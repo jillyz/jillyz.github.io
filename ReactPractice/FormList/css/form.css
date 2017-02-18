@@ -1,0 +1,204 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: .875em;
+}
+/*---------------*/
+table, th, td {
+  padding: .5em 1em;
+  border-collapse: collapse;
+}
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+caption {
+  padding: 1em;
+  background-color: #222;
+  color: #fff;
+}
+th {
+  height: 2rem;
+  text-align: left;
+  color: #999;
+  border-bottom: 1px solid #ccc;
+}
+.list td {
+  height: 3rem;
+}
+table thead th,
+table tbody td  {
+  background-color: #efefef;
+  border-bottom: 1px solid #fff;
+}
+tfoot td {
+  background-color: #ffc;
+}
+/*-------------*/
+
+/*-------------*/
+[disabled][readonly] {
+  border: 0;
+  background-color: transparent;
+}
+input {
+  width: calc( 100% - 4em );
+}
+button, input {
+  padding: .5em;
+  font-size: 1em;
+}
+.btnDelete {
+  margin-left: .25em;
+  outline: none;
+  border: 0;
+  color: #c66;
+  background-color: transparent;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.btnEdit {
+  float: right;
+  display: block;
+  padding: .5em 2em;
+  text-decoration: none;
+  background-color: #222;
+  color: #fff;
+}
+.isEdit {
+  outline: 3px solid #0c0;
+  color: #060;
+  font-weight: bold;
+  -webkit-box-shadow: 0 0 5px #999;
+  box-shadow: 0 0 5px #999;
+}
+
+/*--------------*/
+.left {
+  float: left;
+  margin-right: 5px;
+}
+.right {
+  float: right;
+  margin-left: 5px;
+}
+.left,
+.right {
+  width: calc( 50% - 5px );
+  height: 100vh;
+  overflow: auto;
+}
+/*------------*/
+.grid {
+  display: table;
+}
+.col {
+  display: table-cell;
+  border-right: 5px solid #fff;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form {
+}
+.wrap {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto; 
+}
+.small {
+  font-size: .8125em;
+}
+/*------------*/
+.textRight {
+  text-align: right;
+}
+.title {
+  margin: 0;
+  padding: 0;
+}
+.btnUpdateList {
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  display: table-cell;
+  width: 3em;
+  height: 3em;
+  line-height: 3em;
+  font-size: 1.5em;
+  border-radius: 50%;
+  border: 0;
+  text-align: center;
+  background-color: #fff;
+  -webkit-box-shadow: 3px 3px 3px #ccc;
+  box-shadow: 3px 3px 3px #ccc;
+  cursor: pointer;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */      
+}
+.btnUpdateList:active {
+  background-color: #ff3;
+}
+
+.fixedTop,
+.fixedBottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+.fixedTop {
+  top: 0;
+}
+.fixedBottom {
+  bottom: 0;
+}
+.bar {
+  display: table-cell;
+  padding: 1em;
+  background-color: #fff;
+}
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);;
+  -ms-transform: translate(-50%, -50%);;
+  -o-transform: translate(-50%, -50%);;
+  transform: translate(-50%, -50%);;
+  padding: 1em .5em;
+  background-color: #fff;
+  color: #666;
+}
+.textCenter {
+  text-align: center;
+}
+.colOrder {
+  width: 2em;
+}
+.colType {
+  width: 4em;
+}
+.colTime {
+  width: 9rem;
+}
+.typeAdd {
+  font-weight: bold;
+  color: #33c;
+}
+.typeUpdate {
+  font-weight: bold;
+  color: #090;
+}
+.typeDelete {
+  color: #c66;
+}
+.strike {
+  text-decoration: line-through;
+}
+.gray {
+  color: #999;
+}
