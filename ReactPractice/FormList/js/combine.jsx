@@ -67,7 +67,7 @@ class Form extends React.Component {
       //clear input value
       this.refs.addInput.value = '';
 
-      this.scrollToBottom();
+      scrollToBottom('form');
      
     }
   }
@@ -169,6 +169,7 @@ class Form extends React.Component {
   }
 
   componentDidMount() {
+    scrollToBottom('form');
     this.refs.addInput.focus();
   }
 
@@ -176,14 +177,6 @@ class Form extends React.Component {
     if(this.state.items.length === 0) {
       this.refs.addInput.focus();
     }
-  }
-
-  scrollToBottom(){
-    const arr = ['form'];
-    arr.map( domId => {
-      var element = document.getElementById(domId);
-      scrollTo(element, element.scrollHeight, 300);
-    })
   }
 
   render() {  
@@ -355,7 +348,7 @@ class List extends React.Component {
   fetchHistory (){
     let d = localStorage.getItem('data')
     this.setState({ 
-      items: JSON.parse(d).reverse(),
+      items: JSON.parse(d),
       canFetch: false,
       showLoading: true
     });
@@ -389,6 +382,7 @@ class List extends React.Component {
       1000
     );
 
+    scrollToBottom('list');
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -401,6 +395,8 @@ class List extends React.Component {
         1000
       )   
     }
+
+    scrollToBottom('list');
   }
 
   tick(){
@@ -633,6 +629,15 @@ window.App.List = List;
 window.App.ListTable = ListTable;
 window.App.Log = Log;
 window.App.LogTable = LogTable;
+
+//----------------------------------------
+// SCROLLTO
+//----------------------------------------
+
+function scrollToBottom(domId){
+  var element = document.getElementById(domId);
+  scrollTo(element, element.scrollHeight, 300);
+}
 
 //----------------------------------------
 // ANIMATION
