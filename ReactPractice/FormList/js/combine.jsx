@@ -190,10 +190,10 @@ class Form extends React.Component {
       <div>
         <div className="fixed fixedTop">
           <table>
-            <caption>管理項目</caption>
+            <caption>項目</caption>
             <thead>
               <tr>
-                <th className="colOrder">#</th>
+                <th className="colOrder">ID</th>
                 <th>Item</th>
                 <th>Time</th>
               </tr>
@@ -213,7 +213,7 @@ class Form extends React.Component {
                     ref="addInput"
                     onKeyDown={this.handleAddItem}
                     onChange={this.handleTextChange} 
-                    placeholder="新增..." />                
+                    placeholder="新增項目..." />                
                 </td>
                 <td className="textRight">
                   <button className="btnDelete" onClick={this.clearItem}>
@@ -233,7 +233,7 @@ class Form extends React.Component {
             <caption>管理項目</caption>
             <thead>
               <tr>
-                <th className="colOrder">#</th>
+                <th className="colOrder">ID</th>
                 <th>Item</th>
                 <th>Time</th>
               </tr>
@@ -276,19 +276,22 @@ class FormItem extends React.Component {
     this.state = {
       value: '',
       oldValue: '',
-      isEdit: false
+      editable: false,
+      isEditing: false
     }
     this.textChanged = this.textChanged.bind(this);
     this.saveOldItem = this.saveOldItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
     this.updateItem = this.updateItem.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
+    this.toggleEditable = this.toggleEditable.bind(this);
   }
 
   textChanged(e){
     this.setState({
       value: e.target.value,
-      isEdit: true
+      isEditing: true
     })
   }
 
@@ -305,16 +308,29 @@ class FormItem extends React.Component {
   updateItem(e) { 
     this.props.onUpdateItem(this.props.id, this.refs.editInput.value, this.state.oldValue)
     this.setState({
-      isEdit: false
+      editable: false,
+      isEditing: false
     })
   }
 
   handleKeyDown(e){
     if(e.keyCode === 13 ) { 
-      this.refs.editInput.blur();
+      this.updateItem(e);
+      this.toggleEditable(e);
     }
   }
 
+  handleBlur(e){    
+    this.refs.editInput.blur();
+  }
+
+  toggleEditable(e){
+    this.setState({editable: !this.state.editable});
+    if(this.state.editable) {
+      this.refs.editInput.select();
+    }  
+  }
+  
   render() {
     const {
       value,
@@ -325,33 +341,56 @@ class FormItem extends React.Component {
     } = this.props;
 
     return (
-      <tr>
+      <tr onDoubleClick={this.toggleEditable}>
         <td className="colOrder"> 
-          {this.props.id} 
+            {this.props.id} 
         </td>
-        <td>         
-          <input type="text" 
-            ref="editInput"
-            autofocus 
-            onClick={this.toggleEditable}
-            onChange={this.textChanged}
-            onKeyDown={this.handleKeyDown}
-            onFocus={this.saveOldItem}
-            onBlur={this.updateItem}
-            placeholder="請輸入" 
-            defaultValue={this.props.value}
-            className={this.state.isEdit ? 'isEdit' : ''}
-            />
-          <button className="btnDelete" onClick={this.deleteItem}>
-            <i className="fa fa-trash-o" aria-hidden="true"></i>
-          </button>
-        </td>
+        {this.renderEditView()}
         <td>
           {this.props.date}
         </td>
       </tr>
     );
   }
+
+  renderEditView(){
+    return(
+      this.state.editable ? 
+        this.renderEditMode() :
+        this.renderViewMode()
+    )
+  }
+
+  renderEditMode(){
+    return (
+      <td>         
+        <input type="text" 
+          ref="editInput"
+          autoFocus 
+          onChange={this.textChanged}
+          onKeyDown={this.handleKeyDown}
+          onFocus={this.saveOldItem}
+          onBlur={this.handleBlur}
+          placeholder="請輸入" 
+          defaultValue={this.props.value}
+          className={this.state.isEditing ? 'isEdit' : ''}
+          />
+        <button className="btnDelete" onClick={this.deleteItem}>
+          <i className="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+      </td>
+    );
+  }
+
+  renderViewMode(){
+    return (
+      <td>         
+        {this.props.value}
+      </td>
+
+    );
+  }
+
 
 }
 
@@ -507,7 +546,7 @@ function ListTable(props) {
           <caption>項目</caption>
           <thead>
             <tr>
-              <th className="colOrder">#</th>
+              <th className="colOrder">ID</th>
               <th>Item</th>
               <th>Time</th>
             </tr>
@@ -588,7 +627,7 @@ class Log extends React.Component {
             <tr key={content.guid}>
               <td className="small gray">{content.order}</td>
               <td>{content.date}</td>
-              <td>#{content.id}</td>
+              <td># {content.id}</td>
               <td>
                 {(() => {
                   switch (content.typeId) {
@@ -651,7 +690,7 @@ function LogTable(props) {
             <tr>
               <th className="colOrder"></th>
               <th className="colTime">Time</th>
-              <th className="colOrder">#</th>
+              <th className="colOrder">ID</th>
               <th className="colType">Type</th>
               <th>Log</th>
             </tr>
