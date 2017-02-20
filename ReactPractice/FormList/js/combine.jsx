@@ -1,4 +1,130 @@
 //----------------------------------------
+// APP
+//----------------------------------------
+
+class App extends React.Component {
+  render() {
+    return (
+      <div className="grid">
+        <div className="col form"><div className="wrap list" id="form"><Form fetch="false" /></div></div>
+        <div className="col"><div className="wrap list" id="log"><Log fetch="false" /></div></div>
+        <Timer />
+      </div>
+    )
+  } 
+
+}
+
+
+//----------------------------------------
+// App
+//----------------------------------------
+
+class Timer extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      items: [],
+      time: 0,
+      canFetch: true,
+      showLoading: false,
+      updateList: false
+    }
+    this.manualUpdate = this.manualUpdate.bind(this);
+  }
+
+  fetchHistory (){
+    let d = localStorage.getItem('data')
+    this.setState({ 
+      items: JSON.parse(d),
+      canFetch: false,
+      showLoading: true
+    });
+
+    setTimeout( () => 
+      this.setState({ 
+        canFetch: true,
+      })
+      ,1000
+    )
+
+    //模擬取資料
+    setTimeout( () => 
+      this.setState({ 
+        showLoading: false,
+        updateList: true
+      })
+      ,300
+    )
+
+  }
+
+  handleUpdateList(){
+    if( this.state.updateList === true ) {
+      this.setState({updateList: false})
+    }
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.timerID);
+  }
+
+  componentDidMount() {
+    this.fetchHistory();
+    this.handleUpdateList();
+
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+
+    if (this.state.time === 0) {
+      this.fetchHistory();
+      
+      setInterval(
+        this.setState({time: initSec}),
+        1000
+      )   
+    }  
+  }
+
+  tick(){
+    this.setState({time: this.state.time - 1});
+  }
+
+  manualUpdate(){
+    if ( this.state.canFetch === true) {
+      this.setState({time: 0});
+    }
+  }
+
+  renderLoading(){
+    return (
+      <div className="spinner">
+        <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+      </div>
+    )
+  }
+
+  render(){
+    const {
+      toUpdate
+    } = this.props
+    return(
+      <div>
+        <a className="btnUpdateList" onClick={this.manualUpdate}>{this.state.time}</a> 
+        {this.state.showLoading ? this.renderLoading() : ''}
+      </div>
+    )
+  }
+
+}
+
+
+//----------------------------------------
 // FORM
 //----------------------------------------
 
@@ -175,7 +301,6 @@ class Form extends React.Component {
   }
 
   componentDidMount() {
-    scrollToBottom('form');
     this.refs.addInput.focus();
   }
 
@@ -390,174 +515,6 @@ class FormItem extends React.Component {
 
     );
   }
-
-
-}
-
-//----------------------------------------
-// LIST
-//----------------------------------------
-
-class List extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      items: [],
-      time: 0,
-      canFetch: true,
-      showLoading: false
-    }
-    this.manualUpdate = this.manualUpdate.bind(this);
-  }
-
-  fetchHistory (){
-    let d = localStorage.getItem('data')
-    this.setState({ 
-      items: JSON.parse(d),
-      canFetch: false,
-      showLoading: true
-    });
-
-    setTimeout( () => 
-      this.setState({ 
-        canFetch: true,
-      })
-      ,1000
-    )
-
-    //模擬取資料
-    setTimeout( () => 
-      this.setState({ 
-        showLoading: false
-      })
-      ,300
-    )
-
-  }
-
-  componentWillUnmount(){
-    clearInterval(this.timerID);
-  }
-
-  componentDidMount() {
-    this.fetchHistory();
-
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    );
-
-    scrollToBottom('list');
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-
-    if (this.state.time === 0) {
-      this.fetchHistory();
-      
-      setInterval(
-        this.setState({time: initSec}),
-        1000
-      )   
-    }
-
-    scrollToBottom('list');
-  }
-
-  tick(){
-    this.setState({time: this.state.time - 1});
-  }
-
-  manualUpdate(){
-    if ( this.state.canFetch === true) {
-      this.setState({time: 0});
-    }
-  }
-
-  renderLoading(){
-    return (
-      <div className="spinner">
-        <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-      </div>
-    )
-  }
-
-  renderTrItem() {
-    return (
-      <div>
-        <ListTable items={this.state.items} time={this.state.time}>
-          {this.state.items.map(item =>
-            <tr key={item.id}>
-              <td className="colOrder">{item.id}</td>
-              <td>{item.value}</td>
-              <td>{item.date}</td>
-            </tr>
-          )}
-        </ListTable>
-        <a className="btnUpdateList" onClick={this.manualUpdate}>{this.state.time}</a> 
-        {this.state.showLoading ? this.renderLoading() : ''}
-      </div>
-    )
-  }
-
-  renderTrEmpty() {
-    return (
-      <div>
-         <ListTable items={this.state.items} time={this.state.time}>
-          <tr>
-            <td></td>
-            <td>尚無資料</td>
-            <td>--</td>
-          </tr>
-        </ListTable>
-        <a className="btnUpdateList" onClick={this.manualUpdate}>{this.state.time}</a>     
-        {this.state.showLoading ? this.renderLoading() : ''}  
-      </div>
-    )
-  }
-
-  render() {
-    return (
-    this.state.items.length > 0 ?
-      this.renderTrItem() :
-      this.renderTrEmpty()
-    )
-  }
-
-}
-
-function ListTable(props) {
-  return (
-    <div>
-      <div className="relative">
-        <table className="fixed fixedTop">
-          <caption>檢視項目</caption>
-          <thead>
-            <tr>
-              <th className="colOrder">#</th>
-              <th>Item</th>
-              <th>Time</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-      <div>
-        <table className="mb">
-          <caption>項目</caption>
-          <thead>
-            <tr>
-              <th className="colOrder">ID</th>
-              <th>Item</th>
-              <th>Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            {props.children}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
 }
 
 //----------------------------------------
@@ -720,11 +677,10 @@ function LogTable(props) {
 
 //----------------------------------------
 
+window.App.App = App;
 window.App.Form = Form;
 window.App.FormList = FormList;
 window.App.FormItem = FormItem;
-window.App.List = List;
-window.App.ListTable = ListTable;
 window.App.Log = Log;
 window.App.LogTable = LogTable;
 

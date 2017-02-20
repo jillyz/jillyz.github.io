@@ -31,20 +31,10 @@
   <script type="text/babel" src="./js/combine.jsx"></script>
   <script type="text/babel">
     const {
-      Form,
-      FormList,
-      FormItem,
-      List,
-      ListTable,
-      Log,
-      LogTable
+      App
     } = window.App;
     ReactDOM.render(
-      <div className="grid">
-        <div className="col form"><div className="wrap list" id="form"><Form /></div></div>
-        <div className="col"><div className="wrap list" id="log"><Log /></div></div>
-      </div>
-      ,
+      <App />,
       document.getElementById('app')
     );
   </script>
