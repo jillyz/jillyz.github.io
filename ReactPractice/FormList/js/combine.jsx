@@ -51,13 +51,15 @@ class Form extends React.Component {
       localStorage.setItem('data', JSON.stringify(data));
 
       //add log
+      var jsonLog = JSON.parse(localStorage.getItem('log'))
       var newLog = {
         guid: new Date().getTime(),
         id: ( this.state.items.length > 0 ? this.state.items[this.state.items.length - 1].id + 1 : 1 ),
         value: this.state.text,
         date: this.getDateTime(),
         type: 'Add',
-        typeId: 1
+        typeId: 1,
+        order: jsonLog[0] !== undefined ? jsonLog[jsonLog.length - 1].order + 1 : 1
       };
 
       log = log.concat(newLog);
@@ -96,6 +98,7 @@ class Form extends React.Component {
     });
 
     // update log
+    var jsonLog = JSON.parse(localStorage.getItem('log'))
     var newLog = {
       guid: new Date().getTime(), 
       id: itemId,
@@ -103,7 +106,8 @@ class Form extends React.Component {
       oldValue: oldValue,
       date: this.getDateTime(),
       type: 'Update',
-      typeId: 2
+      typeId: 2,
+      order: jsonLog[0] !== undefined ? jsonLog[jsonLog.length - 1].order + 1 : 1
     };
     log = log.concat(newLog);
     localStorage.setItem('log', JSON.stringify(log));
@@ -123,13 +127,15 @@ class Form extends React.Component {
     localStorage.setItem('data', JSON.stringify(data));
 
     // delete log
+    var jsonLog = JSON.parse(localStorage.getItem('log'))
     var newLog = {
       guid: new Date().getTime(), 
       id: itemId,
       value: value,
       date: this.getDateTime(),
       type: 'Delete',
-      typeId: 3
+      typeId: 3,
+      order: jsonLog[0] !== undefined ? jsonLog[jsonLog.length - 1].order + 1 : 1
     };
     log = log.concat(newLog);
     localStorage.setItem('log', JSON.stringify(log));
@@ -182,43 +188,63 @@ class Form extends React.Component {
   render() {  
     return (  
       <div>
-        <table>
-          <caption>管理</caption>
-          <thead>
-            <tr>
-              <th className="colOrder">#</th>
-              <th>Item</th>
-              <th>Time</th>
-            </tr>
-          </thead>
-          <FormList 
-            items={this.state.items} 
-            onDeleteItem={this.handleDeleteItem} 
-            onUpdateItem={this.handleUpdateItem} 
-          />
-          <tfoot>
-            <tr>
-              <td className="colOrder"></td>
-              <td>
-                <input 
-                  type="text" 
-                  autofocus
-                  ref="addInput"
-                  onKeyDown={this.handleAddItem}
-                  onChange={this.handleTextChange} 
-                  placeholder="新增..." />                
-              </td>
-              <td className="textRight">
-                <button className="btnDelete" onClick={this.clearItem}>
-                  <i className="fa fa-trash-o" aria-hidden="true"></i> 項目
-                </button>
-                <button className="btnDelete" onClick={this.clearLog}>
-                  <i className="fa fa-trash-o" aria-hidden="true"></i> Log
-                </button>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
+        <div className="fixed fixedTop">
+          <table>
+            <caption>管理項目</caption>
+            <thead>
+              <tr>
+                <th className="colOrder">#</th>
+                <th>Item</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+
+        <div className="fixed fixedBottom">
+          <table>
+            <tfoot>
+              <tr>
+                <td className="colOrder"></td>
+                <td>
+                  <input 
+                    type="text" 
+                    autofocus
+                    ref="addInput"
+                    onKeyDown={this.handleAddItem}
+                    onChange={this.handleTextChange} 
+                    placeholder="新增..." />                
+                </td>
+                <td className="textRight">
+                  <button className="btnDelete" onClick={this.clearItem}>
+                    清除項目
+                  </button>
+                  <button className="btnDelete" onClick={this.clearLog}>
+                    清除Log
+                  </button>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div>
+          <table className="mb">
+            <caption>管理項目</caption>
+            <thead>
+              <tr>
+                <th className="colOrder">#</th>
+                <th>Item</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <FormList 
+              items={this.state.items} 
+              onDeleteItem={this.handleDeleteItem} 
+              onUpdateItem={this.handleUpdateItem} 
+            />
+          </table>
+        </div>
       </div>
     )
   }
@@ -464,7 +490,20 @@ class List extends React.Component {
 function ListTable(props) {
   return (
     <div>
-        <table>
+      <div className="relative">
+        <table className="fixed fixedTop">
+          <caption>檢視項目</caption>
+          <thead>
+            <tr>
+              <th className="colOrder">#</th>
+              <th>Item</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div>
+        <table className="mb">
           <caption>項目</caption>
           <thead>
             <tr>
@@ -477,6 +516,7 @@ function ListTable(props) {
             {props.children}
           </tbody>
         </table>
+      </div>
     </div>
   );
 }
@@ -546,6 +586,7 @@ class Log extends React.Component {
         <LogTable log={this.state.log} time={this.state.time}>
           {this.state.log.map(content =>
             <tr key={content.guid}>
+              <td className="small gray">{content.order}</td>
               <td>{content.date}</td>
               <td>#{content.id}</td>
               <td>
@@ -561,7 +602,7 @@ class Log extends React.Component {
                 {(() => {
                   switch (content.typeId) {
                     case 1: return <span className="typeAdd">{content.value}</span>;
-                    case 2: return <span><span className="gray strike">{content.oldValue}</span> <i className="fa fa-long-arrow-right gray" aria-hidden="true"></i> <span className="typeUpdate">{content.value}</span></span>;
+                    case 2: return <span><span className="gray strike">{content.oldValue}</span> <i className="fa fa-long-arrow-right gray" aria-hidden="true"></i> <br/><span className="typeUpdate">{content.value}</span></span>;
                     case 3: return <span className="typeDelete strike">{content.value}</span>;
                     default: return content.value;
                   }
@@ -579,6 +620,7 @@ class Log extends React.Component {
       <div>
          <LogTable log={this.state.log} time={this.state.time}>
           <tr>
+            <td></td>
             <td>尚無操作紀錄</td>
             <td>--</td>
             <td>--</td>
@@ -602,10 +644,26 @@ class Log extends React.Component {
 function LogTable(props) {
   return (
     <div>
+      <div className="relative">
+        <table className="fixed fixedTop">
+          <caption>Log</caption>
+          <thead>
+            <tr>
+              <th className="colOrder"></th>
+              <th className="colTime">Time</th>
+              <th className="colOrder">#</th>
+              <th className="colType">Type</th>
+              <th>Log</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div>
         <table>
           <caption>Log</caption>
           <thead>
             <tr>
+              <th className="colOrder"></th>
               <th className="colTime">Time</th>
               <th className="colOrder">#</th>
               <th className="colType">Type</th>
@@ -616,6 +674,7 @@ function LogTable(props) {
             {props.children}
           </tbody>
         </table>
+      </div>
     </div>
   );
 }
