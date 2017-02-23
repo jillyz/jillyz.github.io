@@ -1,4 +1,26 @@
 //----------------------------------------
+// DATE TIME
+//----------------------------------------
+
+function getDateTime(){
+  let today = new Date();
+  let year = today.getFullYear();
+  let month = today.getMonth() + 1;
+  let day = today.getDate();
+  let hh = today.getHours();
+  let mm = today.getMinutes();
+  let ss = today.getSeconds ();
+  let date = year + '/' + this.formatDateTime(month) + '/' + this.formatDateTime(day);
+  let time = this.formatDateTime(hh) + ':' + this.formatDateTime(mm) + ':' + this.formatDateTime(ss);
+  return date + ' ' + time;
+}
+
+function formatDateTime(val) {
+  const n = val.toString();
+  return n.length == 2 ? n : '0' + n;
+}
+
+//----------------------------------------
 // SCROLLTO
 //----------------------------------------
 

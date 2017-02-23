@@ -41,7 +41,7 @@ class Form extends React.Component {
       var newItem = {
         id: ( this.state.items.length > 0 ? this.state.items[this.state.items.length - 1].id + 1 : 1 ), 
         value: this.state.text,
-        date: this.getDateTime(),
+        date: getDateTime(),
       };
 
       this.setState((prevState) => ({
@@ -58,7 +58,7 @@ class Form extends React.Component {
         guid: new Date().getTime(),
         id: ( this.state.items.length > 0 ? this.state.items[this.state.items.length - 1].id + 1 : 1 ),
         value: this.state.text,
-        date: this.getDateTime(),
+        date: getDateTime(),
         type: 'Add',
         typeId: 1,
         order: jsonLog[0] !== undefined ? jsonLog[jsonLog.length - 1].order + 1 : 1
@@ -82,7 +82,7 @@ class Form extends React.Component {
       id: itemId, 
 
       value: value,
-      date: this.getDateTime(),
+      date: getDateTime(),
     };
     var updatedItems = this.state.items.filter(item => {
       if( item.id === itemId ){
@@ -105,7 +105,7 @@ class Form extends React.Component {
       id: itemId,
       value: value,
       oldValue: oldValue,
-      date: this.getDateTime(),
+      date: getDateTime(),
       type: 'Update',
       typeId: 2,
       order: jsonLog[0] !== undefined ? jsonLog[jsonLog.length - 1].order + 1 : 1
@@ -133,7 +133,7 @@ class Form extends React.Component {
       guid: new Date().getTime(), 
       id: itemId,
       value: value,
-      date: this.getDateTime(),
+      date: getDateTime(),
       type: 'Delete',
       typeId: 3,
       order: jsonLog[0] !== undefined ? jsonLog[jsonLog.length - 1].order + 1 : 1
@@ -156,23 +156,7 @@ class Form extends React.Component {
     localStorage.setItem('log', JSON.stringify(log));
   }
 
-  getDateTime(){
-    let today = new Date();
-    let year = today.getFullYear();
-    let month = today.getMonth() + 1;
-    let day = today.getDate();
-    let hh = today.getHours();
-    let mm = today.getMinutes();
-    let ss = today.getSeconds ();
-    let date = year + '/' + this.formatDateTime(month) + '/' + this.formatDateTime(day);
-    let time = this.formatDateTime(hh) + ':' + this.formatDateTime(mm) + ':' + this.formatDateTime(ss);
-    return date + ' ' + time;
-  }
   
-  formatDateTime(val) {
-    const n = val.toString();
-    return n.length == 2 ? n : '0' + n;
-  }
 
   componentDidMount() {
     this.refs.addInput.focus();
