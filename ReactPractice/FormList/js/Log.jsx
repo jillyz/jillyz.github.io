@@ -6,63 +6,21 @@ const {
 class Log extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      log: [],
-      time: 0,
-    }
+    
   }
 
-  fetchHistory (){
-    let d = localStorage.getItem('log')
-    this.setState({ 
-      log: JSON.parse(d).reverse(),
-    });
-  }
-
-  componentWillUnmount(){
-    clearInterval(this.timerID);
-  }
-
-  componentDidMount() {
-    this.fetchHistory();
-
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    );
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-
-    if (this.state.time === 0) {
-      this.fetchHistory();
-      
-      setInterval(
-        this.setState({time: initSec}),
-        1000
-      )   
-    }
-    //this.scrollToBottom();
-
-  }
-
-  // scrollToBottom(){
-  //   const arr = ['log'];
-  //   arr.map( domId => {
-  //     var element = document.getElementById(domId);
-  //     scrollTo(element, element.scrollHeight, 300);
-  //   })
+  // fetchHistory (){
+  //   let d = localStorage.getItem('log')
+  //   this.setState({ 
+  //     log: JSON.parse(d).reverse(),
+  //   });
   // }
-
-  tick(){
-    this.setState({time: this.state.time - 1});
-  }
 
   renderTrItem() {
     return (
       <div>
-        <LogTable log={this.state.log} time={this.state.time}>
-          {this.state.log.map(content =>
+        <LogTable>
+          {this.props.dataLog.map(content =>
             <tr key={content.guid}>
               <td className="small gray">{content.order}</td>
               <td>{content.date}</td>
@@ -96,7 +54,7 @@ class Log extends React.Component {
   renderTrEmpty() {
     return (
       <div>
-         <LogTable log={this.state.log} time={this.state.time}>
+         <LogTable>
           <tr>
             <td></td>
             <td>尚無操作紀錄</td>
@@ -111,7 +69,7 @@ class Log extends React.Component {
 
   render() {
     return (
-    this.state.log.length > 0 ?
+    this.props.dataLog.length > 0 ?
       this.renderTrItem() :
       this.renderTrEmpty()
     )

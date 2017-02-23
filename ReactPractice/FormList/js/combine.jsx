@@ -11,10 +11,8 @@ class App extends React.Component {
         <Timer />
       </div>
     )
-  } 
-
+  }
 }
-
 
 //----------------------------------------
 // App

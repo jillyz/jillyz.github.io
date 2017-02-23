@@ -3,54 +3,29 @@ class Timer extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      items: [],
       time: 0,
       canFetch: true,
       showLoading: false,
       updateList: false
     }
-    this.manualUpdate = this.manualUpdate.bind(this);
+    this.tolUpdate = this.tolUpdate.bind(this);
   }
 
-  fetchHistory (){
-    let d = localStorage.getItem('data')
-    this.setState({ 
-      items: JSON.parse(d),
-      canFetch: false,
-      showLoading: true
-    });
-
-    setTimeout( () => 
-      this.setState({ 
-        canFetch: true,
-      })
-      ,1000
-    )
-
-    //模擬取資料
-    setTimeout( () => 
-      this.setState({ 
-        showLoading: false,
-        updateList: true
-      })
-      ,300
-    )
-
-  }
-
-  handleUpdateList(){
-    if( this.state.updateList === true ) {
-      this.setState({updateList: false})
-    }
-  }
+  // handleUpdateList(){
+  //   if( this.state.updateList === true ) {
+  //     this.setState({updateList: false})
+  //   }
+  // }
 
   componentWillUnmount(){
     clearInterval(this.timerID);
   }
 
   componentDidMount() {
-    this.fetchHistory();
-    this.handleUpdateList();
+    //this.fetchHistory();
+    //this.handleUpdateList();
+
+    this.tolUpdate()
 
     this.timerID = setInterval(
       () => this.tick(),
@@ -61,12 +36,15 @@ class Timer extends React.Component {
   componentDidUpdate(prevProps, prevState) {
 
     if (this.state.time === 0) {
-      this.fetchHistory();
+      //this.fetchHistory();
+
+      //this.tolUpdate()
       
       setInterval(
         this.setState({time: initSec}),
         1000
-      )   
+      )
+      this.props.sec(0);
     }  
   }
 
@@ -74,28 +52,26 @@ class Timer extends React.Component {
     this.setState({time: this.state.time - 1});
   }
 
-  manualUpdate(){
+  tolUpdate(){
     if ( this.state.canFetch === true) {
-      this.setState({time: 0});
-    }
-  }
+      //this.setState({time: 0});
 
-  renderLoading(){
-    return (
-      <div className="spinner">
-        <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-      </div>
-    )
+      const countDownSec = 0;
+      this.props.sec(countDownSec);
+
+      this.setState({
+        time: 0
+      })
+    }
   }
 
   render(){
     const {
-      toUpdate
+      sec
     } = this.props
     return(
       <div>
-        <a className="btnUpdateList" onClick={this.manualUpdate}>{this.state.time}</a> 
-        {this.state.showLoading ? this.renderLoading() : ''}
+        <a className="btnUpdateList" onClick={this.tolUpdate}>{this.state.time}</a> 
       </div>
     )
   }

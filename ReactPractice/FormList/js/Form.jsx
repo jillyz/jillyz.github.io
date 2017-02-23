@@ -9,7 +9,7 @@ class Form extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      items: data,
+      items: [],
       text: '',
     }
     this.handleTextChange = this.handleTextChange.bind(this);
@@ -176,14 +176,33 @@ class Form extends React.Component {
     return n.length == 2 ? n : '0' + n;
   }
 
+  componentWillMount() {
+    
+  }
+
   componentDidMount() {
+    console.log('Form mounted: ' , this.state.items )
     this.refs.addInput.focus();
+    this.setState({
+      items: this.props.dataForm
+    })
+  }
+
+  componentWillReceiveProps(nextProps) {
+    
   }
 
   componentDidUpdate(prevProps, prevState) {
+    this.setState({
+        items: this.props.dataForm
+    })
+
     if(this.state.items.length === 0) {
+
       this.refs.addInput.focus();
+
     }
+      console.log('Form update: ' , this.state.items );
   }
 
   render() {  
@@ -251,44 +270,3 @@ class Form extends React.Component {
   }
 }
 window.App.Form = Form;
-
-//----------------------------------------
-// SCROLLTO
-//----------------------------------------
-
-function scrollToBottom(domId){
-  var element = document.getElementById(domId);
-  scrollTo(element, element.scrollHeight, 300);
-}
-
-//----------------------------------------
-// ANIMATION
-//----------------------------------------
-
-function scrollTo(element, to, duration) {
-    var start = element.scrollTop,
-        change = to - start,
-        currentTime = 0,
-        increment = 20;
-        
-    var animateScroll = function(){        
-        currentTime += increment;
-        var val = Math.easeInOutQuad(currentTime, start, change, duration);
-        element.scrollTop = val;
-        if(currentTime < duration) {
-            setTimeout(animateScroll, increment);
-        }
-    };
-    animateScroll();
-}
-
-//t = current time
-//b = start value
-//c = change in value
-//d = duration
-Math.easeInOutQuad = (t, b, c, d) => {
-  t /= d/2;
-  if (t < 1) return c/2*t*t + b;
-  t--;
-  return -c/2 * (t*(t-2) - 1) + b;
-}

@@ -18,8 +18,8 @@
   <script >
     var initSec = 5;
 
-    var getData = localStorage.getItem('data');
-    getData ? localStorage.setItem('data', getData) : localStorage.setItem('data', '[]');
+    // var getData = localStorage.getItem('data');
+    // getData ? localStorage.setItem('data', getData) : localStorage.setItem('data', '[]');
     var data = localStorage.getItem('data') ? JSON.parse(localStorage.getItem('data')): [];
 
     var getLog = localStorage.getItem('log');
@@ -29,13 +29,14 @@
     window.App = {};
   </script>
   
-  <script type="text/babel" src="./js/moduale.js"></script>
+  <script src="./js/moduale.js"></script>
   <script type="text/babel" src="./js/LogTable.jsx"></script>
   <script type="text/babel" src="./js/Log.jsx"></script>
   <script type="text/babel" src="./js/FormItem.jsx"></script>
   <script type="text/babel" src="./js/FormList.jsx"></script>
   <script type="text/babel" src="./js/Form.jsx"></script>
   <script type="text/babel" src="./js/Timer.jsx"></script>
+  <script type="text/babel" src="./js/loading.jsx"></script>
   <script type="text/babel" src="./js/App.jsx"></script>
   <script type="text/babel">
     const {
