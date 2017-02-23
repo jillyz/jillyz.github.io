@@ -66,7 +66,6 @@ class Form extends React.Component {
 
       log = log.concat(newLog);
       localStorage.setItem('log', JSON.stringify(log));
-      //console.table(JSON.parse(localStorage.getItem('log'))); 
 
       //clear input value
       this.refs.addInput.value = '';
@@ -141,7 +140,6 @@ class Form extends React.Component {
     };
     log = log.concat(newLog);
     localStorage.setItem('log', JSON.stringify(log));
-    //console.table(JSON.parse(localStorage.getItem('log')));   
 
   }
 
@@ -176,12 +174,7 @@ class Form extends React.Component {
     return n.length == 2 ? n : '0' + n;
   }
 
-  componentWillMount() {
-    
-  }
-
   componentDidMount() {
-    console.log('Form mounted: ' , this.state.items )
     this.refs.addInput.focus();
     this.setState({
       items: this.props.dataForm
@@ -189,20 +182,15 @@ class Form extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    
+    this.setState({
+        items: nextProps.dataForm
+    })
   }
 
   componentDidUpdate(prevProps, prevState) {
-    this.setState({
-        items: this.props.dataForm
-    })
-
     if(this.state.items.length === 0) {
-
       this.refs.addInput.focus();
-
     }
-      console.log('Form update: ' , this.state.items );
   }
 
   render() {  

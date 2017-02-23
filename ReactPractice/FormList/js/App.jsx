@@ -42,7 +42,7 @@ class App extends React.Component {
         showLoading: true
       });
 
-      console.table(this.state.items)
+      // console.table(this.state.items)
 
       //模擬取到資料的時間差
       setTimeout( () => 
