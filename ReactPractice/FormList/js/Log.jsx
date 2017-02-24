@@ -14,10 +14,10 @@ class Log extends React.Component {
         <LogTable>
           {this.props.dataLog.map(content =>
             <tr key={content.guid}>
-              <td className="small gray">{content.order}</td>
-              <td>{content.date}</td>
-              <td># {content.id}</td>
-              <td>
+              <td className="colOrder small gray">{content.order}</td>
+              <td className="colTime">{content.date}</td>
+              <td className="colOrder"># {content.id}</td>
+              <td className="colType">
                 {(() => {
                   switch (content.typeId) {
                     case 1: return <span className="typeAdd">{content.type}</span>;

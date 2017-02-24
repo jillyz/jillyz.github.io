@@ -16,7 +16,7 @@ function LogTable(props) {
         </table>
       </div>
       <div>
-        <table>
+        <table className="table">
           <caption>Log</caption>
           <thead>
             <tr>

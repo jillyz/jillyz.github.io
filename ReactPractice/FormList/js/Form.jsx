@@ -223,7 +223,7 @@ class Form extends React.Component {
         </div>
 
         <div>
-          <table className="mb">
+          <table className="table">
             <caption>管理項目</caption>
             <thead>
               <tr>
