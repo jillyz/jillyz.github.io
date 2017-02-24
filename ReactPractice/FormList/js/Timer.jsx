@@ -11,20 +11,11 @@ class Timer extends React.Component {
     this.tolUpdate = this.tolUpdate.bind(this);
   }
 
-  // handleUpdateList(){
-  //   if( this.state.updateList === true ) {
-  //     this.setState({updateList: false})
-  //   }
-  // }
-
   componentWillUnmount(){
     clearInterval(this.timerID);
   }
 
   componentDidMount() {
-    //this.fetchHistory();
-    //this.handleUpdateList();
-
     this.tolUpdate()
 
     this.timerID = setInterval(
@@ -34,12 +25,8 @@ class Timer extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-
     if (this.state.time === 0) {
-      //this.fetchHistory();
 
-      //this.tolUpdate()
-      
       setInterval(
         this.setState({time: config.initSec}),
         1000
@@ -54,7 +41,6 @@ class Timer extends React.Component {
 
   tolUpdate(){
     if ( this.state.canFetch === true) {
-      //this.setState({time: 0});
 
       const countDownSec = 0;
       this.props.sec(countDownSec);

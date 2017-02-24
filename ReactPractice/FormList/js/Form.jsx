@@ -38,19 +38,19 @@ class Form extends React.Component {
       }
       
       //add item
-      var prevItems = getData('data');
-      data.item = prevItems;
+      var prevItems = getData('items');
+      data.items = prevItems;
 
       var newItem = {
         id: ( prevItems.length > 0 ? prevItems[prevItems.length - 1].id + 1 : 1 ), 
         value: this.state.text,
         date: getDateTime(),
       };
-      data.item = prevItems.concat(newItem);
-      setData('data', JSON.stringify(data.item));
+      data.items = prevItems.concat(newItem);
+      setData('items', JSON.stringify(data.items));
 
       this.setState((prevState) => ({
-        items: data.item,
+        items: data.items,
         text: ''
       }));
 
@@ -85,16 +85,16 @@ class Form extends React.Component {
       date: getDateTime(),
     };
 
-    data.item = getData('data');
-    var updatedItems = data.item.filter(item => {
+    data.items = getData('items');
+    var updatedItems = data.items.filter(item => {
       if( item.id === itemId ){
-        for (var key in data.item) {
-          if(data.item[key].id == itemId) {
-            data.item[key] = updateItem;
+        for (var key in data.items) {
+          if(data.items[key].id == itemId) {
+            data.items[key] = updateItem;
             this.setState({
-              items: data.item
+              items: data.items
             });
-            setData('data', JSON.stringify(data.item));
+            setData('items', JSON.stringify(data.items));
           }
         }
       }
@@ -118,9 +118,9 @@ class Form extends React.Component {
   
   handleDeleteItem(itemId, value) {
 
-    data.item = getData('data');
+    data.items = getData('items');
 
-    var updatedItems = data.item.filter(item => {
+    var updatedItems = data.items.filter(item => {
       return item.id !== itemId;
     });
     
@@ -128,8 +128,8 @@ class Form extends React.Component {
       items: [].concat(updatedItems),
     });
 
-    data.item = [].concat(updatedItems);
-    setData('data', JSON.stringify(data.item));
+    data.items = [].concat(updatedItems);
+    setData('items', JSON.stringify(data.items));
 
     // delete log
     var prevLog = getData('log');
@@ -148,11 +148,11 @@ class Form extends React.Component {
   }
 
   clearItem(){
-    data.item = [];
+    data.items = [];
     this.setState({
       items: []
     });
-    setData('data', JSON.stringify(data.item));
+    setData('items', JSON.stringify(data.items));
   }
 
   clearLog(){

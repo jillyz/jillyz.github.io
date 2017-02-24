@@ -10,12 +10,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    let d = localStorage.getItem('data');
-    let l = localStorage.getItem('log')
-
+    let items = getData('items');
+    let log = getData('log');
     this.state = {
-      items: JSON.parse(d),
-      log: JSON.parse(l).reverse(),
+      items: items,
+      log: log.reverse(),
       showLoading: false,
     }
     this.fetchHistory = this.fetchHistory.bind(this);
@@ -25,18 +24,18 @@ class App extends React.Component {
     this.fetchHistory(0);
   }
 
-  fetchHistory (countDownSec){
+  fetchHistory(countDownSec){
 
     if(countDownSec === 0) {
 
       //取資料
-      let d = localStorage.getItem('data')
-      let l = localStorage.getItem('log')
+      let items = getData('items');
+      let log = getData('log');
 
       //取到資料後
       this.setState({ 
-        items: JSON.parse(d),
-        log: JSON.parse(l).reverse(),
+        items: items,
+        log: log.reverse(),
         showLoading: true
       });
 
@@ -54,8 +53,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="grid">
-        <div className="col form"><div className="wrap list" id="form"><Form dataItem={this.state.items} /></div></div>
-        <div className="col form"><div className="wrap list" id="log"><Log dataLog={this.state.log} /></div></div>
+        <div className="col"><div className="wrap list pt pb" id="form"><Form dataItem={this.state.items} /></div></div>
+        <div className="col"><div className="wrap list pt" id="log"><Log dataLog={this.state.log} /></div></div>
         <Timer sec={this.fetchHistory} />
         {this.state.showLoading ? <Loading /> : ''} 
       </div>

@@ -17,13 +17,20 @@
   <script src="./js/moduale.js"></script>
 
   <script>
+
+    var getItem = localStorage.getItem('items');
+    var getLog = localStorage.getItem('log');
+    getItem ? setData('items', getItem) : setData('items', '[]');
+    getLog ? setData('log', getLog) : setData('log', '[]');
+
+    var data = {
+      items: getData('items'),
+      log: getData('log')
+    }
     var config = {
       initSec: 5
     }
-    var data = {
-      item: localStorage.getItem('data') ? getData('data'): [],
-      log: localStorage.getItem('log') ? getData('log'): []
-    }
+
     window.App = {};
   </script>
   
