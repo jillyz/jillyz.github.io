@@ -41,7 +41,7 @@ class Timer extends React.Component {
       //this.tolUpdate()
       
       setInterval(
-        this.setState({time: initSec}),
+        this.setState({time: config.initSec}),
         1000
       )
       this.props.sec(0);

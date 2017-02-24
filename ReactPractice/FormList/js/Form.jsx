@@ -38,34 +38,35 @@ class Form extends React.Component {
       }
       
       //add item
+      var prevItems = getData('data');
+      data.item = prevItems;
+
       var newItem = {
-        id: ( this.state.items.length > 0 ? this.state.items[this.state.items.length - 1].id + 1 : 1 ), 
+        id: ( prevItems.length > 0 ? prevItems[prevItems.length - 1].id + 1 : 1 ), 
         value: this.state.text,
         date: getDateTime(),
       };
+      data.item = prevItems.concat(newItem);
+      setData('data', JSON.stringify(data.item));
 
       this.setState((prevState) => ({
-        items: prevState.items.concat(newItem),
+        items: data.item,
         text: ''
       }));
 
-      data = this.state.items.concat(newItem);
-      localStorage.setItem('data', JSON.stringify(data));
-
       //add log
-      var jsonLog = JSON.parse(localStorage.getItem('log'))
+      var prevLog = getData('log');
       var newLog = {
         guid: new Date().getTime(),
-        id: ( this.state.items.length > 0 ? this.state.items[this.state.items.length - 1].id + 1 : 1 ),
+        id: ( prevLog.length > 0 ? prevLog[prevLog.length - 1].id + 1 : 1 ),
         value: this.state.text,
         date: getDateTime(),
         type: 'Add',
         typeId: 1,
-        order: jsonLog[0] !== undefined ? jsonLog[jsonLog.length - 1].order + 1 : 1
+        order: prevLog[0] !== undefined ? prevLog[prevLog.length - 1].order + 1 : 1
       };
-
-      log = log.concat(newLog);
-      localStorage.setItem('log', JSON.stringify(log));
+      data.log = prevLog.concat(newLog);
+      setData('log', JSON.stringify(data.log));
 
       //clear input value
       this.refs.addInput.value = '';
@@ -79,27 +80,28 @@ class Form extends React.Component {
 
     // update item
     var updateItem = {
-      id: itemId, 
-
+      id: itemId,
       value: value,
       date: getDateTime(),
     };
-    var updatedItems = this.state.items.filter(item => {
+
+    data.item = getData('data');
+    var updatedItems = data.item.filter(item => {
       if( item.id === itemId ){
-        for (var key in data) {
-          if(data[key].id == itemId) {
-            data[key] = updateItem;
+        for (var key in data.item) {
+          if(data.item[key].id == itemId) {
+            data.item[key] = updateItem;
             this.setState({
-              items: data
+              items: data.item
             });
-            localStorage.setItem('data', JSON.stringify(data));
+            setData('data', JSON.stringify(data.item));
           }
         }
       }
     });
 
     // update log
-    var jsonLog = JSON.parse(localStorage.getItem('log'))
+    var prevLog = getData('log');
     var newLog = {
       guid: new Date().getTime(), 
       id: itemId,
@@ -108,15 +110,17 @@ class Form extends React.Component {
       date: getDateTime(),
       type: 'Update',
       typeId: 2,
-      order: jsonLog[0] !== undefined ? jsonLog[jsonLog.length - 1].order + 1 : 1
+      order: prevLog[0] !== undefined ? prevLog[prevLog.length - 1].order + 1 : 1
     };
-    log = log.concat(newLog);
-    localStorage.setItem('log', JSON.stringify(log));
-    //console.table(JSON.parse(localStorage.getItem('log'))); 
+    data.log = prevLog.concat(newLog);
+    setData('log', JSON.stringify(data.log));
   }
   
   handleDeleteItem(itemId, value) {
-    var updatedItems = this.state.items.filter(item => {
+
+    data.item = getData('data');
+
+    var updatedItems = data.item.filter(item => {
       return item.id !== itemId;
     });
     
@@ -124,11 +128,11 @@ class Form extends React.Component {
       items: [].concat(updatedItems),
     });
 
-    data = [].concat(updatedItems);
-    localStorage.setItem('data', JSON.stringify(data));
+    data.item = [].concat(updatedItems);
+    setData('data', JSON.stringify(data.item));
 
     // delete log
-    var jsonLog = JSON.parse(localStorage.getItem('log'))
+    var prevLog = getData('log');
     var newLog = {
       guid: new Date().getTime(), 
       id: itemId,
@@ -136,38 +140,36 @@ class Form extends React.Component {
       date: getDateTime(),
       type: 'Delete',
       typeId: 3,
-      order: jsonLog[0] !== undefined ? jsonLog[jsonLog.length - 1].order + 1 : 1
+      order: prevLog[0] !== undefined ? prevLog[prevLog.length - 1].order + 1 : 1
     };
-    log = log.concat(newLog);
-    localStorage.setItem('log', JSON.stringify(log));
+    data.log = prevLog.concat(newLog);
+    setData('log', JSON.stringify(data.log));
 
   }
 
   clearItem(){
-    data = [];
+    data.item = [];
     this.setState({
       items: []
     });
-    localStorage.setItem('data', JSON.stringify(data));
+    setData('data', JSON.stringify(data.item));
   }
 
   clearLog(){
-    log = []
-    localStorage.setItem('log', JSON.stringify(log));
+    data.log = []
+    setData('log', JSON.stringify(data.log));
   }
-
-  
 
   componentDidMount() {
     this.refs.addInput.focus();
     this.setState({
-      items: this.props.dataForm
+      items: this.props.dataItem
     })
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-        items: nextProps.dataForm
+        items: nextProps.dataItem
     })
   }
 

@@ -54,7 +54,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="grid">
-        <div className="col form"><div className="wrap list" id="form"><Form dataForm={this.state.items} /></div></div>
+        <div className="col form"><div className="wrap list" id="form"><Form dataItem={this.state.items} /></div></div>
         <div className="col form"><div className="wrap list" id="log"><Log dataLog={this.state.log} /></div></div>
         <Timer sec={this.fetchHistory} />
         {this.state.showLoading ? <Loading /> : ''} 

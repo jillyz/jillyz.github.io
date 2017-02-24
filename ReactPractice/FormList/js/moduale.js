@@ -3,7 +3,7 @@
 //----------------------------------------
 
 function getData(dataName){
-  return localStorage.getItem(dataName);
+  return JSON.parse(localStorage.getItem(dataName));
 }
 
 function setData(dataName, data){
