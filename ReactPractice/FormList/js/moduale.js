@@ -1,4 +1,16 @@
 //----------------------------------------
+// DATA
+//----------------------------------------
+
+function getData(dataName){
+  return localStorage.getItem(dataName);
+}
+
+function setData(dataName, data){
+  return localStorage.setItem(dataName, data);
+}
+
+//----------------------------------------
 // DATE TIME
 //----------------------------------------
 
