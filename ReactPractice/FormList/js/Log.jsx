@@ -48,10 +48,10 @@ class Log extends React.Component {
       <div>
          <LogTable>
           <tr>
-            <td></td>
-            <td>尚無操作紀錄</td>
-            <td>--</td>
-            <td>--</td>
+            <td className="colOrder"></td>
+            <td className="colTime">尚無操作紀錄</td>
+            <td className="colOrder">--</td>
+            <td className="colType">--</td>
             <td>--</td>
           </tr>
         </LogTable>

@@ -86,7 +86,7 @@ class Form extends React.Component {
     };
 
     data.items = getData('items');
-    var updatedItems = data.items.filter(item => {
+    data.items.filter(item => {
       if( item.id === itemId ){
         for (var key in data.items) {
           if(data.items[key].id == itemId) {
