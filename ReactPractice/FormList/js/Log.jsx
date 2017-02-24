@@ -6,15 +6,7 @@ const {
 class Log extends React.Component {
   constructor(props){
     super(props);
-    
   }
-
-  // fetchHistory (){
-  //   let d = localStorage.getItem('log')
-  //   this.setState({ 
-  //     log: JSON.parse(d).reverse(),
-  //   });
-  // }
 
   renderTrItem() {
     return (
