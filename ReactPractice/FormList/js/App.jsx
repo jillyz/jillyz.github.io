@@ -27,8 +27,6 @@ class App extends React.Component {
 
   fetchHistory (countDownSec){
 
-    console.log('fetchHistory')
-
     if(countDownSec === 0) {
 
       //取資料
@@ -42,14 +40,11 @@ class App extends React.Component {
         showLoading: true
       });
 
-      // console.table(this.state.items)
-
       //模擬取到資料的時間差
       setTimeout( () => 
-        // this.setState({ 
-        //   showLoading: false,
-        // })
-        console.log('Loaded')
+        this.setState({ 
+          showLoading: false,
+        })
         ,300
       )
     }
@@ -62,7 +57,7 @@ class App extends React.Component {
         <div className="col form"><div className="wrap list" id="form"><Form dataForm={this.state.items} /></div></div>
         <div className="col form"><div className="wrap list" id="log"><Log dataLog={this.state.log} /></div></div>
         <Timer sec={this.fetchHistory} />
-        {/* {this.state.showLoading ? <Loading /> : ''} */}
+        {this.state.showLoading ? <Loading /> : ''} 
       </div>
     )
   } 
