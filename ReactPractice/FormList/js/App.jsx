@@ -63,6 +63,4 @@ class App extends React.Component {
 
 }
 
-// <div className="col"><div className="wrap list" id="log"><Log dataLog={this.state.log} /></div></div>
-
 window.App.App = App;

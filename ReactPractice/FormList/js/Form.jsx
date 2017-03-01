@@ -1,7 +1,5 @@
 const {
   FormList,
-  Log,
-  Timer
 } = window.App;
 
 class Form extends React.Component {
@@ -243,4 +241,5 @@ class Form extends React.Component {
     )
   }
 }
+
 window.App.Form = Form;
