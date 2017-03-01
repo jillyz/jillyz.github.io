@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bingo</title>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css"> -->
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../js/bingo.js"></script>
+</head>
+
+<body>
+
+<!--     <div class="currentTime">
+        目前時間 2017-01-05 13:11:25
+    </div> -->
+
+    <div class="fixedTop currentPeriod ">
+        第 106000887 期 ( 於 13:15 開獎 )
+    </div>
+
+    <div class="starType">
+        <label>快選</label>
+        <button data-random="1">1</button>
+        <button data-random="2">2</button>
+        <button data-random="3">3</button>
+        <button data-random="4">4</button>
+        <button data-random="5">5</button>
+        <button data-random="6">6</button>
+        <button data-random="7">7</button>
+        <button data-random="8">8</button>
+        <button class="selectCustom selectCustom-js">x</button> 
+    </div>
+
+    <div class="selecNumbers layoutLeft">
+        <button data-select="false" data-val="1">1</button>
+        <button data-select="false" data-val="2">2</button>
+        <button data-select="false" data-val="3">3</button>
+        <button data-select="false" data-val="4">4</button>
+        <button data-select="false" data-val="5">5</button>
+        <button data-select="false" data-val="6">6</button>
+        <button data-select="false" data-val="7">7</button>
+        <button data-select="false" data-val="8">8</button>
+        <button data-select="false" data-val="9">9</button>
+        <button data-select="false" data-val="10">10</button>
+        <button data-select="false" data-val="11">11</button>
+        <button data-select="false" data-val="12">12</button>
+        <button data-select="false" data-val="13">13</button>
+        <button data-select="false" data-val="14">14</button>
+        <button data-select="false" data-val="15">15</button>
+        <button data-select="false" data-val="16">16</button>
+        <button data-select="false" data-val="17">17</button>
+        <button data-select="false" data-val="18">18</button>
+        <button data-select="false" data-val="19">19</button>
+        <button data-select="false" data-val="20">20</button>
+        <button data-select="false" data-val="21">21</button>
+        <button data-select="false" data-val="22">22</button>
+        <button data-select="false" data-val="23">23</button>
+        <button data-select="false" data-val="24">24</button>
+        <button data-select="false" data-val="25">25</button>
+        <button data-select="false" data-val="26">26</button>
+        <button data-select="false" data-val="27">27</button>
+        <button data-select="false" data-val="28">28</button>
+        <button data-select="false" data-val="29">29</button>
+        <button data-select="false" data-val="30">30</button>
+        <button data-select="false" data-val="31">31</button>
+        <button data-select="false" data-val="32">32</button>
+        <button data-select="false" data-val="33">33</button>
+        <button data-select="false" data-val="34">34</button>
+        <button data-select="false" data-val="35">35</button>
+        <button data-select="false" data-val="36" data-lock="false">36</button>
+        <button data-select="false" data-val="37">37</button>
+        <button data-select="false" data-val="38">38</button>
+        <button data-select="false" data-val="39">39</button>
+        <button data-select="false" data-val="40">40</button>
+        <button data-select="false" data-val="41">41</button>
+        <button data-select="false" data-val="42">42</button>
+        <button data-select="false" data-val="43">43</button>
+        <button data-select="false" data-val="44">44</button>
+        <button data-select="false" data-val="45">45</button>
+        <button data-select="false" data-val="46">46</button>
+        <button data-select="false" data-val="47">47</button>
+        <button data-select="false" data-val="48">48</button>
+        <button data-select="false" data-val="49">49</button>
+        <button data-select="false" data-val="50">50</button>
+        <button data-select="false" data-val="51">51</button>
+        <button data-select="false" data-val="52">52</button>
+        <button data-select="false" data-val="53">53</button>
+        <button data-select="false" data-val="54">54</button>
+        <button data-select="false" data-val="55">55</button>
+        <button data-select="false" data-val="56">56</button>
+        <button data-select="false" data-val="57">57</button>
+        <button data-select="false" data-val="58">58</button>
+        <button data-select="false" data-val="59">59</button>
+        <button data-select="false" data-val="60">60</button>
+        <button data-select="false" data-val="61">61</button>
+        <button data-select="false" data-val="62">62</button>
+        <button data-select="false" data-val="63">63</button>
+        <button data-select="false" data-val="64">64</button>
+        <button data-select="false" data-val="65">65</button>
+        <button data-select="false" data-val="66">66</button>
+        <button data-select="false" data-val="67">67</button>
+        <button data-select="false" data-val="68">68</button>
+        <button data-select="false" data-val="69">69</button>
+        <button data-select="false" data-val="70">70</button>
+        <button data-select="false" data-val="71">71</button>
+        <button data-select="false" data-val="72">72</button>
+        <button data-select="false" data-val="73">73</button>
+        <button data-select="false" data-val="74">74</button>
+        <button data-select="false" data-val="75">75</button>
+        <button data-select="false" data-val="76">76</button>
+        <button data-select="false" data-val="77">77</button>
+        <button data-select="false" data-val="78">78</button>
+        <button data-select="false" data-val="79">79</button>
+        <button data-select="false" data-val="80">80</button>
+    </div>
+
+
+    <div class="betSlipWrap layoutRight">
+
+        <table class="betSlip">
+            <tr>
+                <th rowspan="2">星數</th>
+                <th colspan="5">中獎方式/賠率</th>
+                <!-- <th class="highlight" rowspan="2">押注點數</th> -->
+            </tr>
+            <tr>
+                <th>中1</th>
+                <th>中2</th>
+                <th>中3</th>
+                <th>中4</th>
+                <th>中5</th>
+            </tr>
+            <tr>
+                <td>一星</td>
+                <td>3.2</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <!-- <td>
+                    <input autocomplete="off" type="number" min="25" step="1" placeholder="請輸入點數">
+                </td> -->
+            </tr>
+            <tr>
+                <td>二星</td>
+                <td>1.5</td>
+                <td>4</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <!-- <td>
+                    <input autocomplete="off" type="number" min="25" step="1" placeholder="請輸入點數">
+                </td> -->
+            </tr>
+            <tr>
+                <td>三星</td>
+                <td></td>
+                <td>3.2</td>
+                <td>25</td>
+                <td></td>
+                <td></td>
+                <!-- <td>
+                    <input autocomplete="off" type="number" min="25" step="1" placeholder="請輸入點數">
+                </td> -->
+            </tr>
+            <tr>
+                <td>四星</td>
+                <td></td>
+                <td>1.5</td>
+                <td>6</td>
+                <td>50</td>
+                <td></td>
+                <!-- <td>
+                    <input autocomplete="off" type="number" min="25" step="1" placeholder="請輸入點數">
+                </td> -->
+            </tr>
+            <tr>
+                <td>五星</td>
+                <td></td>
+                <td></td>
+                <td>3</td>
+                <td>25</td>
+                <td>350</td>
+                <!-- <td>
+                    <input autocomplete="off" type="number" min="25" step="1" placeholder="請輸入點數">
+                </td> -->
+            </tr>
+        </table>
+
+
+
+        <table class="betSlip" style="display: none;">
+            <!-- <caption>投注點數</caption> -->
+            <tbody>
+                <tr>
+                    <th>星數</th>
+                    <th>中獎方式</th>
+                    <th>賠率</th>
+                    <th>押注點數</th>
+                </tr>
+                <tr>
+                    <td>1星</td>
+                    <td>中1</td>
+                    <td>
+                        3.2
+                    </td>
+                    <td>
+                        <input autocomplete="off" type="number" min="25" step="1">
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">2星</td>
+                    <td>中1</td>
+                    <td>
+                        1.5
+                    </td>
+                    <td rowspan="2">
+                        <input autocomplete="off" type="number" min="25">
+                    </td>
+                </tr>
+                <tr>
+                    <td>中2</td>
+                    <td>
+                        4
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2" class="TD_OFS" id="td_star3">3星</td>
+                    <td>中2</td>
+                    <td>
+                        3.2
+                    </td>
+                    <td rowspan="2">
+                        <input autocomplete="off" type="number">
+                    </td>
+                </tr>
+                <tr>
+                    <td>中3</td>
+                    <td>
+                        25
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="3" class="TD_OF" id="td_star4">4星</td>
+                    <td>中2</td>
+                    <td>
+                        1.5
+                    </td>
+                    <td rowspan="3">
+                        <input autocomplete="off" type="number">
+                    </td>
+                </tr>
+                <tr>
+                    <td>中3</td>
+                    <td>
+                        6
+                    </td>
+                </tr>
+                <tr>
+                    <td>中4</td>
+                    <td>
+                        50
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="3">5星</td>
+                    <td>中3</td>
+                    <td>
+                        3
+                    </td>
+                    <td rowspan="3">
+                        <input autocomplete="off" type="number">
+                    </td>
+                </tr>
+                <tr>
+                    <td>中4</td>
+                    <td>
+                        25
+                    </td>
+                </tr>
+                <tr>
+                    <td>中5</td>
+                    <td>
+                        350
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="showSelectNums">已選球號 :&nbsp;&nbsp;&nbsp;<span id="showSelectNums"></span></div>
+
+    </div>
+
+            
+
+
+    
+    <div class="fixedBottom">
+        <div class="row">
+            <div class="remainingTime colItem">
+                <strong class="time">02:18</strong>
+                <label class="label">投注</label>
+            </div>
+
+            <button class="colItem btn">確認投注</button>
+            <button class="colItem btn">續押</button>
+        </div>
+        <div class="myPoint">
+            <span>遊戲點數 1,047</span>
+       </div>
+    </div>
+
+</body>
+
+</html>
