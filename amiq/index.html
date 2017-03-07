@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>AMIQ邏輯教具租借-目錄-90本</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+
+	<header class="header">
+		<div class="">AMIQ 邏輯教具租借 (90本)</div>
+	</header>
+  <div id="app">
+    <div class="sk-cube-grid">
+      <div class="sk-cube sk-cube1"></div>
+      <div class="sk-cube sk-cube2"></div>
+      <div class="sk-cube sk-cube3"></div>
+      <div class="sk-cube sk-cube4"></div>
+      <div class="sk-cube sk-cube5"></div>
+      <div class="sk-cube sk-cube6"></div>
+      <div class="sk-cube sk-cube7"></div>
+      <div class="sk-cube sk-cube8"></div>
+      <div class="sk-cube sk-cube9"></div>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  <script src="./js/moduale.js"></script>
+
+  <script>
+
+    var getItem = localStorage.getItem('items');
+    var getLog = localStorage.getItem('log');
+    getItem ? setData('items', getItem) : setData('items', '[]');
+    getLog ? setData('log', getLog) : setData('log', '[]');
+
+    var data = {
+      items: getData('items'),
+      log: getData('log')
+    }
+    var config = {
+      initSec: 5
+    }
+
+    window.App = {};
+  </script>
+
+  <script type="text/babel" src="./js/App.jsx"></script>
+  <script type="text/babel">
+    const {
+      App
+    } = window.App;
+    ReactDOM.render(
+      <App />,
+      document.getElementById('app')
+    );
+  </script>
+</body>
+</html>

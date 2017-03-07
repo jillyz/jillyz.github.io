@@ -1,0 +1,211 @@
+.header {
+	padding: 1em;
+}
+.grid {
+	border-left: 1px dotted #ddd;
+}
+.item {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	/*margin-left: 20%;*/
+	margin-bottom: 1.5em;
+	padding: 2em;
+	padding-top: 3em;
+	border-right: 1px dotted #ddd;
+	overflow: hidden;
+	background-color: #fff;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: .25s all;
+	-o-transition: .25s all;
+	transition: .25s all;
+}
+.item:hover {
+	z-index: 1;
+	/*background-color: #ffc;*/
+	-webkit-box-shadow: 0 0 3px 3px rgba(0,0,0,.1);
+	box-shadow: 0 0 3px 3px rgba(0,0,0,.1);
+}
+.stage:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	height: 10px;
+	width: calc(4em - 2px);
+	border-top: 10px solid #fc0;
+}
+.stage:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: calc(4em - 2px);
+	z-index: 10;
+	height: 10px;
+	width: calc(100% - 4em);
+	border-top: 10px solid;
+}
+.stage-1:after {
+	border-top-color: #3aa241;
+}
+.stage-2:after {
+	border-top-color: #1cbcb4;
+}
+.stage-3:after {
+	border-top-color: #ef452e;
+}
+.stage-4:after {
+	border-top-color: #fb8809;
+}
+.stage-5:after {
+	border-top-color: #056abc;
+}
+.stage-6:after {
+	border-top-color: #00b0d9;
+}
+.id {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 4em;
+	padding: 1em 0 .5em 0;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	font-size: .8125em;
+	font-weight: bold;
+}
+.title {
+	display: block;
+	margin-top: .5em;
+	font-size: 1.2em;
+}
+.en {
+	display: block;
+	font-size: .8125em;
+}
+.subject {
+	display: block;
+	padding-top: .25em;
+	color: #c03;
+}
+.img {
+	float: left;
+	margin-right: 1em;
+}
+.info {
+}
+.img img {
+	height: 4em;
+}
+.topics img {
+	/*height: 40vh;*/
+	width: 60%;
+    margin-left: 19%;
+    margin-top: -12%;
+    margin-bottom: -20%;
+	-webkit-transform: rotateZ(-90deg);
+	-ms-transform: rotateZ(-90deg);
+	-o-transform: rotateZ(-90deg);
+	transform: rotateZ(-90deg);
+}
+.preview {
+	display: none;
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 20%;
+	background-color: #fff;
+	-webkit-box-shadow: -3px 0 3px rgba(0,0,0,.1);
+	box-shadow: -3px 0 3px rgba(0,0,0,.1);
+}
+.preview img {
+	width: 100%;
+}
+
+/*Spinner------------*/
+.sk-cube-grid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 72px;
+  height: 72px;
+  margin-top: -36px;
+  margin-left: -36px;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: lightgray;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s; }
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1); 
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  } 
+}
+/*------------------------------------*/
+@media screen and (min-width: 480px) and (max-width: 1023px )  {
+	.item {
+		width: 50%;
+	}	
+}
+@media screen and (min-width: 1024px)  {
+	body {
+		padding: 2em;
+	}
+	.item {
+		width: 33.33%;
+	}	
+}

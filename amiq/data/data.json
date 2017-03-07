@@ -1,0 +1,683 @@
+[
+	{
+		"satage": 1,
+		"content": "",
+		"books": [
+			{
+				"id": 101,
+				"stage": 1,
+				"title": "生日派對",
+				"title-en": "Happy Birthday",
+				"subject": "物件形狀與顏色的基本認識"
+			},
+			{
+				"id": 102,
+				"stage": 1,
+				"title": "我的數字不見了",
+				"title-en": "My numbers are gone",
+				"subject": "認識1-12數字概念"
+			},
+			{
+				"id": 103,
+				"stage": 1,
+				"title": "飛吧！多變的形狀",
+				"title-en": "Fly! Shapes",
+				"subject": "引發幼兒想像力及創造力"
+			},
+			{
+				"id": 104,
+				"stage": 1,
+				"title": "數字生活化",
+				"title-en": "The numbers are everywhere",
+				"subject": "生活中處處有數字"
+			},
+			{
+				"id": 105,
+				"stage": 1,
+				"title": "耍寶搞笑的Mina",
+				"title-en": "Mina's dancing up and down",
+				"subject": "方位及方向和動作聯想的概念"
+			},
+			{
+				"id": 106,
+				"stage": 1,
+				"title": "我想長大去上學",
+				"title-en": "I grew up",
+				"subject": "增進生活認知的思考力"
+			},
+			{
+				"id": 107,
+				"stage": 1,
+				"title": "魔幻的迷宮冒險",
+				"title-en": "Magic labyrinth",
+				"subject": "路徑方向的概念"
+			},
+			{
+				"id": 108,
+				"stage": 1,
+				"title": "你往哪個方向走？",
+				"title-en": "Walk back and forth",
+				"subject": "學習空間概念"
+			},
+			{
+				"id": 109,
+				"stage": 1,
+				"title": "快樂的小園丁",
+				"title-en": "Happy young gardeners",
+				"subject": "每個主題所需要的物品或器具的認識"
+			},
+			{
+				"id": 110,
+				"stage": 1,
+				"title": "有趣的數數遊戲",
+				"title-en": "Counting game",
+				"subject": "數數及加法的基本概念"
+			},
+			{
+				"id": 111,
+				"stage": 1,
+				"title": "莉莉的新生活",
+				"title-en": "Lily's new life",
+				"subject": "推理的基本概念"
+			},
+			{
+				"id": 112,
+				"stage": 1,
+				"title": "我和你一樣哦！",
+				"title-en": "The same with you",
+				"subject": "認識同類和不同類的概念"
+			},
+			{
+				"id": 113,
+				"stage": 1,
+				"title": "舞動的線條",
+				"title-en": "Dancing lines",
+				"subject": "辨識圖形變化"
+			},
+			{
+				"id": 114,
+				"stage": 1,
+				"title": "春花百開",
+				"title-en": "Spring flowers",
+				"subject": "分辨花草的形狀與顏色"
+			},
+			{
+				"id": 115,
+				"stage": 1,
+				"title": "四季",
+				"title-en": "Four Seasons",
+				"subject": "觀察四季與場景景物的變化"
+			}
+		]
+	},
+	{
+		"satage": 2,
+		"content": "",
+		"books": [
+			{
+				"id": 201,
+				"stage": 2,
+				"title": "茉莉的快樂時光",
+				"title-en": "Molly's happy time",
+				"subject": "物件形狀花色及擺設的認知推理"
+			},
+			{
+				"id": 202,
+				"stage": 2,
+				"title": "是誰藏在裡面呢？",
+				"title-en": "What's hiding here",
+				"subject": "圓形、三角形、正方形大集合"
+			},
+			{
+				"id": 203,
+				"stage": 2,
+				"title": "瘋狂的夏天",
+				"title-en": "Crazy summer",
+				"subject": "部分與整體的觀察認知"
+			},
+			{
+				"id": 204,
+				"stage": 2,
+				"title": "哈囉！我在這裡！",
+				"title-en": "Hello! I'm here",
+				"subject": "空間與圖像邏輯的識別推理"
+			},
+			{
+				"id": 205,
+				"stage": 2,
+				"title": "彩色蝴蝶世界",
+				"title-en": "Colored world",
+				"subject": "動物習性、生活習性的認知"
+			},
+			{
+				"id": 206,
+				"stage": 2,
+				"title": "幾何娃娃",
+				"title-en": "Geomatric dolls",
+				"subject": "空間方位的基礎認知"
+			},
+			{
+				"id": 207,
+				"stage": 2,
+				"title": "點、線、面",
+				"title-en": "",
+				"subject": "平面圖形變化"
+			},
+			{
+				"id": 208,
+				"stage": 2,
+				"title": "基礎認知",
+				"title-en": "Basic concepts",
+				"subject": "邏輯思考應變力"
+			},
+			{
+				"id": 209,
+				"stage": 2,
+				"title": "看看我的臉",
+				"title-en": "Watch my face",
+				"subject": "動物特徵的認知及識別"
+			},
+			{
+				"id": 210,
+				"stage": 2,
+				"title": "是非對錯",
+				"title-en": "True or false",
+				"subject": "場景物件的認知推理"
+			},
+			{
+				"id": 211,
+				"stage": 2,
+				"title": "衝浪去囉！",
+				"title-en": "Let's go surfing",
+				"subject": "培養觀其因而知其果的概念"
+			},
+			{
+				"id": 212,
+				"stage": 2,
+				"title": "跳耀的字母寶寶",
+				"title-en": "Happy letters",
+				"subject": "英文26個字母的認知"
+			},
+			{
+				"id": 213,
+				"stage": 2,
+				"title": "比一比",
+				"title-en": "Compare this with that",
+				"subject": "學習量的概念"
+			},
+			{
+				"id": 214,
+				"stage": 2,
+				"title": "魔力形狀",
+				"title-en": "Magic shapes",
+				"subject": "數學圖像與邏輯的思考"
+			},
+			{
+				"id": 215,
+				"stage": 2,
+				"title": "新年快樂",
+				"title-en": "Happy new year",
+				"subject": "認識中國新年的傳統習俗"
+			}
+		]
+	},
+	{
+		"satage": 3,
+		"content": "",
+		"books": [
+			{
+				"id": 301,
+				"stage": 3,
+				"title": "動物大觀園",
+				"title-en": "",
+				"subject": "從多個面向認識鳥類"
+			},
+			{
+				"id": 302,
+				"stage": 3,
+				"title": "小小數學家",
+				"title-en": "",
+				"subject": "1-40數數的學習概念"
+			},
+			{
+				"id": 303,
+				"stage": 3,
+				"title": "吵雜的菜市場",
+				"title-en": "",
+				"subject": "結合平常孩子生活的經驗或事物"
+			},
+			{
+				"id": 304,
+				"stage": 3,
+				"title": "雷伊的學校生活",
+				"title-en": "",
+				"subject": "方位、邏輯、空間、輪廓、順序⋯⋯等等的結合學習"
+			},
+			{
+				"id": 305,
+				"stage": 3,
+				"title": "生活常規",
+				"title-en": "",
+				"subject": "培養正確觀念的基石"
+			},
+			{
+				"id": 306,
+				"stage": 3,
+				"title": "夜晚",
+				"title-en": "",
+				"subject": "黑夜中對物件的觀察思考"
+			},
+			{
+				"id": 307,
+				"stage": 3,
+				"title": "動物面面觀",
+				"title-en": "",
+				"subject": "從不同面向認識動物"
+			},
+			{
+				"id": 308,
+				"stage": 3,
+				"title": "數字動一動",
+				"title-en": "",
+				"subject": "加法的學習"
+			},
+			{
+				"id": 309,
+				"stage": 3,
+				"title": "旅遊日誌",
+				"title-en": "",
+				"subject": "動作順序的學習概念"
+			},
+			{
+				"id": 310,
+				"stage": 3,
+				"title": "形形色色，變化多端",
+				"title-en": "",
+				"subject": "平面圖形與立體圖形之間的關係"
+			},
+			{
+				"id": 311,
+				"stage": 3,
+				"title": "一起去冒險",
+				"title-en": "",
+				"subject": "生活中習習香相關的事物或經歷"
+			},
+			{
+				"id": 312,
+				"stage": 3,
+				"title": "我的表情變了嗎？",
+				"title-en": "",
+				"subject": "細膩的辨識學習"
+			},
+			{
+				"id": 313,
+				"stage": 3,
+				"title": "幾何遊戲",
+				"title-en": "",
+				"subject": "從幾何圖形訓練對應能力"
+			},
+			{
+				"id": 314,
+				"stage": 3,
+				"title": "我總是來無影去無蹤",
+				"title-en": "",
+				"subject": "方向方位認知概念學習"
+			},
+			{
+				"id": 315,
+				"stage": 3,
+				"title": "記憶訓練",
+				"title-en": "",
+				"subject": "從圖像訓練記憶"
+			}
+		]
+	},
+	{
+		"satage": 4,
+		"content": "",
+		"books": [
+			{
+				"id": 401,
+				"stage": 4,
+				"title": "愛麗絲夢遊仙境",
+				"title-en": "",
+				"subject": "奇幻世界的冒險"
+			},
+			{
+				"id": 402,
+				"stage": 4,
+				"title": "不可思議的動物世界",
+				"title-en": "",
+				"subject": "動物特徵的認識及辨識"
+			},
+			{
+				"id": 403,
+				"stage": 4,
+				"title": "動物大集合",
+				"title-en": "",
+				"subject": "細膩的辨識力學習-2"
+			},
+			{
+				"id": 404,
+				"stage": 4,
+				"title": "東轉西轉",
+				"title-en": "",
+				"subject": "平面的圖形到體積的觀察與辨識"
+			},
+			{
+				"id": 405,
+				"stage": 4,
+				"title": "埃及法老王",
+				"title-en": "",
+				"subject": "視覺與思考能力的訓練"
+			},
+			{
+				"id": 406,
+				"stage": 4,
+				"title": "黑與白",
+				"title-en": "",
+				"subject": "黑白對比色的視覺辨識"
+			},
+			{
+				"id": 407,
+				"stage": 4,
+				"title": "彎曲的線條",
+				"title-en": "",
+				"subject": "線條輪廓的辨識"
+			},
+			{
+				"id": 408,
+				"stage": 4,
+				"title": "誰的方向感最好",
+				"title-en": "",
+				"subject": "方向方位認知概念學習"
+			},
+			{
+				"id": 409,
+				"stage": 4,
+				"title": "我和別人長得不一樣",
+				"title-en": "",
+				"subject": "生活知識上等細微處的觀察與辨別"
+			},
+			{
+				"id": 410,
+				"stage": 4,
+				"title": "按照順序排排看",
+				"title-en": "",
+				"subject": "事件發生前因後果的排序認知概念"
+			},
+			{
+				"id": 411,
+				"stage": 4,
+				"title": "美麗的一天",
+				"title-en": "",
+				"subject": "圖形變化的聯想"
+			},
+			{
+				"id": 412,
+				"stage": 4,
+				"title": "無懼的阿拉丁",
+				"title-en": "",
+				"subject": "細膩的辨識力學習-3"
+			},
+			{
+				"id": 413,
+				"stage": 4,
+				"title": "疊疊樂",
+				"title-en": "",
+				"subject": "圖形辨識推理"
+			},
+			{
+				"id": 414,
+				"stage": 4,
+				"title": "誰拿了蛋糕",
+				"title-en": "",
+				"subject": "加減法的簡易運用"
+			},
+			{
+				"id": 415,
+				"stage": 4,
+				"title": "你想到什麼了嗎？",
+				"title-en": "",
+				"subject": "正確的聯想力及推理能力"
+			}
+		]
+	},
+	{
+		"satage": 5,
+		"content": "",
+		"books": [
+			{
+				"id": 501,
+				"stage": 5,
+				"title": "奇妙的組合",
+				"title-en": "",
+				"subject": "不同特徵的細膩辨識"
+			},
+			{
+				"id": 502,
+				"stage": 5,
+				"title": "誰是第一",
+				"title-en": "",
+				"subject": "位置、排列、方向⋯⋯等先後順序學習概念"
+			},
+			{
+				"id": 503,
+				"stage": 5,
+				"title": "是誰把我分解了",
+				"title-en": "",
+				"subject": "圖形組合與分解的學習概念"
+			},
+			{
+				"id": 504,
+				"stage": 5,
+				"title": "因果關係",
+				"title-en": "",
+				"subject": "邏輯順序的推理-1"
+			},
+			{
+				"id": 505,
+				"stage": 5,
+				"title": "新符號遊戲",
+				"title-en": "",
+				"subject": "從幾何圖形進入基礎集合概念"
+			},
+			{
+				"id": 506,
+				"stage": 5,
+				"title": "事物之間的連結",
+				"title-en": "",
+				"subject": "聯想力的訓練"
+			},
+			{
+				"id": 507,
+				"stage": 5,
+				"title": "偵探長布朗",
+				"title-en": "",
+				"subject": "觀察推理能力的訓練"
+			},
+			{
+				"id": 508,
+				"stage": 5,
+				"title": "推一推，想一想",
+				"title-en": "",
+				"subject": "圖形對應、推理邏輯"
+			},
+			{
+				"id": 509,
+				"stage": 5,
+				"title": "誰有好眼力",
+				"title-en": "",
+				"subject": "相似圖片的細膩辨識"
+			},
+			{
+				"id": 510,
+				"stage": 5,
+				"title": "幽默先生",
+				"title-en": "",
+				"subject": "邏輯順序的推理-2"
+			},
+			{
+				"id": 511,
+				"stage": 5,
+				"title": "滑稽逗趣好玩系列",
+				"title-en": "",
+				"subject": "邏輯順序的推理-3"
+			},
+			{
+				"id": 512,
+				"stage": 5,
+				"title": "記憶迷圖",
+				"title-en": "",
+				"subject": "記憶力與觀察力的培養"
+			},
+			{
+				"id": 513,
+				"stage": 5,
+				"title": "工程解謎",
+				"title-en": "",
+				"subject": "認識工程的建造過程"
+			},
+			{
+				"id": 514,
+				"stage": 5,
+				"title": "世界旅行",
+				"title-en": "",
+				"subject": "學習世界文化與歷史常識"
+			},
+			{
+				"id": 515,
+				"stage": 5,
+				"title": "好鄰居",
+				"title-en": "",
+				"subject": "符號辨識、順序與邏輯推理"
+			}
+		]
+	},
+	{
+		"satage": 6,
+		"content": "",
+		"books": [
+			{
+				"id": 601,
+				"stage": 6,
+				"title": "動人旋律",
+				"title-en": "",
+				"subject": "音樂與樂器的認識"
+			},
+			{
+				"id": 602,
+				"stage": 6,
+				"title": "奇貌非凡",
+				"title-en": "",
+				"subject": "類似物種的特徵辨識"
+			},
+			{
+				"id": 603,
+				"stage": 6,
+				"title": "跑跑走走轉一圈",
+				"title-en": "",
+				"subject": "線條遊戲"
+			},
+			{
+				"id": 604,
+				"stage": 6,
+				"title": "誰來找碴",
+				"title-en": "",
+				"subject": "相似圖片的辨識訓練"
+			},
+			{
+				"id": 605,
+				"stage": 6,
+				"title": "腦力風暴",
+				"title-en": "",
+				"subject": "綜合邏輯推理能力"
+			},
+			{
+				"id": 606,
+				"stage": 6,
+				"title": "翻翻轉轉找一找",
+				"title-en": "",
+				"subject": "圖形組合邏輯思考訓練"
+			},
+			{
+				"id": 607,
+				"stage": 6,
+				"title": "消失的幾何娃娃",
+				"title-en": "",
+				"subject": "幾何圖形的空間方位辨識"
+			},
+			{
+				"id": 608,
+				"stage": 6,
+				"title": "無所不在的角度",
+				"title-en": "",
+				"subject": "不同角度和圖形的辨識力及聯想"
+			},
+			{
+				"id": 609,
+				"stage": 6,
+				"title": "多變的方位",
+				"title-en": "",
+				"subject": "圖形的分辨和識別"
+			},
+			{
+				"id": 610,
+				"stage": 6,
+				"title": "腦力大挑戰",
+				"title-en": "",
+				"subject": "數字圖形推理"
+			},
+			{
+				"id": 611,
+				"stage": 6,
+				"title": "移動的圖形",
+				"title-en": "",
+				"subject": "圖形推理"
+			},
+			{
+				"id": 612,
+				"stage": 6,
+				"title": "透視遊戲",
+				"title-en": "",
+				"subject": "觀察與透視概念的培養"
+			},
+			{
+				"id": 613,
+				"stage": 6,
+				"title": "鏡中世界",
+				"title-en": "",
+				"subject": "鏡射與對稱的學習概念"
+			},
+			{
+				"id": 614,
+				"stage": 6,
+				"title": "多變的形狀組合",
+				"title-en": "",
+				"subject": "圖形與線條的疊加與減法"
+			},
+			{
+				"id": 615,
+				"stage": 6,
+				"title": "拼拼湊湊",
+				"title-en": "",
+				"subject": "幾何圖形的組合與分割"
+			}
+		]
+	},
+	
+
+
+
+			
+
+
+
+
+
+
+
+		
+		
+			
+]
