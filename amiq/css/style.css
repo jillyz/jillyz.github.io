@@ -1,3 +1,8 @@
+p {
+	line-height: 2;
+	text-align: justify;
+}
+
 .header {
 	padding: 1em;
 }
@@ -66,6 +71,31 @@
 .stage-6:after {
 	border-top-color: #00b0d9;
 }
+.stage-bg {
+	display: block;
+	margin-bottom: 1em;
+	padding: 1em 2em;
+	color: #fff;
+}
+.stage-bg-1 {
+	background-color: #3aa241;
+}
+.stage-bg-2 {
+	background-color: #1cbcb4;
+}
+.stage-bg-3 {
+	background-color: #ef452e;
+}
+.stage-bg-4{
+	background-color: #fb8809;
+}
+.stage-bg-5 {
+	background-color: #056abc;
+}
+.stage-bg-6{
+	background-color: #00b0d9;
+}
+
 .id {
 	position: absolute;
 	top: 0;
@@ -78,6 +108,7 @@
 	text-align: center;
 	font-size: .8125em;
 	font-weight: bold;
+	font-family: 'Arial Black', Sans-Serif;
 }
 .title {
 	display: block;
@@ -92,6 +123,10 @@
 	display: block;
 	padding-top: .25em;
 	color: #c03;
+}
+.books {
+/*	height: 0;
+	overflow: hidden;*/
 }
 .img {
 	float: left;
