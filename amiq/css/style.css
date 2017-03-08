@@ -12,6 +12,18 @@ p {
 .header {
 	padding: 1em;
 }
+.video {
+	width: 40%;
+	height: 30vw;
+	border: 0;
+	margin-bottom: .5em;
+}
+.amiq {
+	float: left;
+	width: 60%;
+	height: 30vw;
+	margin-bottom: .5em;
+}
 .grid {
 	border-left: 1px dotted #ddd;
 }

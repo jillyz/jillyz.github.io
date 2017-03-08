@@ -79,7 +79,8 @@ class App extends React.Component {
     let isPreview = this.state.isPreview;
     return (
       <div className="grid">
-      {this.state.isPreview}
+        <img className="amiq" src="/img/amiq.jpg" />
+        <iframe className="video" src="https://www.youtube.com/embed/5MqM41gZGOM" frameborder="0" allowfullscreen></iframe>
         {this.state.data.map(stage => (
           <section key={stage.stage}>
             <a className={`stage-bg stage-bg-${stage.stage}`} onClick={() => this.toggleBooksHandler(stage.stage)}>
@@ -98,8 +99,6 @@ class App extends React.Component {
           </div>
           : ''       
         }
-
-
       </div>
     )
   } 
