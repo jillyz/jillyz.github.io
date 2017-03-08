@@ -64,7 +64,7 @@ class App extends React.Component {
             </span>
           </div>
           <div ref="preview" className="topics">
-            <img src={`/img/content/amiq${book.id}.jpg`} onError={()=>{this.src='DEFAULT_IMG'}} />
+            <img src={`img/content/amiq${book.id}.jpg`} onError={()=>{this.src='DEFAULT_IMG'}} />
           </div>
         </div>
       ))
@@ -79,7 +79,7 @@ class App extends React.Component {
     let isPreview = this.state.isPreview;
     return (
       <div className="grid">
-        <img className="amiq" src="/img/amiq.jpg" />
+        <img className="amiq" src="img/amiq.jpg" />
         <iframe className="video" src="https://www.youtube.com/embed/5MqM41gZGOM" frameborder="0" allowfullscreen></iframe>
         {this.state.data.map(stage => (
           <section key={stage.stage}>

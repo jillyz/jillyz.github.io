@@ -79,7 +79,7 @@ class Preview extends React.Component {
             </div>
           ))}
         </div>
-        <img src={`/img/content/amiq${this.props.book.id}.jpg`} />
+        <img src={`img/content/amiq${this.props.book.id}.jpg`} />
 
         <div className="close"></div>
 
