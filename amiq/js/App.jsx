@@ -1,5 +1,6 @@
 const {
-  
+  Image,
+  Preview
 } = window.App;
 
 
@@ -7,9 +8,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
+      isPreview: false,
+      book: ''
     }
-    this.renderBooksView = this.renderBooksView.bind(this);
+    this.previewShow = this.previewShow.bind(this);
+    this.previewHide = this.previewHide.bind(this);
+    this.toggleBooksHandler = this.toggleBooksHandler.bind(this);
   }
 
   componentDidMount() {
@@ -22,19 +27,32 @@ class App extends React.Component {
       })
     }).catch((err) => {
       console.log(err);
-    })
+    });
   }
 
-  onError(){
+  previewShow(book){
+    document.body.style.overflow = 'hidden';
     this.setState({
+      isPreview: true,
+      book: book
+    })
 
+    console.log(this.state.isPreview)
+  }
+
+  previewHide(){
+    document.body.style.overflow = 'auto';
+    this.setState({
+      isPreview: false,
+      book: ''
     })
   }
 
   renderBooksView(data){
+    const DEFAULT_IMAGE = '/img/content/none.jpg';
     return (
       data.map(book => (
-        <div className={`item stage stage-${book.stage}`} key={book.id}>
+        <div className={`item stage stage-${book.stage}`} key={book.id} onClick={() => this.previewShow(book)}>
           <div className="info">
             <span className="title">
               <span className="id">{book.id}</span> 
@@ -46,7 +64,7 @@ class App extends React.Component {
             </span>
           </div>
           <div ref="preview" className="topics">
-            <img src={`/img/content/amiq${book.id}.jpg`} onError="this.src='/img/content/none.jpg'" />
+            <img src={`/img/content/amiq${book.id}.jpg`} onError={()=>{this.src='DEFAULT_IMG'}} />
           </div>
         </div>
       ))
@@ -54,26 +72,34 @@ class App extends React.Component {
   }
 
   toggleBooksHandler(id){
-    $('.books' + id).toggle();
+    $('.books-' + id).stop().slideToggle(800);
   }
 
   render() {
+    let isPreview = this.state.isPreview;
     return (
       <div className="grid">
+      {this.state.isPreview}
         {this.state.data.map(stage => (
           <section key={stage.stage}>
-            <a className={`stage-bg stage-bg-${stage.stage}`} onClick={this.toggleBooksHandler(stage.stage)}>
+            <a className={`stage-bg stage-bg-${stage.stage}`} onClick={() => this.toggleBooksHandler(stage.stage)}>
               <h2>第 {stage.stage} 階</h2>
               <p>{stage.content}</p>
             </a>
-            <div ref={`books-${stage.stage}`} className={`books books-${stage.stage}`}>
+            <div ref={`books-${stage.stage}`} className={`books books-${stage.stage} hide`}>
               {this.renderBooksView(stage.books)}
             </div>
           </section>
         ))}
-        <div ref="preview" className="preview">
-          <img src="/img/content/106.jpg" />
-        </div>
+
+        {isPreview ? 
+          <div ref="preview" className="preview" onDoubleClick={() => this.previewHide()}>
+            <Preview book={this.state.book}  />
+          </div>
+          : ''       
+        }
+
+
       </div>
     )
   } 
