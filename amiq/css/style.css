@@ -17,6 +17,7 @@ p {
 	height: 30vw;
 	border: 0;
 	margin-bottom: .5em;
+	background-color: #000;	
 }
 .amiq {
 	float: left;
