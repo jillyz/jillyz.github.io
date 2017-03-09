@@ -175,8 +175,6 @@ p {
 	position: relative;
 	padding: 2em;
 	padding-left: 6em;
-/*	background-color: #f1e8d6;
-*/	border-bottom: 1px dotted #fff;
 	overflow: hidden;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -199,7 +197,9 @@ p {
 }
 .preview .topics {
 	/*max-width: 1280px;*/
-	margin: 0 auto;	
+	margin: 0 auto;
+	border-top: 1px dotted #fff;
+	border-bottom: 1px dotted #fff;
 }
 .topics ul, .topics li {
 	margin: 0;
@@ -477,6 +477,20 @@ p {
 		width: 60%;
 		height: 30vw;
 	}
+	.seeTopicItem {
+		/*display: none;*/
+		width: 50%;
+		margin: 0 auto;
+	}
+	.seeTopic {
+		background-size: 240%;
+	    height: 37.5vw !important;
+	}
+	.see0 {
+	    height: 18vw !important;
+	    background-position: 88% -25px;
+	    background-size: 120%;
+	}
 }
 @media screen and (max-width: 767px)  {
 	.video {
@@ -488,4 +502,86 @@ p {
 		width: 100%;
 		height: auto;
 	}
+	.preview .topics {
+		/*display: none;*/
+	}
+
 }
+	.seeTopic {
+		width: 90%;
+	    height: 77vw;
+	    margin: 1em auto;
+	    -webkit-background-size: 300%;
+	    background-size: 480%;
+
+	}
+	.see0 {
+	    background-position: 88% -25px;
+	    background-size: 240%;
+	    height: 36vw;
+	}
+	.see1 {
+	    background-position: 2% 3.5%;
+	}
+	.see2 {
+	    background-position: 33% 3.5%;
+	}
+	.see3 {
+	    background-position: 2% 49.5%;
+	}
+	.see4 {
+	    background-position: 33% 49.5%;
+	}
+	.see5 {
+	    background-position: 65% 49.5%;
+	}
+	.see6 {
+	    background-position: 96% 49.5%;
+	}
+	.see7 {
+	    background-position: 2% 144.5%;
+	}
+	.see8 {
+	    background-position: 33% 96.5%;
+	}
+	.see9 {
+	    background-position: 65% 96.5%;
+	}
+	.see10 {
+	    background-position: 96% 96.5%;
+	}
+	.topic-cover {
+		margin-bottom: 2em;
+		padding: 1em 0;
+		border-bottom: 1px solid #fff;
+	}
+	.topic-title {
+		width: 90%;
+		margin: 0 auto;
+		color: #c30;
+		font-size: 1.5em;
+	}
+	.see-info {
+		margin-bottom: 2em;
+		padding-bottom: 1em;		
+		border-bottom: 1px solid #fff;
+	}
+	.see-info ul {
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0;
+		list-style: none;
+	}
+	.see-info li {
+		margin-bottom: .5em;
+		list-style: none;
+		font-size: .8125em;
+	}
+	.see-info li span {
+		display: block;
+		color: #c30;
+	}
+	.ans {
+		display: block;
+	}

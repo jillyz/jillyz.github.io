@@ -1,13 +1,19 @@
 const {
 } = window.App;
 
+var style = {
+  'backgroundImage': 'url(img/content/amiq101.jpg)'
+}
+
 class Preview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       content: '',
-      topics: []
+      topics: [],
+      pos: 0
     }
+    this.see = this.see.bind(this);
   }
 
   onError(){
@@ -47,6 +53,13 @@ class Preview extends React.Component {
     });
   }
 
+  see(pos){
+    this.setState({
+      pos: pos
+    })
+    console.log(pos)
+  }
+
   render() {
     const topics = this.state.topics;
     const content = this.state.content;
@@ -80,8 +93,9 @@ class Preview extends React.Component {
           </div>
           */}
 
+          {/*
           {topics.map(item => (
-            <div key={item.pos} className={`pos pos${item.pos}`}>
+            <div key={item.pos} className={`pos pos${item.pos}`} onClick={() => this.see(item.pos)}>
               <div className="topic-info">
                 <ul>
                   <li><span>題目：</span>{item.topic}</li>
@@ -91,7 +105,46 @@ class Preview extends React.Component {
               </div>
             </div>
           ))}
+          */}
           <img className="topics-img" src={`img/content/amiq${this.props.book.id}.jpg`} />
+          
+
+        </div>
+
+        <div className="seeTopicItem">
+          <div className="topic-cover">
+            <div className="topic-title">封面</div>
+            <div className={`seeTopic see0`} style={style}></div>
+          </div>
+          {topics.map(item => (
+            <div key={item.pos}>
+              <div className="topic-title">#{item.pos} {item.topic}</div>
+              <div className={`seeTopic see${item.pos}`} style={style}></div>
+              <div className="see-info">
+                <ul>
+                  {item.point ? <li><span>訓練要點：</span>{item.point}</li> : ''}
+                  {item.skill ? <li><span>訓練要點：</span>{item.skill}</li> : ''}
+                </ul>
+
+                {item.ans ? 
+                  <ul>
+                    <li>
+                      <span>解答說明：</span>
+                      {
+                        item.ans.map(id =>(
+                          <em key={id} className="ans">
+                            {id}
+                          </em>
+                        ))
+                      }
+                    </li>
+                  </ul>
+                : ''}
+
+              </div>
+            </div>
+          ))}
+          {/*<div className={`seeTopic see${this.state.pos}`} style={style}></div>*/}
         </div>
 
         <div className="close"></div>
