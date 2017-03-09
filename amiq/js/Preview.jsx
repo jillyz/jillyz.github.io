@@ -118,12 +118,16 @@ class Preview extends React.Component {
           </div>
           {topics.map(item => (
             <div key={item.pos}>
-              <div className="topic-title">#{item.pos} {item.topic}</div>
+              <div className="topic-title">
+                <strong>#{item.pos} {item.topic}</strong>
+                <small>這些物品都是為了生日派對準備的，請找出相同的物件。</small>
+              </div>
               <div className={`seeTopic see${item.pos}`} style={style}></div>
               <div className="see-info">
                 <ul>
+                  {item.topicLong ? <li><span>題目：</span>{item.point}</li> : ''}
                   {item.point ? <li><span>訓練要點：</span>{item.point}</li> : ''}
-                  {item.skill ? <li><span>訓練要點：</span>{item.skill}</li> : ''}
+                  {item.skill ? <li><span>能力培養</span>{item.skill}</li> : ''}
                 </ul>
 
                 {item.ans ? 

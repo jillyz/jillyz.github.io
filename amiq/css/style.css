@@ -558,8 +558,14 @@ p {
 	.topic-title {
 		width: 90%;
 		margin: 0 auto;
+	}
+	.topic-title strong {
 		color: #c30;
-		font-size: 1.5em;
+		font-size: 1.5em;		
+	}
+	.topic-title small {
+		display: block;
+		margin-top: 1em;
 	}
 	.see-info {
 		margin-bottom: 2em;
