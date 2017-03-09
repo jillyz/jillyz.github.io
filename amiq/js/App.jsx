@@ -10,7 +10,8 @@ class App extends React.Component {
     this.state = {
       data: [],
       isPreview: false,
-      book: ''
+      book: '',
+      bookId: ''
     }
     this.previewShow = this.previewShow.bind(this);
     this.previewHide = this.previewHide.bind(this);
@@ -44,7 +45,8 @@ class App extends React.Component {
     document.body.style.overflow = 'hidden';
     this.setState({
       isPreview: true,
-      book: book
+      book: book,
+      bookId: book.id
     })
 
     console.log(this.state.isPreview)
@@ -105,7 +107,7 @@ class App extends React.Component {
 
         {isPreview ? 
           <div ref="preview" className="preview" onDoubleClick={() => this.previewHide()}>
-            <Preview book={this.state.book}  />
+            <Preview book={this.state.book} previewId={this.state.bookId} />
           </div>
           : ''       
         }

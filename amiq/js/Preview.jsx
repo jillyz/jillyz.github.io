@@ -9,11 +9,14 @@ class Preview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      previewId: this.props.previewId,
       content: '',
       topics: [],
-      pos: 0
+      pos: 0,
     }
     this.see = this.see.bind(this);
+    this.goNext = this.goNext.bind(this);
+    this.goPrev = this.goPrev.bind(this);
   }
 
   onError(){
@@ -38,6 +41,32 @@ class Preview extends React.Component {
     //   console.log(err);
     // });
 
+    this.fetch(id);
+  }
+
+  see(pos){
+    this.setState({
+      pos: pos
+    })
+    console.log(pos)
+  }
+
+  goNext(){
+    const id = parseInt(this.state.previewId) + 1;
+    this.fetch(id);
+    this.setState({
+      previewId: id
+    })
+  }
+  goPrev(){
+    const id = parseInt(this.state.previewId) - 1;
+    this.fetch(id);
+    this.setState({
+      previewId: id
+    })
+  }
+
+  fetch(id){
     var that = this;
     $.ajax({
       url: 'data/' + id +'.json',
@@ -51,13 +80,6 @@ class Preview extends React.Component {
         console.log(res)
       }
     });
-  }
-
-  see(pos){
-    this.setState({
-      pos: pos
-    })
-    console.log(pos)
   }
 
   render() {
@@ -127,7 +149,7 @@ class Preview extends React.Component {
                 <ul>
                   {item.topicLong ? <li><span>題目：</span>{item.point}</li> : ''}
                   {item.point ? <li><span>訓練要點：</span>{item.point}</li> : ''}
-                  {item.skill ? <li><span>能力培養</span>{item.skill}</li> : ''}
+                  {item.skill ? <li><span>能力培養：</span>{item.skill}</li> : ''}
                 </ul>
 
                 {item.ans ? 
@@ -152,6 +174,11 @@ class Preview extends React.Component {
         </div>
 
         <div className="close"></div>
+
+        <div className="preview-jump">
+          <a onClick={() => this.goPrev()}>prev</a>
+          <a onClick={() => this.goNext()}>next</a>
+        </div>
 
       </div>
     )
