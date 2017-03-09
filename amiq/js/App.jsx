@@ -18,15 +18,25 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('data/data.json')
-    .then((response) => {
-      return response.json();
-    }).then((res) => {
-      this.setState({
-        data: res
-      })
-    }).catch((err) => {
-      console.log(err);
+    // fetch('data/data.json')
+    // .then((response) => {
+    //   return response.json();
+    // }).then((res) => {
+    //   this.setState({
+    //     data: res
+    //   })
+    //   console.table(res)
+    // }).catch((err) => {
+    //   console.log(err);
+    // });
+    var that = this;
+    $.ajax({
+      url: 'data/data.json',
+      dataType: 'json',
+      type: 'GET',
+      success: function(response) {
+        that.setState({data: response})
+      }
     });
   }
 

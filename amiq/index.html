@@ -26,32 +26,16 @@
     </div>
   </div>
   
-  <script src="js/libs/jquery.min.js"></script>
   <script src="js/libs/react.js"></script>
   <script src="js/libs/react-dom.js"></script>
-  <script src="js/libs/fetch.js"></script>
+  <script src="js/libs/jquery.min.js"></script>
   <script src="js/libs/browser.min.js"></script>
   <script src="js/moduale.js"></script>
 
   <script>
-
-    var getItem = localStorage.getItem('items');
-    var getLog = localStorage.getItem('log');
-    getItem ? setData('items', getItem) : setData('items', '[]');
-    getLog ? setData('log', getLog) : setData('log', '[]');
-
-    var data = {
-      items: getData('items'),
-      log: getData('log')
-    }
-    var config = {
-      initSec: 5
-    }
-
     window.App = {};
   </script>
 
-  <script type="text/babel" src="./js/Image.jsx"></script>
   <script type="text/babel" src="./js/Preview.jsx"></script>
   <script type="text/babel" src="./js/App.jsx"></script>
   <script type="text/babel">

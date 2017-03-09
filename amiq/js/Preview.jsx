@@ -1,5 +1,4 @@
 const {
-  Image
 } = window.App;
 
 class Preview extends React.Component {
@@ -19,17 +18,32 @@ class Preview extends React.Component {
 
   componentDidMount() {
     const id = this.props.book.id;
-    fetch('data/' + id +'.json')
-    .then((response) => {
-      return response.json();
-    }).then((res) => {
-      this.setState({
-        content: res[0]['content'],
-        topics: res[0]['topics']
-      })
-      console.log(res)
-    }).catch((err) => {
-      console.log(err);
+
+    // fetch('data/' + id +'.json')
+    // .then((response) => {
+    //   return response.json();
+    // }).then((res) => {
+    //   this.setState({
+    //     content: res[0]['content'],
+    //     topics: res[0]['topics']
+    //   })
+    //   console.log(res)
+    // }).catch((err) => {
+    //   console.log(err);
+    // });
+
+    var that = this;
+    $.ajax({
+      url: 'data/' + id +'.json',
+      dataType: 'json',
+      type: 'GET',
+      success: function(res) {
+        that.setState({
+          content: res.content,
+          topics: res.topics
+        })
+        console.log(res)
+      }
     });
   }
 
@@ -68,7 +82,7 @@ class Preview extends React.Component {
           */}
 
           {topics.map(item => (
-            <div className={`pos pos${item.pos}`}>
+            <div key={item.pos} className={`pos pos${item.pos}`}>
               <div className="topic-info">
                 <ul>
                   <li><span>題目：</span>{item.topic}</li>
