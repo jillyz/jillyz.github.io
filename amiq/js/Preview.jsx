@@ -66,9 +66,8 @@ class Preview extends React.Component {
         </div>
 
         <div className="topics">
-
           {/*
-          <div className="pos0">
+          <div className="pos pos0">
             <span className="title">
               <span>{this.props.book.id}</span> 
               {this.props.book.title}
@@ -92,8 +91,8 @@ class Preview extends React.Component {
               </div>
             </div>
           ))}
+          <img className="topics-img" src={`img/content/amiq${this.props.book.id}.jpg`} />
         </div>
-        <img src={`img/content/amiq${this.props.book.id}.jpg`} />
 
         <div className="close"></div>
 

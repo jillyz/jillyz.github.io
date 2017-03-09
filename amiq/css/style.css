@@ -13,17 +13,10 @@ p {
 	padding: 1em;
 }
 .video {
-	width: 40%;
-	height: 30vw;
+	background-color: #000;
 	border: 0;
-	margin-bottom: .5em;
-	background-color: #000;	
 }
 .amiq {
-	float: left;
-	width: 60%;
-	height: 30vw;
-	margin-bottom: .5em;
 }
 .grid {
 	border-left: 1px dotted #ddd;
@@ -52,6 +45,10 @@ p {
 	/*background-color: #ffc;*/
 	-webkit-box-shadow: 0 0 3px 3px rgba(0,0,0,.1);
 	box-shadow: 0 0 3px 3px rgba(0,0,0,.1);
+}
+.item .topics img {
+	width: 100%;
+	margin-top: 1.5em;
 }
 .stage:before {
 	content: "";
@@ -93,7 +90,8 @@ p {
 }
 .stage-bg {
 	display: block;
-	margin-bottom: 1em;
+	margin-top: 1em;
+	margin-bottom: 1px;
 	padding: 1em 2em;
 	color: #fff;
 	cursor: pointer;
@@ -159,19 +157,7 @@ p {
 .img img {
 	height: 4em;
 }
-.topics img {
-	width: 100%;
-	margin-top: 1.5em;
-	/*height: 40vh;*/
-/*	width: 60%;
-    margin-left: 19%;
-    margin-top: -12%;
-    margin-bottom: -20%;
-	-webkit-transform: rotateZ(-90deg);
-	-ms-transform: rotateZ(-90deg);
-	-o-transform: rotateZ(-90deg);
-	transform: rotateZ(-90deg);*/
-}
+
 .preview {
 	position: fixed;
 	z-index: 9999;
@@ -180,28 +166,17 @@ p {
 	left: 0;
 	right: 0;
 	overflow: auto;
-	background-color: #fff;
+	background-color: #f1e8d6;
 	-webkit-box-shadow: -3px 0 3px rgba(0,0,0,.1);
 	box-shadow: -3px 0 3px rgba(0,0,0,.1);
-}
-.preview img {
-	width: 100%;
-/*	width: 40%;
-    margin-left: 20%;
-    margin-top: -12%;
-    margin-bottom: -20%;
-	-webkit-transform: rotateZ(-90deg);
-	-ms-transform: rotateZ(-90deg);
-	-o-transform: rotateZ(-90deg);
-	transform: rotateZ(-90deg);*/
 }
 .book-info {
 	vertical-align: top;
 	position: relative;
 	padding: 2em;
 	padding-left: 6em;
-	background-color: #f1e8d6;
-	border-bottom: 1px dotted #fff;
+/*	background-color: #f1e8d6;
+*/	border-bottom: 1px dotted #fff;
 	overflow: hidden;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -219,8 +194,12 @@ p {
 }
 .topics {
 	position: relative;
-	font-size: .8125em;
+	font-size: 14px;
 	line-height: 2;
+}
+.preview .topics {
+	/*max-width: 1280px;*/
+	margin: 0 auto;	
 }
 .topics ul, .topics li {
 	margin: 0;
@@ -234,12 +213,15 @@ p {
 	display: block;
 	color: #ff9;
 }
+.topics-img {
+	width: 100%;
+}
 .pos {
 	position: absolute;
-	width: 23.6vw;
-    height: 18.5vw;
-	border: 5px solid rgba(255,255,255,1);
-	color: #fff;
+	width: 23.6%;
+    height: 18.5%;
+/*	border: 1px solid rgba(255,255,255,1);
+*/	color: #fff;
 	box-sizing: border-box;
 	overflow: auto;
 	-webkit-transition: .25s all;
@@ -252,7 +234,7 @@ p {
 .topic-info {
 	width: 100%;
 	min-height: 110%;
-	padding: 1em;
+	padding: 1.5em;
 	box-sizing: border-box;
 	background-color: rgba(0,0,0,.5);
 	opacity: 0;
@@ -269,6 +251,70 @@ p {
 	/*display: none;*/
 }
 .pos0 {
+	display: none;
+	top: 2.5%;
+    left: 50.7%;
+    width: 47.8%;
+    height: 29.4%;
+    padding: 1.5em;
+    background-color: rgba(0,0,0,.5);
+}
+.pos1 {
+	top: 2.5%;
+    left: 1.5%;
+    width: 22.8%;
+    height: 29.4%;
+}
+.pos2 {
+	top: 2.5%;
+    left: 25.7%;
+    height: 29.4%;
+}
+.pos3 {
+	top: 34.3%;
+    left: 1.5%;
+    height: 30.5%;
+    width: 22.8%;
+}
+.pos4 {
+	top: 34.3%;
+    left: 25.7%;
+    height: 30.5%;
+}
+.pos5 {
+	top: 34.3%;
+    left: 50.7%;
+    height: 30.6%;
+}
+.pos6 {
+	top: 34.3%;
+    left: 75.7%;
+    height: 30.5%;
+    width: 22.8%;
+}
+.pos7 {
+	top: 67.3%;
+    left: 1.5%;
+    height: 29.4%;
+    width: 22.8%;
+}
+.pos8 {
+	top: 67.3%;
+    left: 25.7%;
+    height: 29.4%;
+}
+.pos9 {
+	top: 67.3%;
+    left: 50.7%;
+    height: 29.4%;
+}
+.pos10 {
+	top: 67.3%;
+    left: 75.7%;
+    height: 29.4%;
+    width: 22.8%;
+}
+/*.pos0 {
 	top: 1.5vw;
     left: 50.7vw;
     width: 48vw;
@@ -323,7 +369,7 @@ p {
 	top: 41.5vw;
     left: 75.7vw;
     height: 19vw;
-}
+}*/
 
 @-webkit-keyframes fadeOut {
   from {
@@ -420,4 +466,26 @@ p {
 	.item {
 		width: 33.33%;
 	}	
+}
+@media screen and (min-width: 768px)  {
+	.video {
+		width: 40%;
+		height: 30vw;
+	}
+	.amiq {
+		float: left;
+		width: 60%;
+		height: 30vw;
+	}
+}
+@media screen and (max-width: 767px)  {
+	.video {
+		width: 100%;
+		height: 75vw;
+	}
+	.amiq {
+		float: left;
+		width: 100%;
+		height: auto;
+	}
 }
