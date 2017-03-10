@@ -29,3 +29,50 @@ Math.easeInOutQuad = (t, b, c, d) => {
   t--;
   return -c/2 * (t*(t-2) - 1) + b;
 }
+
+//----------------------------------------
+// SWIPE
+//----------------------------------------
+
+function swipe(domId) {
+  var touchstartX = 0;
+  var touchstartY = 0;
+  var touchendX = 0;
+  var touchendY = 0;
+
+  var gesuredZone = document.getElementById(domId);
+
+  gesuredZone.addEventListener('touchstart', function(event) {
+      touchstartX = event.changedTouches[0].screenX;
+      touchstartY = event.changedTouches[0].screenY;
+  }, false);
+
+  gesuredZone.addEventListener('touchend', function(event) {
+      touchendX = event.changedTouches[0].screenX;
+      touchendY = event.changedTouches[0].screenY;
+      handleGesure();
+  }, false); 
+
+function handleGesure() {
+      var swiped = 'swiped: ';
+      if (touchendX < touchstartX) {
+          // alert(swiped + 'left!');
+          return 1;
+      }
+      if (touchendX > touchstartX) {
+          // alert(swiped + 'right!');
+          return -1;
+      }
+      if (touchendY < touchstartY) {
+          // alert(swiped + 'down!');
+          return 1;
+      }
+      if (touchendY > touchstartY) {
+          // alert(swiped + 'left!');
+          return -1;
+      }
+      if (touchendY == touchstartY) {
+          // alert('tap!');
+      }
+  }
+}
