@@ -15,6 +15,7 @@ class Preview extends React.Component {
     }
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this)
   }
 
   onError(){
@@ -23,6 +24,20 @@ class Preview extends React.Component {
     })
   }
 
+  componentWillMount(){
+      document.addEventListener("keydown", this.handleKeyDown.bind(this));
+  }
+
+
+  componentWillUnmount() {
+      document.removeEventListener("keydown", this.handleKeyDown.bind(this));
+  }
+
+  handleKeyDown(e) {
+    console.log('>>> press <<< ', e.keyCode)
+    if(e.keyCode == 39) { this.goNext(); }
+    if(e.keyCode == 37) { this.goPrev(); }    
+  }
 
   componentDidMount() {
     const guid = this.state.previewGuid;
@@ -99,15 +114,25 @@ class Preview extends React.Component {
   }
 
   goNext(){
-    const guid = parseInt(this.state.previewGuid) + 1;
+    // const previewGuid = this.state.previewGuid;
+    // const guid = previewGuid == 90 ? 1 : parseInt(previewGuid) + 1;
+    const guid = parseInt(this.state.previewGuid) - 1;
     this.fetch(guid);
     this.props.bookGoNav(1);
+    this.scrollTop();
   }
 
   goPrev(){
     const guid = parseInt(this.state.previewGuid) - 1;
     this.fetch(guid);
     this.props.bookGoNav(-1);
+    this.scrollTop();
+
+  }
+
+  scrollTop(){
+    var element = document.getElementById('preview');
+    scrollTo(element, 0, 300);
   }
 
   render() {
