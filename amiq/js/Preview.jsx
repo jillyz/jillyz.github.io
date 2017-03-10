@@ -11,11 +11,12 @@ class Preview extends React.Component {
       topics: [],
       style: {
         'backgroundImage': 'url(img/content/amiq' + this.props.book.id + '.jpg)'
-      }
+      },
+      titleFixed: false
     }
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this)
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   onError(){
@@ -62,6 +63,19 @@ class Preview extends React.Component {
     // });
 
     this.fetch(guid);
+
+
+    $('#preview').scroll(function(){
+      var that = this;
+      var isExitBookInfo = $('#preview').scrollTop() > $('#bookInfo').height();
+      if(isExitBookInfo) { 
+        $('#bookInfo').addClass('fixed');
+      } 
+      else {
+        $('#bookInfo').removeClass('fixed');
+      }
+
+    })
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -142,10 +156,19 @@ class Preview extends React.Component {
   render() {
     const topics = this.state.topics;
     const content = this.state.content;
+    const stageId = this.props.book.stage;
+
+    const titleFixed = this.state.titleFixed
+    const bookClassName = (
+      titleFixed ? 
+      'book-info fixed stage stage-' + stageId
+      :
+      'book-info stage stage-' + stageId
+    )
     return (
       <div className="">
 
-        <div className={`book-info stage stage-${this.props.book.stage}`}>
+        <div id="bookInfo" className={bookClassName}>
           <span className="title">
             <span className="id">{this.props.book.id}</span> 
             <span className="title">{this.props.book.title}</span>
@@ -218,8 +241,8 @@ class Preview extends React.Component {
         <div className="close"></div>
 
         <div className="preview-jump">
-          <a onClick={() => this.goPrev()}>prev</a>
-          <a onClick={() => this.goNext()}>next</a>
+          <a onClick={() => this.goPrev()}><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
+          <a onClick={() => this.goNext()}><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
         </div>
 
       </div>

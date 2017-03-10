@@ -37,6 +37,7 @@ class App extends React.Component {
         that.setState({data: response})
       }
     });
+
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -174,7 +175,9 @@ class App extends React.Component {
               bookTopics={that.state.bookTopics}
                />
               }
-            <div className="closePreview" onClick={() => this.previewHide()}>close</div>
+            <div className="closePreview" onClick={() => this.previewHide()}>
+              <i className="fa fa-times" aria-hidden="true"></i>
+            </div>
           </div>
           : ''       
         }

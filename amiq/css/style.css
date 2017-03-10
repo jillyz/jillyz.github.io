@@ -125,7 +125,7 @@ p {
 	background-color: #333;
 	color: #fff;
 	text-align: center;
-	font-size: .8125em;
+	font-size: .8125rem;
 	font-weight: bold;
 	font-family: 'Arial Black', Sans-Serif;
 }
@@ -135,6 +135,7 @@ p {
 	font-size: 1.2em;
 	font-weight: bold;
 }
+
 .en {
 	display: block;
 	font-size: .8125em;
@@ -143,6 +144,32 @@ p {
 	display: block;
 	padding-top: .25em;
 	color: #c03;
+}
+.book-info.fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 5;
+	width: 110%;
+	padding: 0;
+	height: 2.5em;
+	background-color: #333;
+	overflow: hidden;
+}
+.book-info.fixed .en,
+.book-info.fixed .subject,
+.book-info.fixed small {
+	visibility: hidden;
+}
+.book-info.fixed .title {
+	margin: 0;
+	margin-left: 2rem;
+	padding: .5em .25em;
+	font-size: .8125rem;
+	font-weight: normal;
+	background-color: #333;
+	color: #fff;
 }
 .books {
 /*	height: 0;
@@ -605,16 +632,16 @@ p {
 	background-color: #f1e8d6;
 }
 .preview-jump a {
-	margin: 0 1em;
+	padding: 1em 2em;
+	color: #8c8174;
 }
 
 .closePreview {
 	position: fixed;
-	top: 0;
+	bottom: 0;
 	right: 0;
 	z-index: 10;
 	padding: 1em;
-	background-color: #333;
-	color: #fff;
+	color: #8c8174;
 	cursor: pointer;
 }
