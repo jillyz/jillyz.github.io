@@ -191,7 +191,7 @@ p {
 /*	position: absolute;
 	left: 70px;*/
 	display: inline-block;
-	margin-left: 1em;
+	margin-left: .5em;
 	font-size: .8125em;
 /*	-webkit-animation: 4s fadeOutIn infinite;
 	-o-animation: 4s fadeOutIn infinite;
@@ -233,9 +233,9 @@ p {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	-webkit-transition: .1s all;
+/*	-webkit-transition: .1s all;
 	-o-transition: .1s all;
-	transition: .1s all;
+	transition: .1s all;*/
 	cursor: pointer;
 }
 .book-subject {
@@ -535,6 +535,16 @@ p {
 
 .preview .sk-cube-grid .sk-cube {
   background-color: #8c8174;
+  background-color: #333;
+}
+.preview .sk-cube-grid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 36px;
+  height: 36px;
+  margin-top: -18px;
+  margin-left: -18px;
 }
 
 @-webkit-keyframes sk-cubeGridScaleDelay {
@@ -557,6 +567,14 @@ p {
   } 
 }
 /*------------------------------------*/
+@media screen and (max-width: 479px)  {
+	.item {
+		padding: 2.5em .75em 0 .75em;
+	}
+	.info {
+		margin-left: 2em;
+	}
+}
 @media screen and (min-width: 480px) and (max-width: 1023px )  {
 	.item {
 		width: 50%;
