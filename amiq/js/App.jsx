@@ -10,25 +10,24 @@ class App extends React.Component {
     this.state = {
       data: [],
       isPreview: false,
-      book: ''
+      book: '',
+      bookId: '',
+      bookGuid: '',
+      bookContent: '',
+      bookTopics: []
     }
     this.previewShow = this.previewShow.bind(this);
     this.previewHide = this.previewHide.bind(this);
     this.toggleBooksHandler = this.toggleBooksHandler.bind(this);
+    this.bookGoNav = this.bookGoNav.bind(this);
+    // this.fetch = this.fetch.bind(this);
   }
 
   componentDidMount() {
-    // fetch('data/data.json')
-    // .then((response) => {
-    //   return response.json();
-    // }).then((res) => {
-    //   this.setState({
-    //     data: res
-    //   })
-    //   console.table(res)
-    // }).catch((err) => {
-    //   console.log(err);
-    // });
+    console.log('app mount')
+    console.log(this.state)
+
+
     var that = this;
     $.ajax({
       url: 'data/data.json',
@@ -40,14 +39,75 @@ class App extends React.Component {
     });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    // console.log('app go ', this.state.book, this.state.bookGuid)
+    console.log('app update')
+    console.log(this.state)
+  }
+
+  bookGoNav(forward){   
+    var guid = this.state.bookGuid + forward;
+
+    this.state.data.map(stage => {
+      stage.books.map(book => {
+        if (book.guid == guid) {
+          this.setState({
+            book: book,
+            bookGuid: guid
+          })
+          // this.fetch(guid);
+        }
+      })
+    })
+
+    console.log(':::: bookGoNav :::::')
+
+    this.state.data.map(stage => {
+      stage.books.map(book => {
+        if (book.guid == guid) {
+          this.previewShow(book);
+          console.log('::: book', book)
+        }
+      })
+    })
+
+
+  }
+
+
+  // fetch(guid){
+  //   var that = this;
+
+  //   var url = 'data/' + guid +'.json';
+  //   // console.log('url', url);
+
+  //   $.ajax({
+  //     url: url,
+  //     dataType: 'json',
+  //     type: 'GET',
+  //     success: function(res) {
+  //       that.setState({
+  //         bookContent: res.content,
+  //         bookTopics: res.topics
+  //       })
+  //       console.log('app: ', res)
+  //       console.log('app: ' , guid, 'bookContent: ', that.state.bookContent)
+  //       console.log('app: ' , guid, 'bookTopics: ')
+  //       console.table('app: ' , that.state.bookTopics)
+  //     },
+  //   });
+  // }
+
   previewShow(book){
     document.body.style.overflow = 'hidden';
     this.setState({
       isPreview: true,
-      book: book
+      book: book,
+      bookId: book.id,
+      bookGuid: book.guid
     })
 
-    console.log(this.state.isPreview)
+    console.log('previewShow', book, this.state)
   }
 
   previewHide(){
@@ -62,7 +122,7 @@ class App extends React.Component {
     const DEFAULT_IMAGE = '/img/content/none.jpg';
     return (
       data.map(book => (
-        <div className={`item stage stage-${book.stage}`} key={book.id} onClick={() => this.previewShow(book)}>
+        <div className={`item stage stage-${book.stage}`} key={book.guid} onClick={() => this.previewShow(book)}>
           <div className="info">
             <span className="title">
               <span className="id">{book.id}</span> 
@@ -86,6 +146,7 @@ class App extends React.Component {
   }
 
   render() {
+    const that = this;
     let isPreview = this.state.isPreview;
     return (
       <div className="grid">
@@ -104,8 +165,16 @@ class App extends React.Component {
         ))}
 
         {isPreview ? 
-          <div ref="preview" className="preview" onDoubleClick={() => this.previewHide()}>
-            <Preview book={this.state.book}  />
+          <div ref="preview" id="preview" className="preview">
+            <Preview 
+              book={that.state.book} 
+              previewGuid={that.state.book.guid} 
+              bookGoNav={that.bookGoNav} 
+              bookContent={that.state.bookContent}
+              bookTopics={that.state.bookTopics}
+               />
+              }
+            <div className="closePreview" onClick={() => this.previewHide()}>close</div>
           </div>
           : ''       
         }
