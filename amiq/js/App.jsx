@@ -33,7 +33,8 @@ class App extends React.Component {
       dataType: 'json',
       type: 'GET',
       success: function(response) {
-        that.setState({data: response})
+        that.setState({data: response});
+        window.bookData = response;
       }
     });
 
@@ -45,8 +46,8 @@ class App extends React.Component {
     console.log(this.state)
   }
 
-  bookGoNav(forward){   
-    var guid = this.state.bookGuid + forward;
+  bookGoNav(guid){   
+    // var guid = this.state.bookGuid + forward;
 
     this.state.data.map(stage => {
       stage.books.map(book => {

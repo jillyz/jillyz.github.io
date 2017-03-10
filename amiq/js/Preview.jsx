@@ -87,13 +87,30 @@ class Preview extends React.Component {
     this.fetch(guid);
   }
 
+  searchBook(guid){
+    window.bookData.forEach(stage => {
+      stage.books.forEach(book => {
+        if(book.guid == guid) {
+          console.log(book)
+          return book;
+        }
+      })
+    })
+  }
+
   fetch(guid){
+
+    var that = this;
     const url = 'data/' + guid +'.json';
     const id =bookKeys.getId[guid];
 
-    this.setState({
+    if(guid < 0) { guid = 1; }
+    if(guid > 90) { guid = 90; }
+
+
+    that.setState({
       previewGuid: guid,
-      previewId: id,
+      book: this.searchBook(guid),
       content: '',
       topics:[],
       style: {
@@ -139,24 +156,43 @@ class Preview extends React.Component {
   }
 
   componentDidUpdate() {
-
+    console.log('render')
+    console.table(this.state)
     // console.log('preview :', this.state.topics, this.state.content);
   }
 
   goNext(){
-    const previewGuid = this.state.previewGuid;
-    const guid = previewGuid == 90 ? 1 : parseInt(previewGuid) + 1;
-    // const guid = parseInt(this.state.previewGuid) + 1;
-    this.fetch(guid);
-    this.props.bookGoNav(1);
-    this.scrollTop();
+    // const previewGuid = this.state.previewGuid;
+    // const guid = previewGuid == 90 ? 1 : parseInt(previewGuid) + 1;
+    const guid = parseInt(this.state.previewGuid) + 1;
+    if (guid > 90) {
+      this.fetch(1);
+      this.props.bookGoNav(1);
+      this.scrollTop();
+      return;
+    }
+    else {
+      this.fetch(guid);
+      this.props.bookGoNav(guid);
+      this.scrollTop();
+    }
   }
 
   goPrev(){
+    // const previewGuid = this.state.previewGuid;
+    // const guid = previewGuid == 1 ? 90 : parseInt(previewGuid) - 1;
     const guid = parseInt(this.state.previewGuid) - 1;
-    this.fetch(guid);
-    this.props.bookGoNav(-1);
-    this.scrollTop();
+    if (guid < 1) {
+      this.fetch(90);
+      this.props.bookGoNav(90);
+      this.scrollTop();
+      return;
+    } 
+    else {
+      this.fetch(guid);
+      this.props.bookGoNav(guid);
+      this.scrollTop();
+    }
 
   }
 
@@ -169,6 +205,8 @@ class Preview extends React.Component {
     const topics = this.state.topics;
     const content = this.state.content;
     const stageId = this.props.book.stage;
+
+   
 
     const titleFixed = this.state.titleFixed
     const bookClassName = (
