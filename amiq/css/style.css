@@ -607,3 +607,14 @@ p {
 .preview-jump a {
 	margin: 0 1em;
 }
+
+.closePreview {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 10;
+	padding: 1em;
+	background-color: #333;
+	color: #fff;
+	cursor: pointer;
+}

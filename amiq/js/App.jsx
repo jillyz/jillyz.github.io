@@ -165,7 +165,7 @@ class App extends React.Component {
         ))}
 
         {isPreview ? 
-          <div ref="preview" id="preview" className="preview" onDoubleClick={() => this.previewHide()}>
+          <div ref="preview" id="preview" className="preview">
             <Preview 
               book={that.state.book} 
               previewGuid={that.state.book.guid} 
@@ -174,6 +174,7 @@ class App extends React.Component {
               bookTopics={that.state.bookTopics}
                />
               }
+            <div className="closePreview" onClick={() => this.previewHide()}>close</div>
           </div>
           : ''       
         }

@@ -26,11 +26,15 @@ class Preview extends React.Component {
 
   componentWillMount(){
       document.addEventListener("keydown", this.handleKeyDown.bind(this));
+      $('#preview').on('swipeleft', function(e){this.goNext()});
+      $('#preview').on('swiperight', function(e){this.goPrev()});
   }
 
 
   componentWillUnmount() {
       document.removeEventListener("keydown", this.handleKeyDown.bind(this));
+      $('#preview').off('swipeleft', function(e){this.goNext()});
+      $('#preview').off('swiperight', function(e){this.goPrev()});
   }
 
   handleKeyDown(e) {
