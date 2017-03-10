@@ -88,12 +88,19 @@ class Preview extends React.Component {
   }
 
   fetch(guid){
-    var that = this;
+    const url = 'data/' + guid +'.json';
+    const id =bookKeys.getId[guid];
 
-    var url = 'data/' + guid +'.json';
-    console.log('url', guid, url);
-
-    this.setState({showLoading: true})
+    this.setState({
+      previewGuid: guid,
+      previewId: id,
+      content: '',
+      topics:[],
+      style: {
+        'backgroundImage': 'url(img/content/amiq' + id + '.jpg)'
+      },
+      showLoading: true,
+    })
 
     $.ajax({
       url: url,
@@ -102,25 +109,19 @@ class Preview extends React.Component {
       success: (res) => {
         this.setState({
           content: res.content,
-          topics: res.topics ? res.topics : [],
-          previewGuid: res.guid,
-          previewId: res.id,
-          style: {
-            'backgroundImage': 'url(img/content/amiq' + res.id + '.jpg)'
-          },
+          topics: res.topics ? res.topics : [],          
           showLoading: false
         })
-        // console.log('app: ', res)
+
         console.log('//----------------------')
         console.log('preview: ' , guid, 'content: ')
-        console.log(that.state.content)
-        // console.log('app: ' , guid, 'bookTopics: ')
+        console.log(this.state.content)
         console.log('preview topics: ')
-        console.table(that.state.topics)
+        console.table(this.state.topics)
         console.log('preview previewGuid: ')
-        console.table(that.state.previewGuid)
+        console.table(this.state.previewGuid)
         console.log('preview style: ')
-        console.table(that.state.style)
+        console.table(this.state.style)
         console.log('//----------------------')
       },
       complete: () => {
@@ -143,9 +144,9 @@ class Preview extends React.Component {
   }
 
   goNext(){
-    // const previewGuid = this.state.previewGuid;
-    // const guid = previewGuid == 90 ? 1 : parseInt(previewGuid) + 1;
-    const guid = parseInt(this.state.previewGuid) + 1;
+    const previewGuid = this.state.previewGuid;
+    const guid = previewGuid == 90 ? 1 : parseInt(previewGuid) + 1;
+    // const guid = parseInt(this.state.previewGuid) + 1;
     this.fetch(guid);
     this.props.bookGoNav(1);
     this.scrollTop();
