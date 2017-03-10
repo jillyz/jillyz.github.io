@@ -1,20 +1,18 @@
 const {
 } = window.App;
 
-var style = {
-  'backgroundImage': 'url(img/content/amiq101.jpg)'
-}
-
 class Preview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       previewId: this.props.previewId,
-      content: '',
+      book: this.props.book,
+      content: this.props.bookContent,
       topics: [],
-      pos: 0,
+      style: {
+        'backgroundImage': 'url(img/content/amiq' + this.props.book.id + '.jpg)'
+      }
     }
-    this.see = this.see.bind(this);
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
   }
@@ -25,8 +23,11 @@ class Preview extends React.Component {
     })
   }
 
+
   componentDidMount() {
-    const id = this.props.book.id;
+    const guid = this.state.previewId;
+
+    console.log('~~~mount', guid, this.state)
 
     // fetch('data/' + id +'.json')
     // .then((response) => {
@@ -41,45 +42,60 @@ class Preview extends React.Component {
     //   console.log(err);
     // });
 
-    this.fetch(id);
+    this.fetch(guid);
   }
 
-  see(pos){
-    this.setState({
-      pos: pos
-    })
-    console.log(pos)
+  componentDidUpdate(prevProps, prevState) {
+    const guid = this.state.previewId;
+    console.log('~~~update', guid)
+
+    this.fetch(guid);
+  }
+
+  fetch(guid){
+    var that = this;
+
+    var url = 'data/' + guid +'.json';
+    console.log('url', guid, url);
+
+    $.ajax({
+      url: url,
+      dataType: 'json',
+      type: 'GET',
+      success: (res) => {
+        this.setState({
+          content: res.content,
+          topics: res.topics
+        })
+        // console.log('app: ', res)
+        console.log('preview: ' , guid, 'content: ')
+        console.log(that.state.content)
+        // console.log('app: ' , guid, 'bookTopics: ')
+        console.log('preview topics: ')
+        console.table(that.state.topics)
+      },
+      // error: function(){
+      //   that.setState({
+      //     content: '',
+      //     topics: []
+      //   })
+      // }
+    });
+  }
+
+  componentDidUpdate() {
+
+    // console.log('preview :', this.state.topics, this.state.content);
   }
 
   goNext(){
     const id = parseInt(this.state.previewId) + 1;
-    this.fetch(id);
-    this.setState({
-      previewId: id
-    })
-  }
-  goPrev(){
-    const id = parseInt(this.state.previewId) - 1;
-    this.fetch(id);
-    this.setState({
-      previewId: id
-    })
+    this.props.bookGoNav(1);
   }
 
-  fetch(id){
-    var that = this;
-    $.ajax({
-      url: 'data/' + id +'.json',
-      dataType: 'json',
-      type: 'GET',
-      success: function(res) {
-        that.setState({
-          content: res.content,
-          topics: res.topics
-        })
-        console.log(res)
-      }
-    });
+  goPrev(){
+    const id = parseInt(this.state.previewId) - 1;
+    this.props.bookGoNav(-1);
   }
 
   render() {
@@ -115,19 +131,6 @@ class Preview extends React.Component {
           </div>
           */}
 
-          {/*
-          {topics.map(item => (
-            <div key={item.pos} className={`pos pos${item.pos}`} onClick={() => this.see(item.pos)}>
-              <div className="topic-info">
-                <ul>
-                  <li><span>題目：</span>{item.topic}</li>
-                  <li><span>訓練要點：</span>{item.point}</li>
-                  <li><span>能力培養：</span>{item.skill}</li>
-                </ul>
-              </div>
-            </div>
-          ))}
-          */}
           <img className="topics-img" src={`img/content/amiq${this.props.book.id}.jpg`} />
           
 
@@ -136,18 +139,17 @@ class Preview extends React.Component {
         <div className="seeTopicItem">
           <div className="topic-cover">
             <div className="topic-title">封面</div>
-            <div className={`seeTopic see0`} style={style}></div>
+            <div className={`seeTopic see0`} style={this.state.style}></div>
           </div>
           {topics.map(item => (
             <div key={item.pos}>
               <div className="topic-title">
                 <strong>#{item.pos} {item.topic}</strong>
-                <small>這些物品都是為了生日派對準備的，請找出相同的物件。</small>
+                <small>{item.topicLong ? item.topicLong : ''}</small>
               </div>
-              <div className={`seeTopic see${item.pos}`} style={style}></div>
+              <div className={`seeTopic see${item.pos}`} style={this.state.style}></div>
               <div className="see-info">
                 <ul>
-                  {item.topicLong ? <li><span>題目：</span>{item.point}</li> : ''}
                   {item.point ? <li><span>訓練要點：</span>{item.point}</li> : ''}
                   {item.skill ? <li><span>能力培養：</span>{item.skill}</li> : ''}
                 </ul>
@@ -170,7 +172,6 @@ class Preview extends React.Component {
               </div>
             </div>
           ))}
-          {/*<div className={`seeTopic see${this.state.pos}`} style={style}></div>*/}
         </div>
 
         <div className="close"></div>
