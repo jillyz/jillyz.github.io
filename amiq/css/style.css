@@ -233,9 +233,9 @@ p {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	-webkit-transition: .25s all;
-	-o-transition: .25s all;
-	transition: .25s all;
+	-webkit-transition: .1s all;
+	-o-transition: .1s all;
+	transition: .1s all;
 	cursor: pointer;
 }
 .book-subject {
@@ -532,6 +532,10 @@ p {
 .sk-cube-grid .sk-cube9 {
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s; }
+
+.preview .k-cube-grid {
+  background-color: #8c8174;
+}
 
 @-webkit-keyframes sk-cubeGridScaleDelay {
   0%, 70%, 100% {
