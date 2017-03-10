@@ -59,7 +59,21 @@ class App extends React.Component {
         }
       })
     })
+
+    console.log(':::: bookGoNav :::::')
+
+    this.state.data.map(stage => {
+      stage.books.map(book => {
+        if (book.guid == guid) {
+          this.previewShow(book);
+          console.log('::: book', book)
+        }
+      })
+    })
+
+
   }
+
 
   // fetch(guid){
   //   var that = this;
@@ -154,7 +168,7 @@ class App extends React.Component {
           <div ref="preview" className="preview" onDoubleClick={() => this.previewHide()}>
             <Preview 
               book={that.state.book} 
-              previewId={that.state.book.guid} 
+              previewGuid={that.state.book.guid} 
               bookGoNav={that.bookGoNav} 
               bookContent={that.state.bookContent}
               bookTopics={that.state.bookTopics}

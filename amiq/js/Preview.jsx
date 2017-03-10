@@ -5,7 +5,7 @@ class Preview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      previewId: this.props.previewId,
+      previewGuid: this.props.previewGuid,
       book: this.props.book,
       content: this.props.bookContent,
       topics: [],
@@ -25,7 +25,7 @@ class Preview extends React.Component {
 
 
   componentDidMount() {
-    const guid = this.state.previewId;
+    const guid = this.state.previewGuid;
 
     console.log('~~~mount', guid, this.state)
 
@@ -46,7 +46,7 @@ class Preview extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const guid = this.state.previewId;
+    const guid = this.state.previewGuid;
     console.log('~~~update', guid)
 
     this.fetch(guid);
@@ -65,14 +65,24 @@ class Preview extends React.Component {
       success: (res) => {
         this.setState({
           content: res.content,
-          topics: res.topics
+          topics: res.topics ? res.topics : [],
+          previewGuid: res.guid,
+          style: {
+            'backgroundImage': 'url(img/content/amiq' + res.id + '.jpg)'
+          }
         })
         // console.log('app: ', res)
+        console.log('//----------------------')
         console.log('preview: ' , guid, 'content: ')
         console.log(that.state.content)
         // console.log('app: ' , guid, 'bookTopics: ')
         console.log('preview topics: ')
         console.table(that.state.topics)
+        console.log('preview previewGuid: ')
+        console.table(that.state.previewGuid)
+        console.log('preview style: ')
+        console.table(that.state.style)
+        console.log('//----------------------')
       },
       // error: function(){
       //   that.setState({
@@ -89,12 +99,14 @@ class Preview extends React.Component {
   }
 
   goNext(){
-    const id = parseInt(this.state.previewId) + 1;
+    const guid = parseInt(this.state.previewGuid) + 1;
+    this.fetch(guid);
     this.props.bookGoNav(1);
   }
 
   goPrev(){
-    const id = parseInt(this.state.previewId) - 1;
+    const guid = parseInt(this.state.previewGuid) - 1;
+    this.fetch(guid);
     this.props.bookGoNav(-1);
   }
 
