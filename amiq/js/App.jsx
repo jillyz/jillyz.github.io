@@ -151,20 +151,24 @@ class App extends React.Component {
     let isPreview = this.state.isPreview;
     return (
       <div className="grid">
+
+        {/*
         <img className="amiq" src="img/amiq.jpg" />
         <iframe className="video" src="https://www.youtube.com/embed/5MqM41gZGOM" frameborder="0" allowfullscreen></iframe>
+        */}
+
         {this.state.data.map(stage => (
           <section key={stage.stage}>
             <a className={`stage-bg stage-bg-${stage.stage}`} onClick={() => this.toggleBooksHandler(stage.stage)}>
               <h2>第 {stage.stage} 階</h2>
               <p>{stage.content}</p>
             </a>
-            <div ref={`books-${stage.stage}`} className={`books books-${stage.stage} hide`}>
+            <div ref={`books-${stage.stage}`} className={`books books-${stage.stage} `}>
               {this.renderBooksView(stage.books)}
             </div>
           </section>
         ))}
-
+        
         {isPreview ? 
           <div ref="preview" id="preview" className="preview">
             <Preview 

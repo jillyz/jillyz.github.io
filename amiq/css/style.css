@@ -18,6 +18,9 @@ p {
 }
 .amiq {
 }
+.amiq100 {
+	/*width: 100%;*/
+}
 .grid {
 	border-left: 1px dotted #ddd;
 }

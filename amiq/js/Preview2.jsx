@@ -15,11 +15,43 @@ class Preview extends React.Component {
       },
       titleFixed: false,
       showLoading: false,
+      swiped: false
+
     }
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+
+    // this._onTouchStart = this._onTouchStart.bind(this);
+    // this._onTouchEnd = this._onTouchEnd.bind(this);
+    // this._swipeStart = {};
+    // this._swipeEnd = {};
   }
+
+  // _onTouchStart(e) {
+  //   const touch = e.touches[0];
+  //   this._swipeStart = { x: touch.clientX, y: touch.clientY };
+  //   console.log(_onTouchStart)
+  // }
+
+  // _onTouchEnd(e) {
+  //   const touch = e.changedTouches[0];
+  //   this._swipeEnd = { x: touch.clientX, y: touch.clientY };
+
+  //   if(_swipeEnd.x > _swipeStart.x) {
+  //     const guid = parseInt(this.state.bookId) + 1;
+  //     this.bookGoNav(guid);
+  //     console.log('left');
+  //   }
+
+  //   if(_swipeEnd.x < _swipeStart.x) {
+  //     const guid = parseInt(this.state.bookId) - 1;
+  //     this.bookGoNav(guid);
+  //     console.log('right');
+  //   }
+
+  //   console.log(_onTouchEnd)
+  // }
 
   onError(){
     this.setState({
@@ -32,7 +64,6 @@ class Preview extends React.Component {
       $('#preview').on('swipeleft', function(e){this.goNext()});
       $('#preview').on('swiperight', function(e){this.goPrev()});
   }
-
 
   componentWillUnmount() {
       document.removeEventListener("keydown", this.handleKeyDown.bind(this));
@@ -65,6 +96,11 @@ class Preview extends React.Component {
     // });
 
     this.fetch(guid);
+
+    swipe('preview');
+    var swipeDir = handleGesure();
+    if (swipeDir > 0) { this.goNext();}
+    if (swipeDir < 0) { this.goPrev();}
 
     $('#preview').scroll(function(){
       var that = this;
@@ -214,8 +250,18 @@ class Preview extends React.Component {
       :
       'book-info stage stage-' + stageId
     )
+
     return (
       <div className="">
+
+
+    // <div 
+    //     onTouchStart={this._onTouchStart()}
+    //     onTouchEnd={this._onTouchEnd()}
+    //     >
+    return (
+      <div>
+
         <div id="bookInfo" className={bookClassName}>
           <div className="title-wrap">
             <span className="id">{this.props.book.id}</span> 
