@@ -66,7 +66,6 @@ class Preview extends React.Component {
 
     this.fetch(guid);
 
-
     $('#preview').scroll(function(){
       var that = this;
       var isExitBookInfo = $('#preview').scrollTop() > $('#bookInfo').height();
@@ -217,7 +216,6 @@ class Preview extends React.Component {
     )
     return (
       <div className="">
-
         <div id="bookInfo" className={bookClassName}>
           <div className="title-wrap">
             <span className="id">{this.props.book.id}</span> 
@@ -295,6 +293,7 @@ class Preview extends React.Component {
 
         <div className="preview-jump">
           <a onClick={() => this.goPrev()}><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
+          <a className="preview-current">{this.state.previewGuid}</a>
           <a onClick={() => this.goNext()}><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
         </div>
 

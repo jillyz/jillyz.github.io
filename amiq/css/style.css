@@ -724,8 +724,14 @@ p {
 	background-color: #f1e8d6;
 }
 .preview-jump a {
-	padding: 1em 2em;
+	padding: 0 2em;
 	color: #8c8174;
+}
+.preview-jump a.preview-current {
+	display: inline-block;
+	padding-left: 0;
+	padding-right: 0;
+	width: 2em;
 }
 
 .closePreview {
