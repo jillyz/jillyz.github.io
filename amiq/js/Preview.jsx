@@ -1,4 +1,5 @@
 const {
+    Loading,
 } = window.App;
 
 class Preview extends React.Component {
@@ -12,7 +13,8 @@ class Preview extends React.Component {
       style: {
         'backgroundImage': 'url(img/content/amiq' + this.props.book.id + '.jpg)'
       },
-      titleFixed: false
+      titleFixed: false,
+      showLoading: false,
     }
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
@@ -91,6 +93,8 @@ class Preview extends React.Component {
     var url = 'data/' + guid +'.json';
     console.log('url', guid, url);
 
+    this.setState({showLoading: true})
+
     $.ajax({
       url: url,
       dataType: 'json',
@@ -102,7 +106,8 @@ class Preview extends React.Component {
           previewGuid: res.guid,
           style: {
             'backgroundImage': 'url(img/content/amiq' + res.id + '.jpg)'
-          }
+          },
+          showLoading: false
         })
         // console.log('app: ', res)
         console.log('//----------------------')
@@ -117,6 +122,11 @@ class Preview extends React.Component {
         console.table(that.state.style)
         console.log('//----------------------')
       },
+      complete: () => {
+        this.setState({
+          showLoading: false
+        })
+      }
       // error: function(){
       //   that.setState({
       //     content: '',
@@ -244,6 +254,8 @@ class Preview extends React.Component {
           <a onClick={() => this.goPrev()}><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
           <a onClick={() => this.goNext()}><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
         </div>
+
+        {this.state.showLoading ? <Loading /> : ''} 
 
       </div>
     )

@@ -1,6 +1,5 @@
 const {
-  Image,
-  Preview
+  Preview,
 } = window.App;
 
 
@@ -14,7 +13,7 @@ class App extends React.Component {
       bookId: '',
       bookGuid: '',
       bookContent: '',
-      bookTopics: []
+      bookTopics: [],
     }
     this.previewShow = this.previewShow.bind(this);
     this.previewHide = this.previewHide.bind(this);
@@ -181,6 +180,7 @@ class App extends React.Component {
           </div>
           : ''       
         }
+
       </div>
     )
   } 
