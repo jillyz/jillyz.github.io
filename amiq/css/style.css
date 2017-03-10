@@ -57,14 +57,14 @@ p {
 	left: 0;
 	z-index: 10;
 	height: 10px;
-	width: calc(4em - 2px);
+	width: 80px;
 	border-top: 10px solid #fc0;
 }
 .stage:after {
 	content: "";
 	position: absolute;
 	top: 0;
-	left: calc(4em - 2px);
+	left: 80px;
 	z-index: 10;
 	height: 10px;
 	width: calc(100% - 4em);
@@ -120,7 +120,7 @@ p {
 	top: 0;
 	left: 0;
 	z-index: 1;
-	width: 4em;
+	width: 80px;
 	padding: 1em 0 .5em 0;
 	background-color: #333;
 	color: #fff;
@@ -153,7 +153,7 @@ p {
 	z-index: 5;
 	width: 110%;
 	padding: 0;
-	height: 2.5em;
+	height: 2.4em;
 	background-color: #333;
 	overflow: hidden;
 }
@@ -164,12 +164,12 @@ p {
 }
 .book-info.fixed .title {
 	margin: 0;
-	margin-left: 2rem;
-	padding: .5em .25em;
-	font-size: .8125rem;
-	font-weight: normal;
-	background-color: #333;
-	color: #fff;
+    margin-left: 40px;
+    padding: .5em 0;
+    font-size: .8125rem;
+    font-weight: normal;
+    background-color: #333; 
+    color: #fff;
 }
 .books {
 /*	height: 0;
