@@ -160,7 +160,7 @@ class Preview extends React.Component {
 
   scrollTop(){
     var element = document.getElementById('preview');
-    scrollTo(element, 0, 300);
+    scrollTo(element, 0, 100);
   }
 
   render() {
@@ -179,11 +179,14 @@ class Preview extends React.Component {
       <div className="">
 
         <div id="bookInfo" className={bookClassName}>
-          <span className="title">
+          <div className="title-wrap">
             <span className="id">{this.props.book.id}</span> 
             <span className="title">{this.props.book.title}</span>
             <span className="en">{this.props.book['title-en']}</span>
-          </span>        
+            <span className={`subject book-subject fixed`}>
+              {this.props.book.subject}
+            </span>
+          </div>        
           <span className={`subject book-subject`}>
             {this.props.book.subject}
           </span>
