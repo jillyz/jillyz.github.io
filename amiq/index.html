@@ -34,6 +34,33 @@
 
   <script>
     window.App = {};
+
+    function keys (){
+      var obj = {},
+          obj1 = {}, 
+          obj2 = {},
+          total = 90,
+          per = 15;
+      for (var guid = 1; guid <= total; guid++) {
+        var yu = guid % per;
+        yu = yu === 0 ? 15 : yu;
+        var bi = parseInt(guid/per);
+        var order = yu;
+        var stage = order == per ? bi : bi + 1 ;
+        order = order.toString().length > 1 ? order : '0' + order;
+
+        obj1[guid] = parseInt( stage.toString() + order.toString() );
+
+        var bookId = stage.toString() + order.toString();
+        obj2[bookId] =  guid;
+      }
+      obj['getId'] = obj1;
+      obj['getGuid'] = obj2;
+      return obj;
+    }
+
+    var bookKeys = keys();
+
   </script>
 
   <script type="text/babel" src="./js/Preview.jsx"></script>
