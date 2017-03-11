@@ -1,80 +1,77 @@
 
 {
-	"content": "103 bbbb",
+	"content": "各種形狀及圖形的變化對孩子來說是有趣又美妙的，透過各種不同圖形的分解與重組，孩子能從中培養對圖形的認知與邏輯思考能力，同時增進其創造力與想像力。",
 	"topics": [
 		{
 			"pos": 1,
-			"topic": "103 33333",
-			"topicLong": "everbrtbrtb",
-			"point": "培養辨識不同種類之物品，和派對上會用到的東西",
-			"skill": "增進日常事物之觀察辨識能力",
-			"ans": [
-				"青蛙出沒在池塘邊，所以選(4)",
-				"鯊魚住在大海裡，所以選(11)"
-			]
+			"topic": "",
+			"topicLong": "",
+			"point": "",
+			"skill": ""
 		},
 		{
 			"pos": 2,
-			"topic": "103 33333",
-			"topicLong": "rbrtbtr",
+			"topic": "",
+			"topicLong": "",
 			"point": "",
-			"skill": "增進日常事物之觀察辨識能力"
+			"skill": ""
 		},
 		{
 			"pos": 3,
-			"topic": "102 33333",
+			"topic": "",
 			"topicLong": "",
-			"point": "培養辨識不同種類之物品，和派對上會用到的東西",
-			"skill": "增進日常事物之觀察辨識能力"
+			"point": "",
+			"skill": ""
 		},
 		{
 			"pos": 4,
-			"topic": " 33333",
+			"topic": "",
 			"topicLong": "",
-			"point": "培養辨識不同種類之物品，和派對上會用到的東西",
-			"skill": "增進日常事物之觀察辨識能力"
+			"point": "",
+			"skill": ""
 		},
 		{
 			"pos": 5,
-			"topic": " 33333",
+			"topic": "",
 			"topicLong": "",
-			"point": "培養辨識不同種類之物品，和派對上會用到的東西",
-			"skill": "增進日常事物之觀察辨識能力"
+			"point": "",
+			"skill": ""
 		},
 		{
 			"pos": 6,
-			"topic": " 33333",
+			"topic": "",
 			"topicLong": "",
-			"point": "培養辨識不同種類之物品，和派對上會用到的東西",
-			"skill": "增進日常事物之觀察辨識能力"
+			"point": "",
+			"skill": ""
 		},
 		{
 			"pos": 7,
-			"topic": " 33333",
+			"topic": "",
 			"topicLong": "",
-			"point": "培養辨識不同種類之物品，和派對上會用到的東西",
-			"skill": "增進日常事物之觀察辨識能力"
+			"point": "",
+			"skill": ""
 		},
 		{
 			"pos": 8,
 			"topic": " 33333",
+			"topic": "",
 			"topicLong": "",
-			"point": "培養辨識不同種類之物品，和派對上會用到的東西",
-			"skill": "增進日常事物之觀察辨識能力"
+			"point": "",
+			"skill": ""
 		},
 		{
 			"pos": 9,
-			"topic": " 33333",
+			"topic": "",
 			"topicLong": "",
-			"point": "培養辨識不同種類之物品，和派對上會用到的東西",
-			"skill": "增進日常事物之觀察辨識能力"
+			"point": "",
+			"skill": ""
 		},
 		{
 			"pos": 10,
-			"topic": " 33333",
+			"topic": "",
 			"topicLong": "",
-			"point": "培養辨識不同種類之物品，和派對上會用到的東西",
-			"skill": "增進日常事物之觀察辨識能力"
+			"point": "",
+			"skill": ""
 		}
 	]
 }
