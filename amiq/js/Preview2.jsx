@@ -251,12 +251,17 @@ class Preview extends React.Component {
       'book-info stage stage-' + stageId
     )
 
+    return (
+      <div className="">
+
+
     // <div 
     //     onTouchStart={this._onTouchStart()}
     //     onTouchEnd={this._onTouchEnd()}
     //     >
     return (
       <div>
+
         <div id="bookInfo" className={bookClassName}>
           <div className="title-wrap">
             <span className="id">{this.props.book.id}</span> 
