@@ -24,6 +24,9 @@ p {
 .grid {
 	border-left: 1px dotted #ddd;
 }
+.section {
+	display: inline;
+}
 .item {
 	display: inline-block;
 	vertical-align: top;
@@ -117,7 +120,12 @@ p {
 .stage-bg-6{
 	background-color: #00b0d9;
 }
-
+.books {
+	display: inline;
+	-webkit-transition: .25s all;
+	-o-transition: .25s all;
+	transition: .25s all;
+}
 .id {
 	position: absolute;
 	top: 0;
@@ -205,8 +213,8 @@ p {
 }
 
 .books {
-/*	height: 0;
-	overflow: hidden;*/
+	/*height: 0;*/
+	overflow: hidden;
 }
 .img {
 	float: left;

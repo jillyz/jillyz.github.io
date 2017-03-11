@@ -14,14 +14,11 @@ class App extends React.Component {
       bookGuid: '',
       bookContent: '',
       bookTopics: [],
-      filterTypes: [],
-      filterData: []
     }
     this.previewShow = this.previewShow.bind(this);
     this.previewHide = this.previewHide.bind(this);
     this.toggleBooksHandler = this.toggleBooksHandler.bind(this);
     this.bookGoNav = this.bookGoNav.bind(this);
-    this.filterTypes = this.filterTypes.bind(this);
     // this.fetch = this.fetch.bind(this);
   }
 
@@ -74,62 +71,10 @@ class App extends React.Component {
         }
       })
     })
+
+
   }
 
-  filterTypes(){
-
-    // console.log('!!! filterTypes')
-
-    var arr = $('.filter:checked').map(function() {
-      return parseInt(this.value);
-    }).get();
-
-    if(arr.length > 0) {
-
-      var showTypes = [];
-      var hideTypes = [];
-      arr.map(id => {
-        showTypes.push('.books.isType' + id);
-        hideTypes.push('.books:not(.isType' + id + ')');
-      })
-
-      var elem = showTypes.toString();
-      var noElem = hideTypes.toString();
-
-      console.log(elem)
-      console.log(noElem)
-
-      // $('.books, .stage-bg').hide();
-      $(noElem + ', .stage-bg').hide();
-      $(elem).show();
-
-    } else {
-      $('.books, .stage-bg').show();
-    }
-
-    
-
-    // var that = this;
-    // that.setState({filterTypes: arr});
-
-    // const filterTypes = this.state.filterTypes;
-    // const filterData = [];
-
-    // this.state.data.map(stage => {
-    //   stage.books.map(book => {
-    //     book.types.map(bookTypeId => {
-    //       arr.map(typeId => {            
-    //         if(bookTypeId === typeId){
-    //           filterData.push(book);
-    //         }
-    //       })
-    //     })
-    //   })
-    // })
-
-    // console.log('filterTypes' , filterTypes, arr)
-    // console.log('filterData' , filterData)
-  }
 
   // fetch(guid){
   //   var that = this;
@@ -174,35 +119,23 @@ class App extends React.Component {
     })
   }
 
-  typesClassName(typeIds, stageId){
-    var classNames = 'books books-' + stageId;
-    if(typeIds !== undefined) {
-      typeIds.map(id => {
-        classNames = classNames + ' isType' + id;
-      })      
-    }
-    return classNames;
-  }
-
   renderBooksView(data){
     const DEFAULT_IMAGE = '/img/content/none.jpg';
     return (
       data.map(book => (
-        <div ref={`books-${book.stage}`} className={this.typesClassName(book.types, book.stage)}>
-          <div className={`item stage stage-${book.stage}`} key={book.guid} onClick={() => this.previewShow(book)}>
-            <div className="info">
-              <span className="title">
-                <span className="id">{book.id}</span> 
-                {book.title}
-                <span className="en">{book['title-en']}</span>
-              </span>        
-              <span className="subject">
-                {book.subject}
-              </span>
-            </div>
-            <div ref="preview" className="topics">
-              <img src={`img/content/amiq${book.id}.jpg`} onError={()=>{this.src='DEFAULT_IMG'}} />
-            </div>
+        <div className={`item stage stage-${book.stage}`} key={book.guid} onClick={() => this.previewShow(book)}>
+          <div className="info">
+            <span className="title">
+              <span className="id">{book.id}</span> 
+              {book.title}
+              <span className="en">{book['title-en']}</span>
+            </span>        
+            <span className="subject">
+              {book.subject}
+            </span>
+          </div>
+          <div ref="preview" className="topics">
+            <img src={`img/content/amiq${book.id}.jpg`} onError={()=>{this.src='DEFAULT_IMG'}} />
           </div>
         </div>
       ))
@@ -224,21 +157,15 @@ class App extends React.Component {
         <iframe className="video" src="https://www.youtube.com/embed/5MqM41gZGOM" frameborder="0" allowfullscreen></iframe>
         */}
 
-        <div>
-          <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">1</label>
-          <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">2</label>
-          <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">3</label>
-        </div>
-
         {this.state.data.map(stage => (
-          <section key={stage.stage} className="section">
+          <section key={stage.stage}>
             <a className={`stage-bg stage-bg-${stage.stage}`} onClick={() => this.toggleBooksHandler(stage.stage)}>
               <h2>第 {stage.stage} 階</h2>
               <p>{stage.content}</p>
             </a>
-           
+            <div ref={`books-${stage.stage}`} className={`books books-${stage.stage} `}>
               {this.renderBooksView(stage.books)}
-
+            </div>
           </section>
         ))}
         
@@ -261,7 +188,8 @@ class App extends React.Component {
 
       </div>
     )
-  }
+  } 
+
 }
 
 window.App.App = App;
