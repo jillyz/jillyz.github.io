@@ -9,7 +9,8 @@
 				"stage": 1,
 				"title": "生日派對",
 				"title-en": "Happy Birthday",
-				"subject": "物件形狀與顏色的基本認識"
+				"subject": "物件形狀與顏色的基本認識",
+				"type": [1,3]
 			},
 			{
 				"guid": 2,
@@ -17,7 +18,8 @@
 				"stage": 1,
 				"title": "我的數字不見了",
 				"title-en": "My numbers are gone",
-				"subject": "認識1-12數字概念"
+				"subject": "認識1-12數字概念",
+				"type": [1,2]
 			},
 			{
 				"guid": 3,
@@ -25,7 +27,8 @@
 				"stage": 1,
 				"title": "飛吧！多變的形狀",
 				"title-en": "Fly! Shapes",
-				"subject": "引發幼兒想像力及創造力"
+				"subject": "引發幼兒想像力及創造力",
+				"type": [2,3]
 			},
 			{
 				"guid": 4,
@@ -33,7 +36,8 @@
 				"stage": 1,
 				"title": "數字生活化",
 				"title-en": "The numbers are everywhere",
-				"subject": "生活中處處有數字"
+				"subject": "生活中處處有數字",
+				"type": [1,3]
 			},
 			{
 				"guid": 5,
