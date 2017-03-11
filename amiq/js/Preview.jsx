@@ -228,7 +228,7 @@ class Preview extends React.Component {
           <span className={`subject book-subject`}>
             {this.props.book.subject}
           </span>
-          <small>{content}</small>
+          <small className="book-content">{content}</small>
         </div>
 
         <div className="topics">
@@ -293,7 +293,7 @@ class Preview extends React.Component {
 
         <div className="preview-jump">
           <a onClick={() => this.goPrev()}><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
-          <a className="preview-current">{this.state.previewGuid}</a>
+          <span className="preview-current">{this.state.previewGuid}</span>
           <a onClick={() => this.goNext()}><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
         </div>
 
