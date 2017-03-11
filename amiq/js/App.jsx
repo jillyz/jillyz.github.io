@@ -233,7 +233,7 @@ class App extends React.Component {
         {this.state.data.map(stage => (
           <section key={stage.stage} className="section">
             <a className={`stage-bg stage-bg-${stage.stage}`} onClick={() => this.toggleBooksHandler(stage.stage)}>
-              <h2>第 {stage.stage} 階</h2>
+              <h2>第 {stage.stage} 階（{stage.stageName}）</h2>
               <p>{stage.content}</p>
             </a>
            
