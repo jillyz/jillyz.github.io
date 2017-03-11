@@ -151,6 +151,9 @@ p {
 .subject.fixed {
 	display: none;
 }
+.book-info {
+	line-height: 1.7;
+}
 .book-info.fixed {
 	position: relative;
 	position: fixed;
@@ -243,9 +246,12 @@ p {
 }
 .book-subject {
 	display: block;
-	margin-bottom: 1em;
+	margin-bottom: .5em;
 	padding-bottom: 1em;
-	border-bottom: 1px dotted #fff;
+}
+.book-content {
+	padding-top: 1em;
+	border-top: 1px dotted #fff;
 }
 .topics {
 	position: relative;
@@ -740,6 +746,8 @@ p {
 	padding-left: 0;
 	padding-right: 0;
 	width: 2em;
+	color: #8c8174;
+	vertical-align: middle;
 }
 
 .closePreview {
