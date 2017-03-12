@@ -47,8 +47,6 @@ class App extends React.Component {
     // console.log('app go ', this.state.book, this.state.bookGuid)
     console.log('app update')
     console.log(this.state)
-
-    $('.gridBook').hide().fadeIn();
   }
 
   bookGoNav(guid){   

@@ -746,9 +746,7 @@ p {
 	cursor: pointer;
 	vertical-align: middle;
 }
-.preview-jump a:hover {
-	background-color: #e0d8c9;
-}
+
 .preview-jump .preview-current {
 	display: inline-block;
 	padding-left: 0;
@@ -759,11 +757,16 @@ p {
 }
 
 .closePreview {
+	display: inline-block;
 	position: fixed;
 	bottom: 0;
 	right: 0;
 	z-index: 10;
-	padding: 1em;
+	padding: .75em 1.5em;
 	color: #8c8174;
 	cursor: pointer;
+}
+.preview-jump a:hover,
+.closePreview:hover {
+	background-color: #e0d8c9;
 }
