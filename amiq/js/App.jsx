@@ -47,6 +47,8 @@ class App extends React.Component {
     // console.log('app go ', this.state.book, this.state.bookGuid)
     console.log('app update')
     console.log(this.state)
+
+    $('.gridBook').hide().fadeIn();
   }
 
   bookGoNav(guid){   
@@ -107,7 +109,8 @@ class App extends React.Component {
       $('.books, .stage-bg').show();
     }
 
-    
+    $('.gridBook').hide().fadeIn();
+
 
     // var that = this;
     // that.setState({filterTypes: arr});
@@ -230,20 +233,20 @@ class App extends React.Component {
           <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">3</label>
         </div>
 
-        {this.state.data.map(stage => (
-          <section key={stage.stage} className="section">
-            <a className={`stage-bg stage-bg-${stage.stage}`} onClick={() => this.toggleBooksHandler(stage.stage)}>
-              <h2>第 {stage.stage} 階（{stage.stageName}）</h2>
-              <p>{stage.content}</p>
-            </a>
-           
-              {this.renderBooksView(stage.books)}
-
-          </section>
-        ))}
-        
+        <div className="gridBook">
+          {this.state.data.map(stage => (
+            <section key={stage.stage} className="section">
+              <a className={`stage-bg stage-bg-${stage.stage}`} onClick={() => this.toggleBooksHandler(stage.stage)}>
+                <h2>第 {stage.stage} 階（{stage.stageName}）</h2>
+                <p>{stage.content}</p>
+              </a>            
+                {this.renderBooksView(stage.books)}
+            </section>
+          ))}
+        </div>
+          
         {isPreview ? 
-          <div ref="preview" id="preview" className="preview">
+          <div ref="preview" id="preview" className="preview animated zoomIn">
             <Preview 
               book={that.state.book} 
               previewGuid={that.state.book.guid} 
