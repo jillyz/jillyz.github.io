@@ -220,7 +220,7 @@ a.share-google-plus {
 
 #title-pic {
   position: relative;
-  background: #709c3b url(../images/15kmh-white-small.png) 50% 40% no-repeat;
+  background: #709c3b url(../Images/15kmh-white-small.png) 50% 40% no-repeat;
 }
 @media screen and (orientation:portrait) {
   #title-pic {
@@ -293,7 +293,7 @@ a.share-google-plus {
     right: 0;
     z-index: 1;
     height: 100%;
-    background: #000 url(../images/15kmh-white-small.png) 50% 10% no-repeat;
+    background: #000 url(../Images/15kmh-white-small.png) 50% 10% no-repeat;
     -webkit-background-size: 40%;
     background-size: 40%;
     overflow: hidden;
@@ -308,7 +308,7 @@ a.share-google-plus {
 
 #cover-mobile {
   position:static;
-  background: url(../images/cover-mobile.jpg) 50% 50% no-repeat;
+  background: url(../Images/cover-mobile.jpg) 50% 50% no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
 }
@@ -421,7 +421,7 @@ a.scroll-down-tip {
 }
 
 .title-15kmh {  
-  background: url(../images/15kmh-white-small.png) 0 50% no-repeat;
+  background: url(../Images/15kmh-white-small.png) 0 50% no-repeat;
   -webkit-background-size: contain;
   background-size: contain;
 }
