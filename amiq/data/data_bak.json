@@ -512,5 +512,260 @@
 				"subject": "正確的聯想力及推理能力"
 			}
 		]
-	}			
+	},
+	{
+		"stage": 5,
+		"stageName": "高階",
+		"content": "經過前面四階的學習，相信孩童對於生活、數理、空間、因果等概念都有了深厚的基礎，因此在這一階段的學習裡，我們透過更多元的題材和圖像遊戲的進行，訓練孩童細膩的觀察能力和辨視推理能力；同時經由圖像資料的整合，孩童對於因果邏輯和序列組合的感知能力也會大大增強。",
+		"books": [
+			{
+				"guid": 61,
+				"id": 501,
+				"stage": 5,
+				"title": "奇妙的組合",
+				"title-en": "",
+				"subject": "不同特徵的細膩辨識"
+			},
+			{
+				"guid": 62,
+				"id": 502,
+				"stage": 5,
+				"title": "誰是第一",
+				"title-en": "",
+				"subject": "位置、排列、方向⋯⋯等先後順序學習概念"
+			},
+			{
+				"guid": 63,
+				"id": 503,
+				"stage": 5,
+				"title": "是誰把我分解了",
+				"title-en": "",
+				"subject": "圖形組合與分解的學習概念"
+			},
+			{
+				"guid": 64,
+				"id": 504,
+				"stage": 5,
+				"title": "因果關係",
+				"title-en": "",
+				"subject": "邏輯順序的推理-1"
+			},
+			{
+				"guid": 65,
+				"id": 505,
+				"stage": 5,
+				"title": "新符號遊戲",
+				"title-en": "",
+				"subject": "從幾何圖形進入基礎集合概念"
+			},
+			{
+				"guid": 66,
+				"id": 506,
+				"stage": 5,
+				"title": "事物之間的連結",
+				"title-en": "",
+				"subject": "聯想力的訓練"
+			},
+			{
+				"guid": 67,
+				"id": 507,
+				"stage": 5,
+				"title": "偵探長布朗",
+				"title-en": "",
+				"subject": "觀察推理能力的訓練"
+			},
+			{
+				"guid": 68,
+				"id": 508,
+				"stage": 5,
+				"title": "推一推，想一想",
+				"title-en": "",
+				"subject": "圖形對應、推理邏輯"
+			},
+			{
+				"guid": 69,
+				"id": 509,
+				"stage": 5,
+				"title": "誰有好眼力",
+				"title-en": "",
+				"subject": "相似圖片的細膩辨識"
+			},
+			{
+				"guid": 70,
+				"id": 510,
+				"stage": 5,
+				"title": "幽默先生",
+				"title-en": "",
+				"subject": "邏輯順序的推理-2"
+			},
+			{
+				"guid": 71,
+				"id": 511,
+				"stage": 5,
+				"title": "滑稽逗趣好玩系列",
+				"title-en": "",
+				"subject": "邏輯順序的推理-3"
+			},
+			{
+				"guid": 72,
+				"id": 512,
+				"stage": 5,
+				"title": "記憶迷圖",
+				"title-en": "",
+				"subject": "記憶力與觀察力的培養"
+			},
+			{
+				"guid": 73,
+				"id": 513,
+				"stage": 5,
+				"title": "工程解謎",
+				"title-en": "",
+				"subject": "認識工程的建造過程"
+			},
+			{
+				"guid": 74,
+				"id": 514,
+				"stage": 5,
+				"title": "世界旅行",
+				"title-en": "",
+				"subject": "學習世界文化與歷史常識"
+			},
+			{
+				"guid": 75,
+				"id": 515,
+				"stage": 5,
+				"title": "好鄰居",
+				"title-en": "",
+				"subject": "符號辨識、順序與邏輯推理"
+			}
+		]
+	},
+	{
+		"stage": 6,
+		"stageName": "高階",
+		"content": "在六階的學習裡我們整合前面一到五階的學習經驗，設計了一系列綜合題目，孩童需運用之前學過的五大邏輯進行推理思考；透過這樣的整合訓練，不僅有助於左右腦的能力提升，同時也可增進面對生活中各種問題時的危機處理及創意啟發能力，為將來的學校課業學習乃至人格發展奠定良好的基礎。",
+		"books": [
+			{
+				"guid": 76,
+				"id": 601,
+				"stage": 6,
+				"title": "動人旋律",
+				"title-en": "",
+				"subject": "音樂與樂器的認識"
+			},
+			{
+				"guid": 77,
+				"id": 602,
+				"stage": 6,
+				"title": "奇貌非凡",
+				"title-en": "",
+				"subject": "類似物種的特徵辨識"
+			},
+			{
+				"guid": 78,
+				"id": 603,
+				"stage": 6,
+				"title": "跑跑走走轉一圈",
+				"title-en": "",
+				"subject": "線條遊戲"
+			},
+			{
+				"guid": 79,
+				"id": 604,
+				"stage": 6,
+				"title": "誰來找碴",
+				"title-en": "",
+				"subject": "相似圖片的辨識訓練"
+			},
+			{
+				"guid": 80,
+				"id": 605,
+				"stage": 6,
+				"title": "腦力風暴",
+				"title-en": "",
+				"subject": "綜合邏輯推理能力"
+			},
+			{
+				"guid": 81,
+				"id": 606,
+				"stage": 6,
+				"title": "翻翻轉轉找一找",
+				"title-en": "",
+				"subject": "圖形組合邏輯思考訓練"
+			},
+			{
+				"guid": 82,
+				"id": 607,
+				"stage": 6,
+				"title": "消失的幾何娃娃",
+				"title-en": "",
+				"subject": "幾何圖形的空間方位辨識"
+			},
+			{
+				"guid": 83,
+				"id": 608,
+				"stage": 6,
+				"title": "無所不在的角度",
+				"title-en": "",
+				"subject": "不同角度和圖形的辨識力及聯想"
+			},
+			{
+				"guid": 84,
+				"id": 609,
+				"stage": 6,
+				"title": "多變的方位",
+				"title-en": "",
+				"subject": "圖形的分辨和識別"
+			},
+			{
+				"guid": 85,
+				"id": 610,
+				"stage": 6,
+				"title": "腦力大挑戰",
+				"title-en": "",
+				"subject": "數字圖形推理"
+			},
+			{
+				"guid": 86,
+				"id": 611,
+				"stage": 6,
+				"title": "移動的圖形",
+				"title-en": "",
+				"subject": "圖形推理"
+			},
+			{
+				"guid": 87,
+				"id": 612,
+				"stage": 6,
+				"title": "透視遊戲",
+				"title-en": "",
+				"subject": "觀察與透視概念的培養"
+			},
+			{
+				"guid": 88,
+				"id": 613,
+				"stage": 6,
+				"title": "鏡中世界",
+				"title-en": "",
+				"subject": "鏡射與對稱的學習概念"
+			},
+			{
+				"guid": 89,
+				"id": 614,
+				"stage": 6,
+				"title": "多變的形狀組合",
+				"title-en": "",
+				"subject": "圖形與線條的疊加與減法"
+			},
+			{
+				"guid": 90,
+				"id": 615,
+				"stage": 6,
+				"title": "拼拼湊湊",
+				"title-en": "",
+				"subject": "幾何圖形的組合與分割"
+			}
+		]
+	}
+			
 ]
