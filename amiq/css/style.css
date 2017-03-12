@@ -1,5 +1,7 @@
 body {
 	color: #333;
+	height: 100vh;
+	overflow: auto;
 }
 p {
 	line-height: 2;

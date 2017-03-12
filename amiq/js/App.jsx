@@ -59,21 +59,19 @@ class App extends React.Component {
             book: book,
             bookGuid: guid
           })
-          // this.fetch(guid);
-        }
-      })
-    })
-
-    console.log(':::: bookGoNav :::::')
-
-    this.state.data.map(stage => {
-      stage.books.map(book => {
-        if (book.guid == guid) {
           this.previewShow(book);
-          console.log('::: book', book)
-        }
+          console.log('::: book', book)        }
       })
+
+      this.scrollToBook(guid);
+
     })
+
+  }
+
+  scrollToBook(guid){
+    var top = $('.book-guid-' + guid).offset().top;
+    $('body').scrollTop( top );
   }
 
   filterTypes(){
@@ -175,8 +173,8 @@ class App extends React.Component {
     })
   }
 
-  typesClassName(typeIds, stageId){
-    var classNames = 'books books-' + stageId;
+  typesClassName(typeIds, stageId, guid){
+    var classNames = 'books books-' + stageId + ' book-guid-' + guid;
     if(typeIds !== undefined) {
       typeIds.map(id => {
         classNames = classNames + ' isType' + id;
@@ -189,7 +187,7 @@ class App extends React.Component {
     const DEFAULT_IMAGE = '/img/content/none.jpg';
     return (
       data.map(book => (
-        <div ref={`books-${book.stage}`} className={this.typesClassName(book.types, book.stage)}>
+        <div ref={`books-${book.stage}`} className={this.typesClassName(book.types, book.stage, book.guid)}>
           <div className={`item stage stage-${book.stage}`} key={book.guid} onClick={() => this.previewShow(book)}>
             <div className="info">
               <span className="title">
