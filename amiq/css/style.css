@@ -24,6 +24,9 @@ p {
 .grid {
 	border-left: 1px dotted #ddd;
 }
+.section {
+	display: inline;
+}
 .item {
 	display: inline-block;
 	vertical-align: top;
@@ -117,7 +120,12 @@ p {
 .stage-bg-6{
 	background-color: #00b0d9;
 }
-
+.books {
+	display: inline;
+	-webkit-transition: .25s all;
+	-o-transition: .25s all;
+	transition: .25s all;
+}
 .id {
 	position: absolute;
 	top: 0;
@@ -150,6 +158,9 @@ p {
 }
 .subject.fixed {
 	display: none;
+}
+.book-info {
+	line-height: 1.7;
 }
 .book-info.fixed {
 	position: relative;
@@ -202,8 +213,8 @@ p {
 }
 
 .books {
-/*	height: 0;
-	overflow: hidden;*/
+	/*height: 0;*/
+	overflow: hidden;
 }
 .img {
 	float: left;
@@ -243,9 +254,12 @@ p {
 }
 .book-subject {
 	display: block;
-	margin-bottom: 1em;
+	margin-bottom: .5em;
 	padding-bottom: 1em;
-	border-bottom: 1px dotted #fff;
+}
+.book-content {
+	padding-top: 1em;
+	border-top: 1px dotted #fff;
 }
 .topics {
 	position: relative;
@@ -722,20 +736,29 @@ p {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding: 1em;
 	text-align: center;
 	background-color: #f1e8d6;
 }
 .preview-jump a {
-	padding: 0 2em;
+	display: inline-block;
+	padding: .75em 2em;
 	color: #8c8174;
 	cursor: pointer;
+<<<<<<< HEAD
+=======
+	vertical-align: middle;
+>>>>>>> develop-amiq
 }
-.preview-jump a.preview-current {
+.preview-jump a:hover {
+	background-color: #e0d8c9;
+}
+.preview-jump .preview-current {
 	display: inline-block;
 	padding-left: 0;
 	padding-right: 0;
 	width: 2em;
+	color: #8c8174;
+	vertical-align: middle;
 }
 
 .closePreview {
