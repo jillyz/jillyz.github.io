@@ -209,7 +209,7 @@ class App extends React.Component {
   }
 
   toggleBooksHandler(id){
-    $('.books-' + id).stop().slideToggle(800);
+    // $('.books-' + id).stop().slideToggle(800);
   }
 
   render() {
@@ -224,9 +224,9 @@ class App extends React.Component {
         */}
 
         <div>
-          <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">1</label>
-          <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">2</label>
-          <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">3</label>
+          <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+          <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+          <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
         </div>
 
         <div className="gridBook">
