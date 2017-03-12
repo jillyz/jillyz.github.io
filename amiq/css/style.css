@@ -163,6 +163,7 @@ p {
 }
 .book-info {
 	line-height: 1.7;
+	transform: translate3d(0,0,0);
 }
 .book-info.fixed {
 	position: relative;
@@ -740,6 +741,7 @@ p {
 	right: 0;
 	text-align: center;
 	background-color: #f1e8d6;
+	transform: translate3d(0,0,0);
 }
 .preview-jump a {
 	display: inline-block;
