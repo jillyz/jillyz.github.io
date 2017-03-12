@@ -66,14 +66,16 @@ class Preview extends React.Component {
 
     this.fetch(guid);
 
+    $('#bookInfoFixed').hide();
+
     $('#preview').scroll(function(){
       var that = this;
       var isExitBookInfo = $('#preview').scrollTop() > $('#bookInfo').height();
       if(isExitBookInfo) { 
-        $('#bookInfo').addClass('fixed');
+        $('#bookInfoFixed').fadeIn(100);
       } 
       else {
-        $('#bookInfo').removeClass('fixed');
+        $('#bookInfoFixed').fadeOut(50);
       }
 
     })
@@ -216,7 +218,7 @@ class Preview extends React.Component {
     )
     return (
       <div className="">
-        <div id="bookInfo" className={bookClassName}>
+        <div id="bookInfo" className={`book-info stage stage-${stageId}`}>
           <div className="title-wrap">
             <span className="id">{this.props.book.id}</span> 
             <span className="title">{this.props.book.title}</span>
@@ -229,6 +231,16 @@ class Preview extends React.Component {
             {this.props.book.subject}
           </span>
           <small>{content}</small>
+        </div>
+
+        <div id="bookInfoFixed" className={`book-info fixed stage stage-${stageId}`}>
+          <div className="title-wrap">
+            <span className="id">{this.props.book.id}</span> 
+            <span className="title">{this.props.book.title}</span>
+            <span className={`subject book-subject fixed`}>
+              {this.props.book.subject}
+            </span>
+          </div>
         </div>
 
         <div className="topics">

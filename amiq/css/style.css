@@ -729,6 +729,7 @@ p {
 .preview-jump a {
 	padding: 0 2em;
 	color: #8c8174;
+	cursor: pointer;
 }
 .preview-jump a.preview-current {
 	display: inline-block;
