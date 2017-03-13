@@ -75,7 +75,7 @@ p {
 	left: 60px;
 	z-index: 10;
 	height: 10px;
-	width: calc(100% - 4em);
+	width: calc(100% - 60px);
 	border-top: 10px solid;
 }
 .stage-1:after {
@@ -98,11 +98,10 @@ p {
 }
 .stage-bg {
 	display: block;
-	margin-top: 1em;
+	/*margin-top: 1em;*/
 	margin-bottom: 1px;
 	padding: 1em 2em;
 	color: #fff;
-	cursor: pointer;
 }
 .stage-bg-1 {
 	background-color: #3aa241;
@@ -254,7 +253,7 @@ p {
 /*	-webkit-transition: .1s all;
 	-o-transition: .1s all;
 	transition: .1s all;*/
-	cursor: pointer;
+	/*cursor: pointer;*/
 }
 .book-subject {
 	display: block;
@@ -774,4 +773,28 @@ p {
 .preview-jump a:hover,
 .closePreview:hover {
 	background-color: #e0d8c9;
+}
+
+.filter {
+	margin-bottom: 1em;
+}
+
+.filter input {
+	display: none;
+}
+.filter label {
+	display: inline-block;
+	margin-right: .25em;
+	padding: .25em 1em;
+	border: 1px solid #ccc;
+	border-radius: .25em;
+	cursor: pointer;
+	-webkit-transition: .15s all;
+	-o-transition: .15s all;
+	transition: .15s all;
+}
+.filter :checked + label {
+	border-color: #333;
+	background-color: #333;
+	color: #fff;
 }
