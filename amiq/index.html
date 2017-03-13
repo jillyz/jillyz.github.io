@@ -76,7 +76,8 @@
 
   <script>
     window.App = {};
-
+    
+    var bookKeys = keys();
     function keys (){
       var obj = {},
           obj1 = {}, 
@@ -100,8 +101,6 @@
       obj['getGuid'] = obj2;
       return obj;
     }
-
-    var bookKeys = keys();
 
     window.addEventListener("load",function() {
         setTimeout(function(){
