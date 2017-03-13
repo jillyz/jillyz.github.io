@@ -2,6 +2,7 @@ body {
 	color: #333;
 	height: 100vh;
 	overflow: auto;
+	font-family: 'Heiti TC', 'Microsoft JhengHei', Sans-Serif;
 }
 p {
 	line-height: 2;
