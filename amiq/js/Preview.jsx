@@ -166,7 +166,7 @@ class Preview extends React.Component {
     // const previewGuid = this.state.previewGuid;
     // const guid = previewGuid == 90 ? 1 : parseInt(previewGuid) + 1;
     const guid = parseInt(this.state.previewGuid) + 1;
-    if (guid > 90) {
+    if (guid > 60) {
       this.fetch(1);
       this.props.bookGoNav(1);
       this.scrollTop();
@@ -183,9 +183,10 @@ class Preview extends React.Component {
     // const previewGuid = this.state.previewGuid;
     // const guid = previewGuid == 1 ? 90 : parseInt(previewGuid) - 1;
     const guid = parseInt(this.state.previewGuid) - 1;
+
     if (guid < 1) {
-      this.fetch(90);
-      this.props.bookGoNav(90);
+      this.fetch(60);
+      this.props.bookGoNav(60);
       this.scrollTop();
       return;
     } 
@@ -221,7 +222,7 @@ class Preview extends React.Component {
         <div id="bookInfo" className={`book-info stage stage-${stageId}`}>
           <div className="title-wrap">
             <span className="id">{this.props.book.id}</span> 
-            <span className="title">{this.props.book.title}</span>
+            <span className="title ch">{this.props.book.title}</span>
             <span className="en">{this.props.book['title-en']}</span>
             <span className={`subject book-subject fixed`}>
               {this.props.book.subject}
@@ -230,7 +231,7 @@ class Preview extends React.Component {
           <span className={`subject book-subject`}>
             {this.props.book.subject}
           </span>
-          <small className="book-content">{content}</small>
+          {content ? <span className="book-content">{content}</span> : ''}
         </div>
 
         <div id="bookInfoFixed" className={`book-info fixed stage stage-${stageId}`}>
@@ -244,22 +245,57 @@ class Preview extends React.Component {
         </div>
 
         <div className="topics">
-          {/*
+
+          <img className="topics-img" src={`img/content/amiq${this.props.book.id}.jpg`} />
+
           <div className="pos pos0">
             <span className="title">
               <span>{this.props.book.id}</span> 
-              {this.props.book.title}
+              <span className="ch">{this.props.book.title}</span>
               <span className="en">{this.props.book['title-en']}</span>
-            </span>        
+            </span>
             <span className="subject">
               {this.props.book.subject}
             </span>
-            {this.state.content}
+            {content ? content : ''}
           </div>
-          */}
 
-          <img className="topics-img" src={`img/content/amiq${this.props.book.id}.jpg`} />
-          
+          {topics.map(item => (
+            <a key={item.pos} className={`pos pos${item.pos}`}>
+              {/*
+              <div className="topic-info">
+                <div className="title">
+                  <strong>#{item.pos} {item.topic}</strong>
+                  <small>{item.topicLong ? item.topicLong : ''}</small>
+                </div>
+                <div className="">
+                  <ul>
+                    {item.point ? <li><span>訓練要點：</span>{item.point}</li> : ''}
+                    {item.skill ? <li><span>能力培養：</span>{item.skill}</li> : ''}
+                  </ul>
+
+                  {item.ans ? 
+                    <ul>
+                      <li className="ans">
+                        <span>解答說明：</span>
+                        <ol>
+                        {
+                          item.ans.map( (text, index) =>(
+                            <li key={index} className="ans">
+                              {(index + 1) < 10 ? '0' + (index + 1 ): index + 1 }. {text}
+                            </li>
+                          ))
+                        }
+                        </ol>
+                      </li>
+                    </ul>
+                  : ''}
+
+                </div>
+              </div>
+              */}
+            </a>
+          ))}
 
         </div>
 
@@ -283,15 +319,17 @@ class Preview extends React.Component {
 
                 {item.ans ? 
                   <ul>
-                    <li>
+                    <li className="ans">
                       <span>解答說明：</span>
+                      <ol>
                       {
-                        item.ans.map(id =>(
-                          <em key={id} className="ans">
-                            {id}
-                          </em>
+                        item.ans.map( (text, index) =>(
+                          <li key={index} className="ans">
+                            {(index + 1) < 10 ? '0' + (index + 1 ): index + 1 }. {text}
+                          </li>
                         ))
                       }
+                      </ol>
                     </li>
                   </ul>
                 : ''}
