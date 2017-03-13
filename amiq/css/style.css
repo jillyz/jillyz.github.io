@@ -25,6 +25,7 @@ p {
 	/*width: 100%;*/
 }
 .grid {
+	margin-bottom: 2em;
 	border-left: 1px dotted #ddd;
 }
 .section {
@@ -129,12 +130,6 @@ p {
 	transition: .25s all;
 }
 .id {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1;
-	width: 60px;
-	padding: 1em 0 .5em 0;
 	background-color: #333;
 	color: #fff;
 	text-align: center;
@@ -143,26 +138,40 @@ p {
 	font-family: 'Arial Black', Sans-Serif;
 }
 .title {
-	display: block;
-	margin-top: .5em;
+/*	display: block;
+*/	margin-top: .5em;
 	font-size: 1.2em;
 	font-weight: bold;
 }
 
 .en {
+/*	display: block;
+*/	font-size: .8125em;
+}
+.item-grid .title,
+.item-grid .en, .preview .en,
+.item-grid .subject,
+ {
 	display: block;
-	font-size: .8125em;
+}
+.item-grid .id,
+.preview .id {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 60px;
+	padding: 1em 0 .5em 0;
 }
 .subject {
-	display: block;
-	padding-top: .25em;
+/*	display: block;
+*/	padding-top: .25em;
 	color: #c03;
 }
 .subject.fixed {
 	display: none;
 }
 .book-info {
-	line-height: 1.7;
 	transform: translate3d(0,0,0);
 }
 .book-info.fixed {
@@ -239,6 +248,7 @@ p {
 	height: 100vh;
 	overflow: auto;
 	background-color: #f1e8d6;
+	line-height: 1.75;
 	-webkit-box-shadow: -3px 0 3px rgba(0,0,0,.1);
 	box-shadow: -3px 0 3px rgba(0,0,0,.1);
 }
@@ -262,6 +272,7 @@ p {
 	padding-bottom: 1em;
 }
 .book-content {
+	display: block;
 	padding-top: 1em;
 	border-top: 1px dotted #fff;
 }
@@ -291,6 +302,15 @@ p {
 .topics-img {
 	width: 100%;
 }
+.ans ol ,
+.ans li  {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+}
+.ans ol {
+	margin-top: .5em;
+}
 .pos {
 	position: absolute;
 	width: 23.6%;
@@ -312,15 +332,15 @@ p {
 	padding: 1.5em;
 	box-sizing: border-box;
 	background-color: rgba(0,0,0,.5);
+	color: #fff;
 	opacity: 0;
 }
-.pos:hover {
-	/*border: 5px solid rgba(0,0,0,.5);*/
-}
+/*.pos:hover {
+	border: 5px solid rgba(0,0,0,.5);
+}*/
 .pos:hover .topic-info  {
 	opacity: 1;
-/*	background-color: transparent;
-	color: #333;*/
+	color: #333;
 }
 .pos:hover ul {
 	/*display: none;*/
@@ -592,7 +612,7 @@ p {
 	.item {
 		padding: 2.5em .75em 0 .75em;
 	}
-	.info {
+	.item-grid .info {
 		margin-left: 2em;
 	}
 }
@@ -703,7 +723,7 @@ p {
 	}
 	.topic-title strong {
 		color: #c30;
-		font-size: 1.5em;		
+		font-size: 1.25em;		
 	}
 	.topic-title small {
 		display: block;
@@ -798,4 +818,114 @@ p {
 	border-color: #333;
 	background-color: #333;
 	color: #fff;
+}
+
+.book-list {
+	padding: 1em;
+	border-bottom: 1px dotted #ccc;
+	-webkit-transition: .75s all;
+	-o-transition: .75s all;
+	transition: .75s all;
+	overflow: hidden;
+}
+.book-list:hover {
+	background-color: #ffe;
+	cursor: pointer;
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.15);
+	box-shadow: 0 0 10px rgba(0,0,0,.15);
+}
+.book-list .id,
+.book-list .title,
+.book-list .subject
+ {
+ 	display: block;
+}
+
+.ch {
+	display: inline-block;
+	margin-right: .5em;
+}
+.en {
+	font-weight: normal;
+}
+
+@media screen and (min-width: 768px) {
+	.book-list .id,
+	.book-list .title,
+	.book-list .subject
+	 {
+		float: left;
+		width: 30%;
+	}
+}
+@media screen and (max-width: 767px) {
+	.book-list .id,
+	.book-list .title,
+	.book-list .subject
+	 {
+		margin-bottom: 1em;
+	}
+	.en {
+		display: block !important;
+	}
+}
+.book-list .id,
+.book-list .en
+ {
+ 	display: inline-block;
+}
+.book-list .id {
+	width: 3em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+.book-list .info .title,
+.book-list .subject,
+.book-list .en {
+	margin: 0;
+	font-size: 1rem;
+}
+.book-list .title,
+.book-list .id {
+	margin-right: 1em;
+}
+
+.book-list-stage {
+	border-left: 10px solid #000;
+}
+.book-list-stage-1 {
+	border-left-color: #3aa241;
+}
+.book-list-stage-2 {
+	border-left-color: #1cbcb4;
+}
+.book-list-stage-3 {
+	border-left-color: #ef452e;
+}
+.book-list-stage-4 {
+	border-left-color: #fb8809;
+}
+.book-list-stage-5 {
+	border-left-color: #056abc;
+}
+.book-list-stage-6 {
+	border-left-color: #00b0d9;
+}
+.book-list-stage-1 .id {
+	background-color: #3aa241;
+}
+.book-list-stage-2 .id {
+	background-color: #1cbcb4;
+}
+.book-list-stage-3 .id {
+	background-color: #ef452e;
+}
+.book-list-stage-4 .id {
+	background-color: #fb8809;
+}
+.book-list-stage-5 .id {
+	border-left-color: #056abc;
+}
+.book-list-stage-6 .id {
+	background-color: #00b0d9;
 }

@@ -19,7 +19,7 @@
 				"stage": 1,
 				"title": "我的數字不見了",
 				"title-en": "My numbers are gone",
-				"subject": "認識1-12數字概念",
+				"subject": "認識 1-12 數字概念",
 				"types": [1,2]
 			},
 			{
@@ -302,7 +302,8 @@
 				"stage": 3,
 				"title": "生活常規",
 				"title-en": "",
-				"subject": "培養正確觀念的基石"
+				"subject": "培養正確觀念的基石",
+				"types": [1,2]
 			},
 			{
 				"guid": 36,
@@ -342,7 +343,8 @@
 				"stage": 3,
 				"title": "形形色色，變化多端",
 				"title-en": "",
-				"subject": "平面圖形與立體圖形之間的關係"
+				"subject": "平面圖形與立體圖形之間的關係",
+				"types": [1]
 			},
 			{
 				"guid": 41,
@@ -358,7 +360,7 @@
 				"stage": 3,
 				"title": "我的表情變了嗎？",
 				"title-en": "",
-				"subject": "細膩的辨識學習"
+				"subject": "細膩的辨識學習-1"
 			},
 			{
 				"guid": 43,
@@ -477,7 +479,8 @@
 				"stage": 4,
 				"title": "美麗的一天",
 				"title-en": "",
-				"subject": "圖形變化的聯想"
+				"subject": "圖形變化的聯想",
+				"types": [3]
 			},
 			{
 				"guid": 57,
@@ -493,7 +496,8 @@
 				"stage": 4,
 				"title": "疊疊樂",
 				"title-en": "",
-				"subject": "圖形辨識推理"
+				"subject": "圖形辨識推理",
+				"types": [2,3]
 			},
 			{
 				"guid": 59,

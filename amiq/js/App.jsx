@@ -183,16 +183,16 @@ class App extends React.Component {
     return classNames;
   }
 
-  renderBooksView(data){
+  renderBooksGrid(data){
     const DEFAULT_IMAGE = '/img/content/none.jpg';
     return (
       data.map(book => (
         <div ref={`books-${book.stage}`} className={this.typesClassName(book.types, book.stage, book.guid)}>
-          <div className={`item stage stage-${book.stage}`} key={book.guid} onClick={() => this.previewShow(book)}>
+          <div className={`item item-grid stage stage-${book.stage}`} key={book.guid} onClick={() => this.previewShow(book)}>
             <div className="info">
               <span className="title">
-                <span className="id">{book.id}</span> 
-                {book.title}
+                <span className="id">{book.id}</span>
+                <span className="ch">{book.title}</span>
                 <span className="en">{book['title-en']}</span>
               </span>        
               <span className="subject">
@@ -201,6 +201,27 @@ class App extends React.Component {
             </div>
             <div ref="preview" className="topics">
               <img src={`img/content/amiq${book.id}.jpg`} onError={()=>{this.src='DEFAULT_IMG'}} />
+            </div>
+          </div>
+        </div>
+      ))
+    )
+  }
+
+  renderBooksList(data){
+    return (
+      data.map(book => (
+        <div ref={`books-${book.stage}`} className={this.typesClassName(book.types, book.stage, book.guid)}>
+          <div className={`book-list book-list-stage book-list-stage-${book.stage}`} key={book.guid} onClick={() => this.previewShow(book)}>
+            <div className="info">
+              <span className="id">{book.id}</span> 
+              <strong className="title">
+                <span className="ch">{book.title}</span>
+                <span className="en">{book['title-en']}</span>
+              </strong>        
+              <span className="subject">
+                {book.subject}
+              </span>
             </div>
           </div>
         </div>
@@ -230,13 +251,14 @@ class App extends React.Component {
         </div>
 
         <div className="gridBook">
+
           {this.state.data.map(stage => (
             <section key={stage.stage} className="section">
               <a className={`stage-bg stage-bg-${stage.stage}`} onClick={() => this.toggleBooksHandler(stage.stage)}>
                 <h2>第 {stage.stage} 階（{stage.stageName}）</h2>
                 <p>{stage.content}</p>
               </a>            
-                {this.renderBooksView(stage.books)}
+                {this.renderBooksGrid(stage.books)}
             </section>
           ))}
         </div>
