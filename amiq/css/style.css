@@ -1,8 +1,18 @@
+html {
+  margin: 0;
+  padding: 0;
+}
 body {
+  margin: 0;
+  padding: 0;
 	color: #333;
 	height: 100vh;
 	overflow: auto;
 	font-family: 'Heiti TC', 'Microsoft JhengHei', Sans-Serif;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 p {
 	line-height: 2;
@@ -629,7 +639,7 @@ p {
 	}	
 }
 @media screen and (min-width: 1024px)  {
-	body {
+	.gridBook {
 		padding: 2em;
 	}
 	.item {
@@ -836,7 +846,7 @@ p {
 	overflow: hidden;
 }
 .book-list:hover {
-	background-color: #ffe;
+	background-color: #f1e8d6;
 	cursor: pointer;
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.15);
 	box-shadow: 0 0 10px rgba(0,0,0,.15);
