@@ -17,6 +17,7 @@ class Preview extends React.Component {
       showLoading: false,
     }
     this.seeTopicDetail = this.seeTopicDetail.bind(this);
+    this.goTop = this.goTop.bind(this);
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -165,7 +166,13 @@ class Preview extends React.Component {
 
   seeTopicDetail(posId) {
     $('.preview').animate({
-        scrollTop: $('#topic_' + posId).offset().top - 32 + $('.preview').scrollTop()
+        scrollTop: $('#topic_' + posId).offset().top - 32 + $('.preview').scrollTop() -15
+    }, 300);
+  }
+
+  goTop() {
+    $('.preview').animate({
+        scrollTop: 0
     }, 300);
   }
 
@@ -313,7 +320,7 @@ class Preview extends React.Component {
         <div className="seeTopicItem">
           <div id="topic_0" className="topic-cover">
             <div className="topic-title">封面</div>
-            <div className={`seeTopic see0`} style={this.state.style}></div>
+            <div className={`seeTopic see0`} style={this.state.style} onClick={() => this.goTop()}></div>{/*img*/}
           </div>
           {topics.map(item => (
             <div key={item.pos} id={`topic_${item.pos}`}>
@@ -321,7 +328,7 @@ class Preview extends React.Component {
                 <strong>#{item.pos} {item.topic}</strong>
                 <small>{item.topicLong ? item.topicLong : ''}</small>
               </div>
-              <div className={`seeTopic see${item.pos}`} style={this.state.style}></div>
+              <div className={`seeTopic see${item.pos}`} style={this.state.style} onClick={() => this.goTop()}></div>{/*img*/}
               <div className="see-info">
                 <ul>
                   {item.point ? <li><span>訓練要點：</span>{item.point}</li> : ''}
