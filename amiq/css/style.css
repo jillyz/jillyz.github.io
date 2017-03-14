@@ -29,8 +29,8 @@ p {
   left: 0;
   right: 0;
   z-index: 90;
-  background-color: #343a40;
-  color: #fff;
+  background-color: #fff;
+  color: #343a40;
 }
 .site-title {
   display: block;
@@ -214,6 +214,18 @@ p {
 .subject {
 	color: #c03;
 }
+@media screen and (min-width: 1366px) {
+  .gridBook {
+    width: calc(100vw - 5.5em);
+    -webkit-transition: .5s all;
+    -o-transition: .35s all;
+    transition: .35s all;
+  }
+  .gridBook.small {
+    width: calc(100vw - 480px);
+  }
+}
+
 .gridBook .subject {
 	display: block;
 }
@@ -701,7 +713,7 @@ p {
 }
 @media screen and (min-width: 1024px)  {
 	.gridBook {
-		padding: 2em;
+		padding: 0 2em;
 	}
 	.item {
 		width: 33.33%;
@@ -886,11 +898,11 @@ p {
   max-width: 360px;
   height: calc(100vh - 3.5em);
   background-color: #fff;
-  -webkit-box-shadow: 0 0 20px rgba(0,0,0,.35);
-  box-shadow: 0 0 20px rgba(0,0,0,.35);
-  -webkit-transition: .5s all ease-out;
-  -o-transition: .5s all ease-out;
-  transition: .5s all ease-out;
+/*  -webkit-box-shadow: 0 0 20px rgba(0,0,0,.35);
+  box-shadow: 0 0 20px rgba(0,0,0,.35);*/
+  -webkit-transition: .35s all ease-out;
+  -o-transition: .35s all ease-out;
+  transition: .35s all ease-out;
   overflow: auto;
 }
 .filter.open {
@@ -904,7 +916,7 @@ p {
 	display: inline-block;
 	margin-right: .25em;
   margin-bottom: .25em;
-	padding: .25em 1em;
+	padding: .5em 1em;
   font-size: .875em;
   color: #343a40;
 	border: 1px solid #ccc;
@@ -1028,4 +1040,14 @@ p {
 }
 .book-list-stage-6 .id {
 	background-color: #00b0d9;
+}
+.dontUseSafari {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: .5em;
+  background-color: #ff3;
+  color: #666;
+  text-align: center;
 }
