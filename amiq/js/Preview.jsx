@@ -16,6 +16,7 @@ class Preview extends React.Component {
       titleFixed: false,
       showLoading: false,
     }
+    this.seeTopicDetail = this.seeTopicDetail.bind(this);
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -162,6 +163,12 @@ class Preview extends React.Component {
     // console.log('preview :', this.state.topics, this.state.content);
   }
 
+  seeTopicDetail(posId) {
+    $('.preview').animate({
+        scrollTop: $('#topic_' + posId).offset().top - 32 + $('.preview').scrollTop()
+    }, 300);
+  }
+
   goNext(){
     // const previewGuid = this.state.previewGuid;
     // const guid = previewGuid == 90 ? 1 : parseInt(previewGuid) + 1;
@@ -248,7 +255,8 @@ class Preview extends React.Component {
 
           <img className="topics-img" src={`img/content/amiq${this.props.book.id}.jpg`} />
 
-          <div className="pos pos0">
+          <a className="pos pos0" onClick={() => this.seeTopicDetail(0)}>
+            {/*
             <span className="title">
               <span>{this.props.book.id}</span> 
               <span className="ch">{this.props.book.title}</span>
@@ -258,10 +266,12 @@ class Preview extends React.Component {
               {this.props.book.subject}
             </span>
             {content ? content : ''}
-          </div>
+            */}
+            <i className="fa fa-plus-circle zoom-in" aria-hidden="true"></i>
+          </a>
 
           {topics.map(item => (
-            <a key={item.pos} className={`pos pos${item.pos}`}>
+            <a key={item.pos} className={`pos pos${item.pos}`} onClick={() => this.seeTopicDetail(item.pos)}>
               {/*
               <div className="topic-info">
                 <div className="title">
@@ -294,18 +304,19 @@ class Preview extends React.Component {
                 </div>
               </div>
               */}
+              <i className="fa fa-plus-circle zoom-in" aria-hidden="true"></i>
             </a>
           ))}
 
         </div>
 
         <div className="seeTopicItem">
-          <div className="topic-cover">
+          <div id="topic_0" className="topic-cover">
             <div className="topic-title">封面</div>
             <div className={`seeTopic see0`} style={this.state.style}></div>
           </div>
           {topics.map(item => (
-            <div key={item.pos}>
+            <div key={item.pos} id={`topic_${item.pos}`}>
               <div className="topic-title">
                 <strong>#{item.pos} {item.topic}</strong>
                 <small>{item.topicLong ? item.topicLong : ''}</small>
