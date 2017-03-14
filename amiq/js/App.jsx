@@ -7,18 +7,20 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      listTypeGrid: false,
       data: [],
+      listTypeGrid: false,
       isPreview: false,
       book: '',
       bookId: '',
       bookGuid: '',
       bookContent: '',
       bookTopics: [],
+      filterOpen: false,
       filterTypes: [],
       filterData: []
     }
     this.switchListToGrid = this.switchListToGrid.bind(this);
+    this.switchFilterPanel = this.switchFilterPanel.bind(this);
     this.previewShow = this.previewShow.bind(this);
     this.previewHide = this.previewHide.bind(this);
     this.onKeyDownPreviewHide = this.onKeyDownPreviewHide.bind(this);
@@ -58,6 +60,12 @@ class App extends React.Component {
     })
     var element = document.getElementById('body');
     scrollTo(element, 0, 100);
+  }
+
+  switchFilterPanel() {
+    this.setState({
+      filterOpen: !this.state.filterOpen
+    })
   }
 
   bookGoNav(guid){   
@@ -275,7 +283,7 @@ class App extends React.Component {
                 <i className="fa fa-th" aria-hidden="true"></i>
               }
             </a>
-            <a><i className="fa fa-filter" aria-hidden="true"></i></a>
+            <a onClick={() => this.switchFilterPanel()}><i className="fa fa-filter" aria-hidden="true"></i></a>
           </span>
           </div>
         </header>
@@ -286,11 +294,56 @@ class App extends React.Component {
           <iframe className="video" src="https://www.youtube.com/embed/5MqM41gZGOM" frameborder="0" allowfullscreen></iframe>
           */}
 
-          {/*<div className="filter">
+          <div className={this.state.filterOpen ? 'filter open' : 'filter'}>
             <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
             <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
             <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
-          </div>*/}
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+          </div>
 
           <div className="gridBook">
 
