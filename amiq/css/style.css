@@ -217,6 +217,7 @@ p {
 @media screen and (min-width: 1366px) {
   .gridBook {
     width: calc(100vw - 5.5em);
+    background-color: #fff;
     -webkit-transition: .5s all;
     -o-transition: .35s all;
     transition: .35s all;
@@ -225,7 +226,13 @@ p {
     width: calc(100vw - 480px);
   }
 }
-
+@media screen and (max-width: 1365px) {
+  .filter {
+    background-color: #eee;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,.35);
+    box-shadow: 0 0 20px rgba(0,0,0,.35);
+  }
+}
 .gridBook .subject {
 	display: block;
 }
@@ -656,11 +663,11 @@ p {
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s; }
 
-.preview .sk-cube-grid .sk-cube {
+.loading-small .sk-cube-grid .sk-cube {
   background-color: #8c8174;
   background-color: #333;
 }
-.preview .sk-cube-grid {
+.loading-small .sk-cube-grid {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -897,9 +904,6 @@ p {
   width: calc(100vw - 110px);
   max-width: 360px;
   height: calc(100vh - 3.5em);
-  background-color: #fff;
-/*  -webkit-box-shadow: 0 0 20px rgba(0,0,0,.35);
-  box-shadow: 0 0 20px rgba(0,0,0,.35);*/
   -webkit-transition: .35s all ease-out;
   -o-transition: .35s all ease-out;
   transition: .35s all ease-out;
@@ -918,6 +922,7 @@ p {
   margin-bottom: .25em;
 	padding: .5em 1em;
   font-size: .875em;
+  background-color: #fff;
   color: #343a40;
 	border: 1px solid #ccc;
 	border-radius: .25em;

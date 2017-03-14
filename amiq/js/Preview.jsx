@@ -365,7 +365,7 @@ class Preview extends React.Component {
           <a onClick={() => this.goNext()}><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
         </div>
 
-        {this.state.showLoading ? <Loading /> : ''} 
+        {this.state.showLoading ? <div className="loading-small"><Loading /></div> : ''} 
 
       </div>
     )

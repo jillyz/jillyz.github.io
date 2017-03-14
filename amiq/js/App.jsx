@@ -1,5 +1,6 @@
 const {
   Preview,
+  Loading
 } = window.App;
 
 
@@ -17,7 +18,8 @@ class App extends React.Component {
       bookTopics: [],
       filterOpen: false,
       filterTypes: [],
-      filterData: []
+      filterData: [],
+      showLoading: false
     }
     this.switchListToGrid = this.switchListToGrid.bind(this);
     this.switchFilterPanel = this.switchFilterPanel.bind(this);
@@ -124,7 +126,15 @@ class App extends React.Component {
       $('.books, .stage-bg').show();
     }
 
-    $('.gridBook').hide().fadeIn();
+    $('.gridBook').hide().fadeIn()
+    $('body').animate({
+        scrollTop: 0
+    }, 250);
+
+    this.setState({showLoading: true})
+    setTimeout(() => {
+      this.setState({showLoading: false})
+    }, 250);
 
 
     // var that = this;
@@ -275,7 +285,8 @@ class App extends React.Component {
 
           <div>
           <span className="list-type-menu">
-            <a className="rent-rule">租借說明</a>
+            <a className="rent-rule">租借</a>
+            <a className="rent-rule">如何玩</a>
             <a onClick={() => this.switchListToGrid()}>
               {/*模式*/} 
               {this.state.listTypeGrid ?
@@ -332,6 +343,7 @@ class App extends React.Component {
           }
 
         </div>
+        {this.state.showLoading ? <div className="loading-small"><Loading /></div> : ''} 
 
       </div>
     )
