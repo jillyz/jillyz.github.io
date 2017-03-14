@@ -5,6 +5,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  padding-top: 3.5em;
 	color: #333;
 	height: 100vh;
 	overflow: auto;
@@ -23,7 +24,44 @@ p {
 }
 
 .header {
-	padding: 1em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background-color: #343a40;
+  color: #fff;
+}
+.site-title {
+  display: block;
+  float: left;
+  padding: 1em;
+}
+.site-logo {
+  height: .9em;
+}
+.rent-rule {
+  background-color: #fa5252;
+  color: #fff;
+  cursor: pointer;
+}
+.rent-rule:hover {
+  background-color: #e03131;
+}
+.list-type-menu {
+  float: right;
+}
+.list-type-menu a {
+  display: inline-block;
+  padding: 1em;
+  cursor: pointer;
+}
+.list-type-menu a:active {
+  opacity: .5;
+}
+.list-type-menu i {
+  font-size: 1.5em;
+  vertical-align: middle;
 }
 .video {
 	background-color: #000;
@@ -55,9 +93,9 @@ p {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	-webkit-transition: .25s all;
-	-o-transition: .25s all;
-	transition: .25s all;
+	-webkit-transition: .5s all;
+	-o-transition: .5s all;
+	transition: .5s all;
 	cursor: pointer;
 }
 .item:hover {
@@ -840,9 +878,9 @@ p {
 .book-list {
 	padding: 1em;
 	border-bottom: 1px dotted #ccc;
-	-webkit-transition: .75s all;
-	-o-transition: .75s all;
-	transition: .75s all;
+  -webkit-transition: .15s all , .75s background;
+  -o-transition: .15s all, .75s background;
+  transition: .15s all, .75s background;
 	overflow: hidden;
 }
 .book-list:hover {

@@ -7,6 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      listTypeGrid: false,
       data: [],
       isPreview: false,
       book: '',
@@ -17,6 +18,7 @@ class App extends React.Component {
       filterTypes: [],
       filterData: []
     }
+    this.switchListToGrid = this.switchListToGrid.bind(this);
     this.previewShow = this.previewShow.bind(this);
     this.previewHide = this.previewHide.bind(this);
     this.onKeyDownPreviewHide = this.onKeyDownPreviewHide.bind(this);
@@ -48,6 +50,14 @@ class App extends React.Component {
     // console.log('app go ', this.state.book, this.state.bookGuid)
     console.log('app update')
     console.log(this.state)
+  }
+
+  switchListToGrid() {
+    this.setState({
+      listTypeGrid: !this.state.listTypeGrid
+    })
+    var element = document.getElementById('body');
+    scrollTo(element, 0, 100);
   }
 
   bookGoNav(guid){   
@@ -246,50 +256,73 @@ class App extends React.Component {
     const that = this;
     let isPreview = this.state.isPreview;
     return (
-      <div className="grid">
+      <div className="app-wrap">
+        <header className="header">
+          {/*<div className="">AMIQ 邏輯教具租借 (90本)(共六階，每一階15本)</div>*/}
+          <span className="site-title">
+            {/*<img className="site-logo" src="img/site-logo.png" /> */}
+            邏輯教具 AMIQ 
+          </span>
 
-        {/*
-        <img className="amiq" src="img/amiq.jpg" />
-        <iframe className="video" src="https://www.youtube.com/embed/5MqM41gZGOM" frameborder="0" allowfullscreen></iframe>
-        */}
-
-        <div className="filter">
-          <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
-          <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
-          <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
-        </div>
-
-        <div className="gridBook">
-
-          {this.state.data.map(stage => (
-            <section key={stage.stage} className={`section section-${stage.stage}`}>
-              <a className={`stage-bg stage-bg-${stage.stage}`} onClick={() => this.toggleBooksHandler(stage.stage)}>
-                <h2>第 {stage.stage} 階（{stage.stageName}）</h2>
-                <p>{stage.content}</p>
-              </a>            
-                {this.renderBooksList(stage.books)}
-                {this.renderBooksGrid(stage.books)}
-            </section>
-          ))}
-        </div>
-          
-        {isPreview ? 
-          <div ref="preview" id="preview" className="preview animated zoomIn">
-            <Preview 
-              book={that.state.book} 
-              previewGuid={that.state.book.guid} 
-              bookGoNav={that.bookGoNav} 
-              bookContent={that.state.bookContent}
-              bookTopics={that.state.bookTopics}
-               />
+          <div>
+          <span className="list-type-menu">
+            <a className="rent-rule">租借說明</a>
+            <a onClick={() => this.switchListToGrid()}>
+              {/*模式*/} 
+              {this.state.listTypeGrid ?
+                <i className="fa fa-list-ul" aria-hidden="true"></i>
+                :
+                <i className="fa fa-th" aria-hidden="true"></i>
               }
-            <div className="closePreview" onClick={() => this.previewHide()}>
-              <i className="fa fa-times" aria-hidden="true"></i>
-            </div>
+            </a>
+            <a><i className="fa fa-filter" aria-hidden="true"></i></a>
+          </span>
           </div>
-          : ''       
-        }
+        </header>
+        <div className="grid">
 
+          {/*
+          <img className="amiq" src="img/amiq.jpg" />
+          <iframe className="video" src="https://www.youtube.com/embed/5MqM41gZGOM" frameborder="0" allowfullscreen></iframe>
+          */}
+
+          {/*<div className="filter">
+            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
+            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
+            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+          </div>*/}
+
+          <div className="gridBook">
+
+            {this.state.data.map(stage => (
+              <section key={stage.stage} className={`section section-${stage.stage}`}>
+                <a className={`stage-bg stage-bg-${stage.stage}`} onClick={() => this.toggleBooksHandler(stage.stage)}>
+                  <h2>AMIQ 第 {stage.stage} 階（{stage.stageName}）</h2>
+                  <p>{stage.content}</p>
+                </a>            
+                {this.state.listTypeGrid ? this.renderBooksGrid(stage.books) : this.renderBooksList(stage.books)}
+              </section>
+            ))}
+          </div>
+            
+          {isPreview ? 
+            <div ref="preview" id="preview" className="preview animated zoomIn">
+              <Preview 
+                book={that.state.book} 
+                previewGuid={that.state.book.guid} 
+                bookGoNav={that.bookGoNav} 
+                bookContent={that.state.bookContent}
+                bookTopics={that.state.bookTopics}
+                 />
+                }
+              <div className="closePreview" onClick={() => this.previewHide()}>
+                <i className="fa fa-times" aria-hidden="true"></i>
+              </div>
+            </div>
+            : ''       
+          }
+
+        </div>
       </div>
     )
   }
