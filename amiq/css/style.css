@@ -93,9 +93,9 @@ p {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	-webkit-transition: .5s all;
-	-o-transition: .5s all;
-	transition: .5s all;
+	-webkit-transition: .25s all;
+	-o-transition: .25s all;
+	transition: .25s all;
 	cursor: pointer;
 }
 .item:hover {
@@ -369,17 +369,34 @@ p {
 .pos {
 	position: absolute;
 	width: 23.6%;
-    height: 18.5%;
+  height: 18.5%;
 /*	border: 1px solid rgba(255,255,255,1);
 */	color: #fff;
 	box-sizing: border-box;
-	overflow: auto;
+	overflow: hidden;
+  cursor: zoom-in;
 	-webkit-transition: .25s all;
 	-o-transition: .25s all;
 	transition: .25s all;
 /*	-webkit-animation: ease-in-out;
 	-o-animation: ease-in-out;
 	animation: .25s fadeOut ease-in;*/
+}
+.pos {
+  display: block;
+  text-align: center;
+  -webkit-transition: .25s all;
+  -o-transition: .25s all;
+  transition: .25s all;
+}
+.pos .zoom-in {
+  display: none;
+  font-size: 5vw;
+  line-height: 18.5vw !important;
+  color: rgba(0,0,0,.75);
+}
+.pos:hover .zoom-in {
+  display: inline;
 }
 .topic-info {
 	width: 100%;
@@ -401,13 +418,11 @@ p {
 	/*display: none;*/
 }
 .pos0 {
-	display: none;
+	/*display: none;*/
 	top: 2.5%;
     left: 50.7%;
     width: 47.8%;
     height: 29.4%;
-    padding: 1.5em;
-    background-color: rgba(0,0,0,.5);
 }
 .pos1 {
 	top: 2.5%;
@@ -663,12 +678,20 @@ p {
   } 
 }
 /*------------------------------------*/
+@media screen and (max-width: 374px)  {
+  /*iPhone5*/
+  body {
+    font-size: .875em;
+  }
+}
 @media screen and (max-width: 479px)  {
 	.item {
 		padding: 2.5em .75em 0 .75em;
 	}
 	.item-grid .info {
 		margin-left: 2em;
+    margin-top: 1.25em;
+    line-height: 1.5;
 	}
 }
 @media screen and (min-width: 480px) and (max-width: 1023px )  {
@@ -852,7 +875,26 @@ p {
 }
 
 .filter {
-	margin-bottom: 1em;
+  position: fixed;
+  top: 3.5em;
+  right: 0;
+  right: -450px;
+  z-index: 20;
+  margin-bottom: 1em;
+  padding: 1em;
+  width: calc(100vw - 110px);
+  max-width: 360px;
+  height: calc(100vh - 3.5em);
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 20px rgba(0,0,0,.35);
+  box-shadow: 0 0 20px rgba(0,0,0,.35);
+  -webkit-transition: .5s all ease-out;
+  -o-transition: .5s all ease-out;
+  transition: .5s all ease-out;
+  overflow: auto;
+}
+.filter.open {
+  right: 0;
 }
 
 .filter input {
@@ -861,7 +903,10 @@ p {
 .filter label {
 	display: inline-block;
 	margin-right: .25em;
+  margin-bottom: .25em;
 	padding: .25em 1em;
+  font-size: .875em;
+  color: #343a40;
 	border: 1px solid #ccc;
 	border-radius: .25em;
 	cursor: pointer;
@@ -870,17 +915,17 @@ p {
 	transition: .15s all;
 }
 .filter :checked + label {
-	border-color: #333;
-	background-color: #333;
+	border-color: #343a40;
+	background-color: #343a40;
 	color: #fff;
 }
 
 .book-list {
 	padding: 1em;
 	border-bottom: 1px dotted #ccc;
-  -webkit-transition: .15s all , .75s background;
-  -o-transition: .15s all, .75s background;
-  transition: .15s all, .75s background;
+  -webkit-transition: .25s all , .75s background;
+  -o-transition: .25s all, .75s background;
+  transition: .25s all, .75s background;
 	overflow: hidden;
 }
 .book-list:hover {
