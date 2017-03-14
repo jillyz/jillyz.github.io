@@ -164,9 +164,16 @@ p {
 	padding: 1em 0 .5em 0;
 }
 .subject {
-/*	display: block;
-*/	padding-top: .25em;
 	color: #c03;
+}
+.gridBook .subject {
+	display: block;
+}
+.gridBook .en {
+	display: block;
+}
+.gridBook .info {
+	line-height: 1.25;
 }
 .subject.fixed {
 	display: none;
@@ -872,7 +879,7 @@ p {
 .book-list .id,
 .book-list .en
  {
- 	display: inline-block;
+ 	display: inline;
 }
 .book-list .id {
 	width: 3em;
