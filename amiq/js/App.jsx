@@ -19,6 +19,7 @@ class App extends React.Component {
     }
     this.previewShow = this.previewShow.bind(this);
     this.previewHide = this.previewHide.bind(this);
+    this.onKeyDownPreviewHide = this.onKeyDownPreviewHide.bind(this);
     this.toggleBooksHandler = this.toggleBooksHandler.bind(this);
     this.bookGoNav = this.bookGoNav.bind(this);
     this.filterTypes = this.filterTypes.bind(this);
@@ -173,6 +174,14 @@ class App extends React.Component {
     })
   }
 
+  onKeyDownPreviewHide(e){
+    console.log('keydown')
+    //ESC
+    if(e.keyCode === 27) {
+      this.previewHide();
+    }
+  }
+
   typesClassName(typeIds, stageId, guid){
     var classNames = 'books books-' + stageId + ' book-guid-' + guid;
     if(typeIds !== undefined) {
@@ -253,11 +262,12 @@ class App extends React.Component {
         <div className="gridBook">
 
           {this.state.data.map(stage => (
-            <section key={stage.stage} className="section">
+            <section key={stage.stage} className={`section section-${stage.stage}`}>
               <a className={`stage-bg stage-bg-${stage.stage}`} onClick={() => this.toggleBooksHandler(stage.stage)}>
                 <h2>第 {stage.stage} 階（{stage.stageName}）</h2>
                 <p>{stage.content}</p>
               </a>            
+                {this.renderBooksList(stage.books)}
                 {this.renderBooksGrid(stage.books)}
             </section>
           ))}
