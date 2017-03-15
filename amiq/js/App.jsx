@@ -91,7 +91,7 @@ class App extends React.Component {
   }
 
   scrollToBook(guid){
-    var top = $('.book-guid-' + guid).offset().top;
+    var top = $('.book-guid-' + guid).offset().top - 50;
     $('body').scrollTop( top );
   }
 
@@ -280,7 +280,7 @@ class App extends React.Component {
           {/*<div className="">AMIQ 邏輯教具租借 (90本)(共六階，每一階15本)</div>*/}
           <span className="site-title">
             {/*<img className="site-logo" src="img/site-logo.png" /> */}
-            邏輯教具 AMIQ  {isSafari ? <div className="dontUseSafari">Hi～您目前使用的瀏覽器為 Safari ， 建議您使用 Chrome 瀏覽唷 (*´∀`)~♥</div> : ''}
+            邏輯教具 AMIQ  {isSafari ? <div className="dontUseSafari">Hi～您目前使用的瀏覽器為 Safari ， 建議您使用 Chrome 瀏覽唷 </div> : ''}
           </span>
 
           <div>
@@ -334,7 +334,6 @@ class App extends React.Component {
                 bookContent={that.state.bookContent}
                 bookTopics={that.state.bookTopics}
                  />
-                }
               <div className="closePreview" onClick={() => this.previewHide()}>
                 <i className="fa fa-times" aria-hidden="true"></i>
               </div>
