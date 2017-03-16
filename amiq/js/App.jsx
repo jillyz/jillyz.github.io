@@ -54,6 +54,16 @@ class App extends React.Component {
     // console.log('app go ', this.state.book, this.state.bookGuid)
     console.log('app update')
     console.log(this.state)
+
+    drift.on('ready',function(api){
+      drift.on('sidebarClose',function(e){
+        if(e.data.widgetVisible){
+          this.setState({
+            filterOpen: false
+          })
+        }
+      })
+    })
   }
 
   switchListToGrid() {
@@ -191,6 +201,12 @@ class App extends React.Component {
       bookGuid: book.guid
     })
 
+
+    drift.on('ready',function(api, payload) {
+      api.widget.hide();
+      api.sidebar.close()
+    })
+
     console.log('previewShow', book, this.state)
   }
 
@@ -199,6 +215,10 @@ class App extends React.Component {
     this.setState({
       isPreview: false,
       book: ''
+    })
+
+    drift.on('ready',function(api, payload) {
+      api.widget.show();
     })
   }
 
