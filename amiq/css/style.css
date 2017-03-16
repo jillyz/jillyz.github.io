@@ -285,7 +285,7 @@ p {
 	z-index: 5;
 	width: 110%;
 	padding: 0;
-	height: 2.4em;
+	height: 2.4rem;
 	background-color: #f1e8d6;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -913,14 +913,19 @@ p {
 }
 
 .closePreview {
-	display: inline-block;
-	position: fixed;
-	top: 0;
-	right: 0;
-	z-index: 10;
-	padding: .75em 1.5em;
-	color: #8c8174;
-	cursor: pointer;
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  padding: 1em 2em;
+  color: #8c8174;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .closePreview {
+    padding: .75em 1em;
+  } 
 }
 .preview-jump a:hover,
 .closePreview:hover {
@@ -930,13 +935,12 @@ p {
 .filter {
   position: fixed;
   top: 3.5em;
-  right: 0;
   right: -450px;
   z-index: 20;
   margin-bottom: 1em;
   padding: 2em;
   max-width: 320px;
-  max-width: calc(100vw - 110px);
+  max-width: calc(100vw - 150px);
   height: calc(100vh - 3.5em);
   -webkit-transition: .35s all ease-out;
   -o-transition: .35s all ease-out;
