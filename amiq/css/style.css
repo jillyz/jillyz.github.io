@@ -151,7 +151,9 @@ p {
 	/*margin-top: 1em;*/
 	margin-bottom: 1px;
 	padding: 1em 2em;
+  /*background-color: #efefef;*/
 	color: #fff;
+  /*border-left: 10px solid;*/
 }
 .stage-bg-1 {
 	background-color: #3aa241;
@@ -171,6 +173,30 @@ p {
 .stage-bg-6{
 	background-color: #00b0d9;
 }
+/*.stage-bg-1 {
+  border-color: #3aa241;
+  color: #3aa241;
+}
+.stage-bg-2 {
+  border-color: #1cbcb4;
+  color: #1cbcb4;
+}
+.stage-bg-3 {
+  border-color: #ef452e;
+  color: #ef452e;
+}
+.stage-bg-4{
+  border-color: #fb8809;
+  color: #fb8809;
+}
+.stage-bg-5 {
+  border-color: #056abc;
+  color: #056abc;
+}
+.stage-bg-6{
+  border-color: #00b0d9;
+  color: #00b0d9;
+}*/
 .books {
 	display: inline;
 	-webkit-transition: .25s all;
@@ -697,10 +723,16 @@ p {
   } 
 }
 /*------------------------------------*/
-@media screen and (max-width: 374px)  {
+@media screen and (max-width: 400px)  {
   /*iPhone5*/
   body {
     font-size: .875em;
+  }
+}
+@media screen and (max-width: 320px)  {
+  /*iPhone5*/
+  body {
+    font-size: .75em;
   }
 }
 @media screen and (max-width: 479px)  {
@@ -881,7 +913,7 @@ p {
 .closePreview {
 	display: inline-block;
 	position: fixed;
-	top: 0;
+	bottom: 0;
 	right: 0;
 	z-index: 10;
 	padding: .75em 1.5em;
