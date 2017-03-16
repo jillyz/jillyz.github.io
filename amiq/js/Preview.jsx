@@ -165,8 +165,12 @@ class Preview extends React.Component {
   }
 
   seeTopicDetail(posId) {
+    // $('.preview').animate({
+    //     scrollTop: $('#topic_' + posId).offset().top - 32 + $('.preview').scrollTop() -15
+    // }, 300);
+    var top = $('#topic_' + posId).position().top - 64;
     $('.preview').animate({
-        scrollTop: $('#topic_' + posId).offset().top - 32 + $('.preview').scrollTop() -15
+        scrollTop: top
     }, 300);
   }
 
