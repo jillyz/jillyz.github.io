@@ -933,8 +933,8 @@ p {
   z-index: 20;
   margin-bottom: 1em;
   padding: 1em;
-  width: calc(100vw - 110px);
-  max-width: 360px;
+  max-width: 320px;
+  max-width: calc(100vw - 110px);
   height: calc(100vh - 3.5em);
   -webkit-transition: .35s all ease-out;
   -o-transition: .35s all ease-out;
@@ -1017,6 +1017,12 @@ p {
 	.en {
 		display: block !important;
 	}
+  .id {
+    display: inline-block !important;
+    margin-bottom: .5em !important;
+    padding-top: .25em;
+    padding-bottom: .25em;
+  }
 }
 .book-list .id,
 .book-list .en
