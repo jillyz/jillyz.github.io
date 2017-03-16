@@ -11,7 +11,7 @@
 				"title": "生日派對",
 				"title-en": "Happy Birthday",
 				"subject": "物件形狀與顏色的基本認識",
-				"types": [1,3]
+				"types": [1,101,102,9901,9902]
 			},
 			{
 				"guid": 2,
@@ -20,7 +20,7 @@
 				"title": "我的數字不見了",
 				"title-en": "My numbers are gone",
 				"subject": "認識 1-12 數字概念",
-				"types": [1,2]
+				"types": [2,201,202,302,9901,9903,9904]
 			},
 			{
 				"guid": 3,
@@ -29,7 +29,7 @@
 				"title": "飛吧！多變的形狀",
 				"title-en": "Fly! Shapes",
 				"subject": "引發幼兒想像力及創造力",
-				"types": [2,3]
+				"types": [5,4,1,101,501,9901,9902,9905,9906,9907,9908]
 			},
 			{
 				"guid": 4,
@@ -38,7 +38,7 @@
 				"title": "數字生活化",
 				"title-en": "The numbers are everywhere",
 				"subject": "生活中處處有數字",
-				"type": [1,3]
+				"types": [1,2,201,203,9901,9904,9903,9909,9910,9911]
 			},
 			{
 				"guid": 5,
@@ -46,7 +46,8 @@
 				"stage": 1,
 				"title": "耍寶搞笑的Mina",
 				"title-en": "Mina's dancing up and down",
-				"subject": "方位及方向和動作聯想的概念"
+				"subject": "方位及方向和動作聯想的概念",
+				"types": [1,6,102,103,104,502,503,601,602,9901,99011,9902,9903]
 			},
 			{
 				"guid": 6,
@@ -54,7 +55,8 @@
 				"stage": 1,
 				"title": "我想長大去上學",
 				"title-en": "I grew up",
-				"subject": "增進生活認知的思考力"
+				"subject": "增進生活認知的思考力",
+				"types": [1,5,502,9902,9904,9906,9912,9913,9915]
 			},
 			{
 				"guid": 7,
@@ -62,7 +64,8 @@
 				"stage": 1,
 				"title": "魔幻的迷宮冒險",
 				"title-en": "Magic labyrinth",
-				"subject": "路徑方向的概念"
+				"subject": "路徑方向的概念",
+				"types": [9901,503,602]
 			},
 			{
 				"guid": 8,
@@ -70,7 +73,8 @@
 				"stage": 1,
 				"title": "你往哪個方向走？",
 				"title-en": "Walk back and forth",
-				"subject": "學習空間概念"
+				"subject": "學習空間概念",
+				"types": []
 			},
 			{
 				"guid": 9,
@@ -78,7 +82,8 @@
 				"stage": 1,
 				"title": "快樂的小園丁",
 				"title-en": "Happy young gardeners",
-				"subject": "每個主題所需要的物品或器具的認識"
+				"subject": "每個主題所需要的物品或器具的認識",
+				"types": []
 			},
 			{
 				"guid": 10,
@@ -86,7 +91,8 @@
 				"stage": 1,
 				"title": "有趣的數數遊戲",
 				"title-en": "Counting game",
-				"subject": "數數及加法的基本概念"
+				"subject": "數數及加法的基本概念",
+				"types": []
 			},
 			{
 				"guid": 11,
@@ -94,7 +100,8 @@
 				"stage": 1,
 				"title": "莉莉的新生活",
 				"title-en": "Lily's new life",
-				"subject": "推理的基本概念"
+				"subject": "推理的基本概念",
+				"types": []
 			},
 			{
 				"guid": 12,
@@ -102,7 +109,8 @@
 				"stage": 1,
 				"title": "我和你一樣哦！",
 				"title-en": "The same with you",
-				"subject": "認識同類和不同類的概念"
+				"subject": "認識同類和不同類的概念",
+				"types": []
 			},
 			{
 				"guid": 13,
@@ -110,7 +118,8 @@
 				"stage": 1,
 				"title": "舞動的線條",
 				"title-en": "Dancing lines",
-				"subject": "辨識圖形變化"
+				"subject": "辨識圖形變化",
+				"types": []
 			},
 			{
 				"guid": 14,
@@ -118,7 +127,8 @@
 				"stage": 1,
 				"title": "春花百開",
 				"title-en": "Spring flowers",
-				"subject": "分辨花草的形狀與顏色"
+				"subject": "分辨花草的形狀與顏色",
+				"types": []
 			},
 			{
 				"guid": 15,
@@ -126,7 +136,8 @@
 				"stage": 1,
 				"title": "四季",
 				"title-en": "Four Seasons",
-				"subject": "觀察四季與場景景物的變化"
+				"subject": "觀察四季與場景景物的變化",
+				"types": []
 			}
 		]
 	},

@@ -115,14 +115,15 @@ class App extends React.Component {
     var arr = $('.filter:checked').map(function() {
       return parseInt(this.value);
     }).get();
+    console.log(arr)
 
     if(arr.length > 0) {
 
       var showTypes = [];
       var hideTypes = [];
       arr.map(id => {
-        showTypes.push('.books.isType' + id);
-        hideTypes.push('.books:not(.isType' + id + ')');
+        showTypes.push('.books.isType_' + id);
+        hideTypes.push('.books:not(.isType_' + id + ')');
       })
 
       var elem = showTypes.toString();
@@ -237,7 +238,7 @@ class App extends React.Component {
     var classNames = 'books books-' + stageId + ' book-guid-' + guid;
     if(typeIds !== undefined) {
       typeIds.map(id => {
-        classNames = classNames + ' isType' + id;
+        classNames = classNames + ' isType_' + id;
       })      
     }
     return classNames;
@@ -335,9 +336,11 @@ class App extends React.Component {
           */}
 
           <div className={this.state.filterOpen ? 'filter open' : 'filter'}>
-            <input type="checkbox" value="1" id="type1" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type1">分類測試 1</label>
-            <input type="checkbox" value="2" id="type2" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type2">分類測試 2</label>
-            <input type="checkbox" value="3" id="type3" className="filter" onChange={() => this.filterTypes()} /><label htmlFor="type3">分類測試 3</label>
+            {window.tags.map(item => (
+              <span>
+                <input type="checkbox" value={item.id} id={`tag_${item.id}`} className="filter" onChange={() => this.filterTypes()} /><label htmlFor={`tag_${item.id}`}>{item.name}</label>
+              </span>
+            ))}
           </div>
 
           <div className={this.state.filterOpen ? 'gridBook small' : 'gridBook'}>
