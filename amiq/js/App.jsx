@@ -48,6 +48,7 @@ class App extends React.Component {
       }
     });
 
+    this.onError();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -64,6 +65,8 @@ class App extends React.Component {
         }
       })
     })
+
+    this.onError();
   }
 
   switchListToGrid() {
@@ -240,8 +243,13 @@ class App extends React.Component {
     return classNames;
   }
 
+  onError(){
+    $("img").error(function(){
+        $(this).unbind("error").attr("src", "img/content/none.jpg");
+    });
+  }
+
   renderBooksGrid(data){
-    const DEFAULT_IMAGE = '/img/content/none.jpg';
     return (
       data.map(book => (
         <div ref={`books-${book.stage}`} className={this.typesClassName(book.types, book.stage, book.guid)}>
@@ -257,7 +265,7 @@ class App extends React.Component {
               </span>
             </div>
             <div ref="preview" className="topics">
-              <img src={`img/content/amiq${book.id}.jpg`} onError={()=>{this.src='DEFAULT_IMG'}} />
+              <img src={`img/content/amiq${book.id}.jpg`} />
             </div>
           </div>
         </div>
