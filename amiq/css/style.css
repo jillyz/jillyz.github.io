@@ -1099,7 +1099,7 @@ p {
     z-index: 20;
     margin-bottom: 1em;
     padding: 2em;
-    max-width: 320px;
+    width: 320px;
     max-width: calc(100vw - 150px);
     height: calc(100vh - 3.5em);
     -webkit-transition: .35s all ease-out;
