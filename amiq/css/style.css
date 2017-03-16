@@ -249,7 +249,7 @@ p {
     transition: .35s all;
   }
   .gridBook.small {
-    width: calc(100vw - 480px);
+    width: calc(100vw - 420px);
   }
 }
 @media screen and (max-width: 1365px) {
