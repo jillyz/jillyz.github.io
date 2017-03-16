@@ -15,7 +15,6 @@ class App extends React.Component {
       bookId: '',
       bookGuid: '',
       bookContent: '',
-      bookTopics: [],
       filterOpen: false,
       filterTypes: [],
       filterData: [],
@@ -363,7 +362,6 @@ class App extends React.Component {
                 previewGuid={that.state.book.guid} 
                 bookGoNav={that.bookGoNav} 
                 bookContent={that.state.bookContent}
-                bookTopics={that.state.bookTopics}
                  />
               <div className="closePreview" onClick={() => this.previewHide()}>
                 <i className="fa fa-times" aria-hidden="true"></i>
