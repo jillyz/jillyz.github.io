@@ -31,6 +31,8 @@ p {
   z-index: 90;
   background-color: #fff;
   color: #343a40;
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,.15);
+  box-shadow: 0 0 5px rgba(0,0,0,.15);
 }
 .site-title {
   display: block;
@@ -242,7 +244,7 @@ p {
 }
 @media screen and (min-width: 1366px) {
   .gridBook {
-    width: calc(100vw - 5.5em);
+    width: calc(100vw - 4em);
     background-color: #fff;
     -webkit-transition: .5s all;
     -o-transition: .35s all;
@@ -741,8 +743,8 @@ p {
 	}
 	.item-grid .info {
 		margin-left: 2em;
-    margin-top: 1.25em;
-    line-height: 1.5;
+	    margin-top: 1.25em;
+	    line-height: 1.5;
 	}
 }
 @media screen and (min-width: 480px) and (max-width: 1023px )  {
@@ -752,7 +754,7 @@ p {
 }
 @media screen and (min-width: 1024px)  {
 	.gridBook {
-		padding: 0 2em;
+		padding: 2em;
 	}
 	.item {
 		width: 33.33%;
@@ -932,7 +934,7 @@ p {
   right: -450px;
   z-index: 20;
   margin-bottom: 1em;
-  padding: 1em;
+  padding: 2em;
   max-width: 320px;
   max-width: calc(100vw - 110px);
   height: calc(100vh - 3.5em);
