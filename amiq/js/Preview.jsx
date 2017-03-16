@@ -225,8 +225,7 @@ class Preview extends React.Component {
     const topics = this.state.topics;
     const content = this.state.content;
     const stageId = this.props.book.stage;
-
-   
+    const types = this.props.book.types;
 
     const titleFixed = this.state.titleFixed
     const bookClassName = (
@@ -235,6 +234,7 @@ class Preview extends React.Component {
       :
       'book-info stage stage-' + stageId
     )
+
     return (
       <div className="">
         <div id="bookInfo" className={`book-info stage stage-${stageId}`}>
@@ -245,11 +245,26 @@ class Preview extends React.Component {
             <span className={`subject book-subject fixed`}>
               {this.props.book.subject}
             </span>
-          </div>        
-          <span className={`subject book-subject`}>
+          </div>
+          <div className={`subject book-subject`}>
             {this.props.book.subject}
-          </span>
+          </div>
+
           {content ? <span className="book-content">{content}</span> : ''}
+          {types ? 
+            <div className="subject">
+              <small>
+              {types.map(tagId => ( 
+                window.tags.map(tag => {
+                  if (tag.id == tagId) {
+                    return tag.name + ' / '
+                  }
+                })
+              ))}
+              </small>
+            </div>
+            : ''
+          }
         </div>
 
         <div id="bookInfoFixed" className={`book-info fixed stage stage-${stageId}`}>
