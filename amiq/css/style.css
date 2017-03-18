@@ -290,6 +290,45 @@ p {
 .subject {
     color: #c03;
 }
+.rent-info {
+    margin-top: 1em;
+    font-size: .8125em;
+    color: #d9480f;
+}
+.rent-state {
+    /*padding: .7em 1.25em;*/
+    margin-top: -1px;
+    height: 1.5em;
+    border: 1px dotted;
+    overflow: hidden;
+}
+.rent-state.already {
+    font-weight: bold;
+    border-color: #d6336c;
+    color: #d6336c;
+}
+.rent-state.reserve {
+    border-color: #868e96;
+    color: #868e96;
+}
+.rent-state .state {
+    display: inline-block;
+    margin-right: 1em;
+    padding: .25em 1em;
+    border-right: 1px solid rgba(255,255,255,.5);    
+    color: #fff;
+}
+.rent-state.already .state {
+    background-color: #d6336c;
+}
+.rent-state.reserve .state {
+    background-color: #868e96;
+}
+/*.item-grid .rent-info {
+    position: absolute;
+    top: -1px;
+    left: 60px;
+}*/
 
 @media screen and (min-width: 1366px) {
     .gridBook {
@@ -322,6 +361,11 @@ p {
 
 .gridBook .info {
     line-height: 1.25;
+}
+
+.item-grid .info {
+    margin-top: 1em;
+    line-height: 1.5;
 }
 
 .subject.fixed {

@@ -318,6 +318,10 @@ class App extends React.Component {
               </div>
               : ''
             }
+            <div className="rent-info">
+            {book.id == 101 ? <div className="rent-state already"><span className="state">已借出</span>2017/4/1 ~ 2017/4/8</div> : '' }
+            {book.id == 102 || book.id == 101 ? <div className="rent-state reserve"><span className="state">已預約</span>2017/4/1 ~ 2017/4/8</div> : '' }
+            </div>
           </div>
         </div>
       ))
