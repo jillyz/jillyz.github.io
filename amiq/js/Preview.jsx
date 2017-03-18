@@ -168,16 +168,20 @@ class Preview extends React.Component {
     // $('.preview').animate({
     //     scrollTop: $('#topic_' + posId).offset().top - 32 + $('.preview').scrollTop() -15
     // }, 300);
-    var top = $('#topic_' + posId).position().top - 64;
+    
+    //var top = $('#topic_' + posId).position().top - 64;
+    var top = $('#topic_' + posId).offset().top - 32 + $('.preview').scrollTop() - 15;
     $('.preview').animate({
         scrollTop: top
     }, 300);
   }
 
   goTop() {
+    var top = $('#bookInfo').height() + 24;
     $('.preview').animate({
-        scrollTop: 0
+        scrollTop: top
     }, 300);
+    console.log('goTop , top:' , top)
   }
 
   goNext(){
@@ -225,7 +229,6 @@ class Preview extends React.Component {
     const topics = this.state.topics;
     const content = this.state.content;
     const stageId = this.props.book.stage;
-    const types = this.props.book.types;
 
     const titleFixed = this.state.titleFixed
     const bookClassName = (
@@ -234,6 +237,21 @@ class Preview extends React.Component {
       :
       'book-info stage stage-' + stageId
     )
+
+    const types = this.props.book.types;
+    // const tagNames = [];
+    // types.map(tagId => ( 
+    //   window.tags.map(tag => {
+    //     if (tag.id == tagId) {
+    //       tagNames.push(tag.name);
+    //     }
+    //   })
+    // ))
+    // const renderTags = (
+    //   types ?
+    //   <div className="subject"><small> + tagNames.toString() + </small></div>
+    //   : ''
+    // )
 
     return (
       <div className="">
@@ -252,12 +270,12 @@ class Preview extends React.Component {
 
           {content ? <span className="book-content">{content}</span> : ''}
           {types ? 
-            <div className="subject">
+            <div className="types">
               <small>
               {types.map(tagId => ( 
                 window.tags.map(tag => {
                   if (tag.id == tagId) {
-                    return tag.name + ' / '
+                    return tag.name + ' / ';
                   }
                 })
               ))}
@@ -330,6 +348,7 @@ class Preview extends React.Component {
                 </div>
               </div>
               */}
+              <span className="topic-id">{item.pos}</span>
               <i className="fa fa-plus-circle zoom-in" aria-hidden="true"></i>
             </a>
           ))}
@@ -338,7 +357,7 @@ class Preview extends React.Component {
 
         <div className="seeTopicItem">
           <div id="topic_0" className="topic-cover">
-            <div className="topic-title">封面</div>
+            <div className="topic-title"><strong>封面</strong></div>
             <div className={`seeTopic see0`} style={this.state.style} onClick={() => this.goTop()}></div>{/*img*/}
           </div>
           {topics.map(item => (
