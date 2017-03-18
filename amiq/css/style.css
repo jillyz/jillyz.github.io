@@ -42,7 +42,7 @@ p {
 .site-title {
     display: block;
     float: left;
-    padding: 1em;
+    padding: 1.25em;
 }
 
 .site-logo {
@@ -477,7 +477,24 @@ p {
 .topics-img {
     width: 100%;
 }
-
+.topic-id {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding:  0 .5em;
+    color: #fff !important;
+    font-size: .75em;
+    font-weight: bold;
+    background-color: rgba(0,0,0,.75);
+/*    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);*/
+    -webkit-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+}
 .ans ol,
 .ans li {
     margin: 0;
@@ -572,52 +589,52 @@ p {
 }
 
 .pos3 {
-    top: 34.3%;
+    top: 34.1%;
     left: 1.5%;
     height: 30.5%;
     width: 22.8%;
 }
 
 .pos4 {
-    top: 34.3%;
+    top: 34.1%;
     left: 25.7%;
     height: 30.5%;
 }
 
 .pos5 {
-    top: 34.3%;
+    top: 34.1%;
     left: 50.7%;
     height: 30.6%;
 }
 
 .pos6 {
-    top: 34.3%;
+    top: 34.1%;
     left: 75.7%;
     height: 30.5%;
     width: 22.8%;
 }
 
 .pos7 {
-    top: 67.3%;
+    top: 66.8%;
     left: 1.5%;
     height: 29.4%;
     width: 22.8%;
 }
 
 .pos8 {
-    top: 67.3%;
+    top: 66.8%;
     left: 25.7%;
     height: 29.4%;
 }
 
 .pos9 {
-    top: 67.3%;
+    top: 66.8%;
     left: 50.7%;
     height: 29.4%;
 }
 
 .pos10 {
-    top: 67.3%;
+    top: 66.8%;
     left: 75.7%;
     height: 29.4%;
     width: 22.8%;
@@ -1156,7 +1173,8 @@ p {
 
 .book-list .id,
 .book-list .title,
-.book-list .subject {
+.book-list .subject,
+.book-list .types {
     display: block;
 }
 
@@ -1168,11 +1186,16 @@ p {
 .en {
     font-weight: normal;
 }
-
+.types {
+    font-size: .8125em;
+    line-height: 1.5;
+    color: #aaa;
+}
 @media screen and (min-width: 768px) {
     .book-list .id,
     .book-list .title,
-    .book-list .subject {
+    .book-list .subject,
+    .book-list .types {
         float: left;
         width: 30%;
     }
@@ -1192,6 +1215,9 @@ p {
         margin-bottom: .5em !important;
         padding-top: .25em;
         padding-bottom: .25em;
+    }
+    .types {
+        margin-top: 1em;
     }
 }
 
@@ -1263,7 +1289,7 @@ p {
 }
 
 .book-list-stage-5 .id {
-    border-left-color: #056abc;
+    background-color: #056abc;
 }
 
 .book-list-stage-6 .id {
