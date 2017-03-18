@@ -68,7 +68,7 @@ $(function() {
                 obj['fromTime'] = data[i].fromTime;
                 obj['toime'] = data[i].toTime;
 
-                console.log(index, bookIds[j], data[i].fromTime, data[i].toTime)
+                // console.log(index, bookIds[j], data[i].fromTime, data[i].toTime)
                 arr[index] = obj;
             }
         }
