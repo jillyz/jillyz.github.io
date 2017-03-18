@@ -35,8 +35,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log('app mount')
-    console.log(this.state)
+    // console.log('app mount')
+    // console.log(this.state)
 
 
     var that = this;
@@ -56,8 +56,8 @@ class App extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     // console.log('app go ', this.state.book, this.state.bookGuid)
-    console.log('app update')
-    console.log(this.state)
+    // console.log('app update')
+    // console.log(this.state)
 
     drift.on('ready',function(api){
       drift.on('sidebarClose',function(e){
@@ -125,7 +125,7 @@ class App extends React.Component {
             bookGuid: guid
           })
           this.previewShow(book);
-          console.log('::: book', book)        }
+        }
       })
 
       this.scrollToBook(guid);
@@ -148,7 +148,7 @@ class App extends React.Component {
     var arr = $('.filter:checked').map(function() {
       return parseInt(this.value);
     }).get();
-    console.log(arr)
+    // console.log(arr)
 
     if(arr.length > 0) {
 
@@ -162,8 +162,8 @@ class App extends React.Component {
       var elem = showTypes.toString();
       var noElem = hideTypes.toString();
 
-      console.log(elem)
-      console.log(noElem)
+      // console.log(elem)
+      // console.log(noElem)
 
       // $('.books, .stage-bg').hide();
       $(noElem + ', .stage-bg').hide();
@@ -249,7 +249,7 @@ class App extends React.Component {
       api.sidebar.close()
     })
 
-    console.log('previewShow', book, this.state)
+    // console.log('previewShow', book, this.state)
   }
 
   previewHide(){
@@ -265,7 +265,7 @@ class App extends React.Component {
   }
 
   onKeyDownPreviewHide(e){
-    console.log('keydown')
+    // console.log('keydown')
     //ESC
     if(e.keyCode === 27) {
       this.previewHide();
