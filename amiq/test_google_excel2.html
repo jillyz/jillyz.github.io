@@ -11,9 +11,9 @@
     <script src="js/libs/jquery.min.js"></script>
     <script>
     
+    var getRentData = [];
 
     $(function() {
-        var getData = [];
         $.get(
             'https://spreadsheets.google.com/feeds/cells/1Hmw4yxk5pVyR7CA2XLsw93ozeFrrWVZB7cep_uyDEc4/1/public/values?alt=json',
             function(res) {
@@ -44,13 +44,13 @@
                     arr[i - 1] = obj;
                 }
                 delete arr[-1];
-                getData = arr;
+                getRentData = arr;
 
-                var rentBooksBackTime = get_rentBooksBackTime(getData);
-                var tempBooksRent = get_tempBooksRent(getData);
+                var rentBooksBackTime = get_rentBooksBackTime(getRentData);
+                var tempBooksRent = get_tempBooksRent(getRentData);
                 var rentData = uniqueArray(tempBooksRent);
 
-                console.log('getData', getData)
+                console.log('getData', getRentData)
                 console.log('rentBooksBackTime', rentBooksBackTime)
                 console.log('tempBooksRent', tempBooksRent)
                 console.log('unique', rentData)
