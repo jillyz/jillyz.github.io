@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+
+<body id="body">
+    test_google_excel
+    <script src="js/libs/jquery.min.js"></script>
+    <script>
+    var getData = [];
+    var tempBooksRent = [];
+
+    $(function() {
+        $.get(
+            'https://spreadsheets.google.com/feeds/cells/1Hmw4yxk5pVyR7CA2XLsw93ozeFrrWVZB7cep_uyDEc4/1/public/values?alt=json',
+            function(res) {
+                // console.log([1])
+                var cols = 8;
+                var data = res.feed.entry;
+                var arr = [];
+                var size = data.length / cols;
+
+                for (var i = 0; i < size; i++) {
+                    var obj = {}
+                    for (var item in data) {
+                        var index = parseInt(item / cols);
+                        if (item % cols == 0 && index == i) obj['time'] = data[item].content.$t;
+                        if (item % cols == 1 && index == i) obj['user'] = data[item].content.$t;
+                        if (item % cols == 2 && index == i) obj['fromTime'] = data[item].content.$t;
+                        if (item % cols == 3 && index == i) obj['toTime'] = data[item].content.$t;
+                        if (item % cols == 4 && index == i) obj['days'] = data[item].content.$t;
+                        if (item % cols == 5 && index == i) obj['notBack'] = data[item].content.$t;
+                        if (item % cols == 6 && index == i) obj['bookTotal'] = data[item].content.$t;
+                        if (item % cols == 7 && index == i) {
+                            var arrIds = []
+                            var str = data[item].content.$t;
+                            arrIds = str.split(', ');
+                            obj['bookIds'] = arrIds;
+                        }
+                    }
+                    arr[i - 1] = obj;
+                }
+                delete arr[-1];
+                getData = arr;
+
+                console.log(getData);
+
+                get_tempBooksRent();
+
+                var bookRent = uniqueArray(tempBooksRent);
+
+                console.log('unique', bookRent)
+
+            }
+        )
+
+        function get_tempBooksRent() {
+            for (var i = 0; i < getData.length; i++) {
+                var bookIds = getData[i].bookIds;
+                for (var j = 0; j < getData[i].bookIds.length; j++) {
+                    tempBooksRent.push(parseInt(bookIds[j]));
+                }
+            }
+        }
+
+        function uniqueArray(array) {
+            var r = [];
+            for (var i = 0, l = array.length; i < l; i++) {
+                for (var j = i + 1; j < l; j++)
+                    if (array[i] === array[j]) j = ++i;
+                r.push(array[i]);
+            }
+            return r;
+        }
+
+
+        // console.log(tempBooksRent);
+
+    });
+    </script>
+</body>
+
+</html>
