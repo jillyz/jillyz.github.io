@@ -3,10 +3,13 @@
 // GET RENT DATA
 //----------------------------------------
 
-var getRentData = [];
-var rentData = [];
+  var getRentData = [];
+  var rentData = [];
+  var rentBookTimeRagne = [];
 
 $(function() {
+
+
     $.get(
         'https://spreadsheets.google.com/feeds/cells/1Hmw4yxk5pVyR7CA2XLsw93ozeFrrWVZB7cep_uyDEc4/1/public/values?alt=json',
         function(res) {
@@ -40,11 +43,38 @@ $(function() {
             getRentData = arr;
 
             var rentBooksBackTime = get_rentBooksBackTime(getRentData);
+            rentBookTimeRagne = get_rentBooksTimeRange(getRentData);
             var tempBooksRent = get_tempBooksRent(getRentData);
             rentData = uniqueArray(tempBooksRent);
 
+            // console.log('getRentData', getRentData)
+            // console.log('rentBooksBackTime', rentBooksBackTime)
+            // console.log('rentBookTimeRagne', rentBookTimeRagne)
+
         }
     )
+
+    function get_rentBooksTimeRange(data) {
+        var arr = [];
+        var index = -1;
+        for (var i = 0; i < data.length; i++) {
+            var bookIds = data[i].bookIds;
+            for (var j = 0; j < bookIds.length; j++) {
+                // obj[bookIds][j] = data[i];
+                index++;
+                var obj = {};
+
+                obj['bookId'] = bookIds[j];
+                obj['fromTime'] = data[i].fromTime;
+                obj['toime'] = data[i].toTime;
+
+                console.log(index, bookIds[j], data[i].fromTime, data[i].toTime)
+                arr[index] = obj;
+            }
+        }
+
+        return arr;
+    }
 
     function get_rentBooksBackTime(data) {
         var arr = [];
