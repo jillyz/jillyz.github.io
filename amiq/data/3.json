@@ -4,74 +4,73 @@
 	"topics": [
 		{
 			"pos": 1,
-			"topic": "",
+			"topic": "找出相同的形狀",
 			"topicLong": "",
-			"point": "",
-			"skill": ""
+			"point": "培養孩子對各種圖形及形狀的基礎認知",
+			"skill": "增進對幾何圖形之觀察辨識能力"
 		},
 		{
 			"pos": 2,
-			"topic": "",
+			"topic": "找出相同的形狀",
 			"topicLong": "",
-			"point": "",
-			"skill": ""
+			"point": "培養孩子對各種圖形及形狀的基礎認知",
+			"skill": "增進對各種圖形之觀察辨識能力"
 		},
 		{
 			"pos": 3,
-			"topic": "",
+			"topic": "找出相同形狀、不同顏色",
 			"topicLong": "",
-			"point": "",
-			"skill": ""
+			"point": "培養孩子對圖形的辨識能力",
+			"skill": "增進對各種圖形之觀察辨識能力"
 		},
 		{
 			"pos": 4,
-			"topic": "",
+			"topic": "找出相同的物件",
 			"topicLong": "",
-			"point": "",
-			"skill": ""
+			"point": "培養孩子辨識不同種類之物品",
+			"skill": "增進對日常事物之觀察辨識能力"
 		},
 		{
 			"pos": 5,
-			"topic": "",
+			"topic": "猜猜正面是誰",
 			"topicLong": "",
-			"point": "",
-			"skill": ""
+			"point": "培養孩子對物品正反面的觀察及識別",
+			"skill": "增進對事物之觀察組合與應用能力"
 		},
 		{
 			"pos": 6,
-			"topic": "",
+			"topic": "找出動物的頭",
 			"topicLong": "",
-			"point": "",
-			"skill": ""
+			"point": "培養孩子依據特徵對動物做出正確辨識",
+			"skill": "增進從部分推理到整體的觀察推理能力"
 		},
 		{
 			"pos": 7,
-			"topic": "",
+			"topic": "找出相同的積木造型",
 			"topicLong": "",
-			"point": "",
-			"skill": ""
+			"point": "培養孩子對圖形的辨識能力",
+			"skill": "增進對各種圖形之觀察辨識能力"
 		},
 		{
 			"pos": 8,
-			"topic": " 33333",
-			"topic": "",
-			"topicLong": "",
-			"point": "",
-			"skill": ""
+			"topic": "可以創造出什麼呢",
+			"topicLong": "利用這些材料可以創造出哪些東西呢？",
+			"point": "培養孩子對加工前後之物品做出正確之判斷識別",
+			"skill": "增進對各物品之觀察推理及綜合應用能力"
 		},
 		{
 			"pos": 9,
-			"topic": "",
-			"topicLong": "",
-			"point": "",
-			"skill": ""
+			"topic": "找出分解圖",
+			"topicLong": "請找出這些造型積木的分解圖",
+			"point": "培養孩子對各種積木組合之觀察推理",
+			"skill": "增進對各圖形分解重組之觀察推理能力"
 		},
 		{
 			"pos": 10,
-			"topic": "",
-			"topicLong": "",
-			"point": "",
-			"skill": ""
+			"topic": "找出材料",
+			"topicLong": "這些東西是用不同的工具和材料做成的，請找出這些材料",
+			"point": "培養孩子對加工前後之物品做出正確之判斷識別",
+			"skill": "增進對各物品之觀察推理及綜合應用能力"
 		}
 	]
 }
