@@ -9,12 +9,14 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: [],
-      listTypeGrid: false,
+      listTypeGrid: true,
+      showGridImage: false,
       isPreview: false,
       book: '',
       bookId: '',
       bookGuid: '',
       bookContent: '',
+      isFilter: false,
       filterOpen: false,
       filterTypes: [],
       filterData: [],
@@ -22,6 +24,7 @@ class App extends React.Component {
     }
     this.switchListToGrid = this.switchListToGrid.bind(this);
     this.switchFilterPanel = this.switchFilterPanel.bind(this);
+    this.filterIfOverlayThenHideDrift = this. filterIfOverlayThenHideDrift.bind(this);
     this.previewShow = this.previewShow.bind(this);
     this.previewHide = this.previewHide.bind(this);
     this.onKeyDownPreviewHide = this.onKeyDownPreviewHide.bind(this);
@@ -46,8 +49,9 @@ class App extends React.Component {
         window.bookData = response;
       }
     });
-
+    
     this.onError();
+    this.filterIfOverlayThenHideDrift();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -65,8 +69,35 @@ class App extends React.Component {
       })
     })
 
+    // if(this.state.filterOpen === true) {
+    //   $('.gridBook').fadeIn();
+    // }
+
     this.onError();
+    this.filterIfOverlayThenHideDrift();  
   }
+
+
+  filterIfOverlayThenHideDrift(){
+
+    const filterOpen = this.state.filterOpen;
+    const winW = $(window).width();
+
+    if(winW <= 1366) {
+      if(filterOpen === true) {
+        drift.on('ready',function(api, payload) {
+          api.widget.hide();
+          //api.sidebar.close()
+        })
+      } 
+      else {
+        drift.on('ready',function(api, payload) {
+          api.widget.show();
+        })
+      }
+    }
+  }
+
 
   switchListToGrid() {
     this.setState({
@@ -80,6 +111,7 @@ class App extends React.Component {
     this.setState({
       filterOpen: !this.state.filterOpen
     })
+    this.filterIfOverlayThenHideDrift();
   }
 
   bookGoNav(guid){   
@@ -108,6 +140,8 @@ class App extends React.Component {
   }
 
   filterTypes(){
+
+    this.refs.tags_all.checked = false;
 
     // console.log('!!! filterTypes')
 
@@ -139,7 +173,6 @@ class App extends React.Component {
       $('.books, .stage-bg').show();
     }
 
-    $('.gridBook').hide().fadeIn()
     $('body').animate({
         scrollTop: 0
     }, 250);
@@ -170,6 +203,12 @@ class App extends React.Component {
 
     // console.log('filterTypes' , filterTypes, arr)
     // console.log('filterData' , filterData)
+  }
+
+  clearFilterTypes(){
+    $('.filter.tag').prop('checked', false);
+    this.filterTypes();
+    this.refs.tags_all.checked = true;
   }
 
   // fetch(guid){
@@ -267,6 +306,18 @@ class App extends React.Component {
             <div ref="preview" className="topics">
               <img src={`img/content/amiq${book.id}.jpg`} />
             </div>
+            {book.types ? 
+              <div className="types">
+                {book.types.map(tagId => ( 
+                  window.tags.map(tag => {
+                    if (tag.id == tagId) {
+                      return tag.name + ' / ';
+                    }
+                  })
+                ))}
+              </div>
+              : ''
+            }
           </div>
         </div>
       ))
@@ -287,6 +338,18 @@ class App extends React.Component {
               <span className="subject">
                 {book.subject}
               </span>
+              {book.types ? 
+                <span className="types">
+                  {book.types.map(tagId => ( 
+                    window.tags.map(tag => {
+                      if (tag.id == tagId) {
+                        return tag.name + ' / ';
+                      }
+                    })
+                  ))}
+                </span>
+                : ''
+              }
             </div>
           </div>
         </div>
@@ -313,8 +376,10 @@ class App extends React.Component {
 
           <div>
           <span className="list-type-menu">
+            {/*
             <a className="rent-rule">租借</a>
             <a className="rent-rule">如何玩</a>
+            */}
             <a onClick={() => this.switchListToGrid()}>
               {/*模式*/} 
               {this.state.listTypeGrid ?
@@ -335,9 +400,10 @@ class App extends React.Component {
           */}
 
           <div className={this.state.filterOpen ? 'filter open' : 'filter'}>
+            <input type="checkbox" ref="tags_all" id="tags_all" className="filter" onChange={() => this.clearFilterTypes()} /><label htmlFor="tags_all">全部</label>
             {window.tags.map(item => (
               <span>
-                <input type="checkbox" value={item.id} id={`tag_${item.id}`} className="filter" onChange={() => this.filterTypes()} /><label htmlFor={`tag_${item.id}`}>{item.name}</label>
+                <input type="checkbox" value={item.id} id={`tag_${item.id}`} className="filter tag" onChange={() => this.filterTypes()} /><label htmlFor={`tag_${item.id}`}>{item.name}</label>
               </span>
             ))}
           </div>
