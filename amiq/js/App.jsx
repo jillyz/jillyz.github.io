@@ -286,9 +286,34 @@ class App extends React.Component {
     return classNames;
   }
 
+  renderBookRentInfo(rentBook){
+    const bookId = rentBook.bookId;
+    const fromTime = rentBook.fromTime;
+    const toTime = rentBook.toTime;
+    const isRented = Date.parse(rentBook.fromTime) < Date.parse(new Date());
+    if(!isRented) {
+      return(
+        <div className="rent-state reserve"><span className="state">已預約</span>{this.formatDateStr(fromTime)} ~ {this.formatDateStr(toTime)}</div>
+      )
+    } else {
+      return(
+        <div className="rent-state already"><span className="state">已借出</span>{this.formatDateStr(fromTime)} ~ {this.formatDateStr(toTime)}</div>
+      )
+    }
+  }
+
+  formatDateStr(dateStr) {
+    var arr = [];
+    arr = dateStr.split('/');
+    arr[1] = ( arr[1].length > 1 ? arr[1] : '0' + arr[1] );
+    arr[2] = ( arr[2].length > 1 ? arr[2] : '0' + arr[2] );
+    var str = arr.join('/');
+    return str;
+  }
+
   onError(){
-    $("img").error(function(){
-        $(this).unbind("error").attr("src", "img/content/none.jpg");
+    $('img').error(function(){
+        $(this).unbind('error').attr('src', 'img/content/none.jpg');
     });
   }
 
@@ -323,8 +348,18 @@ class App extends React.Component {
               : ''
             }
             <div className="rent-info">
+            {
+              rentBookTimeRagne.map(rentBook => (
+                (book.id == rentBook.bookId ? this.renderBookRentInfo(rentBook) : '')
+              ))
+            }
+                {/*
+                book.id == rentBook.bookId ? <div className="rent-state already"><span className="state">已借出</span>{rentBook.fromTime} ~ {rentBook.toTime}</div> : '' 
+                */}
+            {/*
             {book.id == 101 ? <div className="rent-state already"><span className="state">已借出</span>2017/4/1 ~ 2017/4/8</div> : '' }
             {book.id == 102 || book.id == 101 ? <div className="rent-state reserve"><span className="state">已預約</span>2017/4/1 ~ 2017/4/8</div> : '' }
+            */}
             </div>
           </div>
         </div>
@@ -481,6 +516,7 @@ class App extends React.Component {
                 {this.state.listTypeGrid ? this.renderBooksGrid(stage.books) : this.renderBooksList(stage.books)}
               </section>
             ))}
+
           </div>
             
           {isPreview ? 
