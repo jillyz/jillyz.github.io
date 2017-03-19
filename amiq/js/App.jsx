@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: [],
-      listTypeGrid: true,
+      listTypeGrid: false,
       showGridImage: false,
       isPreview: false,
       book: '',
@@ -31,10 +31,6 @@ class App extends React.Component {
     this.toggleBooksHandler = this.toggleBooksHandler.bind(this);
     this.bookGoNav = this.bookGoNav.bind(this);
     this.filterTypes = this.filterTypes.bind(this);
-    this.renderTags = this.renderTags.bind(this);
-    this.renderTags_main = this.renderTags_main.bind(this);
-    this.renderTags_sub1 = this.renderTags_sub1.bind(this); 
-    this.renderTags_sub2 = this.renderTags_sub2.bind(this); 
     // this.fetch = this.fetch.bind(this);
   }
 
@@ -84,27 +80,34 @@ class App extends React.Component {
     this.filterIfOverlayThenHideDrift();  
   }
 
-
   filterIfOverlayThenHideDrift(){
 
     const filterOpen = this.state.filterOpen;
+    const isPreview = this.state.isPreview;
     const winW = $(window).width();
 
-    if(winW <= 1366) {
-      if(filterOpen === true) {
-        drift.on('ready',function(api, payload) {
-          api.widget.hide();
-          //api.sidebar.close()
-        })
-      } 
-      else {
-        drift.on('ready',function(api, payload) {
-          api.widget.show();
-        })
+    if(isPreview) {
+      drift.on('ready',function(api, payload) {
+        api.widget.hide();
+        //api.sidebar.close()
+      })
+    } 
+    else {
+      if(winW <= 1366) {
+        if(filterOpen === true) {
+          drift.on('ready',function(api, payload) {
+            api.widget.hide();
+            //api.sidebar.close()
+          })
+        } 
+        else {
+          drift.on('ready',function(api, payload) {
+            api.widget.show();
+          })
+        }
       }
     }
   }
-
 
   switchListToGrid() {
     this.setState({
@@ -353,13 +356,6 @@ class App extends React.Component {
                 (book.id == rentBook.bookId ? this.renderBookRentInfo(rentBook) : '')
               ))
             }
-                {/*
-                book.id == rentBook.bookId ? <div className="rent-state already"><span className="state">已借出</span>{rentBook.fromTime} ~ {rentBook.toTime}</div> : '' 
-                */}
-            {/*
-            {book.id == 101 ? <div className="rent-state already"><span className="state">已借出</span>2017/4/1 ~ 2017/4/8</div> : '' }
-            {book.id == 102 || book.id == 101 ? <div className="rent-state reserve"><span className="state">已預約</span>2017/4/1 ~ 2017/4/8</div> : '' }
-            */}
             </div>
           </div>
         </div>
@@ -375,8 +371,9 @@ class App extends React.Component {
             <div className="info">
               <span className="id">{book.id}</span> 
               <strong className="title">
-                <span className="ch">{book.title}</span>
+                <span className="ch">{book.title}</span><br/>
                 <span className="en">{book['title-en']}</span>
+                
               </strong>        
               <span className="subject">
                 {book.subject}
@@ -393,6 +390,13 @@ class App extends React.Component {
                 </span>
                 : ''
               }
+              <span className="rent-info">
+              {
+                rentBookTimeRagne.map(rentBook => (
+                  (book.id == rentBook.bookId ? this.renderBookRentInfo(rentBook) : '')
+                ))
+              }
+              </span>
             </div>
           </div>
         </div>
