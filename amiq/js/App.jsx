@@ -534,6 +534,8 @@ class App extends React.Component {
             : ''       
           }
 
+          <iframe className="fill-form" src="https://docs.google.com/forms/d/e/1FAIpQLSdypAzaM8glHVhTUP9I4wNG1M-E9aUAujoAsB5qwiuAMCDEcQ/viewform"></iframe>
+
         </div>
         {this.state.showLoading ? <div className="loading-small"><Loading /></div> : ''} 
 
