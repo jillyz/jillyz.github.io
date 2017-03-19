@@ -31,6 +31,10 @@ class App extends React.Component {
     this.toggleBooksHandler = this.toggleBooksHandler.bind(this);
     this.bookGoNav = this.bookGoNav.bind(this);
     this.filterTypes = this.filterTypes.bind(this);
+    this.renderTags = this.renderTags.bind(this);
+    this.renderTags_main = this.renderTags_main.bind(this);
+    this.renderTags_sub1 = this.renderTags_sub1.bind(this); 
+    this.renderTags_sub2 = this.renderTags_sub2.bind(this); 
     // this.fetch = this.fetch.bind(this);
   }
 
@@ -52,6 +56,9 @@ class App extends React.Component {
     
     this.onError();
     this.filterIfOverlayThenHideDrift();
+
+    $('#tags_all').prop('checked', false);
+    
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -141,9 +148,7 @@ class App extends React.Component {
 
   filterTypes(){
 
-    this.refs.tags_all.checked = false;
-
-    // console.log('!!! filterTypes')
+    $('#tags_all').prop('checked', false);
 
     var arr = $('.filter:checked').map(function() {
       return parseInt(this.value);
@@ -243,10 +248,9 @@ class App extends React.Component {
       bookGuid: book.guid
     })
 
-
     drift.on('ready',function(api, payload) {
       api.widget.hide();
-      api.sidebar.close()
+      api.sidebar.close();
     })
 
     // console.log('previewShow', book, this.state)
@@ -361,6 +365,65 @@ class App extends React.Component {
     )
   }
 
+  renderTags(tags) {
+    return(
+      <div>
+        <div>
+          <input type="checkbox" ref="tags_all" id="tags_all" className="filter" onChange={() => this.clearFilterTypes()} />
+          <label htmlFor="tags_all">全部</label>
+        </div>
+        <hr/>
+        <div>
+          {tags.map(tag => this.renderTags_main(tag))}
+        </div>
+        <hr/>
+        <div>
+          {tags.map(tag => this.renderTags_sub1(tag))}
+        </div>
+        <hr/>
+        <div>
+          {tags.map(tag => this.renderTags_sub2(tag))}
+        </div>
+      </div>
+    )
+  }
+
+  renderTags_main(tag) {
+    const tagId = tag.id;
+    if(tagId.toString().length == 1) {
+        return(
+          <span>
+            <input type="checkbox" value={tagId} id={`tag_${tagId}`} className="filter tag" onChange={() => this.filterTypes()} />
+            <label htmlFor={`tag_${tagId}`}>{tag.name}</label>
+          </span>
+        )
+    }   
+  }
+
+  renderTags_sub1(tag) {
+    const tagId = tag.id;
+    if(tagId.toString().length == 3) {
+        return(
+          <span>
+            <input type="checkbox" value={tagId} id={`tag_${tagId}`} className="filter tag" onChange={() => this.filterTypes()} />
+            <label htmlFor={`tag_${tagId}`}>{tag.name}</label>
+          </span>
+        )
+    }   
+  }
+
+  renderTags_sub2(tag) {
+    const tagId = tag.id;
+    if(tagId.toString().length >= 4) {
+        return(
+          <span>
+            <input type="checkbox" value={tagId} id={`tag_${tagId}`} className="filter tag" onChange={() => this.filterTypes()} />
+            <label htmlFor={`tag_${tagId}`}>{tag.name}</label>
+          </span>
+        )
+    }   
+  }
+
   toggleBooksHandler(id){
     // $('.books-' + id).stop().slideToggle(800);
   }
@@ -403,13 +466,8 @@ class App extends React.Component {
           <iframe className="video" src="https://www.youtube.com/embed/5MqM41gZGOM" frameborder="0" allowfullscreen></iframe>
           */}
 
-          <div className={this.state.filterOpen ? 'filter open' : 'filter'}>
-            <input type="checkbox" ref="tags_all" id="tags_all" className="filter" onChange={() => this.clearFilterTypes()} /><label htmlFor="tags_all">全部</label>
-            {window.tags.map(item => (
-              <span>
-                <input type="checkbox" value={item.id} id={`tag_${item.id}`} className="filter tag" onChange={() => this.filterTypes()} /><label htmlFor={`tag_${item.id}`}>{item.name}</label>
-              </span>
-            ))}
+          <div className={this.state.filterOpen ? 'filter open' : 'filter'}>           
+            {this.renderTags(window.tags)}
           </div>
 
           <div className={this.state.filterOpen ? 'gridBook small' : 'gridBook'}>
