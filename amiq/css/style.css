@@ -12,10 +12,10 @@ body {
     overflow: auto;
     font-family: 'Heiti TC', 'Microsoft JhengHei', Sans-Serif;
     overflow-x: hidden;
-    user-select: none;
+/*    user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
-    -ms-user-select: none;
+    -ms-user-select: none;*/
 }
 
 p {
@@ -45,6 +45,19 @@ hr {
     box-shadow: 0 0 5px rgba(0, 0, 0, .15);
 }
 
+.header .link {
+    display: block;
+    float: left;
+    padding: 1.25em;
+    color: #868e96;
+    cursor: pointer;
+}
+
+.header .link:hover {
+    background-color: #eee;
+    color: #495057;
+}
+
 .site-title {
     display: block;
     float: left;
@@ -66,7 +79,11 @@ hr {
 }
 
 .list-type-menu {
-    float: right;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    color: #868e96;
 }
 
 .list-type-menu a {
@@ -87,16 +104,52 @@ hr {
     vertical-align: middle;
 }
 
-.fill-form {
-    display: none;
+.banner {
+    position: relative;
+    width: 100%;
+    height: calc(100vw / 16 * 9);
+    background: url(../img/amiq_banner.jpg) no-repeat;
+    overflow: hidden;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.banner:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.45);
+}
+.banner .icon-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    font-size: 15vw;
+    opacity: 1;
+    color: #fff;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.rent-form {
     position: fixed;
     top: 48px;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 1;
     width: 100%;
     height: calc(100vh - 48px);
+    border: 0;
+}
+
+.rent-rule {
+    background-color: rgb(229, 227, 208);
 }
 
 .video {
@@ -973,7 +1026,8 @@ hr {
         padding: 2em;
     }
     .item {
-        width: 33.33%;
+        /*width: 33.33%;*/
+        width: 50%;
     }
 }
 
@@ -1124,7 +1178,7 @@ hr {
 
 .preview-jump {
     position: fixed;
-    bottom: 0;
+    bottom: -3px;
     left: 0;
     right: 0;
     text-align: center;
@@ -1257,9 +1311,27 @@ hr {
     .book-list .id,
     .book-list .title,
     .book-list .subject,
-    .book-list .types {
+    .book-list .types,
+    .book-list .rent-info {
         float: left;
-        width: 30%;
+        width: 20%;
+    }
+    .book-list .title,
+    .book-list .subject,
+    .book-list .types,
+    .book-list .rent-info {
+        margin-top: 0;
+        padding-left: 1em;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .book-list .rent-info {
+        padding-left: 2em;
+        width: auto;
+    }
+    .book-list .rent-info .rent-state {
+        border: 0;
     }
 }
 

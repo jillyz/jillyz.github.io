@@ -74,7 +74,7 @@
 				"title": "你往哪個方向走？",
 				"title-en": "Walk back and forth",
 				"subject": "學習空間概念",
-				"types": []
+				"types": [9901]
 			},
 			{
 				"guid": 9,
@@ -83,7 +83,7 @@
 				"title": "快樂的小園丁",
 				"title-en": "Happy young gardeners",
 				"subject": "每個主題所需要的物品或器具的認識",
-				"types": []
+				"types": [9901]
 			},
 			{
 				"guid": 10,
@@ -92,7 +92,7 @@
 				"title": "有趣的數數遊戲",
 				"title-en": "Counting game",
 				"subject": "數數及加法的基本概念",
-				"types": []
+				"types": [9901]
 			},
 			{
 				"guid": 11,
@@ -101,7 +101,7 @@
 				"title": "莉莉的新生活",
 				"title-en": "Lily's new life",
 				"subject": "推理的基本概念",
-				"types": []
+				"types": [9901]
 			},
 			{
 				"guid": 12,
@@ -110,7 +110,7 @@
 				"title": "我和你一樣哦！",
 				"title-en": "The same with you",
 				"subject": "認識同類和不同類的概念",
-				"types": []
+				"types": [9901]
 			},
 			{
 				"guid": 13,
@@ -119,7 +119,7 @@
 				"title": "舞動的線條",
 				"title-en": "Dancing lines",
 				"subject": "辨識圖形變化",
-				"types": []
+				"types": [9901]
 			},
 			{
 				"guid": 14,
@@ -128,7 +128,7 @@
 				"title": "春花百開",
 				"title-en": "Spring flowers",
 				"subject": "分辨花草的形狀與顏色",
-				"types": []
+				"types": [9901]
 			},
 			{
 				"guid": 15,
@@ -137,7 +137,7 @@
 				"title": "四季",
 				"title-en": "Four Seasons",
 				"subject": "觀察四季與場景景物的變化",
-				"types": []
+				"types": [9901]
 			}
 		]
 	},
@@ -152,7 +152,8 @@
 				"stage": 2,
 				"title": "茉莉的快樂時光",
 				"title-en": "Molly's happy time",
-				"subject": "物件形狀花色及擺設的認知推理"
+				"subject": "物件形狀花色及擺設的認知推理",
+				"types": [9901]
 			},
 			{
 				"guid": 17,
@@ -160,7 +161,8 @@
 				"stage": 2,
 				"title": "是誰藏在裡面呢？",
 				"title-en": "What's hiding here",
-				"subject": "圓形、三角形、正方形大集合"
+				"subject": "圓形、三角形、正方形大集合",
+				"types": [9901]
 			},
 			{
 				"guid": 18,
@@ -168,7 +170,8 @@
 				"stage": 2,
 				"title": "瘋狂的夏天",
 				"title-en": "Crazy summer",
-				"subject": "部分與整體的觀察認知"
+				"subject": "部分與整體的觀察認知",
+				"types": [9901]
 			},
 			{
 				"guid": 19,
@@ -176,7 +179,8 @@
 				"stage": 2,
 				"title": "哈囉！我在這裡！",
 				"title-en": "Hello! I'm here",
-				"subject": "空間與圖像邏輯的識別推理"
+				"subject": "空間與圖像邏輯的識別推理",
+				"types": [9901]
 			},
 			{
 				"guid": 20,
@@ -184,7 +188,8 @@
 				"stage": 2,
 				"title": "彩色蝴蝶世界",
 				"title-en": "Colored world",
-				"subject": "動物習性、生活習性的認知"
+				"subject": "動物習性、生活習性的認知",
+				"types": [9901]
 			},
 			{
 				"guid": 21,
@@ -193,7 +198,7 @@
 				"title": "幾何娃娃",
 				"title-en": "Geomatric dolls",
 				"subject": "空間方位的基礎認知",
-				"types": [2,3]
+				"types": [9901]
 			},
 			{
 				"guid": 22,
@@ -201,7 +206,8 @@
 				"stage": 2,
 				"title": "點、線、面",
 				"title-en": "",
-				"subject": "平面圖形變化"
+				"subject": "平面圖形變化",
+				"types": [9901]
 			},
 			{
 				"guid": 23,
@@ -210,7 +216,7 @@
 				"title": "基礎認知",
 				"title-en": "Basic concepts",
 				"subject": "邏輯思考應變力",
-				"types": [2,3]
+				"types": [9901]
 			},
 			{
 				"guid": 24,
@@ -218,7 +224,8 @@
 				"stage": 2,
 				"title": "看看我的臉",
 				"title-en": "Watch my face",
-				"subject": "動物特徵的認知及識別"
+				"subject": "動物特徵的認知及識別",
+				"types": [9901]
 			},
 			{
 				"guid": 25,
@@ -226,7 +233,8 @@
 				"stage": 2,
 				"title": "是非對錯",
 				"title-en": "True or false",
-				"subject": "場景物件的認知推理"
+				"subject": "場景物件的認知推理",
+				"types": [9901]
 			},
 			{
 				"guid": 26,
@@ -234,7 +242,8 @@
 				"stage": 2,
 				"title": "衝浪去囉！",
 				"title-en": "Let's go surfing",
-				"subject": "培養觀其因而知其果的概念"
+				"subject": "培養觀其因而知其果的概念",
+				"types": [9901]
 			},
 			{
 				"guid": 27,
@@ -242,7 +251,8 @@
 				"stage": 2,
 				"title": "跳耀的字母寶寶",
 				"title-en": "Happy letters",
-				"subject": "英文26個字母的認知"
+				"subject": "英文26個字母的認知",
+				"types": [9901]
 			},
 			{
 				"guid": 28,
@@ -250,7 +260,8 @@
 				"stage": 2,
 				"title": "比一比",
 				"title-en": "Compare this with that",
-				"subject": "學習量的概念"
+				"subject": "學習量的概念",
+				"types": [9901]
 			},
 			{
 				"guid": 29,
@@ -258,7 +269,8 @@
 				"stage": 2,
 				"title": "魔力形狀",
 				"title-en": "Magic shapes",
-				"subject": "數學圖像與邏輯的思考"
+				"subject": "數學圖像與邏輯的思考",
+				"types": [9901]
 			},
 			{
 				"guid": 30,
@@ -266,7 +278,8 @@
 				"stage": 2,
 				"title": "新年快樂",
 				"title-en": "Happy new year",
-				"subject": "認識中國新年的傳統習俗"
+				"subject": "認識中國新年的傳統習俗",
+				"types": [9901]
 			}
 		]
 	},
@@ -281,7 +294,8 @@
 				"stage": 3,
 				"title": "動物大觀園",
 				"title-en": "",
-				"subject": "從多個面向認識鳥類"
+				"subject": "從多個面向認識鳥類",
+				"types": [9901]
 			},
 			{
 				"guid": 32,
@@ -289,7 +303,8 @@
 				"stage": 3,
 				"title": "小小數學家",
 				"title-en": "",
-				"subject": "1-40數數的學習概念"
+				"subject": "1-40數數的學習概念",
+				"types": [9901]
 			},
 			{
 				"guid": 33,
@@ -297,7 +312,8 @@
 				"stage": 3,
 				"title": "吵雜的菜市場",
 				"title-en": "",
-				"subject": "結合平常孩子生活的經驗或事物"
+				"subject": "結合平常孩子生活的經驗或事物",
+				"types": [9901]
 			},
 			{
 				"guid": 34,
@@ -305,7 +321,8 @@
 				"stage": 3,
 				"title": "雷伊的學校生活",
 				"title-en": "",
-				"subject": "方位、邏輯、空間、輪廓、順序⋯⋯等等的結合學習"
+				"subject": "方位、邏輯、空間、輪廓、順序⋯⋯等等的結合學習",
+				"types": [9901]
 			},
 			{
 				"guid": 35,
@@ -314,7 +331,7 @@
 				"title": "生活常規",
 				"title-en": "",
 				"subject": "培養正確觀念的基石",
-				"types": [1,2]
+				"types": [9901]
 			},
 			{
 				"guid": 36,
@@ -322,7 +339,8 @@
 				"stage": 3,
 				"title": "夜晚",
 				"title-en": "",
-				"subject": "黑夜中對物件的觀察思考"
+				"subject": "黑夜中對物件的觀察思考",
+				"types": [9901]
 			},
 			{
 				"guid": 37,
@@ -330,7 +348,8 @@
 				"stage": 3,
 				"title": "動物面面觀",
 				"title-en": "",
-				"subject": "從不同面向認識動物"
+				"subject": "從不同面向認識動物",
+				"types": [9901]
 			},
 			{
 				"guid": 38,
@@ -338,7 +357,8 @@
 				"stage": 3,
 				"title": "數字動一動",
 				"title-en": "",
-				"subject": "加法的學習"
+				"subject": "加法的學習",
+				"types": [9901]
 			},
 			{
 				"guid": 39,
@@ -346,7 +366,8 @@
 				"stage": 3,
 				"title": "旅遊日誌",
 				"title-en": "",
-				"subject": "動作順序的學習概念"
+				"subject": "動作順序的學習概念",
+				"types": [9901]
 			},
 			{
 				"guid": 40,
@@ -355,7 +376,7 @@
 				"title": "形形色色，變化多端",
 				"title-en": "",
 				"subject": "平面圖形與立體圖形之間的關係",
-				"types": [1]
+				"types": [9901]
 			},
 			{
 				"guid": 41,
@@ -363,7 +384,8 @@
 				"stage": 3,
 				"title": "一起去冒險",
 				"title-en": "",
-				"subject": "生活中習習相關的事物或經歷"
+				"subject": "生活中習習相關的事物或經歷",
+				"types": [9901]
 			},
 			{
 				"guid": 42,
@@ -371,7 +393,8 @@
 				"stage": 3,
 				"title": "我的表情變了嗎？",
 				"title-en": "",
-				"subject": "細膩的辨識學習-1"
+				"subject": "細膩的辨識學習-1",
+				"types": [9901]
 			},
 			{
 				"guid": 43,
@@ -379,7 +402,8 @@
 				"stage": 3,
 				"title": "幾何遊戲",
 				"title-en": "",
-				"subject": "從幾何圖形訓練對應能力"
+				"subject": "從幾何圖形訓練對應能力",
+				"types": [9901]
 			},
 			{
 				"guid": 44,
@@ -387,7 +411,8 @@
 				"stage": 3,
 				"title": "我總是來無影去無蹤",
 				"title-en": "",
-				"subject": "方向方位認知概念學習"
+				"subject": "方向方位認知概念學習",
+				"types": [9901]
 			},
 			{
 				"guid": 45,
@@ -395,7 +420,8 @@
 				"stage": 3,
 				"title": "記憶訓練",
 				"title-en": "",
-				"subject": "從圖像訓練記憶"
+				"subject": "從圖像訓練記憶",
+				"types": [9901]
 			}
 		]
 	},
@@ -410,7 +436,8 @@
 				"stage": 4,
 				"title": "愛麗絲夢遊仙境",
 				"title-en": "",
-				"subject": "奇幻世界的冒險"
+				"subject": "奇幻世界的冒險",
+				"types": [9901]
 			},
 			{
 				"guid": 47,
@@ -418,7 +445,8 @@
 				"stage": 4,
 				"title": "不可思議的動物世界",
 				"title-en": "",
-				"subject": "動物特徵的認識及辨識"
+				"subject": "動物特徵的認識及辨識",
+				"types": [9901]
 			},
 			{
 				"guid": 48,
@@ -426,7 +454,8 @@
 				"stage": 4,
 				"title": "動物大集合",
 				"title-en": "",
-				"subject": "細膩的辨識力學習-2"
+				"subject": "細膩的辨識力學習-2",
+				"types": [9901]
 			},
 			{
 				"guid": 49,
@@ -434,7 +463,8 @@
 				"stage": 4,
 				"title": "東轉西轉",
 				"title-en": "",
-				"subject": "平面的圖形到體積的觀察與辨識"
+				"subject": "平面的圖形到體積的觀察與辨識",
+				"types": [9901]
 			},
 			{
 				"guid": 50,
@@ -442,7 +472,8 @@
 				"stage": 4,
 				"title": "埃及法老王",
 				"title-en": "",
-				"subject": "視覺與思考能力的訓練"
+				"subject": "視覺與思考能力的訓練",
+				"types": [9901]
 			},
 			{
 				"guid": 51,
@@ -450,7 +481,8 @@
 				"stage": 4,
 				"title": "黑與白",
 				"title-en": "",
-				"subject": "黑白對比色的視覺辨識"
+				"subject": "黑白對比色的視覺辨識",
+				"types": [9901]
 			},
 			{
 				"guid": 52,
@@ -458,7 +490,8 @@
 				"stage": 4,
 				"title": "彎曲的線條",
 				"title-en": "",
-				"subject": "線條輪廓的辨識"
+				"subject": "線條輪廓的辨識",
+				"types": [9901]
 			},
 			{
 				"guid": 53,
@@ -466,7 +499,8 @@
 				"stage": 4,
 				"title": "誰的方向感最好",
 				"title-en": "",
-				"subject": "方向方位認知概念學習"
+				"subject": "方向方位認知概念學習",
+				"types": [9901]
 			},
 			{
 				"guid": 54,
@@ -474,7 +508,8 @@
 				"stage": 4,
 				"title": "我和別人長得不一樣",
 				"title-en": "",
-				"subject": "生活知識上等細微處的觀察與辨別"
+				"subject": "生活知識上等細微處的觀察與辨別",
+				"types": [9901]
 			},
 			{
 				"guid": 55,
@@ -482,7 +517,8 @@
 				"stage": 4,
 				"title": "按照順序排排看",
 				"title-en": "",
-				"subject": "事件發生前因後果的排序認知概念"
+				"subject": "事件發生前因後果的排序認知概念",
+				"types": [9901]
 			},
 			{
 				"guid": 56,
@@ -491,7 +527,7 @@
 				"title": "美麗的一天",
 				"title-en": "",
 				"subject": "圖形變化的聯想",
-				"types": [3]
+				"types": [9901]
 			},
 			{
 				"guid": 57,
@@ -499,7 +535,8 @@
 				"stage": 4,
 				"title": "無懼的阿拉丁",
 				"title-en": "",
-				"subject": "細膩的辨識力學習-3"
+				"subject": "細膩的辨識力學習-3",
+				"types": [9901]
 			},
 			{
 				"guid": 58,
@@ -508,7 +545,7 @@
 				"title": "疊疊樂",
 				"title-en": "",
 				"subject": "圖形辨識推理",
-				"types": [2,3]
+				"types": [9901]
 			},
 			{
 				"guid": 59,
@@ -516,7 +553,8 @@
 				"stage": 4,
 				"title": "誰拿了蛋糕",
 				"title-en": "",
-				"subject": "加減法的簡易運用"
+				"subject": "加減法的簡易運用",
+				"types": [9901]
 			},
 			{
 				"guid": 60,
@@ -524,7 +562,8 @@
 				"stage": 4,
 				"title": "你想到什麼了嗎？",
 				"title-en": "",
-				"subject": "正確的聯想力及推理能力"
+				"subject": "正確的聯想力及推理能力",
+				"types": [9901]
 			}
 		]
 	},
@@ -539,7 +578,8 @@
 				"stage": 5,
 				"title": "奇妙的組合",
 				"title-en": "",
-				"subject": "不同特徵的細膩辨識"
+				"subject": "不同特徵的細膩辨識",
+				"types": [9901]
 			},
 			{
 				"guid": 62,
@@ -547,7 +587,8 @@
 				"stage": 5,
 				"title": "誰是第一",
 				"title-en": "",
-				"subject": "位置、排列、方向⋯⋯等先後順序學習概念"
+				"subject": "位置、排列、方向⋯⋯等先後順序學習概念",
+				"types": [9901]
 			},
 			{
 				"guid": 63,
@@ -555,7 +596,8 @@
 				"stage": 5,
 				"title": "是誰把我分解了",
 				"title-en": "",
-				"subject": "圖形組合與分解的學習概念"
+				"subject": "圖形組合與分解的學習概念",
+				"types": [9901]
 			},
 			{
 				"guid": 64,
@@ -563,7 +605,8 @@
 				"stage": 5,
 				"title": "因果關係",
 				"title-en": "",
-				"subject": "邏輯順序的推理-1"
+				"subject": "邏輯順序的推理-1",
+				"types": [9901]
 			},
 			{
 				"guid": 65,
@@ -571,7 +614,8 @@
 				"stage": 5,
 				"title": "新符號遊戲",
 				"title-en": "",
-				"subject": "從幾何圖形進入基礎集合概念"
+				"subject": "從幾何圖形進入基礎集合概念",
+				"types": [9901]
 			},
 			{
 				"guid": 66,
@@ -579,7 +623,8 @@
 				"stage": 5,
 				"title": "事物之間的連結",
 				"title-en": "",
-				"subject": "聯想力的訓練"
+				"subject": "聯想力的訓練",
+				"types": [9901]
 			},
 			{
 				"guid": 67,
@@ -587,7 +632,8 @@
 				"stage": 5,
 				"title": "偵探長布朗",
 				"title-en": "",
-				"subject": "觀察推理能力的訓練"
+				"subject": "觀察推理能力的訓練",
+				"types": [9901]
 			},
 			{
 				"guid": 68,
@@ -595,7 +641,8 @@
 				"stage": 5,
 				"title": "推一推，想一想",
 				"title-en": "",
-				"subject": "圖形對應、推理邏輯"
+				"subject": "圖形對應、推理邏輯",
+				"types": [9901]
 			},
 			{
 				"guid": 69,
@@ -603,7 +650,8 @@
 				"stage": 5,
 				"title": "誰有好眼力",
 				"title-en": "",
-				"subject": "相似圖片的細膩辨識"
+				"subject": "相似圖片的細膩辨識",
+				"types": [9901]
 			},
 			{
 				"guid": 70,
@@ -611,7 +659,8 @@
 				"stage": 5,
 				"title": "幽默先生",
 				"title-en": "",
-				"subject": "邏輯順序的推理-2"
+				"subject": "邏輯順序的推理-2",
+				"types": [9901]
 			},
 			{
 				"guid": 71,
@@ -619,7 +668,8 @@
 				"stage": 5,
 				"title": "滑稽逗趣好玩系列",
 				"title-en": "",
-				"subject": "邏輯順序的推理-3"
+				"subject": "邏輯順序的推理-3",
+				"types": [9901]
 			},
 			{
 				"guid": 72,
@@ -627,7 +677,8 @@
 				"stage": 5,
 				"title": "記憶迷圖",
 				"title-en": "",
-				"subject": "記憶力與觀察力的培養"
+				"subject": "記憶力與觀察力的培養",
+				"types": [9901]
 			},
 			{
 				"guid": 73,
@@ -635,7 +686,8 @@
 				"stage": 5,
 				"title": "工程解謎",
 				"title-en": "",
-				"subject": "認識工程的建造過程"
+				"subject": "認識工程的建造過程",
+				"types": [9901]
 			},
 			{
 				"guid": 74,
@@ -643,7 +695,8 @@
 				"stage": 5,
 				"title": "世界旅行",
 				"title-en": "",
-				"subject": "學習世界文化與歷史常識"
+				"subject": "學習世界文化與歷史常識",
+				"types": [9901]
 			},
 			{
 				"guid": 75,
@@ -651,7 +704,8 @@
 				"stage": 5,
 				"title": "好鄰居",
 				"title-en": "",
-				"subject": "符號辨識、順序與邏輯推理"
+				"subject": "符號辨識、順序與邏輯推理",
+				"types": [9901]
 			}
 		]
 	},
@@ -666,7 +720,8 @@
 				"stage": 6,
 				"title": "動人旋律",
 				"title-en": "",
-				"subject": "音樂與樂器的認識"
+				"subject": "音樂與樂器的認識",
+				"types": [9901]
 			},
 			{
 				"guid": 77,
@@ -674,7 +729,8 @@
 				"stage": 6,
 				"title": "奇貌非凡",
 				"title-en": "",
-				"subject": "類似物種的特徵辨識"
+				"subject": "類似物種的特徵辨識",
+				"types": [9901]
 			},
 			{
 				"guid": 78,
@@ -682,7 +738,8 @@
 				"stage": 6,
 				"title": "跑跑走走轉一圈",
 				"title-en": "",
-				"subject": "線條遊戲"
+				"subject": "線條遊戲",
+				"types": [9901]
 			},
 			{
 				"guid": 79,
@@ -690,7 +747,8 @@
 				"stage": 6,
 				"title": "誰來找碴",
 				"title-en": "",
-				"subject": "相似圖片的辨識訓練"
+				"subject": "相似圖片的辨識訓練",
+				"types": [9901]
 			},
 			{
 				"guid": 80,
@@ -698,7 +756,8 @@
 				"stage": 6,
 				"title": "腦力風暴",
 				"title-en": "",
-				"subject": "綜合邏輯推理能力"
+				"subject": "綜合邏輯推理能力",
+				"types": [9901]
 			},
 			{
 				"guid": 81,
@@ -706,7 +765,8 @@
 				"stage": 6,
 				"title": "翻翻轉轉找一找",
 				"title-en": "",
-				"subject": "圖形組合邏輯思考訓練"
+				"subject": "圖形組合邏輯思考訓練",
+				"types": [9901]
 			},
 			{
 				"guid": 82,
@@ -714,7 +774,8 @@
 				"stage": 6,
 				"title": "消失的幾何娃娃",
 				"title-en": "",
-				"subject": "幾何圖形的空間方位辨識"
+				"subject": "幾何圖形的空間方位辨識",
+				"types": [9901]
 			},
 			{
 				"guid": 83,
@@ -722,7 +783,8 @@
 				"stage": 6,
 				"title": "無所不在的角度",
 				"title-en": "",
-				"subject": "不同角度和圖形的辨識力及聯想"
+				"subject": "不同角度和圖形的辨識力及聯想",
+				"types": [9901]
 			},
 			{
 				"guid": 84,
@@ -730,7 +792,8 @@
 				"stage": 6,
 				"title": "多變的方位",
 				"title-en": "",
-				"subject": "圖形的分辨和識別"
+				"subject": "圖形的分辨和識別",
+				"types": [9901]
 			},
 			{
 				"guid": 85,
@@ -738,7 +801,8 @@
 				"stage": 6,
 				"title": "腦力大挑戰",
 				"title-en": "",
-				"subject": "數字圖形推理"
+				"subject": "數字圖形推理",
+				"types": [9901]
 			},
 			{
 				"guid": 86,
@@ -746,7 +810,8 @@
 				"stage": 6,
 				"title": "移動的圖形",
 				"title-en": "",
-				"subject": "圖形推理"
+				"subject": "圖形推理",
+				"types": [9901]
 			},
 			{
 				"guid": 87,
@@ -754,7 +819,8 @@
 				"stage": 6,
 				"title": "透視遊戲",
 				"title-en": "",
-				"subject": "觀察與透視概念的培養"
+				"subject": "觀察與透視概念的培養",
+				"types": [9901]
 			},
 			{
 				"guid": 88,
@@ -762,7 +828,8 @@
 				"stage": 6,
 				"title": "鏡中世界",
 				"title-en": "",
-				"subject": "鏡射與對稱的學習概念"
+				"subject": "鏡射與對稱的學習概念",
+				"types": [9901]
 			},
 			{
 				"guid": 89,
@@ -770,7 +837,8 @@
 				"stage": 6,
 				"title": "多變的形狀組合",
 				"title-en": "",
-				"subject": "圖形與線條的疊加與減法"
+				"subject": "圖形與線條的疊加與減法",
+				"types": [9901]
 			},
 			{
 				"guid": 90,
@@ -778,7 +846,8 @@
 				"stage": 6,
 				"title": "拼拼湊湊",
 				"title-en": "",
-				"subject": "幾何圖形的組合與分割"
+				"subject": "幾何圖形的組合與分割",
+				"types": [9901]
 			}
 		]
 	}
