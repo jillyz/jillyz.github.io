@@ -34,50 +34,47 @@ function drift_init(){
 
 $(function() {
 
+    $.ajax({
+      type: 'GET',
+      url: 'https://spreadsheets.google.com/feeds/cells/1Hmw4yxk5pVyR7CA2XLsw93ozeFrrWVZB7cep_uyDEc4/1/public/values?alt=json',
+      cache: false,
+      dataType: 'json',
+      success: function(res)
+      {
+        var cols = 8;
+        var data = res.feed.entry;
+        var arr = [];
+        var size = data.length / cols;
 
-    $.get(
-        'https://spreadsheets.google.com/feeds/cells/1Hmw4yxk5pVyR7CA2XLsw93ozeFrrWVZB7cep_uyDEc4/1/public/values?alt=json',
-        function(res) {
-            // console.log([1])
-            var cols = 8;
-            var data = res.feed.entry;
-            var arr = [];
-            var size = data.length / cols;
-
-            for (var i = 0; i < size; i++) {
-                var obj = {}
-                for (var item in data) {
-                    var index = parseInt(item / cols);
-                    if (item % cols == 0 && index == i) obj['time'] = data[item].content.$t;
-                    if (item % cols == 1 && index == i) obj['user'] = data[item].content.$t;
-                    if (item % cols == 2 && index == i) obj['fromTime'] = data[item].content.$t;
-                    if (item % cols == 3 && index == i) obj['toTime'] = data[item].content.$t;
-                    if (item % cols == 4 && index == i) obj['days'] = data[item].content.$t;
-                    if (item % cols == 5 && index == i) obj['notBack'] = data[item].content.$t;
-                    if (item % cols == 6 && index == i) obj['bookTotal'] = data[item].content.$t;
-                    if (item % cols == 7 && index == i) {
-                        var arrIds = []
-                        var str = data[item].content.$t;
-                        arrIds = str.split(', ');
-                        obj['bookIds'] = arrIds;
-                    }
+        for (var i = 0; i < size; i++) {
+            var obj = {}
+            for (var item in data) {
+                var index = parseInt(item / cols);
+                if (item % cols == 0 && index == i) obj['time'] = data[item].content.$t;
+                if (item % cols == 1 && index == i) obj['user'] = data[item].content.$t;
+                if (item % cols == 2 && index == i) obj['fromTime'] = data[item].content.$t;
+                if (item % cols == 3 && index == i) obj['toTime'] = data[item].content.$t;
+                if (item % cols == 4 && index == i) obj['days'] = data[item].content.$t;
+                if (item % cols == 5 && index == i) obj['gmail'] = data[item].content.$t;
+                if (item % cols == 6 && index == i) obj['bookTotal'] = data[item].content.$t;
+                if (item % cols == 7 && index == i) {
+                    var arrIds = []
+                    var str = data[item].content.$t;
+                    arrIds = str.split(', ');
+                    obj['bookIds'] = arrIds;
                 }
-                arr[i - 1] = obj;
             }
-            delete arr[-1];
-            getRentData = arr;
-
-            // var rentBooksBackTime = get_rentBooksBackTime(getRentData);
-            rentBookTimeRagne = get_rentBooksTimeRange(getRentData);
-            var tempBooksRent = get_tempBooksRent(getRentData);
-            rentData = uniqueArray(tempBooksRent);
-
-            // console.log('getRentData', getRentData)
-            // console.log('rentBooksBackTime', rentBooksBackTime)
-            // console.log('rentBookTimeRagne', rentBookTimeRagne)
-
+            arr[i - 1] = obj;
         }
-    )
+        delete arr[-1];
+        getRentData = arr;
+
+        // var rentBooksBackTime = get_rentBooksBackTime(getRentData);
+        rentBookTimeRagne = get_rentBooksTimeRange(getRentData);
+        var tempBooksRent = get_tempBooksRent(getRentData);
+        rentData = uniqueArray(tempBooksRent);
+      },
+    });
 
     function get_rentBooksTimeRange(data) {
 

@@ -20,8 +20,12 @@ class Catalog extends React.Component {
       filterOpen: false,
       filterTypes: [],
       filterData: [],
-      showLoading: false
+      showLoading: true,
+      showSmallLoading: false,
     }
+
+    this.renderCatalog = this.renderCatalog.bind(this);
+
     this.switchListToGrid = this.switchListToGrid.bind(this);
     this.switchFilterPanel = this.switchFilterPanel.bind(this);
     this.filterIfOverlayThenHideDrift = this. filterIfOverlayThenHideDrift.bind(this);
@@ -38,6 +42,7 @@ class Catalog extends React.Component {
     // console.log('app mount')
     // console.log(this.state)
 
+    this.setState({showLoading: true});
 
     var that = this;
     $.ajax({
@@ -45,12 +50,17 @@ class Catalog extends React.Component {
       dataType: 'json',
       type: 'GET',
       success: function(response) {
-        that.setState({data: response});
-        window.bookData = response;
+        setTimeout( () => {
+          that.setState({
+            data: response,
+            showLoading: false
+          });
+          window.bookData = response;
+        }, 500);
       }
     });
     
-    this.onError();
+    // this.onError();
     this.filterIfOverlayThenHideDrift();
 
     $('#tags_all').prop('checked', false);
@@ -110,11 +120,12 @@ class Catalog extends React.Component {
   }
 
   switchListToGrid() {
+    var element = document.getElementById('body');
+    scrollTo(element, 0, 1000);
+
     this.setState({
       listTypeGrid: !this.state.listTypeGrid
     })
-    var element = document.getElementById('body');
-    scrollTo(element, 0, 100);
   }
 
   switchFilterPanel() {
@@ -185,9 +196,9 @@ class Catalog extends React.Component {
         scrollTop: 0
     }, 250);
 
-    this.setState({showLoading: true})
+    this.setState({showSmallLoading: true});
     setTimeout(() => {
-      this.setState({showLoading: false})
+      this.setState({showSmallLoading: false});
     }, 250);
 
 
@@ -214,9 +225,21 @@ class Catalog extends React.Component {
   }
 
   clearFilterTypes(){
+
+    setTimeout( () => {
+      this.setState({
+        isFilter: false,
+        filterOpen: false,
+        filterTypes: [],
+        filterData: [],
+      });
+      window.bookData = response;
+    }, 300);
+
     $('.filter.tag').prop('checked', false);
     this.filterTypes();
     this.refs.tags_all.checked = true;
+
   }
 
   // fetch(guid){
@@ -296,11 +319,11 @@ class Catalog extends React.Component {
     const isRented = Date.parse(rentBook.fromTime) < Date.parse(new Date());
     if(!isRented) {
       return(
-        <div className="rent-state reserve"><span className="state">已預約</span>{this.formatDateStr(fromTime)} ~ {this.formatDateStr(toTime)}</div>
+        <div className="rent-state reserve" key={`rent_state_reserve_${bookId}`}><span className="state">已預約</span><span className="rent-date">{this.formatDateStr(fromTime)} ~ {this.formatDateStr(toTime)}</span></div>
       )
     } else {
       return(
-        <div className="rent-state already"><span className="state">已借出</span>{this.formatDateStr(fromTime)} ~ {this.formatDateStr(toTime)}</div>
+        <div className="rent-state already" key={`rent_state_already_${bookId}`}><span className="state">已借出</span><span className="rent-date">{this.formatDateStr(fromTime)} ~ {this.formatDateStr(toTime)}</span></div>
       )
     }
   }
@@ -431,7 +454,7 @@ class Catalog extends React.Component {
     const tagId = tag.id;
     if(tagId.toString().length == 1) {
         return(
-          <span>
+          <span key={tagId}>
             <input type="checkbox" value={tagId} id={`tag_${tagId}`} className="filter tag" onChange={() => this.filterTypes()} />
             <label htmlFor={`tag_${tagId}`}>{tag.name}</label>
           </span>
@@ -443,7 +466,7 @@ class Catalog extends React.Component {
     const tagId = tag.id;
     if(tagId.toString().length == 3) {
         return(
-          <span>
+          <span key={tagId}>
             <input type="checkbox" value={tagId} id={`tag_${tagId}`} className="filter tag" onChange={() => this.filterTypes()} />
             <label htmlFor={`tag_${tagId}`}>{tag.name}</label>
           </span>
@@ -455,7 +478,7 @@ class Catalog extends React.Component {
     const tagId = tag.id;
     if(tagId.toString().length >= 4) {
         return(
-          <span>
+          <span key={tagId}>
             <input type="checkbox" value={tagId} id={`tag_${tagId}`} className="filter tag" onChange={() => this.filterTypes()} />
             <label htmlFor={`tag_${tagId}`}>{tag.name}</label>
           </span>
@@ -467,13 +490,14 @@ class Catalog extends React.Component {
     // $('.books-' + id).stop().slideToggle(800);
   }
 
-  render() {
+  renderCatalog() {
+
+    console.log('renderCatalog',this)
     var isSafari = /constructor/i.test(window.HTMLElement);
     const that = this;
     let isPreview = this.state.isPreview;
     return (
       <div>
-
           <span className="list-type-menu">
             
               <span>
@@ -493,11 +517,6 @@ class Catalog extends React.Component {
 
         <div className="grid">
 
-          {/*
-          <img className="amiq" src="img/amiq.jpg" />
-          <iframe className="video" src="https://www.youtube.com/embed/5MqM41gZGOM" frameborder="0" allowfullscreen></iframe>
-          */}
-
           <div className={this.state.filterOpen ? 'filter open' : 'filter'}>           
             {this.renderTags(window.tags)}
           </div>
@@ -505,7 +524,7 @@ class Catalog extends React.Component {
           <div className={this.state.filterOpen ? 'gridBook small' : 'gridBook'}>
 
             {this.state.data.map(stage => (
-              <section key={stage.stage} className={`section section-${stage.stage}`}>
+              <section id={`stage_${stage.stage}`} key={stage.stage} className={`section section-${stage.stage}`}>
                 <a className={`stage-bg stage-bg-${stage.stage}`} onClick={() => this.toggleBooksHandler(stage.stage)}>
                   <h2>AMIQ 第 {stage.stage} 階（{stage.stageName}）</h2>
                   <p>{stage.content}</p>
@@ -532,8 +551,17 @@ class Catalog extends React.Component {
           }
 
         </div>
-        {this.state.showLoading ? <div className="loading-small"><Loading /></div> : ''} 
+        {this.state.showSmallLoading ? <div className="loading-small"><Loading /></div> : ''} 
 
+      </div>
+    )
+  }
+
+  render() {
+
+    return(
+      <div>
+        {this.state.showLoading ? <Loading /> : this.renderCatalog() }
       </div>
     )
   }

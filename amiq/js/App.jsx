@@ -1,4 +1,5 @@
 const {
+  Rent,
   Catalog,
   PlayIntro,
   Loading
@@ -23,7 +24,8 @@ class App extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-
+    var element = document.getElementById('body');
+    scrollTo(element, 0, 0);
   }
 
   showPlayIntro(){
@@ -60,24 +62,29 @@ class App extends React.Component {
 
   render() {
     var isSafari = /constructor/i.test(window.HTMLElement);
-    const that = this;
-    let isPreview = this.state.isPreview;
+    const inHome = this.state.showPlayIntro === true;
+    const inRent = this.state.showRent === true;
+    const inCatalog = this.state.showCatalog === true;
+    const indicatorClassName = () => {
+      if(inHome) return 'indicator home';
+      if(inRent) return 'indicator rent';
+      if(inCatalog) return 'indicator catalog';
+    }
     return (
       <div className="app-wrap">
         <header className="header">
-          <span className="site-title--2">
-            {/*<img className="site-logo" src="img/site-logo.png" /> */}
-            <a className="link" onClick={()=> this.showPlayIntro()}>邏輯教具 AMIQ</a>  
-          </span>
-          <a className="link" onClick={()=> this.showRent()}>租借</a>
-          <a className="link" onClick={()=> this.showCatalog()}>目錄</a>
-
+          <a className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntro()}>邏輯教具 AMIQ</a>  
+          <a className={inRent ? 'link active' : 'link'} onClick={()=> this.showRent()}>租借</a>
+          <a className={inCatalog ? 'link active' : 'link'} onClick={()=> this.showCatalog()}>目錄</a>
+          <span className="indicator-bar"></span>
+          <span className={indicatorClassName()}></span>
         </header>
 
         {this.state.showPlayIntro ?  <PlayIntro/> : ''}
-        {this.state.showRent ? <iframe className="rent-form" src="https://docs.google.com/forms/d/e/1FAIpQLSdypAzaM8glHVhTUP9I4wNG1M-E9aUAujoAsB5qwiuAMCDEcQ/viewform"></iframe> : ''}
+        {this.state.showRent ? <Rent/> : ''}
         {this.state.showCatalog ? <Catalog /> : ''}
         {isSafari ? <div className="dontUseSafari">Hi～您目前使用的瀏覽器為 Safari ， 建議您使用 Chrome 瀏覽唷 </div> : ''}
+        
       </div>
     )
   }
