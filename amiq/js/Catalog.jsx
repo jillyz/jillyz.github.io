@@ -56,7 +56,7 @@ class Catalog extends React.Component {
             showLoading: false
           });
           window.bookData = response;
-        }, 500);
+        }, 800);
       }
     });
     

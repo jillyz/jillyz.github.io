@@ -83,7 +83,7 @@ class App extends React.Component {
         {this.state.showPlayIntro ?  <PlayIntro/> : ''}
         {this.state.showRent ? <Rent/> : ''}
         {this.state.showCatalog ? <Catalog /> : ''}
-        {isSafari ? <div className="dontUseSafari">Hi～您目前使用的瀏覽器為 Safari ， 建議您使用 Chrome 瀏覽唷 </div> : ''}
+        {/*{isSafari ? <div className="dontUseSafari">Hi～您目前使用的瀏覽器為 Safari ， 建議您使用 Chrome 瀏覽唷 </div> : ''}*/}
         
       </div>
     )
