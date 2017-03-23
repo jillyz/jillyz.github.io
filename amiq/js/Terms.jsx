@@ -6,6 +6,13 @@ const {
 class Terms extends React.Component {
   constructor(props) {
     super(props);
+    this.giveMessage = this.giveMessage.bind(this);
+  }
+
+  giveMessage() {
+    drift.on('ready',function(api, payload) {
+      api.sidebar.open();
+    })
   }
 
   render() {
@@ -14,8 +21,21 @@ class Terms extends React.Component {
         <div className="terms-banner"></div>
         <div className="terms-content-wrap">
           <div className="terms-content">
+            <h2>租借服務說明</h2>
+
             <section>
-              <h3 className="terms-title">租借辦法</h3>
+              <h3 className="terms-title">關於本服務</h3>
+              <h4>【服務範圍】</h4>
+              <p>本出租服務僅限【台中市】，並以【面交】方式為主。若外縣市的您仍有租借需求，對於支付運費也可接受，可再<a className="give-a-msg" onClick={()=>this.giveMessage()}>留言</a>洽談唷。</p>
+              <h4>【租比買划算】</h4>
+              <p>本服務緣起於一位上班族媽媽，初衷本是希望可以推廣這套超棒的邏輯遊戲教具給更多家長認識。也許您對於AMIQ很心動，但礙於套書費用及使用時間的考量，而未購入；也許您才剛認識這套教具，希望可以有更進一步的接觸瞭解。本租借服務是為您而生！可僅依據您有興趣的內容、且有使用，才有所花費，租借絕對比您購買一整套還划算唷！</p>
+              <h4>【敬請愛惜物品】</h4>
+              <p>因為自己家裡小朋友仍在使用這套教具，所以希望各位爸爸媽媽在租借後，也能如同自己的東西般愛惜它們唷！也請各位爸爸媽媽提醒小朋友們要愛惜這些物品唷！非常感謝您！</p>
+            </section>
+            <hr/>
+
+            <section>
+              <h3 className="terms-title">費用及借期</h3>
               <p>
                 <strong>
                   每本租金 100元，基本借期 3天，若多本則累加。<br/>
@@ -79,12 +99,13 @@ class Terms extends React.Component {
               </ul>
             </section>
             <hr/>
+
             <section>
               <h3 className="terms-title">特殊情況</h3>
               <h4>【遺失】</h4>
               <ul>
                 <li>遺失遊戲本，遺失每本扣除500元，從押金扣除。</li>
-                <li>遊戲板子若遺失、或遊戲板內任意數字塊遺失，須扣除550元，從押金扣除，若押金不夠扣除，須另補足賠償金額。</li>
+                <li>遊戲板若遺失、或遊戲板內任意數字塊遺失，須扣除550元，從押金扣除，若押金不夠扣除，須另補足賠償金額。（本出租押金僅預收遊戲本部分，不預收遊戲板押金，惟萬一有需賠償遊戲板的部分，須再請您支付此一賠償費用）</li>
               </ul>
               <h4>【破損、污損、折損】按比例賠償</h4>
               <ul>
@@ -95,6 +116,7 @@ class Terms extends React.Component {
                 <li>遊戲本若有任一頁，折損、但不涵蓋至內容部分，則按25%比例賠償。</li>
                 <li>備註：內容部分指的是，上頁題目區描述及12格、下頁作答區12格、下頁之左上方作答範例、下頁之右上方解答</li>
               </ul>
+              <p>若有以上情況發生，遺失或損壞嚴重者，之後無法再租借，望您能愛惜出租品唷！</p>
            </section>
           </div>
         </div>
