@@ -20,6 +20,15 @@ body {
     -ms-user-select: none;*/
 }
 
+body,
+html,
+.preview {
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100vw;
+}
+
 a {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -248,7 +257,7 @@ hr {
         width: 100%;
     }
 }
-}
+
 @media screen and (orientation: landscape) {
     .banner {
         height: calc(100vw / 16 * 9);
@@ -1299,6 +1308,9 @@ hr {
         display: block;
         margin-top: 1em;
         margin-bottom: 1em;
+        white-space: nowrap;
+    }
+    .rent-date {
     }
 }
 
@@ -1413,9 +1425,11 @@ hr {
     right: 0;
     text-align: center;
     background-color: #f1e8d6;
-    transform: translate3d(0, 0, 0);
+/*    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);*/
 }
-
 .preview-jump a {
     display: inline-block;
     padding: .75em 2em;
@@ -1578,9 +1592,6 @@ hr {
     .book-list .title,
     .book-list .subject {
         margin-bottom: 1em;
-    }
-    .book-list .rent-info {
-        width: 20%;
     }
     .en {
         display: block !important;
