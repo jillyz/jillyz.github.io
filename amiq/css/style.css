@@ -398,6 +398,9 @@ hr {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     cursor: pointer;
+    -webkit-transition: .75s all;
+    -o-transition: .75s all;
+    transition: .75s all;
 }
 
 .item:hover {
@@ -629,11 +632,6 @@ hr {
         -webkit-transition: .5s all ease-out;
         -o-transition: .5s all ease-out;
         transition: .5s all ease-out;
-    }
-    .item {
-        -webkit-transition: .75s all;
-        -o-transition: .75s all;
-        transition: .75s all;
     }
     .book-list {
         -webkit-transition: .35s all, .75s background;
@@ -1234,6 +1232,7 @@ hr {
 
 @media screen and (max-width: 479px) {
     .item {
+        display: block;
         padding: 2.5em .75em 0 .75em;
     }
     .item-grid .info {
