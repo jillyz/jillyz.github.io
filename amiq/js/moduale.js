@@ -164,7 +164,7 @@ function scrollTo(element, to, duration) {
 //b = start value
 //c = change in value
 //d = duration
-Math.easeInOutQuad = (t, b, c, d) => {
+Math.easeInOutQuad = function(t, b, c, d) {
   t /= d/2;
   if (t < 1) return c/2*t*t + b;
   t--;
