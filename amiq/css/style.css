@@ -212,12 +212,23 @@ hr {
     -o-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);   
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     .slogan {
         font-size: 1.25em;
     }
     .slogan h1 {
         font-size: 3em;
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .slogan {
+        font-size: 1em;
+    }
+    .slogan h1 {
+        font-size: 1.5em;
+    }
+    .slogan h2 {
+        font-size: .875em;
     }
 }
 @media screen and (max-width: 720px) {
@@ -296,9 +307,10 @@ hr {
 .slogan h2 {
     display: block;
     margin: 0;
-    font-size: 1.25em;
+    /*font-size: 1.25em;*/
     line-height: 1.25;
     text-shadow: 0 2px 2px rgba(0,0,0,.25);
+    font-weight: bold;
 }
 .slogan .cheap {
     margin-top: .25em;
@@ -561,7 +573,6 @@ hr {
     overflow: hidden;
 }
 .rent-state.already {
-    font-weight: bold;
     border-color: #d6336c;
     color: #d6336c;
 }
@@ -583,7 +594,11 @@ hr {
     background-color: #868e96;
 }
 .rent-date {
+    display: inline-block;
+    padding: .25em 0;
+    min-width: 8.5em;
     font-size: 1.15em;
+    vertical-align: middle;
     letter-spacing: 1px;
 }
 /*.item-grid .rent-info {
@@ -1535,7 +1550,7 @@ hr {
     .book-list .types,
     .book-list .rent-info {
         float: left;
-        width: 20%;
+        width: 22%;
     }
     .book-list .title,
     .book-list .subject,
@@ -1549,10 +1564,12 @@ hr {
     }
     .book-list .rent-info {
         padding-left: 2em;
-        width: auto;
     }
-    .book-list .rent-info .rent-state {
+    .book-list .rent-state {
         border: 0;
+    }
+    .book-list .rent-state + .rent-state {
+        border-top: 1px dotted #ccc;
     }
 }
 
@@ -1561,6 +1578,9 @@ hr {
     .book-list .title,
     .book-list .subject {
         margin-bottom: 1em;
+    }
+    .book-list .rent-info {
+        width: 20%;
     }
     .en {
         display: block !important;
