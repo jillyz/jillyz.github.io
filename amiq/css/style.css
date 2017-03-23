@@ -1677,14 +1677,21 @@ hr {
 .terms-content {
     padding: .5em 2em;
     background-color: #fff;
-    margin-bottom: 48px;
-    border-top: 8px solid rgb(240, 162, 25);
+    margin-bottom: 7em;
+    border-top: 8px solid #c30;
     -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
     word-wrap: break-word;
 }
 .terms-content section {
     margin-bottom: 3em;
+}
+.terms-header {
+    margin-bottom: .5em;
+    padding-bottom: 1em;
+    border-bottom: 1px dotted #adb5bd;
+    color: #c30;
+    text-align: center;
 }
 .terms-title {
     font-size: 34px;
@@ -1739,19 +1746,22 @@ hr {
     width: 50%;
     padding: .5rem .75rem;
     border-radius: 0.25em;
-    background-color: #b11f1f;
+    background-color: #c30;
     color: #fff;
     font-size: 1.25em;
     text-align: center;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,.4);
+    -webkit-transition: .25s all;
+    -o-transition: .25s all;
+    transition: .25s all;
     cursor: pointer;
 }
 .btn-agree:hover {
-    background-color: #c30;
+    background-color: #d9480f;
 }
 .terms-mask {
     position: fixed;
-    bottom: 4.5em;
+    bottom: 4.25em;
     left: 0;
     right: 0;
     height: 72px; 
@@ -1773,6 +1783,7 @@ hr {
     padding: .25em 1em;
     background-color: #868e96;
     color: #fff;
+    border-radius: 3px;
 }
 .give-a-msg:hover {
     background-color: #495057;
