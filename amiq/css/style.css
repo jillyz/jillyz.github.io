@@ -1,7 +1,7 @@
 html {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 body {
@@ -594,7 +594,7 @@ hr {
 
 @media screen and (min-width: 1366px) {
     .gridBook {
-        width: calc(100vw - 4em);
+        width: calc(100vw - 1rem);
         background-color: #fff;
         -webkit-transition: .5s all ease-in;
         -o-transition: .5s all ease-in;
@@ -1221,7 +1221,7 @@ hr {
 
 @media screen and (min-width: 480px) and (max-width: 1600px) {
     .gridBook {
-        padding: 2em;
+        padding: 2rem;
     }
     .item {
         width: 50%;
@@ -1230,8 +1230,11 @@ hr {
 
 @media screen and (min-width: 1601px) {
     .gridBook {
-        padding: 2em;
-    }
+        padding: 2rem;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+   }
     .item {
         /*width: 33.33%;*/
         width: 33.33%;
