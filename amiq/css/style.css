@@ -1123,8 +1123,8 @@ hr {
     height: 33%;
     background-color: lightgray;
     float: left;
-    -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
-    animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+    -webkit-animation: sk-cubeGridScaleDelay 1.5s infinite ease-in-out;
+    animation: sk-cubeGridScaleDelay 1.5s infinite ease-in-out;
 }
 
 .sk-cube-grid .sk-cube1 {
