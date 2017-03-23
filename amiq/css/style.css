@@ -333,7 +333,7 @@ hr {
     z-index: 1; 
     width: 100%;
     height: calc(100vh - 48px);*/
-    border: 0;
+    border: 0 !important;
     /*overflow: auto;*/
     
 }
