@@ -20,10 +20,21 @@ class App extends React.Component {
   }
 
   componentDidMount() {
- 
+    this.bodyOverflow();
   }
 
   componentDidUpdate(prevProps, prevState) {
+    this.bodyOverflow();
+  }
+
+  bodyOverflow() {
+    const inHome = this.state.showPlayIntro;
+    const inRent = this.state.showRent;
+    const inCatalog = this.state.showCatalog;
+    if ( inHome || inCatalog ) {
+      $('body').css({'overflow-y' : 'auto'})
+    }
+
     var element = document.getElementById('body');
     scrollTo(element, 0, 0);
   }
@@ -62,9 +73,9 @@ class App extends React.Component {
 
   render() {
     var isSafari = /constructor/i.test(window.HTMLElement);
-    const inHome = this.state.showPlayIntro === true;
-    const inRent = this.state.showRent === true;
-    const inCatalog = this.state.showCatalog === true;
+    const inHome = this.state.showPlayIntro;
+    const inRent = this.state.showRent;
+    const inCatalog = this.state.showCatalog;
     const indicatorClassName = () => {
       if(inHome) return 'indicator home';
       if(inRent) return 'indicator rent';
