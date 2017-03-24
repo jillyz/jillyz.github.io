@@ -19,14 +19,9 @@ body {
     -webkit-user-select: none;
     -ms-user-select: none;*/
 }
-
-body,
-html,
-.preview {
-  height: 100vh;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  width: 100vw;
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 
 }
 
 a {
@@ -48,7 +43,9 @@ hr {
 .hide {
     display: none;
 }
-
+.center {
+    text-align: center;
+}
 .header {
     position: fixed;
     top: 0;
@@ -97,9 +94,9 @@ hr {
     height: .35em;
     /*width: 4em;*/
     background-color: #c30;
-    -webkit-transition: .75s all;
-    -o-transition: .75s all;
-    transition: .75s all;
+    -webkit-transition: .5s all;
+    -o-transition: .5s all;
+    transition: .5s all;
 }  
 .indicator.home {
     left: 0;
@@ -150,7 +147,14 @@ hr {
     font-size: 1.5em;
     vertical-align: middle;
 }
+.btn-filter.on {
+    background-color: rgb(238,238,238);
+}
 
+
+/*-----------------------------*/
+/* PLAY INTRO                  */
+/*-----------------------------*/
 
 .banner {
     position: relative;
@@ -341,6 +345,11 @@ hr {
     transform: translate(-50%,-50%);
 }
 
+.test-img {
+    width: 100%;
+}
+
+
 .rent-form {
     /*position: fixed;
     top: 48px;
@@ -359,20 +368,171 @@ hr {
     
 }
 
-.rent-rule {
+/*.rent-rule {
     background-color: rgb(229, 227, 208);
-}
+}*/
 
 .video {
     background-color: #000;
     border: 0;
 }
 
-.amiq {}
-
-.amiq100 {
-    /*width: 100%;*/
+.intro {
+    background: url(../img/bg.jpg) 50% 50%;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
+.intro-content {
+    margin: 0 auto;
+    padding: 3em 1.5em;
+    max-width: 960px;
+    color: #fff;
+}
+.intro-content img {
+    margin: 3em auto -4em auto;
+    width: 100%;
+}
+.intro-title {
+    margin-bottom: 1em;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 2em;
+}
+.intro-title big {
+    font-size: 1.75em;
+}
+
+.intro-content .col {
+    padding: 0 1.5em;
+}
+.margin {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.intro-content iframe {
+
+}
+
+.intro-content ol,
+.intro-content ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.intro-content li {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 2rem;
+    vertical-align: top;
+}
+.intro-content .icon {
+    display: block;
+    margin-bottom: 2rem;
+}
+.intro-content hr {
+    margin: 5em 0;
+    height: 0;
+    border-bottom: 1px dotted rgba(255,255,255,.25);
+}
+.intro-rent {
+    padding: 4em 0;
+    background-color: #d9480f;
+    color: #fff;
+}
+.intro-rent .intro-title {
+    font-size: 4em;
+}
+.intro-rent .intro-content {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.5em;
+}
+.intro-rent strong {
+    font-size: 1.5em;
+}
+.go-rent {
+    display: inline-block;
+    margin: 3em;
+    padding: 1.5em 5em;
+    background-color: #fff;
+    color: #d9480f;
+    border-radius: .25em;
+    font-size: 1.75em;
+    font-weight: bold;
+    -webkit-transition: .25s all;
+    -o-transition: .25s all;
+    transition: .25s all;
+}
+.go-rent:hover {
+    -webkit-box-shadow: 0 10px 10px rgba(0,0,0,.35);
+    box-shadow: 0 10px 10px rgba(0,0,0,.35);
+}
+@media screen and (min-width: 768px) {
+    .intro-content {
+        padding: 3em;
+    }
+    .intro-content img {
+        /*margin-bottom: 0;*/
+    }
+    .intro-content .col {
+        display: inline-block;
+        width: 50%;
+        vertical-align: top;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .intro-content li {
+        width: 25%;
+        margin-bottom: 2rem;
+    }
+    .intro-content .icon {
+        font-size: 8vw;
+        margin-bottom: 1rem;
+    }
+    .forDesktop {
+        display: block;
+    }
+    .forMobile {
+        display: none;
+    }
+}
+@media screen and (max-width: 767px) {
+    .intro-content {
+        font-size: 16px;
+    }
+    .intro-content img {
+        margin-bottom: 0;
+    }
+    .intro-content li {
+        width: 50%;
+    }
+    .intro-content .icon {
+        display: block;
+        width: 20vw;
+        height: 20vw;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 20vw;
+    }
+    .forDesktop {
+        display: none;
+    }
+    .forMobile {
+        display: block;
+    }
+}
+@media screen and (max-width: 480px) {
+    .intro-content li {
+        width: 100%;
+        margin-bottom: 2em;
+    }
+}
+
+/*-----------------------------*/
+/* CATALOG                     */
+/*-----------------------------*/
 
 .grid {
     margin-bottom: 2em;
@@ -619,9 +779,13 @@ hr {
     left: 60px;
 }*/
 
+.gridBook {
+    /*margin: 2rem;*/
+}
 @media screen and (min-width: 1366px) {
     .gridBook {
-        width: calc(100vw - 2rem);
+        margin: 2rem;
+        /*width: calc(100vw - 2rem);*/
         background-color: #fff;
         -webkit-transition: .5s all ease-in;
         -o-transition: .5s all ease-in;
@@ -1243,9 +1407,7 @@ hr {
 }
 
 @media screen and (min-width: 480px) and (max-width: 1600px) {
-    .gridBook {
-        padding: 2rem;
-    }
+
     .item {
         width: 50%;
     }
@@ -1253,7 +1415,7 @@ hr {
 
 @media screen and (min-width: 1601px) {
     .gridBook {
-        padding: 2rem;
+        /*padding: 2rem;*/
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
@@ -1266,8 +1428,8 @@ hr {
 
 @media screen and (min-width: 768px) {
     .video {
-        width: 40%;
-        height: 30vw;
+        width: 100%;
+        height: 40vw;
     }
     .amiq {
         float: left;
@@ -1293,7 +1455,7 @@ hr {
 @media screen and (max-width: 767px) {
     .video {
         width: 100%;
-        height: 75vw;
+        height: 50vw;
     }
     .amiq {
         float: left;
@@ -1479,17 +1641,17 @@ hr {
     max-width: calc(100vw - 150px);
     height: calc(100vh - 7em);
     background-color: #fff;
-    -webkit-transition: .5s all ease-in;
-    -o-transition: .5s all ease-in;
-    transition: .5s all ease-in;
+    -webkit-transition: .25s all ease-in;
+    -o-transition: .25s all ease-in;
+    transition: .25s all ease-in;
     overflow: auto;
 }
 
 .filter.open {
     right: 0;
-    -webkit-transition: .5s all ease-out;
-    -o-transition: .5s all ease-out;
-    transition: .5s all ease-out;
+    -webkit-transition: .25s all ease-out;
+    -o-transition: .25s all ease-out;
+    transition: .25s all ease-out;
 }
 
 .filter input {
@@ -1506,7 +1668,7 @@ hr {
     color: #343a40;
     border: 1px solid #ccc;
     border-radius: .25em;
-    cursor: pointer;
+    /*cursor: pointer;*/
     -webkit-transition: .15s all;
     -o-transition: .15s all;
     transition: .15s all;
