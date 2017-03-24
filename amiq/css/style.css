@@ -446,7 +446,7 @@ hr {
 .intro-rent .intro-content {
     margin: 0 auto;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 .intro-rent strong {
     font-size: 1.5em;
@@ -454,7 +454,8 @@ hr {
 .go-rent {
     display: inline-block;
     margin: 3em;
-    padding: 1.5em 5em;
+    margin-top: 0;
+    padding: 1.5em 2em;
     background-color: #fff;
     color: #d9480f;
     border-radius: .25em;
@@ -490,6 +491,9 @@ hr {
     .intro-content .icon {
         font-size: 8vw;
         margin-bottom: 1rem;
+    }
+    .intro-rent .intro-content {
+        font-size: 1.5em;
     }
     .forDesktop {
         display: block;
