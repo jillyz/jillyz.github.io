@@ -642,6 +642,10 @@ hr {
     /*border-left: 10px solid;*/
 }
 
+.stage-bg h2 {
+    margin-top: 1em;
+}
+
 .stage-bg-1 {
     background-color: #3aa241;
 }
@@ -1899,6 +1903,7 @@ hr {
     margin-bottom: 3em;
 }
 .terms-header {
+    margin-top: .5em;
     margin-bottom: .5em;
     padding-bottom: 1em;
     border-bottom: 1px dotted #adb5bd;
