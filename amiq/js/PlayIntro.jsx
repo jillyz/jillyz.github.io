@@ -69,10 +69,30 @@ class PlayIntro extends React.Component {
             <h2 className="intro-title">培養孩子多元能力</h2>
             <br/>
             <ol>
-              <li><i className="icon fa fa-eye" aria-hidden="true"></i> 增進觀察辨識的應用能力</li>
-              <li><i className="icon fa fa-american-sign-language-interpreting" aria-hidden="true"></i> 提升後設認知能力</li>
-              <li><i className="icon fa fa-lightbulb-o" aria-hidden="true"></i> 培養及奠定良好的邏輯思考基礎</li>
-              <li><i className="icon fa fa-leanpub" aria-hidden="true"></i> 藉由實際操作的啟蒙教育</li>
+              <li>
+                <strong><i className="icon fa fa-eye" aria-hidden="true"></i> 增進<br/>觀察辨識的應用能力</strong>
+                <p>
+                  在AMIQ六階三大學習系列，從基礎認知到深度思考的邏輯概念，結合生活中各種事物、動作行為、生活歷程即實際經驗等題材，讓孩童在生活中處處都懂得做細膩的觀察及思考。
+                </p>
+              </li>
+              <li>
+                <strong><i className="icon fa fa-american-sign-language-interpreting" aria-hidden="true"></i> 提升<br/>後設認知能力</strong>
+                <p>
+                  孩童在吸收新知後，能學會支配運用知識和選擇策略，就是所謂的「後設認知能力」。孩子既能瞭解他所學知識的性質和內容，也能也瞭解如何進一步支配知識，解決問題。
+                </p>
+              </li>
+              <li>
+                <strong><i className="icon fa fa-lightbulb-o" aria-hidden="true"></i> 培養及奠定良好的<br/>邏輯思考基礎</strong>
+                <p>
+                  遊戲中學習是激發孩童對邏輯思考最直接的方式，結合生活中各種題材更能提高其學習興趣，AMIQ學習系列囊括五大邏輯領域，充分引導孩童能有自信的去思考、推理、探索並解決問題。
+                </p>
+              </li>
+              <li>
+                <strong><i className="icon fa fa-graduation-cap" aria-hidden="true"></i> 藉由實際操作的<br/>啟蒙教育</strong>
+                <p>
+                  三歲以上的幼兒需要加強語言活動和大小肌肉...等肢體活動，透過操作 AMIQ 遊戲板，讓孩童經由手眼協調增進其思考的靈活度。且人體70%的接收器都集中在眼部，換句話說，刺激孩童大腦發育的感官經驗，過一半是來自眼睛所帶來視覺的影響，操作遊戲板可訓練孩童敏銳地去判斷外在世界的微妙變化。
+                </p>
+              </li>
             </ol>
         </div>
         </div>

@@ -378,6 +378,8 @@ hr {
 }
 
 .intro {
+    padding-top: 2em;
+    padding-bottom: 4em;
     background: url(../img/bg.jpg) 50% 50%;
     -webkit-background-size: cover;
     background-size: cover;
@@ -422,9 +424,24 @@ hr {
 }
 .intro-content li {
     display: inline-block;
+    margin-top: 1em;
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
     text-align: center;
-    margin-bottom: 2rem;
     vertical-align: top;
+    line-height: 1.5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.intro-content li strong {
+    font-size: 1.2em; 
+}
+.intro-content li p  {
+    margin-top: 2em;
+    color: #fff;
+    /*display: none;*/
 }
 .intro-content .icon {
     display: block;
@@ -436,8 +453,8 @@ hr {
     border-bottom: 1px dotted rgba(255,255,255,.25);
 }
 .intro-skill {
-    padding: 3em 0;
-    background-color: #d6336c;   
+    padding: 2em 0;
+    background-color: #d6336c;
 }
 .intro-play {
     background-color: #fff;   
@@ -447,7 +464,7 @@ hr {
 }
 .intro-rent {
     padding: 4em 0;
-    background-color: #fff;
+    background-color: #d6336c;
 }
 .intro-rent .intro-title {
     font-size: 4em;
@@ -456,7 +473,7 @@ hr {
     margin: 0 auto;
     text-align: center;
     font-size: 1em;
-    color: #d6336c;
+    color: #fff;
     font-weight: bold;
 }
 .intro-rent strong {
@@ -467,18 +484,22 @@ hr {
     margin: 3em;
     margin-top: 0;
     padding: 1.5em 2em;
-    background-color: #d6336c;
-    color: #fff;
+    background-color: #fff;
+    color: #d6336c;
     border-radius: .25em;
     font-size: 1.75em;
     font-weight: bold;
     -webkit-transition: .25s all;
     -o-transition: .25s all;
     transition: .25s all;
+    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,.5);
+    box-shadow: 0 2px 5px rgba(0,0,0,.5);
 }
 .go-rent:hover {
-    -webkit-box-shadow: 0 10px 10px rgba(0,0,0,.35);
-    box-shadow: 0 10px 10px rgba(0,0,0,.35);
+    background-color: #c2255c;
+    color: #fff;
+    -webkit-box-shadow: 0 2px 20px rgba(0,0,0,.5);
+    box-shadow: 0 2px 20px rgba(0,0,0,.5);
 }
 @media screen and (min-width: 768px) {
     .intro-content {
@@ -500,7 +521,7 @@ hr {
         margin-bottom: 2rem;
     }
     .intro-content .icon {
-        font-size: 5vw;
+        font-size: 96px;
         margin-bottom: 1rem;
     }
     .intro-rent .intro-content {
@@ -522,6 +543,7 @@ hr {
     }
     .intro-content li {
         width: 50%;
+        border-top: 1px dotted rgba(255,255,255,.5);
     }
     .intro-content .icon {
         display: block;
