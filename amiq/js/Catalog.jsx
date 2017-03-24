@@ -45,20 +45,34 @@ class Catalog extends React.Component {
     this.setState({showLoading: true});
 
     var that = this;
-    $.ajax({
-      url: 'data/data.json',
-      dataType: 'json',
-      type: 'GET',
-      success: function(response) {
-        setTimeout( () => {
-          that.setState({
-            data: response,
-            showLoading: false
-          });
-          window.bookData = response;
-        }, 800);
-      }
-    });
+    if(window.bookData == undefined) {
+      $.ajax({
+        url: 'data/data.json',
+        dataType: 'json',
+        type: 'GET',
+        success: function(response) {
+          setTimeout( () => {
+            that.setState({
+              data: response,
+              showLoading: false
+            });
+            window.bookData = response;
+          }, 500);
+        }
+      });
+    } 
+    else {
+      setTimeout( () => {
+        this.setState({
+          data: window.bookData,
+        });
+      },0);
+      setTimeout( () => {
+        this.setState({
+          showLoading: false
+        });
+      },500);
+    }
     
     // this.onError();
     this.filterIfOverlayThenHideDrift();
@@ -72,15 +86,15 @@ class Catalog extends React.Component {
     // console.log('app update')
     // console.log(this.state)
 
-    drift.on('ready',function(api){
-      drift.on('sidebarClose',function(e){
-        if(e.data.widgetVisible){
-          this.setState({
-            filterOpen: false
-          })
-        }
-      })
-    })
+    // drift.on('ready',function(api){
+    //   drift.on('sidebarClose',function(e){
+    //     if(e.data.widgetVisible){
+    //       this.setState({
+    //         filterOpen: false
+    //       })
+    //     }
+    //   })
+    // })
 
     // if(this.state.filterOpen === true) {
     //   $('.gridBook').fadeIn();
@@ -91,7 +105,6 @@ class Catalog extends React.Component {
   }
 
   filterIfOverlayThenHideDrift(){
-
     const filterOpen = this.state.filterOpen;
     const isPreview = this.state.isPreview;
     const winW = $(window).width();
@@ -233,8 +246,8 @@ class Catalog extends React.Component {
         filterTypes: [],
         filterData: [],
       });
-      window.bookData = response;
-    }, 300);
+      // window.bookData = response;
+    }, 1000);
 
     $('.filter.tag').prop('checked', false);
     this.filterTypes();
@@ -495,24 +508,24 @@ class Catalog extends React.Component {
     console.log('renderCatalog',this)
     var isSafari = /constructor/i.test(window.HTMLElement);
     const that = this;
-    let isPreview = this.state.isPreview;
+    const isFilterOpen = this.state.filterOpen;
+    const isPreview = this.state.isPreview;
     return (
       <div>
-          <span className="list-type-menu">
-            
-              <span>
-              <a onClick={() => this.switchListToGrid()}>
-                {this.state.listTypeGrid ?
-                  <i className="fa fa-list-ul" aria-hidden="true"></i>
-                  :
-                  <i className="fa fa-th" aria-hidden="true"></i>
-                }
-              </a>
-              <a onClick={() => this.switchFilterPanel()}><i className="fa fa-filter" aria-hidden="true"></i></a>
-              </span>
 
-          </span>
-
+        {/* btn in header: grid/list , filter */}
+        <span className="list-type-menu">
+            <span>
+            <a onClick={() => this.switchListToGrid()}>
+              {this.state.listTypeGrid ?
+                <i className="fa fa-list-ul" aria-hidden="true"></i>
+                :
+                <i className="fa fa-th" aria-hidden="true"></i>
+              }
+            </a>
+            <a onClick={() => this.switchFilterPanel()} className={isFilterOpen ? 'btn-filter on' : 'btn-filter off'}><i className="fa fa-filter" aria-hidden="true"></i></a>
+            </span>
+        </span>
 
 
         <div className="grid">
