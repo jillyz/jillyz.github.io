@@ -62,7 +62,10 @@ class PlayIntro extends React.Component {
               中階 3-7 歲／
               高階 5-12 歲
             </p>
-            <hr/>
+          </div>
+        </div>
+        <div className="intro-skill">
+          <div className="intro-content">
             <h2 className="intro-title">培養孩子多元能力</h2>
             <br/>
             <ol>
@@ -71,7 +74,10 @@ class PlayIntro extends React.Component {
               <li><i className="icon fa fa-lightbulb-o" aria-hidden="true"></i> 培養及奠定良好的邏輯思考基礎</li>
               <li><i className="icon fa fa-leanpub" aria-hidden="true"></i> 藉由實際操作的啟蒙教育</li>
             </ol>
-            <hr/>
+        </div>
+        </div>
+        <div className="intro-play">
+          <div className="intro-content">
             <h2 className="intro-title">玩法介紹</h2>
             <iframe className="video" width="560" height="315" src="https://www.youtube.com/embed/xbVJLBwxArQ" frameborder="0" allowfullscreen></iframe>
           </div>
@@ -92,6 +98,7 @@ class PlayIntro extends React.Component {
           <a onClick={this.props.goRent} className="go-rent">我要租</a>
           </div>
         </div>
+
       </div>
     )
   }

@@ -435,6 +435,13 @@ hr {
     height: 0;
     border-bottom: 1px dotted rgba(255,255,255,.25);
 }
+.intro-skill {
+    padding: 3em 0;
+    background-color: #d6336c;   
+}
+.intro-play {
+    background-color: #212529;   
+}
 .intro-rent {
     padding: 4em 0;
     background-color: #d9480f;
@@ -489,7 +496,7 @@ hr {
         margin-bottom: 2rem;
     }
     .intro-content .icon {
-        font-size: 8vw;
+        font-size: 5vw;
         margin-bottom: 1rem;
     }
     .intro-rent .intro-content {
@@ -1899,6 +1906,7 @@ hr {
     text-align: center;
 }
 .terms-title {
+    margin: 1em 0;
     font-size: 34px;
     font-weight: normal;
 }
