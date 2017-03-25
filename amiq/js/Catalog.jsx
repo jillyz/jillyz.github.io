@@ -31,6 +31,7 @@ class Catalog extends React.Component {
     this.filterIfOverlayThenHideDrift = this. filterIfOverlayThenHideDrift.bind(this);
     this.previewShow = this.previewShow.bind(this);
     this.previewHide = this.previewHide.bind(this);
+    this.isShowPreview = this.isShowPreview.bind(this);
     this.onKeyDownPreviewHide = this.onKeyDownPreviewHide.bind(this);
     this.toggleBooksHandler = this.toggleBooksHandler.bind(this);
     this.bookGoNav = this.bookGoNav.bind(this);
@@ -503,6 +504,10 @@ class Catalog extends React.Component {
     // $('.books-' + id).stop().slideToggle(800);
   }
 
+  isShowPreview(showPreview) {
+    showPreview == false ? this.setState({isPreview: false}) : '';
+  }
+ 
   renderCatalog() {
 
     console.log('renderCatalog',this)
@@ -549,17 +554,14 @@ class Catalog extends React.Component {
           </div>
             
           {isPreview ? 
-            <div ref="preview" id="preview" className="preview animated zoomIn">
-              <Preview 
-                book={that.state.book} 
-                previewGuid={that.state.book.guid} 
-                bookGoNav={that.bookGoNav} 
-                bookContent={that.state.bookContent}
-                 />
-              <div className="closePreview" onClick={() => this.previewHide()}>
-                <i className="fa fa-times" aria-hidden="true"></i>
-              </div>
-            </div>
+            <Preview 
+              ref="preview" 
+              book={that.state.book} 
+              previewGuid={that.state.book.guid} 
+              bookGoNav={that.bookGoNav} 
+              bookContent={that.state.bookContent}
+              isShowPreview={that.isShowPreview} 
+              />
             : ''       
           }
 

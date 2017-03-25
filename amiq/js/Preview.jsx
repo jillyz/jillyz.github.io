@@ -20,6 +20,7 @@ class Preview extends React.Component {
     this.goTop = this.goTop.bind(this);
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
+    this.previewHide = this.previewHide.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
@@ -220,6 +221,10 @@ class Preview extends React.Component {
 
   }
 
+  previewHide(){
+    this.props.isShowPreview(false);
+  }
+
   scrollTop(){
     var element = document.getElementById('preview');
     scrollTo(element, 0, 100);
@@ -254,75 +259,113 @@ class Preview extends React.Component {
     // )
 
     return (
-      <div className="">
-        <div id="bookInfo" className={`book-info stage stage-${stageId}`}>
-          <div className="title-wrap">
-            <span className="id">{this.props.book.id}</span> 
-            <span className="title ch">{this.props.book.title}</span>
-            <span className="en">{this.props.book['title-en']}</span>
-            <span className={`subject book-subject fixed`}>
-              {this.props.book.subject}
-            </span>
-          </div>
-          <div className={`subject book-subject`}>
-            {this.props.book.subject}
-          </div>
-
-          {content ? <span className="book-content">{content}</span> : ''}
-          {types ? 
-            <div className="types">
-              <small>
-              {types.map(tagId => ( 
-                window.tags.map(tag => {
-                  if (tag.id == tagId) {
-                    return tag.name + ' / ';
-                  }
-                })
-              ))}
-              </small>
-            </div>
-            : ''
-          }
-        </div>
-
-        <div id="bookInfoFixed" className={`book-info fixed stage stage-${stageId}`}>
-          <div className="title-wrap">
-            <span className="id">{this.props.book.id}</span> 
-            <span className="title">{this.props.book.title}</span>
-            <span className={`subject book-subject fixed`}>
-              {this.props.book.subject}
-            </span>
-          </div>
-        </div>
-
-        <div className="topics">
-
-          <img className="topics-img" src={`img/content/amiq${this.props.book.id}.jpg`} />
-
-          <a className="pos pos0" onClick={() => this.seeTopicDetail(0)}>
-            {/*
-            <span className="title">
-              <span>{this.props.book.id}</span> 
-              <span className="ch">{this.props.book.title}</span>
+      <div>
+        <div id="preview" className="preview animated zoomIn">
+          <div id="bookInfo" className={`book-info stage stage-${stageId}`}>
+            <div className="title-wrap">
+              <span className="id">{this.props.book.id}</span> 
+              <span className="title ch">{this.props.book.title}</span>
               <span className="en">{this.props.book['title-en']}</span>
-            </span>
-            <span className="subject">
+              <span className={`subject book-subject fixed`}>
+                {this.props.book.subject}
+              </span>
+            </div>
+            <div className={`subject book-subject`}>
               {this.props.book.subject}
-            </span>
-            {content ? content : ''}
-            */}
-            <i className="fa fa-plus-circle zoom-in" aria-hidden="true"></i>
-          </a>
+            </div>
 
-          {topics.map(item => (
-            <a key={item.pos} className={`pos pos${item.pos}`} onClick={() => this.seeTopicDetail(item.pos)}>
+            {content ? <span className="book-content">{content}</span> : ''}
+            {types ? 
+              <div className="types">
+                <small>
+                {types.map(tagId => ( 
+                  window.tags.map(tag => {
+                    if (tag.id == tagId) {
+                      return tag.name + ' / ';
+                    }
+                  })
+                ))}
+                </small>
+              </div>
+              : ''
+            }
+          </div>
+
+
+
+          <div className="topics">
+
+            <img className="topics-img" src={`img/content/amiq${this.props.book.id}.jpg`} />
+
+            <a className="pos pos0" onClick={() => this.seeTopicDetail(0)}>
               {/*
-              <div className="topic-info">
-                <div className="title">
+              <span className="title">
+                <span>{this.props.book.id}</span> 
+                <span className="ch">{this.props.book.title}</span>
+                <span className="en">{this.props.book['title-en']}</span>
+              </span>
+              <span className="subject">
+                {this.props.book.subject}
+              </span>
+              {content ? content : ''}
+              */}
+              <i className="fa fa-plus-circle zoom-in" aria-hidden="true"></i>
+            </a>
+
+            {topics.map(item => (
+              <a key={item.pos} className={`pos pos${item.pos}`} onClick={() => this.seeTopicDetail(item.pos)}>
+                {/*
+                <div className="topic-info">
+                  <div className="title">
+                    <strong>#{item.pos} {item.topic}</strong>
+                    <small>{item.topicLong ? item.topicLong : ''}</small>
+                  </div>
+                  <div className="">
+                    <ul>
+                      {item.point ? <li><span>訓練要點：</span>{item.point}</li> : ''}
+                      {item.skill ? <li><span>能力培養：</span>{item.skill}</li> : ''}
+                    </ul>
+
+                    {item.ans ? 
+                      <ul>
+                        <li className="ans">
+                          <span>解答說明：</span>
+                          <ol>
+                          {
+                            item.ans.map( (text, index) =>(
+                              <li key={index} className="ans">
+                                {(index + 1) < 10 ? '0' + (index + 1 ): index + 1 }. {text}
+                              </li>
+                            ))
+                          }
+                          </ol>
+                        </li>
+                      </ul>
+                    : ''}
+
+                  </div>
+                </div>
+                */}
+                <span className="topic-id">{item.pos}</span>
+                <i className="fa fa-plus-circle zoom-in" aria-hidden="true"></i>
+              </a>
+            ))}
+
+          </div>
+
+          <div className="seeTopicItem">
+            <div id="topic_0" className="topic-cover">
+              <div className="topic-title"><strong>封面</strong></div>
+              <div className={`seeTopic see0`} style={this.state.style} onClick={() => this.goTop()}></div>{/*img*/}
+            </div>
+            {topics.map(item => (
+              <div key={item.pos} id={`topic_${item.pos}`}>
+                <div className="topic-title">
                   <strong>#{item.pos} {item.topic}</strong>
                   <small>{item.topicLong ? item.topicLong : ''}</small>
                 </div>
-                <div className="">
+                <div className={`seeTopic see${item.pos}`} style={this.state.style} onClick={() => this.goTop()}></div>{/*img*/}
+                <div className="see-info">
                   <ul>
                     {item.point ? <li><span>訓練要點：</span>{item.point}</li> : ''}
                     {item.skill ? <li><span>能力培養：</span>{item.skill}</li> : ''}
@@ -347,55 +390,21 @@ class Preview extends React.Component {
 
                 </div>
               </div>
-              */}
-              <span className="topic-id">{item.pos}</span>
-              <i className="fa fa-plus-circle zoom-in" aria-hidden="true"></i>
-            </a>
-          ))}
-
-        </div>
-
-        <div className="seeTopicItem">
-          <div id="topic_0" className="topic-cover">
-            <div className="topic-title"><strong>封面</strong></div>
-            <div className={`seeTopic see0`} style={this.state.style} onClick={() => this.goTop()}></div>{/*img*/}
+            ))}
           </div>
-          {topics.map(item => (
-            <div key={item.pos} id={`topic_${item.pos}`}>
-              <div className="topic-title">
-                <strong>#{item.pos} {item.topic}</strong>
-                <small>{item.topicLong ? item.topicLong : ''}</small>
-              </div>
-              <div className={`seeTopic see${item.pos}`} style={this.state.style} onClick={() => this.goTop()}></div>{/*img*/}
-              <div className="see-info">
-                <ul>
-                  {item.point ? <li><span>訓練要點：</span>{item.point}</li> : ''}
-                  {item.skill ? <li><span>能力培養：</span>{item.skill}</li> : ''}
-                </ul>
-
-                {item.ans ? 
-                  <ul>
-                    <li className="ans">
-                      <span>解答說明：</span>
-                      <ol>
-                      {
-                        item.ans.map( (text, index) =>(
-                          <li key={index} className="ans">
-                            {(index + 1) < 10 ? '0' + (index + 1 ): index + 1 }. {text}
-                          </li>
-                        ))
-                      }
-                      </ol>
-                    </li>
-                  </ul>
-                : ''}
-
-              </div>
-            </div>
-          ))}
         </div>
-
-        <div className="close"></div>
+        <div id="bookInfoFixed" className={`book-info fixed stage stage-${stageId}`}>
+          <div className="title-wrap">
+            <span className="id">{this.props.book.id}</span> 
+            <span className="title">{this.props.book.title}</span>
+            <span className={`subject book-subject fixed`}>
+              {this.props.book.subject}
+            </span>
+          </div>
+        </div>        
+        <div className="closePreview" onClick={() => this.previewHide()}>
+          <i className="fa fa-times" aria-hidden="true"></i>
+        </div>
 
         <div className="preview-jump">
           <a onClick={() => this.goPrev()}><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
