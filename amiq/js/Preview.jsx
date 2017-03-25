@@ -222,7 +222,7 @@ class Preview extends React.Component {
   }
 
   previewHide(){
-    this.props.isShowPreview(false);
+    this.props.isPreviewHide();
   }
 
   scrollTop(){

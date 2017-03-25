@@ -31,7 +31,6 @@ class Catalog extends React.Component {
     this.filterIfOverlayThenHideDrift = this. filterIfOverlayThenHideDrift.bind(this);
     this.previewShow = this.previewShow.bind(this);
     this.previewHide = this.previewHide.bind(this);
-    this.isShowPreview = this.isShowPreview.bind(this);
     this.onKeyDownPreviewHide = this.onKeyDownPreviewHide.bind(this);
     this.toggleBooksHandler = this.toggleBooksHandler.bind(this);
     this.bookGoNav = this.bookGoNav.bind(this);
@@ -503,10 +502,6 @@ class Catalog extends React.Component {
   toggleBooksHandler(id){
     // $('.books-' + id).stop().slideToggle(800);
   }
-
-  isShowPreview(showPreview) {
-    showPreview == false ? this.setState({isPreview: false}) : '';
-  }
  
   renderCatalog() {
 
@@ -560,7 +555,7 @@ class Catalog extends React.Component {
               previewGuid={that.state.book.guid} 
               bookGoNav={that.bookGoNav} 
               bookContent={that.state.bookContent}
-              isShowPreview={that.isShowPreview} 
+              isPreviewHide={that.previewHide} 
               />
             : ''       
           }
