@@ -235,6 +235,8 @@ class Preview extends React.Component {
     const content = this.state.content;
     const stageId = this.props.book.stage;
 
+    const topicsNum = [1,2,3,4,5,6,7,8,9,10];
+
     const titleFixed = this.state.titleFixed
     const bookClassName = (
       titleFixed ? 
@@ -291,8 +293,6 @@ class Preview extends React.Component {
             }
           </div>
 
-
-
           <div className="topics">
 
             <img className="topics-img" src={`img/content/amiq${this.props.book.id}.jpg`} />
@@ -312,41 +312,9 @@ class Preview extends React.Component {
               <i className="fa fa-plus-circle zoom-in" aria-hidden="true"></i>
             </a>
 
-            {topics.map(item => (
-              <a key={item.pos} className={`pos pos${item.pos}`} onClick={() => this.seeTopicDetail(item.pos)}>
-                {/*
-                <div className="topic-info">
-                  <div className="title">
-                    <strong>#{item.pos} {item.topic}</strong>
-                    <small>{item.topicLong ? item.topicLong : ''}</small>
-                  </div>
-                  <div className="">
-                    <ul>
-                      {item.point ? <li><span>訓練要點：</span>{item.point}</li> : ''}
-                      {item.skill ? <li><span>能力培養：</span>{item.skill}</li> : ''}
-                    </ul>
-
-                    {item.ans ? 
-                      <ul>
-                        <li className="ans">
-                          <span>解答說明：</span>
-                          <ol>
-                          {
-                            item.ans.map( (text, index) =>(
-                              <li key={index} className="ans">
-                                {(index + 1) < 10 ? '0' + (index + 1 ): index + 1 }. {text}
-                              </li>
-                            ))
-                          }
-                          </ol>
-                        </li>
-                      </ul>
-                    : ''}
-
-                  </div>
-                </div>
-                */}
-                <span className="topic-id">{item.pos}</span>
+            {topicsNum.map(num => (
+              <a key={num} className={`pos pos${num}`} onClick={() => this.seeTopicDetail(num)}>
+                <span className="topic-id">{num}</span>
                 <i className="fa fa-plus-circle zoom-in" aria-hidden="true"></i>
               </a>
             ))}
@@ -358,39 +326,60 @@ class Preview extends React.Component {
               <div className="topic-title"><strong>封面</strong></div>
               <div className={`seeTopic see0`} style={this.state.style} onClick={() => this.goTop()}></div>{/*img*/}
             </div>
-            {topics.map(item => (
-              <div key={item.pos} id={`topic_${item.pos}`}>
+            {topicsNum.map(num => (
+
+              topics.length > 0 
+
+              ?
+
+              topics.map(item => (
+                item.pos == num ? 
+                  <div key={item.pos} id={`topic_${item.pos}`}>
+                    <div className="topic-title">
+                      <strong>#{item.pos} {item.topic}</strong>
+                      <small>{item.topicLong ? item.topicLong : ''}</small>
+                    </div>
+                    <div className={`seeTopic see${item.pos}`} style={this.state.style} onClick={() => this.goTop()}></div>{/*img*/}
+                    <div className="see-info">
+                      <ul>
+                        {item.point ? <li><span>訓練要點：</span>{item.point}</li> : ''}
+                        {item.skill ? <li><span>能力培養：</span>{item.skill}</li> : ''}
+                      </ul>
+
+                      {item.ans ? 
+                        <ul>
+                          <li className="ans">
+                            <span>解答說明：</span>
+                            <ol>
+                            {
+                              item.ans.map( (text, index) =>(
+                                <li key={index} className="ans">
+                                  {(index + 1) < 10 ? '0' + (index + 1 ): index + 1 }. {text}
+                                </li>
+                              ))
+                            }
+                            </ol>
+                          </li>
+                        </ul>
+                      : ''}
+
+                    </div>
+                  </div>
+                  : ''
+                
+              ))
+
+              :
+
+              <div key={num} id={`topic_${num}`}>
                 <div className="topic-title">
-                  <strong>#{item.pos} {item.topic}</strong>
-                  <small>{item.topicLong ? item.topicLong : ''}</small>
+                  <strong>#{num}</strong>
                 </div>
-                <div className={`seeTopic see${item.pos}`} style={this.state.style} onClick={() => this.goTop()}></div>{/*img*/}
-                <div className="see-info">
-                  <ul>
-                    {item.point ? <li><span>訓練要點：</span>{item.point}</li> : ''}
-                    {item.skill ? <li><span>能力培養：</span>{item.skill}</li> : ''}
-                  </ul>
+                <div className={`seeTopic see${num}`} style={this.state.style} onClick={() => this.goTop()}></div>{/*img*/}
+              </div>               
 
-                  {item.ans ? 
-                    <ul>
-                      <li className="ans">
-                        <span>解答說明：</span>
-                        <ol>
-                        {
-                          item.ans.map( (text, index) =>(
-                            <li key={index} className="ans">
-                              {(index + 1) < 10 ? '0' + (index + 1 ): index + 1 }. {text}
-                            </li>
-                          ))
-                        }
-                        </ol>
-                      </li>
-                    </ul>
-                  : ''}
-
-                </div>
-              </div>
             ))}
+            
           </div>
         </div>
         <div id="bookInfoFixed" className={`book-info fixed stage stage-${stageId}`}>
