@@ -308,6 +308,14 @@ hr {
     padding: .15em .35em;
     font-size: 2em;
     background-color: rgba(204,51,0,.85);
+    -webkit-transition: .5s all;
+    -o-transition: .5s all;
+    transition: .5s all;
+}
+.slogan .bigger:hover {
+    background-color: rgba(204,71,20,.95);
+    -webkit-box-shadow: 2px 10px 50px rgba(0,0,0,.35);
+    box-shadow: 2px 10px 50px rgba(0,0,0,.35);
 }
 .slogan .text-amiq {
     display: block;
@@ -348,8 +356,6 @@ hr {
 .test-img {
     width: 100%;
 }
-
-
 .rent-form {
     /*position: fixed;
     top: 48px;
@@ -483,23 +489,21 @@ hr {
     display: inline-block;
     margin: 3em;
     margin-top: 0;
-    padding: 1.5em 2em;
+    padding: 1em 2em;
     background-color: #fff;
     color: #d6336c;
-    border-radius: .25em;
+    border-radius: 5em;
     font-size: 1.75em;
     font-weight: bold;
     -webkit-transition: .25s all;
     -o-transition: .25s all;
     transition: .25s all;
-    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,.5);
-    box-shadow: 0 2px 5px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.25);
+    box-shadow: 0 5px 10px rgba(0,0,0,.25);
 }
 .go-rent:hover {
-    background-color: #c2255c;
-    color: #fff;
-    -webkit-box-shadow: 0 2px 20px rgba(0,0,0,.5);
-    box-shadow: 0 2px 20px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 10px 40px rgba(0,0,0,.35);
+    box-shadow: 0 10px 40px rgba(0,0,0,.35);
 }
 @media screen and (min-width: 768px) {
     .intro-content {
@@ -808,7 +812,7 @@ hr {
 }
 .rent-date {
     display: inline-block;
-    padding: .25em 0;
+    padding: .15em 0;
     min-width: 8.5em;
     font-size: 1.15em;
     vertical-align: middle;
@@ -1079,14 +1083,17 @@ hr {
 }
 
 .pos .zoom-in {
-    display: none;
+    opacity: 0;
     font-size: 5vw;
     line-height: 18.5vw !important;
     color: rgba(0, 0, 0, .75);
+    -webkit-transition: .5s all;
+    -o-transition: .5s all;
+    transition: .5s all;
 }
 
 .pos:hover .zoom-in {
-    display: inline;
+    opacity: 1;
 }
 
 .topic-info {
