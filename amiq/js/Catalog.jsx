@@ -133,8 +133,8 @@ class Catalog extends React.Component {
   }
 
   switchListToGrid() {
-    var element = document.getElementById('body');
-    scrollTo(element, 0, 1000);
+    // var element = document.getElementById('body');
+    // scrollTo(element, 0, 1000);
 
     this.setState({
       listTypeGrid: !this.state.listTypeGrid
@@ -372,7 +372,7 @@ class Catalog extends React.Component {
               </span>
             </div>
             <div ref="preview" className="topics">
-              <img src={`img/content/amiq${book.id}.jpg`} />
+              <img src={`img/content_s/amiq${book.id}.jpg`} />
             </div>
             {book.types ? 
               <div className="types">
