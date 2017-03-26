@@ -47,6 +47,7 @@ class Preview extends React.Component {
     console.log('>>> press <<< ', e.keyCode)
     if(e.keyCode == 39) { this.goNext(); }
     if(e.keyCode == 37) { this.goPrev(); }    
+    if(e.keyCode == 27) { this.previewHide(); }    
   }
 
   componentDidMount() {
@@ -106,7 +107,7 @@ class Preview extends React.Component {
 
     var that = this;
     const url = 'data/' + guid +'.json';
-    const id =bookKeys.getId[guid];
+    const id = bookKeys.getId[guid];
 
     if(guid < 0) { guid = 1; }
     if(guid > 90) { guid = 90; }
