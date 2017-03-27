@@ -180,11 +180,93 @@ hr {
     background: url(../img/amiq_banner.jpg) 50% 33% no-repeat;
     -webkit-background-size: 100% auto;
     background-size: 100% auto;
+    -webkit-transition: 1s all;
+    -o-transition: 1s all;
+    transition: 1s all;
+/*    -webkit-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    -o-transform: rotate(-15deg);
+    transform: rotate(-15deg);*/
+    -webkit-animation: bannerAni 40s ease-in-out infinite;
+    -o-animation: bannerAni 40s ease-in-out infinite;
+    animation: bannerAni 40s ease-in-out infinite;
+}
+.banner:before {
+    top: -25%;
+    left: -35%;
+    width: 180%;
+    height: calc(100vw / 16 * 9 *  1.8);
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    transform: rotate(15deg); 
+}
 
+@-webkit-keyframes bannerAni {
+  0%, 100% {
+    top: -25%;
+    left: -25%;
+    width: 160%;
+    height: calc(100vw / 16 * 9 * 1.6);
+    transition: 1s all;
     -webkit-transform: rotate(-15deg);
     -ms-transform: rotate(-15deg);
     -o-transform: rotate(-15deg);
     transform: rotate(-15deg);
+  }
+  25%, 75% {
+    top: 0;
+    left: -10%;
+    width: 120%;
+    height: calc(100vw / 16 * 9);
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);  
+  }
+  50% {
+    top: -25%;
+    left: -35%;
+    width: 180%;
+    height: calc(100vw / 16 * 9 *  1.8);
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    transform: rotate(15deg); 
+  }
+}
+@keyframes bannerAni {
+  0%, 100% {
+    top: -25%;
+    left: -25%;
+    width: 160%;
+    height: calc(100vw / 16 * 9 * 1.6);
+    transition: 1s all;
+    -webkit-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    -o-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+  25%, 75% {
+    top: 0;
+    left: -10%;
+    width: 120%;
+    height: calc(100vw / 16 * 9);
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);  
+  }
+  50% {
+    top: -25%;
+    left: -35%;
+    width: 180%;
+    height: calc(100vw / 16 * 9 *  1.8);
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    transform: rotate(15deg); 
+  }
 }
 
 @media screen (max-width: 48px) {
@@ -469,13 +551,40 @@ hr {
     color: #d6336c;
 }
 .intro-rent {
+    position: relative;
     padding: 4em 0;
-    background-color: #d6336c;
+    background: url(../img/cute_mei.jpg) no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;    
+}
+@media screen and (orientation: portrait) {
+    .intro-rent {
+        background-position: 65% 0;
+    }
+}
+@media screen and (orientation: landscape) {
+    .intro-rent {
+        background-position: 100% 0;
+    }
+}
+.intro-rent:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: #a61e4d;
+    background-blend-mode: hard-light;
+    opacity: .5;
 }
 .intro-rent .intro-title {
     font-size: 4em;
+    text-shadow: 0 2px 2px rgba(0,0,0,.25);
 }
 .intro-rent .intro-content {
+    position: relative;
+    z-index: 1;
     margin: 0 auto;
     text-align: center;
     font-size: 1em;
@@ -494,7 +603,7 @@ hr {
     color: #d6336c;
     border-radius: 5em;
     font-size: 1.75em;
-    font-weight: bold;
+    font-weight: 900;
     -webkit-transition: .25s all;
     -o-transition: .25s all;
     transition: .25s all;
@@ -502,8 +611,8 @@ hr {
     box-shadow: 0 5px 10px rgba(0,0,0,.25);
 }
 .go-rent:hover {
-    -webkit-box-shadow: 0 10px 40px rgba(0,0,0,.35);
-    box-shadow: 0 10px 40px rgba(0,0,0,.35);
+    -webkit-box-shadow: 0 10px 50px rgba(0,0,0,.4);
+    box-shadow: 0 10px 50px rgba(0,0,0,.4);
 }
 .how-to-play {
     width: 100%;
@@ -1487,7 +1596,7 @@ hr {
 @media screen and (min-width: 768px) {
     .video {
         width: 100%;
-        height: 40vw;
+        height: 56vw;
     }
     .amiq {
         float: left;
@@ -1513,7 +1622,7 @@ hr {
 @media screen and (max-width: 767px) {
     .video {
         width: 100%;
-        height: 50vw;
+        height: 56vw;
     }
     .amiq {
         float: left;

@@ -97,25 +97,30 @@ class PlayIntro extends React.Component {
         </div>
         </div>
         <div className="intro-play">
-          <div className="intro-content">
+          <div className="intro-content8">
+            {/*
             <h2 className="intro-title">玩法介紹</h2>
-            <iframe className="video" width="560" height="315" src="https://www.youtube.com/embed/xbVJLBwxArQ" frameborder="0" allowfullscreen></iframe>
+            <div>
+              <img className="how-to-play" src="img/play.gif" />
+            </div>
+            */}
+            <iframe className="video" width="560" height="315" src="https://www.youtube.com/embed/mTjTBEI0Gvc" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
 
         <div className="intro-rent">
           <div className="intro-content">
-          <h2 className="intro-title">租比買划算</h2>
+            <h2 className="intro-title">租比買划算</h2>
 
-          <p className="center">
-            <strong>也許您有過以下疑慮</strong><br/>
-            一套教具動輒好幾萬，買了也不知道小朋友喜不喜歡，常不常用<br/>
-            看起來很棒，可是我的小朋友還小...擔心長大了就用不到了，似乎有點浪費<br/>
-            我好心動，想再多了解看看，但我還沒打算真的要買<br/>
-            <br/>
-            <strong>別猶豫！<br/>租，是您最好的選擇！<br/>快來吧～</strong>
-          </p>
-          <a onClick={this.props.goRent} className="go-rent">我要租</a>
+            <p className="center">
+              <strong>也許您有過以下疑慮</strong><br/>
+              一套教具動輒好幾萬，買了也不知道小朋友喜不喜歡，常不常用<br/>
+              看起來很棒，可是我的小朋友還小...擔心長大了就用不到了，似乎有點浪費<br/>
+              我好心動，想再多了解看看，但我還沒打算真的要買<br/>
+              <br/>
+              <strong>別猶豫！<br/>租，是您最好的選擇！<br/>快來吧～</strong>
+            </p>
+            <a onClick={this.props.goRent} className="go-rent">我要租</a>
           </div>
         </div>
 
