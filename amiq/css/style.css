@@ -187,9 +187,9 @@ hr {
     -ms-transform: rotate(-15deg);
     -o-transform: rotate(-15deg);
     transform: rotate(-15deg);*/
-    -webkit-animation: bannerAni 40s ease-in-out infinite;
+/*    -webkit-animation: bannerAni 40s ease-in-out infinite;
     -o-animation: bannerAni 40s ease-in-out infinite;
-    animation: bannerAni 40s ease-in-out infinite;
+    animation: bannerAni 40s ease-in-out infinite;*/
 }
 .banner:before {
     top: -25%;
