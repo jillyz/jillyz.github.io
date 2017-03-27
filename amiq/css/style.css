@@ -183,25 +183,14 @@ hr {
     -webkit-transition: 1s all;
     -o-transition: 1s all;
     transition: 1s all;
-/*    -webkit-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
     -ms-transform: rotate(-15deg);
     -o-transform: rotate(-15deg);
-    transform: rotate(-15deg);*/
+    transform: rotate(-15deg);
 /*    -webkit-animation: bannerAni 40s ease-in-out infinite;
     -o-animation: bannerAni 40s ease-in-out infinite;
     animation: bannerAni 40s ease-in-out infinite;*/
 }
-.banner:before {
-    top: -25%;
-    left: -35%;
-    width: 180%;
-    height: calc(100vw / 16 * 9 *  1.8);
-    -webkit-transform: rotate(15deg);
-    -ms-transform: rotate(15deg);
-    -o-transform: rotate(15deg);
-    transform: rotate(15deg); 
-}
-
 @-webkit-keyframes bannerAni {
   0%, 100% {
     top: -25%;
