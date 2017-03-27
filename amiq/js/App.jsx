@@ -17,14 +17,30 @@ class App extends React.Component {
     this.showPlayIntro = this.showPlayIntro.bind(this);
     this.showCatalog = this.showCatalog.bind(this);
     this.showRent = this.showRent.bind(this);
+    this.scrollHeader = this.scrollHeader.bind(this);
   }
 
   componentDidMount() {
     this.bodyOverflow();
+    this.scrollHeader();
   }
 
   componentDidUpdate(prevProps, prevState) {
     this.bodyOverflow();
+  }
+
+  scrollHeader() {
+    var header = new Headroom(document.querySelector("#header, .list-type-menu, .indicator-bar"), {
+        tolerance: 5,
+        offset : 0,
+        classes: {
+          initial: "animated",
+          pinned: "slideDown",
+          unpinned: "slideUp"
+        }
+    });
+    header.init();
+
   }
 
   bodyOverflow() {
@@ -83,7 +99,7 @@ class App extends React.Component {
     }
     return (
       <div className="app-wrap">
-        <header className="header">
+        <header id="header" className="header">
           <a className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntro()}>邏輯教具 AMIQ</a>  
           <a className={inRent ? 'link active' : 'link'} onClick={()=> this.showRent()}>租借</a>
           <a className={inCatalog ? 'link active' : 'link'} onClick={()=> this.showCatalog()}>目錄</a>
