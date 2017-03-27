@@ -607,6 +607,7 @@ hr {
     border-radius: 5em;
     font-size: 1.75em;
     font-weight: 900;
+    white-space: nowrap;
     -webkit-transition: .25s all;
     -o-transition: .25s all;
     transition: .25s all;
