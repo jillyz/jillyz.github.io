@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>會員等級及標籤管理</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="layout.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div id="mode" data-mode="member">
+
+<div class="member-list">
+  <div class="fix-top func-bar">
+    <a class="btn">新增會員</a>
+  </div>
+  <table class="my-table">
+    <thead>
+      <tr>
+        <th class="col-username">會員帳號</th>
+        <th class="col-nickname">暱稱</th>
+        <th class="col-time">最新交易時間</th>
+        <th class="col-amount text-right">總交易額</th>
+        <th class="col-tags">等級/標籤</th>
+      </tr>
+      <tr>
+        <td><a class="edit">member001</a></td>
+        <td>詹姆士</td>
+        <td>2017/04/05 09:25:02</td>
+        <td class="col-amount text-right"><a>230,000</a></td>
+        <td>
+          <span class="tag-it tag-auto tag-frequently">頻繁交易</span>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="edit">member002</a></td>
+        <td>茱蒂</td>
+        <td>2017/04/05 09:25:02</td>
+        <td class="col-amount text-right"><a>58,000,000</a></td>
+        <td>
+          <span class="tag-it tag-auto tag-high-amount">高額交易</span>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="edit">member003</a></td>
+        <td>席維斯</td>
+        <td>2017/04/05 09:25:02</td>
+        <td class="col-amount text-right"><a>6,900,000</a></td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="edit">member004</a></td>
+        <td>艾薇</td>
+        <td>2017/04/05 09:25:02</td>
+        <td class="col-amount text-right"><a>110,000</a></td>
+        <td>
+          <span class="tag-it tag-manual tag-1">手動標籤1111</span>
+          <span class="tag-it tag-manual tag-2">手動標籤22</span>
+          <span class="tag-it tag-manual tag-3">手動標籤3</span>
+        </td>
+      </tr>
+      <tr>
+        <td><a class="edit">member005</a></td>
+        <td>張伯倫</td>
+        <td>2017/04/05 09:25:02</td>
+        <td class="col-amount text-right"><a>2,470,000</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="edit">member006</a></td>
+        <td>貝拉</td>
+        <td>2017/04/05 09:25:02</td>
+        <td class="col-amount text-right"><a>620,000</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="edit">member007</a></td>
+        <td>道爾</td>
+        <td>2017/04/05 09:25:02</td>
+        <td class="col-amount text-right"><a>18,000</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="edit">member008</a></td>
+        <td>珊迪</td>
+        <td>2017/04/05 09:25:02</td>
+        <td class="col-amount text-right"><a>556,000</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a>member009</a></td>
+        <td>蜜雪兒</td>
+        <td>2017/04/05 09:25:02</td>
+        <td class="col-amount text-right"><a>960,000</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="edit">member010</a></td>
+        <td>艾倫</td>
+        <td>2017/04/05 09:25:02</td>
+        <td class="col-amount text-right"><a>770,000</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="edit">member011</a></td>
+        <td>凱特</td>
+        <td>2017/04/05 09:25:02</td>
+        <td class="col-amount text-right"><a>1,580,000</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="edit">member012</a></td>
+        <td>安琪兒</td>
+        <td>2017/04/05 09:25:02</td>
+        <td class="col-amount text-right"><a>750,000</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="edit">member013</a></td>
+        <td>傑克</td>
+        <td>2017/04/05 09:25:02</td>
+        <td class="col-amount text-right"><a>220,000</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="edit">member014</a></td>
+        <td>克洛伊</td>
+        <td>2017/04/05 09:25:02</td>
+        <td class="col-amount text-right"><a>360,000</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="edit">member015</a></td>
+        <td>莎拉</td>
+        <td>2017/04/05 09:25:02</td>
+        <td class="col-amount text-right"><a>810,000</a></td>
+        <td></td>
+      </tr>
+    </thead>
+  </table>
+</div>
+
+<div class="tag-list-wrap">
+  <div class="fix-top func-bar">
+    <a class="btn btn-mode-switch swith-mode-js">管理標籤 <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+    <a class="btn btn-mode-switch hidden swith-mode-js"><i class="fa fa-angle-double-left" aria-hidden="true"></i> 會員等級</a>
+  </div>
+
+  <div class="tag-list">
+    <strong class="tag-type auto">自動標籤</strong>
+    <ul>
+      <li class="tag-auto tag-high-amount" id="tag-setting-1">高額交易</li>
+      <li class="tag-auto tag-frequently">頻繁交易</li>
+      <li class="tag-auto tag-normal">正常交易</li>
+    </ul>
+
+    <strong class="tag-type manual">
+      手動標籤 
+      <i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" title="拖曳標籤至會員列上，可為該會員加上標籤"></i>
+    </strong>
+    <ul>
+      <li class="tag-manual tag-1">手動標籤1111</li>
+      <li class="tag-manual tag-2">手動標籤22</li>
+      <li class="tag-manual tag-3">手動標籤3</li>
+      <li class="tag-manual tag-4">手動標籤44444</li>
+      <li class="tag-manual tag-5">手動標籤555</li>
+    </ul>
+
+  </div>
+
+</div>
+
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="index.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
