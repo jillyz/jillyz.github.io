@@ -51,11 +51,11 @@ $(function() {
             for (var item in data) {
                 var index = parseInt(item / cols);
                 if (item % cols == 0 && index == i) obj['time'] = data[item].content.$t;
-                if (item % cols == 1 && index == i) obj['user'] = data[item].content.$t;
-                if (item % cols == 2 && index == i) obj['fromTime'] = data[item].content.$t;
-                if (item % cols == 3 && index == i) obj['toTime'] = data[item].content.$t;
+                if (item % cols == 1 && index == i) obj['gmail'] = data[item].content.$t;
+                if (item % cols == 2 && index == i) obj['user'] = data[item].content.$t;
+                if (item % cols == 3 && index == i) obj['fromTime'] = data[item].content.$t;
                 if (item % cols == 4 && index == i) obj['days'] = data[item].content.$t;
-                if (item % cols == 5 && index == i) obj['gmail'] = data[item].content.$t;
+                if (item % cols == 5 && index == i) obj['toTime'] = data[item].content.$t;
                 if (item % cols == 6 && index == i) obj['bookTotal'] = data[item].content.$t;
                 if (item % cols == 7 && index == i) {
                     var arrIds = []
