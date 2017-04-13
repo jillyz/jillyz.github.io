@@ -136,7 +136,7 @@ hr {
 */
 .list-type-menu {
     position: fixed;
-    top: 5px;
+    top: 0;
     right: 0;
     z-index: 100;
     background-color: #fff;
@@ -144,7 +144,7 @@ hr {
 
 .list-type-menu a {
     display: inline-block;
-    padding: .65em 1em;
+    padding: 1.25em 1em .75em 1em;
     color: #868e96;
     cursor: pointer;
     -webkit-transition: .5s all;
