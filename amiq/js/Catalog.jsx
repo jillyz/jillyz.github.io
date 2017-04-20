@@ -330,11 +330,13 @@ class Catalog extends React.Component {
     const fromTime = rentBook.fromTime;
     const toTime = rentBook.toTime;
     const isRented = Date.parse(rentBook.fromTime) < Date.parse(new Date());
+    const isPassed= Date.parse(rentBook.toTime) < Date.parse(new Date());
     if(!isRented) {
       return(
         <div className="rent-state reserve" key={`rent_state_reserve_${bookId}`}><span className="state">已預約</span><span className="rent-date">{this.formatDateStr(fromTime)} 借 ~ {this.formatDateStr(toTime)} 還</span></div>
       )
-    } else {
+    } 
+    else if (isRented && !isPassed) {
       return(
         <div className="rent-state already" key={`rent_state_already_${bookId}`}><span className="state">已借出</span><span className="rent-date">{this.formatDateStr(fromTime)} 借 ~ {this.formatDateStr(toTime)} 還</span></div>
       )
