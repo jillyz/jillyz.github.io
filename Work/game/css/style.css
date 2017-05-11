@@ -178,7 +178,7 @@ a, img {
   /*left: 780px;*/
 	width: 370px;
 	height: 138px;
-	background-image: url(../images/play.png);
+	background-image: url(../images/play_start.png);
 	-webkit-background-size: 100%;
 	background-size: 100%;
 	-webkit-transition: all .25s;
