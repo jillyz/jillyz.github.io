@@ -79,7 +79,7 @@ function onPlayerStateChange(event) {
         $("#cover").css({ 'background-color': 'rgba(105,153,102, 1)', '-webkit-transition': '0', '-o-transition': '0', 'transition': '0' });
         $(".go-micro-film").text("前往完整版...");
         setTimeout(function () {
-            location.href = "Video.html";
+            location.href = "video.html";
         }, 1500);
 
     }
