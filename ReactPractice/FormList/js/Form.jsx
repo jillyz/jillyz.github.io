@@ -182,7 +182,7 @@ class Form extends React.Component {
       <div>
         <div className="fixed fixedTop">
           <table>
-            <caption>項目</caption>
+            <caption>管理項目（雙擊後編輯）</caption>
             <thead>
               <tr>
                 <th className="colOrder">ID</th>
