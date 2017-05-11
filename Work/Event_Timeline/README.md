@@ -12,7 +12,6 @@
 - [css/events.css](https://github.com/jillyz/jillyz.github.io/blob/master/Work/Event_Timeline/css/events.css)
 
 ## Demo
-- [線上demo](http://formosat.tw/nspo_esok/events.php)
-- [系統展示可參考此 6:33開始](https://www.youtube.com/watch?v=mJuxljDyZ78&t=393)
+- [線上demo](https://jillyz.github.io/Work/Event_Timeline/event.html)
 
 
