@@ -11,12 +11,13 @@
 
 ## Demo
 - [封面頁](https://jillyz.github.io/Work/15kmh/index.html)
- - 封面擷取8分鐘微電影的一部份來播放（提供暫停、靜音功能），播完後自動跳轉至內頁的第一頁
+-- 封面擷取8分鐘微電影的一部份來播放（提供暫停、靜音功能），播完後自動跳轉至內頁的第一頁
+-- 手機上的設計，封面影片會以封面影像取代（配合後端替換，此處因是靜態網頁故無此效果）
 - [第一頁：8分鐘 微電影 及影片場景介紹](https://jillyz.github.io/Work/15kmh/video.html)
 - [第二頁：3分鐘 觀光短片 及自行車道資訊](https://jillyz.github.io/Work/15kmh/index.html)
 
 ## 與本功能相關之檔案如下：
 
-- []
+- [封面 index.html](https://github.com/jillyz/jillyz.github.io/blob/master/Work/15kmh/index.html) , [第一頁 video.html](https://github.com/jillyz/jillyz.github.io/blob/master/Work/15kmh/video.html) , [第二頁 BikeRouteAttractions.html](https://github.com/jillyz/jillyz.github.io/blob/master/Work/15kmh/BikeRouteAttractions.html)
 - [Site.css](https://github.com/jillyz/jillyz.github.io/blob/master/Work/15kmh/Content/Site.css) , [Index.css](https://github.com/jillyz/jillyz.github.io/blob/master/Work/15kmh/Content/Index.css)
 - [封面 youtube-cover.js](https://github.com/jillyz/jillyz.github.io/blob/master/Work/15kmh/Scripts/youtube-cover.js) , [第一頁 8分鐘 微電影 youtube-8min.js](https://github.com/jillyz/jillyz.github.io/blob/master/Work/15kmh/Scripts/youtube-8min.js) , [第二頁 3分鐘 觀光短片 youtube-3min.js](https://github.com/jillyz/jillyz.github.io/blob/master/Work/15kmh/Scripts/youtube-3min.js) 
