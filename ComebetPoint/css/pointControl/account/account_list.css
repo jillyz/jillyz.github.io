@@ -1,0 +1,31 @@
+﻿table {
+    width: 100%;
+}
+.queryBox select {
+    padding: .5em;
+}
+.contentPadding {
+    padding: 2em;
+}
+/*.borderTop {
+    border-top: 1px solid #ddd;
+}
+.borderBottom {
+    border-bottom: 1px solid #ddd;
+}*/
+
+/*----------------------*/
+
+.input {
+    padding: 0;
+}
+.tableView th:nth-child(1) { width: 10%; }
+.tableView th:nth-child(2) { width: 10%; }
+.tableView th:nth-child(3) { width: 7%; }
+.tableView th:nth-child(4) { width: 20%; }
+.tableView th:nth-child(5) { width: 5%; }
+.tableView th:nth-child(6) { width: 8%; }
+.tableView th:nth-child(7) { width: 10%; }
+.tableView th:nth-child(8) { width: auto; }
+.tableView th:nth-child(9) { width: 5%; }
+.tableView th:nth-child(10) { width: auto; }

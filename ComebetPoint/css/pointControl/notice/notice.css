@@ -1,0 +1,86 @@
+﻿/*.mui-tabs__bar {
+    border-bottom: 1px solid #2196F3;
+}
+.mui-tabs__bar>li {
+    padding-left: 2em;
+    padding-right: 2em;
+    text-align: center;
+}
+.mui-tabs__bar>li:first-child {
+    width: 500px;
+}
+.mui-tabs__bar>li.mui--is-active {
+    border-bottom: 5px solid #2196F3;
+}*/
+
+/*-----------------------------------------*/
+
+.mui-textfield>input, .mui-textfield>textarea  {
+    font-size: inherit;
+}
+.mui-table {
+    margin-bottom: 0;
+}
+
+.mui-table>tbody>tr>td, .mui-table>tbody>tr>th, .mui-table>tfoot>tr>td, .mui-table>tfoot>tr>th, .mui-table>thead>tr>td, .mui-table>thead>tr>th {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.mui-textfield {
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+    .alert_circle {
+        background:#F44336;
+        color:#fff;
+        border-radius:99em;
+        width:23px;
+        height:23px;
+        display:inline-block;
+        line-height:23px;
+        margin-left:15px;
+        text-align: center;
+    }
+/*---------------------------*/
+
+.counterBlock {
+    position: fixed; 
+    left: calc(170px + .5em);
+    bottom: .5em;
+}
+
+.keyword {
+    width: 16em !important;
+}
+.confirmBlock {
+    width: auto;
+    border: 2px solid #ccc;
+}
+.confirmBtn {
+    width: 5em;
+    margin-left: -2px;
+    border: 2px solid #2196F3 !important;
+    border-radius: 0 4px 4px 0;
+}
+.type {
+    width: 6em;
+}
+.isPaid {
+    width: auto;
+}
+.isPaid i {
+    font-size: 1.5em !important;
+    color: green;
+}
+.memo {
+    width: 30em !important;
+    height: 30.6px;
+    line-height: 30.6px;
+    padding: 0 .5em !important;
+    font-size: 13px;
+    border: 2px solid #2196F3 !important;
+    border-radius: 4px 0 0 4px !important;
+    background-color: #fff !important;
+    vertical-align: middle;
+}

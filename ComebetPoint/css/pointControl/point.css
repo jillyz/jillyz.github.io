@@ -1,0 +1,998 @@
+﻿
+/* ---------------------------------------*/
+/* COMMON                                 */
+/* ---------------------------------------*/
+
+.hidden {
+    display: none;
+}
+.inline {
+    display: inline-block !important;
+}
+
+.marginBottom {
+    margin-bottom: .5em;
+}
+.alignTop {
+    padding-top: 1.5em;
+    vertical-align: top;
+}
+.bigger {
+    font-size: 1.5em;
+}
+
+.noSelect {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */      
+}
+/* ---------------------------------------*/
+/* DEFAULT STYLE                          */
+/* ---------------------------------------*/
+
+.pageTitle {
+    margin: 1rem;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #607d8b;
+}
+
+.queryBox th {
+    width: 8em;
+    padding-top: 1.3em;
+    background-color: #fff;
+    color: #ababab;
+    vertical-align: top;
+}
+
+.detailWrap {
+    overflow: auto;
+}
+
+table label {
+    font-size: 100%;
+}
+::-webkit-input-placeholder {
+    color: #607D8B !important;
+}
+:-moz-placeholder {
+    color: #607D8B !important;
+}
+::-moz-placeholder {
+    color: #607D8B !important;
+}
+:-ms-input-placeholder {
+    color: #607D8B !important;
+}
+
+/* 查詢條件顯示 */
+
+.searchKeyWords {
+    color:#555;
+    margin:15px 0;
+}
+
+/* 查詢條件顯示 */
+/* 查無符合資料 */
+
+.emptyData {
+    padding: 1em;
+    color: #999;
+    text-align: center;
+}
+.emptyData i {
+    color: #ccc;
+}
+
+/* 顏色 */
+
+.green, .red, .orange {
+    text-shadow: 1px 1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, -1px -1px 0 #fff;
+}
+.green {
+    color: green;
+}
+.red {
+    color: #c33;
+}
+.orange {
+    color: #ff9800;
+}
+.blue {
+    color: blue;
+}
+.lightBlue {
+    color: #2196F3;
+}
+.darkBlue {
+    color: #369;
+}
+.gray {
+    color: #aaa;
+}
+.lightGray {
+    color: #ddd;
+}
+.bold {
+    font-weight: bold;
+}
+.bgLabel {
+    display: block;
+    color: #fff;
+}
+.bgGreen {
+    background-color: #4caf50;
+}
+.bgRed {
+    background-color: #f44336;
+}
+.bgOrange {
+    background-color: #ff9800;
+}
+/*--------------*/
+
+.headerUser,
+.headerUser:hover {
+    color: #fff;
+}
+
+/* tableView style 用在有總計小計的表格---------------*/
+
+.tableView th,
+.tableView .th {
+    background-color: #f7f7f7;
+    color: #666;
+}
+
+.tableView .borderTop th, .tableView .borderTop td {
+    border-top: 1em solid #fff;
+}
+
+.tableView .total td {
+    background-color: #ffd;
+    /*color: #F44336;*/
+}
+.tableView .subtotal td {
+    background-color: #f7f7f7;
+    /*color: #369;*/
+}
+
+.total td , 
+.subtotal td {
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.subtotal.inherit td {
+    font-size: inherit;
+}
+
+/* ---------------------------------------*/
+/* QUERY BOX:
+/* FIELD WIDTH
+/* ---------------------------------------*/
+
+.keyword {
+    width: 28em !important;
+}
+.score {
+    width: 8em !important;
+}
+.date {
+    width: 8em !important;
+}
+.dateTime {
+    width: 14em !important;
+}
+.select {
+    padding: .5em;
+    width: 28em !important;
+}
+.order {
+    width: 16em !important;
+}
+.helpDesc {
+    margin-top:3px;
+}
+.input {
+    padding: 0;
+}
+.input.error .error-message {
+    margin-top: .75em;
+    margin-bottom: 1.5em;
+}
+.input.error .error-message .pull-right {
+    margin-top: -.25em;
+    vertical-align: middle;
+}
+
+/*----------------------------------------*/
+/* QUERY BOX:                             */
+/* Submit Button & loading animation      */
+/*----------------------------------------*/
+
+.submitBtn,
+.submitBtn:hover {
+    padding-left: 4em;
+    padding-right: 4em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.submitBtn[disabled],
+.submitBtn[disabled]:hover,
+.submitBtn[data-disabled=true],
+.submitBtn[data-disabled=true]:hover {
+    position: relative;
+    -moz-transition: none;
+    -o-transition: none;
+    -webkit-transition: none;
+    transition: none;
+}
+.submitBtn i {
+    position: absolute;
+    top: .75em;
+    right: .5em;
+    display: none;
+}
+.submitBtn[disabled] i,
+.submitBtn[data-disabled=true] i {
+    display: inline;
+    -webkit-animation: fa-spin 1s infinite steps(8);
+    animation: fa-spin 1s infinite steps(8);
+}
+.cancelBtn,
+.cancelBtn:hover {
+    padding-left: 4em;
+    padding-right: 4em;
+    color: #39a1f4;
+    text-decoration: none;
+}
+.mui-btn--primary-line {
+    border:2px solid #39a1f4;
+    color:#39a1f4;
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+/*----------------------------------------*/
+/* QUERY BOX:                             */
+/* CheckBox & RadioButton STYLE           */
+/*----------------------------------------*/
+
+.fillForm th {
+    padding-top: 1.5em !important;
+    vertical-align: top;
+}
+
+.fillForm input[type="checkbox"] + label ,
+.fillForm input[type="radio"] + label {
+    margin-bottom: .5em;
+}
+.fillForm label:not(.chkType) {
+    display: inline-block;
+    margin-right: .25em;
+    padding: .5em 1.15em;
+    font: normal normal normal 14px/1 fontello;
+    font-size: inherit;
+    text-rendering: auto;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #fff;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.fillForm :checked + label {
+    background-color: #607D8B;
+    color: #fff;
+    border-color: #607D8B;
+}
+
+.fillForm input[type=checkbox] +label:before {
+    content: "\ea33";
+    margin-right: 10px;
+    color: #999;
+    font-size: 1.25em;
+}
+
+.fillForm input[type=checkbox]:not(:checked) +label:hover {
+    color: #333;
+    background-color: #eee;
+}
+
+.fillForm input[type=checkbox]:checked + label:before {
+    content: "\e937";
+    margin-right: 8px;
+    color: #eee;
+    font-size: 1.25em;
+}
+.fillForm input[type=checkbox],
+.fillForm input[type=radio] {
+    position: absolute;
+    left: -9999px;
+}
+
+.quickOption {
+    margin-top: .5em;
+}
+
+#subSite {
+    padding: 1em 0;
+}
+.tip {
+    color: #999;
+}
+
+/* ---------------------------------------*/
+/* lavel nav style                        */
+/* ---------------------------------------*/
+
+.levelNav {
+    margin: 1em 0 2em 0;
+}
+.levelNav ul {
+    margin: 0;
+    padding: 0;
+} 
+.levelNav li {
+    display: inline-block;
+    margin: 0;
+    background-color: #fff;
+}
+.levelNav li a {
+    padding: 1em 3em 1em 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+.levelNav li + li {
+    margin-left: -2em;
+}
+
+.levelNav li:not(:last-child) a {
+    color: #666;
+    text-decoration: underline;
+}
+
+.levelNav li:last-child a {
+    cursor: default;
+    text-decoration: none;
+}
+
+.levelNav li:last-child a:hover {
+    text-decoration: none
+}
+
+/* ---------------------------------------*/
+/* page style                             */
+/* ---------------------------------------*/
+
+.fixedBottom {
+    position: fixed;
+    /*left: 150px;*/
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: .25em;
+    border-top: 2px solid #fff;
+    background-color: #f7f7f7;
+}
+.fixedBottom.list {
+    left: 170px;
+}
+
+.pageGroup {
+    /*margin: 0 auto;
+    width: 40%;*/
+    font-size:16px;
+    /*margin:20px 0;*/
+}
+.pageGroup > div,
+.pageGroup span {
+    margin-right: 10px;
+}
+.totalPage span {
+    margin:0;
+}
+.pageGroup .mui-btn {
+    padding: 0 10px;
+}
+.mui-select > select.pageSelect {
+    width: auto;
+}
+.mui-select {
+    display:inline-block;
+}
+.mui-select__menu {
+    max-height: calc(100vh - 140px) !important;
+    top: auto !important;
+    bottom: 0 !important;
+}
+.pageGroup .mui-select > select {
+    padding-left: .5em;
+    border: 0;
+    background-color: #fff;
+    color: #39a1f4;
+    font-weight: bold;
+    font-size: inherit;
+    border-radius: 2px;
+}
+.pageGroup .targetSelect {
+    display:inline-block;
+}
+.pageGroup .targetSelect select {
+    display:inline-block;
+    margin: 7px 0;
+    padding: 7px;
+    border: none;
+    outline: none;
+}
+/*----------------------------------------*/
+/* FORM BOX & Message                     */
+/*----------------------------------------*/
+
+.formBoxWrapper .mui-panel {
+    width: 40em;
+    margin: 2em auto;
+}
+.formBoxWrapper td {
+    width: 32em;
+}
+
+.formBoxWrapper .submitBtn {
+    width: 100%;
+}
+
+.formBoxTitle {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-bottom: .5em;
+    border-bottom: 6px solid #f7f7f7;
+    font-size: 1.5em;
+    text-align: center;
+    color: #2196F3;
+}
+.formBox th {
+    color: #607d8b;
+}
+
+/* isRequired ------------------*/
+
+.formBox [autocomplete="off"][readonly] {
+    cursor: text;
+}
+
+.isRequired th {
+    font-weight: bold;
+}
+
+/*.isRequired [class*=mui-] {
+    position: relative;
+}*/
+.isRequired [class*=mui-]:before {
+    content: "*";
+    position: absolute;
+    display: table-cell;
+    top: 19px;
+    left: -1.5em;
+    width: 13px;
+    height: 13px;
+    background-color: #ff4081;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+/* hasBtn ----------------*/
+
+.hasBtn {
+    position: relative;
+}
+.inInputBtn {
+    display: inline-block;
+    position: absolute;
+    top: calc(.5em + 2px);
+    right: 1em;
+    padding: 0 1em;
+    height: 2.5em;
+    line-height: 2.5;
+    border-left: 1px dotted #ccc;
+    color: #009688;
+    cursor: pointer;
+}
+.inInputBtn:hover {
+    text-decoration: none;
+    color: #360;
+}
+
+/* hasMsg, hasIcon ---------------*/
+
+.hasMsg,
+.hasIcon {
+    position: relative;
+}
+
+.hasMsg [class^=msg],
+.hasIcon [class^=icon] {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+.msgYes {
+    color: green;
+}
+
+.msgNo {
+    color: #c33;
+}
+
+/* Message After Submit ---------------*/
+
+.msg {
+    padding: .5em 1em;
+    text-align: center;
+    font-weight: bold;
+}
+.msgError {
+    color: #c33;
+}
+.msgSuccess {
+    color: green;
+}
+
+/* -------------------------------------*/
+
+.clearDate {
+    padding: .5em 1em;
+    border-radius: 2px;
+}
+.clearDate:hover {
+    background-color: #eee;
+}
+
+.totalDiv {
+    padding: 1em;
+    background-color: #ffd;
+    /*color: #F44336;*/
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.itemTitle {
+    margin-top: 1em;
+    padding: 1em .5em;
+    font-size: 1.2em;
+    background-color: #607D8B;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btnDelete {
+    visibility: hidden;
+    -moz-transition: none;
+    -o-transition: none;
+    -webkit-transition: none;
+    transition: none;
+}
+.mui-table>tbody>tr:hover .btnDelete {
+    visibility: visible;
+}
+
+.mui-table>tbody>tr:hover>td:not(.th) {
+    background-color: #ffd;
+}
+.mui-table>tbody>tr:hover>td.th {
+    background-color: #607D8B;
+    color: #fff;
+}
+
+/*--------------*/
+
+.textCenter {
+    text-align: center;
+}
+.textLeft {
+    text-align: left;
+}
+.textRight {
+    text-align: right;
+}
+
+.alignTop {
+    vertical-align: top;
+}
+
+/* ---------------------------------------*/
+/* companyTreeMenu                        */
+/* ---------------------------------------*/
+
+.treeTip {
+    padding: .5em;
+    /*display: inline-block;*/
+    /*border: 1px dotted #ccc;*/
+}
+.treeTip .hightlight {
+    color: #1E88E5;
+}
+.selectCount {
+    font-size: 1.5em !important;
+}
+.treeFunc {
+    margin: .5em 0;
+    cursor: pointer;
+}
+.companysTree {
+    padding: 1em 0;
+}
+
+.treeNode .ic {
+    font-size: 16px !important;
+    vertical-align: middle;
+}
+
+/*--------*/
+.itemCheck, .itemCheck:hover {
+    color: #97abb5;
+}
+.itemName {
+    display: inline-block;
+}
+.itemName, .itemName:hover {
+    color: inherit;
+    cursor: pointer;
+}
+.itemName > span {
+    margin-left: .5em;
+}
+
+/* toggle icon btn */
+.noNext .itemToggle .ic {
+    display: none;
+}
+.noNext .itemToggle:before {
+    content: "";
+    position: relative;
+    top: -4px;
+    display: inline-block;
+    width: 1.5em;
+    border-top: 1px dotted #ccc;
+}
+.itemToggle {
+    width: 1.5em;
+    color: #ddd;
+}
+.itemToggle .ic {
+    cursor: pointer;
+}
+.itemToggle .ic:hover {
+    color: #556c77;
+}
+.treeNode .icClose {
+    display: inline-block;
+    color: #97abb5;
+}
+.treeNode .icOpen {
+    display: none;
+}
+.treeNode.isOpen > .treeItem .icClose {
+    display: none;
+}
+.treeNode.isOpen > .treeItem .icOpen {
+    display: inline-block;
+}
+
+/* checkbox style icon  */
+.itemCheck input[type=checkbox],
+.itemCheck input[type=radio] {
+    display: none;
+}
+.selectCompany ~  label > .ic {
+    cursor: pointer;
+}
+.selectCompany ~  label > .icUnchecked,
+.selectCompany ~  label > .icUnchecked:hover {
+    display: inline-block;
+    color: #1E88E5;
+}
+.selectCompany ~ label > .icChecked {
+    display: none;
+}
+.selectCompany:checked ~ label > .icChecked {
+    display: inline-block;
+}
+.selectCompany:checked ~ label > .icUnchecked {
+    display: none;
+}
+.selectCompany:checked ~ label > .ic,
+.selectCompany:checked ~ label>strong {
+    color: #1E88E5;
+}
+
+.selectCompany ~ label:hover > .icUnchecked {
+    display: none;
+}
+.selectCompany:not(:checked) ~ label:hover > .icChecked {
+    display: inline-block;
+    color: #1E88E5;
+    opacity: .3;
+}
+/* treeNode - block margin-left */
+
+.nextNode {
+    margin-left: .75em;
+}
+.nextNode .nextNode {
+    margin-left: 1.5em;
+}
+/*.treeRoot > .treeNode > .nextNode {
+    margin-left: 2.5em;
+}*/
+
+/* nextNode open/close*/
+.treeRoot .treeNode > .nextNode {
+    display: none;
+}
+.treeRoot .treeNode.isOpen > .nextNode {
+    display: block;
+}
+/* treeNode dotted line */
+.nextNode .treeNode:before {
+    content: "";
+    float: left;
+    display: inline-block;
+    width: .75em;
+    height: .75em;
+    border-left: 1px dotted #ccc;
+    border-bottom: 1px dotted #ccc;
+}
+/*empty data*/
+.itemEmpty {
+    color: #ccc;
+}
+
+.openNextAllToggle {
+    padding: .25em .5em;
+    border: 1px dotted #97abb5;
+    color: #97abb5;
+}
+.openNextAllToggle:active {
+    color: #607D8B;
+}
+/* ---------------------------------------*/
+/* myModal                                */
+/* ---------------------------------------*/
+
+.message {
+    z-index: 999999;
+}
+
+.myModal {
+    display: none !important;
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index: 999;
+}
+
+
+.myModal.show:before {
+    content: "";
+    position: fixed !important;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index: 1;
+    background-color: rgba(0,0,0,.7);
+}
+
+.myModal.show {
+    display: block !important;
+}
+
+.myModal.show .myModalContent {
+    position: fixed;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+    transform: translate(-50%, -50%);
+    display: flex;
+    background-color: #fff;
+    border: 5px solid #fff;
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.myModalBody {
+    display: block;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.myModalFooter {
+    display: block;
+    background-color: #eee;
+}
+
+/*-------------*/
+
+.dialogDelete {
+    position: relative;
+}
+
+.dialogTable th,
+.dialogTable td {
+    padding: 1em !important;
+}
+
+.rowTitle {
+    background-color: #eee;
+    color: #999;
+}
+
+.dialogDelete select {
+    padding: .5em;
+}
+
+/*--------------------------------*/
+
+.icon.spinner {
+    -moz-animation: spin 1s infinite;
+    -o-animation: spin 1s infinite;
+    -webkit-animation: spin 1s infinite;
+    animation: spin 1s infinite;
+    -moz-transform-origin: 50% 55%;
+    -webkit-transform-origin: 50% 55%;
+    transform-origin: 50% 55%;
+}
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+/* ---------------------------------------*/
+/* MUI style Modify                       */
+/* ---------------------------------------*/
+
+.mui-panel {
+    margin: 1em;
+}
+.mui-textfield>input, .mui-textfield>textarea  {
+    font-size: inherit;
+}
+.mui-table {
+    /*table-layout: fixed;*/
+    margin-bottom: 0;
+}
+.mui-table>tbody>tr>td, .mui-table>tbody>tr>th, .mui-table>tfoot>tr>td, .mui-table>tfoot>tr>th, .mui-table>thead>tr>td, .mui-table>thead>tr>th {
+    padding: 5px 10px;
+    border-bottom: 1px solid #ddd;
+}
+.mui-textfield {
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+/* ---------------------------------------*/
+/* UPLOAD style Modify                       */
+/* ---------------------------------------*/
+.progressBar {
+    position:relative;
+    width:70%;
+}
+.progressBar input.err {
+    border-color:#F44336;
+}
+.progressBar .text {
+    position:absolute;
+    top:8px;
+    left:40%;
+    z-index:4;
+    color:#fff;
+}
+.progressBg {
+    background:#2ec1cc;
+    position:absolute;
+    width:66%;
+    height:30px;
+    left:0;
+    bottom:2px;
+    z-index:3;
+
+	-webkit-transition: width 0.5s, height 0.5s;
+	-moz-transition: width 0.5s, height 0.5s;
+	transition: width 0.5s, height 0.5s;
+}
+.progressBg:hover {
+    width:90%;
+}
+.progressRight {
+    width:27%;
+    position:absolute;
+    top:0;
+    right:0;
+}
+.delay5s {
+    animation-delay:5s;
+    -webkit-animation-delay:5s;
+}
+.animated {
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}

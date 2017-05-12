@@ -1,0 +1,7 @@
+﻿.isSa {
+    display: none;
+}
+
+.isSa.display {
+    display: table-row;
+}

@@ -1,0 +1,154 @@
+﻿
+.queryBox th {
+    width: 8em;
+}
+
+/*-------------------*/
+
+.hidden {
+    display: none;
+}
+.inline {
+    display: inline-block !important;
+}
+
+.keyword {
+    width: 28em !important;
+}
+.score {
+    width: 8em !important;
+}
+.date {
+    width: 8em !important;
+}
+.select {
+    width: 28em !important;
+}
+
+.order {
+    width: 16em !important;
+}
+
+table label {
+    font-size: 100%;
+}
+
+/*-----------------------------------------*/
+
+.mui-textfield>input, .mui-textfield>textarea  {
+    font-size: inherit;
+}
+.mui-table {
+    margin-bottom: 0;
+}
+
+.mui-table>tbody>tr>td, .mui-table>tbody>tr>th, .mui-table>tfoot>tr>td, .mui-table>tfoot>tr>th, .mui-table>thead>tr>td, .mui-table>thead>tr>th {
+    padding: 5px 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.mui-textfield {
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*---------------------------*/
+
+.memberAccount {
+    width: 15em;
+}
+.floatBox_gameAccount .showPercentTableFloatWrapper {
+    left: -14.5em;
+}
+
+.mui-panel {
+    margin: 1em;
+}
+
+
+.submitBtn,
+.submitBtn:hover {
+    padding-left: 4em;
+    padding-right: 4em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.submitBtn[disabled],
+.submitBtn[disabled]:hover,
+.submitBtn[data-disabled=true],
+.submitBtn[data-disabled=true]:hover {
+    position: relative;
+    -moz-transition: none;
+    -o-transition: none;
+    -webkit-transition: none;
+    transition: none;
+}
+.submitBtn i {
+    position: absolute;
+    top: .75em;
+    right: .5em;
+    display: none;
+}
+.submitBtn[disabled] i,
+.submitBtn[data-disabled=true] i {
+    display: inline;
+    -webkit-animation: fa-spin 1s infinite steps(8);
+    animation: fa-spin 1s infinite steps(8);
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+/*------------------*/
+
+.fillForm label {
+    display: inline-block;
+    margin-right: .25em;
+    padding: .5em 1.15em;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.fillForm :checked + label {
+    background-color: #607D8B;
+    color: #fff;
+    border-color: #607D8B;
+}
+
+.fillForm input[type=checkbox] +label:before {
+    content: "\f096";
+    margin-right: .5em;
+    color: #999;
+}
+
+.fillForm input[type=checkbox]:checked + label:before {
+    content: "\f14a";
+    color: #eee;
+}
+.fillForm input[type=checkbox],
+.fillForm input[type=radio] {
+    position: absolute;
+    top: -999px;
+}

@@ -1,0 +1,135 @@
+﻿.detailOptionWrap-js {
+    display: none;
+}
+
+.detailOptionWrap-js.isDisplay {
+    display: block;
+}
+
+#edit_credit_box #royal_game_table {
+    max-width: inherit;
+}
+
+select {
+    color: rgba(0,0,0,.87);
+}
+
+.input {
+    padding-left: 0;
+}
+.inline {
+    width: auto !important;
+}
+.nationNumber {
+    width: 6em !important;
+}
+.hidden {
+    /*display: none !important*/
+}
+
+.formBoxTitle {
+    padding-left: 10px;
+    text-align: left;
+}
+
+.infoPanel {
+
+}
+.infoItem {
+    display: inline-block;
+    width: 20em;
+    margin-right: 1em;
+    vertical-align: top;
+    text-align: left;
+}
+.phone {
+    width: 12em;
+}
+.infoItem label {
+    color: #607d8b;
+    font-weight: bold;
+}
+.username {
+    padding: 1em;
+}
+
+/*fix*/
+#edit_credit_box .memberGameTable .th {
+    width: 65px;
+}
+
+/*------------*/
+
+#edit_credit_box a {
+    color: blue !important;
+    cursor: pointer;
+}
+
+#edit_credit_box table th {
+    text-align: center;
+}
+
+#edit_credit_box table th,
+#edit_credit_box table td {
+    padding-left: .25em;
+}
+
+#edit_credit_box table th,
+#edit_credit_box .memberGameTable .th,
+#edit_credit_box #quick_table .thead td
+{
+    background-color: #607d8b !important;
+    color: #fff !important;
+    font-weight: bold !important;
+}
+#edit_credit_box table td:not(.expandTableBar)  {
+    background-color: #f7f7f7 !important;
+}
+#edit_credit_box table th,
+#edit_credit_box table td 
+{
+    border-color:  #ccc !important;
+}
+.expandTableBar {
+    padding: 0 10px;
+    line-height: 30px;
+    background-color: #263238;
+    color: #fff;
+}
+
+#edit_credit_box table td.tfoot {
+    padding: 5px;
+    background-color: #607d8b !important;
+}
+/*----------------------*/
+
+.limitItem {
+    border-bottom: 1px solid #ccc;
+}
+.limitBlock {
+    display: none;
+}
+.limitBlock.isDisplay {
+    display: block;
+}
+.limitTable {
+    display: inline-block;
+    margin-top: .5em;
+    margin-right: .5em;
+    vertical-align: top;
+} 
+#edit_credit_box table.limitTable th,
+#edit_credit_box table.limitTable td {
+    background-color: #fff !important;
+}
+.limitLabel {
+    padding: 5px;
+    min-width: 6em;
+    font-weight: bold;
+}
+
+/*-----------------*/
+[readonly], [disabled] {
+    border: 0 solid #ccc !important; 
+    background-color: #f7f7f7 !important;
+}

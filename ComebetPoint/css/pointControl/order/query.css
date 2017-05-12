@@ -1,0 +1,101 @@
+﻿
+#userInfo_box span {
+    font-size: 2em;
+    color: #2196F3;
+}
+
+#list_box {
+    margin-bottom: 90px;
+}
+
+#list_box th, 
+#list_box td {
+    white-space: nowrap;
+}
+
+.input {
+    padding-left: 0;
+}
+
+.select {
+    padding: .5em;
+}
+
+#sFrom .select,
+#sTo .select {
+    width: 13em !important;
+}
+
+.mui-table > tbody > tr > td {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.totalBox {
+    margin-top: .5em;
+    margin-bottom: .5em;
+    margin-left: 0;
+    margin-right: .5em;
+    padding: .5em;
+}
+
+    .totalBox > span {
+        font-size: 1.5em;
+    }
+
+.total {
+    margin: 0 .5em;
+    /*color: #F44336;*/
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.subtotal {
+    margin: 0 .5em;
+    color: #369;
+    font-weight: bold;
+}
+
+.transBlue {
+    color: #369;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.amount {
+    color: #F44336;
+    font-weight: bold;
+}
+
+.colOrderId {
+    width: 8em;
+}
+.colUsername {
+    min-width: 12em; 
+}
+.colType {
+    width: 6em;
+}
+.colFromTo {
+    min-width: 12em;
+}
+.colPayWay {
+    padding-left: 2em !important;
+    width: 18em;
+}
+.colAccount {
+    min-width: 6m;
+}
+.colAmount {
+    width: 8em;
+}
+.colStatus {
+    width: 6em;
+}
+
+.colTime {
+    width: 12em;
+}
+

@@ -1,0 +1,43 @@
+﻿.mui-select {
+    padding: 8px 0;
+}
+.dateTimePicker,
+.select.editField {
+    border-bottom: 1px solid #ccc;
+    color: #333 !important;
+}
+.editorWrapper input.editField {
+    border: 1px solid #ccc;
+    color: #333 !important;
+}
+
+/*--------------------------*/
+
+.filterTagItem {
+    float: left;
+    margin: 0 5px 5px 0;
+    border-radius: 3px;
+}
+
+.filterTag.company .filterTagItem {
+    background: #009688;
+}
+
+.filterTag.level .filterTagItem {
+    background: #1E88E5;
+}
+
+.filterTag.top .filterTagItem {
+    background: #F44336;
+}
+
+.announce_title_box {
+    margin: 0 0 10px 0;
+}
+
+select {
+    font-size: 13px;
+}
+.filterTable {
+    width: 100%;
+}

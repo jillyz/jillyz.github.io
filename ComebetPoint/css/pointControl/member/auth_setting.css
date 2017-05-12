@@ -1,0 +1,207 @@
+﻿#content {
+    overflow-y: scroll;
+}
+/*------------------------*/
+.mui-panel {
+    margin: 0;
+}
+.formBoxTitle {
+    padding-bottom: 0;
+    text-align: left;
+}
+.formBoxTitle.fixed {
+    position: fixed;
+    top: 0;
+    left: auto;
+    margin-top: 0;
+    width: 340px;
+    background-color: #fff;
+    z-index:1;
+}
+#settings {
+    padding-top: 50px;
+}
+.fixedBottom>div ,
+.settingBox {
+    margin-left: auto;
+    margin-right: auto;
+}
+.settingBox {
+    width: 350px;
+    margin-bottom: 80px;
+}
+.fixedBottom {
+    left: 0 !important;
+}
+.fixedBottom>div{
+    width: 320px;
+    text-align: left;
+}
+.settingBox .mui-table>tbody>tr:hover>td,
+.settingBox .mui-table>tbody>tr:hover>th {
+    background-color: rgb(244, 244, 244);
+}
+.settingBox .mui-panel {
+    padding-top: 0;
+}
+
+.btnToggleAll {
+    margin: 0 .5em 0 1em;
+    height: auto;
+    padding: 0 5px;
+    line-height: 24px;
+    text-align: center;
+}
+.btnPageGroup {
+    position: relative;
+    width: 100%;
+    margin-top: .5em;
+    margin-bottom: -.5em;
+    padding: .5em .25em;
+    font-weight: bold;
+    background-color: #607D8B;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+
+/*---------------------------*/
+
+.fillForm ul {
+    margin: 0;
+    padding: 0;
+}
+.fillForm li {
+    list-style: none;
+}
+
+.fillForm label {
+    padding-left: 2em;
+    font-weight: bold;
+}
+.fillForm input[type=checkbox]:not(:checked) +label:hover {
+    background-color: #ffc;
+}
+.fillForm input[type=checkbox] +label:before {
+    content: '\eaf8';
+    float: right;
+    margin-right: 8px;
+    text-indent: .6em;
+    color: #2196F3;
+}
+.fillForm label:not(.chkType) {
+    margin: 0 !important;
+    margin-top: -1px !important;
+    padding-right: .5em !important;
+    border: 1px solid #eee;
+    border-radius: 0;
+    width: 100%;
+    color: #2196F3;
+}
+.fillForm :checked + label {
+    background-color: #ffc;
+    color: #2196F3;
+    font-weight: bold;
+}
+.fillForm input[type=checkbox]:checked + label:before {
+    color: #2196F3;
+}
+.fillForm input[type=checkbox][disabled] + label:before {
+    color: #ddd;
+}
+/*---------------------------*/
+.fillForm label.noAuth {
+    color: #ccc;
+    cursor: not-allowed;
+}
+.fillForm label.noAuth:before {
+    content: "\ea33";
+    float: right ;
+    margin-right: 10px;
+    color: #ccc;
+    font-size: 1.25em;
+}
+.fillForm label.noAuth:after {
+    content: "";
+    float: right;
+    -moz-transform: rotate(-45deg) translate(8px,15px);
+    -ms-transform: rotate(-45deg) translate(8px,15px);
+    -o-transform: rotate(-45deg) translate(8px,15px);
+    -webkit-transform: rotate(-45deg) translate(8px,15px);
+    transform: rotate(-45deg) translate(8px,15px);
+    width: 18px;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.icon-gogog {
+    position: absolute;
+    top: -.15em;
+    right: .15em;
+    padding: .5em;
+    font-size: 1.5em;
+    cursor: default;
+    border-left: 1px solid #999;
+}
+.icon-gogog.global {
+    padding: .4em;
+    color: #2196F3;
+    border-left:0;
+}
+.submitBtn {
+    width: 20em;
+}
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+}
+
+[data-open="false"] .iconOpen {
+    display: inline-block;
+}
+[data-open="false"] .iconClose {
+    display: none;
+}
+[data-open="true"] .iconOpen {
+    display: none;
+}
+[data-open="true"] .iconClose {
+    display: inline-block;
+}
+/*
+.options[data-open="false"] {
+}
+.options[data-open="true"] {
+}
+*/
+.dialogTable label::after,
+.options input[type=checkbox][data-edited="true"]:not(:checked) + label::after {
+    content: '\e83f'; /*icon-attention*/
+    float: right;
+    color: red;
+}
+.options input[type=checkbox] {
+    float: right;
+    width: 16px;
+    height: 16px;
+}
+.num {
+    position: absolute;
+    top: .5em;
+    right: 4em;
+}
+.btnAllSelect {
+    float: right;
+    margin-top: 1em;
+    margin-right: .75em;
+}
+.settingOption:first-child {
+    margin-top: 4px;
+}
+
+.dialogTable label {
+    color: #c33 !important;
+    font-weight: bold !important;
+}
+

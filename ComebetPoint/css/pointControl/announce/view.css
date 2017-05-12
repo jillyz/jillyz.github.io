@@ -1,0 +1,19 @@
+﻿.levelListView {
+    margin: 0;
+    margin-right: 1em;
+    padding: 0;
+    vertical-align: middle;
+}
+.levelListView li {
+    padding: 0;
+    display: inline-block;
+}
+.levelListView li + li:before {
+    content: "/";
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+label {
+    color: #ababab ;
+}

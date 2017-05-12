@@ -1,0 +1,110 @@
+﻿.select {
+    padding: .5em;
+}
+
+.mt {
+    margin-top: .5em;
+}
+
+.accountsRow,
+.mui-table>tbody>.accountsRow:hover>td {
+    background-color: #607D8B !important;
+    color: #fff;
+}
+
+.subTable {
+    margin-left: 2em;
+}
+
+.subTable th {
+    background-color: transparent;
+    color: #ccc;
+}
+
+.subTable th {
+    padding: .5rem 2rem;
+}
+.subTable td {
+    padding: .25rem 2rem;
+}
+
+.subTable tr + tr td {
+    padding: .25rem 2rem;
+    border-top: 1px dotted #999;
+}
+
+.subTable .status {
+    padding-right: 0;
+} 
+
+.subTable .mui-btn {
+    background-color: rgba(255,255,255,.95);
+}
+
+.subTable .btnDelete {
+    visibility: hidden !important;
+}
+.subTable tr:hover .btnDelete {
+    visibility: visible !important;
+}
+
+/*-------------*/
+.groupRow td {
+    height: 50px;
+}
+[data-group="inactive"] .subTable td {
+    height: 40px;
+}
+
+/*------------*/
+.bigger {
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+/*----------------*/
+
+.grey {
+    color: #999;
+}
+
+/*----------------*/
+.waitForDelete{
+    background-color: #F44336;
+}
+.waitForDelete,
+.waitForDelete a {
+    color:#fff !important;
+}
+
+/*-----------------*/
+
+.btnMoveAccounts {
+    display: inline-block;
+    width: 5em;
+    padding: .5em 1.5em;
+    border: none;
+    border-radius: 2px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #FFF;
+    background-color: #F44336;
+    cursor: pointer;
+}
+.moveControl {
+    width: 8em;
+}
+
+/*---------------------*/
+
+.subtotal {
+    height: 48px;
+    color: yellow;
+}
+
+.amount {
+    font-weight: bold;
+    font-size: 1.5em;
+}

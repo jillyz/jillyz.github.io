@@ -1,0 +1,115 @@
+﻿
+
+.overlayBox {
+    position: relative;
+}
+
+.overlayWrapper {
+    position: absolute;
+    left: auto;
+    top: auto;
+    z-index: 1;
+    margin-top: 6px;
+    margin-left: -6px;
+    text-align: left;
+}
+
+.overlayConetntTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #263238;
+    color: #fff;
+    box-shadow: 0px 2px 4px #ccc;
+    overflow: hidden;
+}
+
+.overlayConetntTable th,
+.overlayConetntTable td {
+    padding: .5em 1em;
+    border-collapse: collapse;
+    border: 0;
+    background-color: transparent;
+    white-space: nowrap;
+}
+.overlayConetntTable th,
+.overlayConetntTable .rowTh {
+    color: #999;
+}
+.overlayConetntTable .rowTh {
+    text-align: left;
+}
+.overlayConetntTable tr ~ tr td {
+    border-top: 1px solid #444;
+}
+
+.overlayConetntTable tr:hover>td {
+    background-color: rgba(255,255,255,.1);
+}
+
+/*.tableView td.textLeft {
+    text-align: left;
+}*/
+
+/*-----------------------------*/
+
+[data-overlay="content"] {
+    display: none;
+}
+
+[data-overlay="toggle"] [type="checkbox"],
+[data-overlay="toggle"] [type="radio"] {
+    display: none;
+}
+
+[data-overlay="toggle"] label {
+    display: block;
+    margin: -.5em;
+    padding: .75em;
+    border-radius: 2px 2px 0 0 ;
+    cursor: pointer;
+}
+
+[data-overlay="toggle"] label [data-overlay="toggle-up"] {
+    display: none;
+}
+[data-overlay="toggle"] :checked + label [data-overlay="toggle-up"] {
+    display: inline-block;
+}
+
+[data-overlay="toggle"] label [data-overlay="toggle-down"] {
+    display: inline-block;
+}
+[data-overlay="toggle"] :checked + label [data-overlay="toggle-down"] {
+    display: none;
+}
+
+[data-overlay="toggle"] :checked + label {
+    background-color: #263238;
+    cursor: pointer;
+}
+[data-overlay="toggle"] :checked + label a {
+     color: yellow;   
+}
+
+[data-overlay="toggle"] :checked {
+
+}
+[data-overlay="toggle"] :checked a {
+    color: yellow;
+}
+[data-overlay="toggle"] :checked ~ [data-overlay="content"] {
+    display: block;
+}
+
+[aria-expanded="true"] {
+    background-color: #263238;
+}
+[aria-expanded="true"] a,
+[aria-expanded="true"] a:hover {
+    color: yellow;
+    text-decoration: none;
+}
+
+[aria-expanded="false"] + [data-overlay] {
+    display: none;
+}
