@@ -69,16 +69,17 @@ function toggleGameIcon (id, isOpen) {
   if( gameList[index].count % rowCount > 0 ) {
     row = row + 1;
   } 
-  if(isOpen == 'close') {
-    $('.category-name').not(eleCate).attr('data-open', 'close')
-    $('.category-name').next('.game-wrap').css({'height': rowH + 'px' });
-    eleCate.next('.game-wrap').css({'height': rowH * row + bufferH + 'px' });
-    eleCate.attr({'data-open': 'open'});
-  }
-  if(isOpen == 'open') {
-    eleCate.next('.game-wrap').css({'height': rowH + 'px' });
-    eleCate.attr({'data-open': 'close'});
-  }
+
+  // if(isOpen == 'close') {
+  //   $('.category-name').not(eleCate).attr('data-open', 'close')
+  //   $('.category-name').next('.game-wrap').css({'height': rowH + 'px' });
+  //   eleCate.next('.game-wrap').css({'height': rowH * row + bufferH + 'px' });
+  //   eleCate.attr({'data-open': 'open'});
+  // }
+  // if(isOpen == 'open') {
+  //   eleCate.next('.game-wrap').css({'height': rowH + 'px' });
+  //   eleCate.attr({'data-open': 'close'});
+  // }
   
   $('html, body').animate({
     scrollTop: $('#' + target ).offset().top
@@ -93,6 +94,13 @@ $('.category-name').click(function(){
 
 });
 
+
+var arrTop = [],
+    lenCateItem = $('.category-item').length;
+for(var i = 0; i < lenCateItem; i++) {
+  arrTop.push($('.category-wrap').eq(i).offset().top);
+}
+
 $(window).scroll(function() {
 	var $height = $(window).scrollTop();
   var hh = $('.banner').height() + $('.product-switch').height();
@@ -102,6 +110,20 @@ $(window).scroll(function() {
   if($height <= hh) {
 		$('.category-menu').removeClass('fixed');
 	}
+  
+  //window.scrollY
+  var y = window.scrollY + 20;
+	var len = arrTop.length;
+	for( var i=0; i<len; i++) {
+		if( (y >= arrTop[i] && y < arrTop[i+1]) || y >= arrTop[i] && y < arrTop[len-1] ) {
+			console.log(y, i, $('.category-item').eq(i).text(), y, arrTop[i] )
+			$('.category-item').eq(i).addClass('active');
+      $('.category-item').not($('.category-item').eq(i)).removeClass('active');
+      $('.category-wrap .category-name').removeClass('fixed');
+      $('.category-wrap').eq(i).find('.category-name').addClass('fixed');
+		}
+	}
+  
 });
 
 
