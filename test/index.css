@@ -51,6 +51,8 @@ ul, li {
   margin-bottom: 60vh;
 }
 .category-name {
+  position: relative;
+  z-index: 1;
   margin-top: .5em;
   margin-bottom: -8px;
   text-indent: -1.25em;
@@ -82,7 +84,6 @@ ul, li {
   top: -7px;
   left: 3vw;
   right: 70px;
-  z-index: 1;
   visibility: visible;
 }
 /* .category-name:before {
