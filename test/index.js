@@ -112,11 +112,14 @@ $(window).scroll(function() {
 	}
   
   //window.scrollY
-  var y = window.scrollY;
+  var y = window.scrollY - 30;
 	var len = arrTop.length;
 	for( var i=0; i<len; i++) {
+
+    
+
 		if( (y >= arrTop[i] && y < arrTop[i+1]) || y >= arrTop[i] && y < arrTop[len-1] ) {
-			console.log(y, i, $('.category-item').eq(i).text(), y, arrTop[i] )
+			// console.log(y, i, $('.category-item').eq(i).text(), y, arrTop[i] )
 			$('.category-item').eq(i).addClass('active');
       $('.category-item').not($('.category-item').eq(i)).removeClass('active');
       $('.category-wrap .category-name').removeClass('fixed');
