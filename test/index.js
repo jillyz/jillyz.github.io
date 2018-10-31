@@ -112,7 +112,7 @@ $(window).scroll(function() {
 	}
   
   //window.scrollY
-  var y = window.scrollY + 20;
+  var y = window.scrollY;
 	var len = arrTop.length;
 	for( var i=0; i<len; i++) {
 		if( (y >= arrTop[i] && y < arrTop[i+1]) || y >= arrTop[i] && y < arrTop[len-1] ) {
