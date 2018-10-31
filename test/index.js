@@ -48,7 +48,7 @@ function reset () {
   if ( winH < winW ) { rowCount = 5 }
   iconH = $('.game-icon').height(),
     rowH = iconH * 1.4;
-  $('.game-wrap').height(rowH + bufferH);
+  //$('.game-wrap').height(rowH + bufferH);
 }
 
 $('.category-item').click(function(){
