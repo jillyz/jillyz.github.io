@@ -22,13 +22,29 @@ ul, li {
 }
 .category-wrap {
   clear: left;
+  position: relative;
   margin: 0 3vw;
-  margin-right: 70px;
+  margin-left: 70px;
 /*   margin-bottom: 10px; */
   transition: all .3s;
 }
+
+.category-wrap:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  height: 20px;
+/*   background-color: rgba(255,255,255, .3); */
+  background: -moz-linear-gradient(top, rgba(18,19,41,0) 0%, rgba(18,19,41,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(18,19,41,0) 0%,rgba(18,19,41,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(18,19,41,0) 0%,rgba(18,19,41,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
 .category-name {
-  margin-top: 1em;
+  margin-top: .5em;
   margin-bottom: -5px;
   text-indent: -1.25em;
   font-size: .875em;
@@ -37,6 +53,9 @@ ul, li {
   border-radius: 10px;
   transition: all .3s;
 /*   background-color: #fff; */
+}
+.category-wrap {
+/*   margin-bottom: 20px; */
 }
 .category-name:after {
   content: "More";
@@ -54,24 +73,26 @@ ul, li {
   text-indent: 0;
   text-align: center;
 }
+
 /* .category-name:before {
   content: "";
   float: left;
   height: 1em;
   border-left: 3px solid #abc;
 } */
-/* .category-name:after {
+.category-name:after {
   content: "";
-  float: left;
+  float: right;
   border: solid #abc;
   border-width: 0 2px 2px 0;
+  border-radius: 0;
   display: inline-block;
   margin-top: 15px;
   margin-left: 3vw;
   padding: 3px;
   vertical-align: middle;
   transition: all .3s;
-} */
+}
 
 /* .category-name:after {
   content: "Show All";
@@ -83,7 +104,7 @@ ul, li {
 .category-name:active {
   background-color: rgba(255,255,255,.05);
 }
-/* .category-name[data-open="close"]:after {
+.category-name[data-open="close"]:after {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
@@ -91,7 +112,7 @@ ul, li {
   border-color: #56dbe0;
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
-} */
+}
 .category-name[data-open="open"] {
   margin-top: 20px;
   color: #56dbe0;
@@ -107,23 +128,42 @@ ul, li {
 /*   margin-bottom: 1.5em; */
 }
 .game-item {
-  float: left;
+  display: inline-block;
 /*   width: 33%; */
   padding: 5px 0;
   text-align: center;
+  vertical-align: top;
 }
 .game-icon {
   width: 80px;
   height: 80px;
   margin: 0 auto;
 /*   background-color: #999; */
-  background: url(https://img-1-12-2.cdnnetworks.net//images/icons/mobile/VirtualFootball.png?201810242) no-repeat;
+  background-repeat: no-repeat;
   background-size: contain;
 /*   border: 1px solid #ccc; */
   border-radius: 6px;
 }
+/* --------- */
+.game-item:nth-child(5n+1) .game-icon {
+  background-image: url(https://img-1-12-2.cdnnetworks.net//images/icons/mobile/EzDice.png?201810242);
+}
+.game-item:nth-child(5n+2) .game-icon {
+  background-image: url(https://img-1-12-2.cdnnetworks.net//images/icons/mobile/VirtualFootball.png?201810242);
+}
+.game-item:nth-child(5n+3) .game-icon {
+  background-image: url(https://img-1-12-2.cdnnetworks.net//images/icons/mobile/JackInTheBox.png?201810242);
+}
+.game-item:nth-child(5n+4) .game-icon {
+  background-image: url(https://img-1-12-2.cdnnetworks.net//images/icons/mobile/FishermenGold.png?201810242);
+}
+.game-item:nth-child(5n) .game-icon {
+  background-image: url(https://img-1-12-2.cdnnetworks.net//images/icons/mobile/TotoDraw.png?201810242);
+}
+/* --------- */
 .game-name {
   margin-top: 5px;
+  padding: 0 .5em;
   font-size: .725em;
   text-align: center;
   color: #789;
@@ -133,11 +173,11 @@ ul, li {
   position: absolute;
   top: calc( 100vw * (300/640) + 30px );
   bottom: 0;
-  right: 0;
+  left: 0;
   width: 64px;
   margin-bottom: 30px;
 /*   border-right: 20px solid #121329; */
-/*   background-color: #111; */
+  background-color: #111;
   text-align: center;
 }
 .category-menu.fixed {
@@ -162,11 +202,11 @@ ul, li {
   vertical-align: top;
   word-wrap: normal;
 /*   line-height: .95; */
-  opacity: .5;
+  opacity: .3;
 }
 .category-item.active {
   background-color: #121329;
-  color: #abc;
+  color: #4ec3ca;
   opacity: 1;
 }
 .category-item:before{
