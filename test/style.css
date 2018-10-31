@@ -24,7 +24,7 @@ ul, li {
   clear: left;
   position: relative;
   margin: 0 3vw;
-  margin-left: 70px;
+  margin-right: 70px;
 /*   margin-bottom: 10px; */
   transition: all .3s;
 }
@@ -118,13 +118,13 @@ ul, li {
   color: #56dbe0;
 }
 .category-name[data-open="open"] ~ .game-wrap {
-  margin-bottom: 20px;
+/*   margin-bottom: 20px; */
 }
 .game-wrap {
   width: 100%;
 /*   height: 110px; */
   overflow: hidden;
-/*   transition: all .3s; */
+/*   transition: all .2s; */
 /*   margin-bottom: 1.5em; */
 }
 .game-item {
@@ -173,7 +173,7 @@ ul, li {
   position: absolute;
   top: calc( 100vw * (300/640) + 30px );
   bottom: 0;
-  left: 0;
+  right: 0;
   width: 64px;
   margin-bottom: 30px;
 /*   border-right: 20px solid #121329; */
