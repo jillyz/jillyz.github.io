@@ -82,6 +82,7 @@ ul, li {
   top: -7px;
   left: 3vw;
   right: 70px;
+  z-index: 1;
   visibility: visible;
 }
 /* .category-name:before {
