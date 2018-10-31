@@ -73,7 +73,7 @@ function toggleGameIcon (id, isOpen) {
   if(isOpen == 'close') {
     $('.category-name').not(eleCate).attr('data-open', 'close')
     $('.category-name').next('.game-wrap').css({'height': rowH + 'px' });
-    eleCate.next('.game-wrap').css({'height': rowH * row + bufferH + 'px' });
+    eleCate.next('.game-wrap').css({'height': (rowH * row) + bufferH + 'px' });
     eleCate.attr({'data-open': 'open'});
   }
   if(isOpen == 'open') {
