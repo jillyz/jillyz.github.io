@@ -48,7 +48,7 @@ function reset () {
   if ( winH < winW ) { rowCount = 5 }
   iconH = $('.game-icon').height(),
     rowH = iconH * 1.4;
-  $('.game-wrap').height(rowH + bufferH);
+  // $('.game-wrap').height(rowH + bufferH);
   $('.category-menu').addClass('slideIn');
 }
 
@@ -56,7 +56,6 @@ $('.category-item').click(function(){
   var id = $(this).attr('data-target');
   $(this).addClass('active');
   $('.category-item').not($(this)).removeClass('active');
-  // $('#' + target ).find('.category-name').trigger('click');
   toggleGameIcon(id, 'close');
 });
 
@@ -65,7 +64,6 @@ function toggleGameIcon (id, isOpen) {
   var target = id;
   var eleCate = $('#' + target ).children('.category-name');
   var index = eleCate.attr('data-index');
-  console.log(eleCate, id, isOpen, index, gameList[index])
   
   var row = parseInt(gameList[index].count / rowCount);
   if( gameList[index].count % rowCount > 0 ) {
