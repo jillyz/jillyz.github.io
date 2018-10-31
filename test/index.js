@@ -1,6 +1,6 @@
 var gameList = [
   {'ct': 'Recently Played' , 'count': 4, 'id': 'recently'},
-  {'ct': 'Top Pick' , 'count': 54, 'id': 'toppick'},
+  {'ct': 'Top Pick' , 'count': 20, 'id': 'toppick'},
   {'ct': 'Slots' , 'count': 36, 'id': 'slots'},
   {'ct': 'Arcade' , 'count': 12, 'id':'arcade'},
   {'ct': 'Scratch Cards' , 'count': 12, 'id': 'scratchcard'},
@@ -32,7 +32,8 @@ $('#gameList').html(html);
 
 var winW = $(window).width(),
     winH = $(window).height(),
-    rowCount = 0;
+    rowCount = 0,
+    bufferH = 15;
 
 
 $(function(){
@@ -41,12 +42,13 @@ $(function(){
 $(window).resize(function(){
   reset();
 })
+
 function reset () {
   if ( winH >= winW ) { rowCount = 3 }
   if ( winH < winW ) { rowCount = 5 }
   iconH = $('.game-icon').height(),
     rowH = iconH * 1.4;
-  $('.game-wrap').height(rowH);
+  $('.game-wrap').height(rowH + bufferH);
 }
 
 $('.category-item').click(function(){
@@ -71,7 +73,7 @@ function toggleGameIcon (id, isOpen) {
   if(isOpen == 'close') {
     $('.category-name').not(eleCate).attr('data-open', 'close')
     $('.category-name').next('.game-wrap').css({'height': rowH + 'px' });
-    eleCate.next('.game-wrap').css({'height': rowH * row + 'px' });
+    eleCate.next('.game-wrap').css({'height': rowH * row + bufferH + 'px' });
     eleCate.attr({'data-open': 'open'});
   }
   if(isOpen == 'open') {
@@ -89,30 +91,7 @@ $('.category-name').click(function(){
   var id = $(this).parent().attr('id'),
       isOpen = $(this).attr('data-open');
   toggleGameIcon(id, isOpen);
-//   var target = $(this).parent('.category-wrap').attr('id');
-  
-//   if(!isOpen) { var isOpen = $(this).attr('data-open'); }
-//   var index = $(this).attr('data-index');
-//   var row = parseInt(gameList[index].count / rowCount);
-//   if( gameList[index].count % rowCount > 0 ) {
-//     row = row + 1;
-//   }  
-//   if(isOpen == 'close') {
-//     $('.category-name').not($(this)).attr('data-open', 'close')
-//     $('.category-name').next('.game-wrap').css({'height': rowH + 'px' });
-//     $(this).next('.game-wrap').css({'height': rowH * row + 'px' });
-//     $(this).attr({'data-open': 'open'});
-//   }
-//   if(isOpen == 'open') {
-//     $(this).next('.game-wrap').css({'height': rowH + 'px' });
-//     $(this).attr({'data-open': 'close'});
-//   }
-  
-//   $('html, body').animate({
-//     scrollTop: $('#' + target ).offset().top
-//   }, {'speed': 500, 'easing': 'swing'});
-  
-  
+
 });
 
 $(window).scroll(function() {
