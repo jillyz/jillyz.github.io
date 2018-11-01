@@ -33,7 +33,7 @@ $('#gameList').html(html);
 var winW = $(window).width(),
     winH = $(window).height(),
     rowCount = 0,
-    bufferH = 15;
+    bufferH = 20;
 
 
 $(function(){
@@ -57,6 +57,7 @@ $('.category-item').click(function(){
   $(this).addClass('active');
   $('.category-item').not($(this)).removeClass('active');
   toggleGameIcon(id, 'close');
+  // $('#' + id + ' .category-name').trigger('click');
 });
 
 
@@ -112,19 +113,27 @@ $(window).scroll(function() {
 	}
   
   //window.scrollY
-  var y = window.scrollY - 30;
+  var y = window.scrollY ;
 	var len = arrTop.length;
 	for( var i=0; i<len; i++) {
 
-    
+    if( y < arrTop[0] ) {
+      $('.category-wrap .category-name').removeClass('fixed');
+    }
 
-		if( (y >= arrTop[i] && y < arrTop[i+1]) || y >= arrTop[i] && y < arrTop[len-1] ) {
-			// console.log(y, i, $('.category-item').eq(i).text(), y, arrTop[i] )
+		if( y >= arrTop[i] && y < arrTop[i+1] ) {
 			$('.category-item').eq(i).addClass('active');
       $('.category-item').not($('.category-item').eq(i)).removeClass('active');
       $('.category-wrap .category-name').removeClass('fixed');
       $('.category-wrap').eq(i).find('.category-name').addClass('fixed');
 		}
+    
+    if( y > arrTop[len-1] ) {
+      $('.category-item').eq(len-1).addClass('active');
+      $('.category-item').not($('.category-item').eq(len-1)).removeClass('active');
+      $('.category-wrap .category-name').removeClass('fixed');
+      $('.category-wrap').eq(len-1).find('.category-name').addClass('fixed');
+    }
 	}
   
 });
