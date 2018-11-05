@@ -33,7 +33,7 @@ $('#gameList').html(html);
 var winW = $(window).width(),
     winH = $(window).height(),
     rowCount = 0,
-    bufferH = 20;
+    bufferH = 5;
 
 
 $(function(){
@@ -109,7 +109,7 @@ function indicator (){
 
   $(window).scroll(function() {
     var $height = $(window).scrollTop();
-    var hh = $('.banner').height() + $('.product-switch').height();
+    var hh = $('.banner').height() + $('.product-switch').height() - bufferH;
     if($height > hh) {
       $('.category-menu, .balance-wrap, .menu').addClass('fixed');
     }
