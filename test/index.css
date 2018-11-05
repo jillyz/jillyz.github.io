@@ -156,7 +156,7 @@ ul, li {
   font-weight: bold;
   background-color: #121329;
   /* border-radius: 10px; */
-  transition: all .3s;
+  /* transition: all .3s; */
 }
 .category-name.fixed {
   position: fixed;
