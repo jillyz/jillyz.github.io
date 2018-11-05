@@ -163,6 +163,8 @@ ul, li {
   top: -7px;
   left: 3vw;
   right: 70px;
+  padding: 1em 0;
+  font-size: 14px;
   background-color: #121329;
   color: #56dbe0;
 }
