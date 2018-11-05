@@ -12,8 +12,12 @@ var gameList = [
 var html = '';
 for ( var i = 0; i < gameList.length; i ++ ) {
   var count = gameList[i].count;
+  var recentlyCount = '';
+  if( i == 0 ) { 
+    recentlyCount = '<span class="count">(' + gameList[0].count + ')<span>' 
+  }
   html += '<div class="category-wrap" id="' + gameList[i].id  +'">';
-    html += '<div class="category-name ' +  gameList[i].id +'" data-index="' + i + '" data-open="close">' + gameList[i].ct + '</div>';
+    html += '<div class="category-name ' +  gameList[i].id +'" data-index="' + i + '" data-open="close">' + gameList[i].ct + recentlyCount + '</div>';
     html += '<div class="game-wrap">';
     for ( var n = 0; n < count; n ++ ) {  
         html += '<div class="game-item">';
@@ -34,7 +38,7 @@ $('#gameList').html(html);
 var winW = $(window).width(),
     winH = $(window).height(),
     rowCount = 0,
-    bufferH = 5;
+    bufferH = 1;
 
 
 $(function(){
@@ -60,6 +64,7 @@ $('.category-item').click(function(){
   $(this).addClass('active');
   $('.category-item').not($(this)).removeClass('active');
   toggleGameIcon(id, 'close');
+  
   // $('#' + id + ' .category-name').trigger('click');
 });
 
@@ -95,11 +100,14 @@ function toggleGameIcon (id, isOpen) {
   //   eleCate.attr({'data-open': 'close'});
   // }
   
-  indicator();
-  
   $('html, body').animate({
     scrollTop: $('#' + target ).offset().top + bufferH
-  }, {'speed': 300, 'easing': 'swing'});
+  }, {duration: 300, 'easing': 'swing'});
+
+  setTimeout(function(){
+    indicator()
+  },300);
+
 }
 
 
@@ -115,6 +123,7 @@ $('.balance').click(function(){
 })
 
 function indicator (){
+  console.log('indicator')
   var arrTop = [],
       lenCateItem = $('.category-item').length;
   for(var i = 0; i < lenCateItem; i++) {
@@ -125,10 +134,10 @@ function indicator (){
     var $height = $(window).scrollTop();
     var hh = $('.banner').height() + $('.product-switch').height() - bufferH;
     if($height > hh) {
-      $('.category-menu, .balance-wrap, .menu').addClass('fixed');
+      $('.category-menu, .menu').addClass('fixed');
     }
     if($height <= hh) {
-      $('.category-menu, .balance-wrap, .menu').removeClass('fixed');
+      $('.category-menu, .menu').removeClass('fixed');
     }
     
     //window.scrollY

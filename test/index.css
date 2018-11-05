@@ -141,7 +141,7 @@ ul, li {
   background: linear-gradient(to bottom, rgba(18,19,41,0) 0%,rgba(18,19,41,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .category-wrap:last-child {
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh);
 }
 .category-name {
   position: relative;
@@ -180,6 +180,10 @@ ul, li {
 .category-name.fixed:before {
   border-left-color: #56dbe0;
 }
+.count {
+  margin-left: .5em;
+  font-weight: normal;
+}
 .category-wrap:first-child .category-name:after {
   content: "";
   float: right;
@@ -203,9 +207,9 @@ ul, li {
   margin-right: 2em;
 }  */
 
-.category-name:active {
+/* .category-name:active {
   background-color: rgba(255,255,255,.05);
-}
+} */
 .category-name[data-open="close"]:after {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
@@ -217,7 +221,7 @@ ul, li {
 }
 .category-name[data-open="open"] {
 /*   margin-top: 20px; */
-  color: #56dbe0;
+  /* color: #56dbe0; */
 }
 .category-name[data-open="open"] ~ .game-wrap {
   /* margin-bottom: 20px; */
@@ -283,7 +287,7 @@ ul, li {
   /* margin-bottom: 30px; */
 /*   border-left: 1px solid #333; */
 /*   background-color: #072855; */
-  /* border: 1px solid #345; */
+  border: 1px solid #345;
   border-width: 1px 0 1px 1px;
   border-radius: 4px 0 0 4px;
   overflow-x: hidden;
@@ -300,7 +304,7 @@ ul, li {
   position: fixed;
   top: 42px;
   bottom: 2vh;
-  height: calc(96vh - 42px);
+  height: calc(98vh - 42px);
   overflow-x: hidden;
   overflow-y: auto;
   transition: top .3s;
@@ -433,9 +437,8 @@ ul, li {
 
 /* ================== */
 .footer {
-  margin-right: 70px;
+  margin-right: 64px;
   padding: .75em;
-  height: 50px;
   color: #567;
   font-size: .75em;
   text-align: center;
