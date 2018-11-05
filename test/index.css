@@ -97,7 +97,7 @@ ul, li {
 }
 .menu {
   width: 64px;
-  background: url(https://img-1-12.cdnnetworks.net/images/mobile/menu.png) center center no-repeat;
+  background: #121329 url(https://img-1-12.cdnnetworks.net/images/mobile/menu.png) center center no-repeat;
   background-size: 20px auto;
 }
 .menu.fixed {
@@ -294,9 +294,9 @@ ul, li {
 }
 .category-menu.fixed {
   position: fixed;
-  top: 40px;
+  top: 42px;
   bottom: 2vh;
-  height: calc(96vh);
+  height: calc(96vh - 42px);
   overflow-x: hidden;
   overflow-y: auto;
 }
