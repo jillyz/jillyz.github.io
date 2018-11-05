@@ -102,7 +102,7 @@ function toggleGameIcon (id, isOpen) {
 }
 
 
-$('.category-name').click(function(){
+$('.category-wrap:first-child .category-name').click(function(){
   var id = $(this).parent().attr('id'),
       isOpen = $(this).attr('data-open');
   toggleGameIcon(id, isOpen);
