@@ -43,6 +43,12 @@ ul, li {
   text-align: right;
   transition: all .5s;
 }
+.balance-wrap.fixed {
+  position: fixed;
+  top: 0;
+  right: 64px;
+  z-index: 2;
+}
 .balance {
   padding: .25em 2px .25em 1em;
   line-height: 1;
@@ -90,9 +96,17 @@ ul, li {
   overflow: hidden;
 }
 .menu {
-  width: 44px;
+  width: 64px;
   background: url(https://img-1-12.cdnnetworks.net/images/mobile/menu.png) center center no-repeat;
   background-size: 20px auto;
+}
+.menu.fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 64px;
+  height: 40px;
+  z-index: 1;
 }
 .banner img {
   width: 100%;
@@ -125,7 +139,7 @@ ul, li {
   background: linear-gradient(to bottom, rgba(18,19,41,0) 0%,rgba(18,19,41,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .category-wrap:last-child {
-  margin-bottom: 60vh;
+  min-height: calc(100vh - 80px);
 }
 .category-name {
   position: relative;
@@ -279,7 +293,7 @@ ul, li {
 }
 .category-menu.fixed {
   position: fixed;
-  top: 2vh;
+  top: 40px;
   bottom: 2vh;
   height: calc(96vh);
   overflow-x: hidden;

@@ -111,10 +111,10 @@ function indicator (){
     var $height = $(window).scrollTop();
     var hh = $('.banner').height() + $('.product-switch').height();
     if($height > hh) {
-      $('.category-menu').addClass('fixed');
+      $('.category-menu, .balance-wrap, .menu').addClass('fixed');
     }
     if($height <= hh) {
-      $('.category-menu').removeClass('fixed');
+      $('.category-menu, .balance-wrap, .menu').removeClass('fixed');
     }
     
     //window.scrollY
