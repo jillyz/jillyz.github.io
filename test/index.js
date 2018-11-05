@@ -25,6 +25,7 @@ for ( var i = 0; i < gameList.length; i ++ ) {
   html += '</div>';
 }
 $('#gameList').html(html);
+//$('.category-wrap:last-child').height($(window).height() - $('.footer').height() - $('.category-name.fixed').height());
 
 // $('.category-item:first-child').addClass('active');
 
