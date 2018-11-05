@@ -1,5 +1,5 @@
 var gameList = [
-  {'ct': 'Recently Played' , 'count': 4, 'id': 'recently'},
+  {'ct': 'Recently Played' , 'count': 2, 'id': 'recently'},
   {'ct': 'Top Pick' , 'count': 20, 'id': 'toppick'},
   {'ct': 'Slots' , 'count': 36, 'id': 'slots'},
   {'ct': 'Arcade' , 'count': 12, 'id':'arcade'},
@@ -95,6 +95,9 @@ $('.category-name').click(function(){
 
 });
 
+$('.balance').click(function(){
+  $(this).toggleClass('hide');
+})
 
 var arrTop = [],
     lenCateItem = $('.category-item').length;
