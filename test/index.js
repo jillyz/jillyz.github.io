@@ -73,19 +73,32 @@ function toggleGameIcon (id, isOpen) {
   } 
 
   if(isOpen == 'close') {
-    $('.category-name').not(eleCate).attr('data-open', 'close')
-    $('.category-name').next('.game-wrap').css({'height': rowH + 'px' });
-    eleCate.next('.game-wrap').css({'height': rowH * row + bufferH + 'px' });
+    // $('.category-name').not(eleCate).attr('data-open', 'close');
+    // $('.category-name').next('.game-wrap').css({'height': rowH + 'px' });
+    eleCate.next('.game-wrap').css({'height': rowH * row + 'px' });
     eleCate.attr({'data-open': 'open'});
   }
   if(isOpen == 'open') {
     eleCate.next('.game-wrap').css({'height': rowH + 'px' });
     eleCate.attr({'data-open': 'close'});
   }
+
+  // if(isOpen == 'close') {
+  //   $('.category-name').not(eleCate).attr('data-open', 'close');
+  //   $('.category-name').next('.game-wrap').css({'height': rowH + 'px' });
+  //   eleCate.next('.game-wrap').css({'height': rowH * row + bufferH + 'px' });
+  //   eleCate.attr({'data-open': 'open'});
+  // }
+  // if(isOpen == 'open') {
+  //   eleCate.next('.game-wrap').css({'height': rowH + 'px' });
+  //   eleCate.attr({'data-open': 'close'});
+  // }
   
-  // $('html, body').animate({
-  //   scrollTop: $('#' + target ).offset().top + bufferH
-  // }, {'speed': 500, 'easing': 'swing'});
+  indicator();
+  
+  $('html, body').animate({
+    scrollTop: $('#' + target ).offset().top + bufferH
+  }, {'speed': 250, 'easing': 'swing'});
 }
 
 
