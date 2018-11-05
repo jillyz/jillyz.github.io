@@ -42,7 +42,7 @@ ul, li {
 }
 .balance-wrap {
   text-align: right;
-  transition: all .25s;
+  transition: all .3s;
 }
 .balance-wrap.fixed {
   position: fixed;
@@ -59,7 +59,7 @@ ul, li {
   background-color: #121329;
   font-size: .8125em;
   vertical-align: middle;
-  transition: all .25s;
+  transition: all .3s;
 }
 .balance:after {
   content: "";
@@ -87,7 +87,7 @@ ul, li {
   margin: 0 .5em;
   font-size: 1.2em;
   vertical-align: baseline;
-  transition: max-width .25s;
+  transition: max-width .3s;
 }
 .balance .amount {
   max-width: 5em;
@@ -124,7 +124,7 @@ ul, li {
   margin-right: 70px;
   margin-top: 10px;
 /*   margin-bottom: 10px; */
-  transition: all .25s;
+  transition: all .3s;
 }
 
 .category-wrap:after {
@@ -149,14 +149,14 @@ ul, li {
   margin-top: .5em;
 /*   margin-bottom: -8px; */
   padding: 1em 0;
-  font-size: .875rem;
+  font-size: 14px;
   line-height: 1;
   text-indent: 3vw;
   color: #abc;
   font-weight: bold;
   background-color: #121329;
   /* border-radius: 10px; */
-  transition: all .25s;
+  transition: all .3s;
 }
 .category-name.fixed {
   position: fixed;
@@ -189,7 +189,7 @@ ul, li {
   margin-right: 3vw;
   padding: 3px;
   vertical-align: middle;
-  transition: all .25s;
+  transition: all .3s;
 }
 
 /* .category-name:after {
@@ -222,7 +222,7 @@ ul, li {
   width: 100%;
 /*   height: 110px; */
   overflow: hidden;
-  transition: all .25s;
+  transition: all .3s;
 /*   margin-bottom: 1.5em; */
 }
 .game-item {

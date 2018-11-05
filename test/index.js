@@ -98,7 +98,7 @@ function toggleGameIcon (id, isOpen) {
   
   $('html, body').animate({
     scrollTop: $('#' + target ).offset().top + bufferH
-  }, {'speed': 250, 'easing': 'swing'});
+  }, {'speed': 300, 'easing': 'swing'});
 }
 
 
