@@ -179,15 +179,15 @@ ul, li {
 .category-name.fixed:before {
   border-left-color: #56dbe0;
 }
-.category-name:after {
-/*   content: ""; */
+.category-wrap:first-child .category-name:after {
+  content: "";
   float: right;
   border: solid #abc;
   border-width: 0 3px 3px 0;
   border-radius: 0;
   /* display: inline-block; */
-  margin-top: 15px;
-  margin-left: 3vw;
+  /* margin-top: 15px; */
+  margin-right: 3vw;
   padding: 3px;
   vertical-align: middle;
   transition: all .3s;
@@ -223,7 +223,7 @@ ul, li {
   width: 100%;
 /*   height: 110px; */
   overflow: hidden;
-/*   transition: all .3s; */
+  transition: all .3s;
 /*   margin-bottom: 1.5em; */
 }
 .game-item {
