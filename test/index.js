@@ -38,7 +38,7 @@ $('#gameList').html(html);
 var winW = $(window).width(),
     winH = $(window).height(),
     rowCount = 0,
-    bufferH = 1;
+    bufferH = 2;
 
 
 $(function(){
