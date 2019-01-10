@@ -580,7 +580,7 @@ hr {
     background-color: #fff;
 }
 .rent-notify-msg {
-    width: 19em;
+    width: 15em;
     margin: 0 auto;
     padding: 3em;
     border-radius: 2em;
@@ -588,16 +588,20 @@ hr {
     /* background-color: #fff; */
     color: #333;
     font-weight: bold;
+    font-size: 1.1em;
+}
+.rent-notify-msg img {
+    width: 35vw;
 }
 .rent-notify-msg p {
-    font-size: 1.2em;
+    font-size: 1em;
 }
 .go-notify {
     display: block;
     margin-top: 2em;
     padding: .5em 2em;
     border-radius: 2em;
-    font-size: 1.5em;
+    font-size: 1.2em;
     background-color: #0084ff;
     color: #fff;
     text-decoration: none;

@@ -83,8 +83,8 @@ class Rent extends React.Component {
         </div>
         <div className="rent-notify">
           <div className="rent-notify-msg">
-            <img src="img/facebook-messenger.svg" alt="Messenger" width="120" />
-            <p>若您已提交登記租借表單，請務必透過 Messenger 通知已完成登記。</p>
+            <img src="img/facebook-messenger.svg" alt="Messenger" />
+            <p>若您已提交登記租借表單，請務必透過 Messenger 通知已完成登記預約。</p>
             <a className="go-notify" href="https://m.me/AMIQ.RENT" target="_blank">通知已登記</a>
           </div>
         </div>
