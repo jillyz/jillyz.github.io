@@ -562,7 +562,7 @@ class Catalog extends React.Component {
           }
 
         </div>
-        {this.state.showSmallLoading ? <div className="loading-small"><Loading /></div> : ''} 
+        
 
       </div>
     )
@@ -573,6 +573,7 @@ class Catalog extends React.Component {
     return(
       <div>
         {this.state.showLoading ? <Loading /> : this.renderCatalog() }
+        {this.state.showSmallLoading ? <div className="loading-small"><Loading /></div> : ''} 
       </div>
     )
   }

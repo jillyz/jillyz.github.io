@@ -1,6 +1,7 @@
 html {
     margin: 0;
     padding: 0;
+    font-size: 16px;
     /*overflow: hidden;*/
 }
 
@@ -100,7 +101,7 @@ hr {
     position: fixed;
     bottom: 1em;
     right: .5em;
-    z-index: 99999;
+    z-index: 11;
     margin: 0;
     padding: 0;
     width: 4em;
@@ -470,24 +471,98 @@ hr {
 .test-img {
     width: 100%;
 }
+.rent-process {
+    position: fixed;
+    top: auto;
+    z-index: 1;
+    background-color: #e5e3d0;  
+}
+.rent-process ol {
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.rent-process li {
+    display: table-cell;
+    margin: 0;
+    padding: 1em 0 .5em 0;
+    text-align: center;
+    font-size: .9em;
+} 
+.rent-process li:nth-child(1):before {
+    content: '1';
+}
+.rent-process li:nth-child(2):before {
+    content: '2';
+}
+.rent-process li:nth-child(3):before {
+    content: '3';
+}
+.rent-process li:before {
+    /* content: ''; */
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 2px solid #aaa;
+    background-color: #e5e3d0;
+    color: #aaa;
+    font-family: 'Arial';
+}
+.rent-process li:not(:first-child):after {
+    content: '';
+    position: relative;
+    top: -2.25em;
+    display: block;
+    border-top: 2px solid #aaa;
+    transform: translateX(-50%);
+}
+.rent-process a {
+    display: block;
+    padding-top: .25em;
+    text-decoration: none;
+    color: #aaa;
+}
+.rent-process li.active:before {
+    border-color: #cc3300;
+    background-color: #cc3300;
+    color: #fff;
+}
+.rent-process li.active:not(:first-child):after {
+    border-top-color: #cc3300;
+}
+.rent-process li.active a {
+    color: #cc3300;
+}
+.ic-messenger {
+    width: 1.25em;
+    margin-right: .25em;
+    vertical-align: middle;
+    position: absolute;
+    margin-left: -1.5em;
+}
 .rent-form {
-    /*position: fixed;
-    top: 48px;
+    width: 100%;
+    height: calc(100vh - 9.5em);
+    padding-top: 4em;
+    border: 0 !important; 
+}
+.contact-after-form {
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1;
-    width: 100%;
-    height: calc(100vh - 48px);*/
-    position: relative;
-    z-index: 1; 
-    width: 100%;
-    height: calc(100vh);
-    border: 0 !important;
-    /*overflow: auto;*/
-    
+    padding-left: 1em;
+    line-height: 2em;
+    font-size: .9em;
+    background-color: #0084ff;
+    color: #fff;
 }
-
 /*.rent-rule {
     background-color: rgb(229, 227, 208);
 }*/
@@ -1557,9 +1632,10 @@ hr {
     left: 0;
     bottom: 0;
     right: 0;
+    z-index: 1;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(255,255,255,.6);
+    background-color: rgba(255,255,255,.8);
 }
 
 
@@ -2093,6 +2169,7 @@ hr {
 .terms-wrap {
     min-height: 120vh;
     padding-bottom: 80px;
+    padding-top: 4em;
     background-color: #e5e3d0;
 }
 .terms-banner {
