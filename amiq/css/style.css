@@ -509,17 +509,18 @@ hr {
     height: 16px;
     margin: 0 auto;
     border-radius: 50%;
-    border: 2px solid #aaa;
+    border: 2px solid #cc3300;
     background-color: #e5e3d0;
-    color: #aaa;
+    color: #cc3300;
     font-family: 'Arial';
+    font-weight: bold;
 }
 .rent-process li:not(:first-child):after {
     content: '';
     position: relative;
     top: -2.25em;
     display: block;
-    border-top: 2px solid #aaa;
+    border-top: 2px solid #cc3300;
     transform: translateX(-50%);
 }
 .rent-process a {
@@ -527,16 +528,26 @@ hr {
     padding-top: .25em;
     text-decoration: none;
     color: #aaa;
+    font-weight: bold;
 }
+.rent-process li.checked::before {
+    content: '✔';
+    border-color: #8a9cad;
+    background-color: #8a9cad;
+    color: #fff;
+    font-size: .8em;
+}
+
 .rent-process li.active:before {
     border-color: #cc3300;
     background-color: #cc3300;
     color: #fff;
 }
-.rent-process li.active:not(:first-child):after {
+/* .rent-process li.active:not(:first-child):after {
     border-top-color: #cc3300;
-}
-.rent-process li.active a {
+} */
+.rent-process li.active a,
+.rent-process li.checked a {
     color: #cc3300;
 }
 .ic-messenger {
@@ -552,16 +563,49 @@ hr {
     padding-top: 4em;
     border: 0 !important; 
 }
-.contact-after-form {
+.continue-after-form {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    padding-left: 1em;
-    line-height: 2em;
+    line-height: 3em;
     font-size: .9em;
+    text-align: center;
+    background-color: #4a90e2;
+    color: #fff;
+}
+.rent-notify {
+    height: 100vh;
+    padding-top: 15vh;
+    background-color: #fff;
+}
+.rent-notify-msg {
+    width: 17em;
+    margin: 0 auto;
+    padding: 3em;
+    border-radius: 2em;
+    text-align: center;
+    /* background-color: #fff; */
+    color: #333;
+    font-weight: bold;
+}
+.go-notify {
+    display: block;
+    margin-top: 2em;
+    padding: .5em 2em;
+    border-radius: 2em;
+    font-size: 1.5em;
     background-color: #0084ff;
     color: #fff;
+    text-decoration: none;
+    transition: all .25s;
+}
+.go-notify:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,.3);
+}
+.go-notify:active {
+    background-color: #8a9cad;
+    box-shadow: 0 5px 10px rgba(0,0,0,.3);
 }
 /*.rent-rule {
     background-color: rgb(229, 227, 208);

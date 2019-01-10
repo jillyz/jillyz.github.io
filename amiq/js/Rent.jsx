@@ -9,7 +9,7 @@ class Rent extends React.Component {
     super(props);
     this.state = {
       showLoading: true,
-      agree: false,
+      step: 1,
     }
     this.showRentTermsHandler = this.showRentTermsHandler.bind(this);
   }
@@ -24,9 +24,15 @@ class Rent extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const isAgree = this.state.agree;
-    if(isAgree) { $('body').css({'overflow':'hidden'})};
-    if(!isAgree) { $('body').css({'overflow':'auto'})};    
+    const isAgree = this.state.step  == 2;
+    if(isAgree) 
+    { 
+      $('body').css({'overflow':'hidden'})
+    }
+    else
+    { 
+      $('body').css({'overflow':'auto'})
+    }    
   }
 
 
@@ -35,11 +41,9 @@ class Rent extends React.Component {
       <div>
         <div className="rent-process">
         <ol>
-            <li className="active"><a onClick={()=> this.showRentTermsHandler()} ><strong>同意租借辦法</strong></a></li>
-            <li><a onClick={()=> this.showRentFormHandler()} ><strong>登記租借</strong> 
-                {/* <img src="../img/facebook-messenger.svg" alt="Mesenger" className="ic-messenger" /> */}
-                </a>
-            </li>
+          <li className="active"><a onClick={()=> this.showRentTermsHandler()} >同意租借辦法</a></li>
+            <li><a onClick={()=> this.showRentFormHandler()} >登記租借</a></li>
+            <li><a onClick={()=> this.showRentNotifyHandler()}>通知已登記</a></li>
           </ol>
         </div>
         <RentTerms/>
@@ -55,17 +59,35 @@ class Rent extends React.Component {
       <div>
         <div className="rent-process">
           <ol>
-            <li className="active"><a onClick={()=> this.showRentTermsHandler()} ><strong>同意租借辦法</strong></a></li>
-            <li className="active"><a onClick={()=> this.showRentFormHandler()} ><strong>登記租借</strong> 
-                {/* <img src="../img/facebook-messenger.svg" alt="Mesenger" className="ic-messenger" /> */}
-                </a>
-            </li>
+            <li className="checked"><a onClick={()=> this.showRentTermsHandler()} >同意租借辦法</a></li>
+            <li className="active"><a onClick={()=> this.showRentFormHandler()} >登記租借</a></li>
+            <li><a onClick={()=> this.showRentNotifyHandler()}>通知已登記</a></li>
           </ol>
         </div>
         <iframe id="rentForm" className="rent-form" 
           src="https://docs.google.com/forms/d/e/1FAIpQLSdypAzaM8glHVhTUP9I4wNG1M-E9aUAujoAsB5qwiuAMCDEcQ/viewform">
         </iframe>
-        <div className="contact-after-form">登記完成後，請務必透過 Messenger 通知已完成登記</div>
+        <div onClick={()=> this.showRentNotifyHandler()} className="continue-after-form">提交表單後，請點我繼續</div>
+      </div>
+    )
+  }
+  rentNotifyView() {
+    return(
+      <div>
+        <div className="rent-process">
+          <ol>
+            <li className="checked"><a onClick={()=> this.showRentTermsHandler()} >同意租借辦法</a></li>
+            <li className="checked"><a onClick={()=> this.showRentFormHandler()} >登記租借</a></li>
+            <li className="active"><a onClick={()=> this.showRentNotifyHandler()} >通知已登記</a></li>
+          </ol>
+        </div>
+        <div className="rent-notify">
+          <div className="rent-notify-msg">
+            <img src="../img/facebook-messenger.svg" alt="Messenger" width="120" />
+            <p>若您已提交登記租借表單，請務必透過 Messenger 通知已完成登記。</p>
+            <a className="go-notify" href="https://m.me/AMIQ.RENT" target="_blank">通知已登記</a>
+          </div>
+        </div>
       </div>
     )
   }
@@ -73,7 +95,7 @@ class Rent extends React.Component {
   showRentTermsHandler(){
     this.setState({
       showLoading: true,
-      agree: false
+      step: 1
     })
   }
   showRentFormHandler(){
@@ -82,7 +104,7 @@ class Rent extends React.Component {
     // scrollTo(element, 0, 100);
     this.setState({
       showLoading: true,
-      agree: true
+      step: 2
     })
     $('iframe').on("load", () => {
       this.setState({
@@ -90,12 +112,19 @@ class Rent extends React.Component {
       })
     })
   }
+  showRentNotifyHandler(){
+    this.setState({
+      showLoading: true,
+      step: 3
+    })
+  }
 
   render() {
     return (
       <div className="app-wrap">
-        {this.state.agree == false ? this.rentTermsView() : '' }
-        {this.state.agree ? this.rentFormView() : ''}         
+        {this.state.step == 1 ? this.rentTermsView() : '' }
+        {this.state.step == 2 ? this.rentFormView() : ''} 
+        {this.state.step == 3 ? this.rentNotifyView() : ''} 
       </div> 
     )
   }
