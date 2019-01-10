@@ -96,7 +96,22 @@ hr {
 .header .link.active  {
     color: #c30;
 }
-
+.messenger {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    z-index: 99999;
+    margin: 0;
+    padding: 0;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background: #fff url(../img/facebook-messenger.svg) no-repeat 50% 50%;
+    background-size: 60%;
+    text-indent: -100%;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+}
 .indicator-bar {
     position: absolute;
     top: 3.5em;
@@ -2169,7 +2184,7 @@ hr {
     border-radius: 0.25em;
     background-color: #c30;
     color: #fff;
-    font-size: 1.25em;
+    font-size: 1.1em;
     text-align: center;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,.4);
     -webkit-transition: .25s all;

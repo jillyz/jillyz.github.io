@@ -141,10 +141,10 @@ class App extends React.Component {
           <a className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntro()}><i className="icon fa fa-home" aria-hidden="true"></i> 邏輯教具AMIQ</a>
           <a className={inCatalog ? 'link active' : 'link'} onClick={()=> this.showCatalog()}>目錄</a>
           <a className={inRent ? 'link active' : 'link'} onClick={()=> this.showRent()}>租借</a>
-          {/* <a className="link" href="https://m.me/AMIQ.RENT" target="_blank">通知已登記、問題詢問(FB社團)<span class="icon fa fa-facebook"></span></a> */}
           <span className="indicator-bar"></span>
           <span className={indicatorClassName()}></span>
         </header>
+        <a className="messenger" href="https://m.me/AMIQ.RENT" target="_blank">聯絡我</a>
         <div id="pageContent">
           {this.state.showPlayIntro ?  <PlayIntro goRent={()=> this.showRent() }/> : ''}
           {this.state.showRent ? <Rent/> : ''}
