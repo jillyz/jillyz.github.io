@@ -592,13 +592,14 @@ hr {
 }
 .rent-notify-msg img {
     width: 35vw;
+    max-width: 120px;
 }
 .rent-notify-msg p {
     font-size: 1em;
 }
 .go-notify {
     display: block;
-    margin-top: 2em;
+    margin-top: 1em;
     padding: .5em 2em;
     border-radius: 2em;
     font-size: 1.2em;
