@@ -534,7 +534,7 @@ hr {
     content: '✔';
     border-color: #8a9cad;
     background-color: #8a9cad;
-    color: #fff;
+    color: #fff !important;
     font-size: .8em;
 }
 
