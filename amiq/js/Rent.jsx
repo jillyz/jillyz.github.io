@@ -41,7 +41,7 @@ class Rent extends React.Component {
       <div>
         <div className="rent-process">
         <ol>
-          <li className="active"><a onClick={()=> this.showRentTermsHandler()} >同意租借辦法</a></li>
+          <li className="active"><a onClick={()=> this.showRentTermsHandler()} >詳閱租借辦法</a></li>
             <li><a onClick={()=> this.showRentFormHandler()} >登記租借</a></li>
             <li><a onClick={()=> this.showRentNotifyHandler()}>通知已登記</a></li>
           </ol>
@@ -49,7 +49,7 @@ class Rent extends React.Component {
         <RentTerms/>
         <div className="terms-mask"></div>
         <div className="terms-agree-wrap">
-          <a className="btn-agree" onClick={()=> this.showRentFormHandler() }> 我同意，前往登記租借</a>
+          <a className="btn-agree" onClick={()=> this.showRentFormHandler() }> 已詳閱，前往登記租借</a>
         </div>
       </div>
     )
@@ -59,7 +59,7 @@ class Rent extends React.Component {
       <div>
         <div className="rent-process">
           <ol>
-            <li className="checked"><a onClick={()=> this.showRentTermsHandler()} >同意租借辦法</a></li>
+            <li className="checked"><a onClick={()=> this.showRentTermsHandler()} >詳閱租借辦法</a></li>
             <li className="active"><a onClick={()=> this.showRentFormHandler()} >登記租借</a></li>
             <li><a onClick={()=> this.showRentNotifyHandler()}>通知已登記</a></li>
           </ol>
