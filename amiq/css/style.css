@@ -548,7 +548,7 @@ hr {
 }
 .rent-form {
     width: 100%;
-    height: calc(100vh - 9.5em);
+    height: calc(100vh - 4em);
     padding-top: 4em;
     border: 0 !important; 
 }
@@ -2169,7 +2169,7 @@ hr {
 .terms-wrap {
     min-height: 120vh;
     padding-bottom: 80px;
-    padding-top: 4em;
+    /* padding-top: 4em; */
     background-color: #e5e3d0;
 }
 .terms-banner {
