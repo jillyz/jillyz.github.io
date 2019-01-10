@@ -9,7 +9,7 @@ class Catalog extends React.Component {
     super(props);
     this.state = {
       data: [],
-      listTypeGrid: false,
+      listTypeGrid: true,
       showGridImage: false,
       isPreview: false,
       book: '',
@@ -28,7 +28,7 @@ class Catalog extends React.Component {
 
     this.switchListToGrid = this.switchListToGrid.bind(this);
     this.switchFilterPanel = this.switchFilterPanel.bind(this);
-    this.filterIfOverlayThenHideDrift = this. filterIfOverlayThenHideDrift.bind(this);
+    // this.filterIfOverlayThenHideDrift = this. filterIfOverlayThenHideDrift.bind(this);
     this.previewShow = this.previewShow.bind(this);
     this.previewHide = this.previewHide.bind(this);
     this.onKeyDownPreviewHide = this.onKeyDownPreviewHide.bind(this);
@@ -75,7 +75,7 @@ class Catalog extends React.Component {
     }
     
     // this.onError();
-    this.filterIfOverlayThenHideDrift();
+    // this.filterIfOverlayThenHideDrift();
 
     $('#tags_all').prop('checked', false);
     
@@ -101,36 +101,36 @@ class Catalog extends React.Component {
     // }
 
     this.onError();
-    this.filterIfOverlayThenHideDrift();
+    // this.filterIfOverlayThenHideDrift();
   }
 
-  filterIfOverlayThenHideDrift(){
-    const filterOpen = this.state.filterOpen;
-    const isPreview = this.state.isPreview;
-    const winW = $(window).width();
+  // filterIfOverlayThenHideDrift(){
+  //   const filterOpen = this.state.filterOpen;
+  //   const isPreview = this.state.isPreview;
+  //   const winW = $(window).width();
 
-    if(isPreview) {
-      drift.on('ready',function(api, payload) {
-        api.widget.hide();
-        //api.sidebar.close()
-      })
-    } 
-    else {
-      if(winW <= 1366) {
-        if(filterOpen === true) {
-          drift.on('ready',function(api, payload) {
-            api.widget.hide();
-            //api.sidebar.close()
-          })
-        } 
-        else {
-          drift.on('ready',function(api, payload) {
-            api.widget.show();
-          })
-        }
-      }
-    }
-  }
+  //   if(isPreview) {
+  //     drift.on('ready',function(api, payload) {
+  //       api.widget.hide();
+  //       //api.sidebar.close()
+  //     })
+  //   } 
+  //   else {
+  //     if(winW <= 1366) {
+  //       if(filterOpen === true) {
+  //         drift.on('ready',function(api, payload) {
+  //           api.widget.hide();
+  //           //api.sidebar.close()
+  //         })
+  //       } 
+  //       else {
+  //         drift.on('ready',function(api, payload) {
+  //           api.widget.show();
+  //         })
+  //       }
+  //     }
+  //   }
+  // }
 
   switchListToGrid() {
     // var element = document.getElementById('body');
@@ -145,7 +145,7 @@ class Catalog extends React.Component {
     this.setState({
       filterOpen: !this.state.filterOpen
     })
-    this.filterIfOverlayThenHideDrift();
+    // this.filterIfOverlayThenHideDrift();
   }
 
   bookGoNav(guid){   
@@ -241,8 +241,8 @@ class Catalog extends React.Component {
 
     setTimeout( () => {
       this.setState({
-        isFilter: false,
         filterOpen: false,
+        isFilter: false,
         filterTypes: [],
         filterData: [],
       });
@@ -287,10 +287,10 @@ class Catalog extends React.Component {
       bookGuid: book.guid
     })
 
-    drift.on('ready',function(api, payload) {
-      api.widget.hide();
-      api.sidebar.close();
-    })
+    // drift.on('ready',function(api, payload) {
+    //   api.widget.hide();
+    //   api.sidebar.close();
+    // })
 
     // console.log('previewShow', book, this.state)
   }
@@ -302,9 +302,9 @@ class Catalog extends React.Component {
       book: ''
     })
 
-    drift.on('ready',function(api, payload) {
-      api.widget.show();
-    })
+    // drift.on('ready',function(api, payload) {
+    //   api.widget.show();
+    // })
   }
 
   onKeyDownPreviewHide(e){
@@ -446,8 +446,7 @@ class Catalog extends React.Component {
     return(
       <div>
         <div>
-          <input type="checkbox" ref="tags_all" id="tags_all" className="filter" onChange={() => this.clearFilterTypes()} />
-          <label htmlFor="tags_all">全部</label>
+          <a onClick={() => this.clearFilterTypes()}><i className="icon fa fa-close" aria-hidden="true"></i> 清除</a>
         </div>
         <hr/>
         <div>

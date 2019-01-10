@@ -97,7 +97,8 @@ class PlayIntro extends React.Component {
         </div>
         </div>
         <div className="intro-play">
-          <div className="intro-content8">
+          <div className="intro-content">
+          <h2 className="intro-title">如何玩</h2>
             {/*
             <h2 className="intro-title">玩法介紹</h2>
             <div>
@@ -112,13 +113,13 @@ class PlayIntro extends React.Component {
           <div className="intro-content">
             <h2 className="intro-title">租比買划算</h2>
 
-            <p className="center">
+            <p className="center description">
               <strong>也許您有過以下疑慮</strong><br/>
               一套教具動輒好幾萬，買了也不知道小朋友喜不喜歡，常不常用<br/>
               看起來很棒，可是我的小朋友還小...擔心長大了就用不到了，似乎有點浪費<br/>
               我好心動，想再多了解看看，但我還沒打算真的要買<br/>
               <br/>
-              <strong>別猶豫！<br/>租，是您最好的選擇！<br/>快來吧～</strong>
+              <strong>別猶豫！<br/>租，是您最佳的選擇！<br/>快來體驗</strong>
             </p>
             <a onClick={this.props.goRent} className="go-rent">我要租</a>
           </div>

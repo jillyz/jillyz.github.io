@@ -1,6 +1,7 @@
 //----------------------------------------
 // Async Drift Code
 //----------------------------------------
+/*
 function drift_init(){
   !function() {
     var t;
@@ -23,6 +24,7 @@ function drift_init(){
   drift.SNIPPET_VERSION = '0.3.1';
   drift.load('mff3tw3kwyr6');
 }
+*/
 
 //----------------------------------------
 // GET RENT DATA
@@ -63,6 +65,7 @@ $(function() {
                     arrIds = str.split(', ');
                     obj['bookIds'] = arrIds;
                 }
+                // if (item % cols == 8 && index == i) obj['location'] = data[item].content.$t;
             }
             arr[i - 1] = obj;
         }

@@ -22,7 +22,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.bodyOverflow();
-    this.scrollHeader();
+    this.setRouter();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -43,6 +43,40 @@ class App extends React.Component {
 
   }
 
+  setRouter(){
+    var page = location.href.split('#')[1];
+    if(page) {
+      switch(page){
+        case 'index':
+          this.setState({
+            showPlayIntro: true,
+            showCatalog: false,
+            showRent: false
+          })
+          break;
+        case 'rent':
+          this.setState({
+            showPlayIntro: false,
+            showCatalog: false,
+            showRent: true
+          })
+          break;
+        case 'catalog':
+          this.setState({
+            showPlayIntro: false,
+            showCatalog: true,
+            showRent: false
+          })
+          break;
+        default:
+          break;
+      }
+    }
+    if (!page) {
+      location.hash = 'index';
+    }
+  }
+
   bodyOverflow() {
     const inHome = this.state.showPlayIntro;
     const inRent = this.state.showRent;
@@ -51,8 +85,9 @@ class App extends React.Component {
       $('body').css({'overflow-y' : 'auto'})
     }
 
-    var element = document.getElementById('body');
-    scrollTo(element, 0, 0);
+    var element = document.getElementById('top');
+    // scrollTo(element, 0, 0);
+    element.scrollIntoView();
   }
 
   showPlayIntro(){
@@ -69,6 +104,7 @@ class App extends React.Component {
       showCatalog: false,
       showRent: false
     })
+    location.hash = 'index';
   }
 
   showCatalog() {
@@ -77,6 +113,7 @@ class App extends React.Component {
       showCatalog: true,
       showRent: false
     })
+    location.hash = 'catalog';
   }
 
   showRent() {
@@ -85,6 +122,7 @@ class App extends React.Component {
       showCatalog: false,
       showRent: true
     })
+    location.hash = 'rent';
   }
 
   render() {
@@ -98,20 +136,21 @@ class App extends React.Component {
       if(inCatalog) return 'indicator catalog';
     }
     return (
-      <div className="app-wrap">
+      <div id="appWrap" className="app-wrap">
         <header id="header" className="header">
-          <a className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntro()}>邏輯教具 AMIQ</a>  
-          <a className={inRent ? 'link active' : 'link'} onClick={()=> this.showRent()}>租借</a>
+          <a className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntro()}><i className="icon fa fa-home" aria-hidden="true"></i> 邏輯教具AMIQ</a>
           <a className={inCatalog ? 'link active' : 'link'} onClick={()=> this.showCatalog()}>目錄</a>
+          <a className={inRent ? 'link active' : 'link'} onClick={()=> this.showRent()}>租借</a>
+          {/* <a className="link" href="https://m.me/AMIQ.RENT" target="_blank">通知已登記、問題詢問(FB社團)<span class="icon fa fa-facebook"></span></a> */}
           <span className="indicator-bar"></span>
           <span className={indicatorClassName()}></span>
         </header>
-
-        {this.state.showPlayIntro ?  <PlayIntro goRent={()=> this.showRent() }/> : ''}
-        {this.state.showRent ? <Rent/> : ''}
-        {this.state.showCatalog ? <Catalog /> : ''}
-        {/*{isSafari ? <div className="dontUseSafari">Hi～您目前使用的瀏覽器為 Safari ， 建議您使用 Chrome 瀏覽唷 </div> : ''}*/}
-        
+        <div id="pageContent">
+          {this.state.showPlayIntro ?  <PlayIntro goRent={()=> this.showRent() }/> : ''}
+          {this.state.showRent ? <Rent/> : ''}
+          {this.state.showCatalog ? <Catalog /> : ''}
+          {/*{isSafari ? <div className="dontUseSafari">Hi～您目前使用的瀏覽器為 Safari ， 建議您使用 Chrome 瀏覽唷 </div> : ''}*/}
+        </div>
       </div>
     )
   }
