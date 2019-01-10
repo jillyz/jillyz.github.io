@@ -99,7 +99,7 @@ hr {
 .messenger {
     position: fixed;
     bottom: 1em;
-    right: 1em;
+    right: .5em;
     z-index: 99999;
     margin: 0;
     padding: 0;
