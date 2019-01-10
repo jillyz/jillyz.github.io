@@ -12,7 +12,8 @@ class App extends React.Component {
     this.state = {
       showPlayIntro: true,
       showCatalog: false,
-      showRent: false
+      showRent: false,
+      showMessenger: true
     }
     this.showPlayIntro = this.showPlayIntro.bind(this);
     this.showCatalog = this.showCatalog.bind(this);
@@ -97,6 +98,11 @@ class App extends React.Component {
       </div>
     )
   }
+  showMessenger (){
+    return(
+      <a className="messenger" href="https://m.me/AMIQ.RENT" target="_blank">聯絡我</a>
+    )
+  }
 
   showPlayIntro() {
     this.setState({
@@ -144,10 +150,10 @@ class App extends React.Component {
           <span className="indicator-bar"></span>
           <span className={indicatorClassName()}></span>
         </header>
-        <a className="messenger" href="https://m.me/AMIQ.RENT" target="_blank">聯絡我</a>
+        {this.state.showMessenger ? this.showMessenger() : ''}   
         <div id="pageContent">
           {this.state.showPlayIntro ?  <PlayIntro goRent={()=> this.showRent() }/> : ''}
-          {this.state.showRent ? <Rent/> : ''}
+          {this.state.showRent ? <Rent showMessenger="false"/> : ''}
           {this.state.showCatalog ? <Catalog /> : ''}
           {/*{isSafari ? <div className="dontUseSafari">Hi～您目前使用的瀏覽器為 Safari ， 建議您使用 Chrome 瀏覽唷 </div> : ''}*/}
         </div>
