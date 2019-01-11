@@ -35,6 +35,36 @@ class Rent extends React.Component {
     }    
   }
 
+  setRouter(){
+    var page = location.href.split('#')[1];
+    if(page) {
+      switch(page){
+        case 'rent-terms':
+          this.setState({
+            showLoading: true,
+            step: 1
+          })
+          break;
+        case 'rent-form':
+          this.setState({
+            showLoading: true,
+            step: 2
+          })
+          break;
+        case 'rent-notify':
+          this.setState({
+            showLoading: true,
+            step: 3
+          })
+          break;
+        default:
+          break;
+      }
+    }
+    if (!page) {
+      location.hash = 'rent-terms';
+    }
+  }
 
   rentTermsView() {
     return(
@@ -97,6 +127,7 @@ class Rent extends React.Component {
       showLoading: true,
       step: 1
     })
+    location.hash = 'rent-terms';
   }
   showRentFormHandler(){
     // window.open('https://docs.google.com/forms/d/e/1FAIpQLSdypAzaM8glHVhTUP9I4wNG1M-E9aUAujoAsB5qwiuAMCDEcQ/viewform' , '_blank');
@@ -111,12 +142,14 @@ class Rent extends React.Component {
         showLoading: false
       })
     })
+    location.hash = 'rent-form';
   }
   showRentNotifyHandler(){
     this.setState({
       showLoading: true,
       step: 3
     })
+    location.hash = 'rent-nofify';
   }
 
   render() {

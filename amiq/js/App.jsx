@@ -55,7 +55,7 @@ class App extends React.Component {
             showRent: false
           })
           break;
-        case 'rent':
+        case 'rent-terms':
           this.setState({
             showPlayIntro: false,
             showCatalog: false,
@@ -128,7 +128,7 @@ class App extends React.Component {
       showCatalog: false,
       showRent: true
     })
-    location.hash = 'rent';
+    location.hash = 'rent-terms';
   }
 
   render() {
