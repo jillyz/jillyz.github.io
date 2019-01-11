@@ -71,9 +71,9 @@ class Rent extends React.Component {
       <div>
         <div className="rent-process">
         <ol>
-          <li className="active"><a onClick={()=> this.showRentTermsHandler()} >詳閱租借辦法</a></li>
-            <li><a onClick={()=> this.showRentFormHandler()} >登記租借</a></li>
-            <li><a onClick={()=> this.showRentNotifyHandler()}>通知已登記</a></li>
+          <li onClick={()=> this.showRentTermsHandler()} className="active"><a>詳閱租借辦法</a></li>
+          <li onClick={()=> this.showRentFormHandler()} ><a>登記租借</a></li>
+          <li onClick={()=> this.showRentNotifyHandler()}><a>通知已登記</a></li>
           </ol>
         </div>
         <RentTerms/>
@@ -89,9 +89,9 @@ class Rent extends React.Component {
       <div>
         <div className="rent-process">
           <ol>
-            <li className="checked"><a onClick={()=> this.showRentTermsHandler()} >詳閱租借辦法</a></li>
-            <li className="active"><a onClick={()=> this.showRentFormHandler()} >登記租借</a></li>
-            <li><a onClick={()=> this.showRentNotifyHandler()}>通知已登記</a></li>
+            <li onClick={()=> this.showRentTermsHandler()} className="checked"><a>詳閱租借辦法</a></li>
+            <li onClick={()=> this.showRentFormHandler()} className="active"><a>登記租借</a></li>
+            <li onClick={()=> this.showRentNotifyHandler()}><a>通知已登記</a></li>
           </ol>
         </div>
         <iframe id="rentForm" className="rent-form" 
@@ -106,9 +106,9 @@ class Rent extends React.Component {
       <div>
         <div className="rent-process">
           <ol>
-            <li className="checked"><a onClick={()=> this.showRentTermsHandler()} >同意租借辦法</a></li>
-            <li className="checked"><a onClick={()=> this.showRentFormHandler()} >登記租借</a></li>
-            <li className="active"><a onClick={()=> this.showRentNotifyHandler()} >通知已登記</a></li>
+            <li className="checked" onClick={()=> this.showRentTermsHandler()}><a>同意租借辦法</a></li>
+            <li className="checked" onClick={()=> this.showRentFormHandler()}><a>登記租借</a></li>
+            <li className="active" onClick={()=> this.showRentNotifyHandler()}><a>通知已登記</a></li>
           </ol>
         </div>
         <div className="rent-notify">
