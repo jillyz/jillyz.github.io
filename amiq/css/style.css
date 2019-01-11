@@ -580,6 +580,12 @@ hr {
     font-weight: bold;
     transition: all 1s;
 }
+.rent-process li.active a {
+    color: #cc3300;
+}
+.rent-process li.checked a {
+    color: #586e75;
+}
 .rent-process li.checked a:before {
     content: '✔';
     border-color: #586e75;
@@ -607,12 +613,6 @@ hr {
 /* .rent-process li.active:not(:first-child):after {
     border-top-color: #cc3300;
 } */
-.rent-process li.active a {
-    color: #cc3300;
-}
-.rent-process li.checked a {
-    color: #586e75;
-}
 .ic-messenger {
     width: 1.25em;
     margin-right: .25em;
