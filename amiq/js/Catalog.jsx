@@ -361,7 +361,7 @@ class Catalog extends React.Component {
   renderBooksGrid(data){
     return (
       data.map(book => (
-        <div ref={`books-${book.stage}`} className={this.typesClassName(book.types, book.stage, book.guid)}>
+        <div data-ga="BookGrid" data-value={book.id} ref={`books-${book.stage}`} className={this.typesClassName(book.types, book.stage, book.guid)}>
           <div className={`item item-grid stage stage-${book.stage}`} key={book.guid} onClick={() => this.previewShow(book)}>
             <div className="info">
               <span className="title">
@@ -404,7 +404,7 @@ class Catalog extends React.Component {
   renderBooksList(data){
     return (
       data.map(book => (
-        <div ref={`books-${book.stage}`} className={this.typesClassName(book.types, book.stage, book.guid)}>
+        <div data-ga="BookList" data-value={book.id} ref={`books-${book.stage}`} className={this.typesClassName(book.types, book.stage, book.guid)}>
           <div className={`book-list book-list-stage book-list-stage-${book.stage}`} key={book.guid} onClick={() => this.previewShow(book)}>
             <div className="info">
               <span className="id">{book.id}</span> 
@@ -524,7 +524,7 @@ class Catalog extends React.Component {
                 <i className="fa fa-th" aria-hidden="true"></i>
               }
             </a>
-            <a onClick={() => this.switchFilterPanel()} className={isFilterOpen ? 'btn-filter on' : 'btn-filter off'}><i className="fa fa-filter" aria-hidden="true"></i></a>
+            <a onClick={() => this.switchFilterPanel()} className={isFilterOpen ? 'btn-filter on' : 'btn-filter off'} data-value={isFilterOpen ? 'TurnOff' : 'TurnOn'} ><i className="fa fa-filter" aria-hidden="true"></i></a>
             </span>
         </span>
 

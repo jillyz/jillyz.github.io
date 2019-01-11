@@ -263,7 +263,7 @@ class Preview extends React.Component {
 
     return (
       <div>
-        <div id="preview" className="preview animated zoomIn">
+        <div id="preview" data-bookid={this.props.book.id} className="preview animated zoomIn">
           <div id="bookInfo" className={`book-info stage stage-${stageId}`}>
             <div className="title-wrap">
               <span className="id">{this.props.book.id}</span> 
@@ -397,9 +397,9 @@ class Preview extends React.Component {
         </div>
 
         <div className="preview-jump">
-          <a onClick={() => this.goPrev()}><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
+          <a className="prev" onClick={() => this.goPrev()}><i className="fa fa-arrow-left" aria-hidden="true"></i></a>
           <span className="preview-current">{this.state.previewGuid}</span>
-          <a onClick={() => this.goNext()}><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
+          <a className="next" onClick={() => this.goNext()}><i className="fa fa-arrow-right" aria-hidden="true"></i></a>
         </div>
 
         {this.state.showLoading ? <div className="loading-small"><Loading /></div> : ''} 
