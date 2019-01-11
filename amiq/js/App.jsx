@@ -88,9 +88,7 @@ class App extends React.Component {
       $('body').css({'overflow-y' : 'auto'})
     }
 
-    var element = document.getElementById('top');
-    // scrollTo(element, 0, 0);
-    element.scrollIntoView();
+    setScrollIntoView();
   }
 
   showPlayIntro(){
