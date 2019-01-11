@@ -149,7 +149,7 @@ class Rent extends React.Component {
       showLoading: true,
       step: 3
     })
-    location.hash = 'rent-nofify';
+    location.hash = 'rent-notify';
   }
 
   render() {

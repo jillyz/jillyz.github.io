@@ -56,6 +56,8 @@ class App extends React.Component {
           })
           break;
         case 'rent-terms':
+        case 'rent-form':
+        case 'rent-notify':
           this.setState({
             showPlayIntro: false,
             showCatalog: false,
