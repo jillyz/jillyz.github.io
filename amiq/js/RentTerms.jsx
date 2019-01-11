@@ -18,19 +18,17 @@ class RentTerms extends React.Component {
   render() {
     return (
       <div className="terms-wrap">
-        <div className="terms-banner"></div>
+        {/* <div className="terms-banner"></div> */}
         <div className="terms-content-wrap">
           <div className="terms-content">
-            <h2 className="terms-header">租借服務說明</h2>
+            <h2 className="terms-header">租借說明（請詳閱）</h2>
 
-            <section>
-              <h3 className="terms-title">費用及借期</h3>
+            <section className="text-highlight">
+              {/* <h3 className="terms-title">費用、借期、服務範圍</h3> */}
+              <h4>【費用及借期】</h4>
               <p>
-                <strong>
                   每本租金 100元，基本借期 3天，若多本則累加。<br/>
                   借期若須延長，延長的每本則每一天加收10元。
-                </strong>
-                <br/>
               </p>
               <table className="table">
                 <thead>
@@ -81,16 +79,21 @@ class RentTerms extends React.Component {
                 </tbody>
               </table>
               <ul>
-                <li>數量：一次最多借閱5本</li>
-                <li>借期：今天借，隔日為借期第 1 天。當日歸還的遊戲本需隔日才可再借出。</li>
+                <li>數量：一次最多借閱 5 本</li>
+                <li>借期：今天借，隔日為借期第 1 天。歸還的遊戲本必須隔日才可再借出。</li>
                 <li>歸還：經過借期天數，隔日再還</li>
                 <li>租借項目：本出租內容物為：遊戲板 1 片，及您所租借的遊戲本數量。（註：出租內容物不含點讀筆）</li>
               </ul>
+            
+              <h4>【服務範圍】</h4>
+              <ul>
+                <li>本出租服務以【台中市】【面交】為主。<br/>若外縣市的您仍有租借需求，對於支付運費也可接受，可再至 Messenger 洽談租借數量及運費。</li>
+                <li>台中市優先採用面交，亦可郵寄；外縣市一律郵寄。（郵寄需支付運費，視您租借數量而定）</li>
+              </ul>
             </section>
             <hr/>
-
             <section>
-              <h3 className="terms-title">特殊情況</h3>
+              {/* <h3 className="terms-title">特殊情況</h3> */}
               <h4>【遺失】</h4>
               <ul>
                 <li>遺失遊戲本，遺失每本扣除500元，從押金扣除。</li>
@@ -110,11 +113,9 @@ class RentTerms extends React.Component {
             <hr/>
 
             <section>
-              <h3 className="terms-title">關於本服務</h3>
-              <h4>【服務範圍】</h4>
-              <p>本出租服務以【台中市】【面交】為主。若外縣市的您仍有租借需求，對於支付運費也可接受，可再至 Messanger 洽談。</p>
+              {/* <h3 className="terms-title">關於本服務</h3> */}
               <h4>【租比買 更划算】</h4>
-              <p>本服務緣起於一位上班族媽媽，因緣際會之下，入手了 AMIQ 邏輯遊戲 90 本套書。初衷本是希望可以推廣這套超棒的 AMIQ 邏輯遊戲教具給更多家長認識。</p>
+              <p>本服務緣起於一位台中的上班族媽媽，因緣際會之下，入手了 AMIQ 邏輯遊戲 90 本套書。初衷本是希望可以推廣這套超棒的 AMIQ 邏輯遊戲教具給更多家長認識。</p>
               <p>也許您對於 AMIQ 很心動，但礙於套書費用動輒數萬元、及使用時間的考量，而未購入；也許您才剛認識這套好玩的教具，希望可以有更進一步的接觸瞭解。本租借服務是為您而生！可針對您感興趣的部分遊戲本、且有花時間使用，才有所花費支出。</p>
               <p>若您購買一整套，往往是耗費鉅資、擺在家多時、卻無法每本都真的玩過，租借絕對比購買整套要更划算唷！使用率也更高！</p>
               <h4>【敬請愛惜物品】</h4>

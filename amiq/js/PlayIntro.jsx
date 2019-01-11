@@ -121,7 +121,7 @@ class PlayIntro extends React.Component {
               <br/>
               <strong>別猶豫！<br/>租，是您最佳的選擇！<br/>快來體驗</strong>
             </p>
-            <a onClick={this.props.goRent} className="go-rent">如何租借</a>
+            <a onClick={this.props.goRent} className="go-rent">瞭解如何租借</a>
           </div>
         </div>
 
