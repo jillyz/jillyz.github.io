@@ -530,7 +530,7 @@ hr {
     color: #aaa;
     font-weight: bold;
 }
-.rent-process li.checked::before {
+.rent-process li.checked:before {
     content: '✔';
     border-color: #8a9cad;
     background-color: #8a9cad;
