@@ -32,7 +32,8 @@ class Rent extends React.Component {
     else
     { 
       $('body').css({'overflow':'auto'})
-    }    
+    }
+    setScrollIntoView();
   }
 
   setRouter(){
@@ -65,21 +66,27 @@ class Rent extends React.Component {
       location.hash = 'rent-terms';
     }
   }
-
+  renderRentProcess(){
+    return(
+      <div className="rent-process">
+        <div>
+          <ol>
+            <li className={this.state.step == 1 ? 'active': 'checked'} onClick={()=> this.showRentTermsHandler()}><a data-value="RentTerms">詳閱租借說明</a></li>
+            <li className={this.state.step == 2 ? 'active': (this.state.step == 1 ? '' : 'checked' )} onClick={()=> this.showRentFormHandler()}><a data-value="RentForm">登記租借</a></li>
+            <li className={this.state.step == 3 ? 'active': ''} onClick={()=> this.showRentNotifyHandler()}><a data-value="RentNotify">通知已登記</a></li>
+          </ol>
+        </div>
+      </div>
+    )
+  }
   rentTermsView() {
     return(
       <div>
-        <div className="rent-process">
-        <ol>
-          <li onClick={()=> this.showRentTermsHandler()} className="active"><a data-value="RentTerms">詳閱租借辦法</a></li>
-          <li onClick={()=> this.showRentFormHandler()} ><a data-value="RentForm">登記租借</a></li>
-          <li onClick={()=> this.showRentNotifyHandler()}><a data-value="RentNotify">通知已登記</a></li>
-          </ol>
-        </div>
+        {this.renderRentProcess() }
         <RentTerms/>
         <div className="terms-mask"></div>
         <div className="terms-agree-wrap">
-          <a className="btn-agree" onClick={()=> this.showRentFormHandler() }> 已詳閱，前往登記租借</a>
+          <a className="btn-agree" onClick={()=> this.showRentFormHandler() }> 我瞭解了，前往登記租借</a>
         </div>
       </div>
     )
@@ -87,13 +94,7 @@ class Rent extends React.Component {
   rentFormView() {
     return(
       <div>
-        <div className="rent-process">
-          <ol>
-            <li onClick={()=> this.showRentTermsHandler()} className="checked"><a data-value="RentTerms">詳閱租借辦法</a></li>
-            <li onClick={()=> this.showRentFormHandler()} className="active"><a data-value="RentForm">登記租借</a></li>
-            <li onClick={()=> this.showRentNotifyHandler()}><a data-value="RentNotify">通知已登記</a></li>
-          </ol>
-        </div>
+        {this.renderRentProcess() }
         <iframe id="rentForm" className="rent-form" 
           src="https://docs.google.com/forms/d/e/1FAIpQLSdypAzaM8glHVhTUP9I4wNG1M-E9aUAujoAsB5qwiuAMCDEcQ/viewform">
         </iframe>
@@ -104,13 +105,7 @@ class Rent extends React.Component {
   rentNotifyView() {
     return(
       <div>
-        <div className="rent-process">
-          <ol>
-            <li className="checked" onClick={()=> this.showRentTermsHandler()}><a data-value="RentTerms">同意租借辦法</a></li>
-            <li className="checked" onClick={()=> this.showRentFormHandler()}><a data-value="RentForm">登記租借</a></li>
-            <li className="active" onClick={()=> this.showRentNotifyHandler()}><a data-value="RentNotify">通知已登記</a></li>
-          </ol>
-        </div>
+        {this.renderRentProcess() }
         <div className="rent-notify">
           <div className="rent-notify-msg">
             <img src="img/facebook-messenger.svg" alt="Messenger" />
@@ -154,7 +149,7 @@ class Rent extends React.Component {
 
   render() {
     return (
-      <div className="app-wrap">
+      <div className="rent app-wrap">
         {this.state.step == 1 ? this.rentTermsView() : '' }
         {this.state.step == 2 ? this.rentFormView() : ''} 
         {this.state.step == 3 ? this.rentNotifyView() : ''} 

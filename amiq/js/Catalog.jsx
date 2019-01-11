@@ -133,9 +133,7 @@ class Catalog extends React.Component {
   // }
 
   switchListToGrid() {
-    // var element = document.getElementById('body');
-    // scrollTo(element, 0, 1000);
-
+    setScrollIntoView();
     this.setState({
       listTypeGrid: !this.state.listTypeGrid
     })
@@ -174,6 +172,8 @@ class Catalog extends React.Component {
   }
 
   filterTypes(){
+
+    setScrollIntoView();
 
     $('#tags_all').prop('checked', false);
 
@@ -247,7 +247,7 @@ class Catalog extends React.Component {
         filterData: [],
       });
       // window.bookData = response;
-    }, 1000);
+    }, 300);
 
     $('.filter.tag').prop('checked', false);
     this.filterTypes();
@@ -515,7 +515,7 @@ class Catalog extends React.Component {
       <div>
 
         {/* btn in header: grid/list , filter */}
-        <span className="list-type-menu">
+        <span className={isFilterOpen ? 'list-type-menu on' : 'list-type-menu off'}>
             <span>
             <a onClick={() => this.switchListToGrid()}>
               {this.state.listTypeGrid ?
