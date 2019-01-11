@@ -487,7 +487,6 @@ hr {
 .rent-process li {
     display: table-cell;
     margin: 0;
-    padding: 1em 0 .5em 0;
     text-align: center;
     font-size: .9em;
 } 
@@ -525,7 +524,7 @@ hr {
 }
 .rent-process a {
     display: block;
-    padding-top: .25em;
+    padding: 1em 0 .5em 0;
     text-decoration: none;
     color: #aaa;
     font-weight: bold;
