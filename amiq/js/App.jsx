@@ -1,4 +1,4 @@
-const {
+﻿const {
   Rent,
   Catalog,
   PlayIntro,
@@ -13,7 +13,7 @@ class App extends React.Component {
       showPlayIntro: true,
       showCatalog: false,
       showRent: false,
-      showMessenger: true
+      showMessenger: true,
     }
     this.showPlayIntro = this.showPlayIntro.bind(this);
     this.showCatalog = this.showCatalog.bind(this);
@@ -146,9 +146,9 @@ class App extends React.Component {
     return (
       <div id="appWrap" className="app-wrap">
         <header id="header" className="header">
-          <a className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntro()}><i className="icon fa fa-home" aria-hidden="true"></i> 邏輯教具AMIQ</a>
-          <a className={inCatalog ? 'link active' : 'link'} onClick={()=> this.showCatalog()}>目錄</a>
-          <a className={inRent ? 'link active' : 'link'} onClick={()=> this.showRent()}>租借</a>
+          <a className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntro()} data-value="Index"><i className="icon fa fa-home" aria-hidden="true"></i> 邏輯教具AMIQ</a>
+          <a className={inCatalog ? 'link active' : 'link'} onClick={()=> this.showCatalog()} data-value="Catalog">目錄</a>
+          <a className={inRent ? 'link active' : 'link'} onClick={()=> this.showRent()} data-value="Rent">租借</a>
           <span className="indicator-bar"></span>
           <span className={indicatorClassName()}></span>
         </header>
