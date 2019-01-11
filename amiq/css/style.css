@@ -166,9 +166,10 @@ hr {
 */
 .list-type-menu {
     position: fixed;
-    bottom: .5em;
-    right: .5em;
+    bottom: 1em;
+    right: 50%;
     z-index: 100;
+    transform: translateX(50%);
     background-color: #fff;
     text-align: right;
     background-color: #fff;
@@ -206,6 +207,7 @@ hr {
         bottom: 12em;
         border: 0;
         border-radius: 0;
+        transform: translateX(0);
     }
 }
 @media screen and (min-width: 601px) {
@@ -217,7 +219,7 @@ hr {
         font-size: 1.2em;
     } */
     .list-type-menu {
-        right: 6rem;
+        right: 2rem;
         bottom: auto;
         top: .5rem;
         font-size: 1.1em;
@@ -586,6 +588,7 @@ hr {
 .rent-process li.checked a {
     color: #586e75;
 }
+
 .rent-process li.checked a:before {
     content: '✔';
     border-color: #586e75;
