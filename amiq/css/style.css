@@ -632,7 +632,7 @@ hr {
 }
 .intro-content {
     margin: 0 auto;
-    padding: 3em 1.5em;
+    padding: 3em 1em;
     max-width: 960px;
     color: #fff;
 }
@@ -1740,14 +1740,14 @@ hr {
 
 @media screen and (max-width: 400px) {
     /*iPhone5*/
-    body {
+    html {
         font-size: .875em;
     }
 }
 
 @media screen and (max-width: 320px) {
     /*iPhone5*/
-    body {
+    html {
         font-size: .75em;
     }
 }
