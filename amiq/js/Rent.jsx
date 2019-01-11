@@ -16,10 +16,10 @@ class Rent extends React.Component {
 
   componentDidMount() {
     this.setState({showLoading: false});
-
-    $("#rentForm").contents().find(".quantumWizButtonPaperbuttonEl").click(()=>{
-      alert('send');
-    });
+    this.setRouter();
+    // $("#rentForm").contents().find(".quantumWizButtonPaperbuttonEl").click(()=>{
+    //   alert('send');
+    // });
 
   }
 
