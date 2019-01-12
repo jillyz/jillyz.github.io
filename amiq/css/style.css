@@ -15,6 +15,7 @@ body {
     /*font-family: 'Heiti TC', 'Microsoft JhengHei', Sans-Serif;*/
     font-family: 'Roboto','RobotoDraft','Heiti TC','Microsoft JhengHei',Helvetica,Arial,sans-serif;
     overflow-x: hidden;
+    box-sizing: border-box;
 /*    user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -99,8 +100,8 @@ hr {
 }
 .messenger {
     position: fixed;
-    top: 1.5em;
-    right: .5em;
+    bottom: 2em;
+    right: 2em;
     z-index: 99;
     margin: 0;
     padding: 0;
@@ -112,6 +113,28 @@ hr {
     text-indent: -100%;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,.15);
+    
+    transform: scale(0);
+    -webkit-transition: .25s all ease-out;
+    -o-transition: .25s all ease-out;
+    transition: .25s all ease-out;
+}
+.messenger.show {
+    animation: showMessenger .5s;
+    transform: scale(1)
+}
+@keyframes showMessenger {
+    0% {
+        transform: scale(0);
+    }
+    85% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 .indicator-bar {
     position: absolute;
@@ -144,7 +167,7 @@ hr {
 } 
 .indicator.rent {
     left: 14rem;
-    width: 4rem;
+    width: 7rem;
 } 
 .header.slideUp .indicator,
 .header.slideUp .indicator-bar {
@@ -177,7 +200,8 @@ hr {
         top: 2.75em;
     }
     .messenger {
-        top: 1em;
+        right: 1em;
+        bottom: 3em;
     }
 }
 
@@ -671,9 +695,10 @@ hr {
     text-align: center;
     background-color: #4a90e2;
     color: #fff;
+    cursor: pointer;
 }
 .rent-notify {
-    height: 100vh;
+    /* height: 100vh; */
     padding-top: 10vh;
     background-color: #fff;
 }
@@ -811,7 +836,7 @@ hr {
 .intro-rent {
     position: relative;
     padding: 4em 0;
-    background: url(../img/cute_mei.jpg) no-repeat;
+    background: url(../img/cute_mei.jpg) no-repeat center center;
     -webkit-background-size: cover;
     background-size: cover;    
 }
@@ -916,7 +941,10 @@ hr {
         margin-bottom: 1rem;
     }
     .intro-rent .intro-content {
-        font-size: 1.5em;
+        /* font-size: 1.5em; */
+    }
+    .intro-rent {
+        background-size: auto 100%;
     }
     .forDesktop {
         display: block;
@@ -2405,6 +2433,8 @@ hr {
 .terms-content h4 {
     margin-top: 2em;
     font-size: 1.1em;
+    color: #c30;
+    text-indent: -.5em;
 }
 .terms-header {
     margin-top: 1em;
@@ -2420,8 +2450,13 @@ hr {
     font-weight: normal;
 }
 .terms-content li {
-    line-height: 1.5;
     margin-bottom: .5em;
+    line-height: 1.5;
+}
+.terms-content .no-list-style,
+.terms-content .no-list-style li {
+    padding-left: 0;
+    list-style: none;
 }
 @media screen and (max-width: 660px) {
     .terms-banner  {
@@ -2439,11 +2474,72 @@ hr {
         font-size: 24px;
     }
 }
+.other-terms label {
+    display: block;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.other-terms input {
+    display: none;
+}
+.other-terms h4 {
+    margin-top: 0;
+    color: #cc3300 !important;
+}
+.other-terms h4:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-top: 0;
+    margin-right: .5em;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 6px solid #333;
+    -webkit-transition: .25s all;
+    -o-transition: .25s all;
+    transition: .25s all;
+    overflow: hidden;
+}
+.other-terms h4:after {
+    content: '[瞭解詳情]';
+    margin-left: 1em;
+    font-weight: normal;
+    font-size: .9em;
+    color: #999;
+}
+.other-terms h4  {
+    display: inline-block;
+    color: #333;
+    font-size: 1em;
+}
+.other-terms-item {
+    padding: 1em 0;
+    border-top: 1px dotted #ddd;
+}
+.other-terms-item ul {
+    padding-left: 1em;
+}
 .other-terms-item-content {
-    font-size: .8em;
+    margin-left: 1em;
+    height: 0;
+    /* font-size: .8em; */
+    -webkit-transition: .25s all;
+    -o-transition: .25s all;
+    transition: .25s all;
+    overflow: hidden;
+}
+.other-terms input:checked + label + .other-terms-item-content {
+    height: auto;
+}
+.other-terms input:checked + label > h4:before {
+    transform: rotate(90deg);
+}
+.other-terms input:checked + label > h4:after {
+    content: '[關閉]';
 }
 .text-highlight {
-    /* color: #cc3300; */
+    color: #cc3300;
     font-weight: bold;
 }
 .table {
@@ -2470,7 +2566,7 @@ hr {
     border-top: 1px solid #ccc;
 }
 .terms-agree-wrap {
-    padding: 1em 0 3em 0;
+    padding: 1em 0 7em 0;
     text-align: center;
     /* background-color: #e5e3d0; */
     /* position: fixed;
@@ -2480,10 +2576,10 @@ hr {
 }
 .btn-agree {
     display: inline-block;
-    /* margin: .5em auto 1rem auto; */
-    width: 50%;
-    padding: .5rem .75rem;
-    border-radius: 0.25em;
+    width: 80%;
+    max-width: 480px;
+    padding: .75rem .75rem;
+    border-radius: 3em;
     background-color: #c30;
     color: #fff;
     font-size: 1.1em;
