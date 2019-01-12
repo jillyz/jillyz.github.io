@@ -24,10 +24,17 @@ class App extends React.Component {
   componentDidMount() {
     this.bodyOverflow();
     this.setRouter();
+    setScrollIntoView();
+
+    setTimeout(() => {
+      var element = document.getElementById("messenger");
+      element.classList.add("show");
+    }, 2000)
   }
 
   componentDidUpdate(prevProps, prevState) {
     this.bodyOverflow();
+    setScrollIntoView();
   }
 
   scrollHeader() {
@@ -87,8 +94,6 @@ class App extends React.Component {
     if ( inHome || inCatalog ) {
       $('body').css({'overflow-y' : 'auto'})
     }
-
-    setScrollIntoView();
   }
 
   showPlayIntro(){
@@ -100,7 +105,7 @@ class App extends React.Component {
   }
   showMessenger (){
     return(
-      <a className="messenger" href="https://m.me/AMIQ.RENT" target="_blank">聯絡我</a>
+      <a id="messenger" className="messenger" href="https://m.me/AMIQ.RENT" target="_blank">聯絡我</a>
     )
   }
 
@@ -146,7 +151,7 @@ class App extends React.Component {
         <header id="header" className="header">
           <a className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntro()} data-value="Index"><i className="icon fa fa-home" aria-hidden="true"></i> 邏輯教具AMIQ</a>
           <a className={inCatalog ? 'link active' : 'link'} onClick={()=> this.showCatalog()} data-value="Catalog">目錄</a>
-          <a className={inRent ? 'link active' : 'link'} onClick={()=> this.showRent()} data-value="Rent">租借</a>
+          <a className={inRent ? 'link active' : 'link'} onClick={()=> this.showRent()} data-value="Rent">租借及費用</a>
           <span className="indicator-bar"></span>
           <span className={indicatorClassName()}></span>
         </header>
