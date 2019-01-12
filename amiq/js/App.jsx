@@ -13,12 +13,14 @@ class App extends React.Component {
       showPlayIntro: true,
       showCatalog: false,
       showRent: false,
-      showMessenger: true,
+      showMessenger: false,
+      showMessengerTip: true,
     }
     this.showPlayIntro = this.showPlayIntro.bind(this);
     this.showCatalog = this.showCatalog.bind(this);
     this.showRent = this.showRent.bind(this);
     this.scrollHeader = this.scrollHeader.bind(this);
+    this.hideMessengerTipHandler = this.hideMessengerTipHandler.bind(this);
   }
 
   componentDidMount() {
@@ -27,14 +29,39 @@ class App extends React.Component {
     setScrollIntoView();
 
     setTimeout(() => {
-      var element = document.getElementById("messenger");
-      element.classList.add("show");
-    }, 2000)
+      this.setState({
+        showMessenger: true,
+        showMessengerTip: true,
+      })
+    }, 500); 
+
+    setTimeout(() => {
+      this.setState({
+        showMessengerTip: false,
+      })
+    }, 12000); 
+
+
+    // this.showMessengerHandler('messenger');
+    // this.showMessengerHandler('messengerTip');
+
+    // setTimeout(() => {
+    //   var element = document.getElementById('messengerTip');
+    //   element.classList.remove("show");
+    // }, 10000);
+
   }
 
   componentDidUpdate(prevProps, prevState) {
     this.bodyOverflow();
     setScrollIntoView();
+  }
+
+  showMessengerHandler(htmlId){
+    setTimeout(() => {
+      var element = document.getElementById(htmlId);
+      element.classList.add("show");
+    }, 2000);
   }
 
   scrollHeader() {
@@ -96,6 +123,12 @@ class App extends React.Component {
     }
   }
 
+  hideMessengerTipHandler(){
+    this.setState({
+      showMessengerTip: false,
+    })
+  }
+
   showPlayIntro(){
     return(
       <div>
@@ -104,11 +137,24 @@ class App extends React.Component {
     )
   }
   showMessenger (){
-    return(
-      <a id="messenger" className="messenger" href="https://m.me/AMIQ.RENT" target="_blank">聯絡我</a>
+    return(     
+      <a id="messenger" className={this.state.showMessenger ? 'messenger show' : 'messenger' } href="https://m.me/AMIQ.RENT" target="_blank">聯絡我</a>
     )
   }
-
+  showMessengerTip (){
+    return(     
+      <div id="messengerTip" 
+        className={this.state.showMessengerTip ? 'messenger-tip show' : 'messenger-tip' } 
+        onClick={()=> this.hideMessengerTipHandler()}
+        >
+        <i className="close fa fa-times" aria-hidden="true"></i>
+        嗨！若您有任何問題詢問，或是通知已登記租借，請透過 Messenger 聯絡我。
+        想收到更多消息請至
+        <a href="https://www.facebook.com/AMIQ.RENT/" target="_blank">粉絲專頁</a>
+        按讚
+      </div>
+    )
+  }
   showPlayIntro() {
     this.setState({
       showPlayIntro: true,
@@ -155,7 +201,8 @@ class App extends React.Component {
           <span className="indicator-bar"></span>
           <span className={indicatorClassName()}></span>
         </header>
-        {this.state.showMessenger ? this.showMessenger() : ''}   
+        { this.showMessenger() } 
+        { this.showMessengerTip() } 
         <div id="pageContent">
           {this.state.showPlayIntro ?  <PlayIntro goRent={()=> this.showRent() }/> : ''}
           {this.state.showRent ? <Rent showMessenger="false"/> : ''}

@@ -101,7 +101,7 @@ hr {
 .messenger {
     position: fixed;
     bottom: 2em;
-    right: 2em;
+    right: 1.5em;
     z-index: 99;
     margin: 0;
     padding: 0;
@@ -113,15 +113,47 @@ hr {
     text-indent: -100%;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,.15);
-    
     transform: scale(0);
     -webkit-transition: .25s all ease-out;
     -o-transition: .25s all ease-out;
     transition: .25s all ease-out;
 }
+
+.messenger-tip {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 98;
+    padding: 1rem 5rem 1rem 4rem;
+    /* width: 12em; */
+    line-height: 1.7;
+    background-color: #444444;
+    color: #fff;
+    /* border-radius: .5em; */
+    box-shadow: 0 0 20px rgba(0,0,0,.15);
+    transform: translateY(100%);
+    -webkit-transition: .25s all ease-out;
+    -o-transition: .25s all ease-out;
+    transition: .25s all ease-out;
+}
+.messenger-tip.show {
+    transform: translateY(0);
+}
 .messenger.show {
-    animation: showMessenger .5s;
-    transform: scale(1)
+    /* animation: showMessenger .5s; */
+    transform: scale(1);
+}
+.messenger-tip a {
+    margin: 0 .5em;
+    color: #ffff66;
+    text-decoration: none;
+    font-weight: bold;
+}
+.messenger-tip .close {
+    position: absolute;
+    left: 1.5em;
+    top: 3em;
 }
 @keyframes showMessenger {
     0% {
@@ -200,7 +232,7 @@ hr {
         top: 2.5rem;
     }
     .messenger {
-        right: 1em;
+        right: .5rem;
         bottom: 3em;
     }
 }
@@ -892,6 +924,7 @@ hr {
     display: inline-block;
     /* margin: 3em; */
     margin-top: 0;
+    margin-bottom: 2em;
     padding: .5em 3em;
     background-color: #fff;
     color: #a61e4d;
