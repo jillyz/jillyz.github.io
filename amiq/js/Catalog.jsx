@@ -449,15 +449,15 @@ class Catalog extends React.Component {
           <a onClick={() => this.clearFilterTypes()}><i className="icon fa fa-close" aria-hidden="true"></i> 清除</a>
         </div>
         <div>
-          <strong className="filter-name">類別</strong>
+          <strong className="filter-name">主題</strong>
           {tags.map(tag => this.renderTags_main(tag))}
         </div>
         <div>
-          <strong className="filter-name">主題</strong>
+          <strong className="filter-name">內容</strong>
           {tags.map(tag => this.renderTags_sub1(tag))}
         </div>
         <div>
-          <strong className="filter-name">學習</strong>
+          <strong className="filter-name">訓練</strong>
           {tags.map(tag => this.renderTags_sub2(tag))}
         </div>
       </div>
