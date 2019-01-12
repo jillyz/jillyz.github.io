@@ -44,7 +44,7 @@ class Preview extends React.Component {
   }
 
   handleKeyDown(e) {
-    console.log('>>> press <<< ', e.keyCode)
+    // console.log('>>> press <<< ', e.keyCode)
     if(e.keyCode == 39) { this.goNext(); }
     if(e.keyCode == 37) { this.goPrev(); }    
     if(e.keyCode == 27) { this.previewHide(); }    
@@ -53,7 +53,7 @@ class Preview extends React.Component {
   componentDidMount() {
     const guid = this.state.previewGuid;
 
-    console.log('~~~mount', guid, this.state)
+    // console.log('~~~mount', guid, this.state)
 
     // fetch('data/' + id +'.json')
     // .then((response) => {
@@ -87,7 +87,7 @@ class Preview extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     const guid = this.state.previewGuid;
-    console.log('~~~update', guid)
+    // console.log('~~~update', guid)
 
     this.fetch(guid);
   }
@@ -96,7 +96,7 @@ class Preview extends React.Component {
     window.bookData.forEach(stage => {
       stage.books.forEach(book => {
         if(book.guid == guid) {
-          console.log(book)
+          // console.log(book)
           return book;
         }
       })
@@ -135,16 +135,16 @@ class Preview extends React.Component {
           showLoading: false
         })
 
-        console.log('//----------------------')
-        console.log('preview: ' , guid, 'content: ')
-        console.log(this.state.content)
-        console.log('preview topics: ')
+        // console.log('//----------------------')
+        // console.log('preview: ' , guid, 'content: ')
+        // console.log(this.state.content)
+        // console.log('preview topics: ')
         console.table(this.state.topics)
-        console.log('preview previewGuid: ')
+        // console.log('preview previewGuid: ')
         console.table(this.state.previewGuid)
-        console.log('preview style: ')
+        // console.log('preview style: ')
         console.table(this.state.style)
-        console.log('//----------------------')
+        // console.log('//----------------------')
       },
       complete: () => {
         this.setState({
@@ -161,7 +161,7 @@ class Preview extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log('render')
+    // console.log('render')
     console.table(this.state)
     // console.log('preview :', this.state.topics, this.state.content);
   }
@@ -183,7 +183,7 @@ class Preview extends React.Component {
     $('.preview').animate({
         scrollTop: top
     }, 300);
-    console.log('goTop , top:' , top)
+    // console.log('goTop , top:' , top)
   }
 
   goNext(){

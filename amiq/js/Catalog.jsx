@@ -445,19 +445,19 @@ class Catalog extends React.Component {
   renderTags(tags) {
     return(
       <div>
-        <div>
+        <div className="clear-filter">
           <a onClick={() => this.clearFilterTypes()}><i className="icon fa fa-close" aria-hidden="true"></i> 清除</a>
         </div>
-        <hr/>
         <div>
+          <strong className="filter-name">類別</strong>
           {tags.map(tag => this.renderTags_main(tag))}
         </div>
-        <hr/>
         <div>
+          <strong className="filter-name">主題</strong>
           {tags.map(tag => this.renderTags_sub1(tag))}
         </div>
-        <hr/>
         <div>
+          <strong className="filter-name">學習</strong>
           {tags.map(tag => this.renderTags_sub2(tag))}
         </div>
       </div>
@@ -506,7 +506,7 @@ class Catalog extends React.Component {
  
   renderCatalog() {
 
-    console.log('renderCatalog',this)
+    // console.log('renderCatalog',this)
     var isSafari = /constructor/i.test(window.HTMLElement);
     const that = this;
     const isFilterOpen = this.state.filterOpen;
@@ -517,14 +517,20 @@ class Catalog extends React.Component {
         {/* btn in header: grid/list , filter */}
         <span className={isFilterOpen ? 'list-type-menu on' : 'list-type-menu off'}>
             <span>
-            <a onClick={() => this.switchListToGrid()}>
-              {this.state.listTypeGrid ?
-                <i className="fa fa-list-ul" aria-hidden="true"></i>
-                :
-                <i className="fa fa-th" aria-hidden="true"></i>
+              <a onClick={() => this.switchListToGrid()}>
+                {this.state.listTypeGrid ?
+                  <i className="fa fa-list-ul" aria-hidden="true"></i>
+                  :
+                  <i className="fa fa-th" aria-hidden="true"></i>
+                }
+              </a>
+              <a onClick={() => this.switchFilterPanel()} className={isFilterOpen ? 'btn-filter on' : 'btn-filter off'} data-value={isFilterOpen ? 'TurnOff' : 'TurnOn'} ><i className="fa fa-filter" aria-hidden="true"></i></a>
+              {this.state.filterOpen ? 
+                <a className="clear-filter" onClick={() => this.clearFilterTypes()}>
+                  <i className="icon fa fa-trash" aria-hidden="true"></i>
+                </a> 
+                : ''
               }
-            </a>
-            <a onClick={() => this.switchFilterPanel()} className={isFilterOpen ? 'btn-filter on' : 'btn-filter off'} data-value={isFilterOpen ? 'TurnOff' : 'TurnOn'} ><i className="fa fa-filter" aria-hidden="true"></i></a>
             </span>
         </span>
 
