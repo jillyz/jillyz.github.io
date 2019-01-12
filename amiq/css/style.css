@@ -1868,14 +1868,14 @@ hr {
 @media screen and (max-width: 400px) {
     /*iPhone5*/
     html {
-        font-size: .875em;
+        font-size: 14px;
     }
 }
 
 @media screen and (max-width: 320px) {
     /*iPhone5*/
     html {
-        font-size: .75em;
+        font-size: 12px;
     }
 }
 
