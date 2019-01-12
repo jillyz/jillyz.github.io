@@ -8,7 +8,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    padding-top: 3.75em;
+    padding-top: 3rem;
     color: #333;
     height: 100vh;
     overflow: auto;
@@ -190,14 +190,14 @@ hr {
 
 @media screen and (max-width:600px) {
     body {
-        padding-top: 3em;
+        padding-top: 2.5rem;
     }
     .header .link {
         padding: .75em 1em;
     }
     .indicator-bar,
     .indicator {
-        top: 2.75em;
+        top: 2.5rem;
     }
     .messenger {
         right: 1em;
