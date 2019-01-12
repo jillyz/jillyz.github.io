@@ -24,13 +24,14 @@ class RentTerms extends React.Component {
             <h2 className="terms-header">租借說明，請詳閱</h2>
 
             <section>
+              <h4>【關於本服務】</h4> 
               <p>本服務緣起於一位台中的上班族媽媽，因緣際會之下，入手了 AMIQ 邏輯遊戲 90 本套書。推出租借服務的初衷，是希望可以推廣這套超棒的 AMIQ 邏輯遊戲教具給更多家長認識。</p>
 
               <h4>【費用及借期】</h4>
               <p>
                   <span className="text-highlight">每本租金 100元，基本借期 3天</span>
                   ，若多本則累加。<br/>
-                  借期若須延長，延長的每本則每一天加收10元。
+                  借期若須延長，延長的每本則每一天加收 10 元。
               </p>
               <table className="table">
                 <thead>
@@ -81,8 +82,12 @@ class RentTerms extends React.Component {
                 </tbody>
               </table>
               <ul className="no-list-style">
-                <li></li>
-                <li>今天借，隔日為借期第 1 天。經過借期天數，隔日再還。歸還的遊戲本必須隔日才可再借出。</li>
+                <li>
+                  今天借，隔日為借期第 1 天。借期天數（如上表）到期後的隔日再還。歸還的遊戲本必須隔日才可再借出。
+                </li>
+                <li>
+                  以租借一本為例：1/10 借出，1/11-13 為租期，1/14 須歸還。
+                </li>
                 <li>出租內容物：遊戲公車板 1 片，及您所租借的遊戲本數量（一次最多借閱 5 本），不含點讀筆。</li>
               </ul>
             
@@ -96,7 +101,7 @@ class RentTerms extends React.Component {
 
               <h4>【敬請愛惜物品】</h4> 
               <p>因為自己家裡小朋友仍在使用這套教具，所以希望各位爸爸媽媽在租借後，也能如同自己的東西般愛惜它們唷！也請各位爸爸媽媽提醒小朋友們要愛惜這些物品唷！非常感謝您！</p>
-            
+
             </section>
 
             <section className="other-terms">
@@ -110,7 +115,8 @@ class RentTerms extends React.Component {
                     <li>遺失遊戲本，遺失每本扣除 500 元，從押金扣除。</li>
                     <li>遊戲板若遺失、或遊戲板內任意數字塊遺失，須扣除 550 元，從押金扣除，若押金不夠扣除，須另補足賠償金額。（本出租押金僅預收遊戲本部分，不預收遊戲板押金，惟萬一有需賠償遊戲板的部分，須再請您支付此一賠償費用）</li>
                   </ul>
-                </div>
+                  <p className="text-highlight">若有遺失之情況，之後無法再租借，望您能愛惜出租品唷！</p>
+               </div>
               </div>
 
               <div className="other-terms-item">
@@ -127,8 +133,34 @@ class RentTerms extends React.Component {
                     <li>遊戲本若有任一頁，折損、但不涵蓋至內容部分，則按 25% 比例賠償。</li>
                     <li>備註：內容部分指的是，上頁題目區描述及 12 格、下頁作答區 12 格、下頁之左上方作答範例、下頁之右上方解答</li>
                   </ul>
-                  <p className="text-highlight">若有以上情況發生，遺失或損壞嚴重者，之後無法再租借，望您能愛惜出租品唷！</p>
+                  <p className="text-highlight">若有損壞嚴重者，之後無法再租借，望您能愛惜出租品唷！</p>
 
+                </div>
+              </div>
+
+              <div className="other-terms-item">
+                <input id="rentOverTime" type="checkbox"/>
+                <label htmlFor="rentOverTime">
+                  <h4>【逾期歸還】扣除延長日加收金額</h4> 
+                </label>
+                <div className="other-terms-item-content">
+                  <ul>
+                    <li>扣除金額，參考上表之數量及「延長每日加收」費用。</li>
+                    <li>
+                      郵寄：<br/>
+                      如歸還日為 2/14（以郵寄日期為依據）<br/>
+                      若 2/15 才寄出則每本扣押 10 元、<br/>
+                      若 2/16 才寄出則每本扣押 20 元，以下類推，<br/>
+                      費用從押金扣除，押金餘額會歸還給您。
+                    </li>
+                    <li>
+                      面交：<br/>
+                      如歸還日為 2/14，<br/>
+                      若 2/15 才面交歸還則每本扣押 10 元、<br/>
+                      若 2/16 才面交歸還則每本扣押 20 元，以下類推，<br/>
+                      費用從押金扣除，押金餘額會歸還給您。
+                    </li>
+                  </ul>
                 </div>
               </div>
             
