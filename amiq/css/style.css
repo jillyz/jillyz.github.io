@@ -1258,7 +1258,7 @@ hr {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 201;
+    z-index: 99999;
     width: 110%;
     padding: 0;
     height: 3.5em;
