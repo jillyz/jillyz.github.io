@@ -164,6 +164,23 @@ hr {
     height: .9em;
 }
 */
+
+@media screen and (max-width:600px) {
+    body {
+        padding-top: 3em;
+    }
+    .header .link {
+        padding: .75em 1em;
+    }
+    .indicator-bar,
+    .indicator {
+        top: 2.75em;
+    }
+    .messenger {
+        top: 1em;
+    }
+}
+
 .list-type-menu {
     position: fixed;
     z-index: 1001;
@@ -171,7 +188,6 @@ hr {
     background-color: #fff;
     text-align: center;
     background-color: #fff;
-    border: 1px solid #e9ecef;
     /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15); */
     -webkit-transition: .25s all;
     -o-transition: .25s all;
@@ -210,23 +226,24 @@ hr {
         padding-top: 3px;
         margin-bottom: 3px;
         padding-bottom: 3px;
-        border-top: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
+        /* border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd; */
     }
     .filter .clear-filter {
         display: none;
     }
     .list-type-menu .clear-filter {
         position: fixed;
-        bottom: 10em;
-        right: .5em;
+        bottom: 10rem;
+        right: .5rem;
         display: block;
-        width: 3em;
-        height: 3em;
+        width: 3.5em;
+        height: 3.5em;
         padding: 0 !important;
+        font-size: .85em;
         background-color: rgb(238,238,238);
         text-align: center;
-        line-height: 2.5em;
+        line-height: 3em;
         border-radius: 50%;
         box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, .15);
     }
@@ -1261,18 +1278,21 @@ hr {
     z-index: 99999;
     width: 110%;
     padding: 0;
-    height: 3.5em;
+    height: 3em;
     line-height: 3em;
     background-color: #f1e8d6;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .book-info.fixed .id {
-    display: inline-block;
-    padding: .5em 0;
+    padding: 0;
     width: 60px;
+    height: 30px;
+    line-height: 30px;
 }
-
+.book-info.fixed .title {
+    margin-top: 0;
+}
 .book-info.fixed .en {
     display: inline-block;
 }
@@ -1406,15 +1426,12 @@ hr {
     position: absolute;
     top: 50%;
     left: 0;
-    padding:  0 .5em;
+    padding:  0 1em 0 .5em;
     color: #fff !important;
     font-size: .75em;
     font-weight: bold;
     background-color: rgba(0,0,0,.75);
-/*    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    -o-transform: translate(0, -50%);
-    transform: translate(0, -50%);*/
+    border-radius: 0 16px 16px 0;
     -webkit-transform: translate(0,-50%);
     -ms-transform: translate(0,-50%);
     -o-transform: translate(0,-50%);
@@ -2054,7 +2071,7 @@ hr {
 .closePreview {
     display: inline-block;
     position: fixed;
-    top: 10px;
+    top: 5px;
     right: 0;
     z-index: 99999;
     padding: .7em 2em;
