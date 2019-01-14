@@ -1071,6 +1071,7 @@ hr {
 
 .intro-rent {
     position: relative;
+    padding-bottom: 3rem;
     background: url(../img/cute_mei.jpg) no-repeat center center;
     -webkit-background-size: cover;
     background-size: cover;    
