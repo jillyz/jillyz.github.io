@@ -14,7 +14,7 @@ class App extends React.Component {
       showCatalog: false,
       showRent: false,
       showMessenger: false,
-      showMessengerTip: true,
+      showMessengerTip: false,
     }
     this.showPlayIntro = this.showPlayIntro.bind(this);
     this.showCatalog = this.showCatalog.bind(this);
@@ -26,24 +26,35 @@ class App extends React.Component {
   componentDidMount() {
     this.bodyOverflow();
     this.setRouter();
-    setScrollIntoView();
 
     setTimeout(() => {
       this.setState({
         showMessenger: true,
-        showMessengerTip: true,
       })
-    }, 500); 
-
+    }, 1000); 
     setTimeout(() => {
       this.setState({
-        showMessengerTip: false,
+        showMessengerTip: true,
       })
-    }, 12000); 
+    }, 1000); 
 
+    // setTimeout(() => {
+    //   this.setState({
+    //     showMessengerTip: false,
+    //   })
+    // }, 12000); 
 
-    // this.showMessengerHandler('messenger');
-    // this.showMessengerHandler('messengerTip');
+    setTimeout(() => {
+      var element = document.getElementById('messengerTip');
+      element.classList.add("show");
+
+      window.onscroll = function() {
+        var element = document.getElementById('messengerTip');
+        element.classList.remove("show");     
+      }
+
+    }, 1500);
+
 
     // setTimeout(() => {
     //   var element = document.getElementById('messengerTip');
@@ -54,14 +65,7 @@ class App extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     this.bodyOverflow();
-    setScrollIntoView();
-  }
-
-  showMessengerHandler(htmlId){
-    setTimeout(() => {
-      var element = document.getElementById(htmlId);
-      element.classList.add("show");
-    }, 2000);
+    
   }
 
   scrollHeader() {
@@ -112,6 +116,7 @@ class App extends React.Component {
     if (!page) {
       location.hash = 'index';
     }
+    setScrollIntoView();
   }
 
   bodyOverflow() {
@@ -125,8 +130,14 @@ class App extends React.Component {
 
   hideMessengerTipHandler(){
     this.setState({
+      showMessenger: false,
       showMessengerTip: false,
     })
+    setTimeout(() => {
+      this.setState({
+        showMessenger: true,
+      })
+    }, 500); 
   }
 
   showPlayIntro(){
@@ -148,10 +159,12 @@ class App extends React.Component {
         onClick={()=> this.hideMessengerTipHandler()}
         >
         <i className="close fa fa-times" aria-hidden="true"></i>
-        嗨！若您有任何問題詢問，或是通知已登記租借，請透過 Messenger 聯絡我。
-        想收到更多消息請至
-        <a href="https://www.facebook.com/AMIQ.RENT/" target="_blank">粉絲專頁</a>
-        按讚
+        <span className="text">
+          嗨！若您有任何問題詢問，或是通知已登記租借，請透過 Messenger 聯絡我。<br/>
+          想收到更多消息請至
+          <a href="https://www.facebook.com/AMIQ.RENT/" target="_blank">粉絲專頁</a>
+          按讚！
+        </span>
       </div>
     )
   }
@@ -162,6 +175,7 @@ class App extends React.Component {
       showRent: false
     })
     location.hash = 'index';
+    setScrollIntoView();
   }
 
   showCatalog() {
@@ -171,6 +185,7 @@ class App extends React.Component {
       showRent: false
     })
     location.hash = 'catalog';
+    setScrollIntoView();
   }
 
   showRent() {
@@ -180,6 +195,7 @@ class App extends React.Component {
       showRent: true
     })
     location.hash = 'rent-terms';
+    setScrollIntoView();
   }
 
   render() {
