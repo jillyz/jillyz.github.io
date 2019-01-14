@@ -46,13 +46,13 @@ class PlayIntro extends React.Component {
 
         <div className="intro">
           <div className="intro-content">
-            <img src="img/amiq_all.png" className="forDesktop" />
+            <img src="img/amiq_all.png" className="amiq-all-set forDesktop" />
             <h2 className="intro-title"><big>AMIQ</big> <br/>最完整的左右腦思維薰陶訓練</h2>
             <p className="col">
               AMIQ 遊戲本中活潑好玩的遊戲方式及逗趣可愛的畫風，讓幼兒在學習上更增添多元趣味性，
               不但誘發孩子主動學習慾望，也激起他們大腦無限的創造力及想像力，加以發揮幼兒的五大邏輯智能：生活、數理、空間、因果、圖像邏輯。
             </p>
-            <img src="img/amiq_all.png" className="forMobile margin" />
+            <img src="img/amiq_all.png" className="amiq-all-set forMobile margin" />
             <p className="col">
               AMIQ 全套分為六階三系列，由淺入深及主題系統式的教學內容，
               配合操作簡單易上手的遊戲版，引導幼兒進入好玩有趣的思考領域，
@@ -105,20 +105,34 @@ class PlayIntro extends React.Component {
               <img className="how-to-play" src="img/play.gif" />
             </div>
             */}
-            <iframe className="video" width="560" height="315" src="https://www.youtube.com/embed/mTjTBEI0Gvc" frameborder="0" allowfullscreen></iframe>
+
+            <div className="play-step">
+              <img src="img/how_to_play_step.png" alt="玩法說明"/>
+            </div>
+            <div className="how_to_play_img">
+              <img src="img/play/play_1.jpg" alt="畫面1"/>
+              <img src="img/play/play_2.jpg" alt="畫面2"/>
+              {/* <img src="img/play/play_3.jpg" alt="畫面3"/> */}
+              <img src="img/play/play_4.jpg" alt="畫面4"/>
+              <img src="img/play/play_5.jpg" alt="畫面5"/>
+            </div>
+            <div className className="how_to_play_video">
+              <iframe className="video" width="560" height="315" src="https://www.youtube.com/embed/mTjTBEI0Gvc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
           </div>
         </div>
 
         <div className="intro-rent">
           <div className="intro-content">
-            <h2 className="intro-title">租比買划算</h2>
-
+            <h2 className="intro-title forMobile">租比買划算</h2>
             <p className="center description">
-              <strong>也許您有過以下疑慮</strong><br/>
-              一套教具動輒好幾萬，買了也不知道小朋友喜不喜歡，常不常用<br/>
-              看起來很棒，可是我的小朋友還小...擔心長大了就用不到了，似乎有點浪費<br/>
-              我好心動，想再多了解看看，但我還沒打算真的要買<br/>
-              <br/>
+              <strong>也許您有過以下疑慮</strong>
+              <ul className="worry">
+                <li>一套教具動輒好幾萬，買了也不知道小朋友喜不喜歡，常不常用</li>
+                <li>看起來很棒，可是我的小朋友還小...擔心長大了就用不到了，似乎有點浪費</li>
+                <li>我好心動，想再多了解看看，但我還沒打算真的要買</li>
+              </ul>
+              <h2 className="intro-title forDesktop">租比買划算</h2>
               <strong>別猶豫！<br/>租，是您最佳的選擇！<br/>快來體驗</strong>
             </p>
             <a onClick={this.props.goRent} className="go-rent">瞭解如何租借</a>
