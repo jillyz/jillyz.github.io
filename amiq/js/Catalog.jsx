@@ -19,7 +19,8 @@ class Catalog extends React.Component {
       isFilter: false,
       filterOpen: false,
       filterTypes: [],
-      filterData: [],
+      filterBookIds: [],
+      filterBookData: [],
       showLoading: true,
       showSmallLoading: false,
     }
@@ -45,7 +46,7 @@ class Catalog extends React.Component {
     this.setState({showLoading: true});
 
     var that = this;
-    if(window.bookData == undefined) {
+    if(window.bookStageData == undefined) {
       $.ajax({
         url: 'data/data.json',
         dataType: 'json',
@@ -56,7 +57,16 @@ class Catalog extends React.Component {
               data: response,
               showLoading: false
             });
-            window.bookData = response;
+            window.bookStageData = response;
+
+            window.booksData = []
+            bookStageData.map(data => {
+              data.books.map(books => {
+                window.booksData.push(books);
+              })            
+            })
+            console.table(window.booksData);
+
           }, 500);
         }
       });
@@ -64,7 +74,7 @@ class Catalog extends React.Component {
     else {
       setTimeout( () => {
         this.setState({
-          data: window.bookData,
+          data: window.bookStageData,
         });
       },0);
       setTimeout( () => {
@@ -149,31 +159,102 @@ class Catalog extends React.Component {
   bookGoNav(guid){   
     // var guid = this.state.bookGuid + forward;
 
-    this.state.data.map(stage => {
-      stage.books.map(book => {
+    // this.state.data.map(stage => {
+    //   stage.books.map(book => {
+    //     if (book.guid == guid) {
+    //       this.setState({
+    //         book: book,
+    //         bookGuid: guid
+    //       })
+    //       this.previewShow(book);
+    //     }
+    //   })
+    // })
+
+      window.booksData.map(book => {
         if (book.guid == guid) {
           this.setState({
             book: book,
             bookGuid: guid
           })
           this.previewShow(book);
+          setScrollIntoView('guid_' + guid);
+          document.documentElement.scrollTop = document.documentElement.scrollTop -80;
         }
       })
 
-      this.scrollToBook(guid);
-
-    })
+    // this.scrollToBook(guid);
 
   }
 
   scrollToBook(guid){
-    var top = $('.book-guid-' + guid).offset().top - 50;
-    $('body').scrollTop( top );
+    // var top = $('.book-guid-' + guid).offset().top - 50;
+    // $('body').scrollTop( top );
+    setScrollIntoView('guid_' + guid);
+  }
+
+  filterTypesHandler(){
+    $('#tags_all').prop('checked', false);
+
+    var filterTypes = $('.filter:checked').map(function() {
+      return parseInt(this.value);
+    }).get();
+
+    this.state.filterTypes = filterTypes;
+
+    // console.log('filterTypes', filterTypes);
+
+    var booksData = window.booksData;
+
+    // var filterBook = []
+    // for( var i = 0; i < filterTypes.length; i++) {
+    //   // console.log(filterTypes[i]);
+    //   for( var j = 0; j < booksData.length; j++) {
+    //     // console.log(booksData[j].types)
+    //     let bookTypes = booksData[j].types;
+    //     for( var k = 0; k < bookTypes.length; k++) {
+    //       if (bookTypes[k] == filterTypes[i]) {
+    //         // console.log(bookTypes[k] , filterTypes[i] , booksData[j].id );
+    //         filterBook.push(booksData[j].id);
+    //       }
+    //     }
+    //   }
+    // }
+
+    var filterBookIds = getFilterBookIds(filterTypes, booksData);
+    this.state.filterBookIds = filterBookIds;
+
+    // console.log('filterBookIds', this.state.filterBookIds);
+
+    var filterBookData = [];
+
+    getFilterBookData(filterBookIds);
+
+    // for( let m = 0; m < this.state.filterBookIds.length; m++) {
+    //   console.log('filterBookIds[m]', filterBookIds[m]);
+    //   // for( var n = 0; n < booksData.length; n++) {
+    //   //   console.log('booksData.id', booksData.id , 'filterBookIds[m]', filterBookIds[m])
+    //   //   if(booksData.id == filterBookIds[m]) {
+    //   //     filterBookData.push(booksData)
+    //   //   }
+    //   // }
+    // }
+
+    // this.state.filterBookData = filterBookData;
+    // console.log('filterBookData', this.state.filterBookData)
+
+    console.log('filterBookIds', filterBookIds);
+
+    // booksData.forEach((book) => (
+    //   console.log(book);
+
+    // ))
+
   }
 
   filterTypes(){
 
-    setScrollIntoView();
+    this.filterTypesHandler();
 
     $('#tags_all').prop('checked', false);
 
@@ -214,27 +295,7 @@ class Catalog extends React.Component {
       this.setState({showSmallLoading: false});
     }, 250);
 
-
-    // var that = this;
-    // that.setState({filterTypes: arr});
-
-    // const filterTypes = this.state.filterTypes;
-    // const filterData = [];
-
-    // this.state.data.map(stage => {
-    //   stage.books.map(book => {
-    //     book.types.map(bookTypeId => {
-    //       arr.map(typeId => {            
-    //         if(bookTypeId === typeId){
-    //           filterData.push(book);
-    //         }
-    //       })
-    //     })
-    //   })
-    // })
-
-    // console.log('filterTypes' , filterTypes, arr)
-    // console.log('filterData' , filterData)
+    setScrollIntoView();
   }
 
   clearFilterTypes(){
@@ -244,9 +305,10 @@ class Catalog extends React.Component {
         filterOpen: false,
         isFilter: false,
         filterTypes: [],
-        filterData: [],
+        filterBookIds: [],
+        filterBookData: [],
       });
-      // window.bookData = response;
+      // window.bookStageData = response;
     }, 300);
 
     $('.filter.tag').prop('checked', false);
@@ -320,7 +382,7 @@ class Catalog extends React.Component {
     if(typeIds !== undefined) {
       typeIds.map(id => {
         classNames = classNames + ' isType_' + id;
-      })      
+      })
     }
     return classNames;
   }
@@ -361,7 +423,7 @@ class Catalog extends React.Component {
   renderBooksGrid(data){
     return (
       data.map(book => (
-        <div data-ga="BookGrid" data-value={book.id} ref={`books-${book.stage}`} className={this.typesClassName(book.types, book.stage, book.guid)}>
+        <div id={`guid_${book.guid}`} data-ga="BookGrid" data-value={book.id} ref={`books-${book.stage}`} className={this.typesClassName(book.types, book.stage, book.guid)}>
           <div className={`item item-grid stage stage-${book.stage}`} key={book.guid} onClick={() => this.previewShow(book)}>
             <div className="info">
               <span className="title">
