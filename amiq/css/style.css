@@ -1046,7 +1046,7 @@ hr {
 }
 @media (max-width: 768px) {
     .play-step img {
-        height: 330px;
+        height: 45vh;
     }
     .how_to_play_img img {
         width: 50%;
