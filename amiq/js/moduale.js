@@ -26,9 +26,52 @@ function drift_init(){
 }
 */
 
+function getFilterBookIds (filterTypes, booksData) {
+    var filterBook = []
+    for( var i = 0; i < filterTypes.length; i++) {
+      // console.log(filterTypes[i]);
+      for( var j = 0; j < booksData.length; j++) {
+        // console.log(booksData[j].types)
+        let bookTypes = booksData[j].types;
+        for( var k = 0; k < bookTypes.length; k++) {
+          if (bookTypes[k] == filterTypes[i]) {
+            // console.log(bookTypes[k] , filterTypes[i] , booksData[j].id );
+            filterBook.push(booksData[j].id);
+          }
+        }
+      }
+    }
+    return new Set(filterBook.sort());
+}
 
-function setScrollIntoView (){
-    var element = document.getElementById('top');
+function getFilterBookData (filterBookIds) {
+
+    // console.log('getFilterBookData','filterBookIds', filterBookIds)
+
+    var filterBookData = []
+    for( var m = 0; m < filterBookIds.length; m++) {
+        console.log('filterBookId[m]', filterBookId[m]);
+        for( var n = 0; n < window.booksData.length; n++) {
+          console.log('booksData.id', booksData.id , 'filterBookId[m]', filterBookId[m])
+          if(booksData.id == filterBookId[m]) {
+            filterBookData.push(booksData)
+          }
+        }
+    }
+    console.log('filterBookData', filterBookData)
+
+    return filterBookData;
+}
+
+function setScrollIntoView (ele){
+    var element = '' ;
+    if(!ele) 
+    {
+        element = document.getElementById('top');
+    }
+    else {
+        element = document.getElementById(ele);
+    }
     element.scrollIntoView();
 }
 
