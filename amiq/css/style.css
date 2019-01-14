@@ -133,10 +133,10 @@ hr {
     color: #fff;
     /* border-radius: .5em; */
     box-shadow: 0 0 20px rgba(0,0,0,.15);
-    transform: translateY(100%);
-    -webkit-transition: .5s all ease-out;
-    -o-transition: .5s all ease-out;
-    transition: .5s all ease-out;
+    transform: translateY(110%);
+    -webkit-transition: .25s all ease-out;
+    -o-transition: .25s all ease-out;
+    transition: .25s all ease-out;
 }
 .messenger-tip.show {
     transform: translateY(0);
@@ -144,6 +144,12 @@ hr {
 .messenger.show {
     /* animation: showMessenger .5s; */
     transform: scale(1);
+}
+.messenger-tip.put-front {
+    z-index: 1002;
+}
+.messenger.put-front {
+    z-index: 1003;
 }
 .messenger-tip a {
     margin: 0 .5em;
@@ -2721,7 +2727,7 @@ hr {
 }
 .terms-content li {
     margin-bottom: .5em;
-    line-height: 1.5;
+    line-height: 2;
 }
 .terms-content .no-list-style,
 .terms-content .no-list-style li {

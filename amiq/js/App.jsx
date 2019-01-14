@@ -49,8 +49,10 @@ class App extends React.Component {
       element.classList.add("show");
 
       window.onscroll = function() {
-        var element = document.getElementById('messengerTip');
-        element.classList.remove("show");     
+        var tip = document.getElementById('messengerTip');
+        tip.classList.remove("show");
+        var messenger = document.getElementById('messenger');
+        messenger.classList.remove("put-front");
       }
 
     }, 1500);
@@ -137,7 +139,10 @@ class App extends React.Component {
       this.setState({
         showMessenger: true,
       })
-    }, 500); 
+    }, 500);
+
+    var element = document.getElementById('messenger');
+    element.classList.remove("put-front");
   }
 
   showPlayIntro(){
@@ -149,13 +154,13 @@ class App extends React.Component {
   }
   showMessenger (){
     return(     
-      <a id="messenger" className={this.state.showMessenger ? 'messenger show' : 'messenger' } href="https://m.me/AMIQ.RENT" target="_blank">聯絡我</a>
+      <a id="messenger" className={this.state.showMessenger ? 'messenger show put-front' : 'messenger' } href="https://m.me/AMIQ.RENT" target="_blank">聯絡我</a>
     )
   }
   showMessengerTip (){
     return(     
       <div id="messengerTip" 
-        className={this.state.showMessengerTip ? 'messenger-tip show' : 'messenger-tip' } 
+        className={this.state.showMessengerTip ? 'messenger-tip show put-front' : 'messenger-tip' } 
         onClick={()=> this.hideMessengerTipHandler()}
         >
         <i className="close fa fa-times" aria-hidden="true"></i>
