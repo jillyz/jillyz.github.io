@@ -1256,6 +1256,10 @@ hr {
         width: 100%;
         margin-bottom: 2em;
     }
+    .intro-skill .intro-content li {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 /*-----------------------------*/
