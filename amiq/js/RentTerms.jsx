@@ -28,8 +28,8 @@ class RentTerms extends React.Component {
               <p>本服務緣起於一位台中的上班族媽媽，因緣際會之下，入手了 AMIQ 邏輯遊戲 90 本套書。推出租借服務的初衷，是希望可以推廣這套超棒的 AMIQ 邏輯遊戲教具給更多家長認識。</p>
 
               <h4>【費用及借期】</h4>
-              <p>
-                  <span className="text-highlight">每本租金 100元，基本借期 3天</span>
+              <p className="text-highlight">
+                  每本租金 100元，基本借期 3天
                   ，若多本則累加。<br/>
                   借期若須延長，延長的每本則每一天加收 10 元。
               </p>
