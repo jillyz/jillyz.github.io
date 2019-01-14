@@ -93,7 +93,7 @@ class Preview extends React.Component {
   }
 
   searchBook(guid){
-    window.bookData.forEach(stage => {
+    window.bookStageData.forEach(stage => {
       stage.books.forEach(book => {
         if(book.guid == guid) {
           // console.log(book)
@@ -167,15 +167,14 @@ class Preview extends React.Component {
   }
 
   seeTopicDetail(posId) {
+
+    setScrollIntoView('topic_' + posId);
+    document.documentElement.scrollTop = document.documentElement.scrollTop - 120;
+
+    // var top = $('#topic_' + posId).offset().top - 32 + $('.preview').scrollTop() - 15;
     // $('.preview').animate({
-    //     scrollTop: $('#topic_' + posId).offset().top - 32 + $('.preview').scrollTop() -15
+    //     scrollTop: top
     // }, 300);
-    
-    //var top = $('#topic_' + posId).position().top - 64;
-    var top = $('#topic_' + posId).offset().top - 32 + $('.preview').scrollTop() - 15;
-    $('.preview').animate({
-        scrollTop: top
-    }, 300);
   }
 
   goTop() {
