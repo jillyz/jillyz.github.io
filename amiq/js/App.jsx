@@ -25,6 +25,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.bodyOverflow();
+    // this.scrollHeader();
     this.setRouter();
 
     setTimeout(() => {
@@ -39,6 +40,18 @@ class App extends React.Component {
       })
     }, 1000); 
 
+    window.onscroll = function() {
+      let y = window.scrollY;
+      let fontSize = parseInt(window.getComputedStyle(document.body,null).getPropertyValue("font-size").slice(0,-2));
+      if ( y >  48 ) 
+      {
+        document.querySelector('body').classList.add('fix-menu');
+      }
+      else {
+        document.querySelector('body').classList.remove('fixe-mnu');
+      }
+    }
+
     setTimeout(() => {
       var element = document.getElementById('messengerTip');
       element.classList.add("show");
@@ -47,14 +60,25 @@ class App extends React.Component {
         tip.classList.remove("show");
         var messenger = document.getElementById('messenger');
         messenger.classList.remove("put-front");
+
+
+        let y = window.scrollY;
+        let fontSize = parseInt(window.getComputedStyle(document.body,null).getPropertyValue("font-size").slice(0,-2));
+        if ( y >  48 ) 
+        {
+          document.querySelector('body').classList.add('fix-menu');
+        }
+        else {
+          document.querySelector('body').classList.remove('fix-menu');
+        }
+  
       }
     }, 1500);
 
   }
 
   componentDidUpdate(prevProps, prevState) {
-    this.bodyOverflow();
-    
+    this.bodyOverflow(); 
   }
 
   scrollHeader() {
@@ -68,7 +92,6 @@ class App extends React.Component {
         }
     });
     header.init();
-
   }
 
   setRouter(){

@@ -112,7 +112,7 @@ class PlayIntro extends React.Component {
             <div className="how_to_play_img">
               <img src="img/play/play_1.jpg" alt="畫面1"/>
               <img src="img/play/play_2.jpg" alt="畫面2"/>
-              {/* <img src="img/play/play_3.jpg" alt="畫面3"/> */}
+              <img src="img/play/play_3.jpg" alt="畫面3"/>
               <img src="img/play/play_4.jpg" alt="畫面4"/>
               <img src="img/play/play_5.jpg" alt="畫面5"/>
             </div>

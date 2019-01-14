@@ -83,16 +83,12 @@ class RentTerms extends React.Component {
               </table>
               <ul className="no-list-style">
                 <li>
-                  <span className="text-highlight">借期：</span><br/>今天借，隔日為借期第 1 天。借期天數（如上表）到期後的隔日再還。歸還的遊戲本必須隔日才可再借出。
+                  <span className="text-highlight">借期：</span><br/>今天借，隔日為借期第 1 天。借期天數（如上表）到期後的隔日再還。歸還的遊戲本必須隔日才可再借出。<br/>
+                  <span className="text-highlight-sample">【範例】：以租借一本為例：1/10 借出，1/11-13 為租期，1/14 須歸還。</span>
                 </li>
                 <li>
-                  <span className="text-highlight">借期範例：</span><br/>以租借一本為例：1/10 借出，1/11-13 為租期，1/14 須歸還。
-                </li>
-                <li>
-                  <span className="text-highlight">續借：</span><br/>續借每本一天加收 10 元（費用請參考上表的「延長每日加收」金額），費用從押金扣除。
-                </li>
-                <li>
-                  <span className="text-highlight">續借範例：</span><br/>以租借 2 本和 1/14 須歸還為例，若續借延長至 1/16 則為延長 2 天，2 本延長 2 天總共加收 40 元。
+                  <span className="text-highlight">續借：</span><br/>續借每本一天加收 10 元（費用請參考上表的「延長每日加收」金額），費用從押金扣除。<br />
+                  <span className="text-highlight-sample">【範例】：以租借 2 本和 1/14 須歸還為例，若續借延長至 1/16 再歸還，則為延長 2 天，2 本延長 2 天總共加收 40 元。</span>
                 </li>
                 <li>
                   <span className="text-highlight">出租內容物：</span><br/>遊戲公車板 1 片，及您所租借的遊戲本數量（一次最多借閱 5 本），不含點讀筆。

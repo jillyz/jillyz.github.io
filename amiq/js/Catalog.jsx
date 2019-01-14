@@ -293,6 +293,7 @@ class Catalog extends React.Component {
     this.setState({showSmallLoading: true});
     setTimeout(() => {
       this.setState({showSmallLoading: false});
+    // }, 25000000);
     }, 250);
 
     setScrollIntoView();
