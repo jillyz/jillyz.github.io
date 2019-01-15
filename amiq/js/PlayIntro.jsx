@@ -98,27 +98,49 @@ class PlayIntro extends React.Component {
         </div>
         <div className="intro-play">
           <div className="intro-content">
-          <h2 className="intro-title">如何玩</h2>
-            {/*
-            <h2 className="intro-title">玩法介紹</h2>
-            <div>
-              <img className="how-to-play" src="img/play.gif" />
-            </div>
-            */}
-
-            <div className="play-step">
+            <h2 className="intro-title">如何玩</h2>
+            
+            {/* <h2 className="intro-title">玩法介紹</h2> */}
+            {/* <div>
+              <img className="how-to-play" src="img/how_play.gif" />
+            </div> */}
+           
+            {/* <div className="play-step">
               <img src="img/how_to_play_step.png" alt="玩法說明"/>
+            </div> */}
+
+            <div className="how_to_play_step">
+              <ul>
+                <li>
+                  <img src="img/play/play_1.jpg" alt="畫面1"/>
+                  <span>1. 看懂題目</span>
+                </li>
+                <li>
+                  <img src="img/play/play_2.jpg" alt="畫面1"/>
+                  <span>2. 公車版的數字塊（對應至題目的紅色編號），往上擺放至作答區</span>
+                </li>
+                <li>
+                  <img src="img/play/play_4.jpg" alt="畫面1"/>
+                  <span>3. 完成了</span>
+                </li>
+                <li>
+                  <img src="img/play/play_5.jpg" alt="畫面1"/>
+                  <span>4. 將公車板蓋上，對照背面圖案是否與正確答案一致</span>
+                </li>
+              </ul>
             </div>
-            <div className="how_to_play_img">
+
+            {/* <div className="how_to_play_img">
               <img src="img/play/play_1.jpg" alt="畫面1"/>
               <img src="img/play/play_2.jpg" alt="畫面2"/>
-              <img src="img/play/play_3.jpg" alt="畫面3"/>
               <img src="img/play/play_4.jpg" alt="畫面4"/>
-              <img src="img/play/play_5.jpg" alt="畫面5"/>
-            </div>
+              <img src="img/play/play_5.jpg" alt="畫面1"/>
+            </div> */}
+
             <div className className="how_to_play_video">
               <iframe className="video" width="560" height="315" src="https://www.youtube.com/embed/mTjTBEI0Gvc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+
           </div>
         </div>
 

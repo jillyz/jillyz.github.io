@@ -1022,6 +1022,8 @@ body.fix-menu .list-type-menu a {
 }
 .intro-play .intro-content {
     max-width: none;
+    /* padding-bottom: .25rem; */
+    padding-bottom: 0;
 }
 .play-step {
     margin-bottom: 1em;
@@ -1029,7 +1031,29 @@ body.fix-menu .list-type-menu a {
     overflow-y: hidden; 
 }
 .how_to_play_img img {
-    display: inline-block;
+    display: block;
+}
+.how_to_play_step li {
+    display: table-cell;
+    width: 25% !important;
+    padding: 0 !important;
+    background-color: #aa2a56;
+}
+.how_to_play_step li:not(:first-child) {
+    /* border-left: 1px solid #fff; */
+}
+.how_to_play_step span {
+    display: block;
+    padding: .5em 1em;
+    min-height: 3em;
+    
+    color: #fff;
+    font-size: .9em;
+    text-align: left;
+}
+.how_to_play_step img {
+    width: 100%;
+    margin-bottom: -6px;
 }
 @media (min-width: 769px) {
     .play-step img {
@@ -1046,21 +1070,27 @@ body.fix-menu .list-type-menu a {
         position: relative;
         margin-left: -3rem;
         margin-right: -3rem;
-        padding-top: 3em;
-        padding-bottom: 3em;
+        padding-top: 5em;
+        padding-bottom: 5em;
+        background-color: #aa2a83;
         overflow: hidden;
     }
     .how_to_play_video:before {
         content: '';
-        background: url(../img/play/play_3.jpg) no-repeat;
+        background: url(../img/play/play_4.jpg) no-repeat;
         background-size: cover;
-        filter: blur(10px) brightness(.5);
+        filter: blur(10px) brightness(.8);
         display: block;
         position: absolute;
         width: 100%;
         height: 100%;
         top: 0;
         transform: scale(1.2);
+        opacity: 0.75;
+    }
+    .how_to_play_step {
+        display: table;
+        margin:  0 -3rem;
     }
 }
 @media (max-width: 768px) {
@@ -1073,7 +1103,13 @@ body.fix-menu .list-type-menu a {
         margin-bottom: 1px;
     }
     .video {
-        margin-top: 2rem;
+        margin-top: 4rem;
+        margin-bottom: 3rem;
+    }
+    .how_to_play_step li {
+        display: block;
+        width: 100% !important;
+        margin-bottom: -1em !important;
     }
 }
 @media (max-width: 600px) { 
@@ -2200,15 +2236,17 @@ body.fix-menu .list-type-menu a {
 }
 @media screen and (min-width: 769px) {
     .video {
-        width: calc(60vh * 1.5);
-        height: calc((60vh * 1.5) * 9 / 16) ;
+        width: calc(75vh * 1.5);
+        height: calc((75vh * 1.5) * 9 / 16) ;
+        box-shadow: 0 10px 40px rgba(0,0,0,.5)
     }
 }
 
 @media screen and (max-width: 768px) {
     .video {
         width: 100%;
-        height: calc(100% * 9 / 16);
+        /* height: calc(100% * 9 / 16); */
+        height: 50vh;
     }
 }
 @media screen and (min-width: 768px) {
