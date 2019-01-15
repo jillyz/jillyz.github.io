@@ -113,7 +113,7 @@ class PlayIntro extends React.Component {
               <ul>
                 <li>
                   <img src="img/play/play_1.jpg" alt="畫面1"/>
-                  <span>1. 看懂題目</span>
+                  <span>1. 擺設好後，看懂題目及答案範例</span>
                 </li>
                 <li>
                   <img src="img/play/play_2.jpg" alt="畫面1"/>
@@ -138,7 +138,7 @@ class PlayIntro extends React.Component {
             </div> */}
 
             <div className className="how_to_play_video">
-              <iframe className="video" width="560" height="315" src="https://www.youtube.com/embed/mTjTBEI0Gvc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe className="video" src="https://www.youtube.com/embed/mTjTBEI0Gvc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
             </div>
 
           </div>

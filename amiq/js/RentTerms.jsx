@@ -91,7 +91,7 @@ class RentTerms extends React.Component {
                   <span className="text-highlight-sample">【範例】：以租借 2 本和 1/14 須歸還為例，若續借延長至 1/16 再歸還，則為延長 2 天，2 本延長 2 天總共加收 40 元。</span>
                 </li>
                 <li>
-                  <span className="text-highlight">出租內容物：</span><br/>遊戲公車板 1 片，及您所租借的遊戲本數量（一次最多借閱 5 本），不含點讀筆。
+                  <span className="text-highlight">出租內容物：</span><br/>遊戲公車板 1 片 ，<br/>遊戲本（一次最多借閱 5 本）(題目為英文)，<br/>不含點讀筆。
                 </li>
               </ul>
             

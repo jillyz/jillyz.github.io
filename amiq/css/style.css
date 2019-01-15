@@ -2246,7 +2246,7 @@ body.fix-menu .list-type-menu a {
     .video {
         width: 100%;
         /* height: calc(100% * 9 / 16); */
-        height: 50vh;
+        height: 60vh;
     }
 }
 @media screen and (min-width: 768px) {
