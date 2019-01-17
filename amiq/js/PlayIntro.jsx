@@ -10,6 +10,8 @@ class PlayIntro extends React.Component {
       showVideo: false
     }
     this.showVideo = this.showVideo.bind(this);
+    this.goIntroAmiq = this.goIntroAmiq.bind(this);
+    this.goIntroRent = this.goIntroRent.bind(this);
   }
 
   componentDidMount() {
@@ -22,7 +24,17 @@ class PlayIntro extends React.Component {
 
   showVideo(){
 
+  }
 
+  goIntroAmiq(){
+    document.getElementById('introAmiq').scrollIntoView();
+    document.documentElement.scrollTop = document.documentElement.scrollTop;
+  }
+
+  goIntroRent(){
+    let fontSize = parseInt(window.getComputedStyle(document.body,null).getPropertyValue("font-size").slice(0,-2));
+    document.getElementById('introRent').scrollIntoView();
+    document.documentElement.scrollTop = document.documentElement.scrollTop - ( fontSize * 3 );
   }
 
   render() {
@@ -31,7 +43,8 @@ class PlayIntro extends React.Component {
         <div className="banner">
           <div className="slogan">
             <h1>
-              <a onClick={this.props.goRent}>
+              {/* <a onClick={this.props.goRent}> */}
+              <a onClick={()=> this.goIntroRent()}>
               <strong className="bigger">
                 <small className="text-amiq">AMIQ</small>
                 租
@@ -40,11 +53,15 @@ class PlayIntro extends React.Component {
               <div className="cheap">比買更划算</div>
             </h1>
             <h2>充滿樂趣的邏輯思考遊戲<br/>大小朋友都愛玩</h2>
+            <div className="read-more">
+              <a onClick={()=> this.goIntroAmiq()}>開始瞭解</a>
+              {/* <a href="">如何租借</a> */}
+            </div>
           </div>
           {/*<a><i className="fa fa-play-circle icon-play" aria-hidden="true"></i></a>*/}
         </div>
 
-        <div className="intro">
+        <div id="introAmiq" className="intro">
           <div className="intro-content">
             <img src="img/amiq_all.png" className="amiq-all-set forDesktop" />
             <h2 className="intro-title"><big>AMIQ</big> <br/>最完整的左右腦思維薰陶訓練</h2>
@@ -117,11 +134,11 @@ class PlayIntro extends React.Component {
                 </li>
                 <li>
                   <img src="img/play/play_2.jpg" alt="畫面1"/>
-                  <span>2. 公車版的數字塊（對應至題目的紅色編號），往上擺放至作答區</span>
+                  <span>2. 公車版的數字塊（對應上半頁題目的紅色編號），往上擺放至答案選項格子內</span>
                 </li>
                 <li>
                   <img src="img/play/play_4.jpg" alt="畫面1"/>
-                  <span>3. 完成了</span>
+                  <span>3. 十二道題都解完了</span>
                 </li>
                 <li>
                   <img src="img/play/play_5.jpg" alt="畫面1"/>
@@ -144,7 +161,7 @@ class PlayIntro extends React.Component {
           </div>
         </div>
 
-        <div className="intro-rent">
+        <div id="introRent" className="intro-rent">
           <div className="intro-content">
             <h2 className="intro-title forMobile">租比買划算</h2>
             <p className="center description">

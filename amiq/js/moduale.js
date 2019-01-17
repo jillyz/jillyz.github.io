@@ -243,7 +243,7 @@ function scrollTo(element, to, duration) {
         currentTime = 0,
         increment = 20;
         
-    var animateScroll = function(){        
+    var animateScroll = function(){
         currentTime += increment;
         var val = Math.easeInOutQuad(currentTime, start, change, duration);
         element.scrollTop = val;

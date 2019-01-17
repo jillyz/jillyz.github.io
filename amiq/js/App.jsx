@@ -19,7 +19,8 @@ class App extends React.Component {
     this.showPlayIntroView = this.showPlayIntroView.bind(this);
     this.showCatalogView = this.showCatalogView.bind(this);
     this.showRentView = this.showRentView.bind(this);
-    this.scrollHeader = this.scrollHeader.bind(this);
+    this.scrollPageHeaderSize = this.scrollPageHeaderSize.bind(this);
+    // this.scrollHeader = this.scrollHeader.bind(this);
     this.hideMessengerTipHandler = this.hideMessengerTipHandler.bind(this);
   }
 
@@ -35,50 +36,53 @@ class App extends React.Component {
     }, 1000);
 
     setTimeout(() => {
-      this.setState({
-        showMessengerTip: true,
-      })
-    }, 1000); 
+      // this.setState({
+      //   showMessengerTip: true,
+      // })
+      var tip = document.getElementById('messengerTip');
+          tip.classList.add("show");
+          tip.classList.add("put-front");
 
-    window.onscroll = function() {
-      let y = window.scrollY;
-      let fontSize = parseInt(window.getComputedStyle(document.body,null).getPropertyValue("font-size").slice(0,-2));
-      if ( y >  48 ) 
-      {
-        document.querySelector('body').classList.add('fix-menu');
-      }
-      else {
-        document.querySelector('body').classList.remove('fixe-mnu');
-      }
-    }
+      setTimeout(() => {
+        var element = document.getElementById('messengerTip');
+        element.classList.add("show");
 
-    setTimeout(() => {
-      var element = document.getElementById('messengerTip');
-      element.classList.add("show");
-      window.onscroll = function() {
-        var tip = document.getElementById('messengerTip');
-        tip.classList.remove("show");
-        var messenger = document.getElementById('messenger');
-        messenger.classList.remove("put-front");
-
-
-        let y = window.scrollY;
-        let fontSize = parseInt(window.getComputedStyle(document.body,null).getPropertyValue("font-size").slice(0,-2));
-        if ( y >  48 ) 
-        {
-          document.querySelector('body').classList.add('fix-menu');
+        window.onscroll = function() {
+          var tip = document.getElementById('messengerTip');
+          tip.classList.remove("show");
+          tip.classList.remove('put-front');
+          var messenger = document.getElementById('messenger');
+          messenger.classList.remove("put-front");  
         }
-        else {
-          document.querySelector('body').classList.remove('fix-menu');
-        }
-  
-      }
-    }, 1500);
+      }, 3000);
+
+    }, 8000); 
+
+    this.scrollPageHeaderSize();
+
+    
 
   }
 
   componentDidUpdate(prevProps, prevState) {
     this.bodyOverflow(); 
+  }
+
+  scrollPageHeaderSize() {
+    let previous = window.scrollY;
+    window.addEventListener('scroll', function(){
+        if(window.scrollY > previous)
+        { 
+          console.log('down') 
+          document.querySelector('body').classList.add('fix-menu');
+        }
+        else 
+        {
+          console.log('up')
+          document.querySelector('body').classList.remove('fix-menu');
+        }
+        previous = window.scrollY;
+    });
   }
 
   scrollHeader() {
@@ -128,7 +132,7 @@ class App extends React.Component {
     if (!page) {
       location.hash = 'index';
     }
-    setScrollIntoView();
+    // setScrollIntoView();
   }
 
   bodyOverflow() {
@@ -141,18 +145,17 @@ class App extends React.Component {
   }
 
   hideMessengerTipHandler(){
-    this.setState({
-      showMessenger: false,
-      showMessengerTip: false,
-    })
+    var tip = document.getElementById('messengerTip');
+    tip.classList.remove("show");
+    tip.classList.remove('put-front');
+    var messenger = document.getElementById('messenger');
+    messenger.classList.remove("put-front"); 
+
     setTimeout(() => {
       this.setState({
         showMessenger: true,
       })
     }, 500);
-
-    var element = document.getElementById('messenger');
-    element.classList.remove("put-front");
   }
 
   showPlayIntroView(){
@@ -226,13 +229,14 @@ class App extends React.Component {
     return (
       <div id="appWrap" className="app-wrap">
         <header id="header" className="header">
-          <a className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntroView()} data-value="Index"><i className="icon fa fa-home" aria-hidden="true"></i> 邏輯教具AMIQ</a>
-          <a className={inCatalog ? 'link active' : 'link'} onClick={()=> this.showCatalogView()} data-value="Catalog">目錄</a>
-          <a className={inRent ? 'link active' : 'link'} onClick={()=> this.showRentView()} data-value="Rent">租借及費用</a>
+          <a href="#index" className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntroView()} data-value="Index"><i className="icon fa fa-home" aria-hidden="true"></i> 邏輯教具AMIQ</a>
+          <a href="#catalog" className={inCatalog ? 'link active' : 'link'} onClick={()=> this.showCatalogView()} data-value="Catalog">目錄</a>
+          <a href="#rent-terms" className={inRent ? 'link active' : 'link'} onClick={()=> this.showRentView()} data-value="Rent">租借及費用</a>
           <span className="indicator-bar"></span>
           <span className={indicatorClassName()}></span>
         </header>
         { this.showMessenger() } 
+        {/* { this.state.showMessengerTip ? this.showMessengerTip() : '' }  */}
         { this.showMessengerTip() } 
         <div id="pageContent">
           {this.state.showPlayIntroView ?  <PlayIntro goRent={()=> this.showRentView() }/> : ''}

@@ -8,7 +8,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    padding-top: 3rem;
+    padding-top: 3.75rem;
     color: #333;
     height: 100vh;
     overflow: auto;
@@ -16,6 +16,7 @@ body {
     font-family: 'Roboto','RobotoDraft','Heiti TC','Microsoft JhengHei',Helvetica,Arial,sans-serif;
     overflow-x: hidden;
     box-sizing: border-box;
+    transition: .25s all;
 /*    user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -112,13 +113,15 @@ hr {
     background-size: 60%;
     text-indent: -100%;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0,0,0,.15);
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
     transform: scale(0);
     -webkit-transition: .25s all ease-out;
     -o-transition: .25s all ease-out;
     transition: .25s all ease-out;
 }
-
+.messenger:hover {
+    box-shadow: 0 10px 50px rgba(0,0,0,.4);
+}
 .messenger-tip {
     position: fixed;
     bottom: 0;
@@ -243,6 +246,10 @@ hr {
         width: 5em;
         height: 5em;
         box-shadow: 0 10px 20px rgba(0,0,0,.3);
+    }
+    .messenger:hover {
+        box-shadow: 0 15px 40px rgba(0,0,0,.5);
+        transform: translateY(-5px);
     }
     .messenger-tip {
         display: block;
@@ -552,12 +559,12 @@ body.fix-menu .list-type-menu a {
     width: auto;    
     text-align: center;
     color: #fff;
-    text-shadow: 
+    /* text-shadow: 
         1px 1px 0 rgba(204,51,0,.5),
         -1px -1px 0 rgba(204,51,0,.5),
         1px -1px 0 rgba(204,51,0,.5),
         -1px 1px 0 rgba(204,51,0,.5)
-        ;
+        ; */
     -webkit-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
@@ -691,6 +698,23 @@ body.fix-menu .list-type-menu a {
     -o-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
 }
+.read-more {
+    margin-top: 2em;
+}
+.read-more a {
+    padding: .25em 2em;
+    color: #fff;
+    background-color: rgba(255,255,255,.1);
+    border: 1px solid #fff;
+    border-radius: 4em; 
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.read-more a + a {
+    margin-left: 1em;
+}
+
 .rent-process {
     position: fixed;
     top: 4rem;

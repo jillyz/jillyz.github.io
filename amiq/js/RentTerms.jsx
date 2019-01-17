@@ -21,7 +21,7 @@ class RentTerms extends React.Component {
         {/* <div className="terms-banner"></div> */}
         <div className="terms-content-wrap">
           <div className="terms-content">
-            <h2 className="terms-header">租借說明，請詳閱</h2>
+            <h2 className="terms-header">詳閱租借說明</h2>
 
             <section>
               <h4>【關於本服務】</h4> 
