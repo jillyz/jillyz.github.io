@@ -79,12 +79,12 @@ class App extends React.Component {
     window.addEventListener('scroll', function(){
         if(window.scrollY > previous)
         { 
-          console.log('down') 
+          // console.log('down') 
           document.querySelector('body').classList.add('fix-menu');
         }
         else 
         {
-          console.log('up')
+          // console.log('up')
           document.querySelector('body').classList.remove('fix-menu');
         }
         previous = window.scrollY;
