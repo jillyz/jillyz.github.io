@@ -251,8 +251,7 @@ class App extends React.Component {
     setScrollIntoView();
   }
 
-  render() {
-    var isSafari = /constructor/i.test(window.HTMLElement);
+  renderHeaderView(){
     const inHome = this.state.showPlayIntroView;
     const inRent = this.state.showRentView;
     const inCatalog = this.state.showCatalogView;
@@ -263,16 +262,27 @@ class App extends React.Component {
       if(inCatalog) return 'indicator catalog';
       if(inGame) return 'indicator game';
     }
+    return(
+      <header id="header" className="header">
+        <a href="#index" className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntroView()} data-value="Index"><i className="icon fa fa-home" aria-hidden="true"></i> 邏輯教具AMIQ</a>
+        <a href="#catalog" className={inCatalog ? 'link active' : 'link'} onClick={()=> this.showCatalogView()} data-value="Catalog">目錄</a>
+        <a href="#rent-terms" className={inRent ? 'link active' : 'link'} onClick={()=> this.showRentView()} data-value="Rent">租借及費用</a>
+        {/* <a href="#game" className={inGame ? 'link active' : 'link'} onClick={()=> this.showGameView()} data-value="Game">遊戲</a> */}
+        <span className="indicator-bar"></span>
+        <span className={indicatorClassName()}></span>
+      </header>
+    )
+  }
+
+  render() {
+    // var isSafari = /constructor/i.test(window.HTMLElement);
+    const inHome = this.state.showPlayIntroView;
+    const inRent = this.state.showRentView;
+    const inCatalog = this.state.showCatalogView;
+    const inGame = this.state.showGameView;
     return (
       <div id="appWrap" className="app-wrap">
-        <header id="header" className="header">
-          <a href="#index" className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntroView()} data-value="Index"><i className="icon fa fa-home" aria-hidden="true"></i> 邏輯教具AMIQ</a>
-          <a href="#catalog" className={inCatalog ? 'link active' : 'link'} onClick={()=> this.showCatalogView()} data-value="Catalog">目錄</a>
-          <a href="#rent-terms" className={inRent ? 'link active' : 'link'} onClick={()=> this.showRentView()} data-value="Rent">租借及費用</a>
-          <a href="#game" className={inGame ? 'link active' : 'link'} onClick={()=> this.showGameView()} data-value="Game">遊戲</a>
-          <span className="indicator-bar"></span>
-          <span className={indicatorClassName()}></span>
-        </header>
+        { !inGame ? this.renderHeaderView() : ''}
         { !inGame ? this.showMessenger() : '' } 
         {/* { this.state.showMessengerTip ? this.showMessengerTip() : '' }  */}
         { !inGame ? this.showMessengerTip() : '' } 
