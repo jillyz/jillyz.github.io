@@ -430,7 +430,7 @@ class Catalog extends React.Component {
               <span className="title">
                 <span className="id">{book.id}</span>
                 <span className="ch">{book.title}</span>
-                <span className="en">{book['title-en']}</span>
+                {/* <span className="en">{book['title-en']}</span> */}
               </span>        
               <span className="subject">
                 {book.subject}
@@ -473,7 +473,7 @@ class Catalog extends React.Component {
               <span className="id">{book.id}</span> 
               <strong className="title">
                 <span className="ch">{book.title}</span><br/>
-                <span className="en">{book['title-en']}</span>
+                {/* <span className="en">{book['title-en']}</span> */}
                 
               </strong>        
               <span className="subject">
