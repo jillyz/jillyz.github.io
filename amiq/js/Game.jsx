@@ -52,8 +52,15 @@ class Game extends React.Component {
 
         )
     }
-    renderGameOptionList() {
+    renderLiList() {
+        let Li = []
 
+        for (let i = 0; i < 12; i++) {
+            Li.push(
+                <li>{i + 1}</li>
+            );
+        }
+        return Li;
     }
 
     render() {
@@ -63,11 +70,15 @@ class Game extends React.Component {
                 <div>
                     <img className="game-topic-img" src={`./img/game/topic/${topic}.jpg`} alt="題目" />
                     <div className="game-option">
-
+                        <ul>
+                            {this.renderLiList()}
+                        </ul>
                     </div>
                 </div>
                 <div className="game-card">
-
+                    <ul>
+                        {this.renderLiList()}
+                    </ul>
                 </div>
             </div>
         )

@@ -161,7 +161,8 @@ class App extends React.Component {
       $('body').css({'overflow-y' : 'auto'})
     }
     if ( inGame  ) {
-      $('body').css({'overflow' : 'hidden'})
+      // $('body').css({'overflow' : 'hidden'})
+      document.querySelector('body').classList.add('game');
     }
   }
 

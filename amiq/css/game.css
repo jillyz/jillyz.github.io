@@ -2,14 +2,14 @@ html {
     margin: 0;
     padding: 0;
 }
-
-body {
+body.game {
     margin: 0;
     padding: 0;
     /* padding-top: 4rem; */
 }
 
 .game-wrap {
+    text-align: center;
 }
 
 @media screen and (orientation: portrait) {
@@ -20,6 +20,7 @@ body {
 @media screen and (orientation: landscape) {
     .game-wrap .game-topic-img {
         /* height: calc(100vh - 4rem); */
-        height: 100vh;
+        height: 88vw;
+        margin: 0 auto;
     }
 }
