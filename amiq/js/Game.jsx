@@ -43,7 +43,7 @@ class Game extends React.Component {
         return (
             <div className="game-wrap">
                 <div>
-                    <img className="game-topic-img" src={`../img/game/topic/${topic}.jpg`} alt="題目" />
+                    <img className="game-topic-img" src={`./img/game/topic/${topic}.jpg`} alt="題目" />
                     <div className="game-option">
 
                     </div>
