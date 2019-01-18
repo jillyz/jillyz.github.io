@@ -12,12 +12,12 @@ body {
 .game-wrap {
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (orientation: portrait) {
     .game-wrap .game-topic-img {
         width: 100vw;
     }
 }
-@media screen and (min-width: 601px) {
+@media screen and (orientation: landscape) {
     .game-wrap .game-topic-img {
         height: calc(100vh - 4rem);
     }
