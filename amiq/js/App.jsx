@@ -2,6 +2,7 @@
   Rent,
   Catalog,
   PlayIntro,
+  Game,
   Loading
 } = window.App;
 
@@ -13,12 +14,14 @@ class App extends React.Component {
       showPlayIntroView: true,
       showCatalogView: false,
       showRentView: false,
+      showGameView: false,
       showMessenger: false,
       showMessengerTip: false,
     }
     this.showPlayIntroView = this.showPlayIntroView.bind(this);
     this.showCatalogView = this.showCatalogView.bind(this);
     this.showRentView = this.showRentView.bind(this);
+    this.showGameView = this.showGameView.bind(this);
     this.scrollPageHeaderSize = this.scrollPageHeaderSize.bind(this);
     // this.scrollHeader = this.scrollHeader.bind(this);
     this.hideMessengerTipHandler = this.hideMessengerTipHandler.bind(this);
@@ -29,38 +32,41 @@ class App extends React.Component {
     // this.scrollHeader();
     this.setRouter();
 
-    setTimeout(() => {
-      this.setState({
-        showMessenger: true,
-      })
-    }, 1000);
+    const inGame = this.state.showGameView;
 
-    setTimeout(() => {
-      // this.setState({
-      //   showMessengerTip: true,
-      // })
-      var tip = document.getElementById('messengerTip');
-          tip.classList.add("show");
-          tip.classList.add("put-front");
+    if(!inGame) {
 
       setTimeout(() => {
-        var element = document.getElementById('messengerTip');
-        element.classList.add("show");
+        this.setState({
+          showMessenger: true,
+        })
+      }, 1000);
 
-        window.onscroll = function() {
-          var tip = document.getElementById('messengerTip');
-          tip.classList.remove("show");
-          tip.classList.remove('put-front');
-          var messenger = document.getElementById('messenger');
-          messenger.classList.remove("put-front");  
-        }
-      }, 3000);
+      setTimeout(() => {
+        // this.setState({
+        //   showMessengerTip: true,
+        // })
+        var tip = document.getElementById('messengerTip');
+            tip.classList.add("show");
+            tip.classList.add("put-front");
 
-    }, 8000); 
+        setTimeout(() => {
+          var element = document.getElementById('messengerTip');
+          element.classList.add("show");
+
+          window.onscroll = function() {
+            var tip = document.getElementById('messengerTip');
+            tip.classList.remove("show");
+            tip.classList.remove('put-front');
+            var messenger = document.getElementById('messenger');
+            messenger.classList.remove("put-front");  
+          }
+        }, 3000);
+
+      }, 12000); 
+    }
 
     this.scrollPageHeaderSize();
-
-    
 
   }
 
@@ -85,18 +91,18 @@ class App extends React.Component {
     });
   }
 
-  scrollHeader() {
-    var header = new Headroom(document.querySelector("#header, .list-type-menu, .indicator-bar"), {
-        tolerance: 5,
-        offset : 0,
-        classes: {
-          initial: "animated",
-          pinned: "slideDown",
-          unpinned: "slideUp"
-        }
-    });
-    header.init();
-  }
+  // scrollHeader() {
+  //   var header = new Headroom(document.querySelector("#header, .list-type-menu, .indicator-bar"), {
+  //       tolerance: 5,
+  //       offset : 0,
+  //       classes: {
+  //         initial: "animated",
+  //         pinned: "slideDown",
+  //         unpinned: "slideUp"
+  //       }
+  //   });
+  //   header.init();
+  // }
 
   setRouter(){
     var page = location.href.split('#')[1];
@@ -106,7 +112,8 @@ class App extends React.Component {
           this.setState({
             showPlayIntroView: true,
             showCatalogView: false,
-            showRentView: false
+            showRentView: false,
+            showGameView: false
           })
           break;
         case 'rent-terms':
@@ -115,14 +122,24 @@ class App extends React.Component {
           this.setState({
             showPlayIntroView: false,
             showCatalogView: false,
-            showRentView: true
+            showRentView: true,
+            showGameView: false
           })
           break;
         case 'catalog':
           this.setState({
             showPlayIntroView: false,
             showCatalogView: true,
-            showRentView: false
+            showRentView: false,
+            showGameView: false
+          })
+          break;
+        case 'game':
+          this.setState({
+            showPlayIntroView: false,
+            showCatalogView: false,
+            showRentView: false,
+            showGameView: true
           })
           break;
         default:
@@ -139,8 +156,12 @@ class App extends React.Component {
     const inHome = this.state.showPlayIntroView;
     const inRent = this.state.showRentView;
     const inCatalog = this.state.showCatalogView;
-    if ( inHome || inCatalog ) {
+    const inGame = this.state.showGameView;
+    if ( inHome || inCatalog || inRent ) {
       $('body').css({'overflow-y' : 'auto'})
+    }
+    if ( inGame  ) {
+      $('body').css({'overflow' : 'hidden'})
     }
   }
 
@@ -190,7 +211,8 @@ class App extends React.Component {
     this.setState({
       showPlayIntroView: true,
       showCatalogView: false,
-      showRentView: false
+      showRentView: false,
+      showGameView: false
     })
     location.hash = 'index';
     setScrollIntoView();
@@ -200,7 +222,8 @@ class App extends React.Component {
     this.setState({
       showPlayIntroView: false,
       showCatalogView: true,
-      showRentView: false
+      showRentView: false,
+      showGameView: false
     })
     location.hash = 'catalog';
     setScrollIntoView();
@@ -210,9 +233,21 @@ class App extends React.Component {
     this.setState({
       showPlayIntroView: false,
       showCatalogView: false,
-      showRentView: true
+      showRentView: true,
+      showGameView: false
     })
     location.hash = 'rent-terms';
+    setScrollIntoView();
+  }
+
+  showGameView() {
+    this.setState({
+      showPlayIntroView: false,
+      showCatalogView: false,
+      showRentView: false,
+      showGameView: true
+    })
+    location.hash = 'game';
     setScrollIntoView();
   }
 
@@ -221,10 +256,12 @@ class App extends React.Component {
     const inHome = this.state.showPlayIntroView;
     const inRent = this.state.showRentView;
     const inCatalog = this.state.showCatalogView;
+    const inGame = this.state.showGameView;
     const indicatorClassName = () => {
       if(inHome) return 'indicator home';
       if(inRent) return 'indicator rent';
       if(inCatalog) return 'indicator catalog';
+      if(inGame) return 'indicator game';
     }
     return (
       <div id="appWrap" className="app-wrap">
@@ -232,16 +269,18 @@ class App extends React.Component {
           <a href="#index" className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntroView()} data-value="Index"><i className="icon fa fa-home" aria-hidden="true"></i> 邏輯教具AMIQ</a>
           <a href="#catalog" className={inCatalog ? 'link active' : 'link'} onClick={()=> this.showCatalogView()} data-value="Catalog">目錄</a>
           <a href="#rent-terms" className={inRent ? 'link active' : 'link'} onClick={()=> this.showRentView()} data-value="Rent">租借及費用</a>
+          <a href="#game" className={inGame ? 'link active' : 'link'} onClick={()=> this.showGameView()} data-value="Game">遊戲</a>
           <span className="indicator-bar"></span>
           <span className={indicatorClassName()}></span>
         </header>
-        { this.showMessenger() } 
+        { !inGame ? this.showMessenger() : '' } 
         {/* { this.state.showMessengerTip ? this.showMessengerTip() : '' }  */}
-        { this.showMessengerTip() } 
+        { !inGame ? this.showMessengerTip() : '' } 
         <div id="pageContent">
-          {this.state.showPlayIntroView ?  <PlayIntro goRent={()=> this.showRentView() }/> : ''}
-          {this.state.showRentView ? <Rent showMessenger="false"/> : ''}
-          {this.state.showCatalogView ? <Catalog /> : ''}
+          {inHome ?  <PlayIntro goRent={()=> this.showRentView() }/> : ''}
+          {inRent ? <Rent showMessenger="false"/> : ''}
+          {inCatalog ? <Catalog /> : ''}
+          {inGame ? <Game /> : ''}
           {/*{isSafari ? <div className="dontUseSafari">Hi～您目前使用的瀏覽器為 Safari ， 建議您使用 Chrome 瀏覽唷 </div> : ''}*/}
         </div>
       </div>

@@ -699,7 +699,7 @@ body.fix-menu .list-type-menu a {
     transform: translate(-50%,-50%);
 }
 .read-more {
-    margin-top: 2em;
+    margin-top: 3em;
 }
 .read-more a {
     padding: .25em 2em;
@@ -710,9 +710,10 @@ body.fix-menu .list-type-menu a {
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: bold;
+    text-shadow: 0 2px 2px rgba(0,0,0,.25);
 }
-.read-more a + a {
-    margin-left: 1em;
+.read-more a {
+    
 }
 
 .rent-process {
