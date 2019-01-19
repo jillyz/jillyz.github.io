@@ -95,7 +95,7 @@ class Rent extends React.Component {
     return(
       <div>
         {this.renderRentProcess() }
-        <iframe id="rentForm" className="rent-form" 
+        <iframe title="登記租借(Google表單)" id="rentForm" className="rent-form" 
           src="https://docs.google.com/forms/d/e/1FAIpQLSdypAzaM8glHVhTUP9I4wNG1M-E9aUAujoAsB5qwiuAMCDEcQ/viewform">
         </iframe>
         <div onClick={()=> this.showRentNotifyHandler()} className="continue-after-form">提交表單後，請點我繼續</div>

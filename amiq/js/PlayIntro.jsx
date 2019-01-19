@@ -155,7 +155,7 @@ class PlayIntro extends React.Component {
             </div> */}
 
             <div className className="how_to_play_video">
-              <iframe className="video" src="https://www.youtube.com/embed/mTjTBEI0Gvc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+              <iframe className="video" title="AMIQ 實際玩" src="https://www.youtube.com/embed/mTjTBEI0Gvc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
             </div>
 
           </div>
