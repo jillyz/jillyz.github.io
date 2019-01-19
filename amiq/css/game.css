@@ -280,6 +280,7 @@ body.game * {
     }
     .show-ans button {
         margin-top: 2vw;
+        margin-bottom: 2vw;
         transform: scale(1.2)
     }
 }
