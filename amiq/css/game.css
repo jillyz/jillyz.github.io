@@ -108,49 +108,143 @@ body.game * {
     width: calc( 100vw * (479/3200) * 6);
 }
 .game-option a {
+    position: relative;
     margin-bottom: -5px;
     background: url(../img/game/card_pattern.svg) no-repeat;
     background-size: calc( 100vw * (479/3200) * 6);
     background-position: -100%;
 }
-.game-option a[data-showoption="1"] {
-    background-position: calc( 100vw * (479/3200) * 0) 100%;
+
+.game-option a[data-showoption] {
+    background-color: #f4eed4;
+}
+.game-option a[data-showoption]:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    line-height: 1;
+}
+.game-option a[data-showoption="1"]:before {
+    content: '1';
+}
+.game-option a[data-showoption="2"]:before {
+    content: '2';
+}
+.game-option a[data-showoption="3"]:before {
+    content: '3';
+}
+.game-option a[data-showoption="4"]:before {
+    content: '4';
+}
+.game-option a[data-showoption="5"]:before {
+    content: '5';
+}
+.game-option a[data-showoption="6"]:before {
+    content: '6';
+}
+.game-option a[data-showoption="7"]:before {
+    content: '7';
+}
+.game-option a[data-showoption="8"]:before {
+    content: '8';
+}
+.game-option a[data-showoption="9"]:before {
+    content: '9';
+}
+.game-option a[data-showoption="10"]:before {
+    content: '10';
+}
+.game-option a[data-showoption="11"]:before {
+    content: '11';
+}
+.game-option a[data-showoption="12"]:before {
+    content: '12';
+}
+.game-option a.ans:before {
+    content: '';
+}
+.game-option li:nth-child(1) .ans,
+.game-option li:nth-child(2) .ans,
+.game-option li:nth-child(3) .ans,
+.game-option li:nth-child(4) .ans,
+.game-option li:nth-child(5) .ans,
+.game-option li:nth-child(6) .ans
+{
+    position: relative;
+    top: calc( 100vw * (479/3200));
+}
+.game-option li:nth-child(7) .ans,
+.game-option li:nth-child(8) .ans,
+.game-option li:nth-child(9) .ans,
+.game-option li:nth-child(10) .ans,
+.game-option li:nth-child(11) .ans,
+.game-option li:nth-child(12) .ans
+{
+    position: relative;
+    top: calc( -100vw * (479/3200));
+}
+
+.game-option a.ans[data-showoption="1"] {
+    background-position: 0 100%;
     opacity: 1;
 }
-.game-option a[data-showoption="2"] {
+.game-option a.ans[data-showoption="2"] {
     background-position: calc( 100vw * (479/3200) * -1) 100%;
 }
-.game-option a[data-showoption="3"] {
+.game-option a.ans[data-showoption="3"] {
     background-position: calc( 100vw * (479/3200) * -2) 100%;
 }
-.game-option a[data-showoption="4"] {
+.game-option a.ans[data-showoption="4"] {
     background-position: calc( 100vw * (479/3200) * -3) 100%;
 }
-.game-option a[data-showoption="5"] {
+.game-option a.ans[data-showoption="5"] {
     background-position: calc( 100vw * (479/3200) * -4) 100%;
 }
-.game-option a[data-showoption="6"] {
+.game-option a.ans[data-showoption="6"] {
     background-position: calc( 100vw * (479/3200) * -5) 100%;
 }
-.game-option a[data-showoption="7"] {
-    background-position: calc( 100vw * (479/3200) * 0) 0;
+.game-option a.ans[data-showoption="7"] {
+    background-position: 0 0;
 }
-.game-option a[data-showoption="8"] {
+.game-option a.ans[data-showoption="8"] {
     background-position: calc( 100vw * (479/3200) * -1) 0;
 }
-.game-option a[data-showoption="9"] {
+.game-option a.ans[data-showoption="9"] {
     background-position: calc( 100vw * (479/3200) * -2) 0;
 }
-.game-option a[data-showoption="10"] {
+.game-option a.ans[data-showoption="10"] {
     background-position: calc( 100vw * (479/3200) * -3) 0;
 }
-.game-option a[data-showoption="11"] {
+.game-option a.ans[data-showoption="11"] {
     background-position: calc( 100vw * (479/3200) * -4) 0;
 }
-.game-option a[data-showoption="12"] {
+.game-option a.ans[data-showoption="12"] {
     background-position: calc( 100vw * (479/3200) * -5) 0;
 }
 
+.show-ans {
+    margin-bottom: 10vw;
+}
+.show-ans button:not(.ans):before {
+    content: '看解答';
+    font-size: 1.5;
+}
+.show-ans button {
+    display: inline-block;
+    width: calc(100vw * (720/ 3200));
+    height: calc(100vw * (250/3200));
+    border: 1px solid #333;
+    background-color: #fff;
+    outline: none;
+}
+.show-ans button.ans {
+    border: 0 solid #000;
+    background-position-x: calc(-100vw * (2140/ 3200)) ;
+    background-position-y: calc(-100vw * (1730/ 3200)) ;
+    background-size: 100vw;
+    background-repeat: no-repeat;
+}
 
 @media screen and (orientation: portrait) {
     .game-question-img {
@@ -198,6 +292,19 @@ body.game * {
     .game-question-text {
         margin-left: 26vw;
     }
+
+    .game-question-img,
+    .game-option-img {
+        transform: scale(.7);
+    }
+    .game-question-img {
+        margin-top: -4vw;
+    }
+    .game-option-img {
+        margin-top: -11vw;
+        margin-bottom: -4vw;
+    }
+
     .game-card {
         position: fixed;
         bottom: 0;
@@ -205,16 +312,18 @@ body.game * {
         width: 200vw;
         white-space: nowrap;
         overflow: auto;
-        transform: scale(.5) translate(-50%, 50%);
+        transform: scale(.4) translate(-60%, 75%);
     }
     .game-option-img {
-        margin-bottom: 12vw;
+        /* margin-bottom: 12vw; */
+        /* height: calc(100vw * 0.45); */
     }
+    
     .game-card a {
-        background-color: #fff;
+        /* background-color: #fff;
         border: 5px solid red;
         color: red;
-        border-radius: 0;
+        border-radius: 0; */
     }
 
 }

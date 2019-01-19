@@ -10,17 +10,26 @@ class Game extends React.Component {
             topics: [
                 {
                     'id': '106_1',
+                    'no': 'rdjov',
                     'opening': '早安！起床準備上學囉～',
                     'question': '找出符合的睡衣和襪子唷',
                 },
                 {
                     'id': '106_6',
+                    'no': 'csgrm',
                     'opening': '彼得畫了這張美麗的圖',
                     'question': '他用了哪些顏色呢？請指出來',
+                },
+                {
+                    'id': '106_7',
+                    'no': 'sbjkw',
+                    'opening': '這些好玩的拼圖，每個都少了一片',
+                    'question': '找出少掉的一片',
                 },
             ],
             currentTopic: '',
         }
+        this.goTop = this.goTop.bind(this);
     }
 
     componentDidMount() {
@@ -49,6 +58,9 @@ class Game extends React.Component {
         $('.game-card a').not('.active').click(function(){
             currentCard = parseInt($(this).attr('data-card'));
             $(this).addClass('active');
+
+            setScrollIntoView('questionImg');
+
             console.log('currentCard',currentCard);
         });
 
@@ -66,6 +78,16 @@ class Game extends React.Component {
             $('.game-option a[data-showoption="' + removeCard + '"]').attr('data-showoption' , 0);
         });
 
+        $('.game-question-img').click(function(){
+            setScrollIntoView('questionImg');
+        })
+
+        $('.show-ans button').click(function(){
+            $('.game-option a[data-showoption]').addClass('ans');
+            $(this).addClass('ans');
+            console.log('ans!')
+        })
+
     }
     componentDidUpdate(prevProps, prevState) {
     }
@@ -77,6 +99,13 @@ class Game extends React.Component {
             currentTopic: topic
         })
     }
+
+    goTop() {
+        var top = $('.game-question-img').height() + 24;
+        $('#app').animate({
+            scrollTop: top
+        }, 300);
+      }
 
     renderGameOptionList() {
         render(
@@ -107,7 +136,8 @@ class Game extends React.Component {
     render() {
         const topic = this.state.currentTopic;
         const style = {
-            backgroundImage: `url(./img/game/topic/${topic.id}.jpg`,
+            backgroundImage: `url(./img/game/topic/${topic.id}_${topic.no}.jpg`,
+            backgroundRepeat: 'no-repeat'
         };
         return (
             <div className="game-wrap">
@@ -118,7 +148,7 @@ class Game extends React.Component {
                     </div>
                     <div className="game-answer-sample" style={style}></div>
                 </div>
-                <div className="game-question-img" style={style}></div>
+                <div id="questionImg" className="game-question-img" style={style}></div>
                 <div className="game-option-img" style={style}>
                     <div className="game-option game-list">
                         <ul>
@@ -126,13 +156,16 @@ class Game extends React.Component {
                         </ul>
                     </div>
                 </div>
-                <div>
-                    {/* <img width="100%" className="game-topic-img" src={`./img/game/topic/${topic.id}.jpg`} alt="題目" /> */}
-                </div>
+                {/* <div>
+                    <img width="100%" className="game-topic-img" src={`./img/game/topic/${topic.id}.jpg`} alt="題目" />
+                </div> */}
                 <div className="game-card game-list">
                     <ul>
                         {this.renderCardList()}
                     </ul>
+                </div>
+                <div className="show-ans">
+                    <button style={style}></button>
                 </div>
             </div>
         )
