@@ -159,14 +159,14 @@ class Game extends React.Component {
                 {/* <div>
                     <img width="100%" className="game-topic-img" src={`./img/game/topic/${topic.id}.jpg`} alt="題目" />
                 </div> */}
+                <div className="show-ans">
+                    <button style={style}></button>
+                </div>
                 <div className="game-card game-list">
                     <ul>
                         {this.renderCardList()}
                     </ul>
-                </div>
-                <div className="show-ans">
-                    <button style={style}></button>
-                </div>
+                </div>               
             </div>
         )
 

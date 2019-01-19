@@ -222,10 +222,6 @@ body.game * {
 .game-option a.ans[data-showoption="12"] {
     background-position: calc( 100vw * (479/3200) * -5) 0;
 }
-
-.show-ans {
-    margin-bottom: 10vw;
-}
 .show-ans button:not(.ans):before {
     content: '看解答';
     font-size: 1.5;
@@ -278,6 +274,9 @@ body.game * {
     .game-card a {
         margin-bottom: 1vw;
     }
+    .show-ans {
+        margin-top: 3vw;
+    }
 }
 @media screen and (orientation: landscape) {
     .game-question-img {
@@ -325,5 +324,7 @@ body.game * {
         color: red;
         border-radius: 0; */
     }
-
+    .show-ans {
+        margin-bottom: 10vw;
+    }
 }
