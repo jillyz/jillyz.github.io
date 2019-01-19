@@ -8,6 +8,7 @@ body.game {
     /* padding-top: 4rem; */
     /* overflow: hidden; */
     user-select: none;
+    overflow-x: hidden;
 }
 body.game * {
     box-sizing: border-box;
