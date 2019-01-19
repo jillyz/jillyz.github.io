@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PV293RL');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68703814-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-68703814-2');
+  </script>
+
+  <meta charset="UTF-8">
+  <title>邏輯教具 AMIQ 租借 | 適用年齡 2-12 歲</title>
+
+  <!-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" /> -->
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="zh-tw" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="JILL WANG">
+  <meta name="copyright" content="JILL WANG">
+  
+  <link rel="author" href="JILL WANG">
+  <link rel="publisher" href="JILL WANG">
+  <meta name="description" content="AMIQ邏輯教具出租 租比買更划算">
+  
+  <meta itemprop="name" content="AMIQ邏輯教具出租">
+  <meta itemprop="image" content="https://jillyz.github.io/amiq/img/og.jpg">
+  <meta itemprop="description" content="AMIQ邏輯教具出租 租比買更划算">
+  
+  <meta property="og:title" content="AMIQ邏輯教具出租" >
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://jillyz.github.io/amiq/">
+  <meta property="og:image" content="https://jillyz.github.io/amiq/img/og.jpg">
+  <meta property="og:description" content="AMIQ邏輯教具出租 租比買更划算" >
+
+  <!--呈現在網頁名稱左方的小icon-->
+  <link rel="icon" href="img/appicon/touch-icon-iphone.png">
+  <!--用戶將網頁收藏為書籤並加到主畫面時，可以令最下的選單消失，令網頁變為全屏幕-->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=yes">
+  <meta name="MobileOptimized" content="320">
+  <meta name="HandheldFriendly" content="True">
+  <meta http-equiv="cleartype" content="on">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!--用戶將網頁收藏為書並加到主畫面時，可以將最上的狀態列設定為其他顏色-->
+  <meta name="apple-mobile-web-app-status-bar-style" content="white" /> 
+
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#fff">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#fff">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#fff">
+
+  <link rel="shortcut icon" href="img/appicon/touch-icon-iphone.png" type="image/png" />
+  <link rel="apple-touch-icon" href="img/appicon/touch-icon-iphone.png"/>
+  
+  <meta name="apple-mobile-web-app-title" content="Amiq rent">
+  <link rel="apple-touch-startup-image" href="img/launch.png">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/game.css">
+  <!-- Hotjar Tracking Code for https://jillyz.github.io/amiq/ -->
+  <script>
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:499014,hjsv:5};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+</head>
+
+<body id="body" class="game">
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV293RL"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div id="top"></div>
+
+  <div class="game-wrap">
+    <div class="game-question-sample">
+        <div id="question" class="game-question-text">
+            <!-- <p>{topic.opening}</p>
+            <p>{topic.question}</p> -->
+        </div>
+        <div class="game-answer-sample" style=""></div>
+    </div>
+    <div id="questionImg" class="game-question-img" style=""></div>
+    <div class="game-card game-list">
+        <ul id="cardList">
+            <!-- {this.renderCardList()} -->
+        </ul>
+    </div>
+    <div class="game-option-img" style="">
+        <div class="game-option game-list">
+            <ul id="optionList">
+                <!-- {this.renderOptionList()} -->
+            </ul>
+        </div>
+    </div>
+    <div class="show-ans">
+        <button style=""></button>
+    </div>             
+</div>  
+
+<script src="js/libs/jquery.min.js"></script>
+<script> 
+    var currentTopic = {};
+    var path = '';
+    var topics = [
+        {
+            'id': '106_1',
+            'no': 'rdjov',
+            'opening': '早安！起床準備上學囉～',
+            'question': '找出符合的睡衣和襪子唷',
+        },
+        {
+            'id': '106_6',
+            'no': 'csgrm',
+            'opening': '彼得畫了這張美麗的圖',
+            'question': '他用了哪些顏色呢？請指出來',
+        },
+        {
+            'id': '106_7',
+            'no': 'sbjkw',
+            'opening': '這些有趣的拼圖，每個都少了一片',
+            'question': '找出少掉的一片',
+        },
+    ]
+
+    var view = {
+        init : function() {
+            view.renderCardList();
+            view.renderOptionList();
+            view.getRandomTopic();
+            view.renderQuestion();
+            view.setImagePath();
+            view.events();
+        },
+        getRandomTopic: function () {
+            var topic = topics[Math.floor(Math.random() * topics.length)];
+            currentTopic=  topic;
+        },
+        renderCardList: function() {
+            var Li = []
+            for (var i = 0; i < 12; i++) {
+                Li.push(
+                    '<li><a data-card=' + (i + 1) + '>' + (i + 1) + '</a></li>'
+                );
+            }
+            // return Li;
+            $('#cardList').html(Li);
+        },
+        renderOptionList: function() {
+            var Li = []
+            for (var i = 0; i < 12; i++) {
+                Li.push(
+                    '<li><a></a></li>'
+                );
+            }
+            // return Li;
+            $('#optionList').html(Li);
+        },
+        renderQuestion: function(){
+            var opening = '<p>' + currentTopic.opening + '</p>';
+            var question = '<p>' + currentTopic.question + '</p>';
+            $('#question').html( opening + question );
+        },
+        setImagePath: function(){
+            path = 'url(img/game/topic/' + currentTopic.id + '_' + currentTopic.no + '.jpg';
+            $('.game-answer-sample, .game-question-img, .game-option-img, .show-ans button').css('background-image', path);
+        },
+        events: function(){
+            $('.game-card a').not('.active').click(function(){
+                currentCard = parseInt($(this).attr('data-card'));
+                $(this).addClass('active');
+
+                setScrollIntoView('questionImg');
+
+                console.log('currentCard',currentCard);
+            });
+
+            $('.game-option a').click(function(){
+                if(currentCard > 0) {
+                    $(this).attr('data-showoption',currentCard );
+                    currentCard = 0;
+                }
+            });
+            
+            $('.game-card a.active').click(function(){
+                $(this).removeClass('active');
+                var removeCard = parseInt($(this).attr('data-card'));
+                console.log('removeCard',removeCard);
+                $('.game-option a[data-showoption="' + removeCard + '"]').attr('data-showoption' , 0);
+            });
+
+            $('.game-question-img').click(function(){
+                setScrollIntoView('questionImg');
+            })
+
+            $('.show-ans button').click(function(){
+                $('.game-option a[data-showoption]').addClass('ans');
+                $(this).addClass('ans');
+                console.log('ans!')
+        })
+        }
+    }
+
+    $(function(){
+        view.init();
+    });
+
+</script>
+</body>
+</html>
