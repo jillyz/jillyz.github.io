@@ -149,6 +149,11 @@ class Game extends React.Component {
                     <div className="game-answer-sample" style={style}></div>
                 </div>
                 <div id="questionImg" className="game-question-img" style={style}></div>
+                <div className="game-card game-list">
+                    <ul>
+                        {this.renderCardList()}
+                    </ul>
+                </div>
                 <div className="game-option-img" style={style}>
                     <div className="game-option game-list">
                         <ul>
@@ -161,12 +166,7 @@ class Game extends React.Component {
                 </div> */}
                 <div className="show-ans">
                     <button style={style}></button>
-                </div>
-                <div className="game-card game-list">
-                    <ul>
-                        {this.renderCardList()}
-                    </ul>
-                </div>               
+                </div>             
             </div>
         )
 
