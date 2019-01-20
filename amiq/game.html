@@ -75,7 +75,7 @@
   <meta name="apple-mobile-web-app-title" content="Amiq rent">
   <link rel="apple-touch-startup-image" href="img/launch.png">
   
-  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
   <link rel="stylesheet" href="css/game.css">
   <!-- Hotjar Tracking Code for https://jillyz.github.io/amiq/ -->
   <script>
@@ -97,7 +97,7 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div id="top"></div>
+  <!-- <div id="top"></div> -->
 
   <div class="game-wrap">
     <div class="game-question-sample">
@@ -110,30 +110,46 @@
     <div id="questionImg" class="game-question-img" style=""></div>
     <div class="game-card game-list">
         <ul id="cardList">
-            <!-- {this.renderCardList()} -->
+            <!-- view.renderCardList() -->
         </ul>
     </div>
     <div class="game-option-img" style="">
         <div class="game-option game-list">
             <ul id="optionList">
-                <!-- {this.renderOptionList()} -->
+                <!-- view.renderOptionList() -->
             </ul>
         </div>
     </div>
     <div class="show-ans">
         <button style=""></button>
-    </div>             
-</div>  
+    </div>
+</div>
+<audio id="bgMusic" autoplay loop>
+    <source src="sound/bg.mp3" type="audio/mpeg">
+</audio>
 
 <script src="js/libs/jquery.min.js"></script>
+<script src="js/moduale.js"></script>
 <script> 
     var currentTopic = {};
     var path = '';
     var topics = [
         {
+            'id': '102_1',
+            'no': 'tgjua',
+            'opening': '這些水果看起來真好吃',
+            'question': '找出相同的數量',
+        },
+        {
+            'id': '102_6',
+            'no': 'abcde',
+            'opening': '文具店可以買到筆紙橡皮擦',
+            'question': '數一數找出符合的數量',
+        },
+        {
             'id': '106_1',
             'no': 'rdjov',
-            'opening': '早安！起床準備上學囉～',
+            'opening': '早安！起床準備上學囉',
             'question': '找出符合的睡衣和襪子唷',
         },
         {
@@ -148,20 +164,138 @@
             'opening': '這些有趣的拼圖，每個都少了一片',
             'question': '找出少掉的一片',
         },
+        {
+            'id': '115_1',
+            'no': 'gbiudj',
+            'opening': '春天來了！花開了，多令人愉悅的景象',
+            'question': '找出相同的圖片',
+        },
     ]
 
     var view = {
+        set: {
+            'selectCard': 0,
+        },
         init : function() {
+            view.getTopic();
             view.renderCardList();
             view.renderOptionList();
-            view.getRandomTopic();
             view.renderQuestion();
             view.setImagePath();
             view.events();
         },
+        events: function(){
+            $('.game-card a').click(function(){
+                var isUnselect = !($(this).hasClass('active'));
+                var isSelected = !isUnselect;
+                if(isUnselect) {
+                    currentCard = parseInt($(this).attr('data-card'));
+                    $(this).addClass('active');
+                    view.playClickSound();
+                    view.checkCard();
+                    view.set.selectCard = currentCard;
+                }
+                if(isSelected) {
+                    $(this).removeClass('active');
+                    var removeCard = parseInt($(this).attr('data-card'));
+                    $('.game-option a[data-showoption="' + removeCard + '"]').removeAttr('data-showoption');                
+                    view.playClickSound();
+                    view.set.selectCard = 0;
+                }
+            });
+            $('.game-option a').click(function(){
+                var isEmpty = !($(this)[0].hasAttribute('data-showoption'));
+                var isNotEmpty = !isEmpty;
+
+                if(isEmpty && view.set.selectCard > 0 ) {
+                    $(this).attr('data-showoption',currentCard );
+                    currentCard = 0;
+                    view.playClickSound();
+                    view.set.selectCard = 0;
+                }
+                if(isNotEmpty && view.set.selectCard !== false ) {
+                    var removeCard = parseInt($(this).attr('data-showoption'));
+                    $('.game-card a[data-card="' + removeCard + '"]').removeClass('active');                
+                    $(this).removeAttr('data-showoption');
+                    view.playClickSound();
+                }
+
+            });
+            $('.game-question-img').click(function(){
+                // setScrollIntoView('questionImg');
+            })
+            $('.show-ans button').click(function(){
+                var isAnswerView = $(this).hasClass('ans');
+                if(!isAnswerView) {
+                    $('.game-option a[data-showoption]').addClass('ans');
+                    $(this).addClass('ans');
+                    view.setImagePath();
+                }
+                if(isAnswerView) {
+                    $(this).removeClass('ans');
+                    $('.game-option a[data-showoption]').removeClass('ans');
+                    $(this).css('background-image', '');
+                    $('.game-option a').removeClass('ans');
+                }
+            })
+
+            // $('.show-ans button:not(.ans)').click(function(){
+            //     $('.game-option a[data-showoption]').addClass('ans');
+            //     $(this).addClass('ans');
+            //     console.log('ans!')
+            // })
+
+        },
+        getTopic: function(){
+            var defaultTopicId = view.getParameter('t');
+            if(defaultTopicId !== undefined) {
+                topics.forEach(function(item){
+                    if(item.id == defaultTopicId) {
+                        currentTopic = item;
+                        
+                    }
+                    if ( Object.keys(currentTopic).length === 0 ) {
+                        view.getRandomTopic();
+                        view.removeParameter('t');
+                    }
+                })
+            }
+            if(defaultTopicId == undefined) {
+                view.getRandomTopic();
+            }
+        },
         getRandomTopic: function () {
             var topic = topics[Math.floor(Math.random() * topics.length)];
             currentTopic=  topic;
+        },
+        getParameter: function(variable){
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i=0;i<vars.length;i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                return pair[1];
+                }
+            } 
+        },
+        removeParameter: function(parameter) {
+            var url=document.location.href;
+            var urlparts= url.split('?');
+
+            if (urlparts.length>=2)
+            {
+            var urlBase=urlparts.shift(); 
+            var queryString=urlparts.join("?"); 
+
+            var prefix = encodeURIComponent(parameter)+'=';
+            var pars = queryString.split(/[&;]/g);
+            for (var i= pars.length; i-->0;)               
+                if (pars[i].lastIndexOf(prefix, 0)!==-1)   
+                    pars.splice(i, 1);
+            url = urlBase + '?' + pars.join('&');
+            window.history.pushState('',document.title,url); // added this line to push the new url directly to url bar .
+            }
+            return url;
         },
         renderCardList: function() {
             var Li = []
@@ -170,7 +304,6 @@
                     '<li><a data-card=' + (i + 1) + '>' + (i + 1) + '</a></li>'
                 );
             }
-            // return Li;
             $('#cardList').html(Li);
         },
         renderOptionList: function() {
@@ -180,7 +313,6 @@
                     '<li><a></a></li>'
                 );
             }
-            // return Li;
             $('#optionList').html(Li);
         },
         renderQuestion: function(){
@@ -190,42 +322,16 @@
         },
         setImagePath: function(){
             path = 'url(img/game/topic/' + currentTopic.id + '_' + currentTopic.no + '.jpg';
-            $('.game-answer-sample, .game-question-img, .game-option-img, .show-ans button').css('background-image', path);
+            $('.game-answer-sample, .game-question-img, .game-option-img, .show-ans button.ans').css('background-image', path);
         },
-        events: function(){
-            $('.game-card a').not('.active').click(function(){
-                currentCard = parseInt($(this).attr('data-card'));
-                $(this).addClass('active');
+        checkCard: function(){
 
-                setScrollIntoView('questionImg');
-
-                console.log('currentCard',currentCard);
-            });
-
-            $('.game-option a').click(function(){
-                if(currentCard > 0) {
-                    $(this).attr('data-showoption',currentCard );
-                    currentCard = 0;
-                }
-            });
-            
-            $('.game-card a.active').click(function(){
-                $(this).removeClass('active');
-                var removeCard = parseInt($(this).attr('data-card'));
-                console.log('removeCard',removeCard);
-                $('.game-option a[data-showoption="' + removeCard + '"]').attr('data-showoption' , 0);
-            });
-
-            $('.game-question-img').click(function(){
-                setScrollIntoView('questionImg');
-            })
-
-            $('.show-ans button').click(function(){
-                $('.game-option a[data-showoption]').addClass('ans');
-                $(this).addClass('ans');
-                console.log('ans!')
-        })
-        }
+        },
+        playClickSound: function(){
+            var audio = new Audio( "sound/click.wav" );
+            audio.play();
+        },
+        
     }
 
     $(function(){

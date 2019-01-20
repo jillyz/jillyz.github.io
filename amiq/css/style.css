@@ -2947,18 +2947,7 @@ body.fix-menu .list-type-menu a {
 .btn-agree:hover {
     background-color: #d9480f;
 }
-/* .terms-mask {
-    position: fixed;
-    bottom: 4em;
-    left: 0;
-    right: 0;
-    height: 24px; 
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e5e3d0+0,e5e3d0+100&0+0,1+100 */
-    background: -moz-linear-gradient(top, rgba(229,227,208,0) 0%, rgba(229,227,208,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(229,227,208,0) 0%,rgba(229,227,208,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(229,227,208,0) 0%,rgba(229,227,208,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e5e3d0', endColorstr='#e5e3d0',GradientType=0 ); /* IE6-9 */
-} */
+
 @media screen and (min-width: 661px) {
     .btn-agree {
         margin-left: auto;

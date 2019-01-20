@@ -12,6 +12,7 @@ body.game {
 }
 body.game * {
     box-sizing: border-box;
+    font-family: 'Roboto','RobotoDraft','Heiti TC','Microsoft JhengHei',Helvetica,Arial,sans-serif;
 }
 .game-wrap {
     margin: 0 auto;
@@ -28,7 +29,7 @@ body.game * {
     background-repeat: no-repeat;
 }
 .game-question-img {
-    height: calc(100vw * 0.35);
+    height: calc(100vw * 0.36);
     background-position: 0 -12vw;
 }
 .game-option-img {
@@ -43,6 +44,7 @@ body.game * {
     margin: 0;
     line-height: 2;
     font-size: 1rem;
+    text-align: left;
 }
 .game-question-text p:nth-child(1) {
     border-bottom: 1px solid #444;
@@ -54,7 +56,7 @@ body.game * {
 .game-answer-sample {
     position: absolute;
     width: calc(100vw * (720/3200));
-    height: calc(100vw * (250/3200));
+    height: calc(100vw * (255/3200));
     background-position: -10.5vw -54vw;
     background-size: 100vw;
     background-repeat: no-repeat;
@@ -74,6 +76,7 @@ body.game * {
 .game-card a {
     margin-right: 1vw;
     background-color: #F4EED4;
+    box-shadow: 5px 5px 0 #bcad6a;
 }
 .game-card a.active {
     opacity: .3;
@@ -91,8 +94,11 @@ body.game * {
     display: block;
     width: calc( 100vw * (479/3200));
     height: calc( 100vw * (480/3200));
+    color: #444;
     /* background-color: #F4EED4; */
     /* box-shadow: 0 5px 10px #000; */
+    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+    font-weight: bold;
 }
 .game-card a,
 .game-option a[data-showoption] {
@@ -115,9 +121,9 @@ body.game * {
     background-size: calc( 100vw * (479/3200) * 6);
     background-position: -100%;
 }
-
 .game-option a[data-showoption] {
     background-color: #f4eed4;
+    box-shadow: .5vw .5vw 0 #b0ad9e;
 }
 .game-option a[data-showoption]:before {
     position: absolute;
@@ -174,6 +180,7 @@ body.game * {
 {
     position: relative;
     top: calc( 100vw * (479/3200));
+    z-index: 1;
 }
 .game-option li:nth-child(7) .ans,
 .game-option li:nth-child(8) .ans,
@@ -224,21 +231,48 @@ body.game * {
     background-position: calc( 100vw * (479/3200) * -5) 0;
 }
 .show-ans button:not(.ans):before {
-    content: '看解答';
-    font-size: 1.5;
+    content: '點我看解答';
+    font-size: 2vh;
+    font-weight: bold;
+    color: #fff;
+}
+.show-ans button:not(.ans) {
+    /* https://www.gradient-animator.com/ */
+    background: linear-gradient(270deg, #d8563d, #93ad1a);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 2s ease infinite;
+    -moz-animation: AnimationName 2s ease infinite;
+    animation: AnimationName 2s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 .show-ans button {
     display: inline-block;
     width: calc(100vw * (720/ 3200));
     height: calc(100vw * (250/3200));
-    border: 1px solid #ccc;
+    border: 0;
     background-color: #fff;
+    background-position: -100% -100%;
+    background-repeat: no-repeat;
     outline: none;
 }
 .show-ans button.ans {
     border: 0 solid #000;
-    background-position-x: calc(-100vw * (2140/ 3200)) ;
-    background-position-y: calc(-100vw * (1730/ 3200)) ;
+    background-position-x: calc(-100vw * (2140/ 3200)) !important;
+    background-position-y: calc(-100vw * (1730/ 3200)) !important;
     background-size: 100vw;
     background-repeat: no-repeat;
 }
@@ -279,12 +313,19 @@ body.game * {
         margin-top: 3vw;
     }
     .show-ans button {
-        margin-top: 2vw;
+        margin-top: 4vw;
         margin-bottom: 2vw;
-        transform: scale(1.2)
+        transform: scale(2);
     }
 }
 @media screen and (orientation: landscape) {
+
+    @media screen and (min-width: 1024px) {
+        .game-question-sample {
+            width: 73vw;
+            margin: 0 auto;
+        }
+    }
     .game-question-img {
         margin-top: 2vw;
     }
@@ -315,10 +356,10 @@ body.game * {
         bottom: 0;
         z-index: 1;
         padding: 1em;
-        width: 200vw;
-        white-space: nowrap;
+        width: 100vw;
+        /* white-space: nowrap; */
         overflow: auto;
-        transform: scale(.4) translate(-60%, 75%);
+        transform: scale(.4) translate(0, 75%);
     }
     .game-option-img {
         /* margin-bottom: 12vw; */
@@ -332,6 +373,6 @@ body.game * {
         border-radius: 0; */
     }
     .show-ans {
-        margin-bottom: 10vw;
+        margin-bottom: 15vw;
     }
 }
