@@ -108,17 +108,17 @@
         <div class="game-answer-sample" style=""></div>
     </div>
     <div id="questionImg" class="game-question-img" style=""></div>
-    <div class="game-card game-list">
-        <ul id="cardList">
-            <!-- view.renderCardList() -->
-        </ul>
-    </div>
     <div class="game-option-img" style="">
         <div class="game-option game-list">
             <ul id="optionList">
                 <!-- view.renderOptionList() -->
             </ul>
         </div>
+    </div>
+    <div class="game-card game-list">
+        <ul id="cardList">
+            <!-- view.renderCardList() -->
+        </ul>
     </div>
     <div class="show-ans">
         <button style=""></button>
@@ -252,13 +252,13 @@
                 topics.forEach(function(item){
                     if(item.id == defaultTopicId) {
                         currentTopic = item;
-                        
-                    }
-                    if ( Object.keys(currentTopic).length === 0 ) {
-                        view.getRandomTopic();
-                        view.removeParameter('t');
+                        return;
                     }
                 })
+                if ( Object.keys(currentTopic).length === 0 ) {
+                    view.getRandomTopic();
+                    view.removeParameter('t');
+                }
             }
             if(defaultTopicId == undefined) {
                 view.getRandomTopic();
