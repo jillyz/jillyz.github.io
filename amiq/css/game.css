@@ -43,7 +43,8 @@ body.game * {
 }
 .game-question-text p {
     margin: 0;
-    line-height: 2;
+    padding: .25em 0;
+    line-height: 1.5;
     font-size: 1rem;
     text-align: left;
 }
@@ -319,6 +320,7 @@ body.game * {
         margin-top: 3vw;
     }
     .show-ans button {
+        height: calc(100vw * (280/3200));
         margin-top: 4vw;
         margin-bottom: 2vw;
         transform: scale(2);
@@ -365,7 +367,7 @@ body.game * {
         bottom: 0;
         z-index: 1;
         padding: 1em;
-        width: 101vw;
+        width: 102vw;
         /* white-space: nowrap; */
         overflow: auto;
         transform: scale(.4) translate(0, 75%);
@@ -383,5 +385,10 @@ body.game * {
     }
     .show-ans {
         margin-bottom: 15vw;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .game-question-text p {
+        font-size: 1.5em;
     }
 }
