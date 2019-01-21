@@ -106,7 +106,7 @@
             <!-- <p>{topic.opening}</p>
             <p>{topic.question}</p> -->
         </div>
-        <div class="game-answer-sample" style=""></div>
+        <div class="game-answer-sample" style="" onclick="fullscreenHandler()"></div>
     </div>
     <div id="questionImg" class="game-question-img" style=""></div>
     <div class="game-option-img" style="">
@@ -136,6 +136,39 @@
 <script src="js/moduale.js"></script>
 <script src="js/youtube-cover.js"></script>
 
+<script>
+    function fullscreenHandler() {
+        var isFullScreen = false;
+
+        var elem = document.documentElement;
+        //openFullscreen
+        if(!isFullScreen) {
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) { /* Firefox */
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE/Edge */
+            elem.msRequestFullscreen();
+        }
+        isFullScreen = !isFullScreen;
+        }   
+        //closeFullscreen
+        if(isFullScreen) {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+        isFullScreen = !isFullScreen;
+        }
+    }
+</script>
 <script> 
     var currentTopic = {};
     var path = '';
@@ -200,6 +233,11 @@
                     view.playClickSound();
                     view.checkCard();
                     view.set.selectCard = currentCard;
+
+                    if(window.innerWidth > window.innerHeight) {
+                        $('.game-card').animate({'bottom': '-50vh'}, 300);
+                    }
+
                 }
                 if(isSelected) {
                     $(this).removeClass('active');
@@ -218,12 +256,20 @@
                     currentCard = 0;
                     view.playClickSound();
                     view.set.selectCard = 0;
+
+                    if(window.innerWidth > window.innerHeight) {
+                        $('.game-card').animate({'bottom': '0'}, 300);
+                    }
                 }
                 if(isNotEmpty && view.set.selectCard !== false ) {
                     var removeCard = parseInt($(this).attr('data-showoption'));
                     $('.game-card a[data-card="' + removeCard + '"]').removeClass('active');                
                     $(this).removeAttr('data-showoption');
                     view.playClickSound();
+
+                    if(window.innerWidth > window.innerHeight) {
+                        $('.game-card').animate({'bottom': '0'}, 300);
+                    }
                 }
 
             });
