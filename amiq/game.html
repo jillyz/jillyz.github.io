@@ -75,8 +75,9 @@
   <meta name="apple-mobile-web-app-title" content="Amiq rent">
   <link rel="apple-touch-startup-image" href="img/launch.png">
   
-  <!-- <link rel="stylesheet" href="css/style.css"> -->
   <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/solid.css" integrity="sha384-+0VIRx+yz1WBcCTXBkVQYIBVNEFH1eP6Zknm16roZCyeNg2maWEpk/l/KsyFKs7G" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css" integrity="sha384-jLuaxTTBR42U2qJ/pm4JRouHkEDHkVqH0T1nyQXn1mZ7Snycpf6Rl25VBNthU4z0" crossorigin="anonymous">
 
   <!-- Hotjar Tracking Code for https://jillyz.github.io/amiq/ -->
   <script>
@@ -124,8 +125,10 @@
     <div class="show-ans">
         <button style=""></button>
     </div>
-    <div>
-
+    <div class="tool">
+        <img onclick="fullscreenHandler()" src="img/game/expand-solid.svg" alt="全螢幕" />
+        <img onclick="fullscreenHandler()" src="img/game/compress-solid.svg" alt="結束全螢幕" />
+        <img src="img/game/bars-solid.svg" alt="選單" />
     </div>
 </div>
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/_62DNuOQIu8?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
@@ -176,6 +179,7 @@
     var currentTopic = {};
     var path = '';
     var topics = [
+        /*
         {
             'id': '102_1',
             'no': 'tgjua',
@@ -211,6 +215,26 @@
             'no': 'gbiudj',
             'opening': '春天來了！花開了，多令人愉悅的景象',
             'question': '找出相同的圖片',
+        },
+        
+        {
+            'id': '505_1',
+            'no': 'egbsi',
+            'opening': '找出左右對調的圖形',
+            'question': '',
+        },
+        */
+        {
+            'id': '506_3',
+            'no': 'zxvfo',
+            'opening': '這些自然中的事物會讓你聯想到什麼？',
+            'question': '',
+        },
+        {
+            'id': '506_4',
+            'no': 'sfubx',
+            'opening': '這些會讓你聯想到什麼用途或場景？',
+            'question': '',
         },
     ]
 
