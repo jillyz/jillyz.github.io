@@ -124,6 +124,9 @@
     <div class="show-ans">
         <button style=""></button>
     </div>
+    <div>
+
+    </div>
 </div>
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/_62DNuOQIu8?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 <!-- <audio id="bgMusic" autoplay loop>
@@ -216,6 +219,10 @@
             'selectCard': 0,
         },
         init : function() {
+            $('.show-ans').hide();
+            if(window.innerWidth > window.innerHeight) {
+                $('.game-option-img').hide();
+            }
             view.getTopic();
             view.renderCardList();
             view.renderOptionList();
@@ -229,22 +236,38 @@
                 var isSelected = !isUnselect;
                 if(isUnselect) {
                     currentCard = parseInt($(this).attr('data-card'));
-                    $(this).addClass('active');
+                    $(this).removeClass('ans').addClass('active');
                     view.playClickSound();
                     view.checkCard();
                     view.set.selectCard = currentCard;
 
                     if(window.innerWidth > window.innerHeight) {
                         $('.game-card').animate({'bottom': '-50vh'}, 300);
+                        $('.game-option-img').show();
                     }
 
+                    $('.game-option a').removeClass('flash').not('[data-showoption]').addClass('flash');
+                    
                 }
                 if(isSelected) {
+                    // var optionFull = $('.game-option a[data-showoption]').size() == 12;
+                    // if(optionFull) {
+                    //     $('.show-ans').show();
+                    // }
+
                     $(this).removeClass('active');
                     var removeCard = parseInt($(this).attr('data-card'));
                     $('.game-option a[data-showoption="' + removeCard + '"]').removeAttr('data-showoption');                
                     view.playClickSound();
                     view.set.selectCard = 0;
+                    
+
+                    if(window.innerWidth > window.innerHeight) {
+                        $('.game-option-img').hide();
+                    }
+
+                    $('.game-option a').removeClass('flash').not('[data-showoption]').addClass('flash');
+                    
                 }
             });
             $('.game-option a').click(function(){
@@ -257,19 +280,43 @@
                     view.playClickSound();
                     view.set.selectCard = 0;
 
-                    if(window.innerWidth > window.innerHeight) {
-                        $('.game-card').animate({'bottom': '0'}, 300);
-                    }
-                }
-                if(isNotEmpty && view.set.selectCard !== false ) {
-                    var removeCard = parseInt($(this).attr('data-showoption'));
-                    $('.game-card a[data-card="' + removeCard + '"]').removeClass('active');                
-                    $(this).removeAttr('data-showoption');
-                    view.playClickSound();
+                    
+                        var optionFull = $('.game-option a[data-showoption]').size() == 12;
+                        if(!optionFull) {
+                            if(window.innerWidth > window.innerHeight) {
+                                $('.game-card').animate({'bottom': '0'}, 200);
+                                $('.game-option-img').hide();
+                                
+                            }
+                            $('.game-option a').removeClass('flash');
+                        }  
+                        if(optionFull){
+                            var top = $('.game-option-img').offset().top;
+                            $("html").animate({"scrollTop": top});
+                            // $("html,body").animate({"scrollTop": top});
+                            $('.show-ans').show();
+                            $('.game-option-img').show();
+                        }
 
-                    if(window.innerWidth > window.innerHeight) {
-                        $('.game-card').animate({'bottom': '0'}, 300);
+                }
+                if(isNotEmpty) {
+                    var optionFull = $('.game-option a[data-showoption]').size() == 12;
+                    if(optionFull) {
+                        $('.show-ans').hide();
                     }
+
+                    if(view.set.selectCard !== false) {
+                        var removeCard = parseInt($(this).attr('data-showoption'));
+                        $('.game-card a[data-card="' + removeCard + '"]').removeClass('active');                
+                        $(this).removeAttr('data-showoption');
+                        view.playClickSound();
+
+                        if(window.innerWidth > window.innerHeight) {
+                            $('.game-card').animate({'bottom': '0'}, 200);
+                            $('.game-option-img').hide();
+                        }  
+                    }
+                  
                 }
 
             });
