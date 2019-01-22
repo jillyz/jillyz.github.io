@@ -311,7 +311,15 @@ body.game * {
     position: absolute;
     left: -100%;
 }
-
+.tool {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.tool img {
+    width: 5vh;
+    height: 5vh;
+}
 @media screen and (orientation: portrait) {
     .game-question-img {
         /* transform: scale(1.1); */
