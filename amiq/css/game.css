@@ -331,7 +331,26 @@ body.game * {
 .tool img {
     width: 1.5em;
     height: 1.5em;
+    opacity: .35;
 }
+.tool img:active {
+    opacity: .2;
+}
+#openFullScreen img {
+    -webkit-animation: hintToFS .5s infinite;
+    -moz-animation: hintToFS .5s infinite;
+    animation: hintToFS .5s infinite;
+}
+@-webkit-keyframes hintToFS {
+    50%{opacity: .9;}
+}
+@-moz-keyframes hintToFS {
+    50%{opacity: .9;}
+}
+@keyframes hintToFS { 
+    50%{opacity: .9;}
+}
+
 @media screen and (orientation: portrait) {
     .game-question-img {
         /* transform: scale(1.1); */
@@ -447,15 +466,15 @@ body.game * {
 @media screen and (orientation: landscape) and (max-width: 812px) {
     .game-question-sample {
         position: fixed;
-        top: 0;
+        top: 2.5em;
         left: 0;
-        width: 23vw;
+        width: 25vw;
         padding: 0 .5em;
     }
     .game-answer-sample {
         position: static;
         transform-origin: 0 0;
-        transform: scale(.9);
+        /* transform: scale(.9); */
     }
     .game-question-text {
         margin-left: 0;
@@ -466,9 +485,9 @@ body.game * {
         margin-top: 1vh;
     }
     .game-question-img, .game-option-img {
-        margin-right: 7em;
+        margin-right: -2vw;
         transform-origin: 100% 0;
-        transform: scale(0.8);
+        transform: scale(0.8) translate(3vw,0);
     }
     .game-option-img {
         margin-top: -8vw;
@@ -478,19 +497,34 @@ body.game * {
         top: calc( 100vw * (81/3200));
     }
     .tool {
-        width: 4em;
+        position: fixed;
+        top: 0.5em;
+        left: 0.5em;
+        right: auto;
+        /* width: 4em; */
         background-color: transparent;
     }
     .game-card {
         transform-origin: 65% 100%;
+        transform: scale(.4) translate(6vw,0);
     }
     .show-ans {
         position: fixed;
-        left: 0;
+        left: .5em;
         top: auto;
-        bottom: 0;
+        bottom: 15vh;
         margin-bottom: 0;
-        padding-left: .5em;
+        /* padding-left: .5em; */
+    }
+    .show-ans button:not(.ans):before {
+        font-size: 1.25em;
+    }
+    #openMenu {
+        transform: translate(-105%, 0);
+    }
+    #openFullScreen,
+    #exitFullScreen {
+        transform: translate(110%, 0);
     }
 }
 

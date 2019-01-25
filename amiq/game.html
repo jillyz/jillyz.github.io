@@ -129,7 +129,7 @@
     </div>
     <div class="show-ans">
         <button style=""></button>
-        <a class="back-topic">回到題目</a>
+        <!-- <a class="back-topic">回到題目</a> -->
     </div>
 </div>
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/_62DNuOQIu8?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
@@ -292,7 +292,9 @@
                         }  
                         if(optionFull){
                             var top = $('.game-option-img').offset().top;
-                            $("html").animate({"scrollTop": top});
+                            if(window.innerWidth >= 812) {
+                                $("html").animate({"scrollTop": top});
+                            }
                             // $("html,body").animate({"scrollTop": top});
                             $('.show-ans').show();
                             // $('.game-option-img').show();
@@ -311,7 +313,7 @@
                         $(this).removeAttr('data-showoption');
                         view.playClickSound();
 
-                        if(window.innerWidth > window.innerHeight) {
+                        if(window.innerWidth > window.innerHeight ) {
                             $('.game-card').animate({'bottom': '0'}, 200);
                             // $('.game-option-img').hide();
                         }  
