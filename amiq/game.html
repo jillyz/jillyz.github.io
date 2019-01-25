@@ -101,6 +101,11 @@
 
   <!-- <div id="top"></div> -->
 
+<div class="tool"> 
+    <span id="openFullScreen"><img src="img/game/expand-solid.svg" alt="全螢幕" /></span>
+    <span id="exitFullScreen"><img src="img/game/compress-solid.svg" alt="結束全螢幕" /></span>
+    <span id="openMenu"><img src="img/game/bars-solid.svg" alt="選單" /></span>
+</div>
   <div class="game-wrap">
     <div class="game-question-sample">
         <div id="question" class="game-question-text">
@@ -124,11 +129,7 @@
     </div>
     <div class="show-ans">
         <button style=""></button>
-    </div>
-    <div class="tool">
-        <img onclick="fullscreenHandler()" src="img/game/expand-solid.svg" alt="全螢幕" />
-        <img onclick="fullscreenHandler()" src="img/game/compress-solid.svg" alt="結束全螢幕" />
-        <img src="img/game/bars-solid.svg" alt="選單" />
+        <a class="back-topic">回到題目</a>
     </div>
 </div>
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/_62DNuOQIu8?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
@@ -143,43 +144,12 @@
 <!-- <script src="js/youtube-cover.js"></script> -->
 
 <script>
-    function fullscreenHandler() {
-        var isFullScreen = false;
-
-        var elem = document.documentElement;
-        //openFullscreen
-        if(!isFullScreen) {
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        } else if (elem.mozRequestFullScreen) { /* Firefox */
-            elem.mozRequestFullScreen();
-        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-            elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE/Edge */
-            elem.msRequestFullscreen();
-        }
-        isFullScreen = !isFullScreen;
-        }   
-        //closeFullscreen
-        if(isFullScreen) {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-        }
-        isFullScreen = !isFullScreen;
-        }
-    }
+    
 </script>
 <script> 
     var currentTopic = {};
     var path = '';
     var topics = [
-        /*
         {
             'id': '102_1',
             'no': 'tgjua',
@@ -223,11 +193,10 @@
             'opening': '找出左右對調的圖形',
             'question': '',
         },
-        */
         {
             'id': '506_3',
             'no': 'zxvfo',
-            'opening': '這些自然中的事物會讓你聯想到什麼？',
+            'opening': '這些自然中的事物和下方物品有所關聯',
             'question': '',
         },
         {
@@ -245,8 +214,9 @@
         init : function() {
             $('.show-ans').hide();
             if(window.innerWidth > window.innerHeight) {
-                $('.game-option-img').hide();
+                // $('.game-option-img').hide();
             }
+            $('#exitFullScreen').hide();
             view.getTopic();
             view.renderCardList();
             view.renderOptionList();
@@ -287,7 +257,7 @@
                     
 
                     if(window.innerWidth > window.innerHeight) {
-                        $('.game-option-img').hide();
+                        // $('.game-option-img').hide();
                     }
 
                     $('.game-option a').removeClass('flash').not('[data-showoption]').addClass('flash');
@@ -309,7 +279,7 @@
                         if(!optionFull) {
                             if(window.innerWidth > window.innerHeight) {
                                 $('.game-card').animate({'bottom': '0'}, 200);
-                                $('.game-option-img').hide();
+                                // $('.game-option-img').hide();
                                 
                             }
                             $('.game-option a').removeClass('flash');
@@ -319,7 +289,7 @@
                             $("html").animate({"scrollTop": top});
                             // $("html,body").animate({"scrollTop": top});
                             $('.show-ans').show();
-                            $('.game-option-img').show();
+                            // $('.game-option-img').show();
                         }
 
                 }
@@ -337,7 +307,7 @@
 
                         if(window.innerWidth > window.innerHeight) {
                             $('.game-card').animate({'bottom': '0'}, 200);
-                            $('.game-option-img').hide();
+                            // $('.game-option-img').hide();
                         }  
                     }
                   
@@ -367,6 +337,14 @@
             //     $(this).addClass('ans');
             //     console.log('ans!')
             // })
+
+            $('.back-topic').click(function(){
+                $("html").animate({"scrollTop": 0});
+            })
+
+            $('#openFullScreen, #exitFullScreen').click(function(){
+                view.fullscreenHandler();
+            })
 
         },
         getTopic: function(){
@@ -440,7 +418,7 @@
         },
         renderQuestion: function(){
             var opening = '<p>' + currentTopic.opening + '</p>';
-            var question = '<p>' + currentTopic.question + '</p>';
+            var question = '<p>' + (currentTopic.question ? currentTopic.question : '&nbsp;') + '</p>';
             $('#question').html( opening + question );
         },
         setImagePath: function(){
@@ -454,7 +432,40 @@
             var audio = new Audio( "sound/click.wav" );
             audio.play();
         },
-        
+        fullscreenHandler: function() {
+            var isFullScreen = false;
+
+            $('#openFullScreen').toggle();
+            $('#exitFullScreen').toggle();
+
+            var elem = document.documentElement;
+            //openFullscreen
+            if(!isFullScreen) {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.mozRequestFullScreen) { /* Firefox */
+                    elem.mozRequestFullScreen();
+                } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                    elem.msRequestFullscreen();
+                }
+                isFullScreen = !isFullScreen;
+            }   
+            //closeFullscreen
+            if(isFullScreen) {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+                isFullScreen = !isFullScreen;
+            }
+        }
     }
 
     $(function(){
