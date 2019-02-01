@@ -45,16 +45,19 @@ class PlayIntro extends React.Component {
             <h1>
               {/* <a onClick={this.props.goRent}> */}
               <a onClick={()=> this.goIntroRent()}>
-              <strong className="bigger">
-                <small className="text-amiq">AMIQ</small>
-                租
-              </strong>
+                <strong className="bigger">
+                  <small className="text-amiq">AMIQ</small>
+                  租
+                </strong>
               </a>
               <div className="cheap">比買更划算</div>
             </h1>
             <h2>充滿樂趣的邏輯思考遊戲<br/>大小朋友都愛玩</h2>
             <div className="read-more">
-              <a onClick={()=> this.goIntroAmiq()}>開始瞭解</a>
+              <a 
+                onClick={()=> this.goIntroAmiq()}>
+                開始瞭解
+              </a>
               {/* <a href="">如何租借</a> */}
             </div>
           </div>
@@ -138,11 +141,11 @@ class PlayIntro extends React.Component {
                 </li>
                 <li>
                   <img src="img/play/play_4.jpg" alt="畫面1"/>
-                  <span>3. 十二道題都解完了</span>
+                  <span>3. 十二道題都解完了．將黃色底板往上翻、蓋起來</span>
                 </li>
                 <li>
                   <img src="img/play/play_5.jpg" alt="畫面1"/>
-                  <span>4. 將公車板蓋上，對照背面圖案是否與正確答案一致</span>
+                  <span>4. 再將整塊公車板翻轉回來，對照數字塊的背面圖案是否與正確答案一致</span>
                 </li>
               </ul>
             </div>
