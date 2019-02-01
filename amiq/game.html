@@ -273,6 +273,13 @@
             $('.game-option a').click(function(){
                 var isEmpty = !($(this)[0].hasAttribute('data-showoption'));
                 var isNotEmpty = !isEmpty;
+                var isAnswerView = $(this).hasClass('ans');
+                if(isAnswerView) {
+                    $(this).removeClass('ans');
+                    $('.game-option a[data-showoption]').removeClass('ans');
+                    $(this).css('background-image', '');
+                    $('.game-option a').removeClass('ans');
+                }
 
                 if(isEmpty && view.set.selectCard > 0 ) {
                     $(this).attr('data-showoption',currentCard );
@@ -298,6 +305,7 @@
                             // $("html,body").animate({"scrollTop": top});
                             $('.show-ans').show();
                             // $('.game-option-img').show();
+                            $('.game-option a').removeClass('flash');
                         }
 
                 }
@@ -325,6 +333,7 @@
             $('.game-question-img').click(function(){
                 // setScrollIntoView('questionImg');
             })
+
             $('.show-ans button').click(function(){
                 var isAnswerView = $(this).hasClass('ans');
                 if(!isAnswerView) {
