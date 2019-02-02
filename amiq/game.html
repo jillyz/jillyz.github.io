@@ -234,11 +234,17 @@
             $('.game-card a').click(function(){
                 var isUnselect = !($(this).hasClass('active'));
                 var isSelected = !isUnselect;
+                var isPutting = view.set.selectCard > 0;
+
+                if(isPutting) {
+                    var prevCard = view.set.selectCard;
+                    $('.game-card a[data-card="' + prevCard + '"]').removeClass('ans').removeClass('active');
+                }
+
                 if(isUnselect) {
-                    currentCard = parseInt($(this).attr('data-card'));
+                    var currentCard = parseInt($(this).attr('data-card'));
                     $(this).removeClass('ans').addClass('active');
                     view.playClickSound();
-                    view.checkCard();
                     view.set.selectCard = currentCard;
 
                     if(window.innerWidth > window.innerHeight) {
@@ -272,11 +278,14 @@
                     $('.game-option a').removeClass('flash');
                     
                 }
+
+                console.log('view.set.selectCard', view.set.selectCard)
             });
             $('.game-option a').click(function(){
                 var isEmpty = !($(this)[0].hasAttribute('data-showoption'));
                 var isNotEmpty = !isEmpty;
                 var isAnswerView = $(this).hasClass('ans');
+                var isPutting = view.set.selectCard > 0;
                 if(isAnswerView) {
                     $(this).removeClass('ans');
                     $('.game-option a[data-showoption]').removeClass('ans');
@@ -284,9 +293,8 @@
                     $('.game-option a').removeClass('ans');
                 }
 
-                if(isEmpty && view.set.selectCard > 0 ) {
-                    $(this).attr('data-showoption',currentCard );
-                    currentCard = 0;
+                if(isEmpty && isPutting ) {
+                    $(this).attr('data-showoption', view.set.selectCard );
                     view.playClickSound();
                     view.set.selectCard = 0;
 
@@ -331,6 +339,8 @@
                     }
                   
                 }
+
+                console.log('view.set.selectCard', view.set.selectCard)
 
             });
             $('.game-question-img').click(function(){
@@ -444,9 +454,6 @@
         setImagePath: function(){
             path = 'url(img/game/topic/' + currentTopic.id + '_' + currentTopic.no + '.jpg';
             $('.game-answer-sample, .game-question-img, .game-option-img, .show-ans button.ans').css('background-image', path);
-        },
-        checkCard: function(){
-
         },
         playClickSound: function(){
             var audio = new Audio( "sound/click.wav" );
