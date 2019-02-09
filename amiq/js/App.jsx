@@ -265,7 +265,7 @@ class App extends React.Component {
     }
     return(
       <header id="header" className="header">
-        <a href="#index" className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntroView()} data-value="Index"><i className="icon fa fa-home" aria-hidden="true"></i> 邏輯教具AMIQ</a>
+        <a href="#index" className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntroView()} data-value="Index"><i className="icon fa fa-home" aria-hidden="true" data-value="Index"></i> 邏輯教具AMIQ</a>
         <a href="#catalog" className={inCatalog ? 'link active' : 'link'} onClick={()=> this.showCatalogView()} data-value="Catalog">目錄</a>
         <a href="#rent-terms" className={inRent ? 'link active' : 'link'} onClick={()=> this.showRentView()} data-value="Rent">租借及費用</a>
         {/* <a href="#game" className={inGame ? 'link active' : 'link'} onClick={()=> this.showGameView()} data-value="Game">遊戲</a> */}
