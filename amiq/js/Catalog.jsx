@@ -65,7 +65,7 @@ class Catalog extends React.Component {
                 window.booksData.push(books);
               })            
             })
-            console.table(window.booksData);
+            // console.table(window.booksData);
 
           }, 500);
         }
@@ -401,7 +401,7 @@ class Catalog extends React.Component {
     } 
     else if (isRented && !isPassed) {
       return(
-        <div className="rent-state already" key={`rent_state_already_${bookId}`}><span className="state">已借出</span><span className="rent-date">{this.formatDateStr(fromTime)} 借 ~ {this.formatDateStr(toTime)} 還</span></div>
+        <div className="rent-state already" key={`rent_state_already_${bookId}`}><span className="state">借閱中</span><span className="rent-date">{this.formatDateStr(fromTime)} 借 ~ {this.formatDateStr(toTime)} 還</span></div>
       )
     }
   }
