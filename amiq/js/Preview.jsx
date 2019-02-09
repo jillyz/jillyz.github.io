@@ -120,7 +120,7 @@ class Preview extends React.Component {
       topics:[],
       style: {
         'backgroundImage': 'url(img/content/amiq' + id + '.jpg)'
-      },
+      },  
       showLoading: true,
     })
 
@@ -132,18 +132,18 @@ class Preview extends React.Component {
         this.setState({
           content: res.content,
           topics: res.topics ? res.topics : [],          
-          showLoading: false
+          showLoading: false,
         })
 
         // console.log('//----------------------')
         // console.log('preview: ' , guid, 'content: ')
         // console.log(this.state.content)
         // console.log('preview topics: ')
-        console.table(this.state.topics)
+        //// console.table(this.state.topics)
         // console.log('preview previewGuid: ')
-        console.table(this.state.previewGuid)
+        //// console.table(this.state.previewGuid)
         // console.log('preview style: ')
-        console.table(this.state.style)
+        //// console.table(this.state.style)
         // console.log('//----------------------')
       },
       complete: () => {

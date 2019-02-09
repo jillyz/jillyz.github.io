@@ -40,19 +40,19 @@ class Rent extends React.Component {
     var page = location.href.split('#')[1];
     if(page) {
       switch(page){
-        case 'rent-terms':
+        case 'rent/terms':
           this.setState({
             showLoading: true,
             step: 1
           })
           break;
-        case 'rent-form':
+        case 'rent/form':
           this.setState({
             showLoading: true,
             step: 2
           })
           break;
-        case 'rent-notify':
+        case 'rent/notify':
           this.setState({
             showLoading: true,
             step: 3
@@ -63,7 +63,7 @@ class Rent extends React.Component {
       }
     }
     if (!page) {
-      location.hash = 'rent-terms';
+      location.hash = 'rent/terms';
     }
   }
   renderRentProcess(){
@@ -122,7 +122,7 @@ class Rent extends React.Component {
       showLoading: true,
       step: 1
     })
-    location.hash = 'rent-terms';
+    location.hash = 'rent/terms';
   }
   showRentFormHandler(){
     // window.open('https://docs.google.com/forms/d/e/1FAIpQLSdypAzaM8glHVhTUP9I4wNG1M-E9aUAujoAsB5qwiuAMCDEcQ/viewform' , '_blank');
@@ -137,14 +137,14 @@ class Rent extends React.Component {
         showLoading: false
       })
     })
-    location.hash = 'rent-form';
+    location.hash = 'rent/form';
   }
   showRentNotifyHandler(){
     this.setState({
       showLoading: true,
       step: 3
     })
-    location.hash = 'rent-notify';
+    location.hash = 'rent/notify';
   }
 
   render() {

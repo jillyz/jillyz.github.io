@@ -13,7 +13,7 @@ class Catalog extends React.Component {
       showGridImage: false,
       isPreview: false,
       book: '',
-      bookId: '',
+      // bookId: '',
       bookGuid: '',
       bookContent: '',
       isFilter: false,
@@ -30,6 +30,7 @@ class Catalog extends React.Component {
     this.switchListToGrid = this.switchListToGrid.bind(this);
     this.switchFilterPanel = this.switchFilterPanel.bind(this);
     // this.filterIfOverlayThenHideDrift = this. filterIfOverlayThenHideDrift.bind(this);
+    this.defaultPreview = this.defaultPreview.bind(this);
     this.previewShow = this.previewShow.bind(this);
     this.previewHide = this.previewHide.bind(this);
     this.onKeyDownPreviewHide = this.onKeyDownPreviewHide.bind(this);
@@ -45,7 +46,7 @@ class Catalog extends React.Component {
 
     this.setState({showLoading: true});
 
-    var that = this;
+    var _this = this;
     if(window.bookStageData == undefined) {
       $.ajax({
         url: 'data/data.json',
@@ -53,7 +54,7 @@ class Catalog extends React.Component {
         type: 'GET',
         success: function(response) {
           setTimeout( () => {
-            that.setState({
+            _this.setState({
               data: response,
               showLoading: false
             });
@@ -66,10 +67,12 @@ class Catalog extends React.Component {
               })            
             })
             // console.table(window.booksData);
+            _this.defaultPreview();
 
           }, 500);
         }
       });
+      
     } 
     else {
       setTimeout( () => {
@@ -83,6 +86,8 @@ class Catalog extends React.Component {
         });
       },500);
     }
+
+    
     
     // this.onError();
     // this.filterIfOverlayThenHideDrift();
@@ -341,6 +346,23 @@ class Catalog extends React.Component {
   //   });
   // }
 
+  defaultPreview(){
+    var page = location.href.split('#')[1];
+    switch(true){
+      case /catalog\/book/.test(page):
+        const bookID = parseInt(page.split('/')[2]);
+        this.setState({
+          bookId: bookID
+        })
+        window.booksData.map(book=> {
+          if(book.id == bookID) {
+            this.previewShow(book);     
+          }
+        })
+        break;
+    }
+  }
+
   previewShow(book){
     document.body.style.overflow = 'hidden';
     this.setState({
@@ -349,6 +371,9 @@ class Catalog extends React.Component {
       bookId: book.id,
       bookGuid: book.guid
     })
+    location.hash = 'catalog/book/' + book.id
+
+    // console.log(book)
 
     // drift.on('ready',function(api, payload) {
     //   api.widget.hide();
@@ -364,6 +389,7 @@ class Catalog extends React.Component {
       isPreview: false,
       book: ''
     })
+    location.hash = 'catalog'
 
     // drift.on('ready',function(api, payload) {
     //   api.widget.show();

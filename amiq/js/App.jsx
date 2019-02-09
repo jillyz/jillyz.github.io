@@ -107,8 +107,8 @@ class App extends React.Component {
   setRouter(){
     var page = location.href.split('#')[1];
     if(page) {
-      switch(page){
-        case 'index':
+      switch(true){
+        case /index/.test(page):
           this.setState({
             showPlayIntroView: true,
             showCatalogView: false,
@@ -116,9 +116,10 @@ class App extends React.Component {
             showGameView: false
           })
           break;
-        case 'rent-terms':
-        case 'rent-form':
-        case 'rent-notify':
+        // case 'rent-terms':
+        // case 'rent-form':
+        // case 'rent-notify':
+        case /rent/.test(page):
           this.setState({
             showPlayIntroView: false,
             showCatalogView: false,
@@ -126,7 +127,8 @@ class App extends React.Component {
             showGameView: false
           })
           break;
-        case 'catalog':
+        case /catalog/.test(page):
+        case /catalog\/book/.test(page):
           this.setState({
             showPlayIntroView: false,
             showCatalogView: true,
@@ -134,15 +136,13 @@ class App extends React.Component {
             showGameView: false
           })
           break;
-        case 'game':
+        case /game/.test(page):
           this.setState({
             showPlayIntroView: false,
             showCatalogView: false,
             showRentView: false,
             showGameView: true
           })
-          break;
-        default:
           break;
       }
     }
@@ -237,7 +237,7 @@ class App extends React.Component {
       showRentView: true,
       showGameView: false
     })
-    location.hash = 'rent-terms';
+    location.hash = 'rent/terms';
     setScrollIntoView();
   }
 
@@ -267,7 +267,7 @@ class App extends React.Component {
       <header id="header" className="header">
         <a href="#index" className={inHome ? 'link active' : 'link'} onClick={()=> this.showPlayIntroView()} data-value="Index"><i className="icon fa fa-home" aria-hidden="true" data-value="Index"></i> 邏輯教具AMIQ</a>
         <a href="#catalog" className={inCatalog ? 'link active' : 'link'} onClick={()=> this.showCatalogView()} data-value="Catalog">目錄</a>
-        <a href="#rent-terms" className={inRent ? 'link active' : 'link'} onClick={()=> this.showRentView()} data-value="Rent">租借及費用</a>
+        <a href="#rent/terms" className={inRent ? 'link active' : 'link'} onClick={()=> this.showRentView()} data-value="Rent">租借及費用</a>
         {/* <a href="#game" className={inGame ? 'link active' : 'link'} onClick={()=> this.showGameView()} data-value="Game">遊戲</a> */}
         <span className="indicator-bar"></span>
         <span className={indicatorClassName()}></span>
