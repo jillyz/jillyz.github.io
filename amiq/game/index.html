@@ -51,7 +51,7 @@
   <meta property="og:description" content="AMIQ邏輯教具出租 租比買更划算" >
 
   <!--呈現在網頁名稱左方的小icon-->
-  <link rel="icon" href="img/appicon/touch-icon-iphone.png">
+  <link rel="icon" href="../img/appicon/touch-icon-iphone.png">
   <!--用戶將網頁收藏為書籤並加到主畫面時，可以令最下的選單消失，令網頁變為全屏幕-->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="format-detection" content="telephone=yes">
@@ -69,13 +69,13 @@
   <!-- iOS Safari -->
   <meta name="apple-mobile-web-app-status-bar-style" content="#fff">
 
-  <link rel="shortcut icon" href="img/appicon/touch-icon-iphone.png" type="image/png" />
-  <link rel="apple-touch-icon" href="img/appicon/touch-icon-iphone.png"/>
+  <link rel="shortcut icon" href="../img/appicon/touch-icon-iphone.png" type="image/png" />
+  <link rel="apple-touch-icon" href="../img/appicon/touch-icon-iphone.png"/>
   
   <meta name="apple-mobile-web-app-title" content="Amiq rent">
-  <link rel="apple-touch-startup-image" href="img/launch.png">
+  <link rel="apple-touch-startup-image" href="../img/launch.png">
   
-  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="game.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/solid.css" integrity="sha384-+0VIRx+yz1WBcCTXBkVQYIBVNEFH1eP6Zknm16roZCyeNg2maWEpk/l/KsyFKs7G" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css" integrity="sha384-jLuaxTTBR42U2qJ/pm4JRouHkEDHkVqH0T1nyQXn1mZ7Snycpf6Rl25VBNthU4z0" crossorigin="anonymous">
 
@@ -102,9 +102,9 @@
   <!-- <div id="top"></div> -->
 
 <div class="tool"> 
-    <span id="openFullScreen"><img src="img/game/expand-solid.svg" alt="全螢幕" /></span>
-    <span id="exitFullScreen"><img src="img/game/compress-solid.svg" alt="結束全螢幕" /></span>
-    <span id="openMenu"><img src="img/game/bars-solid.svg" alt="選單" /></span>
+    <span id="openFullScreen"><img src="img/expand-solid.svg" alt="全螢幕" /></span>
+    <span id="exitFullScreen"><img src="img/compress-solid.svg" alt="結束全螢幕" /></span>
+    <span id="openMenu"><img src="img/bars-solid.svg" alt="選單" /></span>
 </div>
   <div class="game-wrap">
     <div class="game-question-sample">
@@ -139,8 +139,9 @@
 
 <!-- <div id="player" class="bgm"></div> -->
 
-<script src="js/libs/jquery.min.js"></script>
-<script src="js/moduale.js"></script>
+<script src="../js/libs/jquery.min.js"></script>
+<!-- <script src="../js/moduale.js"></script> -->
+<script src="game_topic.js"></script>
 <!-- <script src="js/youtube-cover.js"></script> -->
 
 <script>
@@ -149,70 +150,6 @@
 <script> 
     var currentTopic = {};
     var path = '';
-    var topics = [
-        {
-            'id': '102_1',
-            'no': 'tgjua',
-            'opening': '這些水果看起來真好吃',
-            'question': '找出相同的數量',
-        },
-        {
-            'id': '102_6',
-            'no': 'abcde',
-            'opening': '文具店可以買到筆紙橡皮擦',
-            'question': '數一數找出符合的數量',
-        },
-        {
-            'id': '106_1',
-            'no': 'rdjov',
-            'opening': '早安！起床準備上學囉',
-            'question': '找出符合的睡衣和襪子唷',
-        },
-        {
-            'id': '106_6',
-            'no': 'csgrm',
-            'opening': '彼得畫了這張美麗的圖',
-            'question': '他用了哪些顏色呢？請指出來',
-        },
-        {
-            'id': '106_7',
-            'no': 'sbjkw',
-            'opening': '這些有趣的拼圖，每個都少了一片',
-            'question': '找出少掉的一片',
-        },
-        {
-            'id': '107_2',
-            'no': 'hdpke',
-            'opening': '早餐過後，爸爸看報紙，我和小狗玩',
-            'question': '找出一樣的圖片',
-        },
-        {
-            'id': '115_1',
-            'no': 'gbiudj',
-            'opening': '春天來了！花開了，多令人愉悅的景象',
-            'question': '找出相同的圖片',
-        },
-        
-        {
-            'id': '505_1',
-            'no': 'egbsi',
-            'opening': '找出左右對調的圖形',
-            'question': '',
-        },
-        {
-            'id': '506_3',
-            'no': 'zxvfo',
-            'opening': '這些自然中的事物和下方物品有所關聯',
-            'question': '',
-        },
-        {
-            'id': '506_4',
-            'no': 'sfubx',
-            'opening': '這些會讓你聯想到什麼用途或場景？',
-            'question': '',
-        },
-    ]
-
     var view = {
         set: {
             'selectCard': 0,
@@ -378,7 +315,8 @@
 
         },
         getTopic: function(){
-            var defaultTopicId = view.getParameter('t');
+            // var defaultTopicId = view.getParameter('t');
+            var defaultTopicId = location.hash.split('#')[1];
             if(defaultTopicId !== undefined) {
                 topics.forEach(function(item){
                     if(item.id == defaultTopicId) {
@@ -398,6 +336,7 @@
         getRandomTopic: function () {
             var topic = topics[Math.floor(Math.random() * topics.length)];
             currentTopic=  topic;
+            location.hash = currentTopic.id;
         },
         getParameter: function(variable){
             var query = window.location.search.substring(1);
@@ -452,7 +391,7 @@
             $('#question').html( opening + question );
         },
         setImagePath: function(){
-            path = 'url(img/game/topic/' + currentTopic.id + '_' + currentTopic.no + '.jpg';
+            path = 'url(img/topic/' + currentTopic.id + '_' + currentTopic.no + '.jpg';
             $('.game-answer-sample, .game-question-img, .game-option-img, .show-ans button.ans').css('background-image', path);
         },
         playClickSound: function(){

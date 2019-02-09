@@ -16,6 +16,9 @@ body.game * {
     box-sizing: border-box;
     font-family: 'Roboto','RobotoDraft','Heiti TC','Microsoft JhengHei',Helvetica,Arial,sans-serif;
 }
+a,.show-ans button {
+    cursor: pointer;
+}
 .game-wrap {
     margin: 0 auto;
     text-align: center;
@@ -145,7 +148,7 @@ body.game * {
 .game-option a {
     position: relative;
     margin-bottom: -5px;
-    background: url(../img/game/card_pattern.svg) no-repeat;
+    background: url(img/card_pattern.svg) no-repeat;
     background-size: calc( 100vw * (479/3200) * 6);
     background-position: -100%;
     border-radius: 2vw;
