@@ -85,8 +85,16 @@ class Game extends React.Component {
         $('.show-ans button').click(function(){
             $('.game-option a[data-showoption]').addClass('ans');
             $(this).addClass('ans');
-            console.log('ans!')
+            console.log('ans!');
         })
+
+        function checkOption (){
+            var options = [];
+
+        }
+
+        var bgMusic = document.getElementById("bgMusic"); 
+        bgMusic.play;
 
     }
     componentDidUpdate(prevProps, prevState) {
@@ -137,7 +145,8 @@ class Game extends React.Component {
         const topic = this.state.currentTopic;
         const style = {
             backgroundImage: `url(./img/game/topic/${topic.id}_${topic.no}.jpg`,
-            backgroundRepeat: 'no-repeat'
+            backgroundRepeat: 'no-repeat',
+            // backgroundPosition: '-100% -100%'
         };
         return (
             <div className="game-wrap">
@@ -166,7 +175,12 @@ class Game extends React.Component {
                 </div> */}
                 <div className="show-ans">
                     <button style={style}></button>
-                </div>             
+                </div>
+
+                <audio id="bgMusic">
+                    <source src="../sound/bg.mp3" type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                </audio>           
             </div>
         )
 

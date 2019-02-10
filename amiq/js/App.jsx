@@ -136,13 +136,13 @@ class App extends React.Component {
             showGameView: false
           })
           break;
-        case /game/.test(page):
-          this.setState({
-            showPlayIntroView: false,
-            showCatalogView: false,
-            showRentView: false,
-            showGameView: true
-          })
+        // case /game/.test(page):
+        //   this.setState({
+        //     showPlayIntroView: false,
+        //     showCatalogView: false,
+        //     showRentView: false,
+        //     showGameView: true
+        //   })
           break;
       }
     }

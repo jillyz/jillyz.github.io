@@ -86,8 +86,6 @@ class Catalog extends React.Component {
         });
       },500);
     }
-
-    
     
     // this.onError();
     // this.filterIfOverlayThenHideDrift();
