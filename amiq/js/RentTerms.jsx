@@ -91,7 +91,7 @@ class RentTerms extends React.Component {
                   <span className="text-highlight-sample">【範例】：以租借 2 本和 1/14 須歸還為例，若續借延長至 1/16 再歸還，則為延長 2 天，2 本延長 2 天總共加收 40 元。</span>
                 </li>
                 <li>
-                  <span className="text-highlight">出租內容物：</span><br/>遊戲公車板 1 片 ，<br/>遊戲本（一次最多借閱 5 本）(題目為英文)，<br/>不含點讀筆。
+                  <span className="text-highlight">出租內容物：</span><br/>遊戲公車板 1 片 ，<br/>遊戲本（一次最多借閱 5 本）（題目為英文，每本 10 題，每題都有上下頁，共 20 頁），<br/>不含點讀筆。
                 </li>
               </ul>
             
@@ -99,9 +99,48 @@ class RentTerms extends React.Component {
               <ul className="no-list-style">
                 {/* <li>本出租服務以【台中市】【面交】為主。<br/>若外縣市的您仍有租借需求，對於支付運費也可接受，可再至 Messenger 洽談租借數量及運費。</li> */}
                 <li>台中市優先採用面交，亦可郵寄。外縣市一律郵寄。</li>
-                <li>面交地點為：台中市臺灣大道及文心路交界一帶。</li>
-                <li>郵寄需支付運費，視您租借數量而定，請再至 Messenger 詢問。</li>               
+                <li>面交地點為：
+                  <a className="address" target="_blank" href="https://www.google.com.tw/maps/place/7-ELEVEN+%E6%A1%82%E5%86%A0%E9%96%80%E5%B8%82/@24.1623719,120.6515811,17z/data=!3m1!4b1!4m5!3m4!1s0x34693d8589fe853d:0x7850c53f3db52e06!8m2!3d24.1623719!4d120.6537698">
+                  7-ELEVEN 桂冠門市（台中市西屯區四川路120號1樓）
+                  </a> 
+                    （台中市臺灣大道及文心路交界一帶）</li>
+                <li>郵寄需支付運費，運費 60 元（郵局便利袋在一公斤以內的運費為 60 元）</li>               
               </ul>
+
+              <div className="other-terms">
+                <div className="other-terms-item">
+                  <input id="rentFaceToFace" type="checkbox"/>
+                  <label htmlFor="rentFaceToFace">
+                    <h4>【面交租借】詳細流程</h4> 
+                  </label>
+                  <div className="other-terms-item-content">
+                    <p>
+                      請預約登記，並用 Messenger 通知已登記 → 告知您費用，雙方約面交 → 面交當天為您的租借日 → 隔天開始您的借閱期間（天數參考上表）→ 借期結束的隔天為歸還日，再次雙方面交，確認物品狀況後會現場退還押金給您
+                    </p>
+                  </div>
+                </div>
+
+                <div className="other-terms-item">
+                  <input id="rentMailing" type="checkbox"/>
+                  <label htmlFor="rentMailing">
+                    <h4>【郵寄租借】詳細流程及須知</h4> 
+                  </label>
+                  <div className="other-terms-item-content">
+                    <p>
+                      請預約登記，並用 Messenger 通知已登記 → 告知您費用及銀行帳號，請您提供收件人姓名及地址 → 確認收到費用後為您寄出 → 您收到的當天為租借日 → 隔天開始您的借閱期間（天數參考上表）→ 借期結束的隔天為歸還日，再請您自行寄回（以郵寄收據日期為依據） → 我收到後會確認物品狀況，並退還押金給您
+                    </p>
+                    <ul>
+                      <li>付款後的隔日早上會寄出物品。如果急需隔天收到，請於中午12點前完成付款，當天中午會盡快為您寄出。</li>
+                      <li>若是週一到週四寄出，通常隔日可收到。</li>
+                      <li>若是週五寄出、或遇國定假日，則不保證隔日能收到，會以收到物品的當天為租借日（請再告知收到日期），借期和歸還日也整個往後順延。</li>
+                      <li>歸還日若遇假日，您可以選擇延長借期，或是多借一本跨過假日，或是前後調整您的租借日及借期。</li>
+                      <li>若有必須於指定日期收到的需求，請您務必提前預約。</li>
+                      <li>轉帳銀行若非玉山銀行，會跟您酌收 15 元轉帳費。</li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
 
               <h4>【敬請愛惜物品】</h4> 
               <p>因為自己家裡小朋友仍在使用這套教具，所以希望各位爸爸媽媽在租借後，也能如同自己的東西般愛惜它們唷！也請各位爸爸媽媽提醒小朋友們要愛惜這些物品唷！非常感謝您！</p>

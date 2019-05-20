@@ -2501,6 +2501,22 @@ body.fix-menu .list-type-menu a {
     color: #999;
     white-space: nowrap;
 }
+/* Scrollbar Styling */
+.filter::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+.filter::-webkit-scrollbar-track {
+    background-color: #ebebeb;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.filter::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #cecece; 
+}
 @media screen and (max-width: 600px) {
     .filter {
         top: auto;
@@ -2554,13 +2570,17 @@ body.fix-menu .list-type-menu a {
     padding: .5em 1em;
     font-size: .875rem;
     background-color: #fff;
-    color: #343a40;
+    color: #999;
     border: 1px solid #ccc;
     border-radius: .25em;
-    /*cursor: pointer;*/
+    cursor: pointer;
     /* -webkit-transition: .15s all;
     -o-transition: .15s all;
     transition: .15s all; */
+}
+.filter label:hover {
+    border-color: #343a40;
+    color: #343a40;
 }
 
 .filter:checked + label {
@@ -2828,6 +2848,12 @@ body.fix-menu .list-type-menu a {
         font-size: 24px;
     }
 }
+.address {
+    padding-left: 2em;
+    background: url(../img/google_maps.png) center left no-repeat;
+    background-size: 1.5em 1.5em;
+    color: #056abc;
+}
 .other-terms label {
     display: block;
     line-height: 1.5;
@@ -2868,8 +2894,11 @@ body.fix-menu .list-type-menu a {
     font-size: 1em;
 }
 .other-terms-item {
-    padding: 1em 0;
+    padding: 1em;
     border-top: 1px dotted #ddd;
+}
+.other-terms-item:last-child {
+    border-bottom: 1px dotted #ddd;
 }
 .other-terms-item ul {
     padding-left: 1em;
