@@ -164,9 +164,9 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
         <!-- bottomTab content -->
         <div id="Category" class="tabcontent" data-open="false">
             <div class="GameCategory">
-					<div class="close-arrow-btn" onclick="toggleBottomTabPanel('Category')">
-							<img class="close-arrow" src="images/mobile/close-arrow.svg">
-						</div>
+				<div class="close-arrow-btn" onclick="toggleBottomTabPanel('Category')">
+					<img class="close-arrow" src="images/mobile/close-arrow.svg">
+				</div>
                 <ul class="Info-row">
                     <li class="Info-col">
                         <a class="CategoryImg Img_01 subNavImageSpecial"></a>
@@ -267,8 +267,10 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 		<div id="Search" class="tabcontent" data-open="false">
 				<div class="searchArea">
 					<div class="searchBox">
-						<img class="magnifier" src="images/mobile/magnifying.svg">
 						<input type="search" placeholder="Search by Game Name" onsearch="loadData()">
+						<div class="closeSearch" onclick="toggleBottomTabPanel('Search')">
+							<img src="images/mobile/close.svg">
+						</div>
 					</div>
 					<div class="search-result">
 						<div class="no-result">
@@ -373,8 +375,14 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 				return;
 			}
 			if(isSearch) {
-				if(open === 'true') $('.searchBox input[type="search"]').blur();
-				if(open === 'false') $('.searchBox input[type="search"]').focus();
+				if(open === 'true') {
+					$('.searchBox input[type="search"]').blur();
+					$('.tab').removeClass('hide');
+				}
+				if(open === 'false') {
+					$('.searchBox input[type="search"]').focus();
+					$('.tab').addClass('hide');
+				}
 			}
 			// to close
 			if(open === 'true') {
