@@ -375,10 +375,14 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 				return;
 			}
 			if(isSearch) {
+				// to close
 				if(open === 'true') {
 					$('.searchBox input[type="search"]').blur();
-					$('.tab').removeClass('hide');
+					setTimeout(function(){
+						$('.tab').removeClass('hide');
+					},500)
 				}
+				// to open
 				if(open === 'false') {
 					$('.searchBox input[type="search"]').focus();
 					$('.tab').addClass('hide');
