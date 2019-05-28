@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+.bg1 {
+	height: 41px;
+	width: 16px;
+	background-image: url(../../images/mobile/Voucher/bg1.png);
+	float: left;
+	background-repeat: no-repeat
+}
+
+.bg2 {
+	height: 41px;
+	background-image: url(../../images/mobile/Voucher/bg2.png);
+	display: inline-block;
+	background-repeat: repeat-x;
+	float: left
+}
+
+.bg3 {
+	height: 41px;
+	width: 49px;
+	background-image: url(../../images/mobile/Voucher/bg3.png);
+	background-repeat: no-repeat;
+	float: left
+}
+
+.bg4 {
+	height: 41px;
+	width: 50px;
+	background-image: url(../../images/mobile/Voucher/bg4.png);
+	background-repeat: no-repeat;
+	float: left
+}
+
+h3 {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 9px;
+	color: #233b7a;
+	font-weight: 700;
+	margin: 3px 0 0 5px
+}
+
+h1 {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	color: #ed1c24;
+	font-weight: 700;
+	margin: 0 0 0 5px;
+	font-style: italic;
+	position: absolute
+}
+
+.h1white {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	margin: -14px 0 0 5px;
+	font-style: italic;
+	-webkit-text-stroke: 3px #fff;
+	-webkit-text-fill-color: #ed1c24;
+	position: absolute
+}
+
+h2 {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 10px;
+	color: #233b7a;
+	font-weight: 700;
+	margin: 14px 0 0 21px
+}
+
+.slots_icon {
+	width: 15px;
+	height: 10px;
+	background-image: url(../../images/mobile/Voucher/slots.png);
+	background-size: cover;
+	margin: 14px 0 0 5px;
+	float: left;
+	background-size: cover
+}
+
+.voucher {
+	z-index: 100;
+	position: absolute;
+	margin-left: 10%;
+	margin-top: -10px
+}
