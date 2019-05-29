@@ -86,7 +86,7 @@ body {
 }
 
 .wrapper {
-	position: fixed; /* toPD */
+	/* position: fixed; */
 	top:0;
 	right:0;
 	left:0;
@@ -95,6 +95,8 @@ body {
 	overflow-y: auto;
 	background: #ccc;
 	resize: vertical;
+	/* -webkit-overflow-scrolling: touch; */
+	/* transform: translate3d(0,0,0); */
 }
 
 .screen {
@@ -148,7 +150,6 @@ body {
 	overflow-y: hidden;
 	-ms-overflow-style: none;
 	white-space: nowrap;
-	-webkit-overflow-scrolling: touch;
 }
 
 .prodLink {
@@ -235,6 +236,9 @@ body {
 	right: 0;
 	background-color: rgba(0,0,0,.8);
 	z-index: 11;
+	/* transform: translate3d(0,0,0); */
+}
+.bottomTab {
 	-webkit-overflow-scrolling: touch;
 }
 .bottomTab .tab {
@@ -249,7 +253,6 @@ body {
 	z-index: 25;
 	transform: translateY(0);
 	transition: all .15s;
-	-webkit-overflow-scrolling: touch;
 }
 .bottomTab .tab.hide {
 	transform: translateY(100%);
@@ -286,7 +289,7 @@ body {
 	overflow: auto;
 	max-height: calc(100vh - 80px);
 	z-index: 12;
-	-webkit-overflow-scrolling: touch;
+	transform: translate3d(0,0,0);
 }
 .bottomTab .GameCategory .close-arrow-btn {
 	display: block;
@@ -298,7 +301,7 @@ body {
 	right: 0;
 	z-index: 10;
 	background-color: #072a5c;
-	-webkit-overflow-scrolling: touch;
+	transform: translate3d(0,0,0);
 }
 .bottomTab .GameCategory .close-arrow{
 	display: inline-block;
@@ -383,7 +386,7 @@ body {
 	z-index: 30;
 	padding-bottom: 60px;
 	background-color: #fff;
-	-webkit-overflow-scrolling: touch;
+	transform: translate3d(0,0,0);
 }
 .searchBox {
 	background: #5a5a5a;
@@ -610,7 +613,7 @@ body {
 	background-color: rgba(0,0,0,.5);
 	z-index: 5;
 	vertical-align: middle;
-	-webkit-overflow-scrolling: touch; /*-- toPD --*/
+	transform: translate3d(0,0,0);
 }
 
 .page {
@@ -643,7 +646,7 @@ nav.navMenu {
 	transform: translate3d(0,0,0);
 	-webkit-transition: all .3s cubic-bezier(.32,1.25,.375,.98);
 	transition: all .3s cubic-bezier(.32,1.25,.375,.98);
-	z-index: 11
+	z-index: 11;
 }
 
 .page nav.navMenu ul {
