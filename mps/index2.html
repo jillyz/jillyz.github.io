@@ -424,12 +424,14 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 			$('#Category .Info-col a').on('click', function(){
 				$('#gamelist').addClass('hide');
 				$('#GameListArea').removeClass('hide');
-				$('.listContent h3').text('Recently Played');
+				var text = $(this).next('p').text();
+				$('.listContent h3').text(text);
 			})
 			$('#Providers .Info-col a').on('click', function(){
 				$('#gamelist').addClass('hide');
 				$('#GameListArea').removeClass('hide');
-				$('.listContent h3').text('Betradar');
+				var text = $(this).next('p').text();
+				$('.listContent h3').text(text);
 			})
 			
 			$(".searchBox input").keyup(function(){
