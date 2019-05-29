@@ -267,7 +267,7 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 		<div id="Search" class="tabcontent" data-open="false">
 				<div class="searchArea">
 					<div class="searchBox">
-						<input type="search" placeholder="Search by Game Name" onsearch="loadData()">
+						<input type="text" placeholder="Search by Game Name" onsearch="loadData()">
 						<div class="closeSearch" onclick="toggleBottomTabPanel('Search')">
 							<img src="images/mobile/close.svg">
 						</div>
@@ -369,23 +369,25 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 			$('.tablinks:not(.toggle'+id+')').removeClass('active');
 			if(isAllGames) {
 				$('#menuMask').hide();
-				$('#gamelist').show();
-				$('#GameListArea').hide();
+				$('#gamelist').removeClass('hide');
+				$('#GameListArea').addClass('hide');
 				$('.toggle'+id).addClass('active');
 				return;
 			}
 			if(isSearch) {
 				// to close
 				if(open === 'true') {
-					$('.searchBox input[type="search"]').blur();
+					$('.searchBox input').blur().val('');
 					setTimeout(function(){
 						$('.tab').removeClass('hide');
-					},500)
+					},300)
 				}
 				// to open
 				if(open === 'false') {
-					$('.searchBox input[type="search"]').focus();
+					$('.searchBox input').focus();
 					$('.tab').addClass('hide');
+					var n = $('.searchBox input').length;
+					if(n<=1) $('.search-result').hide();
 				}
 			}
 			// to close
@@ -393,7 +395,8 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 				$('.toggle'+id).removeClass('active');
 				$('#menuMask').hide();
 				// ele.attr('data-open','false');
-				$('.toggleAllGames').addClass('active');
+				var xx = $('#GameListArea').hasClass('hide');
+				if(!xx) ('.toggleAllGames').addClass('active');
 			}
 			// to open
 			if(open === 'false')  {
@@ -419,15 +422,22 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 
 			// ONLY FOR DEMO--------------------------------------
 			$('#Category .Info-col a').on('click', function(){
-				$('#gamelist').hide();
-				$('#GameListArea').show();
+				$('#gamelist').addClass('hide');
+				$('#GameListArea').removeClass('hide');
 				$('.listContent h3').text('Recently Played');
 			})
 			$('#Providers .Info-col a').on('click', function(){
-				$('#gamelist').hide();
-				$('#GameListArea').show();
+				$('#gamelist').addClass('hide');
+				$('#GameListArea').removeClass('hide');
 				$('.listContent h3').text('Betradar');
 			})
+			
+			$(".searchBox input").keyup(function(){
+				var len = $(this).val().length;
+				//英文長度2,中文長度1時,可搜尋
+				if(len>=2) $('.search-result').show();
+				if(len<2) $('.search-result').hide();
+			});
 			// ONLY FOR DEMO-------------------------------------
 
 
@@ -1839,7 +1849,7 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 			</div>
 		</div>
 		<!-- toPD Provider 或 Category 取代原先的 subpage //start-->
-		<div id="GameListArea" class="subPage" style="display: none;">
+		<div id="GameListArea" class="subPage hide">
 			<div class="listContent">
 				<h3>Recently Played</h3>
 				<ul class="GL_Row">
