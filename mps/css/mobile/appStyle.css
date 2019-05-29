@@ -271,7 +271,7 @@ body {
 	transition: all .35s;
 }
 .tabcontent[data-open="false"] > div {
-	transform: translateY(100%);
+	transform: translateY(125%);
 }
 .tabcontent[data-open="true"] > div {
 	transform: translateY(0);	
