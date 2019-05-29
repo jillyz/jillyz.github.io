@@ -372,6 +372,7 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 				$('#gamelist').removeClass('hide');
 				$('#GameListArea').addClass('hide');
 				$('.toggle'+id).addClass('active');
+				$('.header')[0].scrollIntoView();
 				return;
 			}
 			if(isSearch) {
@@ -384,6 +385,7 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 				}
 				// to open
 				if(open === 'false') {
+					// $('#Search')[0].scrollIntoView();
 					$('.searchBox input').focus();
 					$('.tab').addClass('hide');
 					var n = $('.searchBox input').length;
@@ -396,7 +398,10 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 				$('#menuMask').hide();
 				// ele.attr('data-open','false');
 				var xx = $('#GameListArea').hasClass('hide');
-				if(!xx) ('.toggleAllGames').addClass('active');
+				if(!xx) {
+					('.toggleAllGames').addClass('active');
+					$('#gamelist')[0].scrollIntoView();
+				}
 			}
 			// to open
 			if(open === 'false')  {
@@ -418,6 +423,7 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 				$(this).addClass('active');
 				$('#menuMask').hide();
 				$('.tabcontent').attr('data-open','false');
+				$('.header')[0].scrollIntoView();
 			})
 
 			// ONLY FOR DEMO--------------------------------------
@@ -443,18 +449,18 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 			// ONLY FOR DEMO-------------------------------------
 
 
-			var position = $(window).scrollTop();
-			$(window).scroll(function () {
-				var scroll = $(window).scrollTop();
-				if (scroll > position) {
-					$('.bottomTab .tab').hide();
+			// var position = $(window).scrollTop();
+			// $(window).scroll(function () {
+			// 	var scroll = $(window).scrollTop();
+			// 	if (scroll > position) {
+			// 		$('.bottomTab .tab').addClass('hide');
 					
-				}
-				else {
-					$('.bottomTab .tab').show();
-				}
-				position = scroll;
-			})
+			// 	}
+			// 	else {
+			// 		$('.bottomTab .tab').removeClass('hide');
+			// 	}
+			// 	position = scroll;
+			// })
 		
 
 		})
