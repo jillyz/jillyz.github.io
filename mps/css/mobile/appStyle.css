@@ -256,6 +256,7 @@ body {
 }
 .bottomTab .tab.hide {
 	transform: translateY(100%);
+	z-index: -1;
 }
 .bottomTab .tab button {
 	width: 100%;
@@ -375,7 +376,7 @@ body {
 } 
 
 #Search.tabcontent > div {
-	transition: all 0s !important;
+	/* transition: all 0s !important; */
 }
 .searchArea {
 	position: fixed;
