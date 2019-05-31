@@ -15,6 +15,26 @@
 <link href="https://img-1-12-2.cdnnetworks.net/css/mobile/css.css?family=Roboto+Condensed" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="css/mobile/CustomScrollbar.css">
 <link rel="stylesheet" type="text/css" href="css/mobile/casinoBanner.css">
+
+<!-- toPD: add new GTM & GA //start ================ -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PV4Z2TD');</script>
+<!-- End Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72189821-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72189821-5');
+</script>
+<!-- toPD: add new GTM & GA //end ================== -->
+
 <!--<script async="" src="https://static.hotjar.com/c/hotjar-954070.js?sv=6"></script>
 <script async="" src="https://script.hotjar.com/modules.f0cd2cef0113d1d5cf10.js"></script>-->
 <style type="text/css">
@@ -22,6 +42,13 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 </style>
 </head>
 <body style="">
+
+<!-- toPD: add new GTM //start -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV4Z2TD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- toPD: add new GTM //end -->
 
 <div id="loader" style="display: none;">
 	<div class="loader">
@@ -168,37 +195,38 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 					<img class="close-arrow" src="images/mobile/close-arrow.svg">
 				</div>
                 <ul class="Info-row">
-                    <li class="Info-col">
-                        <a class="CategoryImg Img_01 subNavImageSpecial"></a>
-                        <p>Recently Played</p>
+					<!-- 每一層 <li><a><p> 都加 data-value, 值為駝峰無空格的 CategoryName -->
+                    <li class="Info-col" data-value="RecentlyPlayed">
+                        <a class="CategoryImg Img_01 hasNewGame" data-value="RecentlyPlayed"></a>
+                        <p data-value="RecentlyPlayed">Recently Played</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="CategoryImg Img_02 subNavImageSpecial"></a>
-                        <p>Top Pick</p>
+					<li class="Info-col" data-value="TopPick">
+                        <a href="#" class="CategoryImg Img_02 hasNewGame" data-value="TopPick"></a>
+                        <p data-value="TopPick">Top Pick</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="CategoryImg Img_03 subNavImageSpecial"></a>
-                        <p>Scratch Cards</p>
+					<li class="Info-col" data-value="ScratchCards">
+                        <a href="#" class="CategoryImg Img_03 hasNewGame" data-value="ScratchCards"></a>
+                        <p data-value="ScratchCards">Scratch Cards</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="CategoryImg Img_04"></a>
-                        <p>Slots</p>
+					<li class="Info-col" data-value="Slots">
+                        <a href="#" class="CategoryImg Img_04" data-value="Slots"></a>
+                        <p data-value="Slots">Slots</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="CategoryImg Img_05"></a>
-                        <p>Virtual Games</p>
+					<li class="Info-col" data-value="VirtualGames">
+                        <a href="#" class="CategoryImg Img_05" data-value="VirtualGames"></a>
+                        <p data-value="VirtualGames">Virtual Games</p>
                     </li>
-                    <li class="Info-col">
-                        <a href="#" class="CategoryImg Img_06"></a>
-                        <p>Casino</p>
+                    <li class="Info-col" data-value="Casino">
+                        <a href="#" class="CategoryImg Img_06" data-value="Casino"></a>
+                        <p data-value="Casino">Casino</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="CategoryImg Img_07"></a>
-                        <p>Acrade</p>
+					<li class="Info-col" data-value="Arcade">
+                        <a href="#" class="CategoryImg Img_07" data-value="Arcade"></a>
+                        <p data-value="Arcade">Acrade</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="CategoryImg Img_08"></a>
-                        <p>Hi-Lo & Numbers</p>
+					<li class="Info-col" data-value="HiLo&Numbers">
+                        <a href="#" class="CategoryImg Img_08" data-value="HiLo&Numbers"></a>
+                        <p data-value="HiLo&Numbers">Hi-Lo & Numbers</p>
 					</li>
 				</ul>
             </div>
@@ -209,148 +237,148 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 					<img class="close-arrow" src="images/mobile/close-arrow.svg">
 				</div>
                 <ul class="Info-row">
-                    <li class="Info-col">
-                        <a href="#" class="ProvidersImg Img_01 subNavImageSpecial"></a>
-                        <p>Betradar</p>
+					<!-- 每一層 <li><a><p> 都加 data-value, 值為駝峰無空格的 ProviderName -->
+                    <li class="Info-col" data-value="Betradar">
+                        <a href="#" class="ProvidersImg Img_01 hasNewGame" data-value="Betradar"></a>
+                        <p data-value="Betradar">Betradar</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="ProvidersImg Img_02 "></a>
-                        <p>Eyecon</p>
+					<li class="Info-col" data-value="Eyecon">
+                        <a href="#" class="ProvidersImg Img_02"  data-value="Eyecon"></a>
+                        <p data-value="Eyecon">Eyecon</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="ProvidersImg Img_03 "></a>
+					<li class="Info-col" data-value="FunkyGames">
+                        <a href="#" class="ProvidersImg Img_03"></a>
                         <p>Funky Games</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="ProvidersImg Img_04"></a>
-                        <p>JDB</p>
+					<li class="Info-col" data-value="JDB">
+                        <a href="#" class="ProvidersImg Img_04" data-value="JDB"></a>
+                        <p data-value="JDB">JDB</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="ProvidersImg Img_05"></a>
-                        <p>Joker</p>
+					<li class="Info-col" data-value="Joker">
+                        <a href="#" class="ProvidersImg Img_05" data-value="Joker"></a>
+                        <p data-value="Joker">Joker</p>
                     </li>
-                    <li class="Info-col">
-                        <a href="#" class="ProvidersImg Img_06"></a>
-                        <p>LEG</p>
+                    <li class="Info-col" data-value="LEG">
+                        <a href="#" class="ProvidersImg Img_06" data-value="LEG"></a>
+                        <p data-value="LEG">LEG</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="ProvidersImg Img_07"></a>
-                        <p>Logispin</p>
+					<li class="Info-col" data-value="Logispin">
+                        <a href="#" class="ProvidersImg Img_07" data-value="Logispin"></a>
+                        <p data-value="Logispin">Logispin</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="ProvidersImg Img_08"></a>
-                        <p>Onyx</p>
+					<li class="Info-col" data-value="Onyx">
+                        <a href="#" class="ProvidersImg Img_08" data-value="Onyx"></a>
+                        <p data-value="Onyx">Onyx</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="ProvidersImg Img_09"></a>
-                        <p>Pariplay</p>
+					<li class="Info-col" data-value="Pariplay">
+                        <a href="#" class="ProvidersImg Img_09" data-value="Pariplay"></a>
+                        <p data-value="Pariplay">Pariplay</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="ProvidersImg Img_10"></a>
-                        <p>Pocket Soft</p>
+					<li class="Info-col" data-value="PocketSoft">
+                        <a href="#" class="ProvidersImg Img_10" data-value="PocketSoft"></a>
+                        <p data-value="PocketSoft">Pocket Soft</p>
 					</li>
-                    <li class="Info-col">
-                        <a href="#" class="ProvidersImg Img_11"></a>
-                        <p>Pragmatic Play</p>
+                    <li class="Info-col" data-value="PragmaticPlay">
+                        <a href="#" class="ProvidersImg Img_11" data-value="PragmaticPlay"></a>
+                        <p data-value="PragmaticPlay">Pragmatic Play</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="ProvidersImg Img_12"></a>
-                        <p>SA Gaming</p>
+					<li class="Info-col" data-value="SAGaming">
+                        <a href="#" class="ProvidersImg Img_12" data-value="SAGaming"></a>
+                        <p data-value="SAGaming">SA Gaming</p>
 					</li>
-					<li class="Info-col">
-                        <a href="#" class="ProvidersImg Img_13"></a>
-                        <p>Terra</p>
+					<li class="Info-col" data-value="Tera">
+                        <a href="#" class="ProvidersImg Img_13" data-value="Tera"></a>
+                        <p data-value="Tera">Terra</p>
 					</li>
 				</ul>
             </div>
 		</div>
 		<div id="Search" class="tabcontent" data-open="false">
-				<div class="searchArea">
-					<div class="searchBox">
-						<input type="text" placeholder="Search by Game Name" onsearch="loadData()">
-						<div class="closeSearch" onclick="toggleBottomTabPanel('Search')">
-							<img src="images/mobile/close.svg">
-						</div>
-					</div>
-					<div class="search-result">
-						<div class="no-result">
-							<p>No Result Found. Try other gamesyou might like!</p>
-						</div>
-						<ul>
-							<li>
-								<p>Recommended Games</p>
-							</li>
-							<li class="resultItem">
-								<a href="#">
-									<img src="images/icons/mobile/CashorCrash.png">
-									<span>Cashor Crash</span>
-								</a>
-							</li>
-							<li class="resultItem">
-								<a href="#">
-									<img src="images/icons/mobile/LuckyWheel.png">
-									<span>Lucky Wheel</span>
-								</a>
-							</li>
-							<li class="resultItem">
-								<a href="#">
-									<img src="images/icons/mobile/FishPrawnCrab.png">
-									<span>Fish Prawn Crab</span>
-								</a>
-							</li>
-							<li class="resultItem">
-								<a href="#">
-									<img src="images/icons/mobile/MoneyRoll.png">
-									<span>MoneyRoll</span>
-								</a>
-							</li>
-							<li class="resultItem">
-								<a href="#">
-									<img src="images/icons/mobile/Fire88.png">
-									<span>Fire88</span>
-								</a>
-							</li>
-							<li class="resultItem">
-								<a href="#">
-									<img src="images/icons/mobile/FootballStrike.png">
-									<span>Football Strike</span>
-								</a>
-							</li>
-							<li class="resultItem">
-								<a href="#">
-									<img src="images/icons/mobile/Luxor.png">
-									<span>Luxor</span>
-								</a>
-							</li>
-						</ul>
+			<div class="searchArea">
+				<div class="searchBox">
+					<input type="text" placeholder="Search by Game Name" onsearch="loadData()">
+					<div class="closeSearch" onclick="toggleBottomTabPanel('Search')">
+						<img src="images/mobile/close.svg">
 					</div>
 				</div>
+				<div class="search-result">
+					<div class="no-result">
+						<p>No Result Found. Try other games you might like!</p>
+					</div>
+					<ul>
+						<li>
+							<p>Recommended Games</p>
+						</li>
+						<li class="resultItem">
+							<a href="#">
+								<img src="images/icons/mobile/CashorCrash.png">
+								<span>Cashor Crash</span>
+							</a>
+						</li>
+						<li class="resultItem">
+							<a href="#">
+								<img src="images/icons/mobile/LuckyWheel.png">
+								<span>Lucky Wheel</span>
+							</a>
+						</li>
+						<li class="resultItem">
+							<a href="#">
+								<img src="images/icons/mobile/FishPrawnCrab.png">
+								<span>Fish Prawn Crab</span>
+							</a>
+						</li>
+						<li class="resultItem">
+							<a href="#">
+								<img src="images/icons/mobile/MoneyRoll.png">
+								<span>MoneyRoll</span>
+							</a>
+						</li>
+						<li class="resultItem">
+							<a href="#">
+								<img src="images/icons/mobile/Fire88.png">
+								<span>Fire88</span>
+							</a>
+						</li>
+						<li class="resultItem">
+							<a href="#">
+								<img src="images/icons/mobile/FootballStrike.png">
+								<span>Football Strike</span>
+							</a>
+						</li>
+						<li class="resultItem">
+							<a href="#">
+								<img src="images/icons/mobile/Luxor.png">
+								<span>Luxor</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
         <!-- bottomTab links -->
         <div class="tab">
-            <div class="tabIterm">
+            <div id="TabAllGames" class="tabIterm">
 				<button class="tablinks toggleAllGames active" onclick="toggleBottomTabPanel('AllGames')">
 					<div class="tabIterm_icon icon_01">
 						<p>All Games</p>
-					</div>
-					
+					</div>					
                 </button>
             </div>
-            <div id="tabCategory" class="tabIterm">
+            <div id="TabCategory" class="tabIterm">
 				<button class="tablinks toggleCategory" onclick="toggleBottomTabPanel('Category')">
 					<div class="tabIterm_icon icon_02">
 						<p>Category</p>
 					</div>
                 </button>
             </div>
-            <div class="tabIterm">
+            <div id="TabProvider" class="tabIterm">
 				<button class="tablinks toggleProviders" onclick="toggleBottomTabPanel('Providers')">
 					<div class="tabIterm_icon icon_03">
 						<p>Providers</p>
 					</div>
                 </button>
             </div>
-            <div class="tabIterm">
+            <div id="TabSearch" class="tabIterm">
 				<button class="tablinks toggleSearch" onclick="toggleBottomTabPanel('Search')">
 					<div class="tabIterm_icon icon_04">
 						<p>Search</p>
@@ -360,11 +388,12 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
         </div>
 	</div>
     <script>
+		var currentTab = 'AllGames';
 		function toggleBottomTabPanel(id) {
-			var ele = $('#'+id);
-			var open = ele.attr('data-open');
-			var isAllGames = (id === 'AllGames');
-			var isSearch = (id === 'Search');
+			var ele = $('#'+id),
+				open = ele.attr('data-open'),
+				isAllGames = (id === 'AllGames'),
+				isSearch = (id === 'Search');
 			$('.tabcontent').attr('data-open','false');
 			$('.tablinks:not(.toggle'+id+')').removeClass('active');
 			if(isAllGames) {
@@ -372,22 +401,34 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 				$('#gamelist').removeClass('hide');
 				$('#GameListArea').addClass('hide');
 				$('.toggle'+id).addClass('active');
+				$('.Info-col a').removeClass('active')
 				$('.header')[0].scrollIntoView();
+				currentTab = 'AllGames'
 				return;
 			}
 			if(isSearch) {
 				// to close
 				if(open === 'true') {
+					$('#Search').hide();
+					$('.wrap').show();
 					$('.searchBox input').blur().val('');
 					setTimeout(function(){
 						$('.tab').removeClass('hide');
 					},300)
+					$('.tablinks').removeClass('active');
+					$('.toggle' + currentTab).addClass('active');
 				}
 				// to open
 				if(open === 'false') {
+					$('#Search').show();
+					$('.wrap').hide();
 					$('.searchBox input').focus();
-					$('#Search')[0].scrollIntoView();
-					$('.tab').addClass('hide');
+					setTimeout(function(){
+						$('#Search')[0].scrollIntoView();
+					},100)
+					setTimeout(function(){
+						$('.tab').addClass('hide');
+					},300)
 					var n = $('.searchBox input').length;
 					if(n<=1) $('.search-result').hide();
 				}
@@ -396,12 +437,11 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 			if(open === 'true') {
 				$('.toggle'+id).removeClass('active');
 				$('#menuMask').hide();
-				// ele.attr('data-open','false');
 				var xx = $('#GameListArea').hasClass('hide');
 				if(!xx) {
-					('.toggleAllGames').addClass('active');
 					$('#gamelist')[0].scrollIntoView();
 				}
+				$('.toggle' + currentTab).addClass('active');
 			}
 			// to open
 			if(open === 'false')  {
@@ -414,7 +454,6 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 			$('#menuMask').hide();
 			$('.tabcontent').attr('data-open','false');
 		}
-
 		$(function(){
 			
 			// choose provider , choose category 
@@ -426,50 +465,33 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 				$('.header')[0].scrollIntoView();
 			})
 
-			// ONLY FOR DEMO--------------------------------------
+			//-------------------------------------
 			$('#Category .Info-col a').on('click', function(){
 				$('#gamelist').addClass('hide');
 				$('#GameListArea').removeClass('hide');
 				var text = $(this).next('p').text();
+				currentTab = 'Category';
 				$('.listContent h3').text(text);
 			})
 			$('#Providers .Info-col a').on('click', function(){
 				$('#gamelist').addClass('hide');
 				$('#GameListArea').removeClass('hide');
 				var text = $(this).next('p').text();
+				currentTab = 'Providers';
 				$('.listContent h3').text(text);
 			})
-			
 			$(".searchBox input").keyup(function(){
-				var len = $(this).val().length;
 				//英文長度2,中文長度1時,可搜尋
-				if(len>=2) $('.search-result').show();
+				var len = $(this).val().length;
+				if(len>=2) {
+					$('.search-result').show();
+					//搜尋時送出關鍵字到GA
+
+				}
 				if(len<2) $('.search-result').hide();
 			});
-			// ONLY FOR DEMO-------------------------------------
-
-
-			// var position = $(window).scrollTop();
-			// $(window).scroll(function () {
-			// 	var scroll = $(window).scrollTop();
-			// 	if (scroll > position) {
-			// 		$('.bottomTab .tab').addClass('hide');
-					
-			// 	}
-			// 	else {
-			// 		$('.bottomTab .tab').removeClass('hide');
-			// 	}
-			// 	position = scroll;
-			// })
-		
-
+			//-------------------------------------			
 		})
-
-		// $(window).on('scroll', function(e){
-		// 	console.log(this.oldScroll > this.scrollY);
-		// 	this.oldScroll = this.scrollY;
-		// }
-		
 	</script>
 	<!-- toPD //end -->
 	
@@ -617,7 +639,7 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 	</div>
 	</template> -->
 	<div>
-		<!-- toPD 原來的 Home = All Games , 不用改 -->
+		<!-- toPD : 原來的 Home = All Games , 不用改 -->
 		<div id="gamelist">
 			<div>
 				<div>
@@ -1856,8 +1878,10 @@ iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; heig
 				</div>
 			</div>
 		</div>
-		<!-- toPD Provider 或 Category 取代原先的 subpage //start-->
-		<div id="GameListArea" class="subPage hide">
+
+		<!-- toPD : Provider 或 Category 取代原先的 subpage //start-->
+		<!-- data-value 值為駝峰無空格的 ProviderName 或 CategoryName -->
+		<div id="GameListArea" class="subPage hide" data-value="">
 			<div class="listContent">
 				<h3>Recently Played</h3>
 				<ul class="GL_Row">
