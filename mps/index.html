@@ -185,7 +185,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 	</script>
 	
-	<!-- toPD //start-->
+	<!-- toPD  底部 tab //start-->
     <div class="bottomTab">
 		<div id="menuMask" class="menu-mask" onclick="closeMenuMask()"></div>
         <!-- bottomTab content -->
@@ -301,7 +301,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<img src="images/mobile/close.svg">
 					</div>
 				</div>
-				<div class="search-result">
+				<!-- toPD 以下屬性 data-mode="" ，若有符合結果 值為 Result ，若沒符合結果 值為 Recommend -->
+				<div class="search-result" data-mode="Result">
 					<div class="no-result">
 						<p>No Result Found. Try other games you might like!</p>
 					</div>
@@ -309,16 +310,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<li>
 							<p>Recommended Games</p>
 						</li>
-						<li class="resultItem">
-							<a href="#">
-								<img src="images/icons/mobile/CashorCrash.png">
-								<span>Cashor Crash</span>
+						<!-- toPD
+							 <li> 加 data-ga="openGameFromSearch"
+							 <li><a><img><span> 每一層加 data-value="" 值為駝峰無空格的 GameName 
+						-->
+						<li data-ga="openGameFromSearch" data-value="CashorCrash" class="resultItem">
+							<a href="#" data-value="CashorCrash">
+								<img src="images/icons/mobile/CashorCrash.png" data-value="CashorCrash">
+								<span data-value="CashorCrash">Cashor Crash</span>
 							</a>
 						</li>
-						<li class="resultItem">
-							<a href="#">
-								<img src="images/icons/mobile/LuckyWheel.png">
-								<span>Lucky Wheel</span>
+						<li data-ga="openGameFromSearch" data-value="LuckyWheel" class="resultItem">
+							<a href="#" data-value="LuckyWheel">
+								<img src="images/icons/mobile/LuckyWheel.png" data-value="LuckyWheel">
+								<span data-value="LuckyWheel">Lucky Wheel</span>
 							</a>
 						</li>
 						<li class="resultItem">
@@ -387,6 +392,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
 	</div>
+	<!-- toPD  底部 tab //end-->	
+
+	<!-- toPD  底部 tab  Script //start-->
     <script>
 		var currentTab = 'AllGames';
 		function toggleBottomTabPanel(id) {
@@ -394,106 +402,150 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				open = ele.attr('data-open'),
 				isAllGames = (id === 'AllGames'),
 				isSearch = (id === 'Search');
-			$('.tabcontent').attr('data-open','false');
+			togglePanelClose();
 			$('.tablinks:not(.toggle'+id+')').removeClass('active');
 			if(isAllGames) {
-				$('#menuMask').hide();
-				$('#gamelist').removeClass('hide');
-				$('#GameListArea').addClass('hide');
-				$('.toggle'+id).addClass('active');
-				$('.Info-col a').removeClass('active')
-				$('.header')[0].scrollIntoView();
 				currentTab = 'AllGames'
+				closeMenuMask();
+				showMainPage();
+				tooglePanelActive(id,true);
+				removeMenuItemActive();
+				goTop();
 				return;
 			}
 			if(isSearch) {
-				// to close
+				// to close search
 				if(open === 'true') {
-					$('#Search').hide();
-					$('.wrap').show();
-					$('.searchBox input').blur().val('');
-					setTimeout(function(){
-						$('.tab').removeClass('hide');
-					},300)
+					searchEvent('blur');
+					tabShowHide('show');
 					$('.tablinks').removeClass('active');
-					$('.toggle' + currentTab).addClass('active');
+					currentTabActive();
 				}
-				// to open
+				// to open search
 				if(open === 'false') {
-					$('#Search').show();
-					$('.wrap').hide();
-					$('.searchBox input').focus();
+					searchEvent('focus');
 					setTimeout(function(){
 						$('#Search')[0].scrollIntoView();
 					},100)
-					setTimeout(function(){
-						$('.tab').addClass('hide');
-					},300)
-					var n = $('.searchBox input').length;
-					if(n<=1) $('.search-result').hide();
+					tabShowHide('hide');
+					defaultHideSearchResult();
 				}
 			}
-			// to close
+			// to close panel
 			if(open === 'true') {
-				$('.toggle'+id).removeClass('active');
-				$('#menuMask').hide();
-				var xx = $('#GameListArea').hasClass('hide');
-				if(!xx) {
-					$('#gamelist')[0].scrollIntoView();
-				}
-				$('.toggle' + currentTab).addClass('active');
+				tooglePanelActive(id,false);
+				closeMenuMask();
+				currentTabActive()
 			}
-			// to open
+			// to open panel
 			if(open === 'false')  {
-				$('.toggle'+id).addClass('active');
-				$('#menuMask').show();
+				tooglePanelActive(id,true);
+				showMenuMask();
 				ele.attr('data-open','true');
 			}
 		}
+		
+		function currentTabActive(){
+			$('.toggle' + currentTab).addClass('active');
+		}
+		function searchEvent(evt){
+			if(evt == 'blur') {
+				$('#Search').hide();
+				$('.wrap').show();
+				$('.searchBox input').blur().val('');
+			}
+			if(evt == 'focus') {
+				$('#Search').show();
+				$('.wrap').hide();
+				$('.searchBox input').focus();
+			}
+		}
+		function tabShowHide(act){
+			setTimeout(function(){
+				if(act == 'show') $('.tab').removeClass('hide');
+				if(act == 'hide') $('.tab').addClass('hide');
+			},300)
+		}
+		function tooglePanelActive(id, act){
+			if(act == true)	 $('.toggle'+id).addClass('active');
+			if(act == false) $('.toggle'+id).removeClass('active');
+		}
+		function showMainPage(){
+			$('#gamelist').removeClass('hide');
+			$('#GameListArea').addClass('hide');
+		}
+		function showSubPage(){
+			$('#gamelist').addClass('hide');
+			$('#GameListArea').removeClass('hide');
+		}
 		function closeMenuMask(){
 			$('#menuMask').hide();
+			togglePanelClose();
+		}
+		function showMenuMask(){
+			$('#menuMask').show();
+		}
+		function removeMenuItemActive(){
+			$('.Info-col a').removeClass('active');
+		}
+		function goTop(){
+			$('.header')[0].scrollIntoView();
+		}
+		function togglePanelClose(){
 			$('.tabcontent').attr('data-open','false');
 		}
+		function defaultHideSearchResult(){
+			var n = $('.searchBox input').length;
+			if(n<=1) $('.search-result').hide();
+		}
+
 		$(function(){
-			
 			// choose provider , choose category 
 			$('.Info-col a').on('click', function(){
-				$('.Info-col a').removeClass('active');
+				removeMenuItemActive();
 				$(this).addClass('active');
 				$('#menuMask').hide();
-				$('.tabcontent').attr('data-open','false');
-				$('#GameListArea')[0].scrollIntoView();
+				togglePanelClose();
+				goTop();
 			})
 
-			//-------------------------------------
+			// 查看 category game
 			$('#Category .Info-col a').on('click', function(){
-				$('#gamelist').addClass('hide');
-				$('#GameListArea').removeClass('hide');
-				var text = $(this).next('p').text();
+				showSubPage();
 				currentTab = 'Category';
-				$('.listContent h3').text(text);
-			})
-			$('#Providers .Info-col a').on('click', function(){
-				$('#gamelist').addClass('hide');
-				$('#GameListArea').removeClass('hide');
+				
+				// for demo , 可改寫或拿掉
 				var text = $(this).next('p').text();
-				currentTab = 'Providers';
 				$('.listContent h3').text(text);
 			})
+			// 查看 providers game
+			$('#Providers .Info-col a').on('click', function(){
+				showSubPage();
+				currentTab = 'Providers';
+
+				// for demo , 可改寫或拿掉
+				var text = $(this).next('p').text();
+				$('.listContent h3').text(text);
+			})
+			// 執行搜尋
 			$(".searchBox input").keyup(function(){
-				//英文長度2,中文長度1時,可搜尋
+
+				// toPD - 英文長度2,中文長度1時,執行搜尋
 				var len = $(this).val().length;
 				if(len>=2) {
 					$('.search-result').show();
-					//搜尋時送出關鍵字到GA
-
+					// toPD - 搜尋時送出關鍵字到GA,請保留這段 (記得<head>要加 gtag 追蹤碼)
+					gtag('event', 'select_content', {
+						'event_category': 'Search',
+						'event_action': 'Keywords',
+						'event_label': 'Search_Keywords_關鍵字內容', //"關鍵字內容"請替換為真實
+					});
 				}
 				if(len<2) $('.search-result').hide();
 			});
-			//-------------------------------------			
 		})
 	</script>
-	<!-- toPD //end -->
+	<!-- toPD  底部 tab  Script //end-->
 	
 	<script>
 		function loadData(){
@@ -639,16 +691,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div>
 	</template> -->
 	<div>
-		<!-- toPD : 原來的 Home = All Games , 不用改 -->
+		<!-- toPD : 原來的 Home = All Games  -->
 		<div id="gamelist">
 			<div>
 				<div>
 					<div class="menuTitle1">
-						Recently Played
+						<span>Recently Played</span> <!-- toPD -->
 					</div>
 					<div class="scrollcontainer scrollpane">
 						<div class="menuRow">
-							<div id="Category_RecentlyPlayed" class="gameIcon">
+							<div id="Category_RecentlyPlayed"> <!-- toPD 移掉  class="gameIcon" -->
 								<div data-value="BushidoBlade" data-cate="Recently Played" title="Bushido Blade" data-ga="openGame" data-view="ASI" data-order="" class="js-gameItem gameIcon GamingWorld Slots" style="background-image:  url(&quot;https://img-1-12-2.cdnnetworks.net//images/icons/mobile/BushidoBlade.png?20190521d&quot;);>
 									<div data-value="BushidoBlade" data-cate="Recently Played" title="Bushido Blade" data-ga="openGame" data-view="ASI" data-order="" class="js-gameItem gameIcon GamingWorld Slots" style="background-image: url(../images/icons/mobile/BushidoBlade.png);">
 									<div data-ga="openGame" data-view="ASI" data-value="BushidoBlade" data-order="" class="js-gameItemChild GameSpacing ShowPointer WrapperNHover">
@@ -663,11 +715,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div>
 					<div class="menuTitle2">
-						Popular
+						<span>Popular</span> <!-- toPD -->
 					</div>
 					<div class="scrollcontainer scrollpane">
 						<div class="menuRow">
-							<div id="Category_Popular" class="gameIcon">
+							<div id="Category_Popular"> <!-- toPD 移掉  class="gameIcon" -->
 								<div data-value="AztecGems" data-cate="Popular" title="Aztec Gems" data-ga="openGame" data-view="ASI" data-order="" class="js-gameItem gameIcon FeatureGame NewGames PariplayPragmaticPlay Slots" style="background-image: url(&quot;https://img-1-12-2.cdnnetworks.net//images/icons/mobile/AztecGems.png?20190521d&quot;);">
 									<div data-ga="openGame" data-view="ASI" data-value="AztecGems" data-order="" class="js-gameItemChild gameNew GameSpacing ShowPointer WrapperNHover">
 										<p data-ga="openGame" data-view="ASI" data-value="AztecGems" data-order="" class="js-gameItemChild">
@@ -842,11 +894,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div>
 					<div class="menuTitle8">
-						Slots
+						<span>Slots</span> <!-- toPD -->
 					</div>
 					<div class="scrollcontainer scrollpane">
 						<div class="menuRow">
-							<div id="Category_Slots" class="gameIcon">
+							<div id="Category_Slots"> <!-- toPD 移掉  class="gameIcon" -->
 								<div data-value="AztecGems" data-cate="Slots" title="Aztec Gems" data-ga="openGame" data-view="ASI" data-order="" class="js-gameItem gameIcon FeatureGame NewGames PariplayPragmaticPlay Slots" style="background-image: url(&quot;https://img-1-12-2.cdnnetworks.net//images/icons/mobile/AztecGems.png?20190521d&quot;);">
 									<div data-ga="openGame" data-view="ASI" data-value="AztecGems" data-order="" class="js-gameItemChild gameNew GameSpacing ShowPointer WrapperNHover">
 										<p data-ga="openGame" data-view="ASI" data-value="AztecGems" data-order="" class="js-gameItemChild">
@@ -1357,11 +1409,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div>
 					<div class="menuTitle3">
-						Hi-Lo
+						<span>Hi-Lo</span> <!-- toPD -->
 					</div>
+					<div class="titleEnd"></div><!-- toPD 加這行 -->
 					<div class="scrollcontainer scrollpane">
 						<div class="menuRow">
-							<div id="Category_Hi_Lo" class="gameIcon">
+							<div id="Category_Hi_Lo"> <!-- toPD 移掉  class="gameIcon" -->
 								<div data-value="CardsHiLo" data-cate="Hi-Lo" title="Cards Hi Lo" data-ga="openGame" data-view="ASI" data-order="" class="js-gameItem gameIcon FeatureGame NumbersGames Games Hi_Lo" style="background-image: url(&quot;https://img-1-12-2.cdnnetworks.net//images/icons/mobile/CardsHiLo.png?20190521d&quot;);">
 									<div data-ga="openGame" data-view="ASI" data-value="CardsHiLo" data-order="" class="js-gameItemChild GameSpacing ShowPointer WrapperNHover">
 										<p data-ga="openGame" data-view="ASI" data-value="CardsHiLo" data-order="" class="js-gameItemChild">
@@ -1410,11 +1463,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div>
 					<div class="menuTitle9">
-						Skill Game
+						<span>Skill Game</span> <!-- toPD -->
 					</div>
 					<div class="scrollcontainer scrollpane">
 						<div class="menuRow">
-							<div id="Category_SkillGame" class="gameIcon">
+							<div id="Category_SkillGame" > <!-- toPD 移掉  class="gameIcon" -->
 								<div data-value="FootballStrike" data-cate="Skill Game" title="Football Strike" data-ga="openGame" data-view="ASI" data-order="" class="js-gameItem gameIcon FeatureGame Arcade CeltonGames InstantWin" style="background-image: url(&quot;https://img-1-12-2.cdnnetworks.net//images/icons/mobile/FootballStrike.png?20190521d&quot;);">
 									<div data-ga="openGame" data-view="ASI" data-value="FootballStrike" data-order="" class="js-gameItemChild GameSpacing ShowPointer WrapperNHover">
 										<p data-ga="openGame" data-view="ASI" data-value="FootballStrike" data-order="" class="js-gameItemChild">
@@ -1561,11 +1614,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div>
 					<div class="menuTitle4">
-						Numbers Games &amp; Bingo
+						<span>Numbers Games &amp; Bingo</span> <!-- toPD -->
 					</div>
 					<div class="scrollcontainer scrollpane">
 						<div class="menuRow">
-							<div id="Category_NumbersGamesAndBingo" class="gameIcon">
+							<div id="Category_NumbersGamesAndBingo"> <!-- toPD 移掉  class="gameIcon" -->
 								<div data-value="FishPrawnCrab" data-cate="Numbers Games &amp; Bingo" title="Fish Prawn Crab" data-ga="openGame" data-view="ASI" data-order="" class="js-gameItem gameIcon NewGames NumbersGames CeltonGames NumbersGames" style="background-image: url(&quot;https://img-1-12-2.cdnnetworks.net//images/icons/mobile/FishPrawnCrab.png?20190521d&quot;);">
 									<div data-ga="openGame" data-view="ASI" data-value="FishPrawnCrab" data-order="" class="js-gameItemChild gameNew GameSpacing ShowPointer WrapperNHover">
 										<p data-ga="openGame" data-view="ASI" data-value="FishPrawnCrab" data-order="" class="js-gameItemChild">
@@ -1649,11 +1702,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div>
 					<div class="menuTitle6">
-						Virtual Games &amp; Cards
+						<span>Virtual Games &amp; Cards</span> <!-- toPD -->
 					</div>
 					<div class="scrollcontainer scrollpane">
 						<div class="menuRow">
-							<div id="Category_VirtualGamesAndCards" class="gameIcon">
+							<div id="Category_VirtualGamesAndCards"> <!-- toPD 移掉  class="gameIcon" -->
 								<div data-value="DragonTiger" data-cate="Virtual Games &amp; Cards" title="Dragon Tiger" data-ga="openGame" data-view="ASI" data-order="" class="js-gameItem gameIcon FeatureGame TableGames LeekieGames Cards" style="background-image: url(&quot;https://img-1-12-2.cdnnetworks.net//images/icons/mobile/DragonTiger.png?20190521d&quot;);">
 									<div data-ga="openGame" data-view="ASI" data-value="DragonTiger" data-order="" class="js-gameItemChild GameSpacing ShowPointer WrapperNHover">
 										<p data-ga="openGame" data-view="ASI" data-value="DragonTiger" data-order="" class="js-gameItemChild">
@@ -1723,11 +1776,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div>
 					<div class="menuTitle5">
-						Casino
+						<span>Casino</span>
 					</div>
 					<div class="scrollcontainer scrollpane">
 						<div class="menuRow">
-							<div id="Category_Casino" class="gameIcon">
+							<div id="Category_Casino"> <!-- toPD 移掉  class="gameIcon" -->
 								<div data-value="RoyalBaccaratMobile" data-cate="Casino" title="Royal Baccarat " data-ga="openGame" data-view="ASI" data-order="" class="js-gameItem gameIcon TableGames TitansoftGames TableGames" style="background-image: url(&quot;https://img-1-12-2.cdnnetworks.net//images/icons/mobile/RoyalBaccaratMobile.png?20190521d&quot;);">
 									<div data-ga="openGame" data-view="ASI" data-value="RoyalBaccaratMobile" data-order="" class="js-gameItemChild GameSpacing ShowPointer WrapperNHover">
 										<p data-ga="openGame" data-view="ASI" data-value="RoyalBaccaratMobile" data-order="" class="js-gameItemChild">
@@ -1783,11 +1836,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div>
 					<div class="menuTitle7">
-						Scratch Cards
+						<span>Scratch Cards</span> <!-- toPD -->
 					</div>
 					<div class="scrollcontainer scrollpane">
 						<div class="menuRow">
-							<div id="Category_ScratchCards" class="gameIcon">
+							<div id="Category_ScratchCards" > <!-- toPD 移掉  class="gameIcon" -->
 								<div data-value="CopsAndRobbers" data-cate="Scratch Cards" title="Cops And Robbers" data-ga="openGame" data-view="ASI" data-order="" class="js-gameItem gameIcon PariplayNbGames ScratchCards" style="background-image: url(&quot;https://img-1-12-2.cdnnetworks.net//images/icons/mobile/CopsAndRobbers.png?20190521d&quot;);">
 									<div data-ga="openGame" data-view="ASI" data-value="CopsAndRobbers" data-order="" class="js-gameItemChild GameSpacing ShowPointer WrapperNHover">
 										<p data-ga="openGame" data-view="ASI" data-value="CopsAndRobbers" data-order="" class="js-gameItemChild">
@@ -1879,17 +1932,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
 		</div>
 
-		<!-- toPD : Provider 或 Category 取代原先的 subpage //start-->
-		<!-- data-value 值為駝峰無空格的 ProviderName 或 CategoryName -->
-		<div id="GameListArea" class="subPage hide" data-value="">
+		<!-- toPD : 
+			<div id="GameListArea"> 是 Provider 或 Category 取代原先的 subpage
+			其內 
+			data-mode 值為 "Providers" 或 "Category"
+			data-value 值為駝峰無空格的 ProviderName 或 CategoryName (例如 "SAGaming" )
+		-->
+		<div id="GameListArea" class="subPage hide" data-mode="Providers" data-value="SAGaming">
 			<div class="listContent">
 				<h3>Recently Played</h3>
 				<ul class="GL_Row">
-					<li class="GL_col">
-						<a href="#">
-							<img src="images/icons/mobile/CashorCrash.png">
+					<!-- toPD 
+						<li> 加 data-ga="openGameInSubPage"
+						<li><a><img><p> 每一層加  data-value="" 值為駝峰無空格的 ProviderName 或 CategoryName
+					-->
+					<li class="GL_col" data-ga="openGameInSubPage" data-value="CashorCrash">
+						<a href="#" data-value="CashorCrash">
+							<img src="images/icons/mobile/CashorCrash.png" data-value="CashorCrash">
 						</a>
-						<p>Cashor Crash</p>
+						<p data-value="CashorCrash">Cashor Crash</p>
 					</li>
 					<li class="GL_col">
 						<a href="#">
