@@ -252,7 +252,7 @@ body {
 	background-color: #121329;	
 	z-index: 25;
 	transform: translateY(0);
-	transition: all .15s;
+	transition: all .35s;
 }
 .bottomTab .tab.hide {
 	transform: translateY(100%);
@@ -276,6 +276,25 @@ body {
 }
 .tabcontent[data-open="true"] > div {
 	transform: translateY(0);	
+}
+@media screen and (orientation: landscape) {
+	.bottomTab .tab {
+		height: 40px;
+		transition: all 0s;
+	}
+	.bottomTab .tab p {
+		display: none;
+	}
+	.bottomTab .GameCategory .Info-col,
+	.bottomTab .tab button {
+		transform: scale(.9);
+	}
+	.bottomTab .GameCategory {
+		padding: 0 0 45px 0 !important;
+	}
+	.bottomTab .GameCategory .Info-row {
+		margin-top: 30px;
+	}
 }
 .bottomTab .GameCategory{
 	width: 100%;
@@ -383,7 +402,7 @@ body {
 	top: 0;
 	left: 0;
 	right: 0;
-	bottom: 0;
+	height: 100vh;
 	z-index: 12;
 	padding-bottom: 60px;
 	background-color: #fff;
@@ -392,7 +411,7 @@ body {
 .searchBox {
 	background: #5a5a5a;
 }
-.bottomTab  #Search .searchBox input{
+#Search .searchBox input{
 	-webkit-appearance: none;
     width: calc(100% - 48px);
     box-sizing: border-box;
@@ -407,7 +426,7 @@ body {
     background: url(../../images/mobile/magnifying.svg) no-repeat 15px center;
     background-size: 21px 21px;
 }
-.bottomTab #Search input::-webkit-input-placeholder{
+#Search input::-webkit-input-placeholder{
     color: #C0C0C0;
 }
 .closeSearch {
@@ -423,19 +442,19 @@ body {
 .closeSearch img {
 	width: 16px;
 }
-.bottomTab #Search .search-result {    
+#Search .search-result {    
 	padding: 0 15px;
     height: calc(100%);
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
 
-.bottomTab #Search .search-result ul {    
+#Search .search-result ul {    
     list-style-type: none;
 	text-align: left;
 }
 
-.bottomTab #Search li a{
+#Search li a{
 	display: flex;
 	padding: 10px 0;
 	justify-content: flex-start;
@@ -445,32 +464,32 @@ body {
     font-size: 14px;
     color: black;
 }
-.bottomTab #Search li:last-child a{
+#Search li:last-child a{
 	border-bottom: none;
 }
-.bottomTab #Search li a:hover:not(.header) {
+#Search li a:hover:not(.header) {
     background-color: #f8f8f8;
 }
-.bottomTab #Search .no-result p{
+#Search .no-result p{
 	color: #8e8e8e;
 	line-height: 36px;
 	border-bottom: 1px solid #E2E2E2;
 }
-.bottomTab #Search li p{
+#Search li p{
 	color: #333333;
 	padding: 12px 0 0 0;
     font-size: 13px;
 }
-.bottomTab #Search li img{
+#Search li img{
 	display: block;
 	width: 72px;
 	height: 72px;
 }
-.bottomTab #Search li span{
+#Search li span{
 	margin-left: 10px;
 }
 
-.subNavImageSpecial:after {
+.hasNewGame:after {
     content: 'New';
     display: inline-block;
     position: absolute;
