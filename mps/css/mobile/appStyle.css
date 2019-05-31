@@ -236,7 +236,6 @@ body {
 	right: 0;
 	background-color: rgba(0,0,0,.8);
 	z-index: 11;
-	/* transform: translate3d(0,0,0); */
 }
 .bottomTab {
 	-webkit-overflow-scrolling: touch;
@@ -393,10 +392,6 @@ body {
 } 
 .bottomTab .GameCategory .Info-col a.CategoryImg.Img_08{
 	background-position: 8px -327px;
-} 
-
-#Search.tabcontent > div {
-	/* transition: all 0s !important; */
 }
 .searchArea {
 	position: fixed;
@@ -876,6 +871,8 @@ nav.navMenu {
 	height: 130px
 }
 
+/* toPD --- 這些不要了可以刪掉--- //start  */
+/* 
 .menuTitle0 {
 	display: inline-flex;
 	-webkit-box-align: center;
@@ -887,7 +884,6 @@ nav.navMenu {
 	background-position: 0 3px;
 	background-repeat: no-repeat
 }
-
 .menuTitle1 {
 	display: inline-flex;
 	-webkit-box-align: center;
@@ -899,7 +895,6 @@ nav.navMenu {
 	background-position: 0 3px;
 	background-repeat: no-repeat
 }
-
 .menuTitle2 {
 	display: inline-flex;
 	-webkit-box-align: center;
@@ -923,7 +918,6 @@ nav.navMenu {
 	background-position: 0 3px;
 	background-repeat: no-repeat
 }
-
 .menuTitle4 {
 	display: inline-flex;
 	-webkit-box-align: center;
@@ -935,7 +929,6 @@ nav.navMenu {
 	background-position: 0 3px;
 	background-repeat: no-repeat
 }
-
 .menuTitle5 {
 	display: inline-flex;
 	-webkit-box-align: center;
@@ -959,7 +952,6 @@ nav.navMenu {
 	background-position: 0 3px;
 	background-repeat: no-repeat
 }
-
 .menuTitle7 {
 	display: inline-flex;
 	-webkit-box-align: center;
@@ -971,7 +963,6 @@ nav.navMenu {
 	background-position: 0 3px;
 	background-repeat: no-repeat
 }
-
 .menuTitle8 {
 	display: inline-flex;
 	-webkit-box-align: center;
@@ -983,7 +974,6 @@ nav.navMenu {
 	background-position: 0 3px;
 	background-repeat: no-repeat
 }
-
 .menuTitle9 {
 	display: inline-flex;
 	-webkit-box-align: center;
@@ -995,7 +985,6 @@ nav.navMenu {
 	background-position: 0 3px;
 	background-repeat: no-repeat
 }
-
 .menuTitle99 {
 	display: inline-flex;
 	-webkit-box-align: center;
@@ -1006,14 +995,16 @@ nav.navMenu {
 	background-size: 155px 12px;
 	background-position: 0 3px;
 	background-repeat: no-repeat
-}
+} 
+*/
+/* toPD --- 這些不要了可以刪掉--- //end  */
 
 .gameIcon {
 	display: table-cell;
 	-webkit-box-align: center;
 	align-items: center;
 	height: 130px;
-	border: 1px solid #dbe1e5;
+	border-right: 2px solid #dbe1e5; /* toPD */
 	background-color: #fff;
 	background-size: 80px 80px;
 	background-position: center 10px;
@@ -1701,21 +1692,36 @@ a:hover,a:active {
 	padding: 10px 20px;
 	background: #666;
 	color: #fff
-}[class^=menuTitle]:first-child {
-	margin-top: 10px
-}[class^=menuTitle] {
-	margin-left: 2%;
-	margin-right: 2%;
-	margin-top: 5px;
-	background-position: 0 4px
 }
+[class^=menuTitle]:first-child {
+	margin-top: 10px
+}
+/* toPD start----------------------------------------------------  */
+[class^=menuTitle] {
+	margin-left: 3%;
+	margin-right: 3S%;
+	width: 96%;
+}
+[class^=menuTitle] span {
+	display: block;
+	padding: 0 40px 0 8px;
+	border-left: 3px solid #243b7a;
+	color: #243b7a;
+	background-color: #ebf1f5;
+	font-size: 14px;
+	text-indent: 0;
+	font-weight: bold;
+	border-bottom: 1px solid #ebf1f5;
+	margin-bottom: 5px;
+}
+/* toPD //end-------------------------------------------------  */
 
 .scrollpane {
 	margin-left: 2%;
 	margin-right: 2%;
-	background-color: #dde2e6;
+	background-color: #fff; /* toPD */
 	box-shadow: 0 3px 10px rgba(0,0,0,.05);
-	border: solid 1px #dee3e7
+	border: 2px solid #dee3e7
 }
 
 .modal {
@@ -1952,7 +1958,7 @@ ul.eventGameIcon li img {
 	animation: bounsNum 1s infinite
 }
 
-/*-----------------------------GameListArea Start-----------------------------*/
+/*-----------------------------toPD GameListArea Start -----------------------------*/
 #gamelist.hide,
 #GameListArea.hide {
 	display: none;
@@ -1960,18 +1966,14 @@ ul.eventGameIcon li img {
 #GameListArea{
 	width: 100%;
 	height: auto;
-	background: #fff;
-}
-#GameListArea .listContent{
-	
 }
 #GameListArea .listContent h3{	
 	padding: 0 4%;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 36px;
 	color: #23527C;
 	font-weight: bold;
-	border-bottom: 2px solid #DBE1E5;
+	/* border-bottom: 2px solid #DBE1E5; */
 }
 #GameListArea .listContent h3::before{
 	content: '|';
@@ -1983,15 +1985,28 @@ ul.eventGameIcon li img {
 	display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    /* margin: 0px 8px; */
+    background-color: #fff;
+    border: solid 2px #dee3e7;
+    box-shadow: 0 3px 10px rgba(0,0,0,.05);
 }
 #GameListArea .listContent li.GL_col{
 	width: 33.333%;
-	padding: 4%;
+	padding: 3% 4%;
 	text-align: center;
-	border-right: 2px solid #DBE1E5;
 	border-bottom: 2px solid #DBE1E5;
 }
+#GameListArea .listContent li.GL_col:nth-child(3n+1),
+#GameListArea .listContent li.GL_col:nth-child(3n+2) {
+	border-right: 2px solid #DBE1E5;
+}
 @media screen and (min-width: 640px) {
+	#GameListArea .listContent li.GL_col {
+		border-right: 2px solid #DBE1E5;
+	}
+	#GameListArea .listContent li.GL_col:nth-child(5n) {
+		border-right: 0;
+	}
 	#GameListArea .listContent li.GL_col {
 		width: 20%;
 	}
@@ -2001,11 +2016,14 @@ ul.eventGameIcon li img {
 }
 #GameListArea .listContent li.GL_col a {
 	display: block;
+	text-align: center;
 }
 #GameListArea .listContent li.GL_col img{
 	display: block;
-	width: 100%;
+	width: 80px;
 	height: auto;
+	margin-left: auto;
+	margin-right: auto;
 	margin-bottom: 6px;
 }
 #GameListArea .listContent li.GL_col p{
@@ -2013,7 +2031,7 @@ ul.eventGameIcon li img {
     font-weight: 500;
 	color: #243b7a;
 }
-/*------------------------------GameListArea END------------------------------*/
+/*-----------------------------toPD GameListArea END------------------------------*/
 
 .addhight{
 	height: 60px;
