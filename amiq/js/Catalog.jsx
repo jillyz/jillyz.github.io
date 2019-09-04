@@ -604,14 +604,14 @@ class Catalog extends React.Component {
         {/* btn in header: grid/list , filter */}
         <span className={isFilterOpen ? 'list-type-menu on' : 'list-type-menu off'}>
             <span>
-              <a onClick={() => this.switchListToGrid()}>
+              <a className="btn-list-mode" onClick={() => this.switchListToGrid()}>
                 {this.state.listTypeGrid ?
-                  <i className="fa fa-list-ul" aria-hidden="true"></i>
+                  <span><i className="fa fa-list-ul" aria-hidden="true"></i> 列表模式</span>
                   :
-                  <i className="fa fa-th" aria-hidden="true"></i>
+                  <span><i className="fa fa-th" aria-hidden="true"></i> 列表模式</span>
                 }
               </a>
-              <a onClick={() => this.switchFilterPanel()} className={isFilterOpen ? 'btn-filter on' : 'btn-filter off'} data-value={isFilterOpen ? 'TurnOff' : 'TurnOn'} ><i className="fa fa-filter" aria-hidden="true"></i></a>
+              <a onClick={() => this.switchFilterPanel()} className={isFilterOpen ? 'btn-filter on' : 'btn-filter off'} data-value={isFilterOpen ? 'TurnOff' : 'TurnOn'} ><i className="fa fa-filter" aria-hidden="true"></i> 篩選</a>
               {this.state.filterOpen ? 
                 <a className="clear-filter" onClick={() => this.clearFilterTypes()}>
                   <i className="icon fa fa-trash" aria-hidden="true"></i>

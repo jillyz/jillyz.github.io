@@ -344,10 +344,10 @@ body.fix-menu .list-type-menu a {
 }
 .list-type-menu a {
     display: inline-block;
-    padding: 0 1em;
+    padding: .35em 1em 0 1em;
     color: #868e96;
     cursor: pointer;
-    line-height: 3.5rem; 
+    line-height: 3rem; 
     -webkit-transition: .5s all;
     -o-transition: .5s all;
     transition: .5s all;
@@ -400,10 +400,10 @@ body.fix-menu .list-type-menu a {
 }
 @media screen and (min-width: 601px) {
     .list-type-menu {
-        right: 10rem;
+        right: 2rem;
         bottom: auto;
         top: 0;
-        font-size: 1.1em;
+        font-size: 1em;
         box-shadow: none;
         border-radius: 0;
     }
@@ -412,13 +412,21 @@ body.fix-menu .list-type-menu a {
     }
     .clear-filter {
         padding-bottom: .5em;
+        padding-right: .5em;
         border-bottom: 1px solid #e9ecef;
+        text-align: right;
     }
     .filter-name {
         display: block;
         margin-top: 1em;
         margin-bottom: .5em;
         font-size: .8em;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .list-type-menu {
+        right: 50%;
+        transform: translateX(50%);
     }
 }
 .btn-filter.on {
@@ -1062,7 +1070,7 @@ body.fix-menu .list-type-menu a {
     display: table-cell;
     width: 25% !important;
     padding: 0 !important;
-    background-color: #aa2a56;
+    /* background-color: #aa2a56; */
 }
 .how_to_play_step li:not(:first-child) {
     /* border-left: 1px solid #fff; */
@@ -1071,8 +1079,7 @@ body.fix-menu .list-type-menu a {
     display: block;
     padding: .5em 1em;
     min-height: 3em;
-    
-    color: #fff;
+    color: #aa2a56;
     font-size: .9em;
     text-align: left;
 }
@@ -1095,13 +1102,13 @@ body.fix-menu .list-type-menu a {
         position: relative;
         margin-left: -3rem;
         margin-right: -3rem;
-        padding-top: 5em;
+        padding-top: 2em;
         padding-bottom: 5em;
-        background-color: #aa2a83;
+        /* background-color: #aa2a83; */
         overflow: hidden;
     }
     .how_to_play_video:before {
-        content: '';
+        /* content: ''; */
         background: url(../img/play/play_4.jpg) no-repeat;
         background-size: cover;
         filter: blur(10px) brightness(.8);
@@ -2263,7 +2270,7 @@ body.fix-menu .list-type-menu a {
     .video {
         width: calc(75vh * 1.5);
         height: calc((75vh * 1.5) * 9 / 16) ;
-        box-shadow: 0 10px 40px rgba(0,0,0,.5)
+        /* box-shadow: 0 10px 40px rgba(0,0,0,.5) */
     }
 }
 
