@@ -84,27 +84,28 @@ class RentTerms extends React.Component {
               <ul className="no-list-style">
                 <li>
                   <span className="text-highlight">借期：</span><br/>今天借，隔日為借期第 1 天。借期天數（如上表）到期後的隔日再還。歸還的遊戲本必須隔日才可再借出。<br/>
-                  <span className="text-highlight-sample">【範例】：以租借一本為例：1/10 借出，1/11-13 為租期，1/14 須歸還。</span>
+                  <small className="text-highlight-sample">【範例】：以租借一本為例：1/10 借出，1/11-13 為租期，1/14 須歸還。</small>
                 </li>
                 <li>
                   <span className="text-highlight">續借：</span><br/>續借每本一天加收 10 元（費用請參考上表的「延長每日加收」金額），費用從押金扣除。<br />
-                  <span className="text-highlight-sample">【範例】：以租借 2 本和 1/14 須歸還為例，若續借延長至 1/16 再歸還，則為延長 2 天，2 本延長 2 天總共加收 40 元。</span>
+                  <small className="text-highlight-sample">【範例】：以租借 2 本和 1/14 須歸還為例，若續借延長至 1/16 再歸還，則為延長 2 天，2 本延長 2 天總共加收 40 元。</small>
                 </li>
                 <li>
                   <span className="text-highlight">出租內容物：</span><br/>遊戲公車板 1 片 ，<br/>遊戲本（一次最多借閱 5 本）（題目為英文，每本 10 題，每題都有上下頁，共 20 頁），<br/>不含點讀筆。
                 </li>
               </ul>
             
-              <h4>【服務範圍】</h4>
+              <h4>【取件方式】</h4>
               <ul className="no-list-style">
                 {/* <li>本出租服務以【台中市】【面交】為主。<br/>若外縣市的您仍有租借需求，對於支付運費也可接受，可再至 Messenger 洽談租借數量及運費。</li> */}
-                <li>台中市優先採用面交，亦可郵寄。外縣市一律郵寄。</li>
-                <li>面交地點為：
+                <li>台中市優先採用面交，亦可寄送。外縣市一律寄送。</li>
+                <li><span className="pickup">【面交】</span>地點為：
                   <a className="address" target="_blank" href="https://www.google.com.tw/maps/place/7-ELEVEN+%E6%A1%82%E5%86%A0%E9%96%80%E5%B8%82/@24.1623719,120.6515811,17z/data=!3m1!4b1!4m5!3m4!1s0x34693d8589fe853d:0x7850c53f3db52e06!8m2!3d24.1623719!4d120.6537698">
-                  7-ELEVEN 桂冠門市（台中市西屯區四川路120號1樓）
-                  </a> 
-                    （台中市臺灣大道及文心路交界一帶）</li>
-                <li>郵寄需支付運費，運費 60 元（郵局便利袋在一公斤以內的運費為 60 元）</li>               
+                  7-ELEVEN 桂冠門市
+                  </a> （台中市臺灣大道及文心路交界一帶）。</li>
+                <li><span className="pickup">【郵寄】</span>運費 60 元（1~5本遊戲本及1片遊戲板）。</li>
+                <li><span className="pickup">【掌櫃服務】</span>費用50元，若您社區有掌櫃可在社區掌櫃取件，或是至超商掌櫃取件。<a href="https://www.palmbox.com.tw/" target="_blank">>>瞭解掌櫃>></a></li>
+                <li className="text-highlight">寄送取件，若有必須於指定日期收到的需求，請您務必提前預約。</li>
               </ul>
 
               <div className="other-terms">
@@ -134,7 +135,6 @@ class RentTerms extends React.Component {
                       <li>若是週一到週四寄出，通常隔日可收到。</li>
                       <li>若是週五寄出、或遇國定假日，則不保證隔日能收到，會以收到物品的當天為租借日（請再告知收到日期），借期和歸還日也整個往後順延。</li>
                       <li>歸還日若遇假日，您可以選擇延長借期，或是多借一本跨過假日，或是前後調整您的租借日及借期。</li>
-                      <li>若有必須於指定日期收到的需求，請您務必提前預約。</li>
                       <li>轉帳銀行若非玉山銀行，會跟您酌收 15 元轉帳費。</li>
                     </ul>
                   </div>

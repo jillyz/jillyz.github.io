@@ -2788,9 +2788,19 @@ body.fix-menu .list-type-menu a {
 .terms-content {
     padding: .5em 2em;
     background-color: #fff;
-    /* margin-bottom: 7em; */
-    
+    /* margin-bottom: 7em; */ 
     word-wrap: break-word;
+}
+.terms-content a {
+    color: #000;
+    text-decoration: underline;
+}
+.terms-content small {
+    background-color: #fdf6e3;
+}
+.pickup {
+    color: #c30 !important;
+    font-weight: bold;
 }
 @media screen and (min-width: 660px) {
     .terms-content {
@@ -2806,7 +2816,7 @@ body.fix-menu .list-type-menu a {
 }
 .terms-content h4 {
     margin-top: 2em;
-    font-size: 1.1em;
+    font-size: 1.3em;
     color: #c30;
     text-indent: -.5em;
 }
@@ -2852,7 +2862,7 @@ body.fix-menu .list-type-menu a {
     padding-left: 2em;
     background: url(../img/google_maps.png) center left no-repeat;
     background-size: 1.5em 1.5em;
-    color: #056abc;
+    /* color: #056abc; */
 }
 .other-terms label {
     display: block;
@@ -2864,7 +2874,7 @@ body.fix-menu .list-type-menu a {
 }
 .other-terms h4 {
     margin-top: 0;
-    color: #cc3300 !important;
+    color: #6b3422 !important;
 }
 .other-terms h4:before {
     content: '';
@@ -2875,7 +2885,7 @@ body.fix-menu .list-type-menu a {
     margin-right: .5em;
     border-top: 4px solid transparent;
     border-bottom: 4px solid transparent;
-    border-left: 6px solid #333;
+    border-left: 6px solid #6b3422;
     -webkit-transition: .25s all;
     -o-transition: .25s all;
     transition: .25s all;
