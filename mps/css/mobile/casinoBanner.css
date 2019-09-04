@@ -1,0 +1,114 @@
+#PromoteBanner {
+	opacity: 1;
+	transition: all .3s
+}
+
+#PromoteBanner.Active {
+	opacity: 0
+}
+
+.BannerBar {
+	background: rgba(0,0,0,.77);
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	z-index: 10000
+}
+
+.BannerBar p {
+	color: #dcdcdcdc;
+	width: 300px;
+	margin: 0 auto;
+	font-size: 17px;
+	text-align: center
+}
+
+.BannerBarImg {
+	display: block;
+	position: absolute;
+	width: 300px;
+	height: 372px;
+	left: 50%;
+	top: 50%;
+	margin-left: -150px;
+	margin-top: -186px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center
+}
+
+.BannerTxt {
+	display: block;
+	position: absolute;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	left: 27px;
+	top: 42px;
+	font-family: arial,sans-serif;
+	color: #ffffe3;
+	font-style: italic;
+	font-weight: 700;
+	font-size: 18px;
+	letter-spacing: 0;
+	text-align: left
+}
+
+.BannerCta {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%
+}
+
+.BannerCta a {
+	display: inline-block;
+	width: 100%;
+	height: 100%
+}
+
+.BannerCloseButton {
+	display: block;
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	top: 20px;
+	right: 20px;
+	border-radius: 40px;
+	background-color: rgba(0,0,0,.5);
+	border: 1px solid #fff;
+	background-repeat: no-repeat;
+	background-position: center;
+	box-shadow: 0 5px 10px rgba(0,0,0,.3);
+	cursor: pointer
+}
+
+.BannerCloseButton:before,.BannerCloseButton:after {
+	position: absolute;
+	content: "";
+	width: 2px;
+	height: 20px;
+	border-radius: 5px;
+	background-color: #fff;
+	top: 50%;
+	left: 50%;
+	margin-top: -10px;
+	margin-left: -1px
+}
+
+.BannerCloseButton:after {
+	transform: rotate(-45deg)
+}
+
+.BannerCloseButton:before {
+	transform: rotate(45deg)
+}
+
+p.Banner_DoNotShowAgain {
+	width: 100%;
+	position: fixed;
+	bottom: 60px;
+	text-decoration: underline
+}
