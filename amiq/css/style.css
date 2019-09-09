@@ -367,8 +367,8 @@ body.fix-menu .list-type-menu a {
         bottom: 0;    
     }
     .list-type-menu a {
-        padding-left: 2em;
-        padding-right: 2em;
+        padding-left: 1em;
+        padding-right: 1em;
         line-height: 2.5rem !important;
     }
     .filter > div > div:nth-child(3) {
@@ -2553,7 +2553,9 @@ body.fix-menu .list-type-menu a {
     }
     .filter > div  div {
         width: 100vw;
+        height: 2.25em;
         overflow: auto;
+        white-space: nowrap;
     }
     .filter span {
         white-space: nowrap;
@@ -2867,7 +2869,7 @@ body.fix-menu .list-type-menu a {
 }
 .address {
     padding-left: 2em;
-    background: url(../img/google_maps.png) center left no-repeat;
+    background: url(../img/google_maps.png) .25em center no-repeat;
     background-size: 1.5em 1.5em;
     /* color: #056abc; */
 }

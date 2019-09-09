@@ -99,10 +99,15 @@ class RentTerms extends React.Component {
               <ul className="no-list-style">
                 {/* <li>本出租服務以【台中市】【面交】為主。<br/>若外縣市的您仍有租借需求，對於支付運費也可接受，可再至 Messenger 洽談租借數量及運費。</li> */}
                 <li>台中市優先採用面交，亦可寄送。外縣市一律寄送。</li>
-                <li><span className="pickup">【面交】</span>地點為：
+                <li><span className="pickup">【面交】</span>地點為
                   <a className="address" target="_blank" href="https://www.google.com.tw/maps/place/7-ELEVEN+%E6%A1%82%E5%86%A0%E9%96%80%E5%B8%82/@24.1623719,120.6515811,17z/data=!3m1!4b1!4m5!3m4!1s0x34693d8589fe853d:0x7850c53f3db52e06!8m2!3d24.1623719!4d120.6537698">
                   7-ELEVEN 桂冠門市
-                  </a> （台中市臺灣大道及文心路交界一帶）。</li>
+                  </a>（臺灣大道及文心路附近），或是台中市政府後方的
+                  <a className="address" target="_blank" href="https://www.google.com.tw/maps/place/407,+Taichung+City,+Xitun+District,+%E5%BA%9C%E6%9C%83%E5%9C%92%E9%81%93179%E8%99%9F%E5%85%A8%E7%90%83%E9%81%8B%E7%B1%8C%E4%B8%AD%E5%BF%83/@24.1613408,120.6434616,17z/data=!3m1!4b1!4m5!3m4!1s0x34693d8d75cc5a0b:0x4613f8504c24b5bf!8m2!3d24.1613408!4d120.6456503?hl=en&authuser=0">
+                  府會園道
+                  </a>
+                  。
+                </li>
                 <li><span className="pickup">【郵寄】</span>運費 60 元（1~5本遊戲本及1片遊戲板）。</li>
                 <li><span className="pickup">【掌櫃服務】</span>費用50元，若您社區有掌櫃可在社區掌櫃取件，或是至超商掌櫃取件。<a href="https://www.palmbox.com.tw/" target="_blank">>>瞭解掌櫃>></a></li>
                 <li className="text-highlight">寄送取件，若有必須於指定日期收到的需求，請您務必提前預約。</li>
