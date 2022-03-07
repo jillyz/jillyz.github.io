@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <!-- My style -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Icon - Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+
+    <div class="wrap dashboard">
+        <div class="notice">
+
+            <div class="todo">
+                <i class="fa-solid fa-clipboard-check"></i> 待審閱計畫 <span>3</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-triangle-exclamation"></i> 評選委員同時為其他計畫廠商 <span>3</span>
+            </div>
+            <!-- <div>
+                <i class="fa-solid fa-user-xmark"></i> 無人督主辦計畫 <span>3</span>
+            </div> -->
+        </div>
+        <div class="col col-1 section-outsourcing-funds">
+            <h2 class="title">
+                <select class="select-year">
+                    <option value="110">110年度</option>
+                    <option value="111" selected>111年度</option>
+                </select> 計畫概要
+            </h2>
+            <table class="data-total">
+                <tr>
+                    <th>總件數</th>
+                    <th class="align-r">核定總經費</th>
+                </tr>
+                <tr>
+                    <td>33件</td>
+                    <td class="align-r">5182萬</td>
+                </tr>
+            </table>
+            <div class="wrap chart-outsourcing-funds">
+                <div id="chartOutsourcing" class="chart-outsourcing col"></div>
+                <div id="chartFunds" class="chart-funds col"></div>
+            </div>
+            <table class="data-outsourcing-funds">
+                <tr class="yes">
+                    <td>已發包</td>
+                    <td><span>25件</span></td>
+                    <td>已執行經費 </td>
+                    <td><span>3990萬</span></td>
+                </tr>
+                <tr class="no">
+                    <td>未發包</td>
+                    <td><span>8件</span></td>
+                    <td>剩餘經費</td>
+                    <td><span>1192萬</span></td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="col col-2 section-organizer-stage">
+            <h2 class="title">計畫執行</h2>
+            <div class="flex">
+                <section class="wrap-organizer">
+                    <div id="chartMyOrganizer" class="chart-organizer-mine"></div>
+                    <table class="data-organizer-mine">
+                        <caption class="section-title">主督辦計畫</caption>
+                        <!-- <tr>
+                            <td></td>
+                            <td class="align-r">件數</td>
+                            <td class="align-r">進度落後</td>
+                        </tr> -->
+                        <tr class="wra">
+                            <th>個人主辦</th>
+                            <td class="align-r"><span>1</span></td>
+                            <td class="align-r"><span class="late">1</span></td>
+                        </tr>
+                        <tr class="aa">
+                            <th>個人督辦</th>
+                            <td class="align-r"><span>1</span></td>
+                            <td class="align-r"><span class="late">0</span></td>
+                        </tr>
+                        <tr class="aa">
+                            <th>控管單位執行</th>
+                            <td class="align-r"><span>33</span></td>
+                            <td class="align-r"><span class="late">8</span></td>
+                        </tr>
+                    </table>
+                </section>
+                <section class="wrap-stage">
+                    <div id="chartStage" class="chart-stage"></div>
+                    <table class="data-stage">
+                        <tr class="align-t">
+                            <th>計畫<br/>申請</th>
+                            <th>計畫<br/>核可</th>
+                            <th>採購<br/>提報</th>
+                            <th>契約<br/>簽訂</th>
+                            <th>契約<br/>變更</th>
+                            <th>進度<br/>填報</th>
+                            <th>已結案</th>
+                            <th>成果<br/>上傳</th>
+                            <th>成果<br/>歸檔</th>
+                        </tr>
+                        <tr id="dataSatageTotal" class="cursor">
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>26</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>3</td>
+                        </tr>
+                        <tr id="dataSatageLate" class="cursor">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><span>1</span></td>
+                            <td></td>
+                            <td><span>7</span></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="cursor btn-purchase-detail">
+                                <input id="purchaseDetail" type="checkbox">
+                                <label for="purchaseDetail"><i class="fa-regular fa-rectangle-list"></i></label>
+                                <table class="data-stage purchase">
+                                    <caption>採購階段執行進度（已完成「計畫核可」方列入統計）</caption>
+                                    <tr>
+                                        <th>尚未登打</th>
+                                        <th>上網公告</th>
+                                        <th>資格審查</th>
+                                        <th>規格審查</th>
+                                        <th>定期議價</th>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td colspan="7"></td>
+                        </tr>
+                    </table>
+
+
+                </section>
+            </div>
+        </div>
+        <div class="col col-1 section-priority">
+            <h2 class="title">計畫優先序</h2>
+            <div class="wrap wrap-priority">
+                <div class="col col-3">
+                    <table class="data-priority">
+                        <tr>
+                            <th colspan="2">最優先</th>
+                        </tr>
+                        <tr>
+                            <td>總件數</td>
+                            <td><span>6</span></td>
+                        </tr>
+                        <tr>
+                            <td>未發包</td>
+                            <td><span class="not-yet">1</span></td>
+                        </tr>
+                    </table>
+                    <div id="chartPriority1" class="chart-priority"></div>
+                    <span class="percentage">%</span>
+                </div>
+                <div class="col col-3">
+                    <table class="data-priority">
+                        <tr>
+                            <th colspan="2">優先</th>
+                        </tr>
+                        <tr>
+                            <td>總件數</td>
+                            <td><span>10</span></td>
+                        </tr>
+                        <tr>
+                            <td>未發包</td>
+                            <td><span class="not-yet">2</span></td>
+                        </tr>
+                    </table>
+                    <div id="chartPriority2" class="chart-priority"></div>
+                    <span class="percentage">%</span>
+                </div>
+                <div class="col col-3">
+                    <table class="data-priority">
+                        <tr>
+                            <th colspan="2">一般</th>
+                        </tr>
+                        <tr>
+                            <td>總件數</td>
+                            <td><span>17</span></td>
+                        </tr>
+                        <tr>
+                            <td>未發包</td>
+                            <td><span class="not-yet">5</span></td>
+                        </tr>
+                    </table>
+                    <div id="chartPriority3" class="chart-priority"></div>
+                    <span class="percentage">%</span>
+                </div>
+            </div>
+        </div>
+        <div class="col col-1 section-company">
+            <h2 class="title">廠商</h2>
+
+            <div class="mychart-type-bar">
+                <table class="data">
+                    <tr>
+                        <td>只有一家廠商投標</td>
+                        <td class="align-r">50件</td>
+                    </tr>
+                </table>
+                <div class="mychart-bar">
+                    <span id="chartOneCompany" class="bar" data-value="50" data-total="526"></span>
+                </div>
+            </div>
+            <div class="slider">
+                <input type="radio" name="r" id="r1" checked>
+                <label for="r1">
+                    <div id="chartCompany" class="chart-company slider" data-slider="0"></div>
+                </label>
+                <input type="radio" name="r" id="r2">
+                <label for="r2">
+                    <div id="chartCompanyHosting" class="chart-company slider" data-slider="0">
+
+                    </div>
+                </label>
+            </div>
+
+        </div>
+        <div class="col col-1 section-committee">
+            <h2 class="title">委員</h2>
+            <div class="mychart-type-bar">
+                <table class="data">
+                    <tr>
+                        <td>有遴聘委員</td>
+                        <td class="align-r">389件</td>
+                    </tr>
+                </table>
+                <div class="mychart-bar">
+                    <span id="chartHasCommittee" class="bar" data-value="389" data-total="526"></span>
+                </div>
+            </div>
+            <div id="chartCommittee" class="chart-company"></div>
+            <table class="data-committee-hosting">
+                <caption>評選委員同時為其他計畫主持人</caption>
+                <tbody>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+    </div>
+
+    <div class="wrap dashboard">
+
+    </div>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
+    <!-- Uncomment this line if you want to dataTool extension
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/extension/dataTool.min.js"></script>
+          -->
+    <!-- Uncomment this line if you want to use gl extension
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+          -->
+    <!-- Uncomment this line if you want to echarts-stat extension
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+          -->
+    <!-- Uncomment this line if you want to use map
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/map/js/china.js"></script>
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/map/js/world.js"></script>
+          -->
+    <!-- Uncomment these two lines if you want to use bmap extension
+          <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=<Your Key Here>"></script>
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@{{version}}/dist/extension/bmap.min.js"></script>
+          -->
+
+
+    <script data-main="js/dashboard-my-organizer" src="js/require.js"></script>
+    <script>
+        window.addEventListener('resize', function() {
+            "use strict";
+            window.location.reload();
+        });
+    </script>
+
+
+</body>
+
+</html>

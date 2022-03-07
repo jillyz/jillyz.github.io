@@ -1,0 +1,12 @@
+requirejs([
+    'common',
+    'echart-outsourcing',
+    'echart-funds',
+    'echart-organizer',
+    'echart-stage',
+    'echart-priority',
+    'echart-company',
+    'echart-hosting',
+    'echart-committee',
+    'mychart-bar',
+]);
