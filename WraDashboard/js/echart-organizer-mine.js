@@ -77,6 +77,11 @@ function renderMyOrganizer(label, valueTotal, valueLate) {
         myChartMyOrganizer.setOption(optionMyOrganizer);
     }
 
+    window.onresize = function() {
+        myChartMyOrganizer.resize();
+    };
+
+
     //----連動查詢-------
     myChartMyOrganizer.on('mouseover', function(params) {
         var temp = 0;

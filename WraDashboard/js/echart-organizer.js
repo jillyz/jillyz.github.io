@@ -80,6 +80,10 @@ function renderOrganizer() {
         myChartOrganizer.setOption(optionOrganizer);
     }
 
+    window.onresize = function() {
+        myChartOrganizer.resize();
+    };
+
     //----連動查詢-------
     myChartOrganizer.on('mouseover', function(params) {
         var temp = 0;

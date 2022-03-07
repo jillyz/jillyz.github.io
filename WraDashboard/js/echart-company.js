@@ -73,6 +73,9 @@ function renderCompany(label, value) {
     if (optionCompany && typeof optionCompany === 'object') {
         myChartCompany.setOption(optionCompany);
     }
+    window.onresize = function() {
+        myChartCompany.resize();
+    };
 }
 var labelCompany = ['黎明工程顧問股份有限公司', 'ＯＯ工程顧問股份有限公司', '逢甲大學', '天思數位科技股粉有限公司', '詮華國土測繪有限公司'];
 var valueCompany = [20, 15, 12, 8, 7];

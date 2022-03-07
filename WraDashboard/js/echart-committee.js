@@ -61,6 +61,10 @@ function renderCommittee(label, value) {
     if (optionCommittee && typeof optionCommittee === 'object') {
         myChartCommittee.setOption(optionCommittee);
     }
+
+    window.onresize = function() {
+        myChartCommittee.resize();
+    };
 }
 var labelCommittee = ['李安安', '陳欣欣', '張明明', '黃大大', '林瑋瑋'];
 var valueCommittee = [10, 8, 7, 6, 5];

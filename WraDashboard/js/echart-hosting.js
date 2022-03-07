@@ -61,6 +61,10 @@ function renderCompanyHosting() {
         myChartCompanyHosting.setOption(optionCompanyHosting);
     }
 
+    window.onresize = function() {
+        myChartCompanyHosting.resize();
+    };
+
 }
 renderCompanyHosting();
 // });

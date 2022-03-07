@@ -120,9 +120,18 @@ function renderStage(label, valueTotal, valueLate, title) {
         myChartStage.setOption(optionStage);
     }
 
+    window.addEventListener('resize', function() {
+        "use strict";
+        myChartStage.resize();
+    });
+
+
 }
 var labelStage = ['計畫申請', '計畫核可', '採購提報', '契約簽訂', '契約變更', '進度填報', '已結案', '成果上傳', '成果歸檔'];
 var valueStageTotal = [0, 145, 42, 91, 1, 107, 0, 0, 0];
 var valueStageLate = [0, 26, 0, 49, 0, 37, 0, 0, 0];
 renderStage(labelStage, valueStageTotal, valueStageLate);
+
+
+
 // });
