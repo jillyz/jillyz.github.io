@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>主督辦/組室窗口/Dashboard</title>
     <!-- CSS Reset -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
@@ -31,45 +31,16 @@
                 <i class="fa-solid fa-user-xmark"></i> 無人督主辦計畫 <span>3</span>
             </div> -->
         </div>
-        <div class="col col-1 section-outsourcing-funds">
+
+
+
+        <div class="col col-3 section-organizer-stage">
             <h2 class="title">
                 <select class="select-year">
                     <option value="110">110年度</option>
                     <option value="111" selected>111年度</option>
-                </select> 計畫概要
+                </select> 計畫執行
             </h2>
-            <table class="data-total">
-                <tr>
-                    <th>總件數</th>
-                    <th class="align-r">核定總經費</th>
-                </tr>
-                <tr>
-                    <td>33件</td>
-                    <td class="align-r">5182萬</td>
-                </tr>
-            </table>
-            <div class="wrap chart-outsourcing-funds">
-                <div id="chartOutsourcing" class="chart-outsourcing col"></div>
-                <div id="chartFunds" class="chart-funds col"></div>
-            </div>
-            <table class="data-outsourcing-funds">
-                <tr class="yes">
-                    <td>已發包</td>
-                    <td><span>25件</span></td>
-                    <td>已執行經費 </td>
-                    <td><span>3990萬</span></td>
-                </tr>
-                <tr class="no">
-                    <td>未發包</td>
-                    <td><span>8件</span></td>
-                    <td>剩餘經費</td>
-                    <td><span>1192萬</span></td>
-                </tr>
-            </table>
-
-        </div>
-        <div class="col col-2 section-organizer-stage">
-            <h2 class="title">計畫執行</h2>
             <div class="flex">
                 <section class="wrap-organizer">
                     <div id="chartMyOrganizer" class="chart-organizer-mine"></div>
@@ -164,6 +135,42 @@
                 </section>
             </div>
         </div>
+
+        <div class="col col-1 section-outsourcing-funds">
+            <h2 class="title">
+                計畫概要
+            </h2>
+            <table class="data-total">
+                <tr>
+                    <th>總件數</th>
+                    <th class="align-r">核定總經費</th>
+                </tr>
+                <tr>
+                    <td>33件</td>
+                    <td class="align-r">5182萬</td>
+                </tr>
+            </table>
+            <div class="wrap chart-outsourcing-funds">
+                <div id="chartOutsourcing" class="chart-outsourcing col"></div>
+                <div id="chartFunds" class="chart-funds col"></div>
+            </div>
+            <table class="data-outsourcing-funds">
+                <tr class="yes">
+                    <td>已發包</td>
+                    <td><span>25件</span></td>
+                    <td>已執行經費 </td>
+                    <td><span>3990萬</span></td>
+                </tr>
+                <tr class="no">
+                    <td>未發包</td>
+                    <td><span>8件</span></td>
+                    <td>剩餘經費</td>
+                    <td><span>1192萬</span></td>
+                </tr>
+            </table>
+
+        </div>
+        <!-- 
         <div class="col col-1 section-priority">
             <h2 class="title">計畫優先序</h2>
             <div class="wrap wrap-priority">
@@ -220,6 +227,7 @@
                 </div>
             </div>
         </div>
+         -->
         <div class="col col-1 section-company">
             <h2 class="title">廠商</h2>
 
