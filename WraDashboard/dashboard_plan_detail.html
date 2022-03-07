@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>計畫查詢 Dashboard</title>
     <!-- CSS Reset -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
@@ -59,7 +59,6 @@
         
         .plan {
             grid-area: plan;
-            /* display: none; */
         }
         
         .stage {
@@ -93,9 +92,53 @@
         
         .wrap-checkbox>* {
             display: inline-block;
+            margin-top: 5px;
+            ;
         }
         
-        .grid-title {
+        .wrap-checkbox input[type="checkbox"] {
+            appearance: none;
+        }
+        
+        .wrap-checkbox input,
+        .wrap-checkbox label {
+            cursor: pointer;
+        }
+        
+        .wrap-checkbox input[type="checkbox"]::before {
+            content: "✓";
+            display: inline-block;
+            margin-left: 1em;
+            padding: 0 .5em;
+            border-radius: .25em;
+            background-color: #CDCDCD;
+            color: #FFFFFF;
+            font-weight: bold;
+            text-align: center;
+            transition: .25s all;
+        }
+        
+        .wrap-checkbox .legend-1:checked:before {
+            background-color: #5470C6;
+        }
+        
+        .wrap-checkbox .legend-2:checked:before {
+            background-color: #91CC75;
+        }
+        
+        .wrap-checkbox .legend-3:checked:before {
+            background-color: #FAC858;
+        }
+        
+        .wrap-checkbox .legend-4:checked:before {
+            background-color: #EE6666;
+        }
+        
+        .wrap-checkbox .legend-5:checked:before {
+            background-color: #5ECDE1;
+        }
+        
+        .wrap-checkbox .grid-title {
             padding-bottom: .5em;
             font-size: 16px;
             font-weight: bold;
@@ -196,25 +239,24 @@
                     </select>
                 </div>
                 <div class="wrap-checkbox">
-                    <span>篩選</span>
                     <span>
-                        <input type="checkbox" name="" id="chkIsEng">
+                        <input type="checkbox" name="" id="chkIsEng" class="legend-5" checked>
                         <label for="chkIsEng">八大類計畫</label>
                     </span>
                     <span>
-                        <input type="checkbox" name="" id="chkIsPlanKind1">
+                        <input type="checkbox" name="" id="chkIsPlanKind1" class="legend-1" checked>
                         <label for="chkIsPlanKind1">新興計畫</label>
                     </span>
                     <span>
-                        <input type="checkbox" name="" id="chkIsPlanKind2">
+                        <input type="checkbox" name="" id="chkIsPlanKind2" class="legend-2" checked>
                         <label for="chkIsPlanKind2">延續性計畫</label>
                     </span>
                     <span>
-                        <input type="checkbox" name="" id="chkIsPlanKind3">
+                        <input type="checkbox" name="" id="chkIsPlanKind3" class="legend-3" checked>
                         <label for="chkIsPlanKind3">跨年度計畫</label>
                     </span>
                     <span>
-                        <input type="checkbox" name="" id="chkIsAgency">
+                        <input type="checkbox" name="" id="chkIsAgency" class="legend-4" checked>
                         <label for="chkIsAgency">代辦計畫</label>
                     </span>
                 </div>
@@ -826,12 +868,12 @@
 
 
     <script data-main="js/dashboard-detail" src="js/require.js"></script>
-    <script>
+    <!-- <script>
         window.addEventListener('resize', function() {
             "use strict";
             window.location.reload();
         });
-    </script>
+    </script> -->
 
 </body>
 
