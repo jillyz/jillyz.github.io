@@ -281,14 +281,14 @@ h6 {
 }
 
 .chart-outsourcing-funds {
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .chart-outsourcing {
     width: calc(50% - 8px);
     /* max-width: 200px; */
     height: 200px;
-    transform: translate(-10px, -20px);
+    /* transform: translate(-10px, -20px); */
     /* overflow: hidden; */
 }
 
@@ -415,8 +415,8 @@ h6 {
 }
 
 .data-outsourcing-funds {
-    /* position: relative; */
-    /* z-index: 1; */
+    position: relative;
+    z-index: 1;
     margin-top: -85px;
     margin-bottom: 1.5em;
     width: 100%;
