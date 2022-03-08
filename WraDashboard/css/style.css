@@ -957,27 +957,56 @@ border-width: 0 1px;
 .my-table thead th,
 .my-table2 thead th {
     position: sticky;
-    top: 0;
+    top: -1px;
     background-color: #F7FAFC;
-    box-shadow: 0 0 10px (0, 0, 0, .5);
 }
 
-.my-table thead th.name,
-.my-table2 thead th.name {
+.my-table thead th.fixed,
+.my-table2 thead th.fixed {
+    position: relative;
     position: sticky;
+    top: -1px;
     left: 0;
     z-index: 2;
-    box-shadow: 0 0 10px (0, 0, 0, .5);
+    background-color: #F7FAFC;
 }
 
-.my-table tbody td.name,
-.my-table2 tbody td.name {
+.my-table tbody td.fixed,
+.my-table2 tbody td.fixed {
     position: relative;
     position: sticky;
     left: 0;
-    background: #FFFFFF;
     z-index: 1;
-    box-shadow: 0 0 10px (0, 0, 0, .5);
+    background: #FFFFFF;
+}
+
+.my-table2 thead th::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    border-bottom: 1px solid #e5e7eb;
+    background-color: #F7FAFC;
+}
+
+.my-table2 tbody td.fixed::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    border-right: 1px solid #e5e7eb;
+    background-color: #FFFFFF;
 }
 
 .my-table th,
