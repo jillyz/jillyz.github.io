@@ -36,8 +36,8 @@ function renderChartPlanEngCount() {
             center: ['50%', '40%'],
             radius: ['50%', '80%'],
             avoidLabelOverlap: false,
-            selectedMode: 'single',
-            // showEmptyCircle: true,
+            // selectedMode: 'single',
+            showEmptyCircle: true,
             label: {
                 show: false,
                 position: 'center'

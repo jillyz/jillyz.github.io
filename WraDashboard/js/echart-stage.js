@@ -42,7 +42,7 @@ function renderStage(label, valueTotal, valueLate, title) {
             }
         },
         grid: {
-            left: '3%',
+            left: '4%',
             right: '6%',
             top: '30%',
             bottom: '10px',

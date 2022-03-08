@@ -35,8 +35,8 @@ function renderChartPlanKindCount() {
             center: ['50%', '30%'],
             radius: ['50%', '80%'],
             avoidLabelOverlap: false,
-            selectedMode: 'single',
-            // showEmptyCircle: true,
+            // selectedMode: 'single',
+            showEmptyCircle: true,
             label: {
                 show: false,
                 position: 'center'

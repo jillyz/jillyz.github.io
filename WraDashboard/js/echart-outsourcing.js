@@ -22,7 +22,7 @@ function renderChartOutsourcing() {
             },
         },
         legend: {
-            bottom: '0',
+            bottom: '10',
             left: 'center'
         },
         color: [
