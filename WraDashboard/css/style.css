@@ -917,6 +917,11 @@ border-width: 0 1px;
     border: 1px dotted #CCC;
 }
 
+.my-table-wrap,
+.my-table2-wrap {
+    overflow-x: auto;
+}
+
 .my-table,
 .my-table2 {
     width: 100%;
@@ -926,6 +931,7 @@ border-width: 0 1px;
 .my-table th,
 .my-table td {
     padding: 8px;
+    max-width: 20em;
 }
 
 .my-table th,
@@ -1051,6 +1057,7 @@ border-width: 0 1px;
 
 .my-table2 th,
 .my-table2 td {
+    max-width: 20em;
     padding: .5em .5rem;
     font-weight: normal;
 }
