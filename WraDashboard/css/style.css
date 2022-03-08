@@ -1112,6 +1112,244 @@ a {
 }
 
 
+/* ============================= */
+
+.grid.dashboard-detail {
+    display: grid;
+    margin: 8px;
+    height: calc(100vh - 16px);
+    grid-gap: 8px;
+    grid-template-columns: 360px 1fr;
+    grid-template-rows: 54px 210px auto;
+    grid-template-areas: "query query" "plan stage" "plan list";
+    box-sizing: border-box;
+}
+
+.grid.dashboard-detail.no-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 54px 1fr;
+    grid-template-areas: "query" "list";
+}
+
+.grid.no-grid .plan,
+.grid.no-grid .stage {
+    display: none;
+}
+
+.grid>div {
+    padding: 12px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+}
+
+.dashboard-detail .query {
+    width: 100%;
+    grid-area: query;
+}
+
+.dashboard-detail .plan {
+    grid-area: plan;
+}
+
+.dashboard-detail .stage {
+    grid-area: stage;
+    /* display: none; */
+}
+
+.dashboard-detail .list {
+    grid-area: list;
+    background-color: #F7FAFC !important;
+}
+
+.dashboard-detail *:not(.grid-title) {
+    font-size: 13px !important;
+}
+
+.grid.dashboard-organizer {
+    display: grid;
+    margin: 8px;
+    height: calc(100vh - 16px);
+    grid-gap: 8px;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "top5 top5" "unit list";
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.grid.dashboard-organizer.no-grid {
+    /* grid-template-columns: 1fr 4fr; */
+    grid-template-rows: 1fr;
+    grid-template-areas: "unit list";
+}
+
+.grid.dashboard-organizer.no-grid .top5 {
+    display: none;
+}
+
+.grid.dashboard-organizer .top5 {
+    grid-area: top5;
+}
+
+.grid.dashboard-organizer .unit {
+    grid-area: unit;
+    width: 100%;
+    /* overflow: auto; */
+}
+
+.grid.dashboard-organizer .list {
+    grid-area: list;
+    /* height: calc(100% - 30px); */
+    overflow: hidden;
+    background-color: #F7FAFC !important;
+}
+
+.grid-top5 {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.grid-top5 [class^="chart-"] {
+    width: 100%;
+    height: 180px;
+    background-color: #555;
+}
+
+.wrap-select {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    /* width: calc(100% / 11* 4 - 10px); */
+}
+
+.wrap-checkbox {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    /* width: calc(100% / 11* 7 - 10px); */
+    text-align: center;
+}
+
+.wrap-checkbox>* {
+    display: inline-block;
+    margin-top: 5px;
+    ;
+}
+
+.wrap-checkbox input[type="checkbox"] {
+    appearance: none;
+}
+
+.wrap-checkbox input,
+.wrap-checkbox label {
+    cursor: pointer;
+}
+
+.wrap-checkbox input[type="checkbox"]::before {
+    content: "✓";
+    display: inline-block;
+    margin-left: 1em;
+    padding: 0 .5em;
+    border-radius: .25em;
+    background-color: #CDCDCD;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+    transition: .25s all;
+}
+
+.wrap-checkbox .legend-1:checked:before {
+    background-color: #5470C6;
+}
+
+.wrap-checkbox .legend-2:checked:before {
+    background-color: #91CC75;
+}
+
+.wrap-checkbox .legend-3:checked:before {
+    background-color: #FAC858;
+}
+
+.wrap-checkbox .legend-4:checked:before {
+    background-color: #EE6666;
+}
+
+.wrap-checkbox .legend-5:checked:before {
+    background-color: #5ECDE1;
+}
+
+.grid-title {
+    padding-bottom: .5em;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.grid-title.border-bottom {
+    padding-bottom: 1em;
+    /* border-bottom: 1px solid #EFEFEF; */
+}
+
+.data-plan-list .detail,
+.data-plan-list .late {
+    display: none;
+}
+
+.relative {
+    position: relative;
+}
+
+.toolbox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    padding-right: 1em;
+}
+
+.toolbox>* {
+    margin-left: 1.5em;
+}
+
+.toolbox .form-switch {
+    line-height: 30px;
+}
+
+.toolbox .form-switch input {
+    margin-top: 10px;
+}
+
+.btn-full-table input {
+    appearance: none;
+}
+
+.btn-full-table i::before {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn-full-table label:hover>i::before {
+    color: #5470C6;
+}
+
+.btn-full-table input+label>i {
+    display: none;
+}
+
+.btn-full-table input:checked+label>i.compress {
+    display: block;
+}
+
+.btn-full-table input:not(:checked)+label>i.expand {
+    display: block;
+}
+
+
+/* ==================================== */
+
+
 /* CSS SLIDER -------------------------- */
 
 .slider {
