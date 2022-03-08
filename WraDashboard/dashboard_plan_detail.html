@@ -68,6 +68,7 @@
         
         .list {
             grid-area: list;
+            background-color: #F7FAFC !important;
         }
         
         .dashboard-detail *:not(.grid-title) {
@@ -146,7 +147,7 @@
         
         .grid-title.border-bottom {
             padding-bottom: 1em;
-            border-bottom: 1px solid #EFEFEF;
+            /* border-bottom: 1px solid #EFEFEF; */
         }
         
         .data-plan-list .detail,
@@ -269,19 +270,28 @@
                 </div>
                 <table class="data-plan-kind">
                     <tr class="legend-1">
-                        <td class="align-l">新興計畫</td>
+                        <td class="align-l">
+                            新興計畫
+                            <i class="fa-solid fa-info" data-bs-toggle="tooltip" data-bs-placement="top" title="含延續性第一年、跨年度第一年，不含代辦案"></i>
+                        </td>
                         <td>128件</td>
                         <td>經費</td>
                         <td>9億3990萬</td>
                     </tr>
                     <tr class="legend-2">
-                        <td class="align-l">延續性計畫</td>
+                        <td class="align-l">
+                            延續性計畫
+                            <i class="fa-solid fa-info" data-bs-toggle="tooltip" data-bs-placement="top" title="第二年以後之延續性計畫"></i>
+                        </td>
                         <td>114件</td>
                         <td>經費</td>
                         <td>10億2989萬</td>
                     </tr>
                     <tr class="legend-3">
-                        <td class="align-l">跨年度計畫</td>
+                        <td class="align-l">
+                            跨年度計畫
+                            <i class="fa-solid fa-info" data-bs-toggle="tooltip" data-bs-placement="top" title="第二年以後之跨年度計畫"></i>
+                        </td>
                         <td>206件</td>
                         <td>經費</td>
                         <td>7億7490萬</td>
@@ -299,7 +309,10 @@
                 </div>
                 <table class="data-plan-kind" style="margin-top: -50px;">
                     <tr class="legend-5">
-                        <td class="align-l">八大類計畫</td>
+                        <td class="align-l">
+                            八大類計畫
+                            <i class="fa-solid fa-info" data-bs-toggle="tooltip" data-bs-placement="top" title="無需填報撥款之計畫類型"></i>
+                        </td>
                         <td>385件</td>
                         <td>經費</td>
                         <td>23億3973萬</td>
@@ -352,7 +365,7 @@
                 </table>
             </div>
             <div class="list relative">
-                <div class="grid-title border-bottom">
+                <div class="grid-title">
                     計畫列表
                 </div>
                 <div class="toolbox">
@@ -388,18 +401,19 @@
                         </label>
                     </span>
                 </div>
-                <div class="table-responsive my-table-wrap">
-                    <table class="my-table data-plan-list">
+                <div class="table-responsive my-table2-wrap" style="height: calc(100% - 30px );">
+                    <table class="my-table2 data-plan-list" style="height: 250px;">
                         <thead>
                             <tr>
                                 <th scope="col">年度</th>
                                 <th>計畫編號</th>
                                 <th class="name">計畫名稱</th>
-                                <th class="detail">年度類型</th>
+                                <th class="detail">計畫期程</th>
                                 <th class="detail">八大類</th>
                                 <th class="detail">代辦</th>
                                 <th>督辦組室/人員</th>
                                 <th>主辦機關/單位/人員</th>
+                                <th class="stage">執行階段</th>
                                 <th class="late">進度落後</th>
                                 <th class="late">預定日期</th>
                             </tr>
@@ -409,11 +423,12 @@
                                 <td>111</td>
                                 <td>MOEAWRA1110138</td>
                                 <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">新興</td>
+                                <td class="detail">單一年度</td>
                                 <td class="detail"></td>
                                 <td class="detail"></td>
                                 <td class="person"><a href="#">水利行政組／鄭仲君</a></td>
                                 <td class="person"><a href="#">中區水資源局／湖山水庫管理中心／林明鋒</a></td>
+                                <td class="stage">進度填報階段</td>
                                 <td class="late">
                                     第二次審查<br/>第三次報告<br/>第三次審查<br/>第一次撥款<br/>第二次撥款<br/>第三次撥款<br/>第四次撥款
                                 </td>
@@ -432,10 +447,11 @@
                                 <td>111</td>
                                 <td>MOEAWRA1110138</td>
                                 <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">新興</td>
+                                <td class="detail">單一年度</td>
                                 <td class="detail">✓</td>
                                 <td class="detail">✓</td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
+                                <td class="stage">進度填報階段</td>
                                 <td class="late">第一次撥款</td>
                                 <td class="late">111/1/31</td>
                             </tr>
@@ -447,10 +463,21 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">
-                                    第二次審查
-                                </td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">進度填報階段</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
+                            </tr>
+                            <tr>
+                                <td>111</td>
+                                <td>MOEAWRA1110138</td>
+                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
+                                <td class="detail">延續性</td>
+                                <td class="detail">✓</td>
+                                <td class="detail"></td>
+                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
+                                <td class="stage">訂期議價已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -460,8 +487,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">訂期議價已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -471,8 +499,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">計畫核可已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -482,8 +511,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">計畫核可已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -493,8 +523,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">計畫核可已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -504,8 +535,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">計畫核可已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -515,8 +547,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">計畫核可已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -526,8 +559,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">計畫核可已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -537,8 +571,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">計畫核可已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -548,8 +583,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">計畫核可已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -559,8 +595,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">計畫核可已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -570,8 +607,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">計畫核可已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -581,8 +619,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">計畫核可已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -592,8 +631,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">計畫核可已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -603,8 +643,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">計畫核可已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -614,8 +655,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">計畫核可已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
                             <tr>
                                 <td>111</td>
@@ -625,217 +667,9 @@
                                 <td class="detail">✓</td>
                                 <td class="detail"></td>
                                 <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
-                            </tr>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110138</td>
-                                <td class="name"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                                <td class="detail">跨年度</td>
-                                <td class="detail">✓</td>
-                                <td class="detail"></td>
-                                <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                                <td class="late">第一次撥款</td>
-                                <td class="late">111/1/31</td>
+                                <td class="stage">計畫核可已完成</td>
+                                <td class="late"></td>
+                                <td class="late"></td>
                             </tr>
 
                         </tbody>

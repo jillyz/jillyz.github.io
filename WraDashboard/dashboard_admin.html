@@ -9,6 +9,9 @@
     <!-- CSS Reset -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- My style -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Icon - Font Awesome -->
@@ -17,15 +20,20 @@
 </head>
 
 <body>
+    <div class="demo">
+        <a href="dashboard_admin.html">管理員</a>
+        <a href="dashboard_organizer.html">主督辦/組室</a>
+        <a href="dashboard_budget_controller.html">預算控管人員</a>
+    </div>
     <div class="wrap dashboard">
         <div class="notice">
-            <div class="todo">
-                <i class="fa-solid fa-clipboard-check"></i> 待審閱計畫 <span>3</span>
+            <div class="todo" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                <i class="fa-solid fa-clipboard-check"></i> 待審閱計畫 <span>2</span>
             </div>
             <div>
                 <i class="fa-solid fa-triangle-exclamation"></i> 評選委員同時為其他計畫廠商 <span>3</span>
             </div>
-            <div>
+            <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2" aria-controls="offcanvasBottom2">
                 <i class="fa-solid fa-user-xmark"></i> 無人督主辦計畫 <span>3</span>
             </div>
         </div>
@@ -42,7 +50,7 @@
                     <th class="align-r">核定總經費</th>
                 </tr>
                 <tr>
-                    <td>449件</td>
+                    <td>386件</td>
                     <td class="align-r">29億9966萬</td>
                 </tr>
             </table>
@@ -53,13 +61,13 @@
             <table class="data-outsourcing-funds">
                 <tr class="yes">
                     <td>已發包</td>
-                    <td><span>400件</span></td>
+                    <td><span>250件</span></td>
                     <td>已執行經費 </td>
                     <td><span>23億2074萬</span></td>
                 </tr>
                 <tr class="no">
                     <td>未發包</td>
-                    <td><span>49件</span></td>
+                    <td><span>36件</span></td>
                     <td>剩餘經費</td>
                     <td><span>6億789萬</span></td>
                 </tr>
@@ -80,11 +88,11 @@
                         <tr class="wra">
                             <td>水利署主辦</td>
                             <td class="align-r"><span>109</span></td>
-                            <td class="align-r"><span class="late">39</span></td>
+                            <td class="align-r"><span class="late">38</span></td>
                         </tr>
                         <tr class="aa">
                             <td>所屬機關主辦</td>
-                            <td class="align-r"><span>340</span></td>
+                            <td class="align-r"><span>277</span></td>
                             <td class="align-r"><span class="late">71</span></td>
                         </tr>
                     </table>
@@ -120,7 +128,7 @@
                             <td></td>
                             <td><span>49</span></td>
                             <td></td>
-                            <td><span>37</span></td>
+                            <td><span>34</span></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -166,11 +174,11 @@
                         </tr>
                         <tr>
                             <td>總件數</td>
-                            <td><span>164</span></td>
+                            <td><span>71</span></td>
                         </tr>
                         <tr>
                             <td>未發包</td>
-                            <td><span class="not-yet">21</span></td>
+                            <td><span class="not-yet">7</span></td>
                         </tr>
                     </table>
                     <div id="chartPriority1" class="chart-priority"></div>
@@ -183,11 +191,11 @@
                         </tr>
                         <tr>
                             <td>總件數</td>
-                            <td><span>164</span></td>
+                            <td><span>116</span></td>
                         </tr>
                         <tr>
                             <td>未發包</td>
-                            <td><span class="not-yet">21</span></td>
+                            <td><span class="not-yet">11</span></td>
                         </tr>
                     </table>
                     <div id="chartPriority2" class="chart-priority"></div>
@@ -200,11 +208,11 @@
                         </tr>
                         <tr>
                             <td>總件數</td>
-                            <td><span>164</span></td>
+                            <td><span>193</span></td>
                         </tr>
                         <tr>
                             <td>未發包</td>
-                            <td><span class="not-yet">21</span></td>
+                            <td><span class="not-yet">8</span></td>
                         </tr>
                     </table>
                     <div id="chartPriority3" class="chart-priority"></div>
@@ -219,11 +227,11 @@
                 <table class="data">
                     <tr>
                         <td>只有一家廠商投標</td>
-                        <td class="align-r">50件</td>
+                        <td class="align-r">50件 (13%)</td>
                     </tr>
                 </table>
                 <div class="mychart-bar">
-                    <span id="chartOneCompany" class="bar" data-value="50" data-total="526"></span>
+                    <span id="chartOneCompany" class="bar" data-value="50" data-total="386"></span>
                 </div>
             </div>
             <div class="slider">
@@ -246,11 +254,11 @@
                 <table class="data">
                     <tr>
                         <td>有遴聘委員</td>
-                        <td class="align-r">389件</td>
+                        <td class="align-r">389件 (82%)</td>
                     </tr>
                 </table>
                 <div class="mychart-bar">
-                    <span id="chartHasCommittee" class="bar" data-value="389" data-total="526"></span>
+                    <span id="chartHasCommittee" class="bar" data-value="317" data-total="386"></span>
                 </div>
             </div>
             <div id="chartCommittee" class="chart-company"></div>
@@ -313,13 +321,199 @@
             </table>
         </div>
 
-
-
-
     </div>
 
-    <div class="wrap dashboard">
 
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasBottomLabel">待審閱計畫</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div id="viewToDo" class="offcanvas-body small">
+            <div class="my-table2-wrap">
+                <div class="my-table2-title">
+                    主持人填報資料審閱
+                </div>
+                <table class="my-table2">
+                    <thead>
+                        <tr>
+                            <th scope="col">計畫年度</a>
+                            </th>
+                            <th scope="col">計畫編號</a>
+                            </th>
+                            <th scope="col">計畫名稱</a>
+                            </th>
+                            <th scope="col">預定/增辦計畫</a>
+                            </th>
+                            <th scope="col">計畫類別</a>
+                            </th>
+                            <th scope="col">契約型式</a>
+                            </th>
+                            <th scope="col">督辦組室/人員</a>
+                            </th>
+                            <th scope="col">主辦機關/單位/人員</a>
+                            </th>
+                            <th scope="col">計畫狀態</th>
+                            <th scope="col">GRB_計畫摘要</th>
+                            <th scope="col">GRB_期中報告</th>
+                            <th scope="col">GRB_期末報告</th>
+                            <th scope="col">成果內容</th>
+                            <th scope="col">實際績效指標</th>
+                            <th scope="col">成果效益報告</th>
+                            <th scope="col">修改受託單位資料</th>
+                        </tr>
+                    </thead>
+                    <tobody>
+                        <tr>
+                            <td>100</td>
+                            <td>MOEAWRA1000466</td>
+                            <td><a href="http://wendy/wraplan/System/Plan/Result.aspx?pnumber=MOEAWRA1000466" target="_blank" title="詳細資料">大甲溪裡冷段開闊地區成為囚砂區可行性規劃</a></td>
+                            <td>增辦計畫</td>
+                            <td>一般委辦</td>
+                            <td>一般合約</td>
+                            <td><span style="color: blue;">水利行政組/林玄忠</span></td>
+                            <td><span style="color: blue;">第三河川局/規劃課/李俊延</span></td>
+                            <td><span id="Data_List_All_ctl02_PlanStatus">成果歸檔完成</span></td>
+                            <td>
+                                無
+                            </td>
+                            <td>
+                                無
+                            </td>
+                            <td>
+                                無
+                            </td>
+                            <td>
+                                <div><span id="Data_List_All_ctl02_LbTxt" style="color: green;">完成</span></div>
+
+                                <div><a id="Data_List_All_ctl02_LinkResultView" style="color: rgb(0, 51, 204);">&lt;查閱&gt;</a></div>
+                            </td>
+                            <td>
+
+                                <div><input id="Data_List_All_ctl02_BtnKpiVerify" name="Data_List_All$ctl02$BtnKpiVerify" style="background: red; color: rgb(255, 255, 255);" type="submit" value="審閱" /></div>
+                            </td>
+                            <td>
+                                無
+                            </td>
+                            <td>
+                                <i class="fa-solid fa-pen"></i>
+                            </td>
+                        </tr>
+                        </tbody>
+                </table>
+            </div>
+
+
+            <div class="my-table2-wrap">
+                <div class="my-table2-title">
+                    委辦計畫資料審閱
+                </div>
+                <table class="my-table2">
+                    <table class="my-table2">
+                        <thead>
+                            <tr>
+                                <th><a>計畫年度</a></th>
+                                <th><a>計畫編號</a></th>
+                                <th><a>計畫名稱</a></th>
+                                <th><a>預定/增辦計畫</a></th>
+                                <th><a>計畫類別</a></th>
+                                <th><a>契約型式</a></th>
+                                <th><a>督辦組室/人員</a></th>
+                                <th><a>主辦機關/單位/人員</a></th>
+                                <th>處理事項</th>
+                                <th>計畫書</th>
+                                <th>契約條款</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>111</td>
+                                <td>MOEAWRA1110083</td>
+                                <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                                <td>預定計畫</td>
+                                <td>輔助行政</td>
+                                <td>一般合約</td>
+                                <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
+                                <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
+                                <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">請審閱契約簽訂內容</a></td>
+                                <td>
+                                    <a href="http://wendy/wraplan/System/Files/PlanCheckFile/111/MOEAWRA1110083_P.doc" id="Data_List_All_ctl02_lnkBook" target="_blank"><i class="fa-solid fa-file-arrow-down"></i></a>
+                                </td>
+                                <td>
+                                    <a href="http://wendy/wraplan/System/Files/PlanConFile/111/MOEAWRA1110083_S.pdf" id="Data_List_All_ctl02_lnkContract" target="_blank"><i class="fa-solid fa-file-arrow-down"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom2" aria-labelledby="offcanvasBottom2Label">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasBottom2Label">無人督主辦計畫</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div id="viewToDo" class="offcanvas-body small">
+            <div class="my-table2-wrap">
+                <table class="my-table2">
+                    <tbody>
+                        <tr>
+                            <th scope="col"><a>計畫年度</a></th>
+                            <th scope="col"><a>計畫編號</a></th>
+                            <th scope="col"><a>計畫名稱</a></th>
+                            <th scope="col"><a>預定/增辦計畫</a></th>
+                            <th scope="col"><a>計畫類別</a></th>
+                            <th scope="col"><a>督辦<br />
+                        組室/人員</a></th>
+                            <th scope="col"><a>主辦<br />
+                        機關/單位/人員</a></th>
+                            <th scope="col"><a>原督辦<br />
+                        組室/人員</a></th>
+                            <th scope="col"><a>原主辦<br />
+                        機關/單位/人員</a></th>
+                            <th scope="col">編輯設定</th>
+                        </tr>
+                        <tr>
+                            <td>110</td>
+                            <td>MOEAWRA1090031_110</td>
+                            <td>大安溪卓蘭大橋至梅象橋及支流景山溪、烏石坑溪河川區域檢討變更勘測計畫</td>
+                            <td>預定委辦計畫</td>
+                            <td>輔助行政/</td>
+                            <td><a id="gvData_ctl02_lbtnManage" style="color: rgb(0, 51, 204);">河川勘測隊／周湘俊</a></td>
+                            <td></td>
+                            <td><span id="gvData_ctl02_lblOriManager">水利行政組/水政四科/周湘俊</span></td>
+                            <td><span id="gvData_ctl02_lblOriAction">第三河川局/管理課//杜亮呈</span></td>
+                            <td><i class="fa-solid fa-pen"></i></td>
+                        </tr>
+                        <tr>
+                            <td>110</td>
+                            <td>MOEAWRA1100112</td>
+                            <td>110年度臺美水利技術第八號附錄合作計畫</td>
+                            <td>預定委辦計畫</td>
+                            <td>輔助行政/</td>
+                            <td></td>
+                            <td><a id="gvData_ctl03_lbtnAction" style="color: rgb(0, 51, 204);">水利規劃試驗所／河川規劃課／陳俊合</a></td>
+                            <td><span id="gvData_ctl03_lblOriManager">河川海岸組/河海一科/黃爾強</span></td>
+                            <td><span id="gvData_ctl03_lblOriAction">水利規劃試驗所/河川規劃課//陳俊合</span></td>
+                            <td><i class="fa-solid fa-pen"></i></td>
+                        </tr>
+                        <tr>
+                            <td>110</td>
+                            <td>MOEAWRA1100362</td>
+                            <td>河川環境情報地圖製作</td>
+                            <td>預定委辦計畫</td>
+                            <td>輔助行政/</td>
+                            <td></td>
+                            <td><a id="gvData_ctl04_lbtnAction" style="color: rgb(0, 51, 204);">水利規劃試驗所／河川規劃課／王奕智</a></td>
+                            <td><span id="gvData_ctl04_lblOriManager">河川海岸組/河海一科/黃爾強</span></td>
+                            <td><span id="gvData_ctl04_lblOriAction">水利規劃試驗所/河川規劃課//王奕智</span></td>
+                            <td><i class="fa-solid fa-pen"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
 
@@ -350,6 +544,7 @@
             window.location.reload();
         });
     </script>
+
 
 </body>
 

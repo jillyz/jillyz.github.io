@@ -17,7 +17,7 @@ function renderChartFunds() {
         detail: {
             valueAnimation: true,
             offsetCenter: ['0%', '10%'],
-            fontSize: 28,
+            fontSize: 32,
         }
     }, ];
     optionFunds = {
@@ -25,7 +25,7 @@ function renderChartFunds() {
         color: '#5CC1FF',
         series: [{
             type: 'gauge',
-            center: ['65%', '55%'],
+            center: ['60%', '30%'],
             startAngle: 90,
             endAngle: -270,
             pointer: {

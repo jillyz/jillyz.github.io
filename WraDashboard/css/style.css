@@ -16,6 +16,34 @@ h6 {
     padding: 0;
 }
 
+.demo {
+    text-align: center;
+}
+
+.demo a {
+    display: inline-block;
+    padding: 0 .5em;
+}
+
+
+/* 覆蓋 BOOTSTRAP =============*/
+
+.offcanvas {
+    background-color: #f7fafc;
+}
+
+.offcanvas-bottom {
+    height: 75vh;
+    /* padding-bottom: 1em; */
+}
+
+caption {
+    caption-side: top;
+}
+
+
+/* ----------------- */
+
 .wrap {
     display: flex;
     flex-direction: row;
@@ -287,7 +315,7 @@ h6 {
 .chart-outsourcing {
     width: calc(50% - 8px);
     /* max-width: 200px; */
-    height: 200px;
+    height: 220px;
     /* transform: translate(-10px, -20px); */
     /* overflow: hidden; */
 }
@@ -295,10 +323,9 @@ h6 {
 .chart-funds {
     width: calc(50% - 8px);
     /* max-width: 180px; */
-    height: 140px;
+    height: 220px;
     margin: 0;
     padding: 0;
-    transform: translate(0px, -20px);
     /* overflow: hidden; */
 }
 
@@ -316,11 +343,11 @@ h6 {
 
 .chart-organizer-mine {
     /* width: calc(100% - 30px); */
-    position: absolute;
-    top: 30px;
+    /* position: absolute; */
+    /* top: 30px;
     left: 0;
     right: 20px;
-    z-index: 1;
+    z-index: 1; */
     height: 170px;
 }
 
@@ -597,6 +624,7 @@ h6 {
 
 .data-stage.purchase caption {
     position: relative;
+    caption-side: top;
     padding: 5px;
     font-size: 12px;
     background-color: #5470C6;
@@ -620,7 +648,7 @@ h6 {
 .data-stage.purchase caption:before {
     position: relative;
     top: 20px;
-    left: calc(-50% - 5px);
+    left: 0;
     content: "";
     display: block;
     margin-top: -24px;
@@ -766,6 +794,10 @@ h6 {
     width: 8em;
 }
 
+.data-plan-kind td:nth-child(4n+1) i {
+    color: #BBBBBB;
+}
+
 .data-plan-kind td:nth-child(4n+2) {
     width: 4em;
 }
@@ -826,7 +858,7 @@ border-width: 0 1px;
     margin-top: -5px;
     margin-bottom: -5px;
     padding: 0 .5em;
-    height: 32px;
+    height: 28px;
     border-radius: 36px;
     font-size: 16px;
     border-width: 0;
@@ -885,46 +917,55 @@ border-width: 0 1px;
     border: 1px dotted #CCC;
 }
 
-.my-table {
+.my-table,
+.my-table2 {
     width: 100%;
     font-size: 13px;
 }
 
 .my-table th,
 .my-table td {
-    padding: 8px 12px;
+    padding: 8px;
 }
 
-.my-table th {
+.my-table th,
+.my-table2 th {
     border-right: 0;
     font-weight: normal;
     color: #777;
 }
 
-.my-table td {
-    border-right: 1px dotted #CCCCCC;
-    border-top: 1px dotted #CCCCCC;
+.my-table td,
+.my-table2 td {
+    /* border-right: 1px dotted #CCCCCC; */
+    /* border-top: 1px dotted #CCCCCC; */
+    vertical-align: top;
+    background-color: #FFFFFF;
 }
 
-.my-table>:not(:first-child) {
+.my-table>:not(:first-child),
+.my-table2>:not(:first-child) {
     border-top-width: 0;
 }
 
-.my-table thead th {
+.my-table thead th,
+.my-table2 thead th {
     position: sticky;
     top: 0;
-    background-color: #FFFFFF;
+    background-color: #F7FAFC;
     box-shadow: 0 0 10px (0, 0, 0, .5);
 }
 
-.my-table thead th.name {
+.my-table thead th.name,
+.my-table2 thead th.name {
     position: sticky;
     left: 0;
     z-index: 2;
     box-shadow: 0 0 10px (0, 0, 0, .5);
 }
 
-.my-table tbody td.name {
+.my-table tbody td.name,
+.my-table2 tbody td.name {
     position: relative;
     position: sticky;
     left: 0;
@@ -938,17 +979,86 @@ border-width: 0 1px;
     /* white-space: nowrap; */
 }
 
-.my-table td.name {
+.my-table td.name,
+.my-table2 td.name {
     min-width: 16em;
 }
 
-.my-table td.detail {
+.my-table td.detail,
+.my-table2 td.detail {
     text-align: center;
 }
 
 .my-table th,
-.my-table td.late {
+.my-table td.late,
+.my-table2 th,
+.my-table2 td.late {
     white-space: nowrap;
+}
+
+
+/* MY TABLE2 -------------------- */
+
+.my-table2-wrap {
+    /* margin-bottom: 1em; */
+    margin-bottom: 1em;
+    position: relative;
+    /* padding-bottom: 1em; */
+    border: 1px solid #e5e7eb;
+    border-radius: .25em;
+    background-color: #F7FAFC;
+    color: #94A4B8;
+}
+
+.my-table2-wrap::before {
+    content: "";
+    display: block;
+    position: sticky;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    /* background-color: red; */
+}
+
+.my-table2-wrap::after {
+    content: "";
+    display: block;
+    position: sticky;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #F7FAFC;
+    box-shadow: inset 0 1px 2px 0 rgba(0 0 0/0.05);
+}
+
+.my-table2-title {
+    padding-left: .5rem;
+    padding-right: 0.5em;
+    padding-bottom: .5rem;
+}
+
+.my-table2 {
+    width: 100%;
+    font-size: 13px;
+    box-sizing: content-box;
+    /* overflow: hidden; */
+}
+
+.my-table2 th,
+.my-table2 td {
+    padding: .5em .5rem;
+    font-weight: normal;
+}
+
+.my-table2 td {
+    color: #64758B;
+    border-top: 1px solid #e5e7eb;
+    background-color: #FFFFFF;
 }
 
 a {
@@ -1032,7 +1142,7 @@ a {
         width: calc(50% - 8px);
     }
     .wrap .col-2 {
-        width: 100%;
+        width: calc(100% - 8px);
     }
     .wrap-stage {
         padding-top: 30px;

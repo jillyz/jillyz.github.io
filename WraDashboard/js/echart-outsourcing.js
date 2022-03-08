@@ -30,10 +30,10 @@ function renderChartOutsourcing() {
             '#5CC1FF',
         ],
         series: [{
-            center: ['40%', '30%'],
+            center: ['40%', '32%'],
             name: '發包情形',
             type: 'pie',
-            radius: ['0%', '60%'],
+            radius: ['0%', '70%'],
             avoidLabelOverlap: false,
             label: {
                 show: false,
@@ -57,8 +57,8 @@ function renderChartOutsourcing() {
                 show: false
             },
             data: [
-                { value: 49, name: '未發包' },
-                { value: 400, name: '已發包' },
+                { value: 36, name: '未發包' },
+                { value: 250, name: '已發包' },
 
             ]
         }]
@@ -67,6 +67,9 @@ function renderChartOutsourcing() {
         myChartOutsourcing.setOption(optionOutsourcing);
     }
 
+    myChartOutsourcing.on('click', function(params) {
+        window.open('dashboard_plan_detail.html?outsourcing=' + encodeURIComponent(params.name)).focus();
+    });
 
 }
 renderChartOutsourcing();

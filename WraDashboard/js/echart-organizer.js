@@ -72,13 +72,17 @@ function renderOrganizer() {
             },
             data: [
                 { value: 109, name: '水利署' },
-                { value: 340, name: '所屬機關' },
+                { value: 277, name: '所屬機關' },
             ]
         }]
     };
     if (optionOrganizer && typeof optionOrganizer === 'object') {
         myChartOrganizer.setOption(optionOrganizer);
     }
+
+    myChartOrganizer.on('click', function(params) {
+        window.open('dashboard_plan_detail.html?organizer=' + encodeURIComponent(params.name)).focus();
+    });
 
     window.onresize = function() {
         myChartOrganizer.resize();
@@ -89,7 +93,7 @@ function renderOrganizer() {
         var temp = 0;
         if (params.data.name == '水利署') {
             var total = [0, 45, 22, 45, 0, 50, 0, 0, 0];
-            var late = [0, 10, 0, 20, 0, 7, 0, 0, 0];
+            var late = [0, 8, 0, 22, 0, 8, 0, 0, 0];
             renderStage(labelStage, total, late, ' (水利署)');
             updateTableData(total, late);
             temp = 1;
@@ -98,7 +102,7 @@ function renderOrganizer() {
         }
         if (params.data.name == '所屬機關') {
             var total = [0, 100, 62, 75, 1, 60, 0, 0, 0];
-            var late = [0, 16, 0, 29, 0, 10, 0, 0, 0];
+            var late = [0, 18, 0, 27, 0, 26, 0, 0, 0];
             renderStage(labelStage, total, late, ' (所屬機關)');
             updateTableData(total, late);
             temp = 2;
