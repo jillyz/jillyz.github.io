@@ -1,9 +1,9 @@
 // define(function() {
-//----廠商Top5------
-function renderCompany(label, value) {
+//----水利署主辦人員 Top5
+function renderTop5WraPersonOrganizer(label, value) {
 
-    var domCompany = document.getElementById("chartCompany");
-    var myChartCompany = echarts.init(domCompany);
+    var domTop5WraPersonOrganizer = document.getElementById("chartTop5WraPersonOrganizer");
+    var myChartTop5WraPersonOrganizer = echarts.init(domTop5WraPersonOrganizer);
 
     function longestString(arr) {
         for (i = 0; i < arr.length; i++) {
@@ -14,11 +14,12 @@ function renderCompany(label, value) {
         return long1;
     }
 
-    var optionCompany;
-    optionCompany = {
+    var optionTop5WraPersonOrganizer;
+    optionTop5WraPersonOrganizer = {
         backgroundColor: '#FFFFFF',
         title: {
-            text: '得標廠商件數 Top 5',
+            text: '水利署主辦人員 Top 5',
+            top: 10,
             textStyle: {
                 fontSize: 16
             }
@@ -70,14 +71,15 @@ function renderCompany(label, value) {
         }]
     };
 
-    if (optionCompany && typeof optionCompany === 'object') {
-        myChartCompany.setOption(optionCompany);
+    if (optionTop5WraPersonOrganizer && typeof optionTop5WraPersonOrganizer === 'object') {
+        myChartTop5WraPersonOrganizer.setOption(optionTop5WraPersonOrganizer);
     }
     window.onresize = function() {
-        myChartCompany.resize();
+        myChartTop5WraPersonOrganizer.resize();
     };
 }
-var labelCompany = ['黎明工程顧問股份有限公司', '中興工程顧問股份有限公司', '逢甲大學', '天思數位科技股粉有限公司', '詮華國土測繪有限公司'];
-var valueCompany = [20, 15, 12, 8, 7];
-renderCompany(labelCompany, valueCompany);
+
+var labelTop5WraPersonOrganizer = ['保育事業組/高華璟', '水文技術組/蔡孟蓉', '水文技術組/李嘉文', '水利防災中心/陳惠玲', '綜合企劃組/徐浩仁'];
+var valueTop5WraPersonOrganizer = [12, 10, 9, 9, 9];
+renderTop5WraPersonOrganizer(labelTop5WraPersonOrganizer, valueTop5WraPersonOrganizer);
 // });

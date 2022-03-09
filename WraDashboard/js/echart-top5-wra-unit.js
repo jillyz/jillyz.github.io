@@ -1,9 +1,9 @@
 // define(function() {
-//----廠商Top5------
-function renderCompany(label, value) {
+//----水利署主辦組室 Top5
+function renderTop5WraUnit(label, value) {
 
-    var domCompany = document.getElementById("chartCompany");
-    var myChartCompany = echarts.init(domCompany);
+    var domTop5WraUnit = document.getElementById("chartTop5WraUnit");
+    var myChartTop5WraUnit = echarts.init(domTop5WraUnit);
 
     function longestString(arr) {
         for (i = 0; i < arr.length; i++) {
@@ -14,11 +14,12 @@ function renderCompany(label, value) {
         return long1;
     }
 
-    var optionCompany;
-    optionCompany = {
+    var optionTop5WraUnit;
+    optionTop5WraUnit = {
         backgroundColor: '#FFFFFF',
         title: {
-            text: '得標廠商件數 Top 5',
+            text: '水利署主辦組室 Top 5',
+            top: 10,
             textStyle: {
                 fontSize: 16
             }
@@ -70,14 +71,16 @@ function renderCompany(label, value) {
         }]
     };
 
-    if (optionCompany && typeof optionCompany === 'object') {
-        myChartCompany.setOption(optionCompany);
+    if (optionTop5WraUnit && typeof optionTop5WraUnit === 'object') {
+        myChartTop5WraUnit.setOption(optionTop5WraUnit);
     }
     window.onresize = function() {
-        myChartCompany.resize();
+        myChartTop5WraUnit.resize();
     };
 }
-var labelCompany = ['黎明工程顧問股份有限公司', '中興工程顧問股份有限公司', '逢甲大學', '天思數位科技股粉有限公司', '詮華國土測繪有限公司'];
-var valueCompany = [20, 15, 12, 8, 7];
-renderCompany(labelCompany, valueCompany);
+
+
+var labelTop5WraUnit = ['保育事業組', '水利防災中心', '綜合企劃組', '水文技術組', '資訊室'];
+var valueTop5WraUnit = [76, 61, 55, 54, 44];
+renderTop5WraUnit(labelTop5WraUnit, valueTop5WraUnit);
 // });

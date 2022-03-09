@@ -1177,6 +1177,14 @@ a {
     overflow: hidden;
 }
 
+.grid.dashboard-organizer .my-table2-wrap {
+    height: calc(100% - 90px);
+}
+
+.grid.dashboard-organizer.no-grid .my-table2-wrap {
+    height: calc(100% - 0);
+}
+
 .grid.dashboard-organizer.no-grid {
     /* grid-template-columns: 1fr 4fr; */
     grid-template-rows: 1fr;
