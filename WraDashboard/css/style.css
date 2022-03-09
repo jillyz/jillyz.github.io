@@ -1159,6 +1159,7 @@ a {
 .dashboard-detail .list {
     grid-area: list;
     background-color: #F7FAFC !important;
+    overflow: hidden;
 }
 
 .dashboard-detail *:not(.grid-title) {
