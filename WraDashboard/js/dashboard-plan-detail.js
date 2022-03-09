@@ -6,7 +6,7 @@ requirejs([
     'echart-plan-eng-funds',
     'echart-stage',
 ], function() {
-    setTableColumnToggle('#chkMore');
-    setTableColumnToggle('#chkLate');
-    setLargeTableView('#chkFullTable');
+    // setTableColumnToggle('#chkMore');
+    // setTableColumnToggle('#chkLate');
+    // setLargeTableView('#chkFullTable');
 });
