@@ -1357,6 +1357,7 @@ a {
     outline: none;
     border: 0;
     color: #999999;
+    cursor: pointer;
 }
 
 .filter-company option {
