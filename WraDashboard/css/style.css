@@ -3,7 +3,7 @@ body {
     color: #3E3E3E;
     box-sizing: border-box;
     overflow-x: hidden;
-    font-family: arial, "Microsoft JhengHei", "微軟正黑體", sans-serif !important;
+    font-family: Roboto, 'Segoe UI', Arial, 'Microsoft Jhenghei', sans-serif;
 }
 
 h1,
@@ -105,7 +105,7 @@ caption {
     padding: .75em 1em;
     /* background-color: #E5EEFD; */
     /* color: #5470C6; */
-    color: #CDCDCD;
+    color: #999999;
     font-size: 16px;
     border-bottom: 1px solid #eee;
 }
@@ -1280,7 +1280,7 @@ a {
     margin-left: 1em;
     padding: 0 .5em;
     border-radius: .25em;
-    background-color: #CDCDCD;
+    background-color: #999999;
     color: #FFFFFF;
     font-weight: bold;
     text-align: center;
@@ -1336,9 +1336,10 @@ a {
     right: 10px;
     display: flex;
     padding-right: 1em;
+    font-size: 13px;
 }
 
-.toolbox>* {
+.toolbox:not(.toolbox-no-gap)>* {
     margin-left: 1.5em;
 }
 
@@ -1348,6 +1349,19 @@ a {
 
 .toolbox .form-switch input {
     margin-top: 10px;
+}
+
+.filter-company {
+    width: auto;
+    margin-top: 2px;
+    outline: none;
+    border: 0;
+    color: #999999;
+}
+
+.filter-company option {
+    text-align: right;
+    color: #000;
 }
 
 .btn-full-table input {
