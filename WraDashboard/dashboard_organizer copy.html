@@ -27,11 +27,7 @@
     </div>
     <div class="wrap dashboard">
         <div class="notice">
-            <div>
-                <div class="btn-my-plan">
-                    我的計畫 <span>3</span>
-                </div>
-            </div>
+
             <div class="todo">
                 <i class="fa-solid fa-clipboard-check"></i> 待審閱計畫 <span>3</span>
             </div>
@@ -54,14 +50,13 @@
             </h2>
             <div class="flex">
                 <section class="wrap-organizer">
-                    <!-- <div id="chartMyOrganizer" class="chart-organizer-mine"></div> -->
-                    <div class="section-title">負責計畫</div>
-                    <table class="data-organizer-mine" style="height: 90%;">
-                        <tr>
+                    <div id="chartMyOrganizer" class="chart-organizer-mine"></div>
+                    <table class="data-organizer-mine">
+                        <!-- <tr>
                             <td></td>
                             <td class="align-r">件數</td>
                             <td class="align-r">進度落後</td>
-                        </tr>
+                        </tr> -->
                         <tr class="wra">
                             <th>個人主辦</th>
                             <td class="align-r"><span>1</span></td>
@@ -179,75 +174,81 @@
                     <td><span>1192萬</span></td>
                 </tr>
             </table>
+            預算核定總經費
 
         </div>
-
-
-        <div class="col col-1 section-company relative">
-            <h2 class="title">廠商資訊</h2>
-
-            <div class="wrap toolbox toolbox-no-gap">
-                <select class="filter-company">
-                    <option selected="selected" value="水利署">全署</option>
-                    <option disabled>-------------</option>
-                    <option value="水利署">本署</option>
-                    <option disabled>-------------</option>
-                    <!-- <option value="第一河川局">第一河川局</option> -->
-                    <option value="第二河川局">第二河川局</option>
-                    <option value="第三河川局">第三河川局</option>
-                    <option value="第四河川局">第四河川局</option>
-                    <option value="第五河川局">第五河川局</option>
-                    <option value="第六河川局">第六河川局</option>
-                    <option value="第七河川局">第七河川局</option>
-                    <option value="第八河川局">第八河川局</option>
-                    <option value="第九河川局">第九河川局</option>
-                    <option value="第十河川局">第十河川局</option>
-                    <option value="北區水資源局">北區水資源局</option>
-                    <option value="中區水資源局">中區水資源局</option>
-                    <option value="南區水資源局">南區水資源局</option>
-                    <option value="水利規劃試驗所">水利規劃試驗所</option>
-                    <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
-                </select>
-                <select class="filter-company">
-                    <option selected="selected" value="1">當年度得標</option>
-                    <option value="2">連續2年得標</option>
-                    <option value="3">連續3年得標</option>
-                    <option value="4">連續4年得標</option>
-                    <option value="5">連續5年得標</option>
-                </select>
+        <!-- 
+        <div class="col col-1 section-priority">
+            <h2 class="title">計畫優先序</h2>
+            <div class="wrap wrap-priority">
+                <div class="col col-3">
+                    <table class="data-priority">
+                        <tr>
+                            <th colspan="2">最優先</th>
+                        </tr>
+                        <tr>
+                            <td>總件數</td>
+                            <td><span>6</span></td>
+                        </tr>
+                        <tr>
+                            <td>未發包</td>
+                            <td><span class="not-yet">1</span></td>
+                        </tr>
+                    </table>
+                    <div id="chartPriority1" class="chart-priority"></div>
+                    <span class="percentage">%</span>
+                </div>
+                <div class="col col-3">
+                    <table class="data-priority">
+                        <tr>
+                            <th colspan="2">優先</th>
+                        </tr>
+                        <tr>
+                            <td>總件數</td>
+                            <td><span>10</span></td>
+                        </tr>
+                        <tr>
+                            <td>未發包</td>
+                            <td><span class="not-yet">2</span></td>
+                        </tr>
+                    </table>
+                    <div id="chartPriority2" class="chart-priority"></div>
+                    <span class="percentage">%</span>
+                </div>
+                <div class="col col-3">
+                    <table class="data-priority">
+                        <tr>
+                            <th colspan="2">一般</th>
+                        </tr>
+                        <tr>
+                            <td>總件數</td>
+                            <td><span>17</span></td>
+                        </tr>
+                        <tr>
+                            <td>未發包</td>
+                            <td><span class="not-yet">5</span></td>
+                        </tr>
+                    </table>
+                    <div id="chartPriority3" class="chart-priority"></div>
+                    <span class="percentage">%</span>
+                </div>
             </div>
+        </div>
+         -->
+        <div class="col col-1 section-company">
+            <h2 class="title">廠商</h2>
 
-            <!-- <div class="mychart-type-bar">
+            <div class="mychart-type-bar">
                 <table class="data">
                     <tr>
                         <td>只有一家廠商投標</td>
-                        <td class="align-r">50件 (13%)</td>
+                        <td class="align-r">50件</td>
                     </tr>
                 </table>
                 <div class="mychart-bar">
-                    <span id="chartOneCompany" class="bar" data-value="50" data-total="386"></span>
-                </div>
-            </div> -->
-
-            <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
-                <div class="total-block big">
-                    <span class="total-title">得標廠商總數</span>
-                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">250</span>
-                </div>
-                <div class="total-block big align-r">
-                    <span class="total-title">得標計畫主持人總數</span>
-                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">218</span>
-                </div>
-                <div class="total-block">
-                    <span class="total-title">得標3件以上的廠商數</span>
-                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">14</span>
-                </div>
-                <div class="total-block align-r">
-                    <span class="total-title">得標3件以上的計畫主持人數</span>
-                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">3</span>
+                    <span id="chartOneCompany" class="bar" data-value="50" data-total="526"></span>
                 </div>
             </div>
-
             <div class="slider">
                 <input type="radio" name="r" id="r1" checked>
                 <label for="r1">
@@ -262,60 +263,80 @@
             </div>
 
         </div>
-
-        <div class="col col-1 section-committee relative">
-            <h2 class="title">外聘評選委員</h2>
-
-            <div class="wrap toolbox toolbox-no-gap">
-                <select class="filter-company">
-                    <option selected="selected" value="水利署">全署</option>
-                    <option disabled>-------------</option>
-                    <option value="水利署">本署</option>
-                    <option disabled>-------------</option>
-                    <!-- <option value="第一河川局">第一河川局</option> -->
-                    <option value="第二河川局">第二河川局</option>
-                    <option value="第三河川局">第三河川局</option>
-                    <option value="第四河川局">第四河川局</option>
-                    <option value="第五河川局">第五河川局</option>
-                    <option value="第六河川局">第六河川局</option>
-                    <option value="第七河川局">第七河川局</option>
-                    <option value="第八河川局">第八河川局</option>
-                    <option value="第九河川局">第九河川局</option>
-                    <option value="第十河川局">第十河川局</option>
-                    <option value="北區水資源局">北區水資源局</option>
-                    <option value="中區水資源局">中區水資源局</option>
-                    <option value="南區水資源局">南區水資源局</option>
-                    <option value="水利規劃試驗所">水利規劃試驗所</option>
-                    <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
-                </select>
-            </div>
-
-            <!-- <div class="mychart-type-bar">
+        <div class="col col-1 section-committee">
+            <h2 class="title">委員</h2>
+            <div class="mychart-type-bar">
                 <table class="data">
                     <tr>
                         <td>有遴聘委員</td>
-                        <td class="align-r">389件 (82%)</td>
+                        <td class="align-r">389件</td>
                     </tr>
                 </table>
                 <div class="mychart-bar">
-                    <span id="chartHasCommittee" class="bar" data-value="317" data-total="386"></span>
-                </div>
-            </div> -->
-
-            <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
-                <div class="total-block big" style="width: 100%;">
-                    <span class="total-title">遴聘委員總數</span>
-                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">238</span>
-                </div>
-                <div class="total-block" style="width: 100%;">
-                    <span class="total-title">遴聘5次以上的委員數</span>
-                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">6</span>
+                    <span id="chartHasCommittee" class="bar" data-value="389" data-total="526"></span>
                 </div>
             </div>
-            <div class="wrap">
-                <div id="chartCommittee" class="chart-company"></div>
-            </div>
+            <div id="chartCommittee" class="chart-company"></div>
+            <table class="data-committee-hosting">
+                <caption>評選委員同時為其他計畫主持人</caption>
+                <tbody>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                    <tr>
+                        <td>王ＯＯ</td>
+                        <td>主持人/協同主持人</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
+
 
 
     </div>

@@ -122,7 +122,7 @@ caption {
 }
 
 .section-company {
-    height: 400px;
+    /* height: 400px; */
 }
 
 .notice {
@@ -221,6 +221,22 @@ caption {
     border: 1px solid rgba(255, 255, 255, .5);
     /* box-shadow: 0 0 8px rgba(255, 255, 255, .8); */
     box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+.btn-my-plan {
+    width: 150px;
+    font-size: 16px;
+    line-height: 32px;
+    color: #4e5164;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.btn-my-plan span {
+    color: #FF6961;
+    border: 0;
+    background-color: transparent;
+    box-shadow: none;
 }
 
 @-webkit-keyframes jump {
@@ -361,6 +377,12 @@ caption {
     height: 180px;
 }
 
+.chart-budget {
+    margin-top: 30px;
+    width: 100%;
+    height: 140px;
+}
+
 .chart-company {
     width: 100%;
     /* margin-left: 5%; */
@@ -416,6 +438,7 @@ caption {
 }
 
 .data-organizer-mine td span {
+    font-size: 16px;
     font-weight: bold;
     color: #5470C6;
 }
@@ -640,6 +663,7 @@ caption {
 
 .data-stage.purchase th {
     padding: .5em .5em 0 .5em;
+    font-size: 13px;
     white-space: nowrap;
 }
 
