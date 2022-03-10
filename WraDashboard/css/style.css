@@ -70,6 +70,7 @@ caption {
 
 .dashboard {
     padding: 10px;
+    font-size: 13px;
 }
 
 .dashboard>.col {
@@ -118,6 +119,10 @@ caption {
 
 .section-organizer-stage {
     padding-bottom: 1.5em;
+}
+
+.section-company {
+    height: 400px;
 }
 
 .notice {
@@ -404,7 +409,7 @@ caption {
 }
 
 .data-organizer-mine th {
-    font-size: 13px;
+    /* font-size: 13px; */
     font-weight: normal;
     text-align: left;
     color: #444 !important;
@@ -448,7 +453,7 @@ caption {
     margin-bottom: 1.5em;
     width: 100%;
     /* margin-left: 7%; */
-    font-size: 13px;
+    /* font-size: 13px; */
     /* font-weight: bold; */
     text-align: right;
     /* border-left: 30px solid #fff; */
@@ -502,7 +507,7 @@ caption {
 .data-organizer td {
     padding: 2px 0;
     padding-top: 4px;
-    font-size: 13px;
+    /* font-size: 13px; */
     color: #6D6D6D;
 }
 
@@ -574,7 +579,7 @@ caption {
     width: calc(100% / 9);
     padding-bottom: 5px;
     font-weight: normal;
-    font-size: 13px;
+    /* font-size: 13px; */
     color: #6D6D6D;
     vertical-align: bottom;
 }
@@ -660,7 +665,7 @@ caption {
 .data-priority {
     margin: 0 auto;
     width: auto;
-    font-size: 13px;
+    /* font-size: 13px; */
 }
 
 .data-priority th {
@@ -692,7 +697,7 @@ caption {
     display: none;
     width: 100%;
     margin-left: 20px;
-    font-size: 13px;
+    /* font-size: 13px; */
 }
 
 .data-committee-hosting caption {
@@ -1088,7 +1093,7 @@ border-width: 0 1px;
 
 .my-table2 {
     width: 100%;
-    font-size: 13px;
+    /* font-size: 13px; */
     box-sizing: content-box;
     /* overflow: hidden; */
 }
@@ -1109,6 +1114,10 @@ border-width: 0 1px;
 a {
     color: #5470C6;
     text-decoration: none;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 
@@ -1308,6 +1317,9 @@ a {
     position: relative;
 }
 
+
+/* TOOLBOX --------------*/
+
 .toolbox {
     position: absolute;
     top: 10px;
@@ -1357,6 +1369,39 @@ a {
 
 
 /* ==================================== */
+
+
+/* TOTAL BLOCK */
+
+.total-block {
+    width: 50%;
+    padding-top: .5em;
+    /* font-size: 13px; */
+    border-bottom: 1px solid #EEEEEE;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, .15); */
+}
+
+.total-title {
+    display: block;
+    font-weight: bold;
+}
+
+.total-value {
+    display: block;
+    padding: .25em 0;
+    /* color: #5470C6; */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.total-block.big {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.total-block.big .total-value {
+    font-size: 24px;
+}
 
 
 /* CSS SLIDER -------------------------- */

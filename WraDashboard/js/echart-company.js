@@ -18,10 +18,11 @@ function renderCompany(label, value) {
     optionCompany = {
         backgroundColor: '#FFFFFF',
         title: {
-            text: '得標廠商件數 Top 5',
+            text: '得標最多的廠商',
             textStyle: {
-                fontSize: 16
-            }
+                fontSize: 13,
+            },
+            left: '-5',
         },
         color: '#5ECDE1',
         tooltip: {
@@ -35,7 +36,7 @@ function renderCompany(label, value) {
             },
         },
         grid: {
-            top: 40,
+            top: 30,
             bottom: 20,
             // left: 170,
             left: long_string(label).length * 13,

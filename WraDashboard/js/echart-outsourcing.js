@@ -57,7 +57,7 @@ function renderChartOutsourcing() {
                 show: false
             },
             data: [
-                { value: 36, name: '未發包' },
+                { value: 136, name: '未發包' },
                 { value: 250, name: '已發包' },
 
             ]

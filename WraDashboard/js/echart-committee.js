@@ -10,10 +10,12 @@ function renderCommittee(label, value) {
     optionCommittee = {
         backgroundColor: '#FFFFFF',
         title: {
-            text: '評選委員遴聘次數 Top 5',
+            text: '遴聘次數最多的委員',
             textStyle: {
-                fontSize: 16
-            }
+                fontSize: 13
+            },
+            left: '-5',
+            top: '-2.5'
         },
         color: '#5ECDE1',
         tooltip: {
@@ -27,7 +29,7 @@ function renderCommittee(label, value) {
             },
         },
         grid: {
-            top: 40,
+            top: 30,
             bottom: 20,
             left: 50,
             right: 40,

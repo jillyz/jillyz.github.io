@@ -9,10 +9,11 @@ function renderCompanyHosting() {
     optionCompanyHosting = {
         backgroundColor: '#FFFFFF',
         title: {
-            text: '計畫主持人件數 Top 5',
+            text: '得標最多的計畫主持人',
             textStyle: {
-                fontSize: 16
-            }
+                fontSize: 13
+            },
+            left: '-5',
         },
         color: '#5ECDE1',
         tooltip: {
@@ -26,14 +27,14 @@ function renderCompanyHosting() {
             },
         },
         grid: {
-            top: 40,
+            top: 30,
             bottom: 20,
             left: 50,
             right: 40,
         },
         yAxis: {
             type: 'category',
-            data: ['李ＯＯ', '陳ＯＯ', '張ＯＯ', '黃ＯＯ', '林ＯＯ'],
+            data: ['李曉明', '陳曉惠', '張曉華', '黃小泉', '林小康'],
             inverse: true,
         },
         xAxis: {
