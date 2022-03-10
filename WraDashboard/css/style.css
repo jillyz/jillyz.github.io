@@ -362,7 +362,7 @@ caption {
 }
 
 .chart-company {
-    width: 90%;
+    width: 100%;
     /* margin-left: 5%; */
     /* margin-top: 16px; */
     height: 180px;
@@ -860,6 +860,16 @@ border-width: 0 1px;
 
 .btn-purchase-detail input:not(:checked)~table {
     display: none;
+}
+
+.btn-rank {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    padding: .25em .75em;
+    border: 1px dotted #CCCCCC;
+    border-radius: 4px;
+    color: #999;
 }
 
 .select-year {
