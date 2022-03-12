@@ -1,5 +1,12 @@
 //-------------- Common Function -------------------
 
+
+//---啟用 Bootstrap5 的 Tooltip ------------- 
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
 //---陣列中最長字串--- for 圖表廠商Top5的廠商名寬度
 function long_string(arr) {
     let longest = arr[0];
