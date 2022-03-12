@@ -16,6 +16,9 @@ h6 {
     padding: 0;
 }
 
+
+/* DEMO =============*/
+
 .demo {
     text-align: center;
 }
@@ -39,6 +42,63 @@ h6 {
 
 caption {
     caption-side: top;
+}
+
+
+/* PAGE LAYOUT----------------- */
+
+.page {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas: "header header" "aside breadcrumb" "aside main";
+}
+
+.page>header {
+    grid-area: header;
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid #DDDDDD;
+    background-color: #FFFFFF;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, .1); */
+}
+
+.page>aside {
+    grid-area: aside;
+    background-color: #2262C7;
+    color: #FFFFFF;
+    overflow: auto;
+}
+
+.page .breadcrumb {
+    grid-area: breadcrumb;
+}
+
+.page>main {
+    grid-area: main;
+    /* background-color: #567; */
+    overflow: auto;
+}
+
+.sys-name {
+    display: table-cell;
+    padding: .5em .5em;
+    vertical-align: middle;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2262C7;
+}
+
+.sys-name::before {
+    content: "";
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: .5em;
+    vertical-align: middle;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/ROC_Water_Resources_Agency_Seal.svg/200px-ROC_Water_Resources_Agency_Seal.svg.png) 50% 50% no-repeat;
+    background-size: contain;
 }
 
 
@@ -327,6 +387,10 @@ caption {
     /* margin-right: 30px; */
     width: calc( 100% / 3 - 8px);
     overflow: hidden;
+}
+
+*[class^="chart-"] {
+    /* background-color: #000; */
 }
 
 .chart-outsourcing-funds {
