@@ -1377,14 +1377,15 @@ a {
 
 .wrap-select {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat(10, 1fr);
     gap: 5px;
     /* width: calc(100% / 11* 4 - 10px); */
 }
 
 .wrap-checkbox {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    /* grid-template-columns: repeat(6, 1fr); */
     gap: 5px;
     /* width: calc(100% / 11* 7 - 10px); */
     text-align: center;
