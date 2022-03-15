@@ -64,7 +64,7 @@ function renderPriority() {
     }
 
     myChartPriority1.getZr().on('click', function(params) {
-        window.open('dashboard_plan_detail.html?priority=1').focus();
+        window.open('dashboard_plan_query.html?priority=1').focus();
     });
 
     window.onresize = function() {
@@ -131,7 +131,7 @@ function renderPriority() {
         myChartPriority2.setOption(optionPriority2);
     }
     myChartPriority2.getZr().on('click', function(params) {
-        window.open('dashboard_plan_detail.html?priority=2').focus();
+        window.open('dashboard_plan_query.html?priority=2').focus();
     });
 
     window.onresize = function() {
@@ -199,7 +199,7 @@ function renderPriority() {
         myChartPriority3.setOption(optionPriority3);
     }
     myChartPriority3.getZr().on('click', function(params) {
-        window.open('dashboard_plan_detail.html?priority=3').focus();
+        window.open('dashboard_plan_query.html?priority=3').focus();
     });
 
     window.onresize = function() {
