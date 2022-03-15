@@ -21,7 +21,7 @@
 
 <body>
 
-    <div class="grid no-grid dashboard-detail">
+    <div class="grid no-grid dashboard-query">
         <div class="query flex">
             <div class="wrap-select">
                 <select class="form-select form-select-sm">
@@ -70,10 +70,11 @@
             </div>
         </div>
         <div class="plan">
+            <!-- 計畫期程 -->
             <div class="grid-title">計畫期程</div>
             <div class="flex" style="overflow: hidden;">
-                <div id="chartPlanKindCount" class="chart-plan-kind-count"></div>
-                <div id="chartPlanKindFunds" class="chart-plan-kind-funds"></div>
+                <div id="chartPlanDurationCount" class="chart-plan-kind-count"></div>
+                <div id="chartPlanDurationFunds" class="chart-plan-kind-funds"></div>
             </div>
             <table class="data-plan-kind">
                 <tr class="legend-1">
@@ -103,13 +104,88 @@
                     <td>經費</td>
                     <td>7億7490萬</td>
                 </tr>
-                <tr class="legend-4">
+                <!-- <tr class="legend-4">
                     <td class="align-l">代辦計畫</td>
                     <td>16件</td>
                     <td>經費</td>
                     <td>2億5497萬</td>
+                </tr> -->
+            </table>
+
+            <!-- 計畫類別 -->
+            <div class="grid-title">計畫類別</div>
+            <div class="flex" style="overflow: hidden;">
+                <div id="chartPrimaryClassCount" class="chart-plan-kind-count"></div>
+                <div id="chartPrimaryClassFunds" class="chart-plan-kind-funds"></div>
+            </div>
+            <table class="data-plan-kind">
+                <tr class="legend-1">
+                    <td class="align-l">
+                        代辦業務
+                        <i class="fa-solid fa-info" data-bs-toggle="tooltip" data-bs-placement="top" title="含延續性第一年、跨年度第一年，不含代辦案"></i>
+                    </td>
+                    <td>128件</td>
+                    <td>經費</td>
+                    <td>9億3990萬</td>
+                </tr>
+                <tr class="legend-2">
+                    <td class="align-l">
+                        科技發展
+                        <i class="fa-solid fa-info" data-bs-toggle="tooltip" data-bs-placement="top" title="第二年以後之延續性計畫"></i>
+                    </td>
+                    <td>114件</td>
+                    <td>經費</td>
+                    <td>10億2989萬</td>
+                </tr>
+                <tr class="legend-3">
+                    <td class="align-l">
+                        輔助行政
+                        <i class="fa-solid fa-info" data-bs-toggle="tooltip" data-bs-placement="top" title="第二年以後之跨年度計畫"></i>
+                    </td>
+                    <td>206件</td>
+                    <td>經費</td>
+                    <td>7億7490萬</td>
                 </tr>
             </table>
+
+            <!-- 契約形式 -->
+            <div class="grid-title">契約形式</div>
+            <div class="flex" style="overflow: hidden;">
+                <div id="chartContractCount" class="chart-plan-kind-count"></div>
+                <div id="chartContractFunds" class="chart-plan-kind-funds"></div>
+            </div>
+            <table class="data-plan-kind">
+                <tr class="legend-1">
+                    <td class="align-l">
+                        一般契約
+                        <i class="fa-solid fa-info" data-bs-toggle="tooltip" data-bs-placement="top" title="含延續性第一年、跨年度第一年，不含代辦案"></i>
+                    </td>
+                    <td>128件</td>
+                    <td>經費</td>
+                    <td>9億3990萬</td>
+                </tr>
+                <tr class="legend-2">
+                    <td class="align-l">
+                        無需訂約
+                        <i class="fa-solid fa-info" data-bs-toggle="tooltip" data-bs-placement="top" title="第二年以後之延續性計畫"></i>
+                    </td>
+                    <td>114件</td>
+                    <td>經費</td>
+                    <td>10億2989萬</td>
+                </tr>
+                <tr class="legend-3">
+                    <td class="align-l">
+                        開口契約
+                        <i class="fa-solid fa-info" data-bs-toggle="tooltip" data-bs-placement="top" title="第二年以後之跨年度計畫"></i>
+                    </td>
+                    <td>206件</td>
+                    <td>經費</td>
+                    <td>7億7490萬</td>
+                </tr>
+            </table>
+
+            <!-- 八大類計畫 -->
+            <div class="grid-title">八大類計畫</div>
             <div class="flex">
                 <div id="chartPlanEngCount" class="chart-plan-eng-count"></div>
                 <div id="chartPlanEngFunds" class="chart-plan-eng-funds"></div>

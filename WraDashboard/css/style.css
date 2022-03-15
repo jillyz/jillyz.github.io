@@ -497,13 +497,13 @@ caption {
 .chart-plan-kind-count {
     width: 42%;
     margin: 0 4%;
-    height: 260px;
+    height: 220px;
 }
 
 .chart-plan-kind-funds {
     width: 42%;
     margin: 0 4%;
-    height: 260px;
+    height: 220px;
 }
 
 .chart-plan-eng-count {
@@ -842,13 +842,14 @@ caption {
 .data-plan-kind {
     width: 90%;
     margin: 0 5%;
+    margin-bottom: 2em;
     text-align: right;
 }
 
 .data-plan-kind {
     position: relative;
     z-index: 1;
-    margin-top: -100px;
+    margin-top: -80px;
     background-color: #FFFFFF;
     font-weight: bold;
 }
@@ -919,7 +920,7 @@ caption {
 }
 
 .data-plan-kind td:nth-child(4n+1) {
-    width: 8em;
+    width: 9em;
 }
 
 .data-plan-kind td:nth-child(4n+1) i {
@@ -935,7 +936,7 @@ caption {
 }
 
 .data-plan-kind td:nth-child(4n+4) {
-    width: 6em;
+    width: 7em;
 }
 
 .percentage {
@@ -1262,7 +1263,7 @@ a {
 
 /* ============================= */
 
-.grid.dashboard-detail {
+.grid.dashboard-query {
     display: grid;
     margin: 8px;
     height: calc(100vh - 16px);
@@ -1273,7 +1274,7 @@ a {
     box-sizing: border-box;
 }
 
-.grid.dashboard-detail.no-grid {
+.grid.dashboard-query.no-grid {
     grid-template-columns: 1fr;
     grid-template-rows: 54px 1fr;
     grid-template-areas: "query" "list";
@@ -1290,27 +1291,28 @@ a {
     background-color: #FFFFFF;
 }
 
-.dashboard-detail .query {
+.dashboard-query .query {
     width: 100%;
     grid-area: query;
 }
 
-.dashboard-detail .plan {
+.dashboard-query .plan {
     grid-area: plan;
+    overflow: auto;
 }
 
-.dashboard-detail .stage {
+.dashboard-query .stage {
     grid-area: stage;
     /* display: none; */
 }
 
-.dashboard-detail .list {
+.dashboard-query .list {
     grid-area: list;
     background-color: #F7FAFC !important;
     overflow: hidden;
 }
 
-.dashboard-detail *:not(.grid-title) {
+.dashboard-query *:not(.grid-title) {
     font-size: 13px !important;
 }
 
