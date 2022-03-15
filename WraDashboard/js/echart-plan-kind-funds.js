@@ -52,7 +52,7 @@ function renderChartPlanKindFunds() {
                 show: false
             },
             data: [
-                { value: 939900000, name: '新興計畫' },
+                { value: 939900000, name: '單一年度計畫' },
                 { value: 1029890000, name: '延續性計畫' },
                 { value: 774900000, name: '跨年度計畫' },
                 { value: 254970000, name: '代辦計畫' },

@@ -59,7 +59,7 @@ function renderChartPlanKindCount() {
                 show: false
             },
             data: [
-                { value: 128, name: '新興計畫' },
+                { value: 128, name: '單一年度計畫' },
                 { value: 114, name: '延續性計畫' },
                 { value: 202, name: '跨年度計畫' },
                 { value: 16, name: '代辦計畫' },
