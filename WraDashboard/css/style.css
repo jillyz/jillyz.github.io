@@ -683,12 +683,13 @@ caption {
     position: relative;
     top: auto;
     z-index: 1;
-    margin-left: 2%;
-    margin-top: -27px;
+    margin-left: 3.5%;
+    margin-top: -25px;
     margin-bottom: .5em;
-    width: 98%;
+    width: 96%;
     border-collapse: collapse;
     border-top: 10px solid #fff;
+    border-left: 2% solid #fff;
     border-right: 1px dotted #ddd;
     background-color: #fff;
 }
