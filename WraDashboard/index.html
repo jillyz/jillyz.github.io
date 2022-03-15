@@ -27,19 +27,177 @@
     </div>
 
     <div class="page">
-        <header>
-            <div class="sys-name">委辦計畫管理系統</div>
-        </header>
         <aside>
             <div class="user">
                 <span>吳皇達</span><br/>
                 <span>綜合企劃組 綜企三科</span>
             </div>
+
+            <menu type="context">
+                <div class="test">test</div>
+            </menu>
         </aside>
+        <header>
+            <!-- <div class="sys-name">委辦計畫管理系統</div> -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand sys-name" href="#">委辦計畫管理系統</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Disabled</a>
+                            </li>
+                        </ul>
+                        <!-- <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form> -->
+                    </div>
+                </div>
+            </nav>
+        </header>
+
         <!-- <section class="breadcrumb">
             HOME > XXX > OOO
         </section> -->
         <main>
+            <div class="news">
+                <marquee scrollamount="1" scrolldelay="50" direction="up" id="xiaoqing" height="60" onmouseover="xiaoqing.stop()" onmouseout="xiaoqing.start()">
+                    <table cellspacing="0">
+                        <tbody>
+                            <tr class="latest">
+                                <td class="date">
+                                    【111年3月4日】
+                                </td>
+                                <td>
+                                    <a href="https://wraplan.wra.gov.tw/System/Files/file.aspx?fromhome=Q&amp;kind=u&amp;page_name=file" target="_blank">政府電子採購網-近1年勞務採購相關警示報表(統計日期:111/3/4)已上傳至檔案下載區，歡迎下載閱覽~</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="5"></td>
+                            </tr>
+                            <tr>
+                                <td class="date">
+                                    【111年3月4日】
+                                </td>
+                                <td onclick="javascript:window.open('news.aspx?type=more&amp;news_id=1110121','','toolbar=0,scrollbars=1,width=630,height=350')">更新「評選會議作業程序簡報(範例)」檔案，歡迎同仁至法規下載參考使用。</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="5"></td>
+                            </tr>
+                            <tr>
+                                <td class="date">
+                                    【111年1月25日】
+                                </td>
+                                <td><a href="https://wraplan.wra.gov.tw/System/Files/files/Files1110350.pdf" target="_blank">提供「工作小組初審意見─受評廠商服務建議書於各評選項目之對應內容及差異性填寫參考案例」，歡迎同仁至檔案下載區下載參考。</a></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="5"></td>
+                            </tr>
+                            <tr>
+                                <td class="date">
+                                    【111年1月5日】
+                                </td>
+                                <td onclick="javascript:window.open('news.aspx?type=more&amp;news_id=1110118','','toolbar=0,scrollbars=1,width=630,height=350')">第2次更正「勞務採購相關警示報表-遴選委員階段2項清單(統計日期：111/1/1)」，請以檔案上傳日期2022/01/05之資料為準。於2022/1/5以前已下載檔案之同仁，請務必重新下載，造成不便，請見諒。</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="5"></td>
+                            </tr>
+                            <tr>
+                                <td class="date">
+                                    【111年1月5日】
+                                </td>
+                                <td onclick="javascript:window.open('news.aspx?type=more&amp;news_id=1110117','','toolbar=0,scrollbars=1,width=630,height=350')">重要提醒~~委託服務計畫簽陳評選委員建議名單時，請檢附「勞務採購相關警示報表-遴選委員階段2項清單」，並請至本系統\工作小組審查參考\警示報表\委員姓名比對匯入專區，查詢專家學者委員建議名單（不論是智慧遴選或自行遴選之專家學者名單）是否有「本署含所屬機關遴聘5次以上次數」、「執行本署含所屬機關得標計畫編號及名稱」等資訊，如有，請註記於評選委員建議名單，以供圈選長官時參考。</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="5"></td>
+                            </tr>
+                            <tr>
+                                <td class="date">
+                                    【110年12月6日】
+                                </td>
+                                <td onclick="javascript:window.open('news.aspx?type=more&amp;news_id=1100114','','toolbar=0,scrollbars=1,width=630,height=350')">請注意~「勞務採購相關警示報表-遴選委員階段2項清單」所附檢核工具，已自本(12)月起不再提供使用，請改至本系統「工作小組審查參考/警示報表」專區之「委員姓名比對匯入」進行比對工作。</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="5"></td>
+                            </tr>
+                            <tr>
+                                <td class="date">
+                                    【110年12月6日】
+                                </td>
+                                <td onclick="javascript:window.open('news.aspx?type=more&amp;news_id=1100113','','toolbar=0,scrollbars=1,width=630,height=350')">請注意~評選委員有無應辭職或予以解聘情形並作妥適之處置!! 相關作業流程請參閱「委託服務計畫採公開評選或審查之採購作業流程補充說明」之細項作業流程─B.成立評選委員會及工作小組、F.資格審查。
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="5"></td>
+                            </tr>
+                            <tr>
+                                <td class="date">
+                                    【110年11月23日】
+                                </td>
+                                <td><a href="https://wraplan.wra.gov.tw/System/Files/files/Files1100330.odt" target="_blank">配合110/11/23修正之「委託服務計畫採公開評選或審查之採購作業流程補充說明」，提供「分段審查履約情形範本」檔案，請同仁於簽陳書面審查或期中/期末審查會時，至檔案下載參考使用。</a></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="5"></td>
+                            </tr>
+                            <tr>
+                                <td class="date">
+                                    【110年11月23日】
+                                </td>
+                                <td onclick="javascript:window.open('news.aspx?type=more&amp;news_id=1100111','','toolbar=0,scrollbars=1,width=630,height=350')">請注意～「委託服務計畫採公開評選或審查之採購作業流程補充說明」已進行修正，並自110/11/23起生效，請同仁至法規下載進行檔案下載～</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="5"></td>
+                            </tr>
+                            <tr>
+                                <td class="date">
+                                    【110年10月18日】
+                                </td>
+                                <td onclick="javascript:window.open('news.aspx?type=more&amp;news_id=1100106','','toolbar=0,scrollbars=1,width=630,height=350')">請注意～「委託服務計畫作業要點」及「委託服務計畫採公開評選或審查之採購作業流程補充說明」已進行修正，並自110/10/14起生效，請同仁至法規下載進行檔案下載～</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="5"></td>
+                            </tr>
+                            <tr>
+                                <td class="date">
+                                    【109年11月12日】
+                                </td>
+                                <td onclick="javascript:window.open('news.aspx?type=more&amp;news_id=1090086','','toolbar=0,scrollbars=1,width=630,height=350')">委辦計畫管理系統招標文件之「資料使用及軟體交付協議書」及「契約條款」檔案已於109年11月更新，請水資源科技發展計畫項下計畫，務必遵循納入委辦或補助契約。</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="5"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><a href="news.aspx?type=more" target="_blank">查閱更多重要訊息..............</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </marquee>
+            </div>
+
             <div class="wrap dashboard">
                 <div class="notice">
                     <div class="todo" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
@@ -374,6 +532,8 @@
 
             </div>
         </main>
+
+
     </div>
 
 
