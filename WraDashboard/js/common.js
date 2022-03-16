@@ -66,6 +66,6 @@ function setLargeTableView(dom) {
     }
 }
 
-setTableColumnToggle('#chkMore');
-setTableColumnToggle('#chkLate');
+// setTableColumnToggle('#chkMore');
+// setTableColumnToggle('#chkLate');
 setLargeTableView('#chkFullTable');

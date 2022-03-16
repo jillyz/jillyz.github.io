@@ -114,35 +114,37 @@
 
             </div>
             <div class="toolbox">
-                <span class="form-check form-switch">
+                <!-- <span class="form-check form-switch">
                     <input type="checkbox" role="switch" name="" id="chkMore" data-toggleClass="detail" class="form-check-input">
                     <label for="chkMore" class="form-check-label">詳細</label>
                 </span>
                 <span class="form-check form-switch">
                     <input type="checkbox"  role="switch"name="" id="chkLate" data-toggleClass="late" class="form-check-input">
                     <label for="chkLate" class="form-check-label">進度落後</label>
-                </span>
+                </span> -->
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                         匯出
                         </button>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="#">精簡 (.xls)</a></li>
+                        <li><a class="dropdown-item" href="#">Excel</a></li>
+                        <li><a class="dropdown-item" href="#">ODT</a></li>
+                        <!-- <li><a class="dropdown-item" href="#">精簡 (.xls)</a></li>
                         <li><a class="dropdown-item" href="#">精簡 (.ods)</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li><a class="dropdown-item" href="#">詳細 (.xls)</a></li>
-                        <li><a class="dropdown-item" href="#">詳細 (.ods)</a></li>
+                        <li><a class="dropdown-item" href="#">詳細 (.ods)</a></li> -->
                     </ul>
                 </div>
                 <span class="btn-full-table">
-                        <input type="checkbox" name="" id="chkFullTable">
-                        <label for="chkFullTable">
-                            <i class="fa-solid fa-expand expand"></i>
-                            <i class="fa-solid fa-compress compress"></i>
-                        </label>
-                    </span>
+                    <input type="checkbox" name="" id="chkFullTable">
+                    <label for="chkFullTable">
+                        <i class="fa-solid fa-expand expand"></i>
+                        <i class="fa-solid fa-compress compress"></i>
+                    </label>
+                </span>
             </div>
             <div class="my-table2-wrap">
                 <table class="my-table2">
@@ -152,8 +154,9 @@
                             <th>計畫編號</th>
                             <th class="name fixed">計畫名稱</th>
                             <th class="detail">計畫期程</th>
+                            <th class="detail">計畫類別</th>
+                            <th class="detail">契約形式</th>
                             <th class="detail">八大類</th>
-                            <th class="detail">代辦</th>
                             <th>督辦組室/人員</th>
                             <th>主辦機關/單位/人員</th>
                             <th class="status">執行階段</th>
@@ -167,8 +170,9 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">單一年度</td>
-                            <td class="detail"></td>
-                            <td class="detail"></td>
+                            <td class="detail">代辦業務</td>
+                            <td class="detail">一般契約</td>
+                            <td class="detail">✓</td>
                             <td class="person"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="person"><a href="#">中區水資源局／湖山水庫管理中心／林明鋒</a></td>
                             <td class="status">進度填報階段</td>
@@ -191,7 +195,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">單一年度</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">一般契約</td>
                             <td class="detail">✓</td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">進度填報階段</td>
@@ -203,7 +208,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">延續性</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">輔助行政</td>
+                            <td class="detail">無需訂約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">進度填報階段</td>
@@ -215,7 +221,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">延續性</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">一般契約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">訂期議價已完成</td>
@@ -227,7 +234,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">開口契約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">訂期議價已完成</td>
@@ -239,7 +247,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">一般契約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">計畫核可已完成</td>
@@ -251,7 +260,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">一般契約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">計畫核可已完成</td>
@@ -263,7 +273,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">一般契約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">計畫核可已完成</td>
@@ -275,7 +286,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">一般契約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">計畫核可已完成</td>
@@ -287,7 +299,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">一般契約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">計畫核可已完成</td>
@@ -299,7 +312,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">一般契約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">計畫核可已完成</td>
@@ -311,7 +325,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">一般契約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">計畫核可已完成</td>
@@ -323,7 +338,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">一般契約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">計畫核可已完成</td>
@@ -335,7 +351,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">一般契約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">計畫核可已完成</td>
@@ -347,7 +364,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">一般契約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">計畫核可已完成</td>
@@ -359,7 +377,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">一般契約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">計畫核可已完成</td>
@@ -371,7 +390,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">一般契約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">計畫核可已完成</td>
@@ -383,31 +403,8 @@
                             <td>MOEAWRA1110138</td>
                             <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
                             <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
-                            <td class="detail"></td>
-                            <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                            <td class="status">計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110138</td>
-                            <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                            <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
-                            <td class="detail"></td>
-                            <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
-                            <td class="status">計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110138</td>
-                            <td class="name fixed"><a href="#">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                            <td class="detail">跨年度</td>
-                            <td class="detail">✓</td>
+                            <td class="detail">科技發展</td>
+                            <td class="detail">一般契約</td>
                             <td class="detail"></td>
                             <td class="person" colspan="2"><a href="#">水利行政組／鄭仲君</a></td>
                             <td class="status">計畫核可已完成</td>
