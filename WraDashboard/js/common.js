@@ -7,7 +7,7 @@ var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 
-//---陣列中最長字串--- for 圖表廠商Top5的廠商名寬度
+//---陣列中最長字串--- for 橫向長條圖取得Label名稱字串長（以便設定圖表Left距離）
 function long_string(arr) {
     let longest = arr[0];
     for (let i = 1; i < arr.length; i++) {
