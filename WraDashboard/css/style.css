@@ -21,6 +21,7 @@ h6 {
 
 body.demo {
     overflow-y: hidden;
+    text-align: left;
 }
 
 .demo {
