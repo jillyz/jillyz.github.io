@@ -65,6 +65,15 @@
                 <button type="button" class="btn btn-secondary">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
+                <!-- <div class="dropdown"> -->
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                        匯出
+                    </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item" href="export/plan_list.xlsx">Excel</a></li>
+                    <li><a class="dropdown-item" href="#">ODT</a></li>
+                </ul>
+                <!-- </div> -->
 
             </div>
             <!-- <div class="wrap-checkbox">
@@ -268,47 +277,42 @@
 
             </table>
         </div>
-        <div class="list relative">
-            <div class="grid-title">
-                計畫列表 (共200筆)
-            </div>
-            <div class="toolbox">
-
-                <!-- <span class="form-check form-switch">
-                    <input type="checkbox" role="switch" name="" id="chkMore" data-toggleClass="detail" class="form-check-input">
-                    <label for="chkMore" class="form-check-label">詳細</label>
-                </span>
-                <span class="form-check form-switch">
-                    <input type="checkbox"  role="switch"name="" id="chkLate" data-toggleClass="late" class="form-check-input">
-                    <label for="chkLate" class="form-check-label">進度落後</label>
-                </span> -->
-
-                <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                        匯出
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-                        <li><a class="dropdown-item" href="#">Excel</a></li>
-                        <li><a class="dropdown-item" href="#">ODT</a></li>
-                        <!--
-                        <li><a class="dropdown-item" href="#">精簡 (.xls)</a></li>
-                        <li><a class="dropdown-item" href="#">精簡 (.ods)</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">詳細 (.xls)</a></li>
-                        <li><a class="dropdown-item" href="#">詳細 (.ods)</a></li>
-                        -->
-                    </ul>
+        <div class="list">
+            <div class="grid query-list">
+                <div class="grid-title">
+                    計畫列表 (共91筆)
                 </div>
-                <span class="btn-full-table">
-                    <input type="checkbox" name="" id="chkFullTable">
-                    <label for="chkFullTable">
-                        <i class="fa-solid fa-expand expand"></i>
-                        <i class="fa-solid fa-compress compress"></i>
-                    </label>
-                </span>
+                <div class="filter-tag-wrap">
+                    <span class="filter-tag">111年度</span>
+                    <!-- <span class="filter-tag">最優先</span> -->
+                    <!-- <span class="filter-tag">已發包</span> -->
+                    <span class="filter-tag">水利署</span>
+                    <!-- <span class="filter-tag">單一年度</span> -->
+                    <!-- <span class="filter-tag">科技發展</span> -->
+                    <!-- <span class="filter-tag">一般契約</span> -->
+                    <span class="filter-tag">契約簽訂</span>
+                    <!-- <span class="filter-tag">契約簽訂-進度落後</span> -->
+                </div>
+                <div>
+                    <!-- <span class="form-check form-switch">
+                            <input type="checkbox" role="switch" name="" id="chkMore" data-toggleClass="detail" class="form-check-input">
+                            <label for="chkMore" class="form-check-label">詳細</label>
+                        </span>
+                        <span class="form-check form-switch">
+                            <input type="checkbox"  role="switch"name="" id="chkLate" data-toggleClass="late" class="form-check-input">
+                            <label for="chkLate" class="form-check-label">進度落後</label>
+                        </span> -->
+
+                    <span class="btn-full-table">
+                        <input type="checkbox" name="" id="chkFullTable">
+                        <label for="chkFullTable">
+                            <i class="fa-solid fa-expand expand"></i>
+                            <i class="fa-solid fa-compress compress"></i>
+                        </label>
+                    </span>
+                </div>
             </div>
+
             <div class="my-table2-wrap" style="height: calc(100% - 32px );">
                 <table class="my-table2 data-plan-list">
                     <thead>

@@ -164,7 +164,6 @@ caption {
     margin-bottom: 8px;
     padding-bottom: .5em;
     border-radius: 4px;
-    background-color: #fff;
     box-sizing: border-box;
 }
 
@@ -176,6 +175,7 @@ caption {
 .dashboard>.col {
     padding-left: 30px;
     padding-right: 30px;
+    background-color: #FFFFFF;
 }
 
 .col-1 {
@@ -1118,6 +1118,7 @@ border-width: 0 1px;
     left: 0;
     z-index: 2;
     background-color: #F7FAFC;
+    border-right: 1px solid #e5e7eb;
 }
 
 .my-table tbody td.fixed,
@@ -1263,8 +1264,12 @@ a {
 
 /* ============================= */
 
-.grid.dashboard-query {
+.grid {
     display: grid;
+}
+
+.grid.dashboard-query {
+    /* display: grid; */
     margin: 8px;
     height: calc(100vh - 16px);
     grid-gap: 8px;
@@ -1285,9 +1290,12 @@ a {
     display: none;
 }
 
-.grid>div {
+.grid.dashboard-query>div {
     padding: 12px;
     border-radius: 4px;
+}
+
+.grid.dashboard-query>div {
     background-color: #FFFFFF;
 }
 
@@ -1317,7 +1325,7 @@ a {
 }
 
 .grid.dashboard-organizer {
-    display: grid;
+    /* display: grid; */
     margin: 8px;
     height: calc(100vh - 16px);
     grid-gap: 8px;
@@ -1377,7 +1385,7 @@ a {
 .wrap-select {
     display: grid;
     /* grid-template-columns: repeat(4, 1fr); */
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(9, 1fr);
     gap: 5px;
     /* width: calc(100% / 11* 4 - 10px); */
 }
@@ -1458,6 +1466,14 @@ a {
     position: relative;
 }
 
+.query-list {
+    grid-template-columns: auto 1fr auto;
+}
+
+.filter-tag-wrap {
+    padding: 0 5px;
+}
+
 
 /* TOOLBOX --------------*/
 
@@ -1470,6 +1486,10 @@ a {
     font-size: 13px;
 }
 
+.toolbox>* {
+    vertical-align: middle;
+}
+
 .toolbox:not(.toolbox-no-gap)>* {
     margin-left: 1.5em;
 }
@@ -1480,6 +1500,30 @@ a {
 
 .toolbox .form-switch input {
     margin-top: 10px;
+}
+
+.filter-tag-wrap {
+    display: inline-block;
+    padding: 0 .5em;
+}
+
+.filter-tag {
+    display: inline-block;
+    margin-bottom: 4px;
+    padding: .1em .5em;
+    background-color: #fff;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    color: #999;
+    white-space: nowrap;
+}
+
+.filter-tag::after {
+    content: "\f00d";
+    display: inline;
+    padding: 0 .25em;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
 }
 
 .filter-company {
