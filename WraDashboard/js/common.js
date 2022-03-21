@@ -1,3 +1,34 @@
+//for demo ( fake menu toggle )
+
+function toggleMenu() {
+    var dom = document.getElementsByClassName('page');
+    var isOpen = dom[0].dataset.menu == "open";
+    if (isOpen) {
+        dom[0].dataset.menu = 'close';
+    } else {
+        dom[0].dataset.menu = 'open';
+    }
+}
+
+function setToggleMenu() {
+    var cookieMenu = document.cookie.toggleMenu;
+    if (cookieMenu == 'open') {
+        document.cookie.toggleMenu = 'close';
+    } else {
+        document.cookie = 'toggleMenu=open';
+    }
+}
+setToggleMenu();
+
+function toggleChart() {
+    var domOver = document.getElementById('chartBudgetRequestOver');
+    var domUnder = document.getElementById('chartBudgetRequestUnder');
+    domOver.classList.toggle('demo-show');
+    domOver.classList.toggle('demo-hide');
+    domUnder.classList.toggle('demo-show');
+    domUnder.classList.toggle('demo-hide');
+}
+
 //-------------- Common Function -------------------
 
 

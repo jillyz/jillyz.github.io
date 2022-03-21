@@ -30,8 +30,9 @@
         <a href="dashboard_預算控管人員.html#page" class="active">預算控管人員</a>
     </div>
 
-    <div class="page" id="page">
-        <aside class="demo-aside">
+    <div class="page" data-menu="open" id="page">
+        <aside class="demo-aside" onclick="toggleMenu()">
+            <nav class="demo-float-sub-menu"></nav>
         </aside>
         <header class="demo-header">
             <a href="#" class="flex">
@@ -222,18 +223,6 @@
                     </div>
 
                 </div>
-
-                <script>
-                    // for demo
-                    function toggleChart() {
-                        var domOver = document.getElementById('chartBudgetRequestOver');
-                        var domUnder = document.getElementById('chartBudgetRequestUnder');
-                        domOver.classList.toggle('demo-show');
-                        domOver.classList.toggle('demo-hide');
-                        domUnder.classList.toggle('demo-show');
-                        domUnder.classList.toggle('demo-hide');
-                    }
-                </script>
 
                 <div class="col col-1 section-company relative">
                     <h2 class="title">廠商資訊</h2>
