@@ -10,16 +10,6 @@ function toggleMenu() {
     }
 }
 
-function setToggleMenu() {
-    var cookieMenu = document.cookie.toggleMenu;
-    if (cookieMenu == 'open') {
-        document.cookie.toggleMenu = 'close';
-    } else {
-        document.cookie = 'toggleMenu=open';
-    }
-}
-setToggleMenu();
-
 function toggleChart() {
     var domOver = document.getElementById('chartBudgetRequestOver');
     var domUnder = document.getElementById('chartBudgetRequestUnder');
