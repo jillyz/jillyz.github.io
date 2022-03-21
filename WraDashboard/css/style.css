@@ -1615,7 +1615,7 @@ a {
 .filter-tag {
     display: inline-block;
     margin-bottom: 4px;
-    padding: .1em .5em;
+    padding: .1em .75em;
     background-color: #fff;
     border: 1px solid #CCC;
     border-radius: 1em;
@@ -1623,13 +1623,14 @@ a {
     white-space: nowrap;
 }
 
-.filter-tag::after {
+
+/* .filter-tag::after {
     content: "\f00d";
     display: inline;
     padding: 0 .25em;
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
-}
+} */
 
 .filter-company {
     width: auto;
