@@ -32,6 +32,18 @@ h6 {
     color: red;
 }
 
+.demo-show {
+    position: absolute;
+    z-index: 1;
+    opacity: 1;
+}
+
+.demo-hide {
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+}
+
 
 /* 覆蓋 BOOTSTRAP =============*/
 

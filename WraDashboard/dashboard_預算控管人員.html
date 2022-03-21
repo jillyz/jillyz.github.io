@@ -204,10 +204,24 @@
             </table>
 
             <!-- 預算核定總經費 -->
-            <div id="chartBudgetRequestOver" class="chart-budget demo-hide" onclick="show1()"></div>
-            <div id="chartBudgetRequestUnder" class="chart-budget" onclick="show2()"></div>
+            <div class="relative">
+                <div id="chartBudgetRequestOver" class="chart-budget demo-show" onclick="toggleChart()"></div>
+                <div id="chartBudgetRequestUnder" class="chart-budget demo-hide" onclick="toggleChart()"></div>
+            </div>
 
         </div>
+
+        <script>
+            // for demo
+            function toggleChart() {
+                var domOver = document.getElementById('chartBudgetRequestOver');
+                var domUnder = document.getElementById('chartBudgetRequestUnder');
+                domOver.classList.toggle('demo-show');
+                domOver.classList.toggle('demo-hide');
+                domUnder.classList.toggle('demo-show');
+                domUnder.classList.toggle('demo-hide');
+            }
+        </script>
 
         <div class="col col-1 section-company relative">
             <h2 class="title">廠商資訊</h2>
@@ -277,13 +291,11 @@
             <div class="slider">
                 <input type="radio" name="r" id="r1" checked>
                 <label for="r1">
-                    <div id="chartCompany" class="chart-company slider" data-slider="0"></div>
+                    <div id="chartCompany" class="chart-company slider"></div>
                 </label>
                 <input type="radio" name="r" id="r2">
                 <label for="r2">
-                    <div id="chartCompanyHosting" class="chart-company slider" data-slider="0">
-
-                    </div>
+                    <div id="chartCompanyHosting" class="chart-company slider"></div>
                 </label>
             </div>
 
