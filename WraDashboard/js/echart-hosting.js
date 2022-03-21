@@ -9,7 +9,7 @@ function renderCompanyHosting() {
     optionCompanyHosting = {
         backgroundColor: '#FFFFFF',
         title: {
-            text: '得標最多的計畫主持人',
+            text: '得標最多計畫主持人',
             textStyle: {
                 fontSize: 13
             },

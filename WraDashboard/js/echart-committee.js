@@ -10,7 +10,7 @@ function renderCommittee(label, value) {
     optionCommittee = {
         backgroundColor: '#FFFFFF',
         title: {
-            text: '遴聘次數最多的委員',
+            text: '遴聘次數最多委員',
             textStyle: {
                 fontSize: 13
             },

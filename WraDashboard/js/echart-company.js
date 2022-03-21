@@ -18,7 +18,7 @@ function renderCompany(label, value) {
     optionCompany = {
         backgroundColor: '#FFFFFF',
         title: {
-            text: '得標最多的廠商',
+            text: '得標最多廠商',
             textStyle: {
                 fontSize: 13,
             },
