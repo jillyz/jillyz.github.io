@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>主督辦/組室窗口/Dashboard</title>
+    <title>組室窗口/Dashboard</title>
     <!-- CSS Reset -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
@@ -19,190 +19,203 @@
     />
 </head>
 
-<body>
+<body class="demo">
     <div class="demo">
         Demo :
-        <a href="dashboard_系統控管人員.html">系統控管人員</a>
-        <a href="dashboard_高階主管.html">高階主管</a>
-        <a href="dashboard_組長科長局長課長.html">組長/科長/局長/課長</a>
-        <a href="dashboard_組室窗口.html" class="active">組室窗口</a>
-        <a href="dashboard_主督辦.html">主督辦</a>
-        <a href="dashboard_預算控管人員.html">預算控管人員</a>
+        <a href="dashboard_系統控管人員.html#page">系統控管人員</a>
+        <a href="dashboard_高階主管.html#page">高階主管</a>
+        <a href="dashboard_組長科長局長課長.html#page">組長/科長/局長/課長</a>
+        <a href="dashboard_組室窗口.html#page" class="active">組室窗口</a>
+        <a href="dashboard_主督辦.html#page">主督辦</a>
+        <a href="dashboard_預算控管人員.html#page">預算控管人員</a>
     </div>
-    <div class="wrap dashboard">
-        <div class="notice">
-            <!-- <div>
+
+
+    <div class="page" id="page">
+        <aside class="demo-aside">
+        </aside>
+        <header class="demo-header">
+            <a href="#" class="flex">
+                <div class="demo-logo"></div>
+                <div class="demo-user-help"></div>
+            </a>
+        </header>
+        <main>
+
+            <div class="wrap dashboard">
+                <div class="notice">
+                    <!-- <div>
                 <div class="btn-my-plan">
                     我的計畫 <span>3</span>
                 </div>
             </div> -->
-            <div class="todo">
-                <i class="fa-solid fa-clipboard-check"></i> 待審閱計畫 <span>3</span>
-            </div>
-            <div>
-                <i class="fa-solid fa-triangle-exclamation"></i> 評選委員同時為其他計畫廠商 <span>3</span>
-            </div>
-            <div>
-                <i class="fa-solid fa-user-xmark"></i> 無人督主辦計畫 <span>3</span>
-            </div>
-        </div>
+                    <div class="todo">
+                        <i class="fa-solid fa-clipboard-check"></i> 待審閱計畫 <span>3</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-triangle-exclamation"></i> 評選委員同時為其他計畫廠商 <span>3</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-user-xmark"></i> 無人督主辦計畫 <span>3</span>
+                    </div>
+                </div>
 
 
 
-        <div class="col col-3 section-organizer-stage">
-            <h2 class="title">
-                <select class="select-year">
+                <div class="col col-3 section-organizer-stage">
+                    <h2 class="title">
+                        <select class="select-year">
                     <option value="110">110年度</option>
                     <option value="111" selected>111年度</option>
                 </select> 計畫執行
-            </h2>
-            <div class="flex">
-                <section class="wrap-organizer">
-                    <!-- <div id="chartMyOrganizer" class="chart-organizer-mine"></div> -->
-                    <div class="section-title">負責計畫</div>
+                    </h2>
+                    <div class="flex">
+                        <section class="wrap-organizer">
+                            <!-- <div id="chartMyOrganizer" class="chart-organizer-mine"></div> -->
+                            <div class="section-title">負責計畫</div>
 
-                    <table class="data-organizer-mine" style="height: 90%;">
-                        <tr>
-                            <td></td>
-                            <td class="align-r">件數</td>
-                            <td class="align-r">進度落後</td>
-                        </tr>
-                        <tr class="wra">
-                            <th>個人主辦</th>
-                            <td class="align-r"><span>1</span></td>
-                            <td class="align-r"><span class="late">1</span></td>
-                        </tr>
-                        <tr class="aa">
-                            <th>個人督辦</th>
-                            <td class="align-r"><span>1</span></td>
-                            <td class="align-r"><span class="late">0</span></td>
-                        </tr>
-                        <tr class="aa">
-                            <th>控管單位執行</th>
-                            <td class="align-r"><span>33</span></td>
-                            <td class="align-r"><span class="late">8</span></td>
-                        </tr>
-                    </table>
-                </section>
-                <section class="wrap-stage">
-                    <div id="chartStage" class="chart-stage"></div>
-                    <table class="data-stage">
-                        <tr class="align-t">
-                            <th>計畫<br/>申請</th>
-                            <th>計畫<br/>核可</th>
-                            <th>採購<br/>提報</th>
-                            <th>契約<br/>簽訂</th>
-                            <th>契約<br/>變更</th>
-                            <th>進度<br/>填報</th>
-                            <th>已結案</th>
-                            <th>成果<br/>上傳</th>
-                            <th>成果<br/>歸檔</th>
-                        </tr>
-                        <tr id="dataSatageTotal" class="cursor">
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>3</td>
-                            <td>0</td>
-                            <td>26</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>3</td>
-                        </tr>
-                        <tr id="dataSatageLate" class="cursor">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><span>1</span></td>
-                            <td></td>
-                            <td><span>7</span></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="cursor btn-purchase-detail">
-                                <input id="purchaseDetail" type="checkbox">
-                                <label for="purchaseDetail"><i class="fa-regular fa-rectangle-list"></i></label>
-                                <table class="data-stage purchase">
-                                    <caption>採購階段執行進度（已完成「計畫核可」方列入統計）</caption>
-                                    <tr>
-                                        <th>尚未登打</th>
-                                        <th>公告上網</th>
-                                        <th>資格審查</th>
-                                        <th>規格審查</th>
-                                        <th>訂期議價</th>
-                                    </tr>
-                                    <tr>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                        <td>0</td>
-                                    </tr>
-                                </table>
-                            </td>
-                            <td colspan="7"></td>
-                        </tr>
-                    </table>
+                            <table class="data-organizer-mine" style="height: 90%;">
+                                <tr>
+                                    <td></td>
+                                    <td class="align-r">件數</td>
+                                    <td class="align-r">進度落後</td>
+                                </tr>
+                                <tr class="wra">
+                                    <th>個人主辦</th>
+                                    <td class="align-r"><span>1</span></td>
+                                    <td class="align-r"><span class="late">1</span></td>
+                                </tr>
+                                <tr class="aa">
+                                    <th>個人督辦</th>
+                                    <td class="align-r"><span>1</span></td>
+                                    <td class="align-r"><span class="late">0</span></td>
+                                </tr>
+                                <tr class="aa">
+                                    <th>控管單位執行</th>
+                                    <td class="align-r"><span>33</span></td>
+                                    <td class="align-r"><span class="late">8</span></td>
+                                </tr>
+                            </table>
+                        </section>
+                        <section class="wrap-stage">
+                            <div id="chartStage" class="chart-stage"></div>
+                            <table class="data-stage">
+                                <tr class="align-t">
+                                    <th>計畫<br/>申請</th>
+                                    <th>計畫<br/>核可</th>
+                                    <th>採購<br/>提報</th>
+                                    <th>契約<br/>簽訂</th>
+                                    <th>契約<br/>變更</th>
+                                    <th>進度<br/>填報</th>
+                                    <th>已結案</th>
+                                    <th>成果<br/>上傳</th>
+                                    <th>成果<br/>歸檔</th>
+                                </tr>
+                                <tr id="dataSatageTotal" class="cursor">
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>3</td>
+                                    <td>0</td>
+                                    <td>26</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr id="dataSatageLate" class="cursor">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span>1</span></td>
+                                    <td></td>
+                                    <td><span>7</span></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td class="cursor btn-purchase-detail">
+                                        <input id="purchaseDetail" type="checkbox">
+                                        <label for="purchaseDetail"><i class="fa-regular fa-rectangle-list"></i></label>
+                                        <table class="data-stage purchase">
+                                            <caption>採購階段執行進度（已完成「計畫核可」方列入統計）</caption>
+                                            <tr>
+                                                <th>尚未登打</th>
+                                                <th>公告上網</th>
+                                                <th>資格審查</th>
+                                                <th>規格審查</th>
+                                                <th>訂期議價</th>
+                                            </tr>
+                                            <tr>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td colspan="7"></td>
+                                </tr>
+                            </table>
 
 
-                </section>
-            </div>
-        </div>
+                        </section>
+                    </div>
+                </div>
 
-        <div class="col col-1 section-outsourcing-funds relative">
-            <h2 class="title">
-                <!-- <select class="select-year">
+                <div class="col col-1 section-outsourcing-funds relative">
+                    <h2 class="title">
+                        <!-- <select class="select-year">
                     <option value="110">110年度</option>
                     <option value="111" selected>111年度</option>
                 </select>  -->
-                計畫概要
-                <div class="wrap toolbox toolbox-no-gap">
-                    <select class="filter-company">
+                        計畫概要
+                        <div class="wrap toolbox toolbox-no-gap">
+                            <select class="filter-company">
                         <option selected="selected" value="">複審會議核定經費</option>
                         <option value="">計畫執行經費</option>
                     </select>
+                        </div>
+                    </h2>
+                    <table class="data-total">
+                        <tr>
+                            <th>總件數</th>
+                            <th class="align-r">總經費</th>
+                        </tr>
+                        <tr>
+                            <td>33件</td>
+                            <td class="align-r">5182萬</td>
+                        </tr>
+                    </table>
+                    <div class="wrap chart-outsourcing-funds">
+                        <div id="chartOutsourcing" class="chart-outsourcing col"></div>
+                        <div id="chartFunds" class="chart-funds col"></div>
+                    </div>
+                    <table class="data-outsourcing-funds">
+                        <tr class="yes">
+                            <td>已發包</td>
+                            <td><span>25件</span></td>
+                            <td>已執行經費 </td>
+                            <td><span>3990萬</span></td>
+                        </tr>
+                        <tr class="no">
+                            <td>未發包</td>
+                            <td><span>8件</span></td>
+                            <td>剩餘經費</td>
+                            <td><span>1192萬</span></td>
+                        </tr>
+                    </table>
+
                 </div>
-            </h2>
-            <table class="data-total">
-                <tr>
-                    <th>總件數</th>
-                    <th class="align-r">總經費</th>
-                </tr>
-                <tr>
-                    <td>33件</td>
-                    <td class="align-r">5182萬</td>
-                </tr>
-            </table>
-            <div class="wrap chart-outsourcing-funds">
-                <div id="chartOutsourcing" class="chart-outsourcing col"></div>
-                <div id="chartFunds" class="chart-funds col"></div>
-            </div>
-            <table class="data-outsourcing-funds">
-                <tr class="yes">
-                    <td>已發包</td>
-                    <td><span>25件</span></td>
-                    <td>已執行經費 </td>
-                    <td><span>3990萬</span></td>
-                </tr>
-                <tr class="no">
-                    <td>未發包</td>
-                    <td><span>8件</span></td>
-                    <td>剩餘經費</td>
-                    <td><span>1192萬</span></td>
-                </tr>
-            </table>
-
-        </div>
 
 
-        <div class="col col-1 section-company relative">
-            <h2 class="title">廠商資訊</h2>
+                <div class="col col-1 section-company relative">
+                    <h2 class="title">廠商資訊</h2>
 
-            <div class="wrap toolbox toolbox-no-gap">
-                <select class="filter-company">
+                    <div class="wrap toolbox toolbox-no-gap">
+                        <select class="filter-company">
                     <option selected="selected" value="水利署">全署</option>
                     <option disabled>-------------</option>
                     <option value="水利署">本署</option>
@@ -223,16 +236,16 @@
                     <option value="水利規劃試驗所">水利規劃試驗所</option>
                     <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
                 </select>
-                <select class="filter-company">
+                        <select class="filter-company">
                     <option selected="selected" value="1">當年度得標</option>
                     <option value="2">連續2年得標</option>
                     <option value="3">連續3年得標</option>
                     <option value="4">連續4年得標</option>
                     <option value="5">連續5年得標</option>
                 </select>
-            </div>
+                    </div>
 
-            <!-- <div class="mychart-type-bar">
+                    <!-- <div class="mychart-type-bar">
                 <table class="data">
                     <tr>
                         <td>只有一家廠商投標</td>
@@ -244,45 +257,45 @@
                 </div>
             </div> -->
 
-            <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
-                <div class="total-block big">
-                    <span class="total-title">得標廠商總數</span>
-                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">250</span>
-                </div>
-                <div class="total-block big align-r">
-                    <span class="total-title">得標計畫主持人總數</span>
-                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">218</span>
-                </div>
-                <div class="total-block">
-                    <span class="total-title">得標3件以上的廠商數</span>
-                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">14</span>
-                </div>
-                <div class="total-block align-r">
-                    <span class="total-title">得標3件以上的計畫主持人數</span>
-                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">3</span>
-                </div>
-            </div>
+                    <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
+                        <div class="total-block big">
+                            <span class="total-title">得標廠商總數</span>
+                            <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">250</span>
+                        </div>
+                        <div class="total-block big align-r">
+                            <span class="total-title">得標計畫主持人總數</span>
+                            <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">218</span>
+                        </div>
+                        <div class="total-block">
+                            <span class="total-title">得標3件以上的廠商數</span>
+                            <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">14</span>
+                        </div>
+                        <div class="total-block align-r">
+                            <span class="total-title">得標3件以上的計畫主持人數</span>
+                            <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">3</span>
+                        </div>
+                    </div>
 
-            <div class="slider">
-                <input type="radio" name="r" id="r1" checked>
-                <label for="r1">
+                    <div class="slider">
+                        <input type="radio" name="r" id="r1" checked>
+                        <label for="r1">
                     <div id="chartCompany" class="chart-company slider" data-slider="0"></div>
                 </label>
-                <input type="radio" name="r" id="r2">
-                <label for="r2">
+                        <input type="radio" name="r" id="r2">
+                        <label for="r2">
                     <div id="chartCompanyHosting" class="chart-company slider" data-slider="0">
 
                     </div>
                 </label>
-            </div>
+                    </div>
 
-        </div>
+                </div>
 
-        <div class="col col-1 section-committee relative">
-            <h2 class="title">外聘評選委員</h2>
+                <div class="col col-1 section-committee relative">
+                    <h2 class="title">外聘評選委員</h2>
 
-            <div class="wrap toolbox toolbox-no-gap">
-                <select class="filter-company">
+                    <div class="wrap toolbox toolbox-no-gap">
+                        <select class="filter-company">
                     <option selected="selected" value="水利署">全署</option>
                     <option disabled>-------------</option>
                     <option value="水利署">本署</option>
@@ -303,9 +316,9 @@
                     <option value="水利規劃試驗所">水利規劃試驗所</option>
                     <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
                 </select>
-            </div>
+                    </div>
 
-            <!-- <div class="mychart-type-bar">
+                    <!-- <div class="mychart-type-bar">
                 <table class="data">
                     <tr>
                         <td>有遴聘委員</td>
@@ -317,26 +330,25 @@
                 </div>
             </div> -->
 
-            <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
-                <div class="total-block big" style="width: 100%;">
-                    <span class="total-title">遴聘委員總數</span>
-                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">238</span>
+                    <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
+                        <div class="total-block big" style="width: 100%;">
+                            <span class="total-title">遴聘委員總數</span>
+                            <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">238</span>
+                        </div>
+                        <div class="total-block" style="width: 100%;">
+                            <span class="total-title">遴聘5次以上的委員數</span>
+                            <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">6</span>
+                        </div>
+                    </div>
+                    <div class="wrap">
+                        <div id="chartCommittee" class="chart-company"></div>
+                    </div>
                 </div>
-                <div class="total-block" style="width: 100%;">
-                    <span class="total-title">遴聘5次以上的委員數</span>
-                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">6</span>
-                </div>
+
+
             </div>
-            <div class="wrap">
-                <div id="chartCommittee" class="chart-company"></div>
-            </div>
-        </div>
 
-
-    </div>
-
-    <div class="wrap dashboard">
-
+        </main>
     </div>
 
 

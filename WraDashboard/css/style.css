@@ -19,6 +19,10 @@ h6 {
 
 /* DEMO =============*/
 
+body.demo {
+    overflow-y: hidden;
+}
+
 .demo {
     text-align: center;
 }
@@ -44,6 +48,33 @@ h6 {
     opacity: 0;
 }
 
+.demo-aside {
+    background: #1E549F url(../images/demo/demo-menu-open.png) 0 0 no-repeat;
+}
+
+.demo-header {
+    height: 135px;
+    background: #2E74CD url(../images/demo/demo-header-bg.png) 0 0 repeat-x;
+}
+
+.demo-header a {
+    display: flex;
+    width: 100%;
+    padding: 0;
+}
+
+.demo-logo {
+    width: 50%;
+    height: 127px;
+    background: url(../images/demo/demo-logo.png) 0 0 no-repeat;
+}
+
+.demo-user-help {
+    width: 50%;
+    height: 135px;
+    background: url(../images/demo/demo-header-right.png) 100% 100% no-repeat;
+}
+
 
 /* 覆蓋 BOOTSTRAP =============*/
 
@@ -66,9 +97,10 @@ caption {
 .page {
     display: grid;
     height: 100vh;
-    grid-template-rows: auto auto 1fr;
-    grid-template-columns: 200px 1fr;
+    grid-template-rows: 135px auto 1fr;
+    grid-template-columns: 300px 1fr;
     grid-template-areas: "aside header" "aside breadcrumb" "aside main";
+    grid-gap: 0;
 }
 
 .page>header {
@@ -80,12 +112,12 @@ caption {
 
 .page>aside {
     grid-area: aside;
-    background-color: #2262C7;
+    background-color: #1E549F;
     color: #FFFFFF;
     overflow: auto;
     float: left;
     height: 100vh;
-    width: 200px;
+    /* width: 300px; */
 }
 
 .page .breadcrumb {
