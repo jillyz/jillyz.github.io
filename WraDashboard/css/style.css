@@ -328,11 +328,6 @@ caption {
     padding-bottom: 1.5em;
 }
 
-.col.section-priority {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
 .section-company {
     /* height: 400px; */
 }
@@ -528,10 +523,9 @@ caption {
     background-color: #fff;
 }
 
-.wrpa-priority {
-    margin: 0 auto;
+.wrap-priority {
+    margin: 0 -15px;
     box-sizing: border-box;
-    width: 100%;
     overflow: hidden;
 }
 
@@ -720,7 +714,7 @@ caption {
 }
 
 .data-outsourcing-funds td:nth-child(4) {
-    width: 7em;
+    width: 8em;
 }
 
 .data-outsourcing-funds td {
@@ -1724,6 +1718,7 @@ a {
 .slider {
     position: relative;
     text-align: right;
+    min-height: 175px;
 }
 
 .slider label {
