@@ -28,6 +28,10 @@ h6 {
     padding: 0 .5em;
 }
 
+.demo a.active {
+    color: red;
+}
+
 
 /* 覆蓋 BOOTSTRAP =============*/
 
@@ -1290,12 +1294,10 @@ a {
     display: none;
 }
 
-.grid.dashboard-query>div {
+.grid.dashboard-query>div,
+.grid.dashboard-organizer>div {
     padding: 12px;
     border-radius: 4px;
-}
-
-.grid.dashboard-query>div {
     background-color: #FFFFFF;
 }
 

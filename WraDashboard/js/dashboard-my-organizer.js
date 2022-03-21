@@ -3,7 +3,7 @@ requirejs([
     'echart-outsourcing',
     'echart-funds',
     'echart-organizer-mine',
-    // 'echart-priority',
+    'echart-priority',
     'echart-stage',
     'echart-company',
     'echart-hosting',

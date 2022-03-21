@@ -21,26 +21,30 @@
 
 <body>
     <div class="demo">
-        <a href="dashboard_admin.html">管理員</a>
-        <a href="dashboard_organizer.html">主督辦/組室</a>
-        <a href="dashboard_budget_controller.html">預算控管人員</a>
+        Demo :
+        <a href="dashboard_系統控管人員.html">系統控管人員</a>
+        <a href="dashboard_署長.html">署長</a>
+        <a href="dashboard_組長科長局長課長.html">組長/科長/局長/課長</a>
+        <a href="dashboard_組室窗口.html" class="active">組室窗口</a>
+        <a href="dashboard_主督辦.html">主督辦</a>
+        <a href="dashboard_預算控管人員.html">預算控管人員</a>
     </div>
     <div class="wrap dashboard">
         <div class="notice">
-            <div>
+            <!-- <div>
                 <div class="btn-my-plan">
                     我的計畫 <span>3</span>
                 </div>
-            </div>
+            </div> -->
             <div class="todo">
                 <i class="fa-solid fa-clipboard-check"></i> 待審閱計畫 <span>3</span>
             </div>
             <div>
                 <i class="fa-solid fa-triangle-exclamation"></i> 評選委員同時為其他計畫廠商 <span>3</span>
             </div>
-            <!-- <div>
+            <div>
                 <i class="fa-solid fa-user-xmark"></i> 無人督主辦計畫 <span>3</span>
-            </div> -->
+            </div>
         </div>
 
 
@@ -56,6 +60,7 @@
                 <section class="wrap-organizer">
                     <!-- <div id="chartMyOrganizer" class="chart-organizer-mine"></div> -->
                     <div class="section-title">負責計畫</div>
+
                     <table class="data-organizer-mine" style="height: 90%;">
                         <tr>
                             <td></td>
@@ -75,16 +80,7 @@
                         <tr class="aa">
                             <th>控管單位執行</th>
                             <td class="align-r"><span>33</span></td>
-                            <td class="align-r">
-                                <span class="late">8</span>
-                            </td>
-                        </tr>
-                        <tr class="aa">
-                            <th>預算控管執行</th>
-                            <td class="align-r"><span>33</span></td>
-                            <td class="align-r">
-                                <!-- <span class="late">8</span> -->
-                            </td>
+                            <td class="align-r"><span class="late">8</span></td>
                         </tr>
                     </table>
                 </section>
@@ -158,10 +154,11 @@
 
         <div class="col col-1 section-outsourcing-funds relative">
             <h2 class="title">
-                <select class="select-year">
+                <!-- <select class="select-year">
                     <option value="110">110年度</option>
                     <option value="111" selected>111年度</option>
-                </select> 計畫概要
+                </select>  -->
+                計畫概要
                 <div class="wrap toolbox toolbox-no-gap">
                     <select class="filter-company">
                         <option selected="selected" value="">複審會議核定經費</option>
@@ -172,7 +169,7 @@
             <table class="data-total">
                 <tr>
                     <th>總件數</th>
-                    <th class="align-r">計畫總經費</th>
+                    <th class="align-r">總經費</th>
                 </tr>
                 <tr>
                     <td>33件</td>
@@ -180,10 +177,10 @@
                 </tr>
             </table>
             <div class="wrap chart-outsourcing-funds">
-                <!-- <div id="chartOutsourcing" class="chart-outsourcing col"></div> -->
-                <!-- <div id="chartFunds" class="chart-funds col"></div> -->
+                <div id="chartOutsourcing" class="chart-outsourcing col"></div>
+                <div id="chartFunds" class="chart-funds col"></div>
             </div>
-            <table class="data-outsourcing-funds" style="margin-top: 10px;">
+            <table class="data-outsourcing-funds">
                 <tr class="yes">
                     <td>已發包</td>
                     <td><span>25件</span></td>
@@ -198,11 +195,8 @@
                 </tr>
             </table>
 
-            <!-- 預算核定總經費 -->
-            <div id="chartBudgetRequestOver" class="chart-budget demo-hide" onclick="show1()"></div>
-            <div id="chartBudgetRequestUnder" class="chart-budget" onclick="show2()"></div>
-
         </div>
+
 
         <div class="col col-1 section-company relative">
             <h2 class="title">廠商資訊</h2>
@@ -366,7 +360,7 @@
           -->
 
 
-    <script data-main="js/dashboard-budget-controller" src="js/require.js"></script>
+    <script data-main="js/dashboard-my-organizer" src="js/require.js"></script>
     <script>
         window.addEventListener('resize', function() {
             "use strict";
