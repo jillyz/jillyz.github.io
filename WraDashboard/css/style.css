@@ -64,13 +64,13 @@ body.demo {
 }
 
 .demo-logo {
-    width: 50%;
+    width: 443px;
     height: 127px;
-    background: url(../images/demo/demo-logo.png) 0 0 no-repeat;
+    background: url(../images/demo/demo-logo.png) 15px 0 no-repeat;
 }
 
 .demo-user-help {
-    width: 50%;
+    width: calc(100vw - 300px - 443px);
     height: 135px;
     background: url(../images/demo/demo-header-right.png) 100% 100% no-repeat;
 }
