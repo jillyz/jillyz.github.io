@@ -9,7 +9,7 @@ function renderChartBudget() {
     optionBudget = {
         backgroundColor: '#FFFFFF',
         title: {
-            text: '預算核定總經費',
+            text: '預算執行情形',
             textStyle: {
                 fontSize: 13
             },
@@ -47,7 +47,7 @@ function renderChartBudget() {
             data: ['']
         },
         series: [{
-                name: '預算申請',
+                name: '計畫申請',
                 type: 'bar',
                 stack: 'total',
                 color: '#5470C6',
@@ -70,7 +70,7 @@ function renderChartBudget() {
                 data: [2000000]
             },
             {
-                name: '預算核定總經費',
+                name: '預算總經費',
                 type: 'bar',
                 color: '#666666',
                 emphasis: {
