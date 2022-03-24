@@ -274,17 +274,6 @@ caption {
     box-sizing: border-box;
 }
 
-.dashboard {
-    padding: 10px;
-    font-size: 13px;
-}
-
-.dashboard>.col {
-    padding-left: 30px;
-    padding-right: 30px;
-    background-color: #FFFFFF;
-}
-
 .col-1 {
     width: calc( 100% / 3 - 8px);
 }
@@ -298,11 +287,17 @@ caption {
 }
 
 .dashboard {
-    /* margin-left: 240px !important; */
-    max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.dashboard>.col {
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #FFFFFF;
 }
 
 .dashboard .title {
@@ -545,6 +540,7 @@ caption {
 
 .chart-outsourcing {
     width: calc(50% - 8px);
+    max-width: 180px;
     /* max-width: 200px; */
     height: 220px;
     /* transform: translate(-10px, -20px); */
@@ -553,6 +549,7 @@ caption {
 
 .chart-funds {
     width: calc(50% - 8px);
+    max-width: 176px;
     /* max-width: 180px; */
     height: 220px;
     margin: 0;
