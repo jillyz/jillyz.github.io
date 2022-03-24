@@ -42,7 +42,7 @@ function renderChartFunds31() {
         }],
         yAxis: [{
                 type: 'value',
-                name: '經費',
+                name: '核定經費',
                 position: 'right',
                 alignTicks: true,
                 axisLine: {
