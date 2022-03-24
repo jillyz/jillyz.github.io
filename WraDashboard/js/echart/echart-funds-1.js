@@ -16,9 +16,7 @@ function renderChartFunds1() {
                 type: 'shadow'
             }
         },
-        legend: {
-            data: ['Profit', 'Expenses', 'Income']
-        },
+        legend: {},
         grid: {
             left: '3%',
             right: '4%',
