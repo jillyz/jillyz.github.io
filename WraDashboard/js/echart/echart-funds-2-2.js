@@ -29,6 +29,7 @@ function renderChartFunds22() {
         },
         yAxis: {
             type: 'category',
+            inverse: true,
             data: ['一河局', '二河局', '三河局', '四河局', '五河局', '六河局', '七河局', '八河局', '九河局', '十河局', '北水局', '中水局', '南水局', '水規所', '水特局']
         },
         series: [

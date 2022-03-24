@@ -27,6 +27,7 @@ function renderChartFunds21() {
         },
         yAxis: {
             type: 'category',
+            inverse: true,
             data: ['綜企組', '水文組', '水源組', '河海組', '保育組', '工務組', '水政組', '土地組', '河勘隊', '防災中心', '資訊室', '秘書室']
         },
         series: [
