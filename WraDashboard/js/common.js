@@ -21,6 +21,19 @@ function toggleChart() {
 
 //-------------- Common Function -------------------
 
+function changeUnit() {
+    var sel = document.getElementById('unitType');
+    if (sel.value == 1) {
+        renderChartFunds21();
+        renderChartFunds31();
+    }
+    if (sel.value == 2) {
+        renderChartFunds22();
+        renderChartFunds32();
+    }
+}
+
+
 
 //---啟用 Bootstrap5 的 Tooltip ------------- 
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
