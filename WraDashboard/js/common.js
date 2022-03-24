@@ -26,14 +26,21 @@ function changeUnit() {
     if (sel.value == 1) {
         renderChartFunds21();
         renderChartFunds31();
+        setUnitName('本署');
     }
     if (sel.value == 2) {
         renderChartFunds22();
         renderChartFunds32();
+        setUnitName('所屬機關');
     }
 }
 
-
+function setUnitName(name) {
+    var n1 = document.getElementById('unitName1');
+    var n2 = document.getElementById('unitName2');
+    n1.innerText = name;
+    n2.innerText = name;
+}
 
 //---啟用 Bootstrap5 的 Tooltip ------------- 
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
