@@ -1,8 +1,8 @@
 // define(function() {
 //----主督辦 主辦機關-------
-function renderOrganizer() {
+function renderOrganizer(dom) {
 
-    var domChartOrganizer = document.getElementById("chartOrganizer");
+    var domChartOrganizer = document.querySelector(dom);
     var myChartOrganizer = echarts.init(domChartOrganizer);
 
     var optionOrganizer;
@@ -88,49 +88,11 @@ function renderOrganizer() {
         myChartOrganizer.resize();
     };
 
-    //----連動查詢-------
-    myChartOrganizer.on('mouseover', function(params) {
-        var temp = 0;
-        if (params.data.name == '水利署') {
-            var total = [0, 45, 22, 45, 0, 50, 0, 0, 0];
-            var late = [0, 8, 0, 22, 0, 8, 0, 0, 0];
-            renderStage(labelStage, total, late, ' (水利署)');
-            updateTableData(total, late);
-            temp = 1;
-            // console.log(temp, temp == 1, temp == 2)
 
-        }
-        if (params.data.name == '所屬機關') {
-            var total = [0, 100, 62, 75, 1, 60, 0, 0, 0];
-            var late = [0, 18, 0, 27, 0, 26, 0, 0, 0];
-            renderStage(labelStage, total, late, ' (所屬機關)');
-            updateTableData(total, late);
-            temp = 2;
-            // console.log(temp, temp == 1, temp == 2)
-        }
-
-
-    });
-    myChartOrganizer.on('globalout', function(params) {
-        renderStage(labelStage, valueStageTotal, valueStageLate, '');
-        updateTableData(valueStageTotal, valueStageLate);
-    });
-
-    function updateTableData(valTotal, valLate) {
-        valTotal.forEach(function(item, i) {
-            var dom = document.querySelectorAll('#dataSatageTotal td');
-            dom[i].innerHTML = item;
-        })
-        valLate.forEach(function(item, i) {
-            var dom = document.querySelectorAll('#dataSatageLate td');
-            if (item > 0) {
-                dom[i].innerHTML = '<span>' + item + '</span>';
-            } else {
-                dom[i].innerHTML = '';
-            }
-        })
-    }
 
 }
-renderOrganizer();
+
+
+
+
 // });

@@ -4,8 +4,6 @@ function renderChartTemplatePieCircle(setting) {
     var domChart = document.querySelector(setting.dom);
     var myChart = echarts.init(domChart);
 
-    console.log(setting)
-
     var option;
     option = {
         backgroundColor: '#FFFFFF',

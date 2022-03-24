@@ -1,6 +1,6 @@
 // define(function() {
 //----計劃執行階段-------
-function renderStage(label, valueTotal, valueLate, title) {
+function renderStage(valueTotal, valueLate, noteTitle) {
 
     var domChartStage = document.getElementById("chartStage");
     var myChartStage = echarts.init(domChartStage);
@@ -9,7 +9,7 @@ function renderStage(label, valueTotal, valueLate, title) {
     optionStage = {
         backgroundColor: '#FFFFFF',
         title: {
-            text: title ? '執行階段' + title : '執行階段',
+            text: noteTitle ? '執行階段' + noteTitle : '執行階段',
             textStyle: {
                 fontSize: 16
             }
@@ -51,7 +51,7 @@ function renderStage(label, valueTotal, valueLate, title) {
         xAxis: [{
             type: 'category',
             boundaryGap: false,
-            data: label
+            data: ['計畫申請', '計畫核可', '採購提報', '契約簽訂', '契約變更', '進度填報', '已結案', '成果上傳', '成果歸檔']
         }],
         yAxis: [{
             type: 'value',
@@ -127,11 +127,6 @@ function renderStage(label, valueTotal, valueLate, title) {
 
 
 }
-var labelStage = ['計畫申請', '計畫核可', '採購提報', '契約簽訂', '契約變更', '進度填報', '已結案', '成果上傳', '成果歸檔'];
-var valueStageTotal = [0, 145, 42, 91, 1, 107, 0, 0, 0];
-var valueStageLate = [0, 26, 0, 49, 0, 37, 0, 0, 0];
-renderStage(labelStage, valueStageTotal, valueStageLate);
-
 
 
 // });

@@ -4,12 +4,19 @@ requirejs([
     // 'echart-plan-kind-funds',
     // 'echart-plan-eng-count',
     // 'echart-plan-eng-funds',
-    'echart-template-pie',
-    'echart-stage',
+    'echart/echart-template-pie',
+    'echart/echart-stage',
 ], function() {
     // setTableColumnToggle('#chkMore');
     // setTableColumnToggle('#chkLate');
     // setLargeTableView('#chkFullTable');
+
+
+    // 執行階段
+    var valueStageTotal = [0, 145, 42, 91, 1, 107, 0, 0, 0];
+    var valueStageLate = [0, 26, 0, 49, 0, 37, 0, 0, 0];
+    renderStage(valueStageTotal, valueStageLate);
+
 
     // 計畫期程-件數
     var dataPlanDurationCount = {
