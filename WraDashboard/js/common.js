@@ -24,12 +24,12 @@ function toggleChart() {
 function changeUnit() {
     var sel = document.getElementById('unitType');
     if (sel.value == 1) {
-        renderChartFunds21();
+        // renderChartFunds21();
         renderChartFunds31();
         setUnitName('本署');
     }
     if (sel.value == 2) {
-        renderChartFunds22();
+        // renderChartFunds22();
         renderChartFunds32();
         setUnitName('所屬機關');
     }

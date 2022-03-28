@@ -23,12 +23,9 @@
 
     <div class="grid dashboard dashboard-funds">
 
-        <div class="filter">
-            <select name="" id="unitType" class="form-select form-select-sm" onchange="changeUnit()">
-                <option value="1">本署</option>
-                <option value="2">所屬機關</option>
-            </select>
-        </div>
+        <!-- <div class="filter">
+
+        </div> -->
         <div class="funds1 relative">
             <h2 class="grid-title">委辦計畫經費執行</h2>
             <div class="wrap toolbox toolbox-no-gap">
@@ -58,15 +55,19 @@
         <div class="funds3 relative">
             <h2 class="grid-title"><span id="unitName2">本署</span>主辦計畫分布</h2>
             <div class="wrap toolbox toolbox-no-gap">
-                <span>計算年度</span>
+                <select name="" id="unitType" class="filter-company" onchange="changeUnit()">
+                    <option value="1">本署</option>
+                    <option value="2">所屬機關</option>
+                </select> 　｜
+                <span>計畫年度</span>
                 <select class="filter-company">
-                    <option value="">110</option>
-                    <option value="" selected>111</option>
+                    <option value="">110年</option>
+                    <option value="" selected>111年</option>
                 </select>
                 <span>～</span>
                 <select class="filter-company">
-                    <option value="">110</option>
-                    <option value="" selected>111</option>
+                    <option value="">110年</option>
+                    <option value="" selected>111年</option>
                 </select>
             </div>
             <div id="funds3" class="chart-plan-funds"></div>
