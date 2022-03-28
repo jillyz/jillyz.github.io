@@ -61,9 +61,62 @@
                     </div>
                 </div>
 
+                <div class="col col-1 section-outsourcing-funds relative">
+                    <h2 class="title">
+                        <!-- <select class="select-year">
+                    <option value="110">110年度</option>
+                    <option value="111" selected>111年度</option>
+                </select>  -->
+                        計畫概要
+                        <div class="wrap toolbox toolbox-no-gap">
+                            <select class="filter-company">
+                        <option selected="selected" value="">複審會議核定經費</option>
+                        <option value="">計畫執行經費</option>
+                    </select>
+                        </div>
+                    </h2>
+                    <table class="data-total">
+                        <tr>
+                            <th>
+                                總件數
+                                <a href="dashboard_plan_query.html" target="_blank">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                            </th>
+                            <th class="align-r">
+                                <a href="dashboard_plan_funds.html" target="_blank">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                                總經費
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>33件</td>
+                            <td class="align-r">5182萬</td>
+                        </tr>
+                    </table>
+                    <div class="wrap chart-outsourcing-funds">
+                        <div id="chartOutsourcing" class="chart-outsourcing col"></div>
+                        <div id="chartFunds" class="chart-funds col"></div>
+                    </div>
+                    <table class="data-outsourcing-funds">
+                        <tr class="yes">
+                            <td>已發包</td>
+                            <td><span>25件</span></td>
+                            <td>已執行經費 </td>
+                            <td><span>3990萬</span></td>
+                        </tr>
+                        <tr class="no">
+                            <td>未發包</td>
+                            <td><span>8件</span></td>
+                            <td>剩餘經費</td>
+                            <td><span>1192萬</span></td>
+                        </tr>
+                    </table>
 
+                </div>
 
-                <div class="col col-3 section-organizer-stage">
+                <div class="col col-2 section-organizer-stage">
                     <h2 class="title">
                         <select class="select-year">
                     <option value="110">110年度</option>
@@ -166,61 +219,66 @@
                     </div>
                 </div>
 
-                <div class="col col-1 section-outsourcing-funds relative">
-                    <h2 class="title">
-                        <!-- <select class="select-year">
-                    <option value="110">110年度</option>
-                    <option value="111" selected>111年度</option>
-                </select>  -->
-                        計畫概要
-                        <div class="wrap toolbox toolbox-no-gap">
-                            <select class="filter-company">
-                        <option selected="selected" value="">複審會議核定經費</option>
-                        <option value="">計畫執行經費</option>
-                    </select>
-                        </div>
+                <div class="col col-1 section-priority">
+                    <h2 class="title">計畫優先序
+                        <a href="dashboard_plan_priority.html" target="_blank">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
                     </h2>
-                    <table class="data-total">
-                        <tr>
-                            <th>
-                                總件數
-                                <a href="dashboard_plan_query.html" target="_blank">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a>
-                            </th>
-                            <th class="align-r">
-                                <a href="dashboard_plan_funds.html" target="_blank">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a>
-                                總經費
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>33件</td>
-                            <td class="align-r">5182萬</td>
-                        </tr>
-                    </table>
-                    <div class="wrap chart-outsourcing-funds">
-                        <div id="chartOutsourcing" class="chart-outsourcing col"></div>
-                        <div id="chartFunds" class="chart-funds col"></div>
+                    <div class="wrap wrap-priority">
+                        <div class="col col-3">
+                            <table class="data-priority">
+                                <tr>
+                                    <th colspan="2">最優先</th>
+                                </tr>
+                                <tr>
+                                    <td>總件數</td>
+                                    <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">71</span></td>
+                                </tr>
+                                <tr>
+                                    <td>未發包</td>
+                                    <td><span class="not-yet" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">7</span></td>
+                                </tr>
+                            </table>
+                            <div id="chartPriority1" class="chart-priority"></div>
+                            <span class="percentage">%</span>
+                        </div>
+                        <div class="col col-3">
+                            <table class="data-priority">
+                                <tr>
+                                    <th colspan="2">優先</th>
+                                </tr>
+                                <tr>
+                                    <td>總件數</td>
+                                    <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">116</span></td>
+                                </tr>
+                                <tr>
+                                    <td>未發包</td>
+                                    <td><span class="not-yet" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">11</span></td>
+                                </tr>
+                            </table>
+                            <div id="chartPriority2" class="chart-priority"></div>
+                            <span class="percentage">%</span>
+                        </div>
+                        <div class="col col-3">
+                            <table class="data-priority">
+                                <tr>
+                                    <th colspan="2">一般</th>
+                                </tr>
+                                <tr>
+                                    <td>總件數</td>
+                                    <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">193</span></td>
+                                </tr>
+                                <tr>
+                                    <td>未發包</td>
+                                    <td><span class="not-yet" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">8</span></td>
+                                </tr>
+                            </table>
+                            <div id="chartPriority3" class="chart-priority"></div>
+                            <span class="percentage">%</span>
+                        </div>
                     </div>
-                    <table class="data-outsourcing-funds">
-                        <tr class="yes">
-                            <td>已發包</td>
-                            <td><span>25件</span></td>
-                            <td>已執行經費 </td>
-                            <td><span>3990萬</span></td>
-                        </tr>
-                        <tr class="no">
-                            <td>未發包</td>
-                            <td><span>8件</span></td>
-                            <td>剩餘經費</td>
-                            <td><span>1192萬</span></td>
-                        </tr>
-                    </table>
-
                 </div>
-
 
                 <div class="col col-1 section-company relative">
                     <h2 class="title">廠商資訊</h2>
