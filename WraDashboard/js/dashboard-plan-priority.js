@@ -94,6 +94,7 @@ requirejs([
     function renderPriority() {
         var sel = document.getElementById('selectPriorityType');
         var note1 = document.getElementById('text_p');
+        var total = document.getElementById('total');
         var table = {
                 wra_p1: document.getElementById('tableWra_P1'),
                 aa_p1: document.getElementById('tableAa_P1'),
@@ -103,6 +104,7 @@ requirejs([
             // 本署
         if (sel.value == 1) {
             note1.innerText = text_p1;
+            total.innerText = data_p1_wra.total + data_p1_aa.total;
             table.wra_p1.classList.remove('hide');
             table.aa_p1.classList.remove('hide');
             table.wra_p2.classList.add('hide');
@@ -113,6 +115,7 @@ requirejs([
         // 所屬機關
         if (sel.value == 2) {
             note1.innerText = text_p2;
+            total.innerText = data_p2_wra.total + data_p2_aa.total;
             table.wra_p1.classList.add('hide');
             table.aa_p1.classList.add('hide');
             table.wra_p2.classList.remove('hide');
