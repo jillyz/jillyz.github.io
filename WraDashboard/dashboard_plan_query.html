@@ -62,7 +62,25 @@
                     <option value="">無需訂約</option>
                     <option value="">開口契約</option>
                 </select>
-                <button type="button" class="btn btn-secondary">
+                <span class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chk1">
+                    <label class="form-check-label" for="chk1">
+                      跨年度僅第一年
+                    </label>
+                </span>
+                <span class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chk2">
+                    <label class="form-check-label" for="chk2">
+                      延續性僅第一年
+                    </label>
+                </span>
+                <span class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chk3">
+                    <label class="form-check-label" for="chk3">
+                      不含八大類計畫
+                    </label>
+                </span>
+                <button type="button" class="btn btn-secondary" style="width: 5em;">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
                 <!-- <div class="dropdown"> -->
@@ -100,6 +118,24 @@
             </div> -->
         </div>
         <div class="plan">
+            <table class="data-total">
+                <tr>
+                    <th>
+                        總件數
+                    </th>
+                    <th class="align-r">
+                        <a href="dashboard_plan_funds.html" target="_blank">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </a>
+                        總經費
+                    </th>
+                </tr>
+                <tr>
+                    <td>386件</td>
+                    <td class="align-r">29億9966萬</td>
+                </tr>
+            </table>
+            <hr/>
             <!-- 計畫期程 -->
             <div class="grid-title">計畫期程</div>
             <div class="flex" style="overflow: hidden;">
