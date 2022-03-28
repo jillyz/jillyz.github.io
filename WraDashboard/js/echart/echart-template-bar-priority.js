@@ -8,6 +8,14 @@ function renderChartPriorityBar(domId, data) {
     var option;
 
     option = {
+        backgroundColor: '#FFFFFF',
+        title: {
+            text: data.title ? data.title : '',
+            textStyle: {
+                fontSize: 16,
+                left: 0,
+            },
+        },
         tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -15,8 +23,11 @@ function renderChartPriorityBar(domId, data) {
                 type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
             }
         },
-        legend: {},
+        legend: {
+            top: 35
+        },
         grid: {
+            top: 70,
             left: '3%',
             right: '4%',
             bottom: '3%',
