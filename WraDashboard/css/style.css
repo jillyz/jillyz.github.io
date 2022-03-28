@@ -77,17 +77,33 @@ body.demo {
 
 .demo-user-help {
     /* height: 135px; */
+    position: relative;
     height: 90px;
     background: url(../images/demo/demo-header-right.png) 100% 100% no-repeat;
     background-size: auto 100%;
 }
 
+.demo-user-help:hover::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 765px;
+    height: 364px;
+    background: url(../images/demo/demo-dropdown-user-help.png) 100% 100% no-repeat;
+    background-size: 100%;
+    transform-origin: 100% 0;
+    transform: scale(.665);
+}
+
 .page[data-menu="open"] .demo-user-help {
-    width: calc(100vw - 240px - 365px);
+    width: calc(100vw - 200px - 365px);
 }
 
 .page[data-menu="close"] .demo-user-help {
-    width: calc(100vw - 64px - 365px);
+    width: calc(100vw - 60px - 365px);
 }
 
 .page[data-menu="open"] .demo-aside {
@@ -97,7 +113,7 @@ body.demo {
 }
 
 .page[data-menu="close"] .demo-aside {
-    background: #1E549F url(../images/demo/demo-menu-close.png) 0 5px no-repeat;
+    background: #1E549F url(../images/demo/demo-menu-close.png) -3px 5px no-repeat;
     background-size: 310px auto;
     cursor: pointer;
 }
@@ -114,10 +130,10 @@ body.demo {
     content: "";
     display: none;
     position: absolute;
-    left: 72px;
-    top: 15px;
+    left: 60px;
+    top: 20px;
     z-index: 10;
-    width: 240px;
+    width: 200px;
     height: 410px;
     background: url(../images/demo/demo-float-sub0menu.png) 0 0 no-repeat;
     background-size: 100%;
@@ -162,7 +178,7 @@ caption {
 }
 
 .page[data-menu="close"] {
-    grid-template-columns: 72px 1fr;
+    grid-template-columns: 60px 1fr;
     transition: .5s all;
 }
 
