@@ -93,24 +93,39 @@ requirejs([
 
     function renderPriority() {
         var sel = document.getElementById('selectPriorityType');
+        var note1 = document.getElementById('text_p');
+        var table = {
+                wra_p1: document.getElementById('tableWra_P1'),
+                aa_p1: document.getElementById('tableAa_P1'),
+                wra_p2: document.getElementById('tableWra_P2'),
+                aa_p2: document.getElementById('tableAa_P2'),
+            }
+            // 本署
         if (sel.value == 1) {
+            note1.innerText = text_p1;
+            table.wra_p1.classList.remove('hide');
+            table.aa_p1.classList.remove('hide');
+            table.wra_p2.classList.add('hide');
+            table.aa_p2.classList.add('hide');
             renderChartPriorityBar('wra', data_p1_wra);
             renderChartPriorityBar('aa', data_p1_aa);
-            document.getElementById('text_p').innerText = text_p1;
-
         }
+        // 所屬機關
         if (sel.value == 2) {
+            note1.innerText = text_p2;
+            table.wra_p1.classList.add('hide');
+            table.aa_p1.classList.add('hide');
+            table.wra_p2.classList.remove('hide');
+            table.aa_p2.classList.remove('hide');
             renderChartPriorityBar('wra', data_p2_wra);
             renderChartPriorityBar('aa', data_p2_aa);
-            document.getElementById('text_p').innerText = text_p2;
         }
     }
 
     renderPriority();
+
     document.getElementById('selectPriorityType').addEventListener('change', function() {
         renderPriority();
-        toggleDOM('tableWra_P1_demo', 'tableWra_P2_demo') //demo
-        toggleDOM('tableAa_P1_demo', 'tableAa_P2_demo') //demo
     })
 
 });

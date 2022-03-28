@@ -5,15 +5,6 @@ function renderCompany(label, value) {
     var domCompany = document.getElementById("chartCompany");
     var myChartCompany = echarts.init(domCompany);
 
-    function longestString(arr) {
-        for (i = 0; i < arr.length; i++) {
-            if (arr[i].length > long1) {
-                long1 = arr[i].length;
-            }
-        }
-        return long1;
-    }
-
     var optionCompany;
     optionCompany = {
         backgroundColor: '#FFFFFF',
@@ -74,6 +65,7 @@ function renderCompany(label, value) {
     if (optionCompany && typeof optionCompany === 'object') {
         myChartCompany.setOption(optionCompany);
     }
+
     window.onresize = function() {
         myChartCompany.resize();
     };

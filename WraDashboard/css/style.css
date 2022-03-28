@@ -49,6 +49,10 @@ body.demo {
     opacity: 0;
 }
 
+.hide {
+    display: none;
+}
+
 .demo-header {
     /* height: 135px; */
     height: 90px;

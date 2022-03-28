@@ -82,9 +82,17 @@ function renderChartPriorityBar(domId, data) {
         ],
     };
 
+    myChart.resize();
+
     if (option && typeof option === 'object') {
         myChart.setOption(option);
     }
+
+
+
+    window.onresize = function() {
+        myChart.resize();
+    };
 
 }
 // renderChartFunds21();
