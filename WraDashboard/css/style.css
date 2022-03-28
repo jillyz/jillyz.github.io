@@ -1481,9 +1481,9 @@ a {
     height: calc(100vh - 32px);
     width: calc(100vw - 16px);
     grid-gap: 8px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto 1fr 1fr;
-    grid-template-areas: "filter filter" "funds3 funds3" "funds2 funds1";
+    grid-template-areas: "filter" "funds3" "funds1";
     /* grid-template-rows: auto 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "funds1 filter filter" "funds1 funds2 funds3"; */
