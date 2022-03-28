@@ -1506,11 +1506,45 @@ a {
     grid-area: filter;
 }
 
-.grid.dashboard-funds>div {
+.grid.dashboard-funds>div,
+.grid.dashboard-priority>div {
     padding: 12px;
     background-color: #fff;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+.grid.dashboard-priority {
+    height: calc(100vh - 32px);
+    width: calc(100vw - 16px);
+    grid-gap: 8px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-areas: "filter filter" "wra_chart wra_table" "aa_chart aa_table";
+    /* grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "funds1 filter filter" "funds1 funds2 funds3"; */
+    box-sizing: border-box;
+}
+
+.grid.dashboard-priority .filter {
+    grid-area: filter;
+}
+
+.grid.dashboard-priority .wra-chart {
+    grid-area: wra_chart;
+}
+
+.grid.dashboard-priority .wra-table {
+    grid-area: wra_table;
+}
+
+.grid.dashboard-priority .aa-chart {
+    grid-area: aa_chart;
+}
+
+.grid.dashboard-priority .aa-table {
+    grid-area: aa_table;
 }
 
 .grid-top5 {

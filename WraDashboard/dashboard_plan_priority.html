@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>計畫經費 Dashboard</title>
+    <title>優先計畫 Dashboard</title>
     <!-- CSS Reset -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
@@ -21,55 +21,412 @@
 
 <body>
 
-    <div class="grid dashboard dashboard-funds">
+    <div class="grid dashboard dashboard-priority">
 
-        <div class="filter">
-            <select name="" id="unitType" class="form-select form-select-sm" onchange="changeUnit()">
-                <option value="1">本署</option>
-                <option value="2">所屬機關</option>
+        <div class="filter flex">
+            <select class="form-select form-select-sm" style="width: 8em">
+                <option value="">110年度</option>
+                <option value="" selected>111年度</option>
             </select>
+            <select class="form-select form-select-sm" style="width: 10em">
+                <!-- <option value="">全部優先序</option> -->
+                <option value="">最優先計畫</option>
+                <option value="">優先計畫</option>
+                <option value="">一般計畫</option>
+            </select>
+            <span style="display: inline-block; width: 8em; padding: 10px; font-weight: bold; vertical-align: middle;">
+                共 50 件
+            </span>
+            <span>
+                註1：最優先計畫應於110年12月31日前完成發包(決標)作業。<br/>
+                註2：表係111年3月21日下午3時自委辦計畫管理系統下載[不含跨年度計畫(111年度前開始執行) 、無需訂約(代辦案)計畫及一般例行性等不適用要點計畫] 。
+            </span>
         </div>
-        <div class="funds1 relative">
-            <h2 class="grid-title">委辦計畫經費執行</h2>
-            <div class="wrap toolbox toolbox-no-gap">
-                <select class="filter-company">
-                    <option value="">110年度</option>
-                    <option value="" selected>111年度</option>
-                </select>
-            </div>
-            <div id="funds1" class="chart-plan-funds"></div>
-        </div>
-        <div class="funds2 relative">
+        <div class="wra-chart relative">
             <h2 class="grid-title"><span id="unitName1">本署</span>計畫辦理情形</h2>
-            <div class="wrap toolbox toolbox-no-gap">
-                <select class="filter-company">
-                    <option value="">110年度</option>
-                    <option value="" selected>111年度</option>
-                </select>
-                <select class="filter-company">
-                    <option value="">全部優先序</option>
-                    <option value="">最優先計畫</option>
-                    <option value="">優先計畫</option>
-                    <option value="">一般計畫</option>
-                </select>
-            </div>
-            <div id="funds2" class="chart-plan-funds"></div>
+            <div id="funds21" class="chart-plan-funds"></div>
         </div>
-        <div class="funds3 relative">
-            <h2 class="grid-title"><span id="unitName2">本署</span>主辦計畫分布</h2>
-            <div class="wrap toolbox toolbox-no-gap">
-                <span>計算年度</span>
-                <select class="filter-company">
-                    <option value="">110</option>
-                    <option value="" selected>111</option>
-                </select>
-                <span>～</span>
-                <select class="filter-company">
-                    <option value="">110</option>
-                    <option value="" selected>111</option>
-                </select>
-            </div>
-            <div id="funds3" class="chart-plan-funds"></div>
+
+        <div class="wra-table">
+            <table class="my-table2">
+                <tbody>
+                    <tr>
+                        <th>
+                            署內單位
+                        </th>
+                        <th>
+                            計畫件數
+                        </th>
+                        <th>
+                            計畫書未核可
+                        </th>
+                        <th>
+                            計畫書已核可
+                            </td>
+                            <th>
+                                評選完成
+                            </th>
+                            <th>
+                                發包或決標
+                            </th>
+                    </tr>
+                    <tr height="37">
+                        <td height="37" style="height:37px;width:88px;">
+                            保育組
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr height="38">
+                        <td>
+                            防災中心
+                        </td>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            4
+                        </td>
+                    </tr>
+                    <tr height="38">
+                        <td>
+                            水文組
+                        </td>
+                        <td>
+                            7
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            6
+                        </td>
+                    </tr>
+                    <tr height="38">
+                        <td>
+                            土地組
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr height="38">
+                        <td>
+                            水政組
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            3
+                        </td>
+                    </tr>
+                    <tr height="38">
+                        <td>
+                            資訊室
+                        </td>
+                        <td>
+                            6
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            6
+                        </td>
+                    </tr>
+                    <tr height="38">
+                        <td>
+                            水源組
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr height="42">
+                        <td height="42" style="height:42px;width:88px;">
+                            總計
+                        </td>
+                        <td>
+                            23
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            22
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+        <div class="aa-chart relative">
+            <h2 class="grid-title"><span id="unitName1">所屬機關</span>計畫辦理情形</h2>
+            <div id="funds22" class="chart-plan-funds"></div>
+        </div>
+
+        <div class="aa-table">
+            <table class="my-table2">
+                <tbody>
+                    <tr>
+                        <th>
+                            所屬 機關
+                            </h>
+                            <th>
+                                計畫件數
+                            </th>
+                            <th>
+                                計畫書未核可
+                            </th>
+                            <th>
+                                計畫書 已核可
+                            </th>
+                            <th>
+                                評選 完成
+                            </th>
+                            <th>
+                                發包或 決標
+                            </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            四河局
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            五河局
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            1
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            六河局
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            北水局
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            中水局
+                        </td>
+                        <td>
+                            11
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            11
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            南水局
+                        </td>
+                        <td>
+                            6
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            6
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            水源局
+                        </td>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            4
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            總計
+                        </td>
+                        <td>
+                            27
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            27
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
         </div>
     </div>
 
@@ -94,7 +451,7 @@
         -->
 
 
-    <script data-main="js/dashboard-plan-funds" src="js/require.js"></script>
+    <script data-main="js/dashboard-plan-priority" src="js/require.js"></script>
     <!-- <script>
         window.addEventListener('resize', function() {
             "use strict";

@@ -1,7 +1,7 @@
 // define(function() {
 //----經費-------
 function renderChartFunds22() {
-    var dom = document.getElementById("funds2");
+    var dom = document.getElementById("funds22");
     var myChart = echarts.init(dom);
     var app = {};
 
@@ -30,10 +30,21 @@ function renderChartFunds22() {
         yAxis: {
             type: 'category',
             inverse: true,
-            data: ['一河局', '二河局', '三河局', '四河局', '五河局', '六河局', '七河局', '八河局', '九河局', '十河局', '北水局', '中水局', '南水局', '水規所', '水特局']
+            data: ['一河局', '二河局', '三河局', '四河局', '五河局', '六河局', '七河局', '八河局', '九河局', '十河局', '北水局', '中水局', '南水局', '水源局', '水規所']
         },
-        series: [
-
+        color: ['#5ECDE1', '#5470C6', '#91CC75', '#FAC858'],
+        series: [{
+                name: '計畫書未核可',
+                type: 'bar',
+                stack: 'total',
+                label: {
+                    show: true
+                },
+                emphasis: {
+                    focus: 'series'
+                },
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+            },
             {
                 name: '計畫書已核可',
                 type: 'bar',
@@ -44,7 +55,7 @@ function renderChartFunds22() {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [1, 2, 6, 1, 4, 6, 1, 2, 3, 5, 11, 5, 6, 12, 6]
+                data: [0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 10, 1, 3, 5, 2]
             },
             {
                 name: '評選完成',
@@ -56,7 +67,7 @@ function renderChartFunds22() {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 3, 0]
+                data: [0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2, 0, 0]
             },
             {
                 name: '簽約或議價完成',
@@ -68,7 +79,7 @@ function renderChartFunds22() {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [4, 5, 7, 9, 14, 12, 8, 6, 6, 5, 6, 39, 28, 8, 12]
+                data: [2, 2, 1, 3, 0, 3, 5, 5, 1, 4, 3, 14, 13, 3, 8]
             }
 
         ]
