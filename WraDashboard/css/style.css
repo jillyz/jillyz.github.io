@@ -99,11 +99,11 @@ body.demo {
 }
 
 .page[data-menu="open"] .demo-user-help {
-    width: calc(100vw - 200px - 365px);
+    width: calc(100vw - 240px - 365px);
 }
 
 .page[data-menu="close"] .demo-user-help {
-    width: calc(100vw - 60px - 365px);
+    width: calc(100vw - 50px - 365px);
 }
 
 .page[data-menu="open"] .demo-aside {
