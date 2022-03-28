@@ -10,13 +10,13 @@ function toggleMenu() {
     }
 }
 
-function toggleChart() {
-    var domOver = document.getElementById('chartBudgetRequestOver');
-    var domUnder = document.getElementById('chartBudgetRequestUnder');
-    domOver.classList.toggle('demo-show');
-    domOver.classList.toggle('demo-hide');
-    domUnder.classList.toggle('demo-show');
-    domUnder.classList.toggle('demo-hide');
+function toggleDOM(domId1, domId2) {
+    var dom1 = document.getElementById(domId1);
+    var dom2 = document.getElementById(domId2);
+    dom1.classList.toggle('demo-show');
+    dom1.classList.toggle('demo-hide');
+    dom2.classList.toggle('demo-show');
+    dom2.classList.toggle('demo-hide');
 }
 
 //-------------- Common Function -------------------

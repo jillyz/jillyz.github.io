@@ -1519,7 +1519,7 @@ a {
     width: calc(100vw - 16px);
     grid-gap: 8px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr 1fr;
+    grid-template-rows: auto auto auto;
     grid-template-areas: "filter filter" "wra_chart wra_table" "aa_chart aa_table";
     /* grid-template-rows: auto 1fr;
     grid-template-columns: 1fr 1fr 1fr;

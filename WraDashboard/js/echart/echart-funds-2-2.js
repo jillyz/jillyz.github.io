@@ -81,7 +81,6 @@ function renderChartFunds22() {
                 },
                 data: [1, 1, 2, 2, 11, 6, 4]
             }
-
         ],
         // series: [{
         //         name: '計畫書未核可',
