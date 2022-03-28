@@ -36,10 +36,8 @@ function changeUnit() {
 }
 
 function setUnitName(name) {
-    var n1 = document.getElementById('unitName1');
-    var n2 = document.getElementById('unitName2');
-    n1.innerText = name;
-    n2.innerText = name;
+    var n = document.getElementById('unitName');
+    n.innerText = name;
 }
 
 //---啟用 Bootstrap5 的 Tooltip ------------- 
