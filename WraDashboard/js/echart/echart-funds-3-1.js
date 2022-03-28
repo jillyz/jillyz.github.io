@@ -19,8 +19,8 @@ function renderChartFunds31() {
             }
         },
         grid: {
-            left: '10%',
-            right: '10%'
+            left: '5%',
+            right: '15%'
         },
         toolbox: {
             // feature: {
