@@ -347,6 +347,38 @@ caption {
     /* height: 400px; */
 }
 
+.quick {
+    width: 100%;
+    text-align: center;
+    background-color: #fff !important;
+}
+
+.quick ul,
+.quick li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.quick li {
+    display: inline-block
+}
+
+.quick a {
+    display: block;
+    padding: 1em;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.quick a {
+    border-left: 2px solid #EEEEEE;
+}
+
+.quick li:last-child a {
+    border-right: 2px solid #EEEEEE;
+}
+
 .notice {
     display: flex;
     width: calc(100% - 8px);
