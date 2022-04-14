@@ -51,8 +51,8 @@
                 <div class="col col-1 section-outsourcing-funds relative">
                     <h2 class="title">
                         <select class="select-year">
-                            <option value="110">110年度</option>
-                            <option value="111" selected>111年度</option>
+                            <option value="110">110年</option>
+                            <option value="111" selected>111年</option>
                         </select> 計畫概要
                     </h2>
                     <div class="wrap toolbox toolbox-no-gap">
@@ -107,7 +107,7 @@
                     <div class="flex">
                         <section class="wrap-organizer">
                             <div id="chartOrganizer" class="chart-organizer"></div>
-                            <a href="dashboard_plan_rank.html" target="_blank" class="btn-rank">排名</a>
+                            <!-- <a href="dashboard_plan_rank.html" target="_blank" class="btn-rank">排名</a> -->
                             <table class="data-organizer">
                                 <tr>
                                     <td></td>
@@ -388,80 +388,78 @@
                     </div>
                 </div>
 
-                <div class="col col-3">
+                <div class="col col-3 section-funds-detail">
                     <div class="funds3 relative">
-                        <h2 class="title"><span id="unitName">本署</span>主辦計畫分布</h2>
-                        <div class="wrap toolbox toolbox-no-gap">
+                        <h2 class="title">
                             <select name="" id="unitType" class="filter-company" onchange="changeUnit()">
                                 <option value="1">本署</option>
                                 <option value="2">所屬機關</option>
-                            </select> 　｜
+                            </select> 主辦計畫分布：
+                            <select class="filter-company">
+                                <option value="" selected>111</option>
+                                <option value="">110</option>
+                            </select>
+                            <span>~</span>
                             <select class="filter-company">
                                 <option value="" selected>111年</option>
                                 <option value="">110年</option>
                             </select>
-                            <span>～</span>
-                            <select class="filter-company">
-                                <option value="" selected>111年</option>
-                                <option value="">110年</option>
-                            </select>
-                        </div>
+                        </h2>
                         <div id="funds3" class="chart-plan-funds"></div>
 
 
-                        <div class="wrap" style="margin-top: 20px;">
-                            <div style="width: 48%; margin-right: 4%" class="relative">
-                                <h2 class="title">歷年委辦計畫趨勢圖</h2>
-                                <div class="wrap toolbox toolbox-no-gap">
-                                    <select class="filter-company">
-                                        <option value="">111年</option>
-                                        <option value="" selected>107年</option>
-                                    </select>
-                                    <span>～</span>
-                                    <select class="filter-company">
-                                        <option value="" selected>111年</option>
-                                        <option value="">110年</option>
-                                    </select>
+                        <div id="fundsDetail" class="hide" style="margin-top: 20px;">
+                            <div class="wrap">
+                                <div style="width: 48%; margin-right: 4%" class="relative">
+                                    <h2 class="grid-title">
+                                        綜企組 - 歷年委辦計畫趨勢圖：
+                                        <select class="filter-company">
+                                            <option value="">111</option>
+                                            <option value="" selected>107</option>
+                                        </select>
+                                        <span>~</span>
+                                        <select class="filter-company">
+                                            <option value="" selected>111年</option>
+                                            <option value="">110年</option>
+                                        </select>
+                                    </h2>
+                                    <div id="funds4" class="chart-plan-funds2"></div>
                                 </div>
-                                <div id="funds4" class="chart-plan-funds2"></div>
-                            </div>
-                            <div style="width: 48%;" class="relative">
-                                <h2 class="title">經費分佈圖</h2>
-                                <div class="wrap toolbox toolbox-no-gap">
-                                    <select class="filter-company">
-                                        <option value="" selected>111年</option>
-                                        <option value="">110年</option>
-                                    </select>
-                                    <select class="filter-company">  
-                                        <option disabled>-經費來源-</option>
-                                        <option>公務預算</option>
-                                        <option>水資源作業基金</option>
-                                        <option>代辦經費</option>
-                                        <option>其他預算</option>
-                                        <option>前瞻基礎建設計畫第3期特別預算</option>
-                                    </select>
+                                <div style="width: 48%;" class="relative">
+                                    <h2 class="grid-title">
+                                        綜企組 - 經費分佈圖：
+                                        <select class="filter-company">
+                                            <option value="" selected>111年</option>
+                                            <option value="">110年</option>
+                                        </select>
+                                        <select class="filter-company">  
+                                            <option disabled>-經費來源-</option>
+                                            <option>公務預算</option>
+                                            <option>水資源作業基金</option>
+                                            <option>代辦經費</option>
+                                            <option>其他預算</option>
+                                            <option>前瞻基礎建設計畫第3期特別預算</option>
+                                        </select>
+                                    </h2>
+                                    <div id="funds5" class="chart-plan-funds2"></div>
                                 </div>
-                                <div id="funds5" class="chart-plan-funds2"></div>
                             </div>
                         </div>
 
 
                     </div>
                 </div>
-
-                <div class="col col-3">
-                    <div class="funds1 relative">
-                        <h2 class="title">委辦計畫經費執行</h2>
-                        <div class="wrap toolbox toolbox-no-gap">
+                <div class="col col-3 section-funds-detail">
+                    <div class="funds1">
+                        <h2 class="title">委辦計畫經費執行：
                             <select class="filter-company">
-                                <option value="">110年度</option>
-                                <option value="" selected>111年度</option>
+                                <option value="">110年</option>
+                                <option value="" selected>111年</option>
                             </select>
-                        </div>
+                        </h2>
                         <div id="funds1" class="chart-plan-funds"></div>
                     </div>
                 </div>
-
 
             </div>
         </main>

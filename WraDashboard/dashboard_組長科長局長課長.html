@@ -44,31 +44,22 @@
         <main>
 
             <div class="wrap dashboard">
-                <div class="notice">
-                    <!-- <div>
-                <div class="btn-my-plan">
-                    我的計畫 <span>3</span>
-                </div>
-            </div> -->
+
+                <!-- <div class="notice">
                     <div class="todo">
                         <i class="fa-solid fa-clipboard-check"></i> 待審閱計畫 <span>3</span>
                     </div>
                     <div>
                         <i class="fa-solid fa-triangle-exclamation"></i> 評選委員同時為其他計畫廠商 <span>3</span>
                     </div>
-                    <!-- <div>
-                <i class="fa-solid fa-user-xmark"></i> 無人督主辦計畫 <span>3</span>
-            </div> -->
-                </div>
-
+                </div> -->
 
                 <div class="col col-1 section-outsourcing-funds relative">
                     <h2 class="title">
-                        <!-- <select class="select-year">
-                    <option value="110">110年度</option>
-                    <option value="111" selected>111年度</option>
-                </select> -->
-                        計畫概要
+                        <select class="select-year">
+                            <option value="111" selected>111年度</option>
+                            <option value="110">110年度</option>
+                        </select> 計畫概要
                         <div class="wrap toolbox toolbox-no-gap">
                             <select class="filter-company">
                         <option selected="selected" value="">複審會議核定經費</option>
@@ -118,19 +109,13 @@
                 </div>
 
 
-
                 <div class="col col-2 section-organizer-stage">
-                    <h2 class="title">
-                        <select class="select-year">
-                    <option value="110">110年度</option>
-                    <option value="111" selected>111年度</option>
-                </select> 計畫執行
-                    </h2>
+                    <h2 class="title">計畫執行</h2>
                     <div class="flex">
                         <section class="wrap-organizer">
-                            <!-- <div id="chartMyOrganizer" class="chart-organizer-mine"></div> -->
+                            <div id="chartOrganizer" class="chart-organizer" style="display:none"></div>
                             <div class="section-title">負責計畫</div>
-                            <a href="dashboard_plan_rank.html" target="_blank" class="btn-rank">排名</a>
+                            <!-- <a href="dashboard_plan_rank.html" target="_blank" class="btn-rank">排名</a> -->
                             <table class="data-organizer-mine" style="height: 90%;">
                                 <tr>
                                     <td></td>
@@ -289,46 +274,34 @@
 
                     <div class="wrap toolbox toolbox-no-gap">
                         <select class="filter-company">
-                    <option selected="selected" value="水利署">全署</option>
-                    <option disabled>-------------</option>
-                    <option value="水利署">本署</option>
-                    <option disabled>-------------</option>
-                    <option value="第一河川局">第一河川局</option>
-                    <option value="第二河川局">第二河川局</option>
-                    <option value="第三河川局">第三河川局</option>
-                    <option value="第四河川局">第四河川局</option>
-                    <option value="第五河川局">第五河川局</option>
-                    <option value="第六河川局">第六河川局</option>
-                    <option value="第七河川局">第七河川局</option>
-                    <option value="第八河川局">第八河川局</option>
-                    <option value="第九河川局">第九河川局</option>
-                    <option value="第十河川局">第十河川局</option>
-                    <option value="北區水資源局">北區水資源局</option>
-                    <option value="中區水資源局">中區水資源局</option>
-                    <option value="南區水資源局">南區水資源局</option>
-                    <option value="水利規劃試驗所">水利規劃試驗所</option>
-                    <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
-                </select>
+                            <option selected="selected" value="水利署">全署</option>
+                            <option disabled>-------------</option>
+                            <option value="水利署">本署</option>
+                            <option disabled>-------------</option>
+                            <option value="第一河川局">第一河川局</option>
+                            <option value="第二河川局">第二河川局</option>
+                            <option value="第三河川局">第三河川局</option>
+                            <option value="第四河川局">第四河川局</option>
+                            <option value="第五河川局">第五河川局</option>
+                            <option value="第六河川局">第六河川局</option>
+                            <option value="第七河川局">第七河川局</option>
+                            <option value="第八河川局">第八河川局</option>
+                            <option value="第九河川局">第九河川局</option>
+                            <option value="第十河川局">第十河川局</option>
+                            <option value="北區水資源局">北區水資源局</option>
+                            <option value="中區水資源局">中區水資源局</option>
+                            <option value="南區水資源局">南區水資源局</option>
+                            <option value="水利規劃試驗所">水利規劃試驗所</option>
+                            <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
+                        </select>
                         <select class="filter-company">
-                    <option selected="selected" value="1">當年度得標</option>
-                    <option value="2">連續2年得標</option>
-                    <option value="3">連續3年得標</option>
-                    <option value="4">連續4年得標</option>
-                    <option value="5">連續5年得標</option>
-                </select>
+                            <option selected="selected" value="1">當年度得標</option>
+                            <option value="2">連續2年得標</option>
+                            <option value="3">連續3年得標</option>
+                            <option value="4">連續4年得標</option>
+                            <option value="5">連續5年得標</option>
+                        </select>
                     </div>
-
-                    <!-- <div class="mychart-type-bar">
-                <table class="data">
-                    <tr>
-                        <td>只有一家廠商投標</td>
-                        <td class="align-r">50件 (13%)</td>
-                    </tr>
-                </table>
-                <div class="mychart-bar">
-                    <span id="chartOneCompany" class="bar" data-value="50" data-total="386"></span>
-                </div>
-            </div> -->
 
                     <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
                         <div class="total-block big">
@@ -369,39 +342,27 @@
 
                     <div class="wrap toolbox toolbox-no-gap">
                         <select class="filter-company">
-                    <option selected="selected" value="水利署">全署</option>
-                    <option disabled>-------------</option>
-                    <option value="水利署">本署</option>
-                    <option disabled>-------------</option>
-                    <option value="第一河川局">第一河川局</option>
-                    <option value="第二河川局">第二河川局</option>
-                    <option value="第三河川局">第三河川局</option>
-                    <option value="第四河川局">第四河川局</option>
-                    <option value="第五河川局">第五河川局</option>
-                    <option value="第六河川局">第六河川局</option>
-                    <option value="第七河川局">第七河川局</option>
-                    <option value="第八河川局">第八河川局</option>
-                    <option value="第九河川局">第九河川局</option>
-                    <option value="第十河川局">第十河川局</option>
-                    <option value="北區水資源局">北區水資源局</option>
-                    <option value="中區水資源局">中區水資源局</option>
-                    <option value="南區水資源局">南區水資源局</option>
-                    <option value="水利規劃試驗所">水利規劃試驗所</option>
-                    <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
-                </select>
+                            <option selected="selected" value="水利署">全署</option>
+                            <option disabled>-------------</option>
+                            <option value="水利署">本署</option>
+                            <option disabled>-------------</option>
+                            <option value="第一河川局">第一河川局</option>
+                            <option value="第二河川局">第二河川局</option>
+                            <option value="第三河川局">第三河川局</option>
+                            <option value="第四河川局">第四河川局</option>
+                            <option value="第五河川局">第五河川局</option>
+                            <option value="第六河川局">第六河川局</option>
+                            <option value="第七河川局">第七河川局</option>
+                            <option value="第八河川局">第八河川局</option>
+                            <option value="第九河川局">第九河川局</option>
+                            <option value="第十河川局">第十河川局</option>
+                            <option value="北區水資源局">北區水資源局</option>
+                            <option value="中區水資源局">中區水資源局</option>
+                            <option value="南區水資源局">南區水資源局</option>
+                            <option value="水利規劃試驗所">水利規劃試驗所</option>
+                            <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
+                        </select>
                     </div>
-
-                    <!-- <div class="mychart-type-bar">
-                <table class="data">
-                    <tr>
-                        <td>有遴聘委員</td>
-                        <td class="align-r">389件 (82%)</td>
-                    </tr>
-                </table>
-                <div class="mychart-bar">
-                    <span id="chartHasCommittee" class="bar" data-value="317" data-total="386"></span>
-                </div>
-            </div> -->
 
                     <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
                         <div class="total-block big" style="width: 100%;">
@@ -418,6 +379,79 @@
                     </div>
                 </div>
 
+
+                <div class="col col-3 section-funds-detail">
+                    <div class="funds3 relative">
+                        <h2 class="title">
+                            <select name="" id="unitType" class="filter-company" onchange="changeUnit()">
+                                <option value="1">本署</option>
+                                <option value="2">所屬機關</option>
+                            </select> 主辦計畫分布：
+                            <select class="filter-company">
+                                <option value="" selected>111</option>
+                                <option value="">110</option>
+                            </select>
+                            <span>~</span>
+                            <select class="filter-company">
+                                <option value="" selected>111年</option>
+                                <option value="">110年</option>
+                            </select>
+                        </h2>
+                        <div id="funds3" class="chart-plan-funds"></div>
+
+
+                        <div id="fundsDetail" class="hide" style="margin-top: 20px;">
+                            <div class="wrap">
+                                <div style="width: 48%; margin-right: 4%" class="relative">
+                                    <h2 class="grid-title">
+                                        綜企組 - 歷年委辦計畫趨勢圖：
+                                        <select class="filter-company">
+                                            <option value="">111</option>
+                                            <option value="" selected>107</option>
+                                        </select>
+                                        <span>~</span>
+                                        <select class="filter-company">
+                                            <option value="" selected>111年</option>
+                                            <option value="">110年</option>
+                                        </select>
+                                    </h2>
+                                    <div id="funds4" class="chart-plan-funds2"></div>
+                                </div>
+                                <div style="width: 48%;" class="relative">
+                                    <h2 class="grid-title">
+                                        綜企組 - 經費分佈圖：
+                                        <select class="filter-company">
+                                            <option value="" selected>111年</option>
+                                            <option value="">110年</option>
+                                        </select>
+                                        <select class="filter-company">  
+                                            <option disabled>-經費來源-</option>
+                                            <option>公務預算</option>
+                                            <option>水資源作業基金</option>
+                                            <option>代辦經費</option>
+                                            <option>其他預算</option>
+                                            <option>前瞻基礎建設計畫第3期特別預算</option>
+                                        </select>
+                                    </h2>
+                                    <div id="funds5" class="chart-plan-funds2"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col col-3 section-funds-detail">
+                    <div class="funds1">
+                        <h2 class="title">委辦計畫經費執行：
+                            <select class="filter-company">
+                                <option value="">110年</option>
+                                <option value="" selected>111年</option>
+                            </select>
+                        </h2>
+                        <div id="funds1" class="chart-plan-funds"></div>
+                    </div>
+                </div>
 
             </div>
 
@@ -444,7 +478,7 @@
           -->
 
 
-    <script data-main="js/dashboard-my-organizer" src="js/require.js"></script>
+    <script data-main="js/dashboard-admin" src="js/require.js"></script>
     <script>
         window.addEventListener('resize', function() {
             "use strict";

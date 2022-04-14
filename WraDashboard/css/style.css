@@ -1770,13 +1770,12 @@ a {
     /* margin-top: 2px; */
     outline: none;
     border: 0;
-    color: #999999;
+    color: inherit;
     cursor: pointer;
 }
 
-.filter-company option {
+.toolbox .filter-company option {
     text-align: right;
-    color: #000000;
 }
 
 .filter-company option:disabled {
@@ -1901,6 +1900,16 @@ a {
 /* MEDIA QYERY ----------------- */
 
 @media screen and (max-width: 1148px) {
+    /* ------- mobile dashboard with no master layout --- start */
+    aside,
+    header {
+        display: none;
+    }
+    .page {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 1fr !important;
+    }
+    /* ------- mobile dashboard with no master layout --- end */
     .notice {
         order: 0;
         -webkit-order: 0;
@@ -1914,10 +1923,14 @@ a {
         order: 2;
         -webkit-order: 2;
     }
-    .section-company,
-    .section-committee {
+    .section-funds-detail {
         order: 3;
         -webkit-order: 3;
+    }
+    .section-company,
+    .section-committee {
+        order: 4;
+        -webkit-order: 4;
     }
     .wrap .col-1 {
         width: calc(50% - 8px);

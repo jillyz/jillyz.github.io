@@ -118,6 +118,13 @@ function renderChartFunds31() {
     if (option && typeof option === 'object') {
         myChart.setOption(option);
     }
+
+    myChart.on('click', function(params) {
+        //for demo
+        document.getElementById('fundsDetail').style.display = 'block';
+        renderChartFunds4();
+        renderChartFunds51();
+    });
 }
 // renderChartFunds22();
 // });

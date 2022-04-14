@@ -12,14 +12,14 @@ function renderChartFunds4() {
     const colors = ['#5470C6', '#91CC75', '#EE6666'];
     option = {
         backgroundColor: '#FFFFFF',
-        title: {
-            text: '綜企組',
-            textStyle: {
-                fontSize: 16,
-                color: '#3E3E3E',
-            },
-            left: '-5',
-        },
+        // title: {
+        //     text: '綜企組',
+        //     textStyle: {
+        //         fontSize: 16,
+        //         color: '#3E3E3E',
+        //     },
+        //     left: '-5',
+        // },
         color: colors,
         tooltip: {
             trigger: 'axis',
@@ -28,7 +28,7 @@ function renderChartFunds4() {
             }
         },
         grid: {
-            top: 70,
+            top: 50,
             bottom: 70,
             left: '5%',
             right: 160

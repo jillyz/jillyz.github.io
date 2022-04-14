@@ -71,7 +71,4 @@ requirejs([
 
     renderChartFunds1();
     renderChartFunds31();
-    renderChartFunds4();
-    renderChartFunds51();
-
 });
