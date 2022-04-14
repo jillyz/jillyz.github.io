@@ -44,12 +44,7 @@
         <main>
 
             <div class="wrap dashboard">
-                <div class="notice">
-                    <!-- <div>
-                <div class="btn-my-plan">
-                    我的計畫 <span>3</span>
-                </div>
-            </div> -->
+                <!-- <div class="notice">
                     <div class="todo">
                         <i class="fa-solid fa-clipboard-check"></i> 待審閱計畫 <span>3</span>
                     </div>
@@ -59,15 +54,14 @@
                     <div>
                         <i class="fa-solid fa-user-xmark"></i> 無人督主辦計畫 <span>3</span>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="col col-1 section-outsourcing-funds relative">
                     <h2 class="title">
-                        <!-- <select class="select-year">
-                    <option value="110">110年度</option>
-                    <option value="111" selected>111年度</option>
-                </select>  -->
-                        計畫概要
+                        <select class="select-year">
+                            <option value="110">110年度</option>
+                            <option value="111" selected>111年度</option>
+                        </select> 計畫概要
                         <div class="wrap toolbox toolbox-no-gap">
                             <select class="filter-company">
                         <option selected="selected" value="">複審會議核定經費</option>
@@ -117,15 +111,10 @@
                 </div>
 
                 <div class="col col-2 section-organizer-stage">
-                    <h2 class="title">
-                        <select class="select-year">
-                    <option value="110">110年度</option>
-                    <option value="111" selected>111年度</option>
-                </select> 計畫執行
-                    </h2>
+                    <h2 class="title">計畫執行</h2>
                     <div class="flex">
                         <section class="wrap-organizer">
-                            <!-- <div id="chartMyOrganizer" class="chart-organizer-mine"></div> -->
+                            <div id="chartMyOrganizer" class="chart-organizer-mine" style="display: none;"></div>
                             <div class="section-title">負責計畫</div>
 
                             <table class="data-organizer-mine" style="height: 90%;">
@@ -441,7 +430,7 @@
           -->
 
 
-    <script data-main="js/dashboard-my-organizer" src="js/require.js"></script>
+    <script data-main="js/dashboard-admin" src="js/require.js"></script>
     <script>
         window.addEventListener('resize', function() {
             "use strict";
