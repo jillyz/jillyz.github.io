@@ -1771,6 +1771,7 @@ a {
     outline: none;
     border: 0;
     color: inherit;
+    background-color: transparent;
     cursor: pointer;
 }
 
