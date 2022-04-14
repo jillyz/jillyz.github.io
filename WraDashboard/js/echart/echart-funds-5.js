@@ -1,7 +1,7 @@
 // define(function() {
 //----經費-------
-function renderChartFunds32() {
-    var dom = document.getElementById("funds3");
+function renderChartFunds51() {
+    var dom = document.getElementById("funds5");
     var myChart = echarts.init(dom);
     var app = {};
 
@@ -11,6 +11,15 @@ function renderChartFunds32() {
 
     const colors = ['#5470C6', '#91CC75', '#EE6666'];
     option = {
+        backgroundColor: '#FFFFFF',
+        title: {
+            text: '綜企組',
+            textStyle: {
+                fontSize: 16,
+                color: '#3E3E3E',
+            },
+            left: '-5',
+        },
         color: colors,
         tooltip: {
             trigger: 'axis',
@@ -19,9 +28,9 @@ function renderChartFunds32() {
             }
         },
         grid: {
-            top: 50,
-            bottom: 40,
-            left: 30,
+            top: 70,
+            bottom: 70,
+            left: '5%',
             right: 160
         },
         toolbox: {
@@ -32,7 +41,9 @@ function renderChartFunds32() {
             // }
         },
         legend: {
-            data: ['核定經費', '發包經費', '件數']
+            data: ['核定經費', '發包經費', '件數'],
+            bottom: 10,
+            left: 20
         },
         xAxis: [{
             type: 'category',
@@ -42,7 +53,16 @@ function renderChartFunds32() {
             axisPointer: {
                 type: 'shadow'
             },
-            data: ['一河局', '二河局', '三河局', '四河局', '五河局', '六河局', '七河局', '八河局', '九河局', '十河局', '水規所', '北水局', '中水局', '南水局', '水特局']
+            data: [
+                '一般行政',
+                '水利行政業務',
+                '水資源企劃及保育',
+                '水資源科技發展',
+                '水資源開發及維護',
+                '河川海岸及排水環境營造',
+                '其他',
+            ],
+
         }],
         yAxis: [{
                 type: 'value',
@@ -95,7 +115,7 @@ function renderChartFunds32() {
                 name: '核定經費',
                 type: 'bar',
                 data: [
-                    32115, 55455, 67338, 41030, 212588, 115320, 78305, 30020, 54246, 40829, 142786, 116652, 240039, 199786, 103110
+                    47210, 950, 14950, 123355, 44861, 100568, 49000, 23526, 11875, 59042, 15932, 65244
                 ]
             },
             {
@@ -103,14 +123,14 @@ function renderChartFunds32() {
                 type: 'bar',
                 yAxisIndex: 1,
                 data: [
-                    26706, 45398, 66126, 34996, 181178, 103279, 71972, 25646, 54042, 38952, 127153, 107957, 233472, 181901, 92521
+                    45500, 947, 0, 109950, 25855, 97770, 38094, 11211, 11875, 54176, 15654, 58770
                 ]
             },
             {
                 name: '件數',
                 type: 'line',
                 yAxisIndex: 2,
-                data: [7, 10, 13, 12, 27, 22, 15, 10, 14, 15, 37, 27, 52, 55, 23]
+                data: [11, 1, 1, 18, 11, 18, 6, 5, 3, 18, 4, 14]
             }
         ]
     };

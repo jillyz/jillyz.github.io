@@ -8,6 +8,11 @@ requirejs([
     'echart/echart-company',
     'echart/echart-hosting',
     'echart/echart-committee',
+    'echart/echart-funds-1',
+    'echart/echart-funds-3-1',
+    'echart/echart-funds-3-2',
+    'echart/echart-funds-4',
+    'echart/echart-funds-5',
 ], function() {
 
 
@@ -63,5 +68,10 @@ requirejs([
     }
 
     // 主辦機關 + 執行階段 連動查詢 =======================================//end
+
+    renderChartFunds1();
+    renderChartFunds31();
+    renderChartFunds4();
+    renderChartFunds51();
 
 });

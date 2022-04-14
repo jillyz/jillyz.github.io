@@ -19,8 +19,10 @@ function renderChartFunds31() {
             }
         },
         grid: {
-            left: '5%',
-            right: '15%'
+            top: 50,
+            bottom: 40,
+            left: 30,
+            right: 160
         },
         toolbox: {
             // feature: {
@@ -37,7 +39,9 @@ function renderChartFunds31() {
             axisTick: {
                 alignWithLabel: true
             },
-            // prettier-ignore
+            axisPointer: {
+                type: 'shadow'
+            },
             data: ['綜企組', '土地組', '工務組', '水文組', '水政組', '防災中心', '水源組', '河海組', '河勘隊', '保育組', '秘書室', '資訊室']
         }],
         yAxis: [{
