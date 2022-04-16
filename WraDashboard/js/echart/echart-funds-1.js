@@ -33,6 +33,7 @@ function renderChartFunds1() {
             axisTick: {
                 show: false
             },
+            inverse: true,
             data: ['公務預算', '水資源作業基金', '代辦經費', '前瞻基礎建設計畫第3期特別預算']
         }],
         series: [{
