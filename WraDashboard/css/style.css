@@ -87,10 +87,10 @@ body.demo {
     content: "";
     display: block;
     position: absolute;
-    top: 0;
+    top: 3px;
     right: 0;
     z-index: 1;
-    width: 765px;
+    width: 800px;
     height: 364px;
     background: url(../images/demo/demo-dropdown-user-help.png) 100% 100% no-repeat;
     background-size: 100%;
@@ -107,13 +107,13 @@ body.demo {
 }
 
 .page[data-menu="open"] .demo-aside {
-    background: #1E549F url(../images/demo/demo-menu-open.png) 0 5px no-repeat;
+    background: #5C84D2 url(../images/demo/demo-menu-open.png) 0 5px no-repeat;
     background-size: 100%;
     cursor: pointer;
 }
 
 .page[data-menu="close"] .demo-aside {
-    background: #1E549F url(../images/demo/demo-menu-close.png) -3px 5px no-repeat;
+    background: #5C84D2 url(../images/demo/demo-menu-close.png) -3px 5px no-repeat;
     background-size: 310px auto;
     cursor: pointer;
 }
