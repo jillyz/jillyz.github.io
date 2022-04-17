@@ -42,432 +42,576 @@
         </header>
         <main>
 
-            <div class="wrap dashboard">
-                <!-- <div class="notice">
-                    <div class="todo" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
-                        <i class="fa-solid fa-clipboard-check"></i> 待審閱計畫 <span>2</span>
-                    </div>
-                    <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2" aria-controls="offcanvasBottom2">
-                        <i class="fa-solid fa-triangle-exclamation"></i> 評選委員同時為其他計畫廠商 <span>3</span>
-                    </div>
-                    <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom3" aria-controls="offcanvasBottom3">
-                        <i class="fa-solid fa-user-xmark"></i> 無人督主辦計畫 <span>3</span>
-                    </div>
-                </div> -->
-                <div class="col col-1 section-outsourcing-funds relative">
-                    <h2 class="title">
-                        <select class="select-year">
-                            <option value="110">110年度</option>
-                            <option value="111" selected>111年度</option>
-                        </select> 計畫概要
+            <ul class="nav nav-pills mb-3 dashboard-tab" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="預定計畫(申請登錄期間：110/8/1～110/8/20)<br>增辦計畫會議登錄(申請登錄期間：110/12/20～111/1/10)">
+                    <a class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab" aria-controls="pills-home" aria-selected="fasle">預定計畫 <i class="fa-solid fa-circle-info"></i></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="true">正式計畫</a>
+                </li>
+            </ul>
 
-                    </h2>
-                    <div class="wrap toolbox toolbox-no-gap">
-                        <select class="filter-company">
-                            <option selected="selected" value="">複審會議核定經費</option>
-                            <option value="">計畫執行經費</option>
-                        </select>
-                    </div>
-                    <table class="data-total">
-                        <tr>
-                            <th>
-                                總件數
-                                <a href="dashboard_plan_query.html" target="_blank">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a>
-                            </th>
-                            <th class="align-r">
-                                <a href="dashboard_plan_funds.html" target="_blank">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a>
-                                總經費
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>386件</td>
-                            <td class="align-r">29億9966萬</td>
-                        </tr>
-                    </table>
-                    <div class="wrap chart-outsourcing-funds">
-                        <div id="chartOutsourcing" class="chart-outsourcing col"></div>
-                        <div id="chartFunds" class="chart-funds col"></div>
-                    </div>
-                    <table class="data-outsourcing-funds">
-                        <tr class="yes">
-                            <td>已發包</td>
-                            <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">250件</span></td>
-                            <td>已執行經費 </td>
-                            <td><span>23億2074萬</span></td>
-                        </tr>
-                        <tr class="no">
-                            <td>未發包</td>
-                            <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">136件</span></td>
-                            <td>剩餘經費</td>
-                            <td><span>6億789萬</span></td>
-                        </tr>
-                    </table>
-
-                </div>
-                <div class="col col-2 section-organizer-stage">
-                    <h2 class="title">計畫執行</h2>
-
-                    <div class="flex">
-                        <section class="wrap-organizer">
-                            <div id="chartOrganizer" class="chart-organizer"></div>
-                            <!-- <a href="dashboard_plan_rank.html" target="_blank" class="btn-rank">排名</a> -->
-                            <table class="data-organizer">
-                                <tr>
-                                    <td></td>
-                                    <td class="align-r">件數</td>
-                                    <td class="align-r">進度落後</td>
-                                </tr>
-                                <tr class="wra">
-                                    <td>水利署主辦</td>
-                                    <td class="align-r"><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">109</span></td>
-                                    <td class="align-r"><span class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">38</span></td>
-                                </tr>
-                                <tr class="aa">
-                                    <td>所屬機關主辦</td>
-                                    <td class="align-r"><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">277</span></td>
-                                    <td class="align-r"><span class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">71</span></td>
-                                </tr>
-                            </table>
-                        </section>
-                        <section class="wrap-stage">
-                            <div id="chartStage" class="chart-stage"></div>
-                            <table class="data-stage">
-                                <tr class="align-t">
-                                    <th>計畫<br/>申請</th>
-                                    <th>計畫<br/>核可</th>
-                                    <th>採購<br/>提報</th>
-                                    <th>契約<br/>簽訂</th>
-                                    <th>契約<br/>變更</th>
-                                    <th>進度<br/>填報</th>
-                                    <th>已結案</th>
-                                    <th>成果<br/>上傳</th>
-                                    <th>成果<br/>歸檔</th>
-                                </tr>
-                                <tr id="dataSatageTotal">
-                                    <td>0</td>
-                                    <td data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">145</td>
-                                    <td data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">42</td>
-                                    <td data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">91</td>
-                                    <td data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">1</td>
-                                    <td data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">107</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr id="dataSatageLate">
-                                    <td></td>
-                                    <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4"><span>26</span></td>
-                                    <td></td>
-                                    <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4"><span class="late">49</span></td>
-                                    <td></td>
-                                    <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4"><span class="late">34</span></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td class="cursor btn-purchase-detail">
-                                        <input id="purchaseDetail" type="checkbox">
-                                        <label for="purchaseDetail"><i class="fa-regular fa-rectangle-list"></i></label>
-                                        <table class="data-stage purchase">
-                                            <caption>採購階段執行進度（已完成「計畫核可」方列入統計）</caption>
-                                            <tr>
-                                                <th>尚未登打</th>
-                                                <th>公告上網</th>
-                                                <th>資格審查</th>
-                                                <th>規格審查</th>
-                                                <th>訂期議價</th>
-                                            </tr>
-                                            <tr>
-                                                <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">56</td>
-                                                <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">19</td>
-                                                <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">21</td>
-                                                <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">11</td>
-                                                <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">37</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td colspan="7"></td>
-                                </tr>
-                            </table>
-
-
-                        </section>
-                    </div>
-                </div>
-                <div class="col col-1 section-priority">
-                    <h2 class="title">計畫優先序
-                        <a href="dashboard_plan_priority.html" target="_blank">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </a>
-                    </h2>
-                    <div class="wrap wrap-priority">
-                        <div class="col col-3">
-                            <table class="data-priority">
-                                <tr>
-                                    <th colspan="2">最優先</th>
-                                </tr>
-                                <tr>
-                                    <td>總件數</td>
-                                    <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">71</span></td>
-                                </tr>
-                                <tr>
-                                    <td>未發包</td>
-                                    <td><span class="not-yet" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">7</span></td>
-                                </tr>
-                            </table>
-                            <div id="chartPriority1" class="chart-priority"></div>
-                            <span class="percentage">%</span>
-                        </div>
-                        <div class="col col-3">
-                            <table class="data-priority">
-                                <tr>
-                                    <th colspan="2">優先</th>
-                                </tr>
-                                <tr>
-                                    <td>總件數</td>
-                                    <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">116</span></td>
-                                </tr>
-                                <tr>
-                                    <td>未發包</td>
-                                    <td><span class="not-yet" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">11</span></td>
-                                </tr>
-                            </table>
-                            <div id="chartPriority2" class="chart-priority"></div>
-                            <span class="percentage">%</span>
-                        </div>
-                        <div class="col col-3">
-                            <table class="data-priority">
-                                <tr>
-                                    <th colspan="2">一般</th>
-                                </tr>
-                                <tr>
-                                    <td>總件數</td>
-                                    <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">193</span></td>
-                                </tr>
-                                <tr>
-                                    <td>未發包</td>
-                                    <td><span class="not-yet" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">8</span></td>
-                                </tr>
-                            </table>
-                            <div id="chartPriority3" class="chart-priority"></div>
-                            <span class="percentage">%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col col-1 section-company relative">
-                    <h2 class="title">廠商資訊</h2>
-
-                    <div class="wrap toolbox toolbox-no-gap">
-                        <select class="filter-company">
-                            <option selected="selected" value="水利署">全署</option>
-                            <option disabled>-------------</option>
-                            <option value="水利署">本署</option>
-                            <option disabled>-------------</option>
-                            <option value="第一河川局">第一河川局</option>
-                            <option value="第二河川局">第二河川局</option>
-                            <option value="第三河川局">第三河川局</option>
-                            <option value="第四河川局">第四河川局</option>
-                            <option value="第五河川局">第五河川局</option>
-                            <option value="第六河川局">第六河川局</option>
-                            <option value="第七河川局">第七河川局</option>
-                            <option value="第八河川局">第八河川局</option>
-                            <option value="第九河川局">第九河川局</option>
-                            <option value="第十河川局">第十河川局</option>
-                            <option value="北區水資源局">北區水資源局</option>
-                            <option value="中區水資源局">中區水資源局</option>
-                            <option value="南區水資源局">南區水資源局</option>
-                            <option value="水利規劃試驗所">水利規劃試驗所</option>
-                            <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
-                        </select>
-                        <select class="filter-company">
-                            <option selected="selected" value="1">當年度得標</option>
-                            <option value="2">連續2年得標</option>
-                            <option value="3">連續3年得標</option>
-                            <option value="4">連續4年得標</option>
-                            <option value="5">連續5年得標</option>
-                        </select>
-                    </div>
-
-                    <!-- <div class="mychart-type-bar">
-                <table class="data">
-                    <tr>
-                        <td>只有一家廠商投標</td>
-                        <td class="align-r">50件 (13%)</td>
-                    </tr>
-                </table>
-                <div class="mychart-bar">
-                    <span id="chartOneCompany" class="bar" data-value="50" data-total="386"></span>
-                </div>
-            </div> -->
-
-                    <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
-                        <div class="total-block big">
-                            <span class="total-title">得標廠商總數</span>
-                            <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">250</span>
-                        </div>
-                        <div class="total-block big align-r">
-                            <span class="total-title">得標計畫主持人總數</span>
-                            <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">218</span>
-                        </div>
-                        <div class="total-block">
-                            <span class="total-title">得標3件以上廠商數</span>
-                            <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">14</span>
-                        </div>
-                        <div class="total-block align-r">
-                            <span class="total-title">得標3件以上計畫主持人數</span>
-                            <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">3</span>
-                        </div>
-                    </div>
-
-                    <div class="slider">
-                        <input type="radio" name="r" id="r1" checked>
-                        <label for="r1">
-                    <div id="chartCompany" class="chart-company slider" data-slider="0"></div>
-                </label>
-                        <input type="radio" name="r" id="r2">
-                        <label for="r2">
-                    <div id="chartCompanyHosting" class="chart-company slider" data-slider="0">
-
-                    </div>
-                </label>
-                    </div>
-
-                </div>
-
-                <div class="col col-1 section-committee relative">
-                    <h2 class="title">外聘評選委員</h2>
-
-                    <div class="wrap toolbox toolbox-no-gap">
-                        <select class="filter-company">
-                    <option selected="selected" value="水利署">全署</option>
-                    <option disabled>-------------</option>
-                    <option value="水利署">本署</option>
-                    <option disabled>-------------</option>
-                    <option value="第一河川局">第一河川局</option>
-                    <option value="第二河川局">第二河川局</option>
-                    <option value="第三河川局">第三河川局</option>
-                    <option value="第四河川局">第四河川局</option>
-                    <option value="第五河川局">第五河川局</option>
-                    <option value="第六河川局">第六河川局</option>
-                    <option value="第七河川局">第七河川局</option>
-                    <option value="第八河川局">第八河川局</option>
-                    <option value="第九河川局">第九河川局</option>
-                    <option value="第十河川局">第十河川局</option>
-                    <option value="北區水資源局">北區水資源局</option>
-                    <option value="中區水資源局">中區水資源局</option>
-                    <option value="南區水資源局">南區水資源局</option>
-                    <option value="水利規劃試驗所">水利規劃試驗所</option>
-                    <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
-                </select>
-                    </div>
-
-                    <!-- <div class="mychart-type-bar">
-                <table class="data">
-                    <tr>
-                        <td>有遴聘委員</td>
-                        <td class="align-r">389件 (82%)</td>
-                    </tr>
-                </table>
-                <div class="mychart-bar">
-                    <span id="chartHasCommittee" class="bar" data-value="317" data-total="386"></span>
-                </div>
-            </div> -->
-
-                    <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
-                        <div class="total-block big" style="width: 100%;">
-                            <span class="total-title">遴聘委員總數</span>
-                            <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2" aria-controls="offcanvasBottom2">238</span>
-                        </div>
-                        <div class="total-block" style="width: 100%;">
-                            <span class="total-title">遴聘5次以上委員數</span>
-                            <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2" aria-controls="offcanvasBottom2">6</span>
-                        </div>
-                    </div>
-                    <div class="wrap">
-                        <div id="chartCommittee" class="chart-company"></div>
-                    </div>
-                </div>
-
-                <div class="col col-3 section-funds-detail">
-                    <div class="funds3 relative">
-                        <h2 class="title">
-                            <select name="" id="unitType" class="filter-company" onchange="changeUnit()">
-                                <option value="1">本署</option>
-                                <option value="2">所屬機關</option>
-                            </select> 主辦計畫分布：
-                            <select class="filter-company">
-                                <option value="" selected>111</option>
-                                <option value="">110</option>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="query-apply-plan">
+                        <div class="wrap-select">
+                            <select class="select-year">
+                                <option value="110">110年度</option>
+                                <option value="111" selected>111年度</option>
                             </select>
-                            <span>~</span>
-                            <select class="filter-company">
-                                <option value="" selected>111年</option>
-                                <option value="">110年</option>
+
+                            <select class="select-year">
+                                <option value="" selected>預定計畫</option>
+                                <option value="">增辦計畫會議</option>
                             </select>
-                        </h2>
-                        <div id="funds3" class="chart-plan-funds"></div>
+                            <select class="select-year">
+                                <option selected="selected" value="水利署">全署</option>
+                                <option disabled="">-------------</option>
+                                <option value="水利署">本署</option>
+                                <option disabled="">-------------</option>
+                                <option value="第一河川局">第一河川局</option>
+                                <option value="第二河川局">第二河川局</option>
+                                <option value="第三河川局">第三河川局</option>
+                                <option value="第四河川局">第四河川局</option>
+                                <option value="第五河川局">第五河川局</option>
+                                <option value="第六河川局">第六河川局</option>
+                                <option value="第七河川局">第七河川局</option>
+                                <option value="第八河川局">第八河川局</option>
+                                <option value="第九河川局">第九河川局</option>
+                                <option value="第十河川局">第十河川局</option>
+                                <option value="北區水資源局">北區水資源局</option>
+                                <option value="中區水資源局">中區水資源局</option>
+                                <option value="南區水資源局">南區水資源局</option>
+                                <option value="水利規劃試驗所">水利規劃試驗所</option>
+                                <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="dashboardScheduledPlan" class="wrap dashboard hide">
+                        <div class="col col-1 section-outsourcing-funds">
+                            <h2 class="title">
+                                計畫概要
 
-
-                        <div id="fundsDetail" class="hide" style="margin-top: 20px;">
-                            <div class="wrap">
-                                <div style="width: 48%; margin-right: 4%" class="relative">
-                                    <h2 class="grid-title">
-                                        綜企組 - 歷年委辦計畫趨勢圖：
-                                        <select class="filter-company">
-                                            <option value="">111</option>
-                                            <option value="" selected>107</option>
-                                        </select>
-                                        <span>~</span>
-                                        <select class="filter-company">
-                                            <option value="" selected>111年</option>
-                                            <option value="">110年</option>
-                                        </select>
-                                    </h2>
-                                    <div id="funds4" class="chart-plan-funds2"></div>
+                            </h2>
+                            <table class="data-total">
+                                <tr>
+                                    <th>
+                                        總件數
+                                        <a href="dashboard_plan_query.html" target="_blank">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </a>
+                                    </th>
+                                    <th class="align-r">
+                                        總經費
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>386件</td>
+                                    <td class="align-r">29億9966萬</td>
+                                </tr>
+                            </table>
+                            <hr/>
+                            <div class="wrap wrap-priority">
+                                <div class="col col-3">
+                                    <table class="data-priority">
+                                        <tr>
+                                            <th colspan="2">最優先</th>
+                                        </tr>
+                                        <tr>
+                                            <td>總件數</td>
+                                            <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">71</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>已提送</td>
+                                            <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">64</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>未提送</td>
+                                            <td><span class="not-yet" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">7</span></td>
+                                        </tr>
+                                    </table>
                                 </div>
-                                <div style="width: 48%;" class="relative">
-                                    <h2 class="grid-title">
-                                        綜企組 - 經費分佈圖：
-                                        <select class="filter-company">
-                                            <option value="" selected>111年</option>
-                                            <option value="">110年</option>
-                                        </select>
-                                        <select class="filter-company">  
-                                            <option disabled>-經費來源-</option>
-                                            <option>公務預算</option>
-                                            <option>水資源作業基金</option>
-                                            <option>代辦經費</option>
-                                            <option>其他預算</option>
-                                            <option>前瞻基礎建設計畫第3期特別預算</option>
-                                        </select>
-                                    </h2>
-                                    <div id="funds5" class="chart-plan-funds2"></div>
+                                <div class="col col-3">
+                                    <table class="data-priority">
+                                        <tr>
+                                            <th colspan="2">優先</th>
+                                        </tr>
+                                        <tr>
+                                            <td>總件數</td>
+                                            <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">116</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>已提送</td>
+                                            <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">105</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>未提送</td>
+                                            <td><span class="not-yet" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">11</span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col col-3">
+                                    <table class="data-priority">
+                                        <tr>
+                                            <th colspan="2">一般</th>
+                                        </tr>
+                                        <tr>
+                                            <td>總件數</td>
+                                            <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">193</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>已提送</td>
+                                            <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">185</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>未提送</td>
+                                            <td><span class="not-yet" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">8</span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col col-2 section-funds-detail">
+                            <div class="funds3 relative">
+                                <h2 class="title">主辦計畫分布</h2>
+                                <div id="funds3_Apply">
+                                    <img src="images/demo/chart-apply-plan-funds.png" style="width: 100%;">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div id="dashboardFormalPlan" class="wrap dashboard">
+                        <!-- <div class="notice">
+                            <div class="todo" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                                <i class="fa-solid fa-clipboard-check"></i> 待審閱計畫 <span>2</span>
+                            </div>
+                            <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2" aria-controls="offcanvasBottom2">
+                                <i class="fa-solid fa-triangle-exclamation"></i> 評選委員同時為其他計畫廠商 <span>3</span>
+                            </div>
+                            <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom3" aria-controls="offcanvasBottom3">
+                                <i class="fa-solid fa-user-xmark"></i> 無人督主辦計畫 <span>3</span>
+                            </div>
+                        </div> -->
+                        <div class="col col-1 section-outsourcing-funds relative">
+                            <h2 class="title">
+                                <select class="select-year">
+                                    <option value="110">110年度</option>
+                                    <option value="111" selected>111年度</option>
+                                </select> 計畫概要
+
+                            </h2>
+                            <div class="wrap toolbox toolbox-no-gap">
+                                <select class="filter-company">
+                                    <option selected="selected" value="">複審會議核定經費</option>
+                                    <option value="">計畫執行經費</option>
+                                </select>
+                            </div>
+                            <table class="data-total">
+                                <tr>
+                                    <th>
+                                        總件數
+                                        <a href="dashboard_plan_query.html" target="_blank">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </a>
+                                    </th>
+                                    <th class="align-r">
+                                        <!-- <a href="dashboard_plan_funds.html" target="_blank">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </a> -->
+                                        總經費
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>386件</td>
+                                    <td class="align-r">29億9966萬</td>
+                                </tr>
+                            </table>
+                            <div class="wrap chart-outsourcing-funds">
+                                <div id="chartOutsourcing" class="chart-outsourcing col"></div>
+                                <div id="chartFunds" class="chart-funds col"></div>
+                            </div>
+                            <table class="data-outsourcing-funds">
+                                <tr class="yes">
+                                    <td>已發包</td>
+                                    <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">250件</span></td>
+                                    <td>已執行經費 </td>
+                                    <td><span>23億2074萬</span></td>
+                                </tr>
+                                <tr class="no">
+                                    <td>未發包</td>
+                                    <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">136件</span></td>
+                                    <td>剩餘經費</td>
+                                    <td><span>6億789萬</span></td>
+                                </tr>
+                            </table>
+
+                        </div>
+                        <div class="col col-2 section-organizer-stage">
+                            <h2 class="title">計畫執行</h2>
+
+                            <div class="flex">
+                                <section class="wrap-organizer">
+                                    <div id="chartOrganizer" class="chart-organizer"></div>
+                                    <!-- <a href="dashboard_plan_rank.html" target="_blank" class="btn-rank">排名</a> -->
+                                    <table class="data-organizer">
+                                        <tr>
+                                            <td></td>
+                                            <td class="align-r">件數</td>
+                                            <td class="align-r">進度落後</td>
+                                        </tr>
+                                        <tr class="wra">
+                                            <td>水利署主辦</td>
+                                            <td class="align-r"><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">109</span></td>
+                                            <td class="align-r"><span class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">38</span></td>
+                                        </tr>
+                                        <tr class="aa">
+                                            <td>所屬機關主辦</td>
+                                            <td class="align-r"><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">277</span></td>
+                                            <td class="align-r"><span class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">71</span></td>
+                                        </tr>
+                                    </table>
+                                </section>
+                                <section class="wrap-stage">
+                                    <div id="chartStage" class="chart-stage"></div>
+                                    <table class="data-stage">
+                                        <tr class="align-t">
+                                            <th>計畫<br/>申請</th>
+                                            <th>計畫<br/>核可</th>
+                                            <th>採購<br/>提報</th>
+                                            <th>契約<br/>簽訂</th>
+                                            <th>契約<br/>變更</th>
+                                            <th>進度<br/>填報</th>
+                                            <th>已結案</th>
+                                            <th>成果<br/>上傳</th>
+                                            <th>成果<br/>歸檔</th>
+                                        </tr>
+                                        <tr id="dataSatageTotal">
+                                            <td>0</td>
+                                            <td data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">145</td>
+                                            <td data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">42</td>
+                                            <td data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">91</td>
+                                            <td data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">1</td>
+                                            <td data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">107</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr id="dataSatageLate">
+                                            <td></td>
+                                            <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4"><span>26</span></td>
+                                            <td></td>
+                                            <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4"><span class="late">49</span></td>
+                                            <td></td>
+                                            <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4"><span class="late">34</span></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td class="cursor btn-purchase-detail">
+                                                <input id="purchaseDetail" type="checkbox">
+                                                <label for="purchaseDetail"><i class="fa-regular fa-rectangle-list"></i></label>
+                                                <table class="data-stage purchase">
+                                                    <caption>採購階段執行進度（已完成「計畫核可」方列入統計）</caption>
+                                                    <tr>
+                                                        <th>尚未登打</th>
+                                                        <th>公告上網</th>
+                                                        <th>資格審查</th>
+                                                        <th>規格審查</th>
+                                                        <th>訂期議價</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">56</td>
+                                                        <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">19</td>
+                                                        <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">21</td>
+                                                        <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">11</td>
+                                                        <td class="late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">37</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td colspan="7"></td>
+                                        </tr>
+                                    </table>
+
+
+                                </section>
+                            </div>
+                        </div>
+                        <div class="col col-1 section-priority">
+                            <h2 class="title">計畫優先序
+                                <a href="dashboard_plan_priority.html" target="_blank">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                            </h2>
+                            <div class="wrap wrap-priority">
+                                <div class="col col-3">
+                                    <table class="data-priority">
+                                        <tr>
+                                            <th colspan="2">最優先</th>
+                                        </tr>
+                                        <tr>
+                                            <td>總件數</td>
+                                            <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">71</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>未發包</td>
+                                            <td><span class="not-yet" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">7</span></td>
+                                        </tr>
+                                    </table>
+                                    <div id="chartPriority1" class="chart-priority"></div>
+                                    <span class="percentage">%</span>
+                                </div>
+                                <div class="col col-3">
+                                    <table class="data-priority">
+                                        <tr>
+                                            <th colspan="2">優先</th>
+                                        </tr>
+                                        <tr>
+                                            <td>總件數</td>
+                                            <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">116</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>未發包</td>
+                                            <td><span class="not-yet" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">11</span></td>
+                                        </tr>
+                                    </table>
+                                    <div id="chartPriority2" class="chart-priority"></div>
+                                    <span class="percentage">%</span>
+                                </div>
+                                <div class="col col-3">
+                                    <table class="data-priority">
+                                        <tr>
+                                            <th colspan="2">一般</th>
+                                        </tr>
+                                        <tr>
+                                            <td>總件數</td>
+                                            <td><span data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">193</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>未發包</td>
+                                            <td><span class="not-yet" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">8</span></td>
+                                        </tr>
+                                    </table>
+                                    <div id="chartPriority3" class="chart-priority"></div>
+                                    <span class="percentage">%</span>
                                 </div>
                             </div>
                         </div>
 
+                        <div class="col col-1 section-company relative">
+                            <h2 class="title">廠商資訊</h2>
+
+                            <div class="wrap toolbox toolbox-no-gap">
+                                <select class="filter-company">
+                                    <option selected="selected" value="水利署">全署</option>
+                                    <option disabled>-------------</option>
+                                    <option value="水利署">本署</option>
+                                    <option disabled>-------------</option>
+                                    <option value="第一河川局">第一河川局</option>
+                                    <option value="第二河川局">第二河川局</option>
+                                    <option value="第三河川局">第三河川局</option>
+                                    <option value="第四河川局">第四河川局</option>
+                                    <option value="第五河川局">第五河川局</option>
+                                    <option value="第六河川局">第六河川局</option>
+                                    <option value="第七河川局">第七河川局</option>
+                                    <option value="第八河川局">第八河川局</option>
+                                    <option value="第九河川局">第九河川局</option>
+                                    <option value="第十河川局">第十河川局</option>
+                                    <option value="北區水資源局">北區水資源局</option>
+                                    <option value="中區水資源局">中區水資源局</option>
+                                    <option value="南區水資源局">南區水資源局</option>
+                                    <option value="水利規劃試驗所">水利規劃試驗所</option>
+                                    <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
+                                </select>
+                                <select class="filter-company">
+                                    <option selected="selected" value="1">當年度得標</option>
+                                    <option value="2">連續2年得標</option>
+                                    <option value="3">連續3年得標</option>
+                                    <option value="4">連續4年得標</option>
+                                    <option value="5">連續5年得標</option>
+                                </select>
+                            </div>
+
+                            <!-- <div class="mychart-type-bar">
+                        <table class="data">
+                            <tr>
+                                <td>只有一家廠商投標</td>
+                                <td class="align-r">50件 (13%)</td>
+                            </tr>
+                        </table>
+                        <div class="mychart-bar">
+                            <span id="chartOneCompany" class="bar" data-value="50" data-total="386"></span>
+                        </div>
+                    </div> -->
+
+                            <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
+                                <div class="total-block big">
+                                    <span class="total-title">得標廠商總數</span>
+                                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">250</span>
+                                </div>
+                                <div class="total-block big align-r">
+                                    <span class="total-title">得標計畫主持人總數</span>
+                                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">218</span>
+                                </div>
+                                <div class="total-block">
+                                    <span class="total-title">得標3件以上廠商數</span>
+                                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">14</span>
+                                </div>
+                                <div class="total-block align-r">
+                                    <span class="total-title">得標3件以上計畫主持人數</span>
+                                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">3</span>
+                                </div>
+                            </div>
+
+                            <div class="slider">
+                                <input type="radio" name="r" id="r1" checked>
+                                <label for="r1">
+                            <div id="chartCompany" class="chart-company slider" data-slider="0"></div>
+                        </label>
+                                <input type="radio" name="r" id="r2">
+                                <label for="r2">
+                            <div id="chartCompanyHosting" class="chart-company slider" data-slider="0">
+        
+                            </div>
+                        </label>
+                            </div>
+
+                        </div>
+
+                        <div class="col col-1 section-committee relative">
+                            <h2 class="title">外聘評選委員</h2>
+
+                            <div class="wrap toolbox toolbox-no-gap">
+                                <select class="filter-company">
+                                    <option selected="selected" value="水利署">全署</option>
+                                    <option disabled>-------------</option>
+                                    <option value="水利署">本署</option>
+                                    <option disabled>-------------</option>
+                                    <option value="第一河川局">第一河川局</option>
+                                    <option value="第二河川局">第二河川局</option>
+                                    <option value="第三河川局">第三河川局</option>
+                                    <option value="第四河川局">第四河川局</option>
+                                    <option value="第五河川局">第五河川局</option>
+                                    <option value="第六河川局">第六河川局</option>
+                                    <option value="第七河川局">第七河川局</option>
+                                    <option value="第八河川局">第八河川局</option>
+                                    <option value="第九河川局">第九河川局</option>
+                                    <option value="第十河川局">第十河川局</option>
+                                    <option value="北區水資源局">北區水資源局</option>
+                                    <option value="中區水資源局">中區水資源局</option>
+                                    <option value="南區水資源局">南區水資源局</option>
+                                    <option value="水利規劃試驗所">水利規劃試驗所</option>
+                                    <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
+                                </select>
+                            </div>
+
+                            <!-- <div class="mychart-type-bar">
+                        <table class="data">
+                            <tr>
+                                <td>有遴聘委員</td>
+                                <td class="align-r">389件 (82%)</td>
+                            </tr>
+                        </table>
+                        <div class="mychart-bar">
+                            <span id="chartHasCommittee" class="bar" data-value="317" data-total="386"></span>
+                        </div>
+                    </div> -->
+
+                            <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
+                                <div class="total-block big" style="width: 100%;">
+                                    <span class="total-title">遴聘委員總數</span>
+                                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2" aria-controls="offcanvasBottom2">238</span>
+                                </div>
+                                <div class="total-block" style="width: 100%;">
+                                    <span class="total-title">遴聘5次以上委員數</span>
+                                    <span class="total-value" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2" aria-controls="offcanvasBottom2">6</span>
+                                </div>
+                            </div>
+                            <div class="wrap">
+                                <div id="chartCommittee" class="chart-company"></div>
+                            </div>
+                        </div>
+
+                        <div class="col col-3 section-funds-detail">
+                            <div class="funds3 relative">
+                                <h2 class="title">
+                                    <select name="" id="unitType" class="filter-company" onchange="changeUnit()">
+                                        <option value="1">本署</option>
+                                        <option value="2">所屬機關</option>
+                                    </select> 主辦計畫分布：
+                                    <select class="filter-company">
+                                        <option value="" selected>111</option>
+                                        <option value="">110</option>
+                                    </select>
+                                    <span>~</span>
+                                    <select class="filter-company">
+                                        <option value="" selected>111年</option>
+                                        <option value="">110年</option>
+                                    </select>
+                                </h2>
+                                <div id="funds3" class="chart-plan-funds"></div>
+
+
+                                <div id="fundsDetail" class="hide" style="margin-top: 20px;">
+                                    <div class="wrap">
+                                        <div style="width: 48%; margin-right: 4%" class="relative">
+                                            <h2 class="grid-title">
+                                                綜企組 - 歷年委辦計畫趨勢圖：
+                                                <select class="filter-company">
+                                                    <option value="">111</option>
+                                                    <option value="" selected>107</option>
+                                                </select>
+                                                <span>~</span>
+                                                <select class="filter-company">
+                                                    <option value="" selected>111年</option>
+                                                    <option value="">110年</option>
+                                                </select>
+                                            </h2>
+                                            <div id="funds4" class="chart-plan-funds2"></div>
+                                        </div>
+                                        <div style="width: 48%;" class="relative">
+                                            <h2 class="grid-title">
+                                                綜企組 - 經費分佈圖：
+                                                <select class="filter-company">
+                                                    <option value="" selected>111年</option>
+                                                    <option value="">110年</option>
+                                                </select>
+                                                <select class="filter-company">  
+                                                    <option disabled>-經費來源-</option>
+                                                    <option>公務預算</option>
+                                                    <option>水資源作業基金</option>
+                                                    <option>代辦經費</option>
+                                                    <option>其他預算</option>
+                                                    <option>前瞻基礎建設計畫第3期特別預算</option>
+                                                </select>
+                                            </h2>
+                                            <div id="funds5" class="chart-plan-funds2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col col-3 section-funds-detail">
+                            <div class="funds1">
+                                <h2 class="title">委辦計畫經費執行：
+                                    <select class="filter-company">
+                                        <option value="">110年</option>
+                                        <option value="" selected>111年</option>
+                                    </select>
+                                </h2>
+                                <div id="funds1" class="chart-plan-funds"></div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
-                <div class="col col-3 section-funds-detail">
-                    <div class="funds1">
-                        <h2 class="title">委辦計畫經費執行：
-                            <select class="filter-company">
-                                <option value="">110年</option>
-                                <option value="" selected>111年</option>
-                            </select>
-                        </h2>
-                        <div id="funds1" class="chart-plan-funds"></div>
-                    </div>
-                </div>
-
             </div>
 
         </main>
@@ -551,7 +695,6 @@
                         </tbody>
                 </table>
             </div>
-
 
             <div class="my-table2-wrap">
                 <div class="my-table2-title">
