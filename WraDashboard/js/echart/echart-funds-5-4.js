@@ -1,7 +1,7 @@
 // define(function() {
 //----經費-------
-function renderChartFunds33() {
-    var dom = document.getElementById("funds3");
+function renderChartFunds54() {
+    var dom = document.getElementById("funds5");
     var myChart = echarts.init(dom);
     var app = {};
 
@@ -11,6 +11,15 @@ function renderChartFunds33() {
 
     const colors = ['#5470C6', '#91CC75', '#EE6666'];
     option = {
+        backgroundColor: '#FFFFFF',
+        // title: {
+        //     text: '綜企組',
+        //     textStyle: {
+        //         fontSize: 16,
+        //         color: '#3E3E3E',
+        //     },
+        //     left: '-5',
+        // },
         color: colors,
         tooltip: {
             trigger: 'axis',
@@ -19,9 +28,9 @@ function renderChartFunds33() {
             }
         },
         grid: {
-            top: 50,
-            bottom: 40,
-            left: 30,
+            top: 70,
+            bottom: 70,
+            left: '5%',
             right: 160
         },
         toolbox: {
@@ -32,7 +41,9 @@ function renderChartFunds33() {
             // }
         },
         legend: {
-            data: ['核定經費', '發包經費', '件數']
+            data: ['核定經費', '發包經費', '件數'],
+            bottom: 10,
+            left: 20
         },
         xAxis: [{
             type: 'category',
@@ -42,7 +53,13 @@ function renderChartFunds33() {
             axisPointer: {
                 type: 'shadow'
             },
-            data: ['規劃課', '管理課']
+            data: [
+                '公共用水效率提升計畫',
+                '尖端地層下陷防治技術之研發',
+                '智慧水管理技術研發',
+                '韌性防災調適與評估研究',
+            ],
+
         }],
         yAxis: [{
                 type: 'value',
@@ -95,7 +112,10 @@ function renderChartFunds33() {
                 name: '核定經費',
                 type: 'bar',
                 data: [
-                    20200, 19115
+                    8900,
+                    9250,
+                    21658,
+                    24700,
                 ]
             },
             {
@@ -103,14 +123,22 @@ function renderChartFunds33() {
                 type: 'bar',
                 yAxisIndex: 1,
                 data: [
-                    10400, 18426
+                    0,
+                    6290,
+                    17368,
+                    7010,
                 ]
             },
             {
                 name: '件數',
                 type: 'line',
                 yAxisIndex: 2,
-                data: [5, 4]
+                data: [
+                    4,
+                    3,
+                    3,
+                    4,
+                ]
             }
         ]
     };
@@ -118,13 +146,6 @@ function renderChartFunds33() {
     if (option && typeof option === 'object') {
         myChart.setOption(option);
     }
-
-    myChart.on('click', function(params) {
-        //for demo
-        document.getElementById('fundsDetail').style.display = 'block';
-        renderChartFunds4();
-        renderChartFunds51();
-    });
 }
 // renderChartFunds22();
 // });

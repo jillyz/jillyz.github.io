@@ -1,6 +1,6 @@
 // define(function() {
 //----經費-------
-function renderChartFunds33() {
+function renderChartFunds34() {
     var dom = document.getElementById("funds3");
     var myChart = echarts.init(dom);
     var app = {};
@@ -42,7 +42,7 @@ function renderChartFunds33() {
             axisPointer: {
                 type: 'shadow'
             },
-            data: ['規劃課', '管理課']
+            data: ['水利規劃試驗所-水資源規劃課', '水利規劃試驗所-地下水文研究中心', '水利署-水文技術組', '水利署-水利防災中心', '水利署-水源經營組', '水利署-保育事業組', '南區水資源局-設計課']
         }],
         yAxis: [{
                 type: 'value',
@@ -95,7 +95,13 @@ function renderChartFunds33() {
                 name: '核定經費',
                 type: 'bar',
                 data: [
-                    20200, 19115
+                    6868,
+                    2450,
+                    6800,
+                    7200,
+                    28000,
+                    8900,
+                    4290,
                 ]
             },
             {
@@ -103,14 +109,28 @@ function renderChartFunds33() {
                 type: 'bar',
                 yAxisIndex: 1,
                 data: [
-                    10400, 18426
+                    4368,
+                    2420,
+                    3870,
+                    7010,
+                    13000,
+                    0,
+                    0
                 ]
             },
             {
                 name: '件數',
                 type: 'line',
                 yAxisIndex: 2,
-                data: [5, 4]
+                data: [
+                    2,
+                    1,
+                    2,
+                    2,
+                    2,
+                    4,
+                    1
+                ]
             }
         ]
     };
@@ -123,7 +143,7 @@ function renderChartFunds33() {
         //for demo
         document.getElementById('fundsDetail').style.display = 'block';
         renderChartFunds4();
-        renderChartFunds51();
+        renderChartFunds54();
     });
 }
 // renderChartFunds22();

@@ -26,8 +26,7 @@ requirejs([
     var valueStageLate = [0, 26, 0, 49, 0, 37, 0, 0, 0];
     renderStage(valueStageTotal, valueStageLate);
 
-    // 主辦機關 + 執行階段 連動查詢 =======================================//end
 
     renderChartFunds1();
-    renderChartFunds31();
+    renderChartFunds33();
 });
