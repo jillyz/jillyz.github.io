@@ -2008,6 +2008,11 @@ a {
     .wrap .section-committee {
         width: calc(50% - 8px);
     }
+    .dashboard-tab li,
+    .dashboard-tab a {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 480px) {
