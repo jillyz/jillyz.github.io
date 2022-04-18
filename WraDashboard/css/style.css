@@ -71,8 +71,8 @@ body.demo {
     height: 127px; */
     width: 440px;
     height: 110px;
-    background: url(../images/demo/demo-logo.png) 15px 0 no-repeat;
-    background-size: 80%;
+    background: url(../images/demo/demo-logo.png) 5px 0 no-repeat;
+    background-size: 83%;
 }
 
 .demo-user-help {
