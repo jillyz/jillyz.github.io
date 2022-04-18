@@ -69,5 +69,5 @@ requirejs([
     // 主辦機關 + 執行階段 連動查詢 =======================================//end
 
     renderChartFunds1();
-    renderChartFunds31();
+    renderChartFunds33();
 });
