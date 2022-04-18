@@ -391,6 +391,14 @@ caption {
     /* height: 400px; */
 }
 
+.block-funds-detail {
+    width: 48%;
+}
+
+.block-funds-detail:nth-child(2n) {
+    margin-right: 4%;
+}
+
 .quick {
     width: 100%;
     text-align: center;
@@ -2012,6 +2020,9 @@ a {
     .dashboard-tab a {
         width: 100%;
         text-align: center;
+    }
+    .block-funds-detail {
+        width: 100%;
     }
 }
 
