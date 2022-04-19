@@ -14,7 +14,7 @@ body {
 
 .GSMis-brand {
     margin-bottom: 0;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -39,7 +39,7 @@ body {
 
 .GSMis-brand-img {
     height: 24px;
-    margin-right: 0.75em;
+    margin-right: 0.25em;
 }
 
 @media all and (min-width: 992px) {
@@ -163,6 +163,7 @@ body {
     transform: rotate(-180deg);
 }
 
+.GSMis-menu li.active,
 .GSMis-menu li.active>.children {
     color: #d3e100 !important;
 }

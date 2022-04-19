@@ -1,0 +1,487 @@
+<!doctype html>
+<html class="no-js" lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表單驗證 | MIS公版系統</title>
+    <!-- Base -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap-5.1.3/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.0.0-beta/all.min.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/form-layout.css">
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <div class="container">
+            <h3>表單驗證</h3>
+            <div class="p-3  bg-secondary mb-5">
+                <div class="alert alert-light mb-0">
+                    <ul>
+                        <li>使用Bootstrap表單驗證功能。<a href="https://getbootstrap.com/docs/5.1/forms/validation/">Bootstrap Validation</a></li>
+                        <li>支援的元素有：
+                            <ul>
+                                <li>有.form-control的<code>&lt;input&gt;</code>和<code>&lt;textarea&gt;</code> <br></li>
+                                <li>有.form-select的<code>&lt;select&gt;</code> <br></li>
+                                <li>有.form-check的</li>
+                            </ul>
+
+                        </li>
+                        <li>可搭配正規表示式做驗證。寫在input的pattern屬性即可。
+                            <ul>
+                                <li>密碼： <code>pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"</code></li>
+                                <li>身分證字號： <code>pattern="^[A-Z]{1}[1-2]{1}[0-9]{8}$"</code></li>
+                                <li>手機號碼： <code>pattern="^09[0-9]{8}$"</code></li>
+                                <li>室內電話 <code>pattern="(\d{2,3}-?|\(\d{2,3}\))\d{3,4}-?\d{4}"</code></li>
+                            </ul>
+                        </li>
+                        <li>
+                            為避免<code>&lt;select&gt;</code>的"請選擇"的提示語變成必填欄位的選項，其value設為空字串，即<code>value=""</code>。
+                        </li>
+                        <li>Boostrap驗證有做幾個修正：
+                            <ul>
+                                <li>只出現紅色的錯誤訊息，不顯示綠色的成功訊息</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h1 class="GSMis-section-title">基本資料</h1>
+            <form class="needs-validation" novalidate>
+                <dl class="GSMis-form-horizontal units-2">
+                    <dt>
+                      <label for="" class="">申請編號</label>
+                  </dt>
+                    <dd class="wide">
+                        <div class="form-control GSMis-no-border">FUA11000001B</div>
+                    </dd>
+                    <dt>
+                      <label for="" class="">申請日期</label>
+                  </dt>
+                    <dd>
+                        <input type="date" class="form-control " placeholder="" value="">
+                    </dd>
+                    <dt>
+                      <label for="" class=""><span class="text-danger">*</span>申請社宅</label>
+                  </dt>
+                    <dd>
+                        <select class="form-select " required>
+                          <option selected disabled value="">請選擇</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                      </select>
+                    </dd>
+                    <dt>
+                      <label for="" class=""><span class="text-danger">*</span>申請身份</label>
+                  </dt>
+                    <dd class="wide">
+                        <div class="form-control GSMis-no-border">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input " type="radio" id="marriedOption1" name="AA" required>
+                                <label for="marriedOption1" class="form-check-label">種子專案申請</label>
+                            </div>
+                            <div class="form-check  form-check-inline">
+                                <input class="form-check-input " type="radio" id="marriedOption2" name="AA">
+                                <label for="marriedOption2" class="form-check-label">共居專案申請</label>
+                            </div>
+                            <div class="form-check  form-check-inline">
+                                <input class="form-check-input " type="radio" id="marriedOption3" name="AA">
+                                <label for="marriedOption3" class="form-check-label">一般戶申請</label>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt>
+                      <label for="" class=""><span class="text-danger">*</span>婚姻狀況</label>
+                  </dt>
+                    <dd class="wide">
+                        <div class="row g-2">
+                            <div class="col-md-auto">
+                                <div class="form-control GSMis-no-border">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input " type="radio" id="marriedOption1" name="married" required>
+                                        <label for="marriedOption1" class="form-check-label">單身</label>
+                                    </div>
+                                    <div class="form-check  form-check-inline">
+                                        <input class="form-check-input " type="radio" id="marriedOption2" name="married">
+                                        <label for="marriedOption2" class="form-check-label">已婚</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-auto">
+                                <div class="">
+                                    <div class="row d-sm-flex g-2 align-items-center">
+                                        <div class="col-auto text-end">
+                                            <label for="" class="">登記日期</label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="date" class="form-control " placeholder="" value="" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-auto">
+                                <div class="row d-sm-flex g-2 align-items-center">
+                                    <div class="col-auto text-end">
+                                        <label for="" class="">新婚未滿2年</label>
+                                    </div>
+                                    <div class="col ">
+                                        <div class="form-control GSMis-no-border">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input " type="radio" id="marriedOption1" name="married" required>
+                                                <label for="marriedOption1" class="form-check-label">是</label>
+                                            </div>
+                                            <div class="form-check  form-check-inline">
+                                                <input class="form-check-input " type="radio" id="marriedOption2" name="married">
+                                                <label for="marriedOption2" class="form-check-label">否</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt>
+                      <label for="" class=""><span class="text-danger">*</span>居住期間</label>
+                  </dt>
+                    <dd class="wide">
+                        <div class="row justify-content-center gx-0 GSMis-duration">
+                            <div class="col-sm">
+                                <input type="date" class="form-control start" placeholder="" value="" required>
+                            </div>
+                            <div class="col-auto">
+                                <div class="input-group-text justify-content-center">至</div>
+                            </div>
+                            <div class="col-sm">
+                                <input type="date" class="form-control end" placeholder="" value="" required>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt>
+                      <label for="" class=""><span class="text-danger">*</span>密碼</label>
+                  </dt>
+                    <dd>
+                        <input type="text" class="form-control " placeholder="(密碼至少八字元，包含大小寫字母、數字、特殊符號)" value="" title="密碼至少八字元，包含大小寫字母、數字、特殊符號" data-bs-toggle="tooltip" pattern="(?&#x3D;^.{8,}$)((?&#x3D;.*\d)|(?&#x3D;.*\W+))(?![.\n])(?&#x3D;.*[A-Z])(?&#x3D;.*[a-z]).*$" required>
+                        <div class="invalid-feedback">密碼至少八字元，包含大小寫字母、數字、特殊符號</div>
+                    </dd>
+                    <dt>
+                      <label for="" class=""><span class="text-danger">*</span>密碼確認</label>
+                  </dt>
+                    <dd>
+                        <input type="text" class="form-control " placeholder="" value="" pattern="(?&#x3D;^.{8,}$)((?&#x3D;.*\d)|(?&#x3D;.*\W+))(?![.\n])(?&#x3D;.*[A-Z])(?&#x3D;.*[a-z]).*$" required>
+                        <div class="invalid-feedback">請確認密碼輸入正確</div>
+                    </dd>
+                    <dt>
+                      <label for="" class=""><span class="text-danger">*</span>身分證字號</label>
+                  </dt>
+                    <dd>
+                        <input type="text" class="form-control " placeholder="(第一個英文字母需大寫)" value="" title="第一個英文字母需大寫" data-bs-toggle="tooltip" pattern="^[A-Z]{1}[1-2]{1}[0-9]{8}$" required>
+                        <div class="invalid-feedback">請確認身分證字號輸入正確</div>
+                    </dd>
+                    <dt>
+                      <label for="" class=""><span class="text-danger">*</span>電子郵件</label>
+                  </dt>
+                    <dd>
+                        <input type="email" class="form-control " placeholder="如：abc@gmail.com" value="" required>
+                        <div class="invalid-feedback">請確認電子郵件輸入正確</div>
+                    </dd>
+                    <dt>
+                      <label for="" class=""><span class="text-danger">*</span>手機</label>
+                  </dt>
+                    <dd>
+                        <input type="text" class="form-control " placeholder="如：0912345678" value="" pattern="^09[0-9]{8}$" required>
+                        <div class="invalid-feedback">請確認手機號碼輸入正確</div>
+                    </dd>
+                    <dt>
+                      <label for="" class=""><span class="text-danger">*</span>室內電話</label>
+                  </dt>
+                    <dd>
+                        <input type="text" class="form-control " placeholder="(04)12345678" value="" pattern="(\d{2,3}-?|\(\d{2,3}\))\d{3,4}-?\d{4}" required>
+                        <div class="invalid-feedback">請確認電話輸入正確</div>
+                    </dd>
+                    <dt>
+                      <label for="" class=""><span class="text-danger">*</span>戶籍資料</label>
+                  </dt>
+                    <dd class="wide">
+                        <div class="row g-2">
+                            <div class="col-md-auto">
+                                <div class="row g-2 align-items-center">
+                                    <div class="col-3 col-sm-2 col-md-auto text-end">
+                                        <label for="" class="">縣市</label>
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-select " required>
+                                          <option selected disabled value="">請選擇</option>
+                                          <option value="1">One</option>
+                                          <option value="2">Two</option>
+                                          <option value="3">Three</option>
+                                      </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-auto">
+                                <div class="row d-sm-flex g-2 align-items-center">
+                                    <div class="col-3 col-sm-2 col-md-auto text-end">
+                                        <label for="" class="">行政區</label>
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-select " required>
+                                          <option selected disabled value="">請選擇</option>
+                                          <option value="1">One</option>
+                                          <option value="2">Two</option>
+                                          <option value="3">Three</option>
+                                      </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xl-3 col-xxl-2">
+                                <div class="row d-sm-flex g-2 align-items-center">
+                                    <div class="col-3 col-sm-2 col-md-auto text-end">
+                                        <label for="" class="">郵遞區號</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" value="" size="1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl">
+                                <div class="row d-sm-flex g-2 align-items-center">
+                                    <div class="col-3 col-sm-2 col-md-auto text-end">
+                                        <label for="" class="">地址</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control " placeholder="" value="" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt>
+                      <label for="" class=""><span class="text-danger">*</span>通訊地址</label>
+                  </dt>
+                    <dd class="wide">
+                        <div class="row g-2">
+                            <div class="col-md-auto">
+                                <div class="form-control GSMis-no-border">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                        <label class="form-check-label" for="inlineCheckbox1">同上</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-auto">
+                                <div class="row g-2 align-items-center">
+                                    <div class="col-3 col-sm-2 col-md-auto text-end">
+                                        <label for="" class="">縣市</label>
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-select " required>
+                                          <option selected disabled value="">請選擇</option>
+                                          <option value="1">One</option>
+                                          <option value="2">Two</option>
+                                          <option value="3">Three</option>
+                                      </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-auto">
+                                <div class="row d-sm-flex g-2 align-items-center">
+                                    <div class="col-3 col-sm-2 col-md-auto text-end">
+                                        <label for="" class="">行政區</label>
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-select " required>
+                                          <option selected disabled value="">請選擇</option>
+                                          <option value="1">One</option>
+                                          <option value="2">Two</option>
+                                          <option value="3">Three</option>
+                                      </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-xl-3 col-xxl-2">
+                                <div class="row d-sm-flex g-2 align-items-center">
+                                    <div class="col-3 col-sm-2 col-md-auto text-end">
+                                        <label for="" class="">郵遞區號</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" value="" size="1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl">
+                                <div class="row d-sm-flex g-2 align-items-center">
+                                    <div class="col-3 col-sm-2 col-md-auto text-end">
+                                        <label for="" class="">地址</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control " placeholder="" value="" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt>
+                      <label for="" class=""><span class="text-danger">*</span>緊急聯絡人</label>
+                  </dt>
+                    <dd class="wide">
+                        <div class="row g-2 mb-3">
+                            <div class="col-md-auto">
+                                <div class="form-control GSMis-no-border">
+                                    聯絡人一：
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="row g-2">
+                                    <div class="col-xl-auto">
+                                        <div class="row g-2 align-items-center">
+                                            <div class="col-3 col-sm-2 col-md-auto text-end">
+                                                <label for="" class="">姓名</label>
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control " placeholder="" value="" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-auto">
+                                        <div class="row d-sm-flex g-2 align-items-center">
+                                            <div class="col-3 col-sm-2 col-md-auto text-end">
+                                                <label for="" class="">關係</label>
+                                            </div>
+                                            <div class="col">
+                                                <select class="form-select " required>
+                                                  <option selected disabled value="">請選擇</option>
+                                                  <option value="1">One</option>
+                                                  <option value="2">Two</option>
+                                                  <option value="3">Three</option>
+                                              </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg">
+                                        <div class="row d-sm-flex g-2">
+                                            <div class="col-3 col-sm-2 col-md-auto text-end">
+                                                <div class="form-control GSMis-no-border px-0">
+                                                    <label for="" class="">手機</label>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control " placeholder="如：0912345678" value="" pattern="^09[0-9]{8}$" required>
+                                                <div class="invalid-feedback">請確認手機號碼輸入正確</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-md-auto">
+                                <div class="form-control GSMis-no-border">
+                                    聯絡人二：
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="row g-2">
+                                    <div class="col-xl-auto">
+                                        <div class="row g-2 align-items-center">
+                                            <div class="col-3 col-sm-2 col-md-auto text-end">
+                                                <label for="" class="">姓名</label>
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control " placeholder="" value="" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-auto">
+                                        <div class="row d-sm-flex g-2 align-items-center">
+                                            <div class="col-3 col-sm-2 col-md-auto text-end">
+                                                <label for="" class="">關係</label>
+                                            </div>
+                                            <div class="col">
+                                                <select class="form-select " required>
+                                                  <option selected disabled value="">請選擇</option>
+                                                  <option value="1">One</option>
+                                                  <option value="2">Two</option>
+                                                  <option value="3">Three</option>
+                                              </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg">
+                                        <div class="row d-sm-flex g-2">
+                                            <div class="col-3 col-sm-2 col-md-auto text-end">
+                                                <div class="form-control GSMis-no-border px-0">
+                                                    <label for="" class="">手機</label>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control " placeholder="如：0912345678" value="" pattern="^09[0-9]{8}$" required>
+                                                <div class="invalid-feedback">請確認手機號碼輸入正確</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt>
+                      <label for="" class=""><span class="text-danger">*</span>說明</label>
+                  </dt>
+                    <dd class="wide">
+                        <textarea class="form-control " placeholder="(最少輸入10個字)" rows="3" minlength="10" title="最少輸入10個字" data-bs-toggle="tooltip" required></textarea>
+                        <div class="invalid-feedback"></div>
+                    </dd>
+                </dl>
+                <div class="row justify-content-center my-4">
+                    <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 mb-sm-0">
+                        <button type='reset' class="btn w-100 btn-outline-primary">清除</button>
+                    </div>
+                    <div class="col-sm-4 col-lg-3 col-xl-2">
+                        <button type='submit' class="btn w-100 btn-primary">查詢</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function() {
+                'use strict'
+
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.querySelectorAll('.needs-validation')
+
+                // Loop over them and prevent submission
+                Array.prototype.slice.call(forms)
+                    .forEach(function(form) {
+                        form.addEventListener('submit', function(event) {
+                            if (!form.checkValidity()) {
+                                event.preventDefault()
+                                event.stopPropagation()
+                            }
+
+                            form.classList.add('was-validated')
+                        }, false)
+                    })
+            })()
+        </script>
+    </div>
+    <!-- /.wrapper -->
+
+
+    <!-- Base -->
+    <script src="assets/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendor/bootstrap-5.1.3/bootstrap.bundle.min.js"></script>
+    <!-- 自訂 -->
+    <script src="assets/js/common.js"></script>
+    <!-- 表單驗證 -->
+    <script src="assets/js/form-validation.js"></script>
+</body>
+
+</html>

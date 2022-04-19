@@ -1,0 +1,374 @@
+<!doctype html>
+<html class="no-js" lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>居家照護個案評估管理系統</title>
+    <!-- Base -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap-5.1.3/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.0.0-beta/all.min.css">
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="assets/css/base-layout-one.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/table.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/form-layout.css">
+</head>
+
+<body>
+    <div class="GSMis-wrapper">
+        <!-- GSMis-header-wrap 刊頭 -->
+        <header class="GSMis-header-wrap">
+            <div class="GSMis-header-inner">
+                <div class="GSMis-header">
+                    <div class="item">
+                        <!-- GSMis-brand -->
+                        <h1 class="GSMis-brand">
+                            <a href="index.html">
+                                <img class="GSMis-brand-img" src="assets/img/taichung-logo.png">
+                                <span class="GSMis-brand-text">居家照護個案評估管理系統</span>
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="item">
+                        <!-- 手機版的漢堡 -->
+                        <a class="GSMis-hamburger-mobile" data-bs-toggle="collapse" href="#GSMis-collapse-menu">
+                            <span><i class="fas fa-bars"></i></span>
+                            <span style="display: none;"><i class="fas fa-times"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.GSMis-header-wrap -->
+        <!-- GSMis-nav-wrap 導覽列 -->
+        <nav class="GSMis-nav-wrap">
+            <div class="GSMis-nav-inner">
+                <div class="text-end">
+                    <!-- 桌機版的漢堡 -->
+                    <a class="GSMis-hamburger-desktop" href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+                <!-- 手機版選單開闔容器 -->
+                <div class="collapse" id="GSMis-collapse-menu">
+                    <!-- GSMis-menu 主選單 -->
+                    <ul class="GSMis-menu">
+                        <li class="active"><a href="#"><i class="fa-solid fa-file-lines"></i> 評估填報</a></li>
+                        <li><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估結果查詢</a></li>
+                    </ul>
+                    <!-- /.GSMis-menu -->
+                    <!-- GSMis-help 輔助資訊 -->
+                    <div class="GSMis-help">
+                        <!-- 非主選單區的輔助選項 -->
+                        <!-- <ul class="GSMis-help-nav">
+                            <li><a href="#"><i class="fa-solid fa-file-arrow-up"></i> 確診者資料上傳</a></li>
+                            <li><a href="#"><i class="fa-solid fa-file-lines"></i> 評估填報</a></li>
+                            <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i> 評估結果查詢</a></li>
+                        </ul> -->
+                        <!-- 使用者狀態資訊 -->
+                        <div class="GSMis-help-user">
+                            <span class="GSMis-help-user-name">歡迎○○○ ○○○登入</span>
+                            <button class="GSMis-help-user-logout"><span class="text">登出</span><i class="fas fa-sign-out-alt"></i></button>
+                        </div>
+                    </div>
+                    <!-- /.GSMis-help -->
+                </div>
+                <!-- /.collapse -->
+            </div>
+        </nav>
+        <!-- /.GSMis-nav-wrap -->
+
+        <!-- /.GSMis-breadcrumb-wrap -->
+        <!-- GSMis-main-wrap 主內容區 -->
+        <main class="GSMis-main-wrap">
+            <div class="GSMis-main-inner">
+
+                <h2 class="GSMis-section-title">環境狀況評估 - 待填報 (共 99 筆)</h2>
+
+                <!-- .table-responsive 表格 -->
+                <div class="table-responsive">
+                    <table class="table GSMis-table-rwd">
+                        <thead>
+                            <tr>
+                                <th>編號</th>
+                                <th>案號</th>
+                                <th>個案研判日期時間</th>
+                                <th>傳染病報告單<br>電腦編號</th>
+                                <th>姓名</th>
+                                <th>性別</th>
+                                <th>出生年月日</th>
+                                <th>診斷年齡</th>
+                                <th>身分證字號</th>
+                                <th>居住鄉鎮／居家地址</th>
+                                <th class="tel">住家電話</th>
+                                <th class="tel">公司電話</th>
+                                <th>環境評估</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-th="編號"></td>
+                                <td data-th="案號">案37079</td>
+                                <td data-th="個案研判日期">111/04/18 15:41:23</td>
+                                <td data-th="傳染病報告單電腦編號">1110300376077</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="性別">女</td>
+                                <td data-th="出生年月日">80/04/19</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="身分證字號">A123456789</td>
+                                <td data-th="居住鄉鎮">西區／台中市西區精誠29街23號6樓之2</td>
+                                <td data-th="住家電話" class="tel">04-23109988</td>
+                                <td data-th="公司電話" class="tel">04-23269900</td>
+                                <td data-th="環境評估">
+                                    <a class="btn w-100 btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">填報</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.table-responsive -->
+                <!-- 分頁 -->
+                <nav>
+                    <ul class="pagination GSMis-pagination justify-content-center ">
+                        <li class="page-item disabled ">
+                            <a class="page-link " href="# " tabindex="-1 " aria-disabled="true ">上一頁</a>
+                        </li>
+                        <li class="page-item "><a class="page-link " href="# ">1</a></li>
+                        <li class="page-item active " aria-current="page ">
+                            <a class="page-link " href="# ">2</a>
+                        </li>
+                        <li class="page-item "><a class="page-link " href="# ">3</a></li>
+                        <li class="page-item ">
+                            <a class="page-link " href="# ">下一頁</a>
+                        </li>
+                    </ul>
+                </nav>
+
+        </main>
+        <!-- /.GSMis-main-wrap -->
+        <!-- GSMis-footer-wrap -->
+        <footer class="GSMis-footer-wrap ">
+            <div class="GSMis-footer-inner ">
+                <div class="GSMis-footer ">
+                    Copyright © 逢甲大學地理資訊系統研究中心 <span class="d-block d-md-inline ">GIS RESEARCH CENTER, FCU</span>
+                </div>
+            </div>
+        </footer>
+        <!-- /.GSMis-footer-wrap -->
+        </div>
+        <!-- /.GSMis-wrapper -->
+        <div class="GSMis-go-top ">
+            <a href="# " class=" " title="Go to Top ">TOP</a>
+        </div>
+
+        <div class="offcanvas offcanvas-end offcanvas-width" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 id="offcanvasRightLabel">確診新型冠狀病毒(COVID-19) 居家環境狀況評估表</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="container">
+                    <form class="needs-validation" novalidate>
+                        <h1 class="GSMis-section-title">基本資料</h1>
+                        <dl class="GSMis-form-horizontal units-2">
+                            <dt>
+                            <label for="" class="">案號</label>
+                        </dt>
+                            <dd>
+                                <div class="form-control GSMis-no-border">案37079</div>
+                            </dd>
+                            <dt>
+                            <label for="" class="">法傳編號</label>
+                        </dt>
+                            <dd>
+                                <div class="form-control GSMis-no-border">ＯＯＯＯＯＯＯ</div>
+                            </dd>
+                            <dt>
+                            <label for="" class="">姓名</label>
+                        </dt>
+                            <dd>
+                                <div class="form-control GSMis-no-border">陳思佑</div>
+                            </dd>
+                            <dt>
+                            <label for="" class="">性別</label>
+                        </dt>
+                            <dd>
+                                <div class="form-control GSMis-no-border">女</div>
+                            </dd>
+                            <dt>
+                            <label for="" class="">生日/年齡</label>
+                        </dt>
+                            <dd>
+                                <div class="form-control GSMis-no-border">80/04/19（33歲）</div>
+                            </dd>
+                            <dt>
+                            <label for="" class="">身分證字號</label>
+                        </dt>
+                            <dd>
+                                <div class="form-control GSMis-no-border">A123456789</div>
+                            </dd>
+                            <dt>
+                            <label for="" class="">電話</label>
+                        </dt>
+                            <dd>
+                                <div class="form-control GSMis-no-border">
+                                    住家：04-23109988<br> 公司：04-23269900
+                                </div>
+                            </dd>
+                            <dt>
+                            <label for="" class="">
+                                居家照護地址
+                                <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="top" title="請再向確診個案確認同意於該地址居家照護至解除隔離止，不得任意變更地址，除因健康或必要之照護或被照護需求等因素"></i>
+                            </label>
+                        </dt>
+                            <dd>
+                                <div class="form-control GSMis-no-border">台中市西區精誠29街23號6樓之2</div>
+                            </dd>
+
+                        </dl>
+
+                        <h1 class="GSMis-section-title">居家環境狀況</h1>
+                        <dl class="GSMis-form-horizontal units-2">
+                            <dt>
+                            <label for="" class=""><span class="text-danger">*</span>個案情況</label>
+                        </dt>
+                            <dd class="wide">
+                                <div class="row padding">
+                                    <div class="col-md-auto">
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="foreign" name="type" required>
+                                            <label for="foreign" class="form-check-label">境外移入個案</label>
+                                        </div>
+                                        <!-- 預設隱藏，「境外移入個案」勾選後出現 -->
+                                        <div class="form-control GSMis-no-border margin-left">
+                                            <div class="form-check">
+                                                <input class="form-check-input " type="radio" id="marriedOption1" name="foreign" required>
+                                                <label for="marriedOption1" class="form-check-label">1人1戶</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input " type="radio" id="marriedOption2" name="foreign">
+                                                <label for="marriedOption2" class="form-check-label">例外情形：同住有多名確診者或有必要之照護或被照護需求時，得多人1戶</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="local" name="type" required>
+                                            <label for="local" class="form-check-label">本土個案或完成居家檢疫返家後確診個案</label>
+                                        </div>
+                                        <!-- 預設隱藏，「本土個案或完成居家檢疫返家後確診個案」勾選後出現 -->
+                                        <div class="form-control GSMis-no-border margin-left">
+                                            <ul>
+                                                <li>
+                                                    確診者：
+                                                    <div class="form-check">
+                                                        <input class="form-check-input " type="radio" id="local_1_1" name="local_1" required>
+                                                        <label for="local_1_1" class="form-check-label">1人1室（單獨房間含衛浴）</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input " type="radio" id="local_1_2" name="local_1">
+                                                        <label for="local_1_2" class="form-check-label">1人1室（單獨房間未含衛浴，每次浴廁使用後均可適當清消）</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input " type="radio" id="local_1_3" name="local_1">
+                                                        <label for="local_1_3" class="form-check-label">同為確診者多人1室</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    未確診者：
+                                                    <div class="form-check">
+                                                        <input class="form-check-input " type="radio" id="local_2_1" name="local_2" required>
+                                                        <label for="local_2_1" class="form-check-label">同住1戶未確診者不超過4人</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </dd>
+                            <dt>
+                            <label for="" class=""><span class="text-danger">*</span>上傳附件</label>
+                        </dt>
+                            <dd class="wide">
+                                <input type="file">
+                            </dd>
+                        </dl>
+
+                        <h1 class="GSMis-section-title">評估結果</h1>
+                        <dl class="GSMis-form-horizontal units-2">
+                            <dt>
+                            <label for="" class=""><span class="text-danger">*</span>評估結果</label>
+                        </dt>
+                            <dd class="wide">
+                                <div class="row padding">
+                                    <div class="col-auto">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="result" id="result1">
+                                            <label class="form-check-label" for="result1">
+                                                符合
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="result" id="result2">
+                                            <label class="form-check-label" for="result2">
+                                                不符合
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </dd>
+                            <dt>
+                            <label for="" class=""><span class="text-danger">*</span>評估日期時間</label>
+                        </dt>
+                            <dd class="wide">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <input type="date" class="form-control form-input-note" placeholder="" value="" required="">
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="time" class="form-control form-input-note" placeholder="" value="" required="">
+                                    </div>
+                                </div>
+                            </dd>
+                            <dt>
+                            <label for="" class=""><span class="text-danger">*</span>評估人員簽名</label>
+                        </dt>
+                            <dd class="wide">
+                                <div id="signature" class="signature">
+
+                                </div>
+                            </dd>
+                            <dt></dt>
+                            <dd class="wide">
+                                <div class="alert alert-light small">
+                                    <ol>
+                                        <li><strong>本表填寫完畢後，請將評估結果回報確診者居住地之衛生所。</strong></li>
+                                    </ol>
+                                </div>
+                            </dd>
+                        </dl>
+                        <div class="row justify-content-center my-4">
+                            <div class="col-sm-4 col-lg-3 col-xl-2">
+                                <button type='submit' class="btn w-100 btn-primary">確定送出</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Base -->
+        <script src="assets/vendor/jquery-3.6.0.min.js "></script>
+        <script src="assets/vendor/bootstrap-5.1.3/bootstrap.bundle.min.js "></script>
+        <!-- 自訂 -->
+        <script src="assets/js/base-layout-one.js "></script>
+        <script src="assets/js/common.js "></script>
+</body>
+
+</html>
