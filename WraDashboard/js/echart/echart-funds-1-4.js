@@ -35,10 +35,7 @@ function renderChartFunds1() {
             },
             inverse: true,
             data: [
-                '公共用水效率提升計畫',
-                '尖端地層下陷防治技術之研發',
-                '智慧水管理技術研發',
-                '韌性防災調適與評估研究',
+                '公務預算-水資源科技發展',
             ]
         }],
         series: [{
@@ -53,9 +50,6 @@ function renderChartFunds1() {
                 },
                 data: [
                     8900,
-                    9090,
-                    21658,
-                    24510,
                 ]
             },
             {
@@ -70,9 +64,7 @@ function renderChartFunds1() {
                 },
                 data: [
                     8900,
-                    9250,
-                    21658,
-                    24700,
+
                 ]
             },
             {
@@ -86,10 +78,7 @@ function renderChartFunds1() {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [
-                    0, -160,
-                    0, -190,
-                ]
+                data: [-160, ]
             }
         ]
     };

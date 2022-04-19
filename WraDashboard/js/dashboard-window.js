@@ -8,7 +8,6 @@ requirejs([
     'echart/echart-company',
     'echart/echart-hosting',
     'echart/echart-committee',
-    'echart/echart-funds-1',
     'echart/echart-funds-3-3',
     'echart/echart-funds-4',
     'echart/echart-funds-5',
@@ -26,7 +25,5 @@ requirejs([
     var valueStageLate = [0, 26, 0, 49, 0, 37, 0, 0, 0];
     renderStage(valueStageTotal, valueStageLate);
 
-
-    renderChartFunds1();
     renderChartFunds33();
 });
