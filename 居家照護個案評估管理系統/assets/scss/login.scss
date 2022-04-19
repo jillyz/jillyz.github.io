@@ -1,0 +1,251 @@
+@import "variables";
+@import "mixin";
+@import url(../vendor/icomoon/style.css);
+
+// ==Input icon + Unicode
+// General
+$icon-left-base: 15px; // icon與邊框的距離
+$icon-color: rgba($primary, 0.6); // icon的顏色
+$user: "e900"; // 使用者
+$user-circle: "e901"; // 使用者
+$key: "e902"; // 密碼
+$lock: "e903"; // 鎖頭
+$email: "e904"; // 信箱
+$triangle-down: "e905"; // 下拉的倒三角型箭頭
+$triangle-right: "e906"; // 右三角型箭頭
+$check: "e919";
+$stop: "e91a"; //停用
+$play: "e91b"; //啟用
+$verify: "e91c"; //審核
+$angle-left-double: "e92b"; //最前
+$angle-left: "e92c"; //往前
+$angle-right: "e92c"; //往後
+$angle-right-double: "e92e"; //最後
+// 圓角
+$exit: "e907"; // 離開、登出
+$refresh: "e908"; //重新整理
+$bars: "e909"; //漢堡
+$bars-right: "e90a"; //漢堡靠右
+$plus-circle: "e90b"; //加號-圓
+$plus: "e90c"; //加號
+$times-circle: "e90d"; //乘號-圓
+$times: "e90e"; //乘號
+$calendar: "e90f"; //月曆
+$home: "e910"; //Home
+$gear: "e911"; //齒輪
+$gear-solid: "e912"; //齒輪-solid
+$search: "e913"; //搜尋
+$upload: "e914"; // 上傳
+$download: "e915"; // 下載
+$view: "e916"; //檢視
+$edit: "e917"; //編輯
+$trash: "e918"; // 刪除
+
+// 將字串轉為unicode
+@function unicode($str) {
+  @return unquote('"') + unquote(str-insert($str, "\\", 1)) + unquote('"');
+}
+body {
+  background-color: #ccc;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+.GSMis-footer {
+  padding: 24px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* 登入區 */
+.login {
+  //title
+  &-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: 12px;
+
+    text-align: center;
+    opacity: 0.8;
+
+    span {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 30px;
+      padding: 0 12px;
+
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 1;
+      border-radius: 999rem;
+      //   border: 1px solid currentColor;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: 40px;
+      margin: auto 0;
+
+      border-top: 1px solid currentColor;
+    }
+
+    &::before {
+      margin-right: 8px;
+    }
+    &::after {
+      margin-left: 8px;
+    }
+  }
+  //內層
+  &-inner {
+    width: 100%;
+    max-width: 420px;
+    padding: 24px 16px;
+    margin: 16px 16px 0;
+
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(#666, 0.2);
+
+    @include md-width {
+      padding: 24px 40px;
+    }
+
+    @include xl-width {
+      max-width: 500px;
+    }
+
+    a {
+      color: currentColor;
+    }
+  }
+  //外層
+  &-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* 登入按鈕 */
+.btn-login {
+  $color: $primary;
+  background-color: $color;
+  color: white !important;
+
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: darken($color, 5%);
+  }
+}
+
+/* 重新整理 */
+.btn-refresh {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 8px;
+  margin-right: 8px;
+
+  font-size: 28px;
+  color: currentColor !important;
+  text-decoration: none !important;
+  opacity: 0.6;
+}
+
+/* ==input icon */
+.input-icon {
+  position: relative;
+
+  input {
+    padding-left: 40px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 11px;
+    left: $icon-left-base;
+    font-family: "icomoon";
+    speak: none;
+    color: $icon-color;
+  }
+
+  // User
+  &.user::before {
+    content: unicode($user);
+    left: $icon-left-base;
+  }
+
+  // key
+  &.key::before {
+    content: unicode($key);
+    left: 23px;
+  }
+
+  // Lock
+  &.lock::before {
+    content: unicode($lock);
+    left: $icon-left-base;
+  }
+
+  // Email
+  &.email::before {
+    content: unicode($email);
+    left: $icon-left-base;
+
+    // top: 10px;
+    // font-size: 14px;
+  }
+
+  // Search
+  &.search::before {
+    content: unicode($search);
+    left: $icon-left-base;
+  }
+}
+
+// input錯誤狀態
+.error {
+  $color: #da1e28;
+
+  .input-group-text {
+    border-color: $color;
+    background-color: $color;
+    color: white;
+  }
+  .form-control {
+    border-color: $color;
+  }
+}
+
+// 警告訊息框
+.GSMis-alert-danger {
+  $color: #da1e28;
+
+  color: black;
+  font-size: 18px;
+  background-color: #fff1f1;
+  border-color: $color;
+  font-weight: bold;
+
+  i {
+    font-size: 24px;
+    color: $color;
+    margin-right: 8px;
+  }
+}
+.GSMis-alert-wrapper {
+  display: none;
+}

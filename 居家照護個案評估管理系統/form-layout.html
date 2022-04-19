@@ -1,0 +1,316 @@
+<!doctype html>
+<html class="no-js" lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表單排版 | MIS公版系統</title>
+  <!-- Base -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap-5.1.3/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.0.0-beta/all.min.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/form.css">
+  <link rel="stylesheet" href="assets/css/form-layout.css">
+  
+
+</head>
+
+<body>
+  <div class="wrapper">
+      
+      
+      <div class="row">
+          <div class="offset-xxl-1 col-xxl-10">
+              <h3 >表單排版</h3>
+              <div class="p-3  bg-secondary mb-5">
+                  <div class="alert alert-light mb-0">
+                      <ul>            
+                          <li>表單排版注意事項：
+                              <ul>
+                                  <li>水平排版 <code>.GSMis-form-horizontal</code>
+                                      <ul>
+                                          <li>使用<code>display:grid</code>作呈現，以<code>auto 1fr</code>為排版基調，一短一長為一組unit的概念。</li>
+                                          <li>設定一個<code>&lt;dt&gt;</code>加一個<code>&lt;dd&gt;</code>等於一組unit。</li>
+                                          <li>可以設定一列要容納幾組unit，上限是4組<code>units-[2-4]</code>(.units-2, .units-3, .units-4)；若不設定，則表示一列只容納一組unit。</li>
+                                          <li>例如：想設計可容納2組unit的列，則設定<code>class="GSMis-form-horizontal units-2"</code>。</li>
+                                          <li>合併寬度：
+                                              <ul>
+                                                  <li><code>&lt;dd class="wide"&gt;</code>dd可以到最寬</li>
+                                                  <li><code>&lt;dd class="span-next"&gt;</code>dd寬度為2個unit</li>
+                                                  <li><code>div.full</code>整列寬</li>
+                                              </ul>
+                                          </li>
+                                          <li>若遇到一個標題項目有多輸入值，例如：<a href="form-validation.html">通訊地址</a>，建議使用<code>&lt;dd class="wide"&gt;</code>。</li>
+                                          <li>
+                                              <code>.span-next</code>是特殊的存在，需要鄰近的單個unit配合才會協調。這裡用「群」的概念來解釋：
+                                              <ul>
+                                                  <li>在units-2時，建議3組或5組unit為一群。 (3,5,7,9...(N+2)都可以)<br> 
+                                                      例如3組一群，就是2組單unit，搭配1組有<code>.span-next</code>的unit。
+                                                  </li>
+                                                  <li>在units-3或units-4時，建議5組或7組unit為一群。 (1,5,7,11...(N+4)都可以)<br> 
+                                                      例如5組一群，就是4組單unit，搭配1組有<code>.span-next</code>的unit。</li>
+                                                  <li><code>.span-next</code>在「群」的位置只能是第一個或最後一個，強烈建議放最後一個。</li>
+                                              </ul>
+                                          </li>
+                                          <li>表單如果有多組<code>&lt;dd class="span-next"&gt;</code>或<code>&lt;dd class="wide"&gt;</code>，建議一列最多容納2的unit<code>.units-2</code>，其狀況會相對單純些。</li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>為不讓跑版影響心請，PG開發時建議先不要設定<code>units-*</code>與<code>.span-next</code> ，等拿到UI的切版再比對設定。</li>
+                      </ul>
+                  </div>
+              </div>
+              <h1 class="GSMis-section-title">空間資料</h1>
+              <form class="needs-validation" novalidate>
+                  <dl class="GSMis-form-horizontal units-4">
+                      <dt>
+                          <label for="">01</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">02</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">03</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">04</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="" class=""><span class="text-danger">*</span>申請身份</label>
+                      </dt>
+                      <dd class="span-next">
+                          <div class="form-control GSMis-no-border">
+                              <div class="form-check form-check-inline">
+                                  <input class="form-check-input " type="radio" id="marriedOption1" name="AA"   required>
+                                  <label for="marriedOption1" class="form-check-label">種子專案申請</label>
+                              </div>
+                              <div class="form-check  form-check-inline">
+                                  <input class="form-check-input " type="radio" id="marriedOption2" name="AA"   >
+                                  <label for="marriedOption2" class="form-check-label">共居專案申請</label>
+                              </div>
+                              <div class="form-check  form-check-inline">
+                                  <input class="form-check-input " type="radio" id="marriedOption3" name="AA"   >
+                                  <label for="marriedOption3" class="form-check-label">一般戶申請</label>
+                              </div>
+                          </div>
+                      </dd>
+                      
+                      <dt>
+                          <label for="">01</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">02</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">03</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">04</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">05</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">06</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">07</label>
+                      </dt>
+                      <dd class="span-next">
+                          <input type="text" class="form-control " placeholder=".sapn-next" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+      
+                      <dt>
+                          <label for="">01</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">02</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">03</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">04</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">05</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">06</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">07</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">08</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">09</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">10</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="" class=""><span class="text-danger">*</span>居住期間</label>
+                      </dt>
+                      <dd class="span-next">
+                          <div class="row justify-content-center gx-0 GSMis-duration">
+                              <div class="col-sm">
+                                  <input type="date" class="form-control start" placeholder="" value=""   required>
+                              </div>
+                              <div class="col-auto">
+                                  <div class="input-group-text justify-content-center">至</div>
+                              </div>
+                              <div class="col-sm">
+                                  <input type="date" class="form-control end" placeholder="" value=""   required>
+                              </div>
+                          </div>
+                      </dd>
+      
+                      <dt>
+                          <label for="">01</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">02</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">03</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">04</label>
+                      </dt>
+                      <dd>
+                          <input type="text" class="form-control " placeholder="" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      <dt>
+                          <label for="">05</label>
+                      </dt>
+                      <dd class="span-next">
+                          <input type="text" class="form-control " placeholder=".sapn-next" value=""   >
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                      
+                      <div class="full">
+                          <hr>
+                      </div>
+                      <dt>
+                          <label for="" class="">說明</label>
+                      </dt>
+                      <dd class="wide">
+                          <textarea class="form-control " placeholder=".wide" rows="3" minlength=""   ></textarea>
+                          <div class="invalid-feedback"></div>
+                      </dd>
+                  </dl>            
+              </form>
+      
+      
+          </div>
+      </div>
+  </div>
+  <!-- /.wrapper -->
+  
+
+  <!-- Base -->
+  <script src="assets/vendor/jquery-3.6.0.min.js"></script>
+  <script src="assets/vendor/bootstrap-5.1.3/bootstrap.bundle.min.js"></script>
+  <!-- 自訂 -->
+  <script src="assets/js/common.js"></script>
+</body>
+
+</html>

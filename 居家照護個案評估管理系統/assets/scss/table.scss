@@ -1,0 +1,61 @@
+@import "variables";
+@import "mixin";
+/* 表格RWD */
+.GSMis-table-rwd {
+  th {
+    white-space: nowrap;
+  }
+  // thead
+  thead {
+    display: none;
+    @include lg-width {
+      display: table-header-group;
+    }
+  }
+  // td
+  td {
+    display: grid;
+    grid-template-columns: 8em 1fr;
+    @include lg-width {
+      display: table-cell;
+    }
+
+    &::before {
+      content: attr(data-th);
+
+      padding-right: 1em;
+      margin-right: 1em;
+
+      border-right: 1px solid rgba(#333, 0.3);
+      text-align: right;
+
+      @include lg-width {
+        display: none;
+      }
+    }
+
+    @include lg-width {
+      display: table-cell;
+    }
+  }
+  // tr
+  tbody tr {
+    &:nth-child(odd) {
+      background-color: #efefef;
+      @include lg-width {
+        background-color: inherit;
+      }
+    }
+  }
+}
+
+/* 分頁 */
+.GSMis-pagination {
+  .page-link {
+    color: inherit;
+  }
+  .page-item.active .page-link {
+    background-color: $primary;
+    border-color: $primary;
+  }
+}

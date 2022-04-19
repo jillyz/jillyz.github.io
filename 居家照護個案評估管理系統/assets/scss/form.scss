@@ -1,0 +1,55 @@
+@import "variables";
+@import "mixin";
+
+/* ==表單類 */
+/* 對齊輸入框 */
+.form-control.GSMis-no-border {
+  border-color: transparent;
+  background: transparent;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+}
+
+/* Radio, Checkbox, Switch 色彩 */
+.form-check-input:checked {
+  border-color: $primary;
+  background-color: $primary;
+}
+
+/* 起訖日 */
+.GSMis-duration {
+  $r: 0.25rem;
+  > * + * {
+    margin-top: -1px;
+    @include sm-width {
+      margin-top: 0;
+      margin-left: -1px;
+    }
+  }
+  .start {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    @include sm-width {
+      border-radius: $r 0 0 $r;
+    }
+  }
+  .end {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    @include sm-width {
+      border-radius: 0 $r $r 0;
+    }
+  }
+  .input-group-text {
+    border-radius: 0;
+    border-width: 0px;
+    background-color: transparent;
+
+    @include sm-width {
+      background-color: #e9ecef;
+      border-width: 1px;
+    }
+  }
+}

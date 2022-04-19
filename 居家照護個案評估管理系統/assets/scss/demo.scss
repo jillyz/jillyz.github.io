@@ -1,0 +1,13 @@
+iframe {
+  box-shadow: 0 0 0 1px rgba(black, 0.2);
+  &.desktop {
+    // transform: scale(0.74);
+  }
+  &.mobile {
+    transform: scale(0.85) translateX(200px);
+  }
+}
+
+h3 {
+  text-align: center;
+}

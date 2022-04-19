@@ -1,0 +1,266 @@
+/* 單欄式 2021-10-06 更新 */
+@import "variables";
+@import "mixin";
+
+$header-h: 40px;
+$header-h-desktop: 80px;
+
+body {
+  background-color: #eee;
+}
+
+/* ==Layout 組件 =============================================== */
+/* GSMis-Brand */
+.GSMis-brand {
+  @include brand;
+}
+
+/* 桌機漢堡 */
+.GSMis-hamburger-desktop {
+  display: none;
+}
+
+/* 手機漢堡 */
+.GSMis-hamburger-mobile {
+  @include hamburger-mobile;
+}
+
+/* 主選單 */
+.GSMis-menu {
+  // Init
+  @include reset;
+  padding-top: 40px;
+  // 1024
+  @include lg-width {
+    // Reset
+    padding-top: unset;
+    // Init
+    display: flex;
+    align-items: center;
+  }
+
+  // a
+  a {
+    display: block;
+    padding: 8px 16px;
+
+    color: white !important;
+    text-decoration: none !important;
+    white-space: nowrap;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  li.current a {
+    color: #d3e100 !important;
+  }
+
+  .children {
+    display: flex;
+    align-items: center;
+
+    i {
+      margin-left: auto;
+      transform: rotate(0deg);
+      transition: all 0.2s;
+
+      @include lg-width {
+        margin-left: 0.8em;
+      }
+    }
+
+    &.childrenOpen {
+      i {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  li.active {
+    > .children {
+      color: #d3e100 !important;
+      // background-color: rgba(#2d85b5, 0.1);
+    }
+  }
+
+  // li
+  li.active {
+    background-color: rgba(black, 0.1);
+  }
+  > li {
+    border-bottom: 1px solid rgba(white, 0.2);
+    @include lg-width {
+      position: relative;
+
+      & + li {
+        margin-left: 1em;
+      }
+    }
+  }
+
+  // ul
+  a.children + ul {
+    display: none;
+  }
+  li.active > ul {
+    display: block;
+    @include lg-width {
+      display: none;
+    }
+  }
+  .level-2 {
+    @include reset;
+    @include lg-width {
+      position: absolute;
+      min-width: 13em;
+      background-color: #2e2e2e;
+    }
+    a {
+      padding-left: 8px * 4;
+      color: white !important;
+
+      @include lg-width {
+        // padding-left: 0em;
+        padding-left: 16px;
+      }
+      &::before {
+        content: "● ";
+        display: inline-block;
+        flex-shrink: 0;
+        width: 1.6em;
+        font-size: 10px;
+      }
+
+      i {
+        margin-left: auto;
+      }
+    }
+  }
+  .level-3 {
+    @include reset;
+    a {
+      padding-left: 8px * 6;
+      @include lg-width {
+        padding-left: 8px * 2;
+      }
+      &::before {
+        content: "";
+      }
+    }
+  }
+}
+
+/* GSMis-help-nav 非主選單區的輔助選項 */
+.GSMis-help-nav {
+  @include help-nav;
+}
+
+/* GSMis-help-user 使用者狀態資訊 */
+.GSMis-help-user {
+  @include help-user;
+}
+
+/* .GSMis-help 輔助資訊 */
+.GSMis-help {
+  @include help;
+  @include xxl-width {
+    right: calc((100vw - 1400px) / 2);
+  }
+}
+
+/* #GSMis-collapse-menu 手機版選單開闔容器 */
+#GSMis-collapse-menu {
+  @include collapse-menu;
+}
+
+/* Go to top */
+.GSMis-go-top {
+  @include go-top;
+}
+
+/* ==base-layout 大區塊 ====================================================== */
+/* GSMis-nav 導覽列 */
+.GSMis-nav {
+  // ==內層
+  &-inner {
+    position: relative;
+    @include inner-center;
+  }
+  // ==外層
+  &-wrap {
+    @include nav-wrap;
+    // 1024
+    @include lg-width {
+      top: $header-h-desktop;
+      max-height: unset;
+      overflow-y: unset;
+    }
+  }
+}
+
+#GSMis-collapse-menu > .inner {
+}
+
+/* GSMis-breadcrumb 麵包屑 */
+.GSMis-breadcrumb {
+  @include breadcrumb;
+  // ==內層
+  &-inner {
+    @include inner-center;
+  }
+  // ==外層
+  &-wrap {
+    background-color: #ccc;
+  }
+}
+
+/* GSMis-Header 刊頭 */
+.GSMis-header {
+  @include header;
+
+  // ==內層
+  &-inner {
+    @include inner-center;
+  }
+  // ==外層
+  &-wrap {
+    @include header-wrap;
+  }
+}
+
+/* GSMis-Footer 註腳 */
+.GSMis-footer {
+  @include footer;
+  // ==內層
+  &-inner {
+    @include inner-center;
+  }
+  // ==外層
+  &-wrap {
+    background-color: #ccc;
+  }
+}
+
+/* GSMis-Main 主內容區 */
+.GSMis-main {
+  // ==內層
+  &-inner {
+    @include inner-center;
+    @include main-inner;
+
+    flex-grow: 1;
+    width: 100%;
+    background-color: white;
+  }
+  // ==外層
+  &-wrap {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* GSMis-Wrapper 最外層 */
+.GSMis-wrapper {
+  @include wrapper;
+}
