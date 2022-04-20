@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>居家照護個案評估管理系統</title>
+    <title>台中市新冠肺炎暨居家照護管理系統</title>
     <!-- Base -->
     <link rel="stylesheet" href="assets/vendor/bootstrap-5.1.3/bootstrap.min.css">
     <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.0.0-beta/all.min.css">
@@ -28,8 +28,8 @@
                         <!-- GSMis-brand -->
                         <h1 class="GSMis-brand">
                             <a href="index.html">
-                                <img class="GSMis-brand-img" src="assets/img/taichung-logo.png">
-                                <span class="GSMis-brand-text">居家照護個案評估管理系統</span>
+                                <!-- <img class="GSMis-brand-img" src="assets/img/taichung-logo.png"> -->
+                                <span class="GSMis-brand-text">台中市新冠肺炎暨居家照護管理系統</span>
                             </a>
                         </h1>
                     </div>
@@ -109,10 +109,10 @@
 
                 <!-- 預設隱藏，上傳後才顯示 -->
                 <div>
-                    <h2 class="GSMis-section-title">已上傳資料 (共 99 筆)</h2>
+                    <h2 class="GSMis-section-title">資料匯入結果 (上傳共99筆，成功匯入23筆)</h2>
                     <!-- .table-responsive 表格 -->
                     <div class="table-responsive">
-                        <table class="table GSMis-table-rwd">
+                        <table class="table table-hover GSMis-table-rwd ">
                             <thead>
                                 <tr>
                                     <th>編號</th>
@@ -125,13 +125,14 @@
                                     <th>診斷年齡</th>
                                     <th>身分證字號</th>
                                     <th>居住鄉鎮／居家地址</th>
-                                    <th class="tel">住家電話</th>
-                                    <th class="tel">公司電話</th>
+                                    <th class="tel">電話</th>
+                                    <th>匯入結果</th>
+                                    <th>編輯</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td data-th="編號"></td>
+                                    <td data-th="編號">12345678901234</td>
                                     <td data-th="案號">案37079</td>
                                     <td data-th="個案研判日期">111/04/18 15:41:23</td>
                                     <td data-th="傳染病報告單電腦編號">1110300376077</td>
@@ -141,8 +142,35 @@
                                     <td data-th="診斷年齡(足歲)">33</td>
                                     <td data-th="身分證字號">A123456789</td>
                                     <td data-th="居住鄉鎮">西區／台中市西區精誠29街23號6樓之2</td>
-                                    <td data-th="住家電話" class="tel">04-23109988</td>
-                                    <td data-th="公司電話" class="tel">04-23269900</td>
+                                    <td data-th="電話" class="tel">04-23109988</td>
+                                    <td data-th="匯入結果"><i class="fa-solid fa-circle-check text-success"></i></td>
+                                    <td>
+                                        <button type="button" class="btn btn-light"><i class="fa-solid fa-pen"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td data-th="編號">12345678901234</td>
+                                    <td data-th="案號">案37079</td>
+                                    <td data-th="個案研判日期">111/04/18 15:41:23</td>
+                                    <td data-th="傳染病報告單電腦編號">1110300376077</td>
+                                    <td data-th="姓名">陳思佑</td>
+                                    <td data-th="性別">女</td>
+                                    <td data-th="出生年月日">80/04/19</td>
+                                    <td data-th="診斷年齡(足歲)">33</td>
+                                    <td data-th="身分證字號">A123456789</td>
+                                    <td data-th="居住鄉鎮">西區／台中市西區精誠29街23號6樓之2</td>
+                                    <td data-th="電話" class="tel">04-23109988</td>
+                                    <td data-th="匯入結果">
+                                        <span class="text-danger">
+                                            <i class="fa-solid fa-circle-exclamation"></i>
+                                            個案研判日期格式錯誤<br>
+                                            身分證字號格式錯誤<br>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-light"><i class="fa-solid fa-pen"></i></button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -234,7 +262,7 @@
                         </dt>
                             <dd>
                                 <div class="form-control GSMis-no-border">
-                                    住家：04-23109988<br> 公司：04-23269900
+                                    04-23109988
                                 </div>
                             </dd>
                             <dt>
