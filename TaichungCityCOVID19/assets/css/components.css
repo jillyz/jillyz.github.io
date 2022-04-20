@@ -146,6 +146,11 @@
     }
 }
 
+.tel {
+    /* max-width: 8em; */
+    white-space: normal !important;
+}
+
 .form-input-note {
     display: inline;
     vertical-align: middle;

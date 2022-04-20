@@ -99,7 +99,7 @@
                     <div class="GSMis-search-area p-4 bg-light rounded border mb-5">
                         <!-- 表單組合 -->
                         <div class="row">
-                            <div class="col-12 col-lg-8 col-xl-3">
+                            <div class="col-12 col-lg-9 col-xl-4">
                                 <div class="mb-3">
                                     <label for="" class="form-label">個案研判日期</label>
                                     <div class="row justify-content-center gx-0 GSMis-duration">
@@ -115,19 +115,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-4 col-xl-3">
+                            <div class="col-md-6 col-lg-3 col-xl-2">
                                 <div class="mb-3">
                                     <label for="" class="form-label">姓名</label>
                                     <input type="text" name="" id="" class="form-control" placeholder="請輸入關鍵字">
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-4 col-xl-3">
+                            <div class="col-md-6 col-lg-3 col-xl-2">
                                 <div class="mb-3">
                                     <label for="" class="form-label">案號</label>
                                     <input type="text" name="" id="" class="form-control" placeholder="請輸入關鍵字">
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-4 col-xl-3">
+                            <div class="col-md-6 col-lg-5 col-xl-4">
                                 <div class="mb-3">
                                     <label for="" class="form-label">醫院</label>
                                     <select name="" id="" class="form-select">
@@ -137,6 +137,8 @@
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6 col-lg-4 col-xl-2">
                                 <div class="mb-3">
                                     <label for="" class="form-label">居住鄉鎮</label>
@@ -166,34 +168,34 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4 col-xl-2">
-                                <label for="" class="form-label">稽催名單</label>
+                                <label for="" class="form-label">稽催</label>
                                 <div class="form-control GSMis-no-border">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input " type="checkbox" value="" id="chkOver2hrs">
                                         <label class="form-check-label" for="chkOver2hrs">
-                                            入案超過兩小時未處理
+                                            超過2小時未處理
                                         </label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-4 col-xl-4">
+                            <div class="col-md-6 col-lg-4 col-xl-6">
                                 <div class="mb-3">
                                     <label for="" class="form-label">收案評估結果</label>
                                     <div class="form-control GSMis-no-border">
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input " type="checkbox" value="" id="inlineCheckbox1">
-                                            <label class="form-check-label" for="inlineCheckbox1">
-                                                不收案
-                                                <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="通知安置於加強版集中檢疫所／防疫旅館"></i>
-                                            </label>
+                                            <label class="form-check-label" for="inlineCheckbox1">收案，健康照護</label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input " type="checkbox" value="" id="inlineCheckbox2">
-                                            <label class="form-check-label" for="inlineCheckbox2">收案，健康照護</label>
+                                            <label class="form-check-label" for="inlineCheckbox2">收案，生活關懷</label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input " type="checkbox" value="" id="inlineCheckbox3">
-                                            <label class="form-check-label" for="inlineCheckbox3">收案，生活關懷</label>
+                                            <label class="form-check-label" for="inlineCheckbox3">
+                                                不收案
+                                                <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="通知安置於加強版集中檢疫所／防疫旅館"></i>
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
@@ -229,6 +231,7 @@
                                     <th>個案研判日期</th>
                                     <th>姓名</th>
                                     <th>診斷年齡(足歲)</th>
+                                    <th>居住鄉鎮</th>
                                     <th>健康評估</th>
                                     <th>環境評估</th>
                                     <th>收案評估</th>
@@ -246,11 +249,14 @@
                                     <td data-th="個案研判日期">111/04/18</td>
                                     <td data-th="姓名">陳思佑</td>
                                     <td data-th="診斷年齡(足歲)">33</td>
+                                    <td data-th="居住鄉鎮">西區</td>
                                     <td data-th="健康評估">適合居家照護</td>
                                     <td data-th="環境評估">
                                         符合
                                     </td>
-                                    <td data-th="收案評估">不收案</td>
+                                    <td data-th="收案評估">
+                                        <span class="text-danger">不收案</span>
+                                    </td>
                                     <td data-th="檢視">
                                         <a class="btn w-100 btn-secondary btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">檢視</a>
                                     </td>
@@ -265,6 +271,7 @@
                                     <td data-th="個案研判日期">111/04/18</td>
                                     <td data-th="姓名">陳思佑</td>
                                     <td data-th="診斷年齡(足歲)">33</td>
+                                    <td data-th="居住鄉鎮">西區</td>
                                     <td data-th="健康評估">
                                         其他 <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="ＯＯＯＯＯＯＯ"></i>
                                     </td>
@@ -427,7 +434,7 @@
                             <label for="" class="">案號</label>
                         </dt>
                             <dd>
-                                <div class="form-control GSMis-no-border">案37079</div>
+                                <div class="form-control GSMis-no-border">37079</div>
                             </dd>
                             <dt>
                             <label for="" class="">法傳編號</label>
@@ -518,7 +525,8 @@
                                             無症狀，採檢日：111/04/18
                                         </div>
                                         <div class="form-control GSMis-no-border">
-                                            咳嗽｜喉嚨癢、痛｜鼻塞、流鼻水｜其他：ＯＯＯＯＯ
+                                            有症狀，發病日：111/04/18<br> 發燒(額溫37.5℃或耳溫38℃以上)，開始日期：111/04/18
+                                            <br> 咳嗽｜喉嚨癢、痛｜鼻塞、流鼻水｜其他（ＯＯＯＯ）
                                         </div>
                                     </dd>
                                     <dt>
@@ -526,14 +534,19 @@
                                 </dt>
                                     <dd class="wide">
                                         <div class="form-control GSMis-no-border">
-                                            糖尿病｜代謝性疾病｜仍在治療中或未治癒之癌症｜免疫低下狀態，說明：ＯＯＯＯ｜其他，說明：ＯＯＯＯ
+                                            糖尿病｜代謝性疾病｜仍在治療中或未治癒之癌症｜免疫低下狀態（ＯＯＯＯ）｜其他（ＯＯＯＯ）
                                         </div>
                                     </dd>
                                     <dt>
                                     <label for="" class="">上傳附件</label>
                                 </dt>
                                     <dd class="wide">
-                                        <img src="assets/img/demo-at-home.jpeg" alt="" class="upload-image">
+                                        <div class="form-control GSMis-no-border">
+                                            <a href="assets/img/demo-at-home.jpeg" target="_blank">
+                                                <img src="assets/img/demo-at-home.jpeg" alt="" class="upload-image">
+                                            </a>
+                                            <a href="xxx.pdf" target="_blank">XXXX.pdf</a>
+                                        </div>
                                     </dd>
                                 </dl>
                             </div>
@@ -557,19 +570,37 @@
                                         <label for="" class="">居家環境狀況</label>
                                     </dt>
                                     <dd class="wide">
+                                        <!-- 若為境外 -->
                                         <div class="form-control GSMis-no-border">
-                                            境外移入個案：<br> 1人1戶
+                                            境外移入個案：<br>
+                                            <!-- 若值為1 -->
+                                            1人1戶<br>
+                                            <!-- 若值為2 -->
+                                            例外情形：同住有多名確診者或有必要之照護或被照護需求時，得多人1戶<br>
                                         </div>
+                                        <!-- 若為本土 -->
                                         <div class="form-control GSMis-no-border">
-                                            本土個案或完成居家檢疫返家後確診個案：<br> 確診者：1人1室（單獨房間未含衛浴，每次浴廁使用後均可適當清消）
-                                            <br> 未確診者：同住1戶未確診者不超過4人
+                                            本土個案或完成居家檢疫返家後確診個案：<br>
+                                            <!-- 若值含1 -->
+                                            確診者：1人1室（單獨房間含衛浴）<br>
+                                            <!-- 若值含2 -->
+                                            確診者：1人1室（單獨房間未含衛浴，每次浴廁使用後均可適當清消）<br>
+                                            <!-- 若值含3 -->
+                                            確診者：同為確診者多人1室<br>
+                                            <!-- 若值含4 -->
+                                            未確診者：同住1戶未確診者不超過4人<br>
                                         </div>
                                     </dd>
                                     <dt>
                                         <label for="" class="">上傳附件</label>
                                     </dt>
                                     <dd class="wide">
-                                        <img src="assets/img/demo-at-home.jpeg" alt="" class="upload-image">
+                                        <div class="form-control GSMis-no-border">
+                                            <a href="assets/img/demo-at-home.jpeg" target="_blank">
+                                                <img src="assets/img/demo-at-home.jpeg" alt="" class="upload-image">
+                                            </a>
+                                            <a href="xxx.pdf" target="_blank">XXXX.pdf</a>
+                                        </div>
                                     </dd>
                                 </dl>
                             </div>

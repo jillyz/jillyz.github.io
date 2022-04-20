@@ -10,11 +10,6 @@
     display: none;
 }
 
-.tel {
-    /* max-width: 8em; */
-    white-space: normal !important;
-}
-
 @media all and (min-width: 992px) {
     .GSMis-table-rwd thead {
         display: table-header-group;
