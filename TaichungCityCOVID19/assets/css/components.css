@@ -147,8 +147,13 @@
 }
 
 .tel {
-    /* max-width: 8em; */
-    white-space: normal !important;
+    min-width: 8em;
+    max-width: 24em;
+    white-space: normal;
+}
+
+.name {
+    min-width: 5em;
 }
 
 .form-input-note {
@@ -190,7 +195,7 @@
 }
 
 .btn-evaluate {
-    min-width: 4em;
+    min-width: 6em;
 }
 
 .upload-image {
@@ -236,7 +241,11 @@
 }
 
 .table-hover tr:hover td {
-    background-color: rgb(255, 255, 224) !important;
+    background-color: rgb(255, 255, 224);
+}
+
+.table-data-error td {
+    background-color: rgb(255, 237, 237) !important;
 }
 
 

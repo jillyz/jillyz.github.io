@@ -120,19 +120,19 @@
                                     <th>案號</th>
                                     <th>個案研判日期</th>
                                     <th>傳染病報告單<br>電腦編號</th>
-                                    <th>姓名</th>
+                                    <th class="name">姓名</th>
                                     <th>性別</th>
                                     <th>出生年月日</th>
-                                    <th>診斷年齡</th>
+                                    <th>診斷<br>年齡</th>
                                     <th>身分證字號</th>
                                     <th>居住鄉鎮／居家地址</th>
                                     <th class="tel">電話</th>
                                     <th>匯入結果</th>
-                                    <th>編輯</th>
+                                    <th>修正</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <tr class="table-data-error" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <td data-th="入案時間">111/04/20 13:12:20</td>
                                     <td data-th="入案編號">12345678901234</td>
                                     <td data-th="案號">37079</td>
@@ -146,14 +146,38 @@
                                     <td data-th="居住鄉鎮">西區／台中市西區精誠29街23號6樓之2</td>
                                     <td data-th="電話" class="tel">04-23109988</td>
                                     <td data-th="匯入結果">
-                                        <span class="text-danger">
-                                            <i class="fa-solid fa-circle-exclamation"></i>
-                                            個案研判日期格式錯誤<br>
-                                            身分證字號格式錯誤<br>
-                                        </span>
+                                        <strong class="text-danger">
+                                            <!-- <i class="fa-solid fa-circle-exclamation"></i> -->
+                                            錯誤，請修正
+                                        </strong>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="table-data-error" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <td data-th="入案時間">111/04/20 13:12:20</td>
+                                    <td data-th="入案編號">12345678901234</td>
+                                    <td data-th="案號">37079</td>
+                                    <td data-th="個案研判日期">111/04/18</td>
+                                    <td data-th="傳染病報告單電腦編號">1110300376077</td>
+                                    <td data-th="姓名">陳思佑</td>
+                                    <td data-th="性別">女</td>
+                                    <td data-th="出生年月日">80/04/19</td>
+                                    <td data-th="診斷年齡(足歲)">33</td>
+                                    <td data-th="身分證字號">A123456789</td>
+                                    <td data-th="居住鄉鎮">西區／台中市西區精誠29街23號6樓之2</td>
+                                    <td data-th="電話" class="tel">04-23109988</td>
+                                    <td data-th="匯入結果">
+                                        <strong class="text-danger">
+                                            <!-- <i class="fa-solid fa-circle-exclamation"></i> -->
+                                            錯誤，請修正
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             <i class="fa-solid fa-pen"></i>
                                         </button>
                                     </td>
@@ -173,7 +197,27 @@
                                     <td data-th="電話" class="tel">04-23109988</td>
                                     <td data-th="匯入結果"><i class="fa-solid fa-circle-check text-success"></i></td>
                                     <td>
-                                        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <td data-th="入案時間">111/04/20 13:12:20</td>
+                                    <td data-th="入案編號">12345678901234</td>
+                                    <td data-th="案號">37079</td>
+                                    <td data-th="個案研判日期">111/04/18</td>
+                                    <td data-th="傳染病報告單電腦編號">1110300376077</td>
+                                    <td data-th="姓名">陳思佑</td>
+                                    <td data-th="性別">女</td>
+                                    <td data-th="出生年月日">80/04/19</td>
+                                    <td data-th="診斷年齡(足歲)">33</td>
+                                    <td data-th="身分證字號">A123456789</td>
+                                    <td data-th="居住鄉鎮">西區／台中市西區精誠29街23號6樓之2</td>
+                                    <td data-th="電話" class="tel">04-23109988</td>
+                                    <td data-th="匯入結果"><i class="fa-solid fa-circle-check text-success"></i></td>
+                                    <td>
+                                        <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             <i class="fa-solid fa-pen"></i>
                                         </button>
                                     </td>
@@ -226,6 +270,11 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                        <code>
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            個案研判日期格式錯誤、身分證字號格式錯誤
+                        </code>
+                        <hr>
                         <div class="row">
                             <div class="col-md">
                                 <div class="mb-3">
@@ -239,18 +288,10 @@
                                     <input type="date" name="" id="" class="form-control" value="2022-12-21">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md">
                                 <div class="mb-3">
                                     <label for="" class="">法傳編號</label>
-                                    <input type="text" class="form-control" value="ＯＯＯＯＯＯＯ">
-                                </div>
-                            </div>
-                            <div class="col-md">
-                                <div class="mb-3">
-                                    <label for="" class="">身分證字號</label>
-                                    <input type="text" class="form-control" value="A123456789">
+                                    <input type="text" class="form-control" value="1110300376077">
                                 </div>
                             </div>
                         </div>
@@ -271,6 +312,12 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="col-md">
+                                <div class="mb-3">
+                                    <label for="" class="">身分證字號</label>
+                                    <input type="text" class="form-control" value="A123456789">
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md">
@@ -285,14 +332,14 @@
                                     <input type="number" min="0" class="form-control" value="33" placeholder="足歲">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md">
                                 <div class="mb-3">
                                     <label for="" class="">電話</label>
                                     <input type="text" class="form-control" value="04-23109988">
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md">
                                 <div class="mb-3">
                                     <label for="" class="">居住鄉鎮</label>
@@ -305,9 +352,7 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md">
+                            <div class="col-md-8">
                                 <div class="mb-3">
                                     <label for="" class="">居家地址</label>
                                     <input type="text" class="form-control" placeholder="請輸入居家照護地址(完整地址)" value="台中市西區精誠29街23號6樓之2">
