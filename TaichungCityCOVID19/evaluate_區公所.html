@@ -58,7 +58,7 @@
                     <!-- GSMis-menu 主選單 -->
                     <ul class="GSMis-menu">
                         <li class="active"><a href="#"><i class="fa-solid fa-file-lines"></i> 評估填報</a></li>
-                        <li><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估結果查詢</a></li>
+                        <li><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估查詢</a></li>
                     </ul>
                     <!-- /.GSMis-menu -->
                     <!-- GSMis-help 輔助資訊 -->
@@ -95,10 +95,18 @@
                             全部
                         </label>
                     </div>
+
                     <div class="form-check form-check-inline">
                         <input class="form-check-input " type="radio" id="flexRadioDefault2" name="flexRadioDefault" checked>
                         <label class="form-check-label" for="flexRadioDefault2">
                             待評估
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="radio" id="flexRadioDefault4" name="flexRadioDefault">
+                        <label class="form-check-label" for="flexRadioDefault4">
+                            <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+                            超過2小時未處理
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -112,78 +120,54 @@
 
                 <!-- .table-responsive 表格 -->
                 <div class="table-responsive">
-                    <table class="table table-hover GSMis-table-rwd">
+                    <table class="table table-hover striped GSMis-table-rwd">
                         <thead>
                             <tr>
                                 <th></th>
                                 <th>入案時間</th>
                                 <th>入案編號</th>
                                 <th>案號</th>
-                                <th>個案研判日期時間</th>
-                                <th>傳染病報告單電腦編號</th>
+                                <th>個案研判日期</th>
                                 <th>姓名</th>
-                                <!-- <th>性別</th> -->
-                                <th>出生年月日</th>
-                                <!-- <th>診斷年齡</th>
-                                <th>身分證字號</th>
-                                <th>居住鄉鎮／居家地址</th>
-                                <th class="tel">電話</th> -->
+                                <th>診斷年齡(足歲)</th>
                                 <th>環境評估</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr class="table-active" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                                 <td data-th="超過2小時未處理">
                                     <i class="fa-solid fa-triangle-exclamation text-danger" data-bs-toggle="tooltip" data-bs-placement="right" title="超過2小時未處理"></i>
                                 </td>
-                                <td>111/04/20 13:12:20</td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="案號">案37079</td>
-                                <td data-th="個案研判日期">111/04/18 15:41:23</td>
-                                <td data-th="傳染病報告單電腦編號">1110300376077</td>
+                                <td data-th="案號">37079</td>
+                                <td data-th="個案研判日期">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
-                                <!-- <td data-th="性別">女</td> -->
-                                <td data-th="出生年月日">80/04/19</td>
-                                <!-- <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="身分證字號">A123456789</td>
-                                <td data-th="居住鄉鎮">西區／台中市西區精誠29街23號6樓之2</td>
-                                <td data-th="電話" class="tel">04-23269900</td> -->
+                                <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="環境評估">
                                     <a class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">填報</a>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                                 <td data-th="超過2小時未處理"></td>
-                                <td>111/04/20 13:12:20</td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="案號">案37079</td>
-                                <td data-th="個案研判日期">111/04/18 15:41:23</td>
-                                <td data-th="傳染病報告單電腦編號">1110300376077</td>
+                                <td data-th="案號">37079</td>
+                                <td data-th="個案研判日期">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
-                                <!-- <td data-th="性別">女</td> -->
-                                <td data-th="出生年月日">80/04/19</td>
-                                <!-- <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="身分證字號">A123456789</td>
-                                <td data-th="居住鄉鎮">西區／台中市西區精誠29街23號6樓之2</td>
-                                <td data-th="電話" class="tel">04-23269900</td> -->
+                                <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="環境評估">
-                                    <a class="text-success" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">符合</a>
+                                    <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">符合</a>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                                 <td data-th="超過2小時未處理"></td>
-                                <td>111/04/20 13:12:20</td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="案號">案37079</td>
-                                <td data-th="個案研判日期">111/04/18 15:41:23</td>
-                                <td data-th="傳染病報告單電腦編號">1110300376077</td>
+                                <td data-th="案號">37079</td>
+                                <td data-th="個案研判日期">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
-                                <!-- <td data-th="性別">女</td> -->
-                                <td data-th="出生年月日">80/04/19</td>
-                                <!-- <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="身分證字號">A123456789</td>
-                                <td data-th="居住鄉鎮">西區／台中市西區精誠29街23號6樓之2</td>
-                                <td data-th="電話" class="tel">04-23269900</td> -->
+                                <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="環境評估">
                                     <a class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">不符合</a>
                                 </td>
@@ -215,7 +199,7 @@
         <footer class="GSMis-footer-wrap ">
             <div class="GSMis-footer-inner ">
                 <div class="GSMis-footer ">
-                    Copyright © 逢甲大學地理資訊系統研究中心 <span class="d-block d-md-inline ">GIS RESEARCH CENTER, FCU</span>
+                    Copyright © 逢甲大學地理資訊系統研究中心、天思數位科技股份有限公司
                 </div>
             </div>
         </footer>

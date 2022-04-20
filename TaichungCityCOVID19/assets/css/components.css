@@ -196,8 +196,42 @@
     padding-bottom: .75em;
 }
 
+.toolbox {
+    margin-left: 1em;
+}
+
+.years-old {
+    width: 5em;
+}
+
+.modal .form-control {
+    margin-top: 5px;
+}
+
+.modal label {
+    color: #4d6c98;
+    font-weight: bold;
+}
+
+.form-control-inline {
+    width: auto;
+    display: inline;
+}
+
+.table .small {
+    font-size: 9em;
+}
+
+.table.striped>tbody>tr:nth-of-type(odd)>* {
+    background-color: #fafafa;
+}
+
+.table-active td {
+    background-color: #ffc !important;
+}
+
 .table-hover tr:hover td {
-    background-color: rgb(255, 255, 240);
+    background-color: rgb(255, 255, 224) !important;
 }
 
 

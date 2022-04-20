@@ -58,7 +58,7 @@
                     <!-- GSMis-menu 主選單 -->
                     <ul class="GSMis-menu">
                         <li class="active"><a href="#"><i class="fa-solid fa-file-lines"></i> 評估填報</a></li>
-                        <li><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估結果查詢</a></li>
+                        <li><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估查詢</a></li>
                     </ul>
                     <!-- /.GSMis-menu -->
                     <!-- GSMis-help 輔助資訊 -->
@@ -87,55 +87,72 @@
         <main class="GSMis-main-wrap">
             <div class="GSMis-main-inner">
 
-                <h2 class="GSMis-section-title">收案評估 - 待評估 (共 99 筆)</h2>
+                <h2 class="GSMis-section-title">收案評估</h2>
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="radio" id="flexRadioDefault1" name="flexRadioDefault">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            全部
+                        </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="radio" id="flexRadioDefault2" name="flexRadioDefault" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            待評估
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="radio" id="flexRadioDefault4" name="flexRadioDefault">
+                        <label class="form-check-label" for="flexRadioDefault4">
+                            <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+                            超過2小時未處理
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="radio" id="flexRadioDefault3" name="flexRadioDefault">
+                        <label class="form-check-label" for="flexRadioDefault3">
+                            已評估
+                        </label>
+                    </div>
+                    - 共 99 筆
+                </div>
 
                 <!-- .table-responsive 表格 -->
                 <div class="table-responsive">
-                    <table class="table table-hover GSMis-table-rwd">
+                    <table class="table table-hover striped GSMis-table-rwd">
                         <thead>
                             <tr>
                                 <th></th>
                                 <th>入案時間</th>
                                 <th>入案編號</th>
                                 <th>案號</th>
-                                <th>個案研判日期時間</th>
-                                <th>傳染病報告單<br>電腦編號</th>
+                                <th>個案研判日期</th>
                                 <th>姓名</th>
-                                <!-- <th>性別</th> -->
-                                <th>出生年月日</th>
-                                <!-- <th>診斷年齡</th>
-                                <th>身分證字號</th>
-                                <th>居住鄉鎮／居家地址</th>
-                                <th class="tel">電話</th> -->
+                                <th>診斷年齡(足歲)</th>
                                 <th>健康評估</th>
                                 <th>環境評估</th>
                                 <th>收案評估</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                                 <td data-th="超過2小時未處理">
                                     <i class="fa-solid fa-triangle-exclamation text-danger" data-bs-toggle="tooltip" data-bs-placement="right" title="超過2小時未處理"></i>
                                 </td>
-                                <td>111/04/20 13:12:20</td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="案號">案37079</td>
-                                <td data-th="個案研判日期">111/04/18 15:41:23</td>
-                                <td data-th="傳染病報告單電腦編號">1110300376077</td>
+                                <td data-th="案號">37079</td>
+                                <td data-th="個案研判日期">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
-                                <!-- <td data-th="性別">女</td> -->
-                                <td data-th="出生年月日">80/04/19</td>
-                                <!-- <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="身分證字號">A123456789</td>
-                                <td data-th="居住鄉鎮">西區／台中市西區精誠29街23號6樓之2</td>
-                                <td data-th="電話" class="tel">04-23269900</td> -->
+                                <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="健康評估">適合居家照護</td>
                                 <td data-th="環境評估">
-                                    <span class="text-success">符合</span>
+                                    符合
                                     <span class="text-danger">不符合</span>
                                 </td>
                                 <td data-th="收案評估">
-                                    <a class="btn w-100 btn-primary btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">評估</a>
+                                    <a class="btn w-100 btn-primary btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">填報</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -165,7 +182,7 @@
         <footer class="GSMis-footer-wrap ">
             <div class="GSMis-footer-inner ">
                 <div class="GSMis-footer ">
-                    Copyright © 逢甲大學地理資訊系統研究中心 <span class="d-block d-md-inline ">GIS RESEARCH CENTER, FCU</span>
+                    Copyright © 逢甲大學地理資訊系統研究中心、天思數位科技股份有限公司
                 </div>
             </div>
         </footer>
@@ -344,14 +361,17 @@
                                 <label for="" class="">健康評估結果</label>
                             </dt>
                             <dd>
-                                <div class="form-control GSMis-no-border">健康狀況適合採居家照護</div>
+                                <div class="form-control GSMis-no-border">
+                                    健康狀況適合採居家照護
+                                    <span class="text-danger">健康狀況不適合採居家照護</span>
+                                </div>
                             </dd>
                             <dt>
                                 <label for="" class="">環境評估結果</label>
                             </dt>
                             <dd>
                                 <div class="form-control GSMis-no-border">
-                                    <span class="text-success">符合</span>
+                                    符合
                                     <span class="text-danger">不符合</span>
                                 </div>
                             </dd>
@@ -359,15 +379,13 @@
                                 <label for="" class="">健康評估時間/人員</label>
                             </dt>
                             <dd>
-                                <div class="form-control GSMis-no-border">111/04/20 14:30</div>
-                                <img src="assets/img/demo-sinature.png" class="signature-show">
+                                <div class="form-control GSMis-no-border">111/04/20 14:30，陳某某</div>
                             </dd>
                             <dt>
                                 <label for="" class="">環境評估時間/人員</label>
                             </dt>
                             <dd>
-                                <div class="form-control GSMis-no-border">111/04/20 14:30</div>
-                                <img src="assets/img/demo-sinature.png" class="signature-show">
+                                <div class="form-control GSMis-no-border">111/04/20 14:30，陳某某</div>
                             </dd>
                             <dt>
                                 <label for="" class=""><span class="text-danger">*</span>收案評估結果</label>
