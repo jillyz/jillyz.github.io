@@ -146,17 +146,15 @@
     }
 }
 
-.tel {
-    min-width: 8em;
-    max-width: 24em;
-    white-space: normal;
-}
-
-.name {
-    min-width: 5em;
-}
-
 @media all and (min-width: 992px) {
+    .tel {
+        min-width: 8em;
+        max-width: 24em;
+        white-space: normal;
+    }
+    .name {
+        min-width: 5em;
+    }
     .evaluate {
         max-width: 8em !important;
         white-space: normal;
@@ -317,6 +315,7 @@ code strong {
     list-style: none;
 }
 
+i.text-success,
 i.is-late {
     font-size: 24px;
 }
