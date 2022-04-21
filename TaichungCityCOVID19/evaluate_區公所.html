@@ -279,7 +279,7 @@
                         <h1 class="GSMis-section-title">居家環境狀況</h1>
                         <dl class="GSMis-form-horizontal units-2">
                             <dt>
-                                家戶概況
+                                <span class="text-danger">*</span>家戶概況
                             </dt>
                             <dd class="wide">
                                 <div class="form-control GSMis-no-border">
@@ -290,10 +290,11 @@
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input " type="radio" id="coresident_Y" name="coresident">
-                                        <label for="coresident_Y" class="form-check-label">有同住者：</label>
+                                        <label for="coresident_Y" class="form-check-label">有同住者</label>
+                                        <!-- 預設隱藏，勾選有同住者才出現 -->
                                         <div class="field-narrow">
                                             <div class="form-check form-check-inline">
-                                                <label for="" class="form-check-label">共</label>
+                                                <label for="" class="form-check-label">：共</label>
                                                 <input type="number" max="42" min="0" class="form-control form-input-note input-week" placeholder="" value="" required=""> 人；
                                             </div>
                                             <div class="form-check form-check-inline">
