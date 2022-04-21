@@ -156,9 +156,11 @@
     min-width: 5em;
 }
 
-.evaluate {
-    max-width: 8em !important;
-    white-space: normal;
+@media all and (min-width: 992px) {
+    .evaluate {
+        max-width: 8em !important;
+        white-space: normal;
+    }
 }
 
 td.evaluate {
