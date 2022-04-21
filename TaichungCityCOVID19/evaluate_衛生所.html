@@ -343,7 +343,6 @@
                             </dd>
                         </dl>
 
-
                         <!-- 健康狀況 -->
                         <div class="collapse-box">
                             <div class="mb-3">
@@ -359,28 +358,20 @@
                             <div id="health" class="collapse">
                                 <dl class="GSMis-form-horizontal units-2">
                                     <dt>
-                                <label for="" class="">洗腎</label>
-                            </dt>
+                                        <label for="" class="">血液透析</label>
+                                    </dt>
                                     <dd class="wide">
                                         <div class="form-control GSMis-no-border">否</div>
                                     </dd>
                                     <dt>
-                                <label for="" class="">懷孕</label>
-                            </dt>
+                                        <label for="" class="">懷孕</label>
+                                    </dt>
                                     <dd class="wide">
                                         <div class="form-control GSMis-no-border">是，懷孕8週</div>
                                     </dd>
                                     <dt>
-                                <label for="" class="">同住之未確診者</label>
-                            </dt>
-                                    <dd class="wide">
-                                        <div class="form-control GSMis-no-border">
-                                            是否有年齡≧65歲、懷孕或洗腎： 否
-                                        </div>
-                                    </dd>
-                                    <dt>
-                                <label for="" class="">主訴症狀</label>
-                            </dt>
+                                        <label for="" class="">主訴症狀</label>
+                                    </dt>
                                     <dd class="wide">
                                         <div class="form-control GSMis-no-border">
                                             無症狀，採檢日：111/04/18
@@ -391,18 +382,35 @@
                                         </div>
                                     </dd>
                                     <dt>
-                                    <label for="" class="">主訴疾病史<br>（慢性疾病）</label>
-                                </dt>
+                                        <label for="" class="">警示症狀</label>
+                                    </dt>
                                     <dd class="wide">
+                                        <div class="form-control GSMis-no-border">
+                                            喘、呼吸困難｜ 意識不清｜ 持續胸悶、胸痛｜ 無發燒（體溫
+                                            <38℃）之情形下，心跳>100次/分鐘｜ 皮膚或嘴唇或指甲床發青｜ 無法進食、喝水或服藥｜ 過去24小時無尿或尿量顯著減少
+                                        </div>
+                                    </dd>
+                                    <dt>
+                                        <label for="" class="">主訴疾病史<br>（慢性疾病）</label>
+                                    </dt>
+                                    <dd class="wide">
+                                        <div class="form-control GSMis-no-border">
+                                            無慢性病史
+                                        </div>
                                         <div class="form-control GSMis-no-border">
                                             糖尿病｜代謝性疾病｜仍在治療中或未治癒之癌症｜免疫低下狀態（ＯＯＯＯ）｜其他（ＯＯＯＯ）
                                         </div>
                                     </dd>
                                     <dt>
-                                    <label for="" class="">上傳附件</label>
+                                    <label for="" class="">健康狀況附件</label>
                                 </dt>
                                     <dd class="wide">
-                                        <img src="assets/img/demo-at-home.jpeg" alt="" class="upload-image">
+                                        <div class="form-control GSMis-no-border">
+                                            <a href="assets/img/demo-at-home.jpeg" target="_blank">
+                                                <img src="assets/img/demo-at-home.jpeg" alt="" class="upload-image">
+                                            </a>
+                                            <a href="xxx.pdf" target="_blank">XXXX.pdf</a>
+                                        </div>
                                     </dd>
                                 </dl>
                             </div>
@@ -412,7 +420,7 @@
                         <div class="collapse-box">
                             <div class="mb-3">
                                 <a href="#environment" class="GSMis-collapse-trigger" data-bs-toggle="collapse">
-                                    <h1 class="GSMis-section-title GSMis-collapse-bar mb-0">環境狀況
+                                    <h1 class="GSMis-section-title GSMis-collapse-bar mb-0">居家環境狀況
                                         <div class="ms-auto">
                                             <span class="arrow"> <i class="fas fa-angle-down"></i></span>
                                         </div>
@@ -423,35 +431,69 @@
                             <div id="environment" class="collapse">
                                 <dl class="GSMis-form-horizontal units-2">
                                     <dt>
-                                        <label for="" class="">居家環境狀況</label>
+                                        家戶概況
+                                    </dt>
+                                    <dd class="wide">
+                                        <div class="form-control GSMis-no-border">
+                                            <!-- if 無同住者 -->
+                                            無同住者<br>
+                                            <!-- if 有同住者 -->
+                                            有同住者：共 4 人； 確診個案 1 人、 非確診個案 3 人<br>
+                                            <!-- 房間數 -->
+                                            房間 3 間， 衛浴設備 2 間
+                                        </div>
+                                    </dd>
+                                    <dt>
+                                        <label for="" class="">確診個案居住狀況</label>
                                     </dt>
                                     <dd class="wide">
                                         <!-- 若為境外 -->
                                         <div class="form-control GSMis-no-border">
-                                            境外移入個案：<br>
+                                            第一類：境外移入個案<br>
                                             <!-- 若值為1 -->
                                             1人1戶<br>
                                             <!-- 若值為2 -->
-                                            例外情形：同住有多名確診者或有必要之照護或被照護需求時，得多人1戶<br>
+                                            例外情形：得多人1戶
+                                            <ul class="no-list-style small mt">
+                                                <li>(1) 同住者為確診個案</li>
+                                                <li>(2) 確診個案有必要照護其他同住者之需求</li>
+                                                <li>(3) 確診個案需有同住者提供必要照護需求</li>
+                                            </ul>
                                         </div>
                                         <!-- 若為本土 -->
                                         <div class="form-control GSMis-no-border">
-                                            本土個案或完成居家檢疫返家後確診個案：<br>
-                                            <!-- 若值含1 -->
-                                            確診者：1人1室（單獨房間含衛浴）<br>
-                                            <!-- 若值含2 -->
-                                            確診者：1人1室（單獨房間未含衛浴，每次浴廁使用後均可適當清消）<br>
-                                            <!-- 若值含3 -->
-                                            確診者：同為確診者多人1室<br>
-                                            <!-- 若值含4 -->
-                                            未確診者：同住1戶未確診者不超過4人<br>
+                                            第二類： 1.本土個案。2.境外移入個案，完成居家檢疫後確診
+                                            <ul>
+                                                <li>
+                                                    確診個案：
+                                                    <!-- if 值為 1 -->
+                                                    1人1室 (單獨房間含衛浴設備)
+                                                    <!-- if 值為 2-->
+                                                    1人1室 (單獨房間未含衛浴，每次浴廁使用後均可適當清消)
+                                                    <!-- if 值為 3 -->
+                                                    與其他同住之確診個案多人1室
+                                                </li>
+                                                <li>
+                                                    同住之非確診個案：
+                                                    <!-- if 值為 1 -->
+                                                    無同住之非確診個案
+                                                    <!-- if 值為 2-->
+                                                    同住者均為非確診個案，且未超過4人(在其他房間隔離，可多人1室)
+                                                    <br>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </dd>
                                     <dt>
-                                        <label for="" class="">上傳附件</label>
+                                        <label for="" class="">居家環境附件</label>
                                     </dt>
                                     <dd class="wide">
-                                        <img src="assets/img/demo-at-home.jpeg" alt="" class="upload-image">
+                                        <div class="form-control GSMis-no-border">
+                                            <a href="assets/img/demo-at-home.jpeg" target="_blank">
+                                                <img src="assets/img/demo-at-home.jpeg" alt="" class="upload-image">
+                                            </a>
+                                            <a href="xxx.pdf" target="_blank">XXXX.pdf</a>
+                                        </div>
                                     </dd>
                                 </dl>
                             </div>
@@ -542,7 +584,7 @@
                             </dd>
                         </dl>
 
-
+                        <hr>
                         <div class="row justify-content-center my-4">
                             <div class="col-sm-4 col-lg-3 col-xl-4">
                                 <button type='submit' class="btn w-100 btn-primary">確定送出</button>
