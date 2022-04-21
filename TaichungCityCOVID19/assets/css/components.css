@@ -161,6 +161,10 @@
     white-space: normal;
 }
 
+td.evaluate {
+    font-weight: bold;
+}
+
 .note {
     color: #666;
 }
@@ -254,8 +258,15 @@
     background-color: rgba(255, 255, 116, 1) !important;
 }
 
+.table-is-late td,
 .table-data-error td {
     background-color: rgb(255, 237, 237) !important;
+}
+
+.table-is-late td .btn {
+    background-color: rgb(220, 53, 69);
+    border-color: rgb(220, 53, 69);
+    font-weight: bold;
 }
 
 .table a {

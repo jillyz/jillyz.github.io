@@ -134,7 +134,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="table-active" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            <!-- 超過2小時未處理：
+                                <tr> 加 class="table-is-late" 
+                                第一欄顯示圖示
+                            -->
+                            <tr class="table-is-late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                                 <td data-th="超過2小時未處理">
                                     <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip" data-bs-placement="right" title="超過2小時未處理"></i>
                                 </td>
@@ -144,7 +148,20 @@
                                 <td data-th="個案研判日期">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="環境評估">
+                                <td data-th="環境評估" class="evaluate">
+                                    <a class="btn w-75 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">填報</a>
+                                </td>
+                            </tr>
+                            <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                <td data-th="超過2小時未處理">
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="案號">37079</td>
+                                <td data-th="個案研判日期">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="環境評估" class="evaluate">
                                     <a class="btn w-75 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">填報</a>
                                 </td>
                             </tr>
@@ -156,7 +173,7 @@
                                 <td data-th="個案研判日期">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="環境評估">
+                                <td data-th="環境評估" class="evaluate">
                                     <a class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">符合</a>
                                 </td>
                             </tr>
@@ -168,7 +185,7 @@
                                 <td data-th="個案研判日期">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="環境評估">
+                                <td data-th="環境評估" class="evaluate">
                                     <a class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">不符合</a>
                                 </td>
                             </tr>
