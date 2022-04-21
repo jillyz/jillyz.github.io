@@ -156,6 +156,15 @@
     min-width: 5em;
 }
 
+.evaluate {
+    max-width: 8em !important;
+    white-space: normal;
+}
+
+.note {
+    color: #666;
+}
+
 .form-input-note {
     display: inline;
     vertical-align: middle;
@@ -242,10 +251,15 @@
 
 .table-hover tr:hover td {
     background-color: rgb(255, 255, 224);
+    cursor: pointer;
 }
 
 .table-data-error td {
     background-color: rgb(255, 237, 237) !important;
+}
+
+.table a {
+    text-decoration: none;
 }
 
 

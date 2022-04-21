@@ -130,9 +130,9 @@
                                 <th>個案研判日期</th>
                                 <th class="name">姓名</th>
                                 <th>診斷年齡(足歲)</th>
-                                <th>健康評估</th>
-                                <th>環境評估</th>
-                                <th>收案評估</th>
+                                <th class="evaluate">健康評估</th>
+                                <th class="evaluate">環境評估</th>
+                                <th class="evaluate">收案評估</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -164,13 +164,15 @@
                                 <td data-th="個案研判日期">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估">適合居家照護</td>
+                                <td data-th="健康評估">
+                                    <span class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">不適合居家照護</span>
+                                </td>
                                 <td data-th="環境評估">
-                                    符合
-                                    <span class="text-danger">不符合</span>
+                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">符合</span>
+                                    <span class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">不符合</span>
                                 </td>
                                 <td data-th="收案評估">
-                                    收案，健康照護
+                                    <a class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">收案，健康照護</a>
                                 </td>
                             </tr>
                             <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -182,13 +184,15 @@
                                 <td data-th="個案研判日期">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估">適合居家照護</td>
+                                <td data-th="健康評估">
+                                    <span class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">不適合居家照護</span>
+                                </td>
                                 <td data-th="環境評估">
-                                    符合
-                                    <span class="text-danger">不符合</span>
+                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">符合</span>
+                                    <span class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">不符合</span>
                                 </td>
                                 <td data-th="收案評估">
-                                    收案，健康關懷
+                                    <a class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">收案，健康關懷</a>
                                 </td>
                             </tr>
                             <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -200,16 +204,21 @@
                                 <td data-th="個案研判日期">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估">適合居家照護</td>
+                                <td data-th="健康評估">
+                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        其他<br>
+                                        <small class="note">備註內容備註內容備註內容備註內容</small>
+                                    </span>
+                                </td>
                                 <td data-th="環境評估">
-                                    符合
-                                    <span class="text-danger">不符合</span>
+                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">符合</span>
+                                    <span class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">不符合</span>
                                 </td>
                                 <td data-th="收案評估">
-                                    <span class="text-danger">
+                                    <a class="text-danger">
                                         不收案
                                         <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="通知安置於加強版集中檢疫所／防疫旅館"></i>
-                                    </span>
+                                    </a>
                                 </td>
                             </tr>
                         </tbody>
