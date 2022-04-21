@@ -245,13 +245,13 @@
     background-color: #fafafa;
 }
 
-.table-active td {
-    background-color: #ffc !important;
+.table-hover tr:hover td {
+    background-color: rgba(255, 255, 224, 1) !important;
+    cursor: pointer;
 }
 
-.table-hover tr:hover td {
-    background-color: rgb(255, 255, 224);
-    cursor: pointer;
+.table-active td {
+    background-color: rgba(255, 255, 116, 1) !important;
 }
 
 .table-data-error td {
@@ -302,6 +302,10 @@ code strong {
 
 .no-list-style {
     list-style: none;
+}
+
+i.is-late {
+    font-size: 24px;
 }
 
 
