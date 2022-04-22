@@ -58,15 +58,18 @@
                     <!-- GSMis-menu 主選單 -->
                     <ul class="GSMis-menu">
                         <!-- if 衛生局 -->
-                        <li class="active"><a href="upload_衛生局.html"><i class="fa-solid fa-file-lines"></i> 確診者資料上傳(衛生局)</a></li>
-                        <!-- if 醫院 -->
-                        <li class="active"><a href="evaluate_醫院.html"><i class="fa-solid fa-file-lines"></i> 評估填報(醫院)</a></li>
-                        <!-- if 區公所 -->
-                        <li class="active"><a href="evaluate_區公所.html"><i class="fa-solid fa-file-lines"></i> 評估填報(區公所)</a></li>
-                        <!-- if 衛生所 -->
-                        <li class="active"><a href="evaluate_衛生所.html"><i class="fa-solid fa-file-lines"></i> 評估填報(衛生所)</a></li>
+                        <li><a href="upload_衛生局.html"><i class="fa-solid fa-file-arrow-up"></i> 確診者資料上傳(衛生局)</a></li>
+                        <!-- if 系統管理員 -->
+                        <li>
+                            <a href="#" class="children">評估填報<i class="fas fa-chevron-down"></i></a>
+                            <ul class="level-2">
+                                <li><a href="evaluate_醫院.html">健康評估(醫院)</a></li>
+                                <li><a href="evaluate_區公所.html">居家環境評估(區公所)</a></li>
+                                <li><a href="evaluate_衛生所.html">收案評估(衛生所)</a></li>
+                            </ul>
+                        </li>
                         <!-- for all -->
-                        <li><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估查詢</a></li>
+                        <li class="active"><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估查詢</a></li>
                     </ul>
                     <!-- /.GSMis-menu -->
                     <!-- GSMis-help 輔助資訊 -->
