@@ -312,46 +312,39 @@
                         <h1 class="GSMis-section-title">健康狀況</h1>
                         <dl class="GSMis-form-horizontal units-2">
                             <dt>
-                            <label for="" class=""><span class="text-danger">*</span>血液透析</label>
-                        </dt>
+                                <label for="" class=""><span class="text-danger">*</span>健康條件</label>
+                            </dt>
                             <dd class="wide">
                                 <div class="row g-2">
                                     <div class="col-md-auto">
                                         <div class="form-control GSMis-no-border">
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input " type="radio" id="hemodialysis_N" name="hemodialysis" required checked>
-                                                <label for="hemodialysis_N" class="form-check-label">否</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input " type="radio" id="health_condition_1" name="health_condition" required>
+                                                <label for="health_condition_1" class="form-check-label">確診者年齡為＜3個月：無症狀或輕症，<strong class="text-danger">且無發燒</strong></strong></label>
                                             </div>
-                                            <div class="form-check  form-check-inline">
-                                                <input class="form-check-input " type="radio" id="hemodialysis_Y" name="hemodialysis">
-                                                <label for="hemodialysis_Y" class="form-check-label">是</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input " type="radio" id="health_condition_2" name="health_condition">
+                                                <label for="health_condition_2" class="form-check-label">確診者年齡為3-12個月：無症狀或輕症，<strong class="text-danger">且無高燒>39度</strong></label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input " type="radio" id="health_condition_3" name="health_condition">
+                                                <label for="health_condition_3" class="form-check-label">確診者年齡為1-64歲：無症狀或輕症，<strong class="text-danger">且無懷孕或血液透析</strong></label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input " type="radio" id="health_condition_4" name="health_condition">
+                                                <label for="health_condition_4" class="form-check-label">確診者年齡為65-69歲：無症狀或輕症，<strong class="text-danger">非獨居，且無懷孕或血液透析</strong></label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input " type="radio" id="health_condition_5" name="health_condition">
+                                                <label for="health_condition_5" class="form-check-label">不符上述條件之無症狀或輕症確診者，如本人或其法定代理人要求希望採居家照護，經醫療人員評估後，得採取居家照護。
+                                                  </label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </dd>
                             <dt>
-                            <label for="" class=""><span class="text-danger">*</span>懷孕</label>
-                        </dt>
-                            <dd class="wide">
-                                <div class="row g-2">
-                                    <div class="col-md-auto">
-                                        <div class="form-control GSMis-no-border">
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input " type="radio" id="pregnant_N" name="pregnant" required checked>
-                                                <label for="pregnant_N" class="form-check-label">否</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input " type="radio" id="pregnant_Y" name="pregnant">
-                                                <label for="pregnant_Y" class="form-check-label">是</label>，懷孕
-                                                <input type="number" max="42" min="0" class="form-control form-input-note input-week" placeholder="" value="" required> 週
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </dd>
-                            <dt>
-                                <label for="" class="">主訴症狀</label>
+                                <label for="" class=""><span class="text-danger">*</span>主訴症狀</label>
                             </dt>
                             <dd class="wide">
                                 <div class="row">

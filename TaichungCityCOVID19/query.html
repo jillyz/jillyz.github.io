@@ -500,16 +500,21 @@
                             <div id="health" class="collapse">
                                 <dl class="GSMis-form-horizontal units-2">
                                     <dt>
-                                        <label for="" class="">血液透析</label>
+                                        <label for="" class="">健康條件</label>
                                     </dt>
                                     <dd class="wide">
-                                        <div class="form-control GSMis-no-border">否</div>
-                                    </dd>
-                                    <dt>
-                                        <label for="" class="">懷孕</label>
-                                    </dt>
-                                    <dd class="wide">
-                                        <div class="form-control GSMis-no-border">是，懷孕8週</div>
+                                        <div class="form-control GSMis-no-border">
+                                            <!-- if 值為 1 -->
+                                            確診者年齡為＜3個月：無症狀或輕症，且無發燒。
+                                            <!-- if 值為 2 -->
+                                            確診者年齡為3-12個月：無症狀或輕症，且無高燒>39度。
+                                            <!-- if 值為 3 -->
+                                            確診者年齡為1-64歲：無症狀或輕症，且無懷孕或血液透析。
+                                            <!-- if 值為 4 -->
+                                            確診者年齡為65-69歲：無症狀或輕症，非獨居，且無懷孕或血液透析。
+                                            <!-- if 值為 5 -->
+                                            不符上述條件之無症狀或輕症確診者，如本人或其法定代理人要求希望採居家照護，經醫療人員評估後，得採取居家照護。
+                                        </div>
                                     </dd>
                                     <dt>
                                         <label for="" class="">主訴症狀</label>
