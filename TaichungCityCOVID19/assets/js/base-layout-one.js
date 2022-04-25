@@ -49,7 +49,7 @@ $(function(){
     }else {
         // Hover動作 (>992)
         $(".GSMis-menu > li").hover(function(){
-            $(this).children(".children").toggleClass('childrenOpen').next().slideToggle();
+            $(this).children(".children").toggleClass('childrenOpen').next().finish().slideToggle();
         })
         $(".GSMis-menu .level-2 .children").click(function(e){
             e.preventDefault();
