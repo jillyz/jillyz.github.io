@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>台中市新冠肺炎暨居家照護管理系統</title>
+    <title>台中市政府新冠肺炎居家照護管理系統</title>
     <!-- Base -->
     <link rel="stylesheet" href="assets/vendor/bootstrap-5.1.3/bootstrap.min.css">
     <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.0.0-beta/all.min.css">
@@ -29,7 +29,7 @@
                         <h1 class="GSMis-brand">
                             <a href="index.html">
                                 <!-- <img class="GSMis-brand-img" src="assets/img/taichung-logo.png"> -->
-                                <span class="GSMis-brand-text">台中市新冠肺炎暨居家照護管理系統</span>
+                                <span class="GSMis-brand-text">台中市政府新冠肺炎居家照護管理系統</span>
                             </a>
                         </h1>
                     </div>
@@ -106,7 +106,7 @@
                         <input class="form-check-input " type="radio" id="flexRadioDefault4" name="flexRadioDefault">
                         <label class="form-check-label" for="flexRadioDefault4">
                             <i class="fa-solid fa-clock text-danger is-late"></i>
-                            超過2小時未處理
+                            超過1小時未處理
                         </label>
                     </div> -->
                     <div class="form-check form-check-inline">
@@ -126,9 +126,9 @@
                                 <th></th>
                                 <th>入案時間</th>
                                 <th>入案編號</th>
-                                <th>案號</th>
-                                <th>個案研判日期</th>
+                                <th>發病日或採檢日</th>
                                 <th class="name">姓名</th>
+                                <th>身分證字號</th>
                                 <th>診斷年齡(足歲)</th>
                                 <th class="evaluate">健康評估</th>
                                 <th class="evaluate">環境評估</th>
@@ -136,19 +136,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- 超過2小時未處理：
+                            <!-- 超過1小時未處理：
                                 <tr> 加 class="table-is-late" 
                                 第一欄顯示圖示
                             -->
                             <tr class="table-is-late" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                <td data-th="超過2小時未處理">
-                                    <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip" data-bs-placement="right" title="超過2小時未處理"></i>
+                                <td data-th="超過1小時未處理">
+                                    <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip" data-bs-placement="right" title="超過1小時未處理"></i>
                                 </td>
                                 <td data-th="入案時間">111/04/20 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="案號">37079</td>
-                                <td data-th="個案研判日期">111/04/18</td>
+                                <td data-th="發病日或採檢日">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="健康評估" class="evaluate">適合居家照護</td>
                                 <td data-th="環境評估" class="evaluate">
@@ -160,13 +160,13 @@
                                 </td>
                             </tr>
                             <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                <td data-th="超過2小時未處理">
+                                <td data-th="超過1小時未處理">
                                 </td>
                                 <td data-th="入案時間">111/04/20 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="案號">37079</td>
-                                <td data-th="個案研判日期">111/04/18</td>
+                                <td data-th="發病日或採檢日">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="健康評估" class="evaluate">適合居家照護</td>
                                 <td data-th="環境評估" class="evaluate">
@@ -178,13 +178,35 @@
                                 </td>
                             </tr>
                             <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                <td data-th="超過2小時未處理">
+                                <td data-th="超過1小時未處理">
                                 </td>
                                 <td data-th="入案時間">111/04/20 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="案號">37079</td>
-                                <td data-th="個案研判日期">111/04/18</td>
+                                <td data-th="發病日或採檢日">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="健康評估" class="evaluate">
+                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">適合居家照護</span>
+                                </td>
+                                <td data-th="環境評估" class="evaluate">
+                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">符合</span>
+                                    <span class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">不符合</span>
+                                </td>
+                                <td data-th="收案評估" class="evaluate">
+                                    <a class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        收案，居家照護
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                <td data-th="超過1小時未處理">
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="發病日或採檢日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="健康評估" class="evaluate">
                                     <span class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">不適合居家照護</span>
@@ -194,37 +216,19 @@
                                     <span class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">不符合</span>
                                 </td>
                                 <td data-th="收案評估" class="evaluate">
-                                    <a class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">收案，健康照護</a>
+                                    <a class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        不收案，送醫院
+                                    </a>
                                 </td>
                             </tr>
                             <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                <td data-th="超過2小時未處理">
+                                <td data-th="超過1小時未處理">
                                 </td>
                                 <td data-th="入案時間">111/04/20 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="案號">37079</td>
-                                <td data-th="個案研判日期">111/04/18</td>
+                                <td data-th="發病日或採檢日">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">不適合居家照護</span>
-                                </td>
-                                <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">符合</span>
-                                    <span class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">不符合</span>
-                                </td>
-                                <td data-th="收案評估" class="evaluate">
-                                    <a class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">收案，健康關懷</a>
-                                </td>
-                            </tr>
-                            <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                <td data-th="超過2小時未處理">
-                                </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="案號">37079</td>
-                                <td data-th="個案研判日期">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="健康評估" class="evaluate">
                                     <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -237,9 +241,8 @@
                                     <span class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">不符合</span>
                                 </td>
                                 <td data-th="收案評估" class="evaluate">
-                                    <a class="text-danger">
-                                        不收案
-                                        <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="通知安置於加強版集中檢疫所／防疫旅館"></i>
+                                    <a class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        不收案，送疫檢所
                                     </a>
                                 </td>
                             </tr>
@@ -292,16 +295,16 @@
                         <h1 class="GSMis-section-title">基本資料</h1>
                         <dl class="GSMis-form-horizontal units-2">
                             <dt>
-                                <label for="" class="">案號</label>
-                            </dt>
-                            <dd>
-                                <div class="form-control GSMis-no-border">37079</div>
-                            </dd>
-                            <dt>
                                 <label for="" class="">法傳編號</label>
                             </dt>
                             <dd>
                                 <div class="form-control GSMis-no-border">ＯＯＯＯＯＯＯ</div>
+                            </dd>
+                            <dt>
+                                <label for="" class="">發病日或採檢日</label>
+                            </dt>
+                            <dd>
+                                <div class="form-control GSMis-no-border">111/04/23</div>
                             </dd>
                             <dt>
                                 <label for="" class="">姓名</label>
@@ -340,6 +343,13 @@
                             </dt>
                             <dd>
                                 <div class="form-control GSMis-no-border">台中市西區精誠29街23號6樓之2</div>
+                                <div class="form-control GSMis-no-border text-danger" style="font-weight: bold;">
+                                    變更地址：台中市北區ＯＯ街ＯＯ號
+                                    <br>
+                                    <a class="btn btn-danger btn-sm">確認變更</a>
+                                    <a class="btn btn-success btn-sm"><i class="fa-solid fa-check"></i>已確認變更</a>
+                                </div>
+                                <code>地址異動過，從「西區」更正至「北區」</code>
                             </dd>
                         </dl>
 
@@ -528,7 +538,7 @@
                             <dd>
                                 <div class="form-control GSMis-no-border">
                                     符合
-                                    <span class="text-danger">不符合</span>
+                                    <span class="text-danger">不符合</span> （顯示備註說明）
                                 </div>
                             </dd>
                             <dt>
@@ -546,19 +556,19 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="result" id="result1">
                                             <label class="form-check-label" for="result1">
-                                                收案，健康照護
+                                                收案，居家照護
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="result" id="result2">
                                             <label class="form-check-label" for="result2">
-                                                收案，健康關懷
+                                                不收案，送醫院
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="result" id="result3">
                                             <label class="form-check-label" for="result3">
-                                                不收案，通知安置於加強版集中檢疫所／防疫旅館
+                                                不收案，送疫檢所
                                             </label>
                                         </div>
                                     </div>
