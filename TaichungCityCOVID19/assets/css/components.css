@@ -357,6 +357,9 @@ i.is-late {
         width: 8em;
         border-right: 2px solid #d63384;
     }
+    .diary>dt.is-last-day {
+        border-right: 0;
+    }
     .diary.form>dt {
         border-right: 0;
     }
@@ -402,6 +405,9 @@ i.is-late {
         padding: 0;
         padding-left: 1em;
         border-left: 2px solid #d63384;
+    }
+    .row-narrow>.wide.is-last-day {
+        border-left: 0;
     }
 }
 

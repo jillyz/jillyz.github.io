@@ -188,7 +188,7 @@
                                             <input class="form-check-input " type="checkbox" value="" id="care_status_2">
                                             <label class="form-check-label" for="care_status_2">已滿10天轉自主健康管理/結案</label>
                                         </div>
-                                        <div class="form-check form-check-inline1">
+                                        <!-- <div class="form-check form-check-inline1">
                                             <input class="form-check-input " type="checkbox" value="" id="care_status_3">
                                             <label class="form-check-label" for="care_status_3">
                                                 未滿10天因故轉醫院
@@ -199,7 +199,7 @@
                                             <label class="form-check-label" for="care_status_4">
                                                 未滿10天因故轉集中檢疫所
                                             </label>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -421,10 +421,13 @@
                                 <input type="text" class="form-control" value="ＯＯＯＯＯＯＯ">
                             </dd>
                             <dt>
-                                <label for="" class="">發病日或採檢日</label>
+                                <label for="" class="">採檢日<br><br>發病日</label>
                             </dt>
                             <dd>
-                                <input type="date" class="form-control" value="111/04/23">
+                                <div class="form-control GSMis-no-border">
+                                    <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                                    <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                                </div>
                             </dd>
                             <dt>
                                 <label for="" class="">姓名</label>
@@ -458,14 +461,6 @@
                                             <span class="input-group-text" id="basic-addon1">歲</span>
                                         </div>
                                     </div>
-                                    <!-- 
-
-                                    <div class="col-md-2">
-                                        <input type="number" min="0" class="form-control years-old" value="33" placeholder="足歲">
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="form-control GSMis-no-border">歲</div>
-                                    </div> -->
                                 </div>
                             </dd>
                             <dt>
@@ -478,11 +473,11 @@
                                 <label for="" class="">電話</label>
                             </dt>
                             <dd>
-                                <div class="input-group mb-3">
+                                <div class="input-group">
                                     <span class="input-group-text" id="basic-addon1">手機電話</span>
                                     <input type="text" class="form-control" placeholder="請輸入手機號碼" aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
-                                <div class="input-group mb-3">
+                                <div class="input-group">
                                     <span class="input-group-text" id="basic-addon1">住家電話</span>
                                     <input type="text" class="form-control" placeholder="請輸入住家電話" aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
@@ -521,10 +516,10 @@
                                 <div class="form-control GSMis-no-border">ＯＯＯＯＯＯＯ</div>
                             </dd>
                             <dt>
-                                <label for="" class="">發病日或採檢日</label>
+                                <label for="" class="">採檢日<br>發病日</label>
                             </dt>
                             <dd>
-                                <div class="form-control GSMis-no-border">111/04/23</div>
+                                <div class="form-control GSMis-no-border">111/04/23 採檢<br>111/04/23 發病</div>
                             </dd>
                             <dt>
                             <label for="" class="">姓名</label>
@@ -788,8 +783,8 @@
                         <h1 class="GSMis-section-title">關懷日誌</h1>
                         <dl class="diary row-narrow mb-5">
                             <dt>
-                                        第1天
-                                    </dt>
+                                第1天
+                            </dt>
                             <dd class="wide">
                                 <dl class="GSMis-form-horizontal units-2 mt-5 mb-3">
                                     <dt>關懷結果</dt>
@@ -802,10 +797,10 @@
                                     </dd>
                                 </dl>
                             </dd>
-                            <dt>
-                                        第2天
-                                    </dt>
-                            <dd class="wide">
+                            <dt class="is-last-day">
+                                第2天
+                            </dt>
+                            <dd class="wide is-last-day">
                                 <dl class="GSMis-form-horizontal units-2 mt-5 mb-3">
                                     <dt>關懷結果</dt>
                                     <dd class="wide">
