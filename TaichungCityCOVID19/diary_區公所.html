@@ -115,7 +115,20 @@
                             未滿10日因故轉
                         </label>
                     </div> -->
-                    - 共 99 筆
+                    ｜
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="checkbox" id="filter_1" name="filter">
+                        <label class="form-check-label" for="filter_1">
+                            有需協助事項
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="checkbox" id="filter_2" name="flexRadioDefault">
+                        <label class="form-check-label" for="filter_2">
+                            轉介其他單位
+                        </label>
+                    </div>
+                    ｜ 共 99 筆
                 </div>
 
                 <!-- .table-responsive 表格 -->
@@ -162,7 +175,27 @@
                                 <td data-th="狀態">定期關懷第 9 天</td>
                                 <td data-th="解隔日">111/04/29</td>
                                 <td data-th="關懷日誌" class="evaluate">
+                                    <!-- 有/無 需協助事項 -->
                                     <span class="text-dark">有需協助事項</span>
+                                    <!-- 若「處理情形」為「轉介其他單位」則額外顯示 -->
+                                    <br><span class="text-dark">(轉介其他單位)</span>
+                                </td>
+                            </tr>
+
+                            <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="採檢日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="狀態">定期關懷第 9 天</td>
+                                <td data-th="解隔日">111/04/29</td>
+                                <td data-th="關懷日誌" class="evaluate">
+                                    <!-- 有/無 需協助事項 -->
+                                    <span class="text-dark">無需協助事項</span>
+                                    <!-- 若「處理情形」為「轉介其他單位」則額外顯示 -->
+                                    <!-- <br><span class="text-dark">(轉介其他單位)</span> -->
                                 </td>
                             </tr>
                             <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -173,17 +206,6 @@
                                 <td data-th="身分證字號">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="狀態">10日期滿轉自主健康管理/結案</td>
-                                <td data-th="解隔日">111/04/29</td>
-                                <td data-th="關懷日誌" class="evaluate">--</td>
-                            </tr>
-                            <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="採檢日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="狀態">未滿10日因故轉醫院照護</td>
                                 <td data-th="解隔日">111/04/29</td>
                                 <td data-th="關懷日誌" class="evaluate">--</td>
                             </tr>
