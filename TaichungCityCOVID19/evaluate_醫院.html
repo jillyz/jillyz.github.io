@@ -252,6 +252,13 @@
             </div>
             <div class="offcanvas-body">
                 <div class="container">
+
+                    <div class="alert alert-secondary small" role="alert">
+                        <ul class="no-list-style mb-0" style="text-indent: -2em;">
+                            <li><b>備註：</b>本評估表係經採受評估者主訴資訊所綜整之評估結果，如有不實受評估者應自負相關責任。</li>
+                        </ul>
+                    </div>
+
                     <form class="needs-validation" novalidate>
                         <h1 class="GSMis-section-title">基本資料</h1>
                         <dl class="GSMis-form-horizontal units-2">
@@ -789,6 +796,12 @@
                             <dd class="wide">
                                 <div class="row padding">
                                     <div class="col-auto">
+
+                                        <!-- 若已完成收案評估 -->
+                                        <div class="mb-2">
+                                            <code>（已完成收案評估，若您異動評估結果，請通知衛生所重做收案評估）</code>
+                                        </div>
+
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="result" id="result1">
                                             <label class="form-check-label" for="result1">
@@ -834,12 +847,6 @@
                                         <input type="text" class="form-control form-input-note" placeholder="" value="" required="">
                                     </div>
                                 </div>
-                            </dd>
-                            <dt></dt>
-                            <dd class="wide">
-                                <code>
-                                    註：本評估表係經採受評估者主訴資訊所綜整之評估結果，如有不實受評估者應自負相關責任。</li>
-                                </code>
                             </dd>
                         </dl>
                         <hr>
