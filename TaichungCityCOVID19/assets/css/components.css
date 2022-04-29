@@ -360,9 +360,6 @@ i.is-late {
     .diary>dt.is-last-day {
         border-right: 0;
     }
-    .diary.form>dt {
-        border-right: 0;
-    }
     .diary>dt::after {
         content: "" !important;
         margin-top: 2px;
