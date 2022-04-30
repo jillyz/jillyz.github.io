@@ -179,7 +179,7 @@ td.evaluate {
 }
 
 .form-input-note[type="text"] {
-    /* padding: 0; */
+    padding: 0;
     padding-bottom: 2px;
 }
 
