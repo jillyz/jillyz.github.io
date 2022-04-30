@@ -188,18 +188,22 @@
                                             <input class="form-check-input " type="checkbox" value="" id="care_status_2">
                                             <label class="form-check-label" for="care_status_2">已滿10天轉自主健康管理/結案</label>
                                         </div>
-                                        <!-- <div class="form-check form-check-inline1">
-                                            <input class="form-check-input " type="checkbox" value="" id="care_status_3">
-                                            <label class="form-check-label" for="care_status_3">
-                                                未滿10天因故轉醫院
-                                            </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4 col-xl-2">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">關懷結果</label>
+                                    <div class="form-control GSMis-no-border">
+                                        <div class="form-check form-check-inline1">
+                                            <input class="form-check-input " type="checkbox" value="" id="care_result_1">
+                                            <label class="form-check-label" for="care_result_1">有需協助事項</label>
                                         </div>
                                         <div class="form-check form-check-inline1">
-                                            <input class="form-check-input " type="checkbox" value="" id="care_status_4">
-                                            <label class="form-check-label" for="care_status_4">
-                                                未滿10天因故轉集中檢疫所
-                                            </label>
-                                        </div> -->
+                                            <input class="form-check-input " type="checkbox" value="" id="care_result_2">
+                                            <label class="form-check-label" for="care_result_2">轉介其他單位</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -309,6 +313,32 @@
                                     <td data-th="身分證字號/護照號碼">A123456789</td>
                                     <td data-th="診斷年齡(足歲)">33</td>
                                     <td data-th="居住鄉鎮">西區</td>
+                                    <td data-th="健康評估" class="evaluate">適合居家照護</td>
+                                    <td data-th="環境評估" class="evaluate">
+                                        符合
+                                    </td>
+                                    <td data-th="收案評估" class="evaluate">
+                                        <span class="text-dark">收案</span>
+                                    </td>
+                                    <td data-th="關懷日誌" class="evaluate">
+                                        <span class="text-dark">結案</span>
+                                    </td>
+                                    <td data-th="解隔日">111/04/29</td>
+                                    <td data-th="檢視">
+                                        <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">檢視</a>
+                                    </td>
+                                </tr>
+                                <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                    <td data-th="超過1小時未處理">
+                                        <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="超過1小時未處理" aria-label="超過1小時未處理"></i>
+                                    </td>
+                                    <td data-th="入案時間">111/04/20 13:12:20</td>
+                                    <td data-th="入案編號">12345678901234</td>
+                                    <td data-th="採檢日">111/04/18</td>
+                                    <td data-th="姓名">陳思佑</td>
+                                    <td data-th="身分證字號/護照號碼">A123456789</td>
+                                    <td data-th="診斷年齡(足歲)">33</td>
+                                    <td data-th="居住鄉鎮">西區</td>
                                     <td data-th="健康評估" class="evaluate">
                                         其他 <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="ＯＯＯＯＯＯＯ"></i>
                                     </td>
@@ -319,7 +349,7 @@
                                         <span class="text-danger">不收案，送醫院</span>
                                     </td>
                                     <td data-th="關懷日誌" class="evaluate">
-                                        <span class="text-dark">10日期滿轉自主健康管理/結案</span>
+                                        --
                                     </td>
                                     <td data-th="解隔日">111/04/29</td>
                                     <td data-th="檢視">
@@ -347,7 +377,7 @@
                                         <span class="text-danger">不收案，送檢疫所</span>
                                     </td>
                                     <td data-th="關懷日誌" class="evaluate">
-                                        <span class="text-danger">未滿10日因故轉醫院照護</span>
+                                        --
                                     </td>
                                     <td data-th="解隔日">111/04/29</td>
                                     <td data-th="檢視">
