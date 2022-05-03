@@ -71,7 +71,7 @@ body.demo {
     height: 127px; */
     width: 440px;
     height: 110px;
-    background: url(../images/demo/demo-logo.png) 5px 0 no-repeat;
+    background: url(../images/demo/demo-logo.png) 10px 3px no-repeat;
     background-size: 83%;
 }
 
@@ -96,6 +96,17 @@ body.demo {
     background-size: 100%;
     transform-origin: 100% 0;
     transform: scale(.75);
+}
+
+.demo-news {
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    width: 1040px;
+    height: 44px;
+    background: url(../images/demo/demo-news.png) 50% 50% no-repeat;
+    background-size: auto 100%;
+    transform: translateX(-50%);
 }
 
 .page[data-menu="open"] .demo-user-help {
