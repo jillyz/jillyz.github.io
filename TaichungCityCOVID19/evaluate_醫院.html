@@ -128,7 +128,7 @@
                                 <th>入案編號</th>
                                 <th>採檢日</th>
                                 <th class="name">姓名</th>
-                                <th>身分證字號</th>
+                                <th>身分證字號/<br>護照號碼</th>
                                 <th>診斷年齡(足歲)</th>
                                 <th class="evaluate">健康評估</th>
                             </tr>
@@ -146,7 +146,7 @@
                                 <td data-th="入案編號">12345678901234</td>
                                 <td data-th="採檢日">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號">A123456789</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="健康評估" class="evaluate">
                                     <a class="btn w-50 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">填報</a>
@@ -158,7 +158,7 @@
                                 <td data-th="入案編號">12345678901234</td>
                                 <td data-th="採檢日">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號">A123456789</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="健康評估" class="evaluate">
                                     <a class="btn w-50 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">填報</a>
@@ -170,7 +170,7 @@
                                 <td data-th="入案編號">12345678901234</td>
                                 <td data-th="採檢日">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號">A123456789</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="健康評估" class="evaluate">
                                     <a class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -198,7 +198,7 @@
                                 <td data-th="入案編號">12345678901234</td>
                                 <td data-th="採檢日">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號">A123456789</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="健康評估">
                                     <a class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -252,6 +252,13 @@
             </div>
             <div class="offcanvas-body">
                 <div class="container">
+
+                    <div class="alert alert-secondary small mb-3" role="alert">
+                        <ul class="no-list-style mb-0" style="text-indent: -2em;">
+                            <li><b>備註：</b>本評估表係經採受評估者主訴資訊所綜整之評估結果，如有不實受評估者應自負相關責任。</li>
+                        </ul>
+                    </div>
+
                     <form class="needs-validation" novalidate>
                         <h1 class="GSMis-section-title">基本資料</h1>
                         <dl class="GSMis-form-horizontal units-2">
@@ -286,7 +293,7 @@
                                 <div class="form-control GSMis-no-border">80/04/19（33歲）</div>
                             </dd>
                             <dt>
-                            <label for="" class="">身分證字號</label>
+                            <label for="" class="">身分證字號/護照號碼</label>
                         </dt>
                             <dd>
                                 <div class="form-control GSMis-no-border">A123456789</div>
@@ -311,38 +318,62 @@
 
                         <h1 class="GSMis-section-title">健康狀況</h1>
                         <dl class="GSMis-form-horizontal units-2">
+
+
                             <dt>
                                 <label for="" class=""><span class="text-danger">*</span>健康條件</label>
                             </dt>
+                            <!-- if (診斷年齡 > 18) 健康條件 //start -->
                             <dd class="wide">
                                 <div class="row g-2">
                                     <div class="col-md-auto">
                                         <div class="form-control GSMis-no-border">
                                             <div class="form-check">
-                                                <input class="form-check-input " type="radio" id="health_condition_1" name="health_condition" required>
-                                                <label for="health_condition_1" class="form-check-label">確診者年齡為＜3個月：無症狀或輕症，<strong class="text-danger">且無發燒</strong></strong></label>
+                                                <input class="form-check-input " type="radio" id="a_health_condition_1" name="a_health_condition">
+                                                <label for="a_health_condition_1" class="form-check-label">確診者年齡為19-64歲：無症狀或輕症，<strong class="text-danger">且無懷孕或血液透析</strong></label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input " type="radio" id="health_condition_2" name="health_condition">
-                                                <label for="health_condition_2" class="form-check-label">確診者年齡為3-12個月：無症狀或輕症，<strong class="text-danger">且無高燒>39度</strong></label>
+                                                <input class="form-check-input " type="radio" id="a_health_condition_2" name="a_health_condition">
+                                                <label for="a_health_condition_2" class="form-check-label">確診者年齡為65-69歲：無症狀或輕症，<strong class="text-danger">非獨居，且無懷孕或血液透析</strong></label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input " type="radio" id="health_condition_3" name="health_condition">
-                                                <label for="health_condition_3" class="form-check-label">確診者年齡為1-64歲：無症狀或輕症，<strong class="text-danger">且無懷孕或血液透析</strong></label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input " type="radio" id="health_condition_4" name="health_condition">
-                                                <label for="health_condition_4" class="form-check-label">確診者年齡為65-69歲：無症狀或輕症，<strong class="text-danger">非獨居，且無懷孕或血液透析</strong></label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input " type="radio" id="health_condition_5" name="health_condition">
-                                                <label for="health_condition_5" class="form-check-label">不符上述條件之無症狀或輕症確診者，如本人或其法定代理人要求希望採居家照護，經醫療人員評估後，得採取居家照護。
+                                                <input class="form-check-input " type="radio" id="a_health_condition_3" name="a_health_condition">
+                                                <label for="a_health_condition_3" class="form-check-label">不符上述條件之無症狀或輕症確診者，如本人或其法定代理人要求希望採居家照護，經醫療人員評估後，得採取居家照護。
                                                   </label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </dd>
+                            <!-- if (診斷年齡 > 18) 健康條件 //end -->
+
+                            <!-- if (診斷年齡 <= 18) 健康條件 //start -->
+                            <dd class="wide">
+                                <div class="row g-2">
+                                    <div class="col-md-auto">
+                                        <div class="form-control GSMis-no-border">
+                                            <div class="form-check">
+                                                <input class="form-check-input " type="radio" id="b_health_condition_1" name="b_health_condition" required>
+                                                <label for="b_health_condition_1" class="form-check-label">確診者年齡為＜3個月：無症狀或輕症，<strong class="text-danger">且無發燒</strong></strong></label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input " type="radio" id="b_health_condition_2" name="b_health_condition">
+                                                <label for="b_health_condition_2" class="form-check-label">確診者年齡為3-12個月：無症狀或輕症，<strong class="text-danger">且無高燒>39度</strong></label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input " type="radio" id="b_health_condition_3" name="b_health_condition">
+                                                <label for="b_health_condition_3" class="form-check-label">確診者年齡為1-18歲：無症狀或輕症，<strong class="text-danger">且無懷孕或血液透析</strong></label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input " type="radio" id="b_health_condition_4" name="b_health_condition">
+                                                <label for="b_health_condition_4" class="form-check-label">不符上述條件之無症狀或輕症確診者，如本人或其法定代理人要求希望採居家照護，經醫療人員評估後，得採取居家照護。</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </dd>
+                            <!-- if (診斷年齡 <= 18) 健康條件 //end -->
+
                             <dt>
                                 <label for="" class=""><span class="text-danger">*</span>主訴症狀</label>
                             </dt>
@@ -404,7 +435,7 @@
                                 <div class="row padding">
                                     <div class="col-xxl">
                                         <div class="row">
-                                            <div class="col-md">
+                                            <div class="col-md-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value="4" id="chk_symptom_complaints_4">
                                                     <label class="form-check-label" for="chk_symptom_complaints_4">
@@ -412,7 +443,7 @@
                                                 </label>
                                                 </div>
                                             </div>
-                                            <div class="col-md">
+                                            <div class="col-md-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value="5" id="chk_symptom_complaints_5">
                                                     <label class="form-check-label" for="chk_symptom_complaints_5">
@@ -420,7 +451,7 @@
                                                 </label>
                                                 </div>
                                             </div>
-                                            <div class="col-md">
+                                            <div class="col-md-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value="6" id="chk_symptom_complaints_6">
                                                     <label class="form-check-label" for="chk_symptom_complaints_6">
@@ -428,7 +459,7 @@
                                                 </label>
                                                 </div>
                                             </div>
-                                            <div class="col-md">
+                                            <div class="col-md-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value="7" id="chk_symptom_complaints_7">
                                                     <label class="form-check-label" for="chk_symptom_complaints_7">
@@ -438,7 +469,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md">
+                                            <div class="col-md-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value="8" id="chk_symptom_complaints_8">
                                                     <label class="form-check-label" for="chk_symptom_complaints_8">
@@ -446,7 +477,7 @@
                                                 </label>
                                                 </div>
                                             </div>
-                                            <div class="col-md">
+                                            <div class="col-md-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value="9" id="chk_symptom_complaints_9">
                                                     <label class="form-check-label" for="chk_symptom_complaints_9">
@@ -454,7 +485,7 @@
                                                 </label>
                                                 </div>
                                             </div>
-                                            <div class="col-md">
+                                            <div class="col-md-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value="10" id="chk_symptom_complaints_10">
                                                     <label class="form-check-label" for="chk_symptom_complaints_10">
@@ -462,7 +493,7 @@
                                                 </label>
                                                 </div>
                                             </div>
-                                            <div class="col-md">
+                                            <div class="col-md-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value="11" id="chk_symptom_complaints_11">
                                                     <label class="form-check-label" for="chk_symptom_complaints_11">
@@ -472,7 +503,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value="12" id="chk_symptom_complaints_12">
                                                     <label class="form-check-label" for="chk_symptom_complaints_12">
@@ -480,7 +511,7 @@
                                                 </label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value="13" id="chk_symptom_complaints_13">
                                                     <label class="form-check-label" for="chk_symptom_complaints_13">
@@ -488,7 +519,7 @@
                                                 </label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="row">
                                                     <div class="col-md-auto">
                                                         <div class="">
@@ -513,6 +544,8 @@
                                     </div>
                                 </div>
                             </dd>
+
+                            <!-- if (診斷年齡 > 18)， 警示症狀 //start -->
                             <dt>
                                 <label for="" class="">警示症狀</label>
                             </dt>
@@ -550,7 +583,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md">
+                                            <div class="col-md-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value="4" id="chk_symptom_warning_4">
                                                     <label class="form-check-label" for="chk_symptom_warning_4">
@@ -560,7 +593,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md">
+                                            <div class="col-md-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value="5" id="chk_symptom_warning_5">
                                                     <label class="form-check-label" for="chk_symptom_warning_5">
@@ -570,7 +603,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md">
+                                            <div class="col-md-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value="6" id="chk_symptom_warning_6">
                                                     <label class="form-check-label" for="chk_symptom_warning_6">
@@ -580,7 +613,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md">
+                                            <div class="col-md-12">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" value="" id="chk_symptom_warning_7">
                                                     <label class="form-check-label" for="chk_symptom_warning_7">
@@ -592,6 +625,125 @@
                                     </div>
                                 </div>
                             </dd>
+                            <!-- if (診斷年齡 > 18)， 警示症狀 //end -->
+
+
+                            <!-- if (診斷年齡 <= 18) 警訊表徵(就醫警訊) //start -->
+                            <dt>
+                                <label for="" class="">警訊表徵<br>(就醫警訊)</label>
+                            </dt>
+                            <dd class="wide">
+                                <div class="row padding">
+                                    <div class="col-xxl">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="1" id="chk_medical_alert_1">
+                                                    <label class="form-check-label" for="chk_medical_alert_1">
+                                                        發燒超過48小時，或高燒>39度合併發冷/冒冷汗
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="2" id="chk_medical_alert_2">
+                                                    <label class="form-check-label" for="chk_medical_alert_2">
+                                                        退燒後持續活動力不佳
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="3" id="chk_medical_alert_3">
+                                                    <label class="form-check-label" for="chk_medical_alert_3">
+                                                        退燒後持續呼吸急促/喘或胸悶胸痛
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="4" id="chk_medical_alert_4">
+                                                    <label class="form-check-label" for="chk_medical_alert_4">
+                                                        持續性嘔吐、頭痛或腹痛
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="5" id="chk_medical_alert_5">
+                                                    <label class="form-check-label" for="chk_medical_alert_5">
+                                                        超過12小時未進食或未解尿
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </dd>
+                            <!-- if (診斷年齡 <= 18) 警訊表徵(就醫警訊) //end -->
+
+                            <!-- if (診斷年齡 <= 18) 警訊表徵(就醫警訊) //start -->
+                            <dt>
+                                <label for="" class="">119就醫/<br>緊急自行就醫條件</label>
+                            </dt>
+                            <dd class="wide">
+                                <div class="row padding">
+                                    <div class="col-xxl">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="1" id="chk_medical_condition_1">
+                                                    <label class="form-check-label" for="chk_medical_condition_1">
+                                                        抽搐
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="2" id="chk_medical_condition_2">
+                                                    <label class="form-check-label" for="chk_medical_condition_2">
+                                                        意識不佳
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="3" id="chk_medical_condition_3">
+                                                    <label class="form-check-label" for="chk_medical_condition_3">
+                                                        呼吸困難或有胸凹現象
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="4" id="chk_medical_condition_4">
+                                                    <label class="form-check-label" for="chk_medical_condition_4">
+                                                        唇色發白或發紫
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="5" id="chk_medical_condition_5">
+                                                    <label class="form-check-label" for="chk_medical_condition_5">
+                                                        血氧飽和度低於94%(如有血氧機)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="5" id="chk_medical_condition_6">
+                                                    <label class="form-check-label" for="chk_medical_condition_6">
+                                                        肢體冰冷且有皮膚斑駁或冒汗
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </dd>
+                            <!-- if (診斷年齡 <= 18) 警訊表徵(就醫警訊) //end -->
+
                             <dt>
                                 <label for="" class="">主訴疾病史<br>（慢性疾病）</label>
                             </dt>
@@ -616,7 +768,7 @@
                                     <div class="row padding">
                                         <div class="col-xxl">
                                             <div class="row">
-                                                <div class="col-md">
+                                                <div class="col-md-12">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" value="1" id="chk_chronic＿disease_1">
                                                         <label class="form-check-label" for="chk_chronic＿disease_1">
@@ -624,7 +776,7 @@
                                                 </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md">
+                                                <div class="col-md-12">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" value="2" id="chk_chronic＿disease_2">
                                                         <label class="form-check-label" for="chk_chronic＿disease_2">
@@ -632,7 +784,7 @@
                                                 </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md">
+                                                <div class="col-md-12">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" value="3" id="chk_chronic＿disease_3">
                                                         <label class="form-check-label" for="chk_chronic＿disease_3">
@@ -640,7 +792,7 @@
                                                 </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md">
+                                                <div class="col-md-12">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" value="4" id="chk_chronic＿disease_4">
                                                         <label class="form-check-label" for="chk_chronic＿disease_4">
@@ -650,7 +802,7 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md">
+                                                <div class="col-md-12">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" value="5" id="chk_chronic＿disease_5">
                                                         <label class="form-check-label" for="chk_chronic＿disease_5">
@@ -658,7 +810,7 @@
                                                 </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md">
+                                                <div class="col-md-12">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" value="6" id="chk_chronic＿disease_6">
                                                         <label class="form-check-label" for="chk_chronic＿disease_6">
@@ -666,7 +818,7 @@
                                                 </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md">
+                                                <div class="col-md-12">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" value="7" id="chk_chronic＿disease_7">
                                                         <label class="form-check-label" for="chk_chronic＿disease_7">
@@ -674,7 +826,7 @@
                                                 </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md">
+                                                <div class="col-md-12">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" value="8" id="chk_chronic＿disease_8">
                                                         <label class="form-check-label" for="chk_chronic＿disease_8">
@@ -684,7 +836,7 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-md">
+                                                <div class="col-md-12">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" value="9" id="chk_chronic＿disease_9">
                                                         <label class="form-check-label" for="chk_chronic＿disease_9">
@@ -692,7 +844,7 @@
                                                 </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md">
+                                                <div class="col-md-12">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" value="10" id="chk_chronic＿disease_10">
                                                         <label class="form-check-label" for="chk_chronic＿disease_10">
@@ -700,7 +852,7 @@
                                                 </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md">
+                                                <div class="col-md-12">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" value="11" id="chk_chronic＿disease_11">
                                                         <label class="form-check-label" for="chk_chronic＿disease_11">
@@ -708,7 +860,7 @@
                                                 </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md">
+                                                <div class="col-md-12">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" value="10" id="chk_chronic＿disease_12">
                                                         <label class="form-check-label" for="chk_chronic＿disease_12">
@@ -789,6 +941,12 @@
                             <dd class="wide">
                                 <div class="row padding">
                                     <div class="col-auto">
+
+                                        <!-- 若已完成收案評估 -->
+                                        <div class="mb-2">
+                                            <code>（已完成收案評估，若您異動評估結果，請通知衛生所重做收案評估）</code>
+                                        </div>
+
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="result" id="result1">
                                             <label class="form-check-label" for="result1">
@@ -834,12 +992,6 @@
                                         <input type="text" class="form-control form-input-note" placeholder="" value="" required="">
                                     </div>
                                 </div>
-                            </dd>
-                            <dt></dt>
-                            <dd class="wide">
-                                <code>
-                                    註：本評估表係經採受評估者主訴資訊所綜整之評估結果，如有不實受評估者應自負相關責任。</li>
-                                </code>
                             </dd>
                         </dl>
                         <hr>

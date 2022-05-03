@@ -129,7 +129,7 @@
                                 <th>入案編號</th>
                                 <th>採檢日</th>
                                 <th class="name">姓名</th>
-                                <th>身分證字號</th>
+                                <th>身分證字號/<br>護照號碼</th>
                                 <th>診斷年齡(足歲)</th>
                                 <th class="evaluate">環境評估</th>
                             </tr>
@@ -147,7 +147,7 @@
                                 <td data-th="入案編號">12345678901234</td>
                                 <td data-th="採檢日">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號">A123456789</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="環境評估" class="evaluate">
                                     <a class="btn w-75 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">填報</a>
@@ -160,7 +160,7 @@
                                 <td data-th="入案編號">12345678901234</td>
                                 <td data-th="採檢日">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號">A123456789</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="環境評估" class="evaluate">
                                     <a class="btn w-75 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">填報</a>
@@ -172,7 +172,7 @@
                                 <td data-th="入案編號">12345678901234</td>
                                 <td data-th="採檢日">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號">A123456789</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="環境評估" class="evaluate">
                                     <a class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">符合</a>
@@ -289,7 +289,7 @@
                                 <div class="form-control GSMis-no-border">80/04/19（33歲）</div>
                             </dd>
                             <dt>
-                            <label for="" class="">身分證字號</label>
+                            <label for="" class="">身分證字號/護照號碼</label>
                         </dt>
                             <dd>
                                 <div class="form-control GSMis-no-border">A123456789</div>
@@ -418,7 +418,7 @@
                                         <div class="form-control GSMis-no-border margin-left">
                                             <ul class="form-ul no-list-style">
                                                 <li>
-                                                    確診個案：
+                                                    <!-- 確診個案： -->
                                                     <div class="form-check">
                                                         <input class="form-check-input " type="radio" id="local_1_1" name="local_1" required>
                                                         <label for="local_1_1" class="form-check-label">1人1室 (單獨房間含衛浴設備)</label>
@@ -441,6 +441,7 @@
                                                         </label>
                                                     </div>
                                                 </li>
+                                                <!-- 
                                                 <li>
                                                     同住之非確診個案：
                                                     <div class="form-check">
@@ -452,6 +453,7 @@
                                                         <label for="local_2_2" class="form-check-label">同住者均為非確診個案，且未超過4人(在其他房間隔離，可多人1室)</label>
                                                     </div>
                                                 </li>
+                                                 -->
                                             </ul>
 
                                         </div>
@@ -475,11 +477,17 @@
                         <h1 class="GSMis-section-title">評估結果</h1>
                         <dl class="GSMis-form-horizontal units-2">
                             <dt>
-                            <label for="" class=""><span class="text-danger">*</span>評估結果</label>
-                        </dt>
+                                <label for="" class=""><span class="text-danger">*</span>評估結果</label>
+                            </dt>
                             <dd class="wide">
                                 <div class="row padding">
                                     <div class="col-auto">
+
+                                        <!-- 若已完成收案評估 -->
+                                        <div class="mb-2">
+                                            <code>（已完成收案評估，若您異動評估結果，請通知衛生所重做收案評估）</code>
+                                        </div>
+
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="result" id="result1">
                                             <label class="form-check-label" for="result1">

@@ -188,18 +188,22 @@
                                             <input class="form-check-input " type="checkbox" value="" id="care_status_2">
                                             <label class="form-check-label" for="care_status_2">已滿10天轉自主健康管理/結案</label>
                                         </div>
-                                        <!-- <div class="form-check form-check-inline1">
-                                            <input class="form-check-input " type="checkbox" value="" id="care_status_3">
-                                            <label class="form-check-label" for="care_status_3">
-                                                未滿10天因故轉醫院
-                                            </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4 col-xl-2">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">關懷結果</label>
+                                    <div class="form-control GSMis-no-border">
+                                        <div class="form-check form-check-inline1">
+                                            <input class="form-check-input " type="checkbox" value="" id="care_result_1">
+                                            <label class="form-check-label" for="care_result_1">有需協助事項</label>
                                         </div>
                                         <div class="form-check form-check-inline1">
-                                            <input class="form-check-input " type="checkbox" value="" id="care_status_4">
-                                            <label class="form-check-label" for="care_status_4">
-                                                未滿10天因故轉集中檢疫所
-                                            </label>
-                                        </div> -->
+                                            <input class="form-check-input " type="checkbox" value="" id="care_result_2">
+                                            <label class="form-check-label" for="care_result_2">轉介其他單位</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -209,8 +213,8 @@
                                     <label for="" class="form-label">年齡</label>
                                     <select name="" id="" class="form-select">
                                         <option value="">全部</option>
-                                        <option value="1">18歲以下</option>
-                                        <option value="2">18-29歲</option>
+                                        <option value="1">0-18歲</option>
+                                        <option value="2">19-29歲</option>
                                         <option value="3">30-39歲</option>
                                         <option value="4">40-49歲</option>
                                         <option value="5">50-64歲</option>
@@ -251,7 +255,7 @@
                 <div class="result">
                     <h2 class="GSMis-section-title">查詢結果 (共 120 筆)</h2>
                     <!-- .table-responsive 表格 -->
-                    <div class="">
+                    <div class="table-responsive">
                         <table class="table table-hover striped GSMis-table-rwd">
                             <thead>
                                 <tr>
@@ -260,8 +264,8 @@
                                     <th>入案編號</th>
                                     <th>採檢日</th>
                                     <th class="name">姓名</th>
-                                    <th>身分證字號</th>
-                                    <th>診斷年齡(足歲)</th>
+                                    <th>身分證字號/<br>護照號碼</th>
+                                    <th>診斷年齡</th>
                                     <th>居住鄉鎮</th>
                                     <th class="evaluate">健康評估</th>
                                     <th class="evaluate">環境評估</th>
@@ -280,7 +284,7 @@
                                     <td data-th="入案編號">12345678901234</td>
                                     <td data-th="採檢日">111/04/18</td>
                                     <td data-th="姓名">陳思佑</td>
-                                    <td data-th="身分證字號">A123456789</td>
+                                    <td data-th="身分證字號/護照號碼">A123456789</td>
                                     <td data-th="診斷年齡(足歲)">33</td>
                                     <td data-th="居住鄉鎮">西區</td>
                                     <td data-th="健康評估" class="evaluate">適合居家照護</td>
@@ -306,20 +310,18 @@
                                     <td data-th="入案編號">12345678901234</td>
                                     <td data-th="採檢日">111/04/18</td>
                                     <td data-th="姓名">陳思佑</td>
-                                    <td data-th="身分證字號">A123456789</td>
+                                    <td data-th="身分證字號/護照號碼">A123456789</td>
                                     <td data-th="診斷年齡(足歲)">33</td>
                                     <td data-th="居住鄉鎮">西區</td>
-                                    <td data-th="健康評估" class="evaluate">
-                                        其他 <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="ＯＯＯＯＯＯＯ"></i>
-                                    </td>
+                                    <td data-th="健康評估" class="evaluate">適合居家照護</td>
                                     <td data-th="環境評估" class="evaluate">
-                                        <span class="text-danger">不符合</span>
+                                        符合
                                     </td>
                                     <td data-th="收案評估" class="evaluate">
-                                        <span class="text-danger">不收案，送醫院</span>
+                                        <span class="text-dark">收案</span>
                                     </td>
                                     <td data-th="關懷日誌" class="evaluate">
-                                        <span class="text-dark">10日期滿轉自主健康管理/結案</span>
+                                        <span class="text-dark">結案</span>
                                     </td>
                                     <td data-th="解隔日">111/04/29</td>
                                     <td data-th="檢視">
@@ -334,7 +336,35 @@
                                     <td data-th="入案編號">12345678901234</td>
                                     <td data-th="採檢日">111/04/18</td>
                                     <td data-th="姓名">陳思佑</td>
-                                    <td data-th="身分證字號">A123456789</td>
+                                    <td data-th="身分證字號/護照號碼">A123456789</td>
+                                    <td data-th="診斷年齡(足歲)">33</td>
+                                    <td data-th="居住鄉鎮">西區</td>
+                                    <td data-th="健康評估" class="evaluate">
+                                        其他 <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="ＯＯＯＯＯＯＯ"></i>
+                                    </td>
+                                    <td data-th="環境評估" class="evaluate">
+                                        <span class="text-danger">不符合</span>
+                                    </td>
+                                    <td data-th="收案評估" class="evaluate">
+                                        <span class="text-danger">不收案，送醫院</span>
+                                    </td>
+                                    <td data-th="關懷日誌" class="evaluate">
+                                        --
+                                    </td>
+                                    <td data-th="解隔日">111/04/29</td>
+                                    <td data-th="檢視">
+                                        <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">檢視</a>
+                                    </td>
+                                </tr>
+                                <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                    <td data-th="超過1小時未處理">
+                                        <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="超過1小時未處理" aria-label="超過1小時未處理"></i>
+                                    </td>
+                                    <td data-th="入案時間">111/04/20 13:12:20</td>
+                                    <td data-th="入案編號">12345678901234</td>
+                                    <td data-th="採檢日">111/04/18</td>
+                                    <td data-th="姓名">陳思佑</td>
+                                    <td data-th="身分證字號/護照號碼">A123456789</td>
                                     <td data-th="診斷年齡(足歲)">33</td>
                                     <td data-th="居住鄉鎮">西區</td>
                                     <td data-th="健康評估" class="evaluate">
@@ -347,7 +377,7 @@
                                         <span class="text-danger">不收案，送檢疫所</span>
                                     </td>
                                     <td data-th="關懷日誌" class="evaluate">
-                                        <span class="text-danger">未滿10日因故轉醫院照護</span>
+                                        --
                                     </td>
                                     <td data-th="解隔日">111/04/29</td>
                                     <td data-th="檢視">
@@ -461,14 +491,14 @@
                                     </div>
                                     <div class="col-md">
                                         <div class="input-group mb-3">
-                                            <input type="number" min="0" class="form-control years-old" value="33" placeholder="足歲" aria-label="Username" aria-describedby="basic-addon1">
+                                            <input type="number" min="0" class="form-control years-old" value="33" placeholder="足歲" aria-label="Username" aria-describedby="basic-addon1" disabled>
                                             <span class="input-group-text" id="basic-addon1">歲</span>
                                         </div>
                                     </div>
                                 </div>
                             </dd>
                             <dt>
-                                <label for="" class="">身分證字號</label>
+                                <label for="" class="">身分證字號/護照號碼</label>
                             </dt>
                             <dd>
                                 <input type="text" class="form-control" value="A123456789">
@@ -544,7 +574,7 @@
                                 <div class="form-control GSMis-no-border">80/04/19（33歲）</div>
                             </dd>
                             <dt>
-                            <label for="" class="">身分證字號</label>
+                            <label for="" class="">身分證字號/護照號碼</label>
                         </dt>
                             <dd>
                                 <div class="form-control GSMis-no-border">A123456789</div>
@@ -585,16 +615,7 @@
                                     </dt>
                                     <dd class="wide">
                                         <div class="form-control GSMis-no-border">
-                                            <!-- if 值為 1 -->
-                                            確診者年齡為＜3個月：無症狀或輕症，且無發燒。
-                                            <!-- if 值為 2 -->
-                                            確診者年齡為3-12個月：無症狀或輕症，且無高燒>39度。
-                                            <!-- if 值為 3 -->
-                                            確診者年齡為1-64歲：無症狀或輕症，且無懷孕或血液透析。
-                                            <!-- if 值為 4 -->
-                                            確診者年齡為65-69歲：無症狀或輕症，非獨居，且無懷孕或血液透析。
-                                            <!-- if 值為 5 -->
-                                            不符上述條件之無症狀或輕症確診者，如本人或其法定代理人要求希望採居家照護，經醫療人員評估後，得採取居家照護。
+                                            確診者年齡為19-64歲：無症狀或輕症，且無懷孕或血液透析
                                         </div>
                                     </dd>
                                     <dt>
@@ -609,6 +630,8 @@
                                             <br> 咳嗽｜喉嚨癢、痛｜鼻塞、流鼻水｜其他（ＯＯＯＯ）
                                         </div>
                                     </dd>
+
+                                    <!-- if (診斷年齡 > 18)，成人：警示症況 //start -->
                                     <dt>
                                         <label for="" class="">警示症狀</label>
                                     </dt>
@@ -618,6 +641,29 @@
                                             <38℃）之情形下，心跳>100次/分鐘｜ 皮膚或嘴唇或指甲床發青｜ 無法進食、喝水或服藥｜ 過去24小時無尿或尿量顯著減少
                                         </div>
                                     </dd>
+                                    <!-- if (診斷年齡 > 18)，成人：警示症況 //end -->
+
+                                    <!-- if (診斷年齡 <= 18)，兒童：警訊表徵(就醫警訊) //start -->
+                                    <dt>
+                                        <label for="" class="">警訊表徵<br>(就醫警訊)</label>
+                                    </dt>
+                                    <dd class="wide">
+                                        <div class="form-control GSMis-no-border">
+                                            發燒超過48小時，或高燒>39度合併發冷/冒冷汗｜ 退燒後持續活動力不佳｜ 退燒後持續呼吸急促/喘或胸悶胸痛｜ 持續性嘔吐、頭痛或腹痛｜ 超過12小時未進食或未解尿
+                                        </div>
+                                    </dd>
+                                    <!-- if (診斷年齡 <= 18)，兒童：警訊表徵(就醫警訊) //end -->
+                                    <!-- if (診斷年齡 <= 18)，兒童：119就醫/緊急自行就醫條件 //start -->
+                                    <dt>
+                                        <label for="" class="">119就醫/<br>緊急自行就醫條件</label>
+                                    </dt>
+                                    <dd class="wide">
+                                        <div class="form-control GSMis-no-border">
+                                            抽搐｜ 意識不佳｜ 呼吸困難或有胸凹現象｜ 唇色發白或發紫｜ 血氧飽和度低於94%(如有血氧機)｜ 肢體冰冷且有皮膚斑駁或冒汗
+                                        </div>
+                                    </dd>
+                                    <!-- if (診斷年齡 <= 18)，兒童：119就醫/緊急自行就醫條件 //end -->
+
                                     <dt>
                                         <label for="" class="">主訴疾病史<br>（慢性疾病）</label>
                                     </dt>
@@ -836,6 +882,8 @@
                                 </dl>
                             </dd>
                             <dt class="is-last-day">
+                            <!-- 若在第1-10天關懷中，則文字顯示為「預計解隔日」 -->
+                            <!-- 若已滿10天/結案，則文字顯示為「解隔日」 -->
                                 預計解隔日<br>
                                 111/04/29
                             </dt>
