@@ -101,11 +101,11 @@ body.demo {
 .demo-news {
     position: absolute;
     left: 50%;
-    top: 60px;
+    top: 61px;
     width: 1040px;
-    height: 44px;
+    height: 40px;
     background: url(../images/demo/demo-news.png) 50% 50% no-repeat;
-    background-size: auto 100%;
+    background-size: contain;
     transform: translateX(-50%);
 }
 
@@ -361,7 +361,15 @@ caption {
     background-color: #5C84D2 !important;
     color: #fff !important;
 }
-
+.dashboard-tab .note {
+    position: absolute;
+    top: .75em;
+    right: 1em;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+    color: #FF6961;
+}
 .query-apply-plan {
     margin: 1px 18px 0 10px;
     padding: 1.5em;

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>組室窗口/Dashboard</title>
+    <title>科長/Dashboard</title>
     <!-- CSS Reset -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
@@ -26,9 +26,9 @@
         <a href="dashboard_高階主管.html#page">高階主管</a>
         <a href="dashboard_組長.html#page">組長</a>
         <a href="dashboard_局長.html#page">局長</a>
-        <a href="dashboard_科長.html#page">科長</a>
+        <a href="dashboard_科長.html#page" class="active">科長</a>
         <a href="dashboard_課長.html#page">課長</a>
-        <a href="dashboard_組室窗口.html#page" class="active">組室窗口</a>
+        <a href="dashboard_組室窗口.html#page">組室窗口</a>
         <a href="dashboard_主督辦.html#page">主督辦</a>
         <a href="dashboard_預算控管人員.html#page">預算控管人員</a>
     </div>
@@ -95,8 +95,8 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <td>33件</td>
-                                    <td class="align-r">5182萬</td>
+                                    <td>386件</td>
+                                    <td class="align-r">29億9966萬</td>
                                 </tr>
                             </table>
                             <hr/>
@@ -174,23 +174,21 @@
                 </div>
                 <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                     <div id="dashboardFormalPlan" class="wrap dashboard">
+
                         <!-- <div class="notice">
-                    <div class="todo">
-                        <i class="fa-solid fa-clipboard-check"></i> 待審閱計畫 <span>3</span>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-triangle-exclamation"></i> 評選委員同時為其他計畫廠商 <span>3</span>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-user-xmark"></i> 無人督主辦計畫 <span>3</span>
-                    </div>
-                </div> -->
+                            <div class="todo">
+                                <i class="fa-solid fa-clipboard-check"></i> 待審閱計畫 <span>3</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-triangle-exclamation"></i> 評選委員同時為其他計畫廠商 <span>3</span>
+                            </div>
+                        </div> -->
 
                         <div class="col col-1 section-outsourcing-funds relative">
                             <h2 class="title">
                                 <select class="select-year">
-                            <option value="110">110年度</option>
                             <option value="111" selected>111年度</option>
+                            <option value="110">110年度</option>
                         </select> 計畫概要
                                 <div class="wrap toolbox toolbox-no-gap">
                                     <select class="filter-company">
@@ -209,8 +207,8 @@
                                     </th>
                                     <th class="align-r">
                                         <!-- <a href="dashboard_plan_funds.html" target="_blank">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a> -->
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </a> -->
                                         總經費
                                     </th>
                                 </tr>
@@ -240,20 +238,21 @@
 
                         </div>
 
+
                         <div class="col col-2 section-organizer-stage">
                             <h2 class="title">計畫執行</h2>
                             <div class="flex">
                                 <section class="wrap-organizer">
-                                    <div id="chartMyOrganizer" class="chart-organizer-mine" style="display: none;"></div>
+                                    <div id="chartOrganizer" class="chart-organizer" style="display:none"></div>
                                     <div class="section-title">負責計畫</div>
-
+                                    <!-- <a href="dashboard_plan_rank.html" target="_blank" class="btn-rank">排名</a> -->
                                     <table class="data-organizer-mine" style="height: 90%;">
                                         <tr>
                                             <td></td>
                                             <td class="align-r">件數</td>
                                             <td class="align-r">進度落後</td>
                                         </tr>
-                                        <tr class="wra">
+                                        <!-- <tr class="wra">
                                             <th>個人主辦</th>
                                             <td class="align-r"><span>1</span></td>
                                             <td class="align-r"><span class="late">1</span></td>
@@ -262,16 +261,11 @@
                                             <th>個人督辦</th>
                                             <td class="align-r"><span>1</span></td>
                                             <td class="align-r"><span class="late">0</span></td>
-                                        </tr>
+                                        </tr> -->
                                         <tr class="aa">
-                                            <th>控管單位主辦</th>
-                                            <td class="align-r"><span>17</span></td>
-                                            <td class="align-r"><span class="late">4</span></td>
-                                        </tr>
-                                        <tr class="aa">
-                                            <th>控管單位督辦</th>
-                                            <td class="align-r"><span>16</span></td>
-                                            <td class="align-r"><span class="late">4</span></td>
+                                            <th>控管單位執行</th>
+                                            <td class="align-r"><span>33</span></td>
+                                            <td class="align-r"><span class="late">8</span></td>
                                         </tr>
                                     </table>
                                 </section>
@@ -342,6 +336,7 @@
                                 </section>
                             </div>
                         </div>
+
 
                         <div class="col col-1 section-priority">
                             <h2 class="title">計畫優先序
@@ -438,18 +433,6 @@
                                 </select>
                             </div>
 
-                            <!-- <div class="mychart-type-bar">
-                                <table class="data">
-                                    <tr>
-                                        <td>只有一家廠商投標</td>
-                                        <td class="align-r">50件 (13%)</td>
-                                    </tr>
-                                </table>
-                                <div class="mychart-bar">
-                                    <span id="chartOneCompany" class="bar" data-value="50" data-total="386"></span>
-                                </div>
-                            </div> -->
-
                             <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
                                 <div class="total-block big">
                                     <span class="total-title">得標廠商總數</span>
@@ -472,14 +455,14 @@
                             <div class="slider">
                                 <input type="radio" name="r" id="r1" checked>
                                 <label for="r1">
-                                    <div id="chartCompany" class="chart-company slider" data-slider="0"></div>
-                                </label>
+                    <div id="chartCompany" class="chart-company slider" data-slider="0"></div>
+                </label>
                                 <input type="radio" name="r" id="r2">
                                 <label for="r2">
-                                    <div id="chartCompanyHosting" class="chart-company slider" data-slider="0">
+                    <div id="chartCompanyHosting" class="chart-company slider" data-slider="0">
 
-                                    </div>
-                                </label>
+                    </div>
+                </label>
                             </div>
 
                         </div>
@@ -489,39 +472,27 @@
 
                             <div class="wrap toolbox toolbox-no-gap">
                                 <select class="filter-company">
-                    <option selected="selected" value="水利署">全署</option>
-                    <option disabled>-------------</option>
-                    <option value="水利署">本署</option>
-                    <option disabled>-------------</option>
-                    <option value="第一河川局">第一河川局</option>
-                    <option value="第二河川局">第二河川局</option>
-                    <option value="第三河川局">第三河川局</option>
-                    <option value="第四河川局">第四河川局</option>
-                    <option value="第五河川局">第五河川局</option>
-                    <option value="第六河川局">第六河川局</option>
-                    <option value="第七河川局">第七河川局</option>
-                    <option value="第八河川局">第八河川局</option>
-                    <option value="第九河川局">第九河川局</option>
-                    <option value="第十河川局">第十河川局</option>
-                    <option value="北區水資源局">北區水資源局</option>
-                    <option value="中區水資源局">中區水資源局</option>
-                    <option value="南區水資源局">南區水資源局</option>
-                    <option value="水利規劃試驗所">水利規劃試驗所</option>
-                    <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
-                </select>
+                                    <option selected="selected" value="水利署">全署</option>
+                                    <option disabled>-------------</option>
+                                    <option value="水利署">本署</option>
+                                    <option disabled>-------------</option>
+                                    <option value="第一河川局">第一河川局</option>
+                                    <option value="第二河川局">第二河川局</option>
+                                    <option value="第三河川局">第三河川局</option>
+                                    <option value="第四河川局">第四河川局</option>
+                                    <option value="第五河川局">第五河川局</option>
+                                    <option value="第六河川局">第六河川局</option>
+                                    <option value="第七河川局">第七河川局</option>
+                                    <option value="第八河川局">第八河川局</option>
+                                    <option value="第九河川局">第九河川局</option>
+                                    <option value="第十河川局">第十河川局</option>
+                                    <option value="北區水資源局">北區水資源局</option>
+                                    <option value="中區水資源局">中區水資源局</option>
+                                    <option value="南區水資源局">南區水資源局</option>
+                                    <option value="水利規劃試驗所">水利規劃試驗所</option>
+                                    <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
+                                </select>
                             </div>
-
-                            <!-- <div class="mychart-type-bar">
-                <table class="data">
-                    <tr>
-                        <td>有遴聘委員</td>
-                        <td class="align-r">389件 (82%)</td>
-                    </tr>
-                </table>
-                <div class="mychart-bar">
-                    <span id="chartHasCommittee" class="bar" data-value="317" data-total="386"></span>
-                </div>
-            </div> -->
 
                             <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
                                 <div class="total-block big" style="width: 100%;">
@@ -538,6 +509,7 @@
                             </div>
                         </div>
 
+
                         <div class="col col-3 section-funds-detail">
                             <div class="funds3 relative">
                                 <h2 class="title">
@@ -547,14 +519,14 @@
                                     </select>  -->
                                     第一河川局 - 主辦計畫分布：
                                     <select class="filter-company">
-                                        <option value="" selected>111</option>
-                                        <option value="">110</option>
-                                    </select>
+                                <option value="" selected>111</option>
+                                <option value="">110</option>
+                            </select>
                                     <span>~</span>
                                     <select class="filter-company">
-                                        <option value="" selected>111年</option>
-                                        <option value="">110年</option>
-                                    </select>
+                                <option value="" selected>111年</option>
+                                <option value="">110年</option>
+                            </select>
                                 </h2>
                                 <div id="funds3" class="chart-plan-funds"></div>
 
@@ -600,15 +572,23 @@
 
                             </div>
                         </div>
-
+                        <div class="col col-3 section-funds-detail">
+                            <div class="funds1">
+                                <h2 class="title">委辦計畫經費執行：
+                                    <select class="filter-company">
+                                <option value="">110年</option>
+                                <option value="" selected>111年</option>
+                            </select>
+                                </h2>
+                                <div id="funds1" class="chart-plan-funds"></div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
             </div>
-
         </main>
     </div>
-
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
     <!-- Uncomment this line if you want to dataTool extension
@@ -630,13 +610,14 @@
           -->
 
 
-    <script data-main="js/dashboard-window" src="js/require.js"></script>
+    <script data-main="js/dashboard-leader" src="js/require.js"></script>
     <!-- <script>
         window.addEventListener('resize', function() {
             "use strict";
             window.location.reload();
         });
     </script> -->
+
 
 </body>
 

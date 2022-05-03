@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>組長/科長/局長/課長/Dashboard</title>
+    <title>組長/Dashboard</title>
     <!-- CSS Reset -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
@@ -24,7 +24,10 @@
         Demo :
         <a href="dashboard_系統控管人員.html#page">系統控管人員</a>
         <a href="dashboard_高階主管.html#page">高階主管</a>
-        <a href="dashboard_組長科長局長課長.html#page" class="active">組長/科長/局長/課長</a>
+        <a href="dashboard_組長.html#page" class="active">組長</a>
+        <a href="dashboard_局長.html#page">局長</a>
+        <a href="dashboard_科長.html#page">科長</a>
+        <a href="dashboard_課長.html#page">課長</a>
         <a href="dashboard_組室窗口.html#page">組室窗口</a>
         <a href="dashboard_主督辦.html#page">主督辦</a>
         <a href="dashboard_預算控管人員.html#page">預算控管人員</a>
@@ -44,14 +47,17 @@
         </header>
         <main>
 
-            <ul class="nav nav-pills mb-3 dashboard-tab" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills mb-3 dashboard-tab relative" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab" aria-controls="pills-home" aria-selected="fasle">預定計畫 
-                        <i class="fa-solid fa-circle-info"  data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="預定計畫(申請登錄期間：110/8/1～110/8/20)<br>增辦計畫會議登錄(申請登錄期間：110/12/20～111/1/10)"></i>
+                        <!-- <i class="fa-solid fa-circle-info"  data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="預定計畫(申請登錄期間：110/8/1～110/8/20)<br>增辦計畫會議登錄(申請登錄期間：110/12/20～111/1/10)"></i> -->
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="true">正式計畫</a>
+                </li>
+                <li class="note">
+                    「預定計畫」申請登錄期間：110/08/01～110/08/20<br>「增辦計畫會議登錄」申請登錄期間：110/12/20～111/01/10
                 </li>
             </ul>
 
