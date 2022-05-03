@@ -31,7 +31,7 @@ requirejs([
     var myChartOrganizer = echarts.init(domChartOrganizer);
 
     // 滑鼠移上主辦機關 Pie圖，帶入數據到執行階段曲線圖
-    myChartOrganizer.on('mouseover', function(params) {
+    myChartOrganizer.on('click', function(params) {
         if (params.data.name == '水利署') {
             var total = [0, 45, 22, 45, 0, 50, 0, 0, 0];
             var late = [0, 8, 0, 22, 0, 8, 0, 0, 0];
@@ -46,7 +46,7 @@ requirejs([
         }
     });
     // 滑鼠移出圖表後 恢復執行階段預設數據
-    myChartOrganizer.on('globalout', function(params) {
+    myChartOrganizer.on('dblclick', function(params) {
         renderStage(valueStageTotal, valueStageLate, '');
         updateTableData(valueStageTotal, valueStageLate);
     });
@@ -68,6 +68,6 @@ requirejs([
 
     // 主辦機關 + 執行階段 連動查詢 =======================================//end
 
-    renderChartFunds1();
+    // renderChartFunds1();
     renderChartFunds33();
 });

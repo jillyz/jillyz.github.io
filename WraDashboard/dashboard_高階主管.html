@@ -33,7 +33,7 @@
         <a href="dashboard_預算控管人員.html#page">預算控管人員</a>
     </div>
 
-    <div class="page" data-menu="open" id="page">
+    <div class="page" data-menu="close" id="page">
         <aside class="demo-aside" onclick="toggleMenu()">
             <nav class="demo-float-sub-menu"></nav>
         </aside>
@@ -106,7 +106,7 @@
                                 <tr>
                                     <th>
                                         總件數
-                                        <a href="dashboard_plan_query.html" target="_blank">
+                                        <a href="dashboard_plan_query.html" target="_blank" class="btn-view">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </a>
                                     </th>
@@ -216,7 +216,7 @@
                                 <tr>
                                     <th>
                                         總件數
-                                        <a href="dashboard_plan_query.html" target="_blank">
+                                        <a href="dashboard_plan_query.html" target="_blank" class="btn-view">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </a>
                                     </th>
@@ -323,7 +323,7 @@
                                             <td></td>
                                             <td class="cursor btn-purchase-detail">
                                                 <input id="purchaseDetail" type="checkbox">
-                                                <label for="purchaseDetail"><i class="fa-regular fa-rectangle-list"></i></label>
+                                                <label for="purchaseDetail" class="btn-view"><i class="fa-regular fa-rectangle-list"></i></label>
                                                 <table class="data-stage purchase">
                                                     <caption>採購階段執行進度（已完成「計畫核可」方列入統計）</caption>
                                                     <tr>
@@ -352,7 +352,7 @@
                         </div>
                         <div class="col col-1 section-priority">
                             <h2 class="title">計畫優先序
-                                <a href="dashboard_plan_priority.html" target="_blank">
+                                <a href="dashboard_plan_priority.html" target="_blank" class="btn-view">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </a>
                             </h2>
@@ -372,7 +372,7 @@
                                         </tr>
                                     </table>
                                     <div id="chartPriority1" class="chart-priority"></div>
-                                    <span class="percentage">%</span>
+                                    <span class="percentage">% 發包率</span>
                                 </div>
                                 <div class="col col-3">
                                     <table class="data-priority">
@@ -389,7 +389,7 @@
                                         </tr>
                                     </table>
                                     <div id="chartPriority2" class="chart-priority"></div>
-                                    <span class="percentage">%</span>
+                                    <span class="percentage">% 發包率</span>
                                 </div>
                                 <div class="col col-3">
                                     <table class="data-priority">
@@ -406,7 +406,7 @@
                                         </tr>
                                     </table>
                                     <div id="chartPriority3" class="chart-priority"></div>
-                                    <span class="percentage">%</span>
+                                    <span class="percentage">% 發包率</span>
                                 </div>
                             </div>
                         </div>

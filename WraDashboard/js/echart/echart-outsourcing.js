@@ -67,9 +67,9 @@ function renderChartOutsourcing() {
         myChartOutsourcing.setOption(optionOutsourcing);
     }
 
-    myChartOutsourcing.on('click', function(params) {
-        window.open('dashboard_plan_query.html?outsourcing=' + encodeURIComponent(params.name)).focus();
-    });
+    // myChartOutsourcing.on('click', function(params) {
+    //     window.open('dashboard_plan_query.html?outsourcing=' + encodeURIComponent(params.name)).focus();
+    // });
 
 }
 renderChartOutsourcing();

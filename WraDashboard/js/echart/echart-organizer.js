@@ -83,9 +83,9 @@ function renderOrganizer(dom) {
             myChartOrganizer.setOption(optionOrganizer);
         }
 
-        myChartOrganizer.on('click', function(params) {
-            window.open('dashboard_plan_query.html?organizer=' + encodeURIComponent(params.name)).focus();
-        });
+        // myChartOrganizer.on('click', function(params) {
+        //     window.open('dashboard_plan_query.html?organizer=' + encodeURIComponent(params.name)).focus();
+        // });
 
         window.onresize = function() {
             myChartOrganizer.resize();

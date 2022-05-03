@@ -1,9 +1,9 @@
 // define(function() {
 //----優先序------
 
-renderPriority('#chartPriority1', 20);
-renderPriority('#chartPriority2', 30);
-renderPriority('#chartPriority3', 50);
+renderPriority('#chartPriority1', 91);
+renderPriority('#chartPriority2', 91);
+renderPriority('#chartPriority3', 96);
 
 function renderPriority(dom, data) {
     var domPriority = document.querySelector(dom);
@@ -55,7 +55,7 @@ function renderPriority(dom, data) {
                 detail: {
                     valueAnimation: true,
                     fontSize: 28,
-                    offsetCenter: [0, '50%']
+                    offsetCenter: [0, '70%']
                 },
                 data: [{
                     value: data
@@ -67,9 +67,9 @@ function renderPriority(dom, data) {
             myChartPriority.setOption(optionPriority);
         }
 
-        myChartPriority.getZr().on('click', function(params) {
-            window.open('dashboard_plan_query.html?priority=1').focus();
-        });
+        // myChartPriority.getZr().on('click', function(params) {
+        //     window.open('dashboard_plan_query.html?priority=1').focus();
+        // });
 
         window.onresize = function() {
             myChartPriority.resize();

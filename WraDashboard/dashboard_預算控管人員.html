@@ -33,7 +33,7 @@
         <a href="dashboard_預算控管人員.html#page" class="active">預算控管人員</a>
     </div>
 
-    <div class="page" data-menu="open" id="page">
+    <div class="page" data-menu="close" id="page">
         <aside class="demo-aside" onclick="toggleMenu()">
             <nav class="demo-float-sub-menu"></nav>
         </aside>
@@ -73,6 +73,12 @@
                                 <option value="" selected>預定計畫</option>
                                 <option value="">增辦計畫會議</option>
                             </select>
+
+                            <select class="select-year">
+                                <option value="" selected>預算控管執行</option>
+                                <option value="">個人主辦</option>
+                                <option value="">個人督辦</option>
+                            </select>
                         </div>
                     </div>
                     <div id="dashboardScheduledPlan" class="wrap dashboard hide">
@@ -85,7 +91,7 @@
                                 <tr>
                                     <th>
                                         總件數
-                                        <a href="dashboard_plan_query.html" target="_blank">
+                                        <a href="dashboard_plan_query.html" target="_blank" class="btn-view">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </a>
                                     </th>
@@ -192,11 +198,18 @@
                                 <section class="wrap-organizer">
                                     <!-- <div id="chartMyOrganizer" class="chart-organizer-mine"></div> -->
                                     <div class="section-title">負責計畫</div>
-                                    <table class="data-organizer-mine" style="height: 90%;">
+                                    <table class="data-organizer-mine">
                                         <tr>
                                             <td></td>
                                             <td class="align-r">件數</td>
                                             <td class="align-r">進度落後</td>
+                                        </tr>
+                                        <tr class="aa active">
+                                            <th>預算控管執行</th>
+                                            <td class="align-r"><span>33</span></td>
+                                            <td class="align-r">
+                                                <span class="late">8</span>
+                                            </td>
                                         </tr>
                                         <tr class="wra">
                                             <th>個人主辦</th>
@@ -214,14 +227,7 @@
                                             <td class="align-r">
                                                 <span class="late">8</span>
                                             </td>
-                                        </tr> -->
-                                        <tr class="aa">
-                                            <th>預算控管執行</th>
-                                            <td class="align-r"><span>33</span></td>
-                                            <td class="align-r">
-                                                <!-- <span class="late">8</span> -->
-                                            </td>
-                                        </tr>
+                                        </tr> -->                                
                                     </table>
                                 </section>
                                 <section class="wrap-stage">
@@ -264,7 +270,7 @@
                                             <td></td>
                                             <td class="cursor btn-purchase-detail">
                                                 <input id="purchaseDetail" type="checkbox">
-                                                <label for="purchaseDetail"><i class="fa-regular fa-rectangle-list"></i></label>
+                                                <label for="purchaseDetail" class="btn-view"><i class="fa-regular fa-rectangle-list"></i></label>
                                                 <table class="data-stage purchase">
                                                     <caption>採購階段執行進度（已完成「計畫核可」方列入統計）</caption>
                                                     <tr>
@@ -310,14 +316,11 @@
                                 <tr>
                                     <th>
                                         總件數
-                                        <a href="dashboard_plan_query.html" target="_blank">
+                                        <a href="dashboard_plan_query.html" target="_blank" class="btn-view">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </a>
                                     </th>
                                     <th class="align-r">
-                                        <!-- <a href="dashboard_plan_funds.html" target="_blank">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a> -->
                                         總經費
                                     </th>
                                 </tr>
@@ -327,29 +330,29 @@
                                 </tr>
                             </table>
                             <div class="wrap chart-outsourcing-funds">
-                                <!-- <div id="chartOutsourcing" class="chart-outsourcing col"></div> -->
-                                <!-- <div id="chartFunds" class="chart-funds col"></div> -->
+                                <div id="chartOutsourcing" class="chart-outsourcing col"></div>
+                                <div id="chartFunds" class="chart-funds col"></div>
                             </div>
-                            <table class="data-outsourcing-funds" style="margin-top: 10px;">
+                            <table class="data-outsourcing-funds">
                                 <tr class="yes">
                                     <td>已發包</td>
                                     <td><span>25件</span></td>
-                                    <td>已執行經費 </td>
+                                    <td>已發包經費 </td>
                                     <td><span>3990萬</span></td>
                                 </tr>
                                 <tr class="no">
                                     <td>未發包</td>
                                     <td><span>8件</span></td>
-                                    <td>剩餘經費</td>
+                                    <td>未發包經費</td>
                                     <td><span>1192萬</span></td>
                                 </tr>
                             </table>
 
                             <!-- 預算核定總經費 -->
-                            <div class="relative">
+                            <!-- <div class="relative">
                                 <div id="chartBudgetRequestOver" class="chart-budget demo-show" onclick="toggleDOM('chartBudgetRequestOver','chartBudgetRequestUnder')"></div>
                                 <div id="chartBudgetRequestUnder" class="chart-budget demo-hide" onclick="toggleDOM('chartBudgetRequestOver','chartBudgetRequestUnder')"></div>
-                            </div>
+                            </div> -->
 
                         </div>
 

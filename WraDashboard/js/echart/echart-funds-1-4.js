@@ -35,7 +35,10 @@ function renderChartFunds1() {
             },
             inverse: true,
             data: [
-                '公務預算-水資源科技發展',
+                '公務預算/水資源科技發展/水資源科技發展/尖端地層下陷防治技術之研發',
+                '公務預算/水資源科技發展/水資源科技發展/智慧水管理技術研發',
+                '公務預算/水資源科技發展/水資源科技發展/韌性防災調適與評估研究',
+                '公務預算/水資源科技發展/水資源科技發展/公共用水效率提升計畫',
             ]
         }],
         series: [{
@@ -49,6 +52,9 @@ function renderChartFunds1() {
                     focus: 'series'
                 },
                 data: [
+                    9090,
+                    21658.750,
+                    24510,
                     8900,
                 ]
             },
@@ -63,8 +69,10 @@ function renderChartFunds1() {
                     focus: 'series'
                 },
                 data: [
+                    9250,
+                    21658.750,
+                    24700,
                     8900,
-
                 ]
             },
             {
@@ -78,7 +86,12 @@ function renderChartFunds1() {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [-160, ]
+                data: [
+                    -160, 
+                    0,
+                    -190,
+                    0
+                ]
             }
         ]
     };

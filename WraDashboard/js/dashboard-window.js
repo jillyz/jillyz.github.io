@@ -9,8 +9,8 @@ requirejs([
     'echart/echart-hosting',
     'echart/echart-committee',
     'echart/echart-funds-3-3',
-    'echart/echart-funds-4',
-    'echart/echart-funds-5',
+    // 'echart/echart-funds-4',
+    // 'echart/echart-funds-5',
 ], function() {
 
 

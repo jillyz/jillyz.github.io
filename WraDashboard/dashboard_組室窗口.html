@@ -34,7 +34,7 @@
     </div>
 
 
-    <div class="page" data-menu="open" id="page">
+    <div class="page" data-menu="close" id="page">
         <aside class="demo-aside" onclick="toggleMenu()">
             <nav class="demo-float-sub-menu"></nav>
         </aside>
@@ -74,6 +74,13 @@
                                 <option value="" selected>預定計畫</option>
                                 <option value="">增辦計畫會議</option>
                             </select>
+
+                            <select class="select-year">
+                                <option value="" selected>個人主辦</option>
+                                <option value="">個人督辦</option>
+                                <option value="">控管單位主辦</option>
+                                <option value="">控管單位督辦</option>
+                            </select>
                         </div>
                     </div>
                     <div id="dashboardScheduledPlan" class="wrap dashboard hide">
@@ -86,7 +93,7 @@
                                 <tr>
                                     <th>
                                         總件數
-                                        <a href="dashboard_plan_query.html" target="_blank">
+                                        <a href="dashboard_plan_query.html" target="_blank" class="btn-view">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </a>
                                     </th>
@@ -189,28 +196,26 @@
                         <div class="col col-1 section-outsourcing-funds relative">
                             <h2 class="title">
                                 <select class="select-year">
-                            <option value="110">110年度</option>
-                            <option value="111" selected>111年度</option>
-                        </select> 計畫概要
+                                    <option value="110">110年度</option>
+                                    <option value="111" selected>111年度</option>
+                                </select>
+                                計畫概要
                                 <div class="wrap toolbox toolbox-no-gap">
                                     <select class="filter-company">
-                        <option selected="selected" value="">複審會議核定經費</option>
-                        <option value="">計畫執行經費</option>
-                    </select>
+                                        <option selected="selected" value="">複審會議核定經費</option>
+                                        <option value="">計畫執行經費</option>
+                                    </select>
                                 </div>
                             </h2>
                             <table class="data-total">
                                 <tr>
                                     <th>
                                         總件數
-                                        <a href="dashboard_plan_query.html" target="_blank">
+                                        <a href="dashboard_plan_query.html" target="_blank" class="btn-view">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </a>
                                     </th>
                                     <th class="align-r">
-                                        <!-- <a href="dashboard_plan_funds.html" target="_blank">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a> -->
                                         總經費
                                     </th>
                                 </tr>
@@ -247,13 +252,13 @@
                                     <div id="chartMyOrganizer" class="chart-organizer-mine" style="display: none;"></div>
                                     <div class="section-title">負責計畫</div>
 
-                                    <table class="data-organizer-mine" style="height: 90%;">
+                                    <table class="data-organizer-mine">
                                         <tr>
                                             <td></td>
                                             <td class="align-r">件數</td>
                                             <td class="align-r">進度落後</td>
                                         </tr>
-                                        <tr class="wra">
+                                        <tr class="wra active">
                                             <th>個人主辦</th>
                                             <td class="align-r"><span>1</span></td>
                                             <td class="align-r"><span class="late">1</span></td>
@@ -315,7 +320,7 @@
                                             <td></td>
                                             <td class="cursor btn-purchase-detail">
                                                 <input id="purchaseDetail" type="checkbox">
-                                                <label for="purchaseDetail"><i class="fa-regular fa-rectangle-list"></i></label>
+                                                <label for="purchaseDetail" class="btn-view"><i class="fa-regular fa-rectangle-list"></i></label>
                                                 <table class="data-stage purchase">
                                                     <caption>採購階段執行進度（已完成「計畫核可」方列入統計）</caption>
                                                     <tr>
@@ -345,7 +350,7 @@
 
                         <div class="col col-1 section-priority">
                             <h2 class="title">計畫優先序
-                                <a href="dashboard_plan_priority.html" target="_blank">
+                                <a href="dashboard_plan_priority.html" target="_blank" class="btn-view">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </a>
                             </h2>
@@ -365,7 +370,7 @@
                                         </tr>
                                     </table>
                                     <div id="chartPriority1" class="chart-priority"></div>
-                                    <span class="percentage">%</span>
+                                    <span class="percentage">% 發包率</span>
                                 </div>
                                 <div class="col col-3">
                                     <table class="data-priority">
@@ -382,7 +387,7 @@
                                         </tr>
                                     </table>
                                     <div id="chartPriority2" class="chart-priority"></div>
-                                    <span class="percentage">%</span>
+                                    <span class="percentage">% 發包率</span>
                                 </div>
                                 <div class="col col-3">
                                     <table class="data-priority">
@@ -399,7 +404,7 @@
                                         </tr>
                                     </table>
                                     <div id="chartPriority3" class="chart-priority"></div>
-                                    <span class="percentage">%</span>
+                                    <span class="percentage">% 發包率</span>
                                 </div>
                             </div>
                         </div>
@@ -559,7 +564,7 @@
                                 <div id="funds3" class="chart-plan-funds"></div>
 
 
-                                <div id="fundsDetail" class="hide" style="margin-top: 20px;">
+                                <!-- <div id="fundsDetail" class="hide" style="margin-top: 20px;">
                                     <div class="wrap">
                                         <div class="block-funds-detail relative">
                                             <h2 class="grid-title">
@@ -595,7 +600,7 @@
                                             <div id="funds5" class="chart-plan-funds2"></div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
 
                             </div>
