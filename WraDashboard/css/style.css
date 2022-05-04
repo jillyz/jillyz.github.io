@@ -319,6 +319,14 @@ caption {
     width: calc( 100% - 8px);
 }
 
+.col-2-1 {
+    width: calc( 100% / 2 - 8px);
+}
+
+.col-2-1 {
+    width: calc( 100% - 8px);
+}
+
 .dashboard {
     margin-left: auto;
     margin-right: auto;
@@ -362,6 +370,7 @@ caption {
     background-color: #5C84D2 !important;
     color: #fff !important;
 }
+
 .dashboard-tab .note {
     position: absolute;
     top: .75em;
@@ -371,6 +380,7 @@ caption {
     text-align: right;
     color: #FF6961;
 }
+
 .query-apply-plan {
     margin: 1px 18px 0 10px;
     padding: 1.5em;
@@ -565,7 +575,9 @@ caption {
     background-color: transparent;
     box-shadow: none;
 }
-.btn-view, .btn-view:hover {
+
+.btn-view,
+.btn-view:hover {
     display: inline-block !important;
     width: 28px;
     height: 28px;
@@ -575,9 +587,12 @@ caption {
     text-align: center;
     border-radius: 4px;
 }
-.btn-view *, .btn-view:hover {
+
+.btn-view *,
+.btn-view:hover {
     color: #fff !important;
 }
+
 @-webkit-keyframes jump {
     40%,
     50%,
@@ -811,10 +826,12 @@ caption {
 .data-organizer-mine .active td {
     background-color: #e8f2ff;
 }
-.data-organizer-mine  tbody tr:hover th,
-.data-organizer-mine  tbody tr:hover td {
-    background-color: rgba(232,242,255,.3);
+
+.data-organizer-mine tbody tr:hover th,
+.data-organizer-mine tbody tr:hover td {
+    background-color: rgba(232, 242, 255, .3);
 }
+
 .data-total {
     position: relative;
     z-index: 1;

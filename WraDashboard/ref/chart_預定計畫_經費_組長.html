@@ -1,0 +1,139 @@
+<!--
+  THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=multiple-y-axis
+-->
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body style="height: 100%; margin: 0">
+    <div id="container" style="height: 100%"></div>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+    <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/extension/dataTool.min.js"></script>
+  -->
+    <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+    <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+    <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+    <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/extension/bmap.min.js"></script>
+  -->
+
+    <script type="text/javascript">
+        var dom = document.getElementById('container');
+        var myChart = echarts.init(dom, null, {
+            renderer: 'canvas',
+            useDirtyRect: false
+        });
+        var app = {};
+
+        var option;
+
+        const colors = ['#5470C6', '#EE6666'];
+        option = {
+            color: colors,
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross'
+                }
+            },
+            grid: {
+                top: 50,
+                bottom: 40,
+                left: 50,
+                right: 180
+            },
+            // toolbox: {
+            //   feature: {
+            //     dataView: { show: true, readOnly: false },
+            //     restore: { show: true },
+            //     saveAsImage: { show: true }
+            //   }
+            // },
+            legend: {
+                data: ['Evaporation', 'Temperature']
+            },
+            xAxis: [{
+                type: 'category',
+                axisTick: {
+                    alignWithLabel: true
+                },
+                // prettier-ignore
+                data: ['水源一科', '水源二科', '水源三科']
+            }],
+            yAxis: [{
+                type: 'value',
+                name: '提報經費',
+                position: 'right',
+                alignTicks: true,
+                offset: 80,
+                axisLine: {
+                    show: false,
+                    lineStyle: {
+                        color: colors[0]
+                    }
+                },
+                axisLabel: {
+                    formatter: '{value}千元'
+                }
+            }, {
+                type: 'value',
+                name: '件數',
+                position: 'left',
+                alignTicks: true,
+                axisLine: {
+                    show: true,
+                    lineStyle: {
+                        color: colors[1]
+                    }
+                },
+                axisLabel: {
+                    formatter: '{value}'
+                }
+            }],
+            series: [{
+                    name: '提報經費',
+                    type: 'bar',
+                    data: [
+                        24003, 19978, 10311
+                    ]
+                },
+                // {
+                //   name: 'Precipitation',
+                //   type: 'bar',
+                //   yAxisIndex: 1,
+                //   data: [
+                //     2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3
+                //   ]
+                // },
+                {
+                    name: '件數',
+                    type: 'line',
+                    yAxisIndex: 1,
+                    data: [15, 10, 8]
+                }
+            ]
+        };
+
+        if (option && typeof option === 'object') {
+            myChart.setOption(option);
+        }
+
+        window.addEventListener('resize', myChart.resize);
+    </script>
+</body>
+
+</html>
