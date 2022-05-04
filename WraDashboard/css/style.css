@@ -786,6 +786,10 @@ caption {
     border-bottom: 1px dotted #CCCCCC !important;
 }
 
+.data-organizer-mine tbody * {
+    cursor: pointer;
+}
+
 .data-organizer-mine th {
     /* font-size: 13px; */
     font-weight: normal;
@@ -806,6 +810,10 @@ caption {
 .data-organizer-mine .active th,
 .data-organizer-mine .active td {
     background-color: #e8f2ff;
+}
+.data-organizer-mine  tbody tr:hover th,
+.data-organizer-mine  tbody tr:hover td {
+    background-color: rgba(232,242,255,.3);
 }
 .data-total {
     position: relative;
