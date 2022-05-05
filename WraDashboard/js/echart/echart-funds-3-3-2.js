@@ -44,7 +44,7 @@ function renderChartFunds332() {
                 axisPointer: {
                     type: 'shadow'
                 },
-                data: ['水源一科', '水源二科']
+                data: ['水源一科', '水源二科', '水源三科']
             }],
             yAxis: [{
                     type: 'value',
@@ -97,7 +97,7 @@ function renderChartFunds332() {
                     name: '核定經費',
                     type: 'bar',
                     data: [
-                        20200, 19115
+                        20200, 19115, 15670
                     ]
                 },
                 {
@@ -105,14 +105,14 @@ function renderChartFunds332() {
                     type: 'bar',
                     yAxisIndex: 1,
                     data: [
-                        10400, 18426
+                        10400, 18426, 9862
                     ]
                 },
                 {
                     name: '件數',
                     type: 'line',
                     yAxisIndex: 2,
-                    data: [5, 4]
+                    data: [5, 4, 3]
                 }
             ]
         };
