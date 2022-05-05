@@ -53,6 +53,7 @@ function renderChartPriorityBar(domId, data) {
                     focus: 'series'
                 },
                 data: data.series[0].data,
+                cursor: 'default',
             },
             {
                 name: data.series[1].name,
@@ -65,6 +66,7 @@ function renderChartPriorityBar(domId, data) {
                     focus: 'series'
                 },
                 data: data.series[1].data,
+                cursor: 'default',
             },
             {
                 name: data.series[2].name,
@@ -77,6 +79,7 @@ function renderChartPriorityBar(domId, data) {
                     focus: 'series'
                 },
                 data: data.series[2].data,
+                cursor: 'default',
             },
             {
                 name: data.series[3].name,
@@ -86,9 +89,10 @@ function renderChartPriorityBar(domId, data) {
                     show: true
                 },
                 emphasis: {
-                    focus: 'series'
+                    focus: 'series',
                 },
                 data: data.series[3].data,
+                cursor: 'default',
             }
         ],
     };

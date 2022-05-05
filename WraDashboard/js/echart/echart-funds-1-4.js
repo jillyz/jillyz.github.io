@@ -42,6 +42,7 @@ function renderChartFunds1() {
             ]
         }],
         series: [{
+                cursor: 'default',
                 name: '預算經費',
                 type: 'bar',
                 label: {

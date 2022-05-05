@@ -49,6 +49,7 @@ function renderCompany(label, value) {
             }
         },
         series: [{
+            cursor: 'default',
             // data: [20, 15, 12, 8, 7],
             data: value,
             type: 'bar',
