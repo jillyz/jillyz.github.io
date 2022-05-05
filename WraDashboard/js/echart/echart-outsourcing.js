@@ -30,6 +30,7 @@ function renderChartOutsourcing() {
             '#5CC1FF',
         ],
         series: [{
+            cursor: 'default',
             center: ['40%', '32%'],
             name: '發包情形',
             type: 'pie',

@@ -46,7 +46,7 @@ function renderPriority(dom, data) {
                     showAbove: true,
                     size: 8,
                     itemStyle: {
-                        borderWidth: 8
+                        borderWidth: 8,
                     }
                 },
                 title: {

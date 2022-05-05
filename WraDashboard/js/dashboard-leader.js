@@ -10,6 +10,7 @@ requirejs([
     'echart/echart-committee',
     'echart/echart-funds-1',
     'echart/echart-funds-3-3',
+    'echart/echart-funds-3-3-2',
     'echart/echart-funds-4',
     'echart/echart-funds-5',
 ], function() {
@@ -70,4 +71,5 @@ requirejs([
 
     // renderChartFunds1();
     renderChartFunds33();
+    renderChartFunds332();
 });

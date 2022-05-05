@@ -49,6 +49,7 @@ function renderCommittee(label, value) {
             }
         },
         series: [{
+            cursor: 'default',
             data: value,
             type: 'bar',
             barWidth: 8,

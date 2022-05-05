@@ -24,6 +24,7 @@ function renderChartFunds() {
         backgroundColor: '#FFFFFF',
         color: '#5CC1FF',
         series: [{
+            cursor: 'default',
             type: 'gauge',
             center: ['60%', '30%'],
             startAngle: 90,
