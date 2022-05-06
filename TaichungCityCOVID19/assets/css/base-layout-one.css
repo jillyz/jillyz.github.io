@@ -157,7 +157,7 @@ body {
     }
 }
 
-.GSMis-menu .children.childrenOpen i {
+.GSMis-menu .children.childrenOpen i.toggleIcon {
     -webkit-transform: rotate(-180deg);
     -ms-transform: rotate(-180deg);
     transform: rotate(-180deg);
@@ -224,7 +224,7 @@ body {
     }
 }
 
-.GSMis-menu .level-2 a::before {
+/* .GSMis-menu .level-2 a::before {
     content: "● ";
     display: inline-block;
     -webkit-flex-shrink: 0;
@@ -232,7 +232,7 @@ body {
     flex-shrink: 0;
     width: 1.6em;
     font-size: 10px;
-}
+} */
 
 .GSMis-menu .level-2 a i {
     margin-left: auto;
