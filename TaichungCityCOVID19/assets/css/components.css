@@ -134,6 +134,16 @@
     border-radius: 50%;
 }
 
+.table-report {
+    table-layout: fixed;
+    caption-side: top;
+}
+
+.table-report th:not(:nth-child(1)),
+.table-report td:not(:nth-child(1)) {
+    text-align: right;
+}
+
 @media all and (min-width: 992px) {
     .offcanvas-width {
         width: 100%;
@@ -336,6 +346,7 @@ i.is-late {
     font-size: 20px;
     color: #d63384 !important;
 }
+
 .diary-date {
     display: block;
     font-size: .8125em;
