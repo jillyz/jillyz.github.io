@@ -72,8 +72,15 @@
                         <li class="active"><a href="diary_區公所.html"><i class="fa-solid fa-book"></i> 關懷日誌</a></li>
                         <!-- for all -->
                         <li class="active"><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估查詢</a></li>
-                        <!-- for ? -->
-                        <li class="active"><a href="report.html"><i class="fa-solid fa-table-list"></i> 收案統計</a>
+                        <!-- if 衛生局 -->
+                        <li class="active"><a href="report.html"><i class="fa-solid fa-table-list"></i> 收案統計</a></li>
+                        <li class="active"><a href="dashboard.html"><i class="fa-solid fa-chart-column"></i> 儀表板</a></li>
+                        <!-- if 系統管理員 -->
+                        <li>
+                            <a href="#" class="children"><i class="fa-solid fa-gear"></i> 系統管理<i class="fas fa-chevron-down toggleIcon"></i></a>
+                            <ul class="level-2">
+                                <li class="active"><a href="user_management.html">帳號管理</a></li>
+                            </ul>
                         </li>
                     </ul>
                     <!-- /.GSMis-menu -->
@@ -106,7 +113,7 @@
                     <div class="GSMis-search-area p-4 bg-light rounded border mb-5">
                         <!-- 表單組合 -->
                         <div class="row">
-                            <div class="col-sm-12 col-md-10 col-lg-9 col-xl-5">
+                            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-4">
                                 <div class="mb-3">
                                     <!-- <label for="" class="form-label">入案日</label> -->
                                     <div class="row justify-content-center gx-0 GSMis-duration">
@@ -122,8 +129,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-4 col-md-2 col-lg-3 col-xl-2 mb-2 mb-sm-0">
+                            <div class="col-sm-6 col-md-2 col-lg-2 col-xl-1 mb-2 mb-sm-0">
                                 <a href="" class="btn w-100 btn-secondary">查詢</a>
+                            </div>
+                            <div class="col-sm-6 col-md-2 col-lg-2 col-xl-1 mb-2 mb-sm-0">
+                                <a href="" class="btn w-100 btn-success">匯出</a>
                             </div>
                         </div>
 
@@ -740,7 +750,7 @@
                     <!-- /.table-responsive -->
 
                 </div>
-
+            </div>
         </main>
         <!-- /.GSMis-main-wrap -->
         <!-- GSMis-footer-wrap -->
@@ -752,19 +762,19 @@
             </div>
         </footer>
         <!-- /.GSMis-footer-wrap -->
-        </div>
-        <!-- /.GSMis-wrapper -->
-        <div class="GSMis-go-top ">
-            <a href="# " class=" " title="Go to Top ">TOP</a>
-        </div>
+    </div>
+    <!-- /.GSMis-wrapper -->
+    <div class="GSMis-go-top ">
+        <a href="# " class=" " title="Go to Top ">TOP</a>
+    </div>
 
 
-        <!-- Base -->
-        <script src="assets/vendor/jquery-3.6.0.min.js "></script>
-        <script src="assets/vendor/bootstrap-5.1.3/bootstrap.bundle.min.js "></script>
-        <!-- 自訂 -->
-        <script src="assets/js/base-layout-one.js "></script>
-        <script src="assets/js/common.js "></script>
+    <!-- Base -->
+    <script src="assets/vendor/jquery-3.6.0.min.js "></script>
+    <script src="assets/vendor/bootstrap-5.1.3/bootstrap.bundle.min.js "></script>
+    <!-- 自訂 -->
+    <script src="assets/js/base-layout-one.js "></script>
+    <script src="assets/js/common.js "></script>
 </body>
 
 </html>
