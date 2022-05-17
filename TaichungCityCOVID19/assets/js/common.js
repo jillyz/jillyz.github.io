@@ -74,3 +74,9 @@ const showDeleteFunc = () => {
         $('.delete-wrap').removeClass('show');
     }
 }
+
+$('#cancel_del').click(function(){
+    $('.delete-wrap').removeClass('show');
+    $('.chk-del').prop( "checked", false );
+    $('#chk_delete_all').prop( "checked", false );
+})
