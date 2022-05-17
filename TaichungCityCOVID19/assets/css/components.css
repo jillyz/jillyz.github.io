@@ -437,6 +437,29 @@ i.is-late {
     display: block;
     font-size: 36px;
 }
+.total > div {
+    text-align: right;
+}
+[class^=legend]::before {
+    content: "";
+    display: inline-block;
+    margin-right: 4px;
+    width: 10px;
+    height: 14px;
+    border-radius: 4px;
+}
+.legend-new::before {
+    background-color: #5672c6;
+}
+.legend-yes::before {
+    background-color: #91CC75;
+}
+.legend-wait::before {
+    background-color: #fac858;
+}
+.legend-no::before {
+    background-color: #EE6666;
+}
 @media all and (min-width: 992px) {
     .dashboard {
         max-width: 1400px;
