@@ -1050,8 +1050,7 @@
                         </dt>
                         <dd class="wide">
                             <div class="row padding">
-                                <div class="col-auto">
-
+                                <div class="col-12">
                                     <!-- 若已完成收案評估 -->
                                     <div class="mb-2">
                                         <code>（已完成收案評估，若您異動評估結果，請通知衛生所重做收案評估）</code>
@@ -1070,12 +1069,27 @@
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="result" id="result3">
-                                        <label class="form-check-label" for="result3">
-                                            其他，說明：
-                                        </label>
-                                        <input type="text" class="form-control form-input-note" placeholder="" value="">
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <input class="form-check-input" type="radio" name="result" id="result3">
+                                                <label class="form-check-label" for="result3">
+                                                    住院/機構，地點：
+                                                </label>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" class="form-control form-input-note" placeholder="請輸入地點" value="">   
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="result" id="result4">
+                                        <label class="form-check-label" for="result4">
+                                            轉外縣市
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-4 mb-4">
+                                    <input type="text" class="form-control form-input-note" placeholder="評估結果備註說明（選填）" value="">   
                                 </div>
                             </div>
 
