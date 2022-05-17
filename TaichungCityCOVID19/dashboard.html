@@ -1,0 +1,480 @@
+<!doctype html>
+<html class="no-js" lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台中市政府新冠肺炎居家照護管理系統</title>
+    <!-- Base -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap-5.1.3/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.1.1-web/all.min.css">
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="assets/css/base-layout-one.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/table.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/form-layout.css">
+</head>
+
+<body>
+    <div class="GSMis-wrapper">
+        <!-- GSMis-header-wrap 刊頭 -->
+        <header class="GSMis-header-wrap">
+            <div class="GSMis-header-inner">
+                <div class="GSMis-header">
+                    <div class="item">
+                        <!-- GSMis-brand -->
+                        <h1 class="GSMis-brand">
+                            <a href="index.html">
+                                <!-- <img class="GSMis-brand-img" src="assets/img/taichung-logo.png"> -->
+                                <span class="GSMis-brand-text">台中市政府新冠肺炎居家照護管理系統</span>
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="item">
+                        <!-- 手機版的漢堡 -->
+                        <a class="GSMis-hamburger-mobile" data-bs-toggle="collapse" href="#GSMis-collapse-menu">
+                            <span><i class="fas fa-bars"></i></span>
+                            <span style="display: none;"><i class="fas fa-times"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.GSMis-header-wrap -->
+        <!-- GSMis-nav-wrap 導覽列 -->
+        <nav class="GSMis-nav-wrap">
+            <div class="GSMis-nav-inner">
+                <div class="text-end">
+                    <!-- 桌機版的漢堡 -->
+                    <a class="GSMis-hamburger-desktop" href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+                <!-- 手機版選單開闔容器 -->
+                <div class="collapse" id="GSMis-collapse-menu">
+                    <!-- GSMis-menu 主選單 -->
+                    <ul class="GSMis-menu">
+                        <!-- if 衛生局 -->
+                        <li><a href="upload_衛生局.html"><i class="fa-solid fa-file-arrow-up"></i> 確診者資料上傳(衛生局)</a></li>
+                        <!-- if 系統管理員 -->
+                        <li>
+                            <a href="#" class="children"><i class="fa-solid fa-file-pen"></i> 評估填報<i
+                                    class="fas fa-chevron-down toggleIcon"></i></a>
+                            <ul class="level-2">
+                                <li><a href="evaluate_醫院.html"> 健康評估(醫院)</a></li>
+                                <li><a href="evaluate_區公所.html"> 居家環境評估(區公所)</a></li>
+                                <li><a href="evaluate_衛生所.html">收案評估(衛生所)</a></li>
+                            </ul>
+                        </li>
+                        <!-- if 區公所 -->
+                        <li class="active"><a href="diary_區公所.html"><i class="fa-solid fa-book"></i> 關懷日誌</a></li>
+                        <!-- for all -->
+                        <li class="active"><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估查詢</a>
+                        </li>
+                        <!-- if 衛生局 -->
+                        <li class="active"><a href="report.html"><i class="fa-solid fa-table-list"></i> 收案統計</a></li>
+                        <li class="active"><a href="dashboard.html"><i class="fa-solid fa-chart-column"></i> 儀表板</a>
+                        </li>
+                        <!-- if 系統管理員 -->
+                        <li>
+                            <a href="#" class="children"><i class="fa-solid fa-gear"></i> 系統管理<i
+                                    class="fas fa-chevron-down toggleIcon"></i></a>
+                            <ul class="level-2">
+                                <li class="active"><a href="user_management.html">帳號管理</a></li>
+                            </ul>
+                        </li>
+                        </li>
+                    </ul>
+                    <!-- /.GSMis-menu -->
+
+                    <!-- GSMis-help 輔助資訊 -->
+                    <div class="GSMis-help">
+                        <!-- 非主選單區的輔助選項 -->
+                        <ul class="GSMis-help-nav">
+                            <li><a href="xxx.pdf">操作手冊</a></li>
+                        </ul>
+                        <!-- 使用者狀態資訊 -->
+                        <div class="GSMis-help-user">
+                            <span class="GSMis-help-user-name">歡迎○○○ ○○○登入</span>
+                            <button class="GSMis-help-user-logout"><span class="text">登出</span><i
+                                    class="fas fa-sign-out-alt"></i></button>
+                        </div>
+                    </div>
+                    <!-- /.GSMis-help -->
+                </div>
+                <!-- /.collapse -->
+            </div>
+        </nav>
+        <!-- /.GSMis-nav-wrap -->
+
+        <!-- /.GSMis-breadcrumb-wrap -->
+        <!-- GSMis-main-wrap 主內容區 -->
+        <main class="GSMis-main-wrap">
+            <div class="GSMis-main-inner2">
+
+                <div class="dashboard">
+                    <div class="total row">
+                        <div class="col-md-3 col-6">
+                            <label>每日新增需評估數</label>
+                            <strong>5,015</strong>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <label>新收案數</label>
+                            <strong>3,540</strong>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <label>評估中人數</label>
+                            <strong>625</strong>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <label>不符合收案人數</label>
+                            <strong>850</strong>
+                        </div>
+                    </div>
+                    <div id="pie" class="evaluate-pie">
+
+                    </div>
+                    <div id="bar" class="zone-bar">
+
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+        <!-- /.GSMis-main-wrap -->
+        <!-- GSMis-footer-wrap -->
+        <footer class="GSMis-footer-wrap ">
+            <div class="GSMis-footer-inner ">
+                <div class="GSMis-footer ">
+                    Copyright © 逢甲大學地理資訊系統研究中心、天思數位科技股份有限公司
+                </div>
+            </div>
+        </footer>
+        <!-- /.GSMis-footer-wrap -->
+    </div>
+    <!-- /.GSMis-wrapper -->
+    <div class="GSMis-go-top ">
+        <a href="# " class=" " title="Go to Top ">TOP</a>
+    </div>
+
+    <!-- Base -->
+    <script src="assets/vendor/jquery-3.6.0.min.js "></script>
+    <script src="assets/vendor/bootstrap-5.1.3/bootstrap.bundle.min.js "></script>
+    <!-- 自訂 -->
+    <script src="assets/js/base-layout-one.js "></script>
+    <script src="assets/js/common.js "></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+    <script>
+
+        renderPie();
+        renderBar();
+
+
+        function renderPie() {
+            var dom = document.getElementById('pie');
+            var myChart = echarts.init(dom, null, {
+                renderer: 'canvas',
+                useDirtyRect: false
+            });
+            var app = {};
+
+            var option;
+
+            const colors = ['#91CC75', '#fac858', '#EE6666'];
+            option = {
+                // title: {
+                //   text: '5,015',
+                //   // subtext: 'Fake Data',
+                //   left: 'center',
+                //   top: 'center',
+                // },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a} <br/>{b} : {c} ({d}%)'
+                },
+                // legend: {
+                //   orient: 'vertical',
+                //   left: 'left'
+                // },
+                color: colors,
+                series: [
+                    {
+                        name: '收案評估結果',
+                        type: 'pie',
+                        // radius: ['50%'],
+                        radius: ['40%', '90%'],
+                        data: [
+                            { value: 3540, name: '新收案數' },
+                            { value: 625, name: '評估中人數' },
+                            { value: 850, name: '不符合收案人數' },
+                        ],
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            };
+
+            if (option && typeof option === 'object') {
+                myChart.setOption(option);
+            }
+
+            window.addEventListener('resize', myChart.resize);
+        }
+
+
+        function renderBar() {
+            var dom = document.getElementById('bar');
+            var myChart = echarts.init(dom, null, {
+                renderer: 'canvas',
+                useDirtyRect: false
+            });
+            var app = {};
+
+            var option;
+
+            option = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        // Use axis to trigger tooltip
+                        type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+                    }
+                },
+                legend: {},
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'value'
+                },
+                yAxis: {
+                    type: 'category',
+                    inverse: true,
+                    data: [
+                        '中區',
+                        '西區',
+                        '東區',
+                        '南區',
+                        '北區',
+                        '西屯區',
+                        '南屯區',
+                        '北屯區',
+                        '豐原區',
+                        '大甲區',
+                        '沙鹿區',
+                        '后里區',
+                        '潭子區',
+                        '新社區',
+                        '外埔區',
+                        '烏日區',
+                        '龍井區',
+                        '太平區',
+                        '東勢區',
+                        '清水區',
+                        '梧棲區',
+                        '神岡區',
+                        '大雅區',
+                        '石岡區',
+                        '大安區',
+                        '大肚區',
+                        '霧峰區',
+                        '大里區',
+                        '和平區',
+                    ]
+                },
+                series: [
+                    {
+                        name: '新增需評估數',
+                        type: 'line',
+                        label: {
+                            // show: true
+                        },
+                        itemStyle: {
+                            barWidth: 50,
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        data: [
+                            155,
+                            280,
+                            120,
+                            250,
+                            350,
+                            550,
+                            450,
+                            380,
+                            160,
+                            110,
+                            90,
+                            125,
+                            135,
+                            155,
+                            70,
+                            140,
+                            130,
+                            170,
+                            90,
+                            100,
+                            120,
+                            90,
+                            145,
+                            85,
+                            75,
+                            135,
+                            145,
+                            150,
+                            60]
+                    },
+                    {
+                        name: '新收案數',
+                        type: 'bar',
+                        stack: 'total',
+                        label: {
+                            // show: true
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        data: [
+                            100,
+                            230,
+                            85,
+                            175,
+                            280,
+                            460,
+                            360,
+                            345,
+                            120,
+                            70,
+                            65,
+                            85,
+                            90,
+                            115,
+                            45,
+                            85,
+                            65,
+                            105,
+                            45,
+                            35,
+                            65,
+                            45,
+                            70,
+                            50,
+                            45,
+                            80,
+                            85,
+                            115,
+                            25]
+                    },
+                    {
+                        name: '評估中人數',
+                        type: 'bar',
+                        stack: 'total',
+                        label: {
+                            // show: true
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        data: [10,
+                            40,
+                            20,
+                            35,
+                            15,
+                            60,
+                            40,
+                            30,
+                            20,
+                            20,
+                            10,
+                            20,
+                            30,
+                            20,
+                            15,
+                            20,
+                            15,
+                            20,
+                            5,
+                            30,
+                            20,
+                            20,
+                            30,
+                            20,
+                            5,
+                            20, ,
+                            20,
+                            10,
+                            5,]
+                    },
+                    {
+                        name: '不符合收案人數',
+                        type: 'bar',
+                        stack: 'total',
+                        label: {
+                            // show: true
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        data: [
+                            45,
+                            10,
+                            15,
+                            40,
+                            55,
+                            30, ,
+                            50,
+                            5,
+                            20,
+                            20,
+                            15,
+                            20,
+                            15,
+                            20,
+                            10,
+                            35,
+                            50,
+                            45,
+                            40,
+                            35,
+                            35,
+                            25,
+                            45,
+                            15,
+                            25,
+                            35,
+                            40,
+                            25,
+                            30]
+                    },
+
+                ]
+            };
+
+            if (option && typeof option === 'object') {
+                myChart.setOption(option);
+            }
+
+            window.addEventListener('resize', myChart.resize);
+        }
+
+
+    </script>
+
+</body>
+
+</html>
