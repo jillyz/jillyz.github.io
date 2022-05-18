@@ -1,0 +1,953 @@
+<!doctype html>
+<html class="no-js" lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台中市政府新冠肺炎居家照護管理系統</title>
+    <!-- Base -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap-5.1.3/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.1.1-web/all.min.css">
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="assets/css/base-layout-one.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/table.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/form-layout.css">
+</head>
+
+<body>
+    <div class="GSMis-wrapper">
+        <!-- GSMis-header-wrap 刊頭 -->
+        <header class="GSMis-header-wrap">
+            <div class="GSMis-header-inner">
+                <div class="GSMis-header">
+                    <div class="item">
+                        <!-- GSMis-brand -->
+                        <h1 class="GSMis-brand">
+                            <a href="index.html">
+                                <!-- <img class="GSMis-brand-img" src="assets/img/taichung-logo.png"> -->
+                                <span class="GSMis-brand-text">台中市政府新冠肺炎居家照護管理系統</span>
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="item">
+                        <!-- 手機版的漢堡 -->
+                        <a class="GSMis-hamburger-mobile" data-bs-toggle="collapse" href="#GSMis-collapse-menu">
+                            <span><i class="fas fa-bars"></i></span>
+                            <span style="display: none;"><i class="fas fa-times"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.GSMis-header-wrap -->
+        <!-- GSMis-nav-wrap 導覽列 -->
+        <nav class="GSMis-nav-wrap">
+            <div class="GSMis-nav-inner">
+                <div class="text-end">
+                    <!-- 桌機版的漢堡 -->
+                    <a class="GSMis-hamburger-desktop" href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+                <!-- 手機版選單開闔容器 -->
+                <div class="collapse" id="GSMis-collapse-menu">
+                    <!-- GSMis-menu 主選單 -->
+                    <ul class="GSMis-menu">
+                        <!-- if 衛生局 -->
+                        <li><a href="upload_衛生局.html"><i class="fa-solid fa-file-arrow-up"></i> 確診者資料上傳(衛生局)</a></li>
+                        <!-- if 系統管理員 -->
+                        <li>
+                            <a href="#" class="children"><i class="fa-solid fa-file-pen"></i> 評估填報<i class="fas fa-chevron-down toggleIcon"></i></a>
+                            <ul class="level-2">
+                                <li><a href="evaluate_醫院.html"> 健康評估(醫院)</a></li>
+                                <li><a href="evaluate_區公所.html"> 居家環境評估(區公所)</a></li>
+                                <li><a href="evaluate_衛生所.html">收案評估(衛生所)</a></li>
+                            </ul>
+                        </li>
+                        <!-- if 區公所 -->
+                        <li class="active"><a href="diary_區公所.html"><i class="fa-solid fa-book"></i> 關懷日誌</a></li>
+                        <!-- for all -->
+                        <li class="active"><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估查詢</a></li>
+                        <!-- if 衛生局 -->
+                        <li class="active"><a href="report.html"><i class="fa-solid fa-table-list"></i> 收案統計</a></li>
+                        <li class="active"><a href="dashboard.html"><i class="fa-solid fa-chart-column"></i> 儀表板</a></li>
+                        <!-- if 系統管理員 -->
+                        <li>
+                            <a href="#" class="children"><i class="fa-solid fa-gear"></i> 系統管理<i class="fas fa-chevron-down toggleIcon"></i></a>
+                            <ul class="level-2">
+                                <li class="active"><a href="user_management.html">帳號管理</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- /.GSMis-menu -->
+
+                    <!-- GSMis-help 輔助資訊 -->
+                    <div class="GSMis-help">
+                        <!-- 非主選單區的輔助選項 -->
+                        <ul class="GSMis-help-nav">
+                            <li><a href="xxx.pdf">操作手冊</a></li>
+                        </ul>
+                        <!-- 使用者狀態資訊 -->
+                        <div class="GSMis-help-user">
+                            <span class="GSMis-help-user-name">歡迎○○○ ○○○登入</span>
+                            <button class="GSMis-help-user-logout"><span class="text">登出</span><i class="fas fa-sign-out-alt"></i></button>
+                        </div>
+                    </div>
+                    <!-- /.GSMis-help -->
+                </div>
+                <!-- /.collapse -->
+            </div>
+        </nav>
+        <!-- /.GSMis-nav-wrap -->
+
+        <!-- /.GSMis-breadcrumb-wrap -->
+        <!-- GSMis-main-wrap 主內容區 -->
+        <main class="GSMis-main-wrap">
+            <div class="GSMis-main-inner">
+
+                <div class="query">
+                    <div class="GSMis-search-area p-4 bg-light rounded border mb-5">
+                        <!-- 表單組合 -->
+                        <div class="row">
+                            <div class="col-12 col-lg-9 col-xl-6">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">入案日</label>
+                                    <div class="row justify-content-center gx-0 GSMis-duration">
+                                        <div class="col-sm">
+                                            <input type="date" name="" id="" class="form-control start" value="2022-05-04">
+                                        </div>
+                                        <div class="col-sm">
+                                            <input type="time" class="form-control" value="00:00:00" step="1800">
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="input-group-text justify-content-center">至</div>
+                                        </div>
+                                        <div class="col-sm">
+                                            <input type="date" name="" id="" class="form-control end" value="2022-05-04">
+                                        </div>
+                                        <div class="col-sm">
+                                            <input type="time" class="form-control" value="23:59:59" step="1800">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3 col-xl-2">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">姓名</label>
+                                    <input type="text" name="" id="" class="form-control" placeholder="請輸入關鍵字">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-1">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">居住鄉鎮</label>
+                                    <select name="" id="" class="form-select">
+                                        <option value="">全部</option>
+                                        <option value="1">OO區</option>
+                                        <option value="2">OO區</option>
+                                        <option value="3">OO區</option>
+                                        <option value="4">OO區</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-5 col-xl-3">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">醫院</label>
+                                    <select name="" id="" class="form-select">
+                                        <option value="">全部</option>
+                                        <option value="1">OOOOOO醫院</option>
+                                        <option value="2">OOOOOO醫院</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+
+
+                            <div class="col-md-6 col-lg-4 col-xl-2">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">收案評估結果</label>
+                                    <div class="form-control GSMis-no-border">
+                                        <div class="form-check form-check-inline1">
+                                            <input class="form-check-input " type="checkbox" value="" id="inlineCheckbox1">
+                                            <label class="form-check-label" for="inlineCheckbox1">收案，居家照護</label>
+                                        </div>
+                                        <div class="form-check form-check-inline1">
+                                            <input class="form-check-input " type="checkbox" value="" id="inlineCheckbox2">
+                                            <label class="form-check-label" for="inlineCheckbox2">不收案，送醫院</label>
+                                        </div>
+                                        <div class="form-check form-check-inline1">
+                                            <input class="form-check-input " type="checkbox" value="" id="inlineCheckbox3">
+                                            <label class="form-check-label" for="inlineCheckbox3">
+                                                不收案，送檢疫所
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4 col-xl-2">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">關懷日誌</label>
+                                    <div class="form-control GSMis-no-border">
+                                        <div class="form-check form-check-inline1">
+                                            <input class="form-check-input " type="checkbox" value="" id="care_status_1">
+                                            <label class="form-check-label" for="care_status_1">定期關懷中</label>
+                                        </div>
+                                        <div class="form-check form-check-inline1">
+                                            <input class="form-check-input " type="checkbox" value="" id="care_status_2">
+                                            <label class="form-check-label" for="care_status_2">已滿7天轉自主健康管理/結案</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4 col-xl-2">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">關懷結果</label>
+                                    <div class="form-control GSMis-no-border">
+                                        <div class="form-check form-check-inline1">
+                                            <input class="form-check-input " type="checkbox" value="" id="care_result_1">
+                                            <label class="form-check-label" for="care_result_1">有需協助事項</label>
+                                        </div>
+                                        <div class="form-check form-check-inline1">
+                                            <input class="form-check-input " type="checkbox" value="" id="care_result_2">
+                                            <label class="form-check-label" for="care_result_2">轉介其他單位</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4 col-xl-2">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">年齡</label>
+                                    <select name="" id="" class="form-select">
+                                        <option value="">全部</option>
+                                        <option value="1">0-18歲</option>
+                                        <option value="2">19-29歲</option>
+                                        <option value="3">30-39歲</option>
+                                        <option value="4">40-49歲</option>
+                                        <option value="5">50-64歲</option>
+                                        <option value="6">65-74歲</option>
+                                        <option value="7">75-84歲</option>
+                                        <option value="8">85歲以上</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-2">
+                                <label for="" class="form-label">稽催</label>
+                                <div class="form-control GSMis-no-border">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input " type="checkbox" value="" id="chkOver2hrs">
+                                        <label class="form-check-label" for="chkOver2hrs">
+                                            超過1小時未處理
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- 按鈕組 -->
+                        <div class="row justify-content-center my-4">
+                            <div class="col-sm-4 col-lg-3 col-xl-2">
+                                <a href="file/export_1110504.xlsx" class="btn w-100 btn-success">匯出</a>
+                            </div>
+                            <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 mb-sm-0">
+                                <a href="" class="btn w-100 btn-secondary">查詢</a>
+                            </div>
+                            <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 mb-sm-0">
+                                <a href="" class="btn w-100 btn-outline-secondary">清除</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result">
+                    <h2 class="GSMis-section-title">查詢結果 (共 120 筆)</h2>
+                    <!-- .table-responsive 表格 -->
+                    <div class="table-responsive">
+                        <table class="table table-hover striped GSMis-table-rwd">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>入案時間</th>
+                                    <th>入案編號</th>
+                                    <th>報告日</th>
+                                    <th class="name">姓名</th>
+                                    <th>身分證字號/<br>護照號碼</th>
+                                    <th>診斷<br>年齡</th>
+                                    <th>居住<br>鄉鎮</th>
+                                    <th class="evaluate">健康評估</th>
+                                    <th class="evaluate">環境評估</th>
+                                    <th class="evaluate">收案評估</th>
+                                    <th class="evaluate">關懷日誌</th>
+                                    <th>解隔日</th>
+                                    <th>檢視</th>
+                                    <th class="text-danger delete">
+                                        刪除<br>
+                                        <input class="form-check-input" type="checkbox" value="" id="chk_delete_all">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-th="超過1小時未處理" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="超過1小時未處理" aria-label="超過1小時未處理"></i>
+                                    </td>
+                                    <td data-th="入案時間" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">111/04/20 13:12:20</td>
+                                    <td data-th="入案編號" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">12345678901234</td>
+                                    <td data-th="報告日" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">111/04/18</td>
+                                    <td data-th="姓名" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">陳思佑</td>
+                                    <td data-th="身分證字號/護照號碼" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">A123456789</td>
+                                    <td data-th="診斷年齡(足歲)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">33</td>
+                                    <td data-th="居住鄉鎮" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">西區</td>
+                                    <td data-th="健康評估" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">適合居家照護</td>
+                                    <td data-th="環境評估" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        符合
+                                    </td>
+                                    <td data-th="收案評估" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <span class="text-dark">收案</span>
+                                    </td>
+                                    <td data-th="關懷日誌" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <span class="text-dark">定期關懷第1天</span>
+                                    </td>
+                                    <td data-th="解隔日" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">111/04/29</td>
+                                    <td data-th="檢視" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">檢視</a>
+                                    </td>
+                                    <td data-th="刪除" class="delete">
+                                        <input class="form-check-input chk-del" type="checkbox" value="" id="chk_delete_12345678901234">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-th="超過1小時未處理" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="超過1小時未處理" aria-label="超過1小時未處理"></i>
+                                    </td>
+                                    <td data-th="入案時間" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">111/04/20 13:12:20</td>
+                                    <td data-th="入案編號" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">12345678901234</td>
+                                    <td data-th="報告日" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">111/04/18</td>
+                                    <td data-th="姓名" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">陳思佑</td>
+                                    <td data-th="身分證字號/護照號碼" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">A123456789</td>
+                                    <td data-th="診斷年齡(足歲)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">33</td>
+                                    <td data-th="居住鄉鎮" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">西區</td>
+                                    <td data-th="健康評估" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">適合居家照護</td>
+                                    <td data-th="環境評估" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        符合
+                                    </td>
+                                    <td data-th="收案評估" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <span class="text-dark">收案</span>
+                                    </td>
+                                    <td data-th="關懷日誌" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <span class="text-dark">結案</span>
+                                    </td>
+                                    <td data-th="解隔日" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">111/04/29</td>
+                                    <td data-th="檢視" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">檢視</a>
+                                    </td>
+                                    <td data-th="刪除" class="delete">
+                                        <input class="form-check-input chk-del" type="checkbox" value="" id="chk_delete_12345678901234">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-th="超過1小時未處理" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="超過1小時未處理" aria-label="超過1小時未處理"></i>
+                                    </td>
+                                    <td data-th="入案時間" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">111/04/20 13:12:20</td>
+                                    <td data-th="入案編號" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">12345678901234</td>
+                                    <td data-th="報告日" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">111/04/18</td>
+                                    <td data-th="姓名" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">陳思佑</td>
+                                    <td data-th="身分證字號/護照號碼" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">A123456789</td>
+                                    <td data-th="診斷年齡(足歲)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">33</td>
+                                    <td data-th="居住鄉鎮" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">西區</td>
+                                    <td data-th="健康評估" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        其他 <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="ＯＯＯＯＯＯＯ"></i>
+                                    </td>
+                                    <td data-th="環境評估" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <span class="text-danger">不符合</span>
+                                    </td>
+                                    <td data-th="收案評估" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <span class="text-danger">不收案，送醫院</span>
+                                    </td>
+                                    <td data-th="關懷日誌" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        --
+                                    </td>
+                                    <td data-th="解隔日" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">111/04/29</td>
+                                    <td data-th="檢視" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">檢視</a>
+                                    </td>
+                                    <td data-th="刪除" class="delete">
+                                        <input class="form-check-input chk-del" type="checkbox" value="" id="chk_delete_12345678901234">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-th="超過1小時未處理" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="超過1小時未處理" aria-label="超過1小時未處理"></i>
+                                    </td>
+                                    <td data-th="入案時間" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">111/04/20 13:12:20</td>
+                                    <td data-th="入案編號" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">12345678901234</td>
+                                    <td data-th="報告日" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">111/04/18</td>
+                                    <td data-th="姓名" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">陳思佑</td>
+                                    <td data-th="身分證字號/護照號碼" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">A123456789</td>
+                                    <td data-th="診斷年齡(足歲)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">33</td>
+                                    <td data-th="居住鄉鎮" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">西區</td>
+                                    <td data-th="健康評估" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <span class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">不適合居家照護</span>
+                                    </td>
+                                    <td data-th="環境評估" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <span class="text-dark">符合</span>
+                                    </td>
+                                    <td data-th="收案評估" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <span class="text-danger">不收案，送檢疫所</span>
+                                    </td>
+                                    <td data-th="關懷日誌" class="evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        --
+                                    </td>
+                                    <td data-th="解隔日" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">111/04/29</td>
+                                    <td data-th="檢視" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">檢視</a>
+                                    </td>
+                                    <td data-th="刪除" class="delete">
+                                        <input class="form-check-input chk-del" type="checkbox" value="" id="chk_delete_12345678901234">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.table-responsive -->
+                    <!-- 分頁 -->
+                    <nav>
+                        <ul class="pagination GSMis-pagination justify-content-center ">
+                            <li class="page-item disabled ">
+                                <a class="page-link " href="# " tabindex="-1 " aria-disabled="true ">上一頁</a>
+                            </li>
+                            <li class="page-item "><a class="page-link " href="# ">1</a></li>
+                            <li class="page-item active " aria-current="page ">
+                                <a class="page-link " href="# ">2</a>
+                            </li>
+                            <li class="page-item "><a class="page-link " href="# ">3</a></li>
+                            <li class="page-item ">
+                                <a class="page-link " href="# ">下一頁</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+        </main>
+        <!-- /.GSMis-main-wrap -->
+        <!-- GSMis-footer-wrap -->
+        <footer class="GSMis-footer-wrap ">
+            <div class="GSMis-footer-inner ">
+                <div class="GSMis-footer ">
+                    Copyright © 逢甲大學地理資訊系統研究中心、天思數位科技股份有限公司
+                </div>
+            </div>
+        </footer>
+        <!-- /.GSMis-footer-wrap -->
+    </div>
+    <!-- /.GSMis-wrapper -->
+    <div class="GSMis-go-top ">
+        <a href="# " class=" " title="Go to Top ">TOP</a>
+    </div>
+
+    <!-- delete-wrap -->
+    <div class="delete-wrap">
+        <div class="row">
+            <div class="col-6">
+                <a href="" class="btn w-100 btn-danger">刪除</a>
+            </div>
+            <div class="col-6">
+                <a id="cancel_del" class="btn w-100 btn-outline-secondary">取消</a>
+            </div>
+        </div>
+    </div>
+    <!-- / delete-wrap -->
+
+    <div class="offcanvas offcanvas-end offcanvas-width" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">確診新型冠狀病毒(COVID-19) 個案資料檢視</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container">
+                <form class="needs-validation" novalidate>
+                    <h1 class="GSMis-section-title">
+                        基本資料
+                        <!-- 編輯 for 衛生局 -->
+                        <div class="toolbox">
+                            <button type="button" class="btn btn-secondary btn-sm">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                        </div>
+                        <!-- 儲存 for 衛生局 -->
+                        <div class="toolbox" style="width: 10em;">
+                            <button type="button" class="btn btn-secondary btn-sm w-50">儲存</button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm w-25">取消</button>
+                        </div>
+                    </h1>
+
+                    <!-- 可編輯 for 衛生局 -->
+                    <dl class="GSMis-form-horizontal units-2">
+                        <dt>
+                                <label for="" class="">法傳編號</label>
+                            </dt>
+                        <dd>
+                            <input type="text" class="form-control" value="ＯＯＯＯＯＯＯ">
+                        </dd>
+                        <dt>
+                                <label for="" class="">報告日<br><br>發病日</label>
+                            </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">
+                                <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                                <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                            </div>
+                        </dd>
+                        <dt>
+                                <label for="" class="">姓名</label>
+                            </dt>
+                        <dd>
+                            <input type="text" class="form-control" value="陳思佑">
+                        </dd>
+                        <dt>
+                                <label for="" class="">性別</label>
+                            </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">
+                                <select name="" id="" class="form-select">
+                                        <option value="" disabled>請選擇</option>
+                                        <option value="1">男</option>
+                                        <option value="2" selected>女</option>
+                                    </select>
+                            </div>
+                        </dd>
+                        <dt>
+                                <label for="" class="">生日/年齡</label>
+                            </dt>
+                        <dd>
+                            <div class="row">
+                                <div class="col-md">
+                                    <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                                </div>
+                                <div class="col-md">
+                                    <div class="input-group mb-3">
+                                        <input type="number" min="0" class="form-control years-old" value="33" placeholder="足歲" aria-label="Username" aria-describedby="basic-addon1" disabled>
+                                        <span class="input-group-text" id="basic-addon1">歲</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <dt>
+                                <label for="" class="">身分證字號/護照號碼</label>
+                            </dt>
+                        <dd>
+                            <input type="text" class="form-control" value="A123456789">
+                        </dd>
+                        <dt>
+                                <label for="" class="">電話</label>
+                            </dt>
+                        <dd>
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">手機電話</span>
+                                <input type="tel" class="form-control" placeholder="請輸入手機號碼" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">住家電話</span>
+                                <input type="tel" class="form-control" placeholder="請輸入住家電話" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">公司電話</span>
+                                <input type="tel" class="form-control" placeholder="請輸入公司電話" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </dd>
+                        <dt>
+                                <label for="" class="">居家地址</label>
+                            </dt>
+                        <dd>
+                            <div class="row">
+                                <div class="col-xl-4">
+                                    <select name="" id="" class="form-select">
+                                            <option value="" disabled>請選擇</option>
+                                            <option value="1">OO區</option>
+                                            <option value="2" selected>OO區</option>
+                                            <option value="3">OO區</option>
+                                            <option value="4">OO區</option>
+                                        </select>
+                                </div>
+                                <div class="col-xl-8">
+                                    <input type="email" class="form-control" placeholder="請輸入居家照護地址(完整地址)" value="台中市西區精誠29街23號6樓之2">
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <!-- 純顯示 -->
+                    <dl class="GSMis-form-horizontal units-2">
+                        <dt>
+                                <label for="" class="">法傳編號</label>
+                            </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">ＯＯＯＯＯＯＯ</div>
+                        </dd>
+                        <dt>
+                                <label for="" class="">報告日<br>發病日</label>
+                            </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">111/04/23 採檢<br>111/04/23 發病</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">姓名</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">陳思佑</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">性別</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">女</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">生日/年齡</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">80/04/19（33歲）</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">身分證字號/護照號碼</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">A123456789</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">電話</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">
+                                手機：0980666555<br> 住家：04-23109988
+                                <br> 公司：04-23109988
+                            </div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">居家地址</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">台中市西區精誠29街23號6樓之2</div>
+                        </dd>
+                    </dl>
+
+                    <!-- 健康狀況 -->
+                    <div class="collapse-box">
+                        <div class="mb-3">
+                            <a href="#health" class="GSMis-collapse-trigger" data-bs-toggle="collapse">
+                                <h1 class="GSMis-section-title GSMis-collapse-bar mb-0">健康狀況
+                                    <div class="ms-auto">
+                                        <span class="arrow"> <i class="fas fa-angle-down"></i></span>
+                                    </div>
+                                </h1>
+                            </a>
+                        </div>
+                        <!-- 開闔容器 -->
+                        <div id="health" class="collapse">
+                            <dl class="GSMis-form-horizontal units-2">
+                                <dt>
+                                        <label for="" class="">健康條件</label>
+                                    </dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">
+                                        確診者年齡為19-64歲：無症狀或輕症，且無懷孕或血液透析
+                                    </div>
+                                </dd>
+                                <dt>
+                                        <label for="" class="">主訴症狀</label>
+                                    </dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">
+                                        無症狀，報告日：111/04/18
+                                    </div>
+                                    <div class="form-control GSMis-no-border">
+                                        有症狀，發病日：111/04/18<br> 發燒(額溫37.5℃或耳溫38℃以上)，開始日期：111/04/18
+                                        <br> 咳嗽｜喉嚨癢、痛｜鼻塞、流鼻水｜其他（ＯＯＯＯ）
+                                    </div>
+                                </dd>
+
+                                <!-- if (診斷年齡 > 18)，成人：警示症況 //start -->
+                                <dt>
+                                        <label for="" class="">警示症狀</label>
+                                    </dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">
+                                        喘、呼吸困難｜ 意識不清｜ 持續胸悶、胸痛｜ 無發燒（體溫
+                                        <38℃）之情形下，心跳>100次/分鐘｜ 皮膚或嘴唇或指甲床發青｜ 無法進食、喝水或服藥｜ 過去24小時無尿或尿量顯著減少
+                                    </div>
+                                </dd>
+                                <!-- if (診斷年齡 > 18)，成人：警示症況 //end -->
+
+                                <!-- if (診斷年齡 <= 18)，兒童：警訊表徵(就醫警訊) //start -->
+                                <dt>
+                                        <label for="" class="">警訊表徵<br>(就醫警訊)</label>
+                                    </dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">
+                                        發燒超過48小時，或高燒>39度合併發冷/冒冷汗｜ 退燒後持續活動力不佳｜ 退燒後持續呼吸急促/喘或胸悶胸痛｜ 持續性嘔吐、頭痛或腹痛｜ 超過12小時未進食或未解尿
+                                    </div>
+                                </dd>
+                                <!-- if (診斷年齡 <= 18)，兒童：警訊表徵(就醫警訊) //end -->
+                                <!-- if (診斷年齡 <= 18)，兒童：119就醫/緊急自行就醫條件 //start -->
+                                <dt>
+                                        <label for="" class="">119就醫/<br>緊急自行就醫條件</label>
+                                    </dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">
+                                        抽搐｜ 意識不佳｜ 呼吸困難或有胸凹現象｜ 唇色發白或發紫｜ 血氧飽和度低於94%(如有血氧機)｜ 肢體冰冷且有皮膚斑駁或冒汗
+                                    </div>
+                                </dd>
+                                <!-- if (診斷年齡 <= 18)，兒童：119就醫/緊急自行就醫條件 //end -->
+
+                                <dt>
+                                        <label for="" class="">主訴疾病史<br>（慢性疾病）</label>
+                                    </dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">
+                                        無慢性病史
+                                    </div>
+                                    <div class="form-control GSMis-no-border">
+                                        糖尿病｜代謝性疾病｜仍在治療中或未治癒之癌症｜免疫低下狀態（ＯＯＯＯ）｜其他（ＯＯＯＯ）
+                                    </div>
+                                </dd>
+                                <dt>
+                                    <label for="" class="">健康狀況附件</label>
+                                </dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">
+                                        <a href="assets/img/demo-at-home.jpeg" target="_blank">
+                                            <img src="assets/img/demo-at-home.jpeg" alt="" class="upload-image">
+                                        </a>
+                                        <a href="xxx.pdf" target="_blank">XXXX.pdf</a>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <!-- 環境狀況 -->
+                    <div class="collapse-box">
+                        <div class="mb-3">
+                            <a href="#environment" class="GSMis-collapse-trigger" data-bs-toggle="collapse">
+                                <h1 class="GSMis-section-title GSMis-collapse-bar mb-0">居家環境狀況
+                                    <div class="ms-auto">
+                                        <span class="arrow"> <i class="fas fa-angle-down"></i></span>
+                                    </div>
+                                </h1>
+                            </a>
+                        </div>
+                        <!-- 開闔容器 -->
+                        <div id="environment" class="collapse">
+                            <dl class="GSMis-form-horizontal units-2">
+                                <dt>
+                                        家戶概況
+                                    </dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">
+                                        <!-- if 無同住者 -->
+                                        無同住者<br>
+                                        <!-- if 有同住者 -->
+                                        有同住者：共 4 人； 確診個案 1 人、 非確診個案 3 人<br>
+                                        <!-- 房間數 -->
+                                        房間 3 間， 衛浴設備 2 間
+                                    </div>
+                                </dd>
+                                <dt>
+                                        <label for="" class="">確診個案居住狀況</label>
+                                    </dt>
+                                <dd class="wide">
+                                    <!-- 若為境外 -->
+                                    <div class="form-control GSMis-no-border">
+                                        第一類：境外移入個案<br>
+                                        <!-- 若值為1 -->
+                                        1人1戶 (無其他同住者)<br>
+                                        <!-- 若值為2 -->
+                                        例外情形：得多人1戶
+                                        <ul class="no-list-style small mt">
+                                            <li>(1) 同住者為確診個案</li>
+                                            <li>(2) 確診個案有必要照護其他同住者之需求</li>
+                                            <li>(3) 確診個案需有同住者提供必要照護需求</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 若為本土 -->
+                                    <div class="form-control GSMis-no-border">
+                                        第二類： 1.本土個案。2.境外移入個案，完成居家檢疫後確診
+                                        <ul>
+                                            <li>
+                                                確診個案：
+                                                <!-- if 值為 1 -->
+                                                1人1室 (單獨房間含衛浴設備)
+                                                <!-- if 值為 2-->
+                                                1人1室 (單獨房間未含衛浴，每次浴廁使用後均可適當清消)
+                                                <!-- if 值為 3 -->
+                                                與其他同住之確診個案多人1室
+                                                <!-- if 值為 4 -->
+                                                例外情形：得多人1室
+                                                <ul class="no-list-style small mt">
+                                                    <li>(1) 確診個案需有同住者提供必要照護需求</li>
+                                                    <li>(2) 確診個案有必要照護其他同住者之需求</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                同住之非確診個案：
+                                                <!-- if 值為 1 -->
+                                                無同住之非確診個案
+                                                <!-- if 值為 2-->
+                                                同住者均為非確診個案，且未超過4人(在其他房間隔離，可多人1室)
+                                                <br>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                                <dt>
+                                        <label for="" class="">居家環境附件</label>
+                                    </dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">
+                                        <a href="assets/img/demo-at-home.jpeg" target="_blank">
+                                            <img src="assets/img/demo-at-home.jpeg" alt="" class="upload-image">
+                                        </a>
+                                        <a href="xxx.pdf" target="_blank">XXXX.pdf</a>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <h1 class="GSMis-section-title">總評估結果</h1>
+                    <dl class="GSMis-form-horizontal units-2">
+                        <dt>
+                                <label for="" class="">健康評估結果</label>
+                            </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">
+                                健康狀況適合採居家照護
+                                <span class="text-danger">健康狀況不適合採居家照護</span>
+                            </div>
+                        </dd>
+                        <dt>
+                                <label for="" class="">健康評估時間/人員</label>
+                            </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">111/04/20 14:30，陳某某</div>
+                        </dd>
+                        <dt>
+                                <label for="" class="">環境評估結果</label>
+                            </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">
+                                符合
+                                <span class="text-danger">不符合</span> （備註內容）
+                            </div>
+                        </dd>
+                        <dt>
+                                <label for="" class="">環境評估時間/人員</label>
+                            </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">111/04/20 14:30，陳某某</div>
+                        </dd>
+                        <dt>
+                                <label for="" class="">收案評估結果</label>
+                            </dt>
+                        <dd>
+
+                            <div class="form-control GSMis-no-border">
+                                收案，居家照護
+                                <span class="text-danger">不收案，送醫院</span>
+                                <span class="text-danger">不收案，送檢疫所</span>
+                            </div>
+                        </dd>
+                        <dt>
+                                <label for="" class="">收案評估時間/人員</label>
+                            </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">111/04/20 14:30，陳某某</div>
+                        </dd>
+                    </dl>
+
+                    <h1 class="GSMis-section-title">關懷日誌</h1>
+                    <dl class="diary row-narrow mb-5">
+                        <dt>
+                                <div class="diary-day">第1天</div>
+                                <div class="diary-date">111/04/19</div>
+                            </dt>
+                        <dd class="wide">
+                            <dl class="GSMis-form-horizontal units-2 mt-5 mb-3">
+                                <dt>關懷結果</dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">無需協助事項</div>
+                                </dd>
+                                <dt>關懷時間/人員</dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">111/04/28 12:00，王某某</div>
+                                </dd>
+                            </dl>
+                        </dd>
+                        <dt>
+                                <div class="diary-day">第2天</div>
+                                <div class="diary-date">111/04/20</div>
+                            </dt>
+                        <dd class="wid">
+                            <dl class="GSMis-form-horizontal units-2 mt-5 mb-3">
+                                <dt>關懷結果</dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">有需協助事項</div>
+                                </dd>
+                                <dt>生活問題類別</dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">
+                                        垃圾清運｜心理諮詢｜長照服務｜就醫需求｜就醫交通安排（非緊急）｜緊急就醫後送｜學生關懷｜弱勢族群協助｜寵物照顧協助｜其他：ＯＯＯＯ
+
+                                    </div>
+                                </dd>
+                                <dt>個案反映問題摘要</dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">ＸＸＸＸＸＸＸＸＸＸＸＸ，ＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸ，ＸＸＸＸＸＸＸＸＸＸＸＸ</div>
+                                </dd>
+                                <dt>處理情形</dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">轉介其他單位：ＯＯＯＯＯＯＯ</div>
+                                </dd>
+                                <dt>處理結果摘要說明</dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">ＸＸＸＸＸＸＸＸＸＸＸＸ，ＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸ，ＸＸＸＸＸＸＸＸＸＸＸＸ</div>
+                                </dd>
+                                <dt>關懷時間/人員</dt>
+                                <dd class="wide">
+                                    <div class="form-control GSMis-no-border">111/04/28 12:00，王某某</div>
+                                </dd>
+                            </dl>
+                        </dd>
+                        <dt class="is-last-day">
+                                <!-- 若在第1-7天關懷中，則文字顯示為「預計解隔日」 -->
+                                <!-- 若已滿7天/結案，則文字顯示為「解隔日」 -->
+                                <div class="diary-day">預計解隔日</div>
+                                <div class="diary-date">111/04/26</div>
+                            </dt>
+                        <dd></dd>
+                    </dl>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Base -->
+    <script src="assets/vendor/jquery-3.6.0.min.js "></script>
+    <script src="assets/vendor/bootstrap-5.1.3/bootstrap.bundle.min.js "></script>
+    <!-- 自訂 -->
+    <script src="assets/js/base-layout-one.js "></script>
+    <script src="assets/js/common.js "></script>
+</body>
+
+</html>
