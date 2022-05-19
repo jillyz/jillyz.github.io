@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 /* 章節大標題 */
-
 .GSMis-section-title {
     display: -webkit-box;
     display: -webkit-flex;
@@ -178,6 +177,18 @@
 td.evaluate {
     font-weight: bold;
 }
+td.evaluate [class^="text"] {
+    text-decoration: underline;
+}
+td.evaluate span i {
+    display: none;
+}
+td.evaluate:hover span i {
+    display: inline-block;
+}
+[data-bs-toggle="offcanvas"] {
+    cursor: pointer;
+}
 .delete {
     text-align: center;
 }
@@ -194,7 +205,7 @@ td.evaluate {
 }
 .table-hover tr.delete-highlight:hover td {
     background-color: rgb(255, 255, 129) !important;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 .delete-wrap {
     position: fixed;
@@ -216,6 +227,12 @@ td.evaluate {
     margin-right: auto;
     width: 100%;
     max-width: 600px;
+}
+.split-line-left {
+    border-left: 1px solid #ccc;
+}
+.split-line-right {
+    border-right: 1px solid #ccc;
 }
 .GSMis-go-top {
     z-index: 11;
@@ -315,7 +332,7 @@ main nav {
 
 .table-hover tr:hover td {
     background-color: rgba(255, 255, 224, 1) !important;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .table-active td {
@@ -327,7 +344,7 @@ main nav {
     background-color: rgb(255, 237, 237) !important;
 }
 
-.table-is-late td .btn {
+.table-is-late td .btn-evaluate {
     background-color: rgb(220, 53, 69);
     border-color: rgb(220, 53, 69);
     font-weight: bold;
@@ -336,16 +353,33 @@ main nav {
 .table a {
     text-decoration: none;
 }
-
+td[data-bs-toggle="offcanvas"]
+tr[data-bs-toggle="offcanvas"] td {
+    cursor: pointer !important;
+}
 code strong {
     font-weight: 900;
     text-decoration: underline;
 }
-
+.center {
+    text-align: center;
+}
+.is-formal {
+    display: inline-block;
+    padding: .25em;
+    vertical-align: middle;
+    /* background-color: green; */
+    /* color: #fff; */
+    border-radius: 30px;
+}
+.is-informal {
+    display: inline-block;
+    vertical-align: middle;
+    color: #EE6666;
+}
 .form-ul li {
     padding: 5px 0;
 }
-
 .form-ul li .form-check {
     padding-top: 5px;
 }

@@ -1,0 +1,1816 @@
+<!doctype html>
+<html class="no-js" lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台中市政府新冠肺炎居家照護管理系統</title>
+    <!-- Base -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap-5.1.3/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.1.1-web/all.min.css">
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="assets/css/base-layout-one.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/table.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/form-layout.css">
+</head>
+
+<body>
+    <div class="GSMis-wrapper">
+        <!-- GSMis-header-wrap 刊頭 -->
+        <header class="GSMis-header-wrap">
+            <div class="GSMis-header-inner">
+                <div class="GSMis-header">
+                    <div class="item">
+                        <!-- GSMis-brand -->
+                        <h1 class="GSMis-brand">
+                            <a href="index.html">
+                                <!-- <img class="GSMis-brand-img" src="assets/img/taichung-logo.png"> -->
+                                <span class="GSMis-brand-text">台中市政府新冠肺炎居家照護管理系統</span>
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="item">
+                        <!-- 手機版的漢堡 -->
+                        <a class="GSMis-hamburger-mobile" data-bs-toggle="collapse" href="#GSMis-collapse-menu">
+                            <span><i class="fas fa-bars"></i></span>
+                            <span style="display: none;"><i class="fas fa-times"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.GSMis-header-wrap -->
+        <!-- GSMis-nav-wrap 導覽列 -->
+        <nav class="GSMis-nav-wrap">
+            <div class="GSMis-nav-inner">
+                <div class="text-end">
+                    <!-- 桌機版的漢堡 -->
+                    <a class="GSMis-hamburger-desktop" href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+                <!-- 手機版選單開闔容器 -->
+                <div class="collapse" id="GSMis-collapse-menu">
+                    <!-- GSMis-menu 主選單 -->
+                    <ul class="GSMis-menu">
+                        <li class="active"><a href="#"><i class="fa-solid fa-file-pen"></i> 評估填報</a></li>
+                        <li><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估查詢</a></li>
+                    </ul>
+                    <!-- /.GSMis-menu -->
+                    <!-- GSMis-help 輔助資訊 -->
+                    <div class="GSMis-help">
+                        <!-- 非主選單區的輔助選項 -->
+                        <ul class="GSMis-help-nav">
+                            <li><a href="xxx.pdf">操作手冊</a></li>
+                        </ul>
+                        <!-- 使用者狀態資訊 -->
+                        <div class="GSMis-help-user">
+                            <span class="GSMis-help-user-name">歡迎○○○ ○○○登入</span>
+                            <button class="GSMis-help-user-logout"><span class="text">登出</span><i
+                                    class="fas fa-sign-out-alt"></i></button>
+                        </div>
+                    </div>
+                    <!-- /.GSMis-help -->
+                </div>
+                <!-- /.collapse -->
+            </div>
+        </nav>
+        <!-- /.GSMis-nav-wrap -->
+
+        <!-- /.GSMis-breadcrumb-wrap -->
+        <!-- GSMis-main-wrap 主內容區 -->
+        <main class="GSMis-main-wrap">
+            <div class="GSMis-main-inner">
+
+                <h2 class="GSMis-section-title">診所評估填報</h2>
+                <div class="row GSMis-search-area p-4 bg-light rounded border mb-3">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="row">
+                                <div class="col-md-auto mt-1">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input " type="radio" id="flexRadioDefault1"
+                                            name="flexRadioDefault">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            全部
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input " type="radio" id="flexRadioDefault2"
+                                            name="flexRadioDefault" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            待評估
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input " type="radio" id="flexRadioDefault3"
+                                            name="flexRadioDefault">
+                                        <label class="form-check-label" for="flexRadioDefault3">
+                                            已評估
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-auto mt-1 split-line-left">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input " type="radio" id="flexRadioDefault4"
+                                            name="flexRadioDefault">
+                                        <label class="form-check-label" for="flexRadioDefault4">
+                                            診所收案
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input " type="radio" id="flexRadioDefault5"
+                                            name="flexRadioDefault">
+                                        <label class="form-check-label" for="flexRadioDefault5">
+                                            待轉正式
+                                            <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title=""
+                                                data-bs-original-title="請確認個案資料已建至法傳系統（若該個案未存在於法傳系統，將無法於本系統轉入正式個案）">
+                                            </i>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-auto split-line-left">
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control" placeholder="請輸入姓名" aria-label="請輸入姓名"
+                                            aria-describedby="button-addon2">
+                                        <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                                                class="fa-solid fa-magnifying-glass"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-md-auto mt-1 bold split-line-left">
+                                    共 <strong>99</strong> 筆
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <a class="btn w-100 btn-secondary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                <i class="fa-solid fa-plus"></i> 診所收案
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- .table-responsive 表格 -->
+                <div class="table-responsive">
+                    <table class="table table-hover striped GSMis-table-rwd">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>入案時間</th>
+                                <th>入案編號</th>
+                                <th>報告日</th>
+                                <th class="name">姓名</th>
+                                <th>身分證字號/<br>護照號碼</th>
+                                <th>診斷年齡</th>
+                                <th class="evaluate">健康評估</th>
+                                <th class="evaluate">環境評估</th>
+                                <th class="evaluate">總評估</th>
+                                <th class="center">診所收案狀態</th>
+                                <th class="center">編輯</th>
+                                <th class="text-danger delete">
+                                    刪除<br>
+                                    <input class="form-check-input" type="checkbox" value="" id="chk_delete_all">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 超過1小時未處理：
+                                <tr> 加 class="table-is-late" 
+                                第一欄顯示圖示
+                            -->
+                            <tr class="table-is-late">
+                                <td data-th="超過1小時未處理">
+                                    <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip"
+                                        data-bs-placement="right" title="超過1小時未處理"></i>
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="健康評估" class="evaluate">
+                                    <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasHealth" aria-controls="offcanvasHealth">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                        填報
+                                    </a>
+                                </td>
+                                <td data-th="環境評估" class="evaluate">
+                                    <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                        填報
+                                    </a>
+                                </td>
+                                <td data-th="總評估" class="evaluate">
+
+                                </td>
+                                <td data-th="診所收案狀態" class="center">
+                                    <i class="fa-solid fa-check-double is-formal" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="" data-bs-original-title="已轉正式"></i>
+                                </td>
+                                <td data-th="編輯" class="center">
+                                    <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
+                                        data-bs-target="#editModal">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+                                </td>
+                                <td data-th="刪除" class="delete">
+                                    <input class="form-check-input chk-del" type="checkbox" value=""
+                                        id="chk_delete_12345678901234">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="超過1小時未處理">
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="健康評估" class="evaluate">
+                                    <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasHealth" aria-controls="offcanvasHealth">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                        填報
+                                    </a>
+                                </td>
+                                <td data-th="環境評估" class="evaluate">
+                                    <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                        填報
+                                    </a>
+                                </td>
+                                <td data-th="總評估" class="evaluate">
+                                    --
+                                </td>
+                                <td data-th="診所收案狀態" class="center">
+                                    <i class="fa-solid fa-hourglass-empty is-informal" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="" data-bs-original-title="待轉正式">
+                                    </i>
+                                </td>
+                                <td data-th="編輯" class="center">
+                                    <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
+                                        data-bs-target="#editModal">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+                                </td>
+                                <td data-th="刪除" class="delete">
+                                    <input class="form-check-input chk-del" type="checkbox" value=""
+                                        id="chk_delete_12345678901234">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="超過1小時未處理">
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="健康評估" class="evaluate">
+                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
+                                        aria-controls="offcanvasHealth">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                        適合居家照護
+                                    </span>
+                                </td>
+                                <td data-th="環境評估" class="evaluate">
+                                    <span class="text-dark" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
+                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
+                                </td>
+                                <td data-th="總評估" class="evaluate text-dark">
+                                    收案，居家照護
+                                </td>
+                                <td data-th="診所收案狀態" class="center">
+                                    --
+                                </td>
+                                <td data-th="編輯" class="center">
+                                    --
+                                </td>
+                                <td data-th="刪除" class="delete">
+                                    --
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="超過1小時未處理">
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="健康評估" class="evaluate">
+                                    <span class="text-danger" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasHealth" aria-controls="offcanvasHealth">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                        不適合居家照護
+                                    </span>
+                                </td>
+                                <td data-th="環境評估" class="evaluate">
+                                    <span class="text-danger" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasEnvironment"
+                                        aria-controls="offcanvasEnvironment">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                        不符合
+                                    </span>
+                                </td>
+                                <td data-th="總評估" class="evaluate text-danger">
+                                    不收案，送醫院
+                                </td>
+                                <td data-th="診所收案狀態" class="center">
+                                    --
+                                </td>
+                                <td data-th="編輯" class="center">
+                                    --
+                                </td>
+                                <td data-th="刪除" class="delete">
+                                    --
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="超過1小時未處理">
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="健康評估" class="evaluate">
+                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
+                                        aria-controls="offcanvasHealth">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                        住院/機構<br>
+                                        <small class="note">這裡顯示地點</small>
+                                    </span>
+                                </td>
+                                <td data-th="環境評估" class="evaluate">
+                                    <span class="text-dark" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                        轉外縣市
+                                        <br>
+                                        <small class="note">這裡顯示地址</small>
+                                    </span>
+                                </td>
+                                <td data-th="總評估" class="evaluate text-danger">
+                                    不收案，送檢疫所
+                                </td>
+                                <td data-th="診所收案狀態" class="center">
+                                    <i class="fa-solid fa-hourglass-empty is-informal" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="" data-bs-original-title="待轉正式">
+                                    </i>
+                                </td>
+                                <td data-th="編輯" class="center">
+                                    <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
+                                        data-bs-target="#editModal">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+                                </td>
+                                <td data-th="刪除" class="delete">
+                                    <input class="form-check-input chk-del" type="checkbox" value=""
+                                        id="chk_delete_12345678901234">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.table-responsive -->
+
+                <!-- 分頁 -->
+                <nav>
+                    <ul class="pagination GSMis-pagination justify-content-center ">
+                        <li class="page-item disabled ">
+                            <a class="page-link " href="# " tabindex="-1 " aria-disabled="true ">上一頁</a>
+                        </li>
+                        <li class="page-item "><a class="page-link " href="# ">1</a></li>
+                        <li class="page-item active " aria-current="page ">
+                            <a class="page-link " href="# ">2</a>
+                        </li>
+                        <li class="page-item "><a class="page-link " href="# ">3</a></li>
+                        <li class="page-item ">
+                            <a class="page-link " href="# ">下一頁</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </main>
+        <!-- /.GSMis-main-wrap -->
+        <!-- GSMis-footer-wrap -->
+        <footer class="GSMis-footer-wrap ">
+            <div class="GSMis-footer-inner ">
+                <div class="GSMis-footer ">
+                    Copyright © 逢甲大學地理資訊系統研究中心、天思數位科技股份有限公司
+                </div>
+            </div>
+        </footer>
+        <!-- /.GSMis-footer-wrap -->
+    </div>
+    <!-- /.GSMis-wrapper -->
+    <div class="GSMis-go-top ">
+        <a href="# " class=" " title="Go to Top ">TOP</a>
+    </div>
+
+    <!-- 健康評估表 -->
+    <div class="offcanvas offcanvas-end offcanvas-width" tabindex="-1" id="offcanvasHealth"
+        aria-labelledby="offcanvasHealthLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasHealthLabel">
+                <div class="row">
+                    <div class="col-auto">
+                        確診新型冠狀病毒(COVID-19) 健康狀況評估表
+                    </div>
+                    <div class="col-auto">
+                        <a class="btn w-100 btn-secondary btn-print">列印</a>
+                    </div>
+                </div>
+            </h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container">
+
+                <div class="alert alert-secondary small mb-3" role="alert">
+                    <ul class="no-list-style mb-0" style="text-indent: -2em;">
+                        <li><b>備註：</b>本評估表係經採受評估者主訴資訊所綜整之評估結果，如有不實受評估者應自負相關責任。</li>
+                    </ul>
+                </div>
+
+                <form class="needs-validation" novalidate>
+                    <h1 class="GSMis-section-title">基本資料</h1>
+                    <dl class="GSMis-form-horizontal units-2">
+                        <dt>
+                            <label for="" class="">法傳編號</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">ＯＯＯＯＯＯＯ</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">報告日<br>發病日</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">111/04/23 採檢<br>111/04/23 發病</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">姓名</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">陳思佑</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">性別</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">女</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">生日/診斷年齡</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">80/04/19（33歲）</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">身分證字號/護照號碼</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">A123456789</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">電話</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">
+                                手機：0980666555<br> 住家：04-23109988
+                                <br> 公司：04-23109988
+                            </div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">居家地址</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">台中市西區精誠29街23號6樓之2</div>
+                            <code>地址異動過，從「西區」更正至「北區」</code>
+                        </dd>
+                    </dl>
+
+                    <h1 class="GSMis-section-title">健康狀況</h1>
+                    <dl class="GSMis-form-horizontal units-2">
+
+
+                        <dt>
+                            <label for="" class=""><span class="text-danger">*</span>健康條件</label>
+                        </dt>
+                        <!-- if (診斷年齡 > 18) 健康條件 //start -->
+                        <dd class="wide">
+                            <div class="row g-2">
+                                <div class="col-md-auto">
+                                    <div class="form-control GSMis-no-border">
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="a_health_condition_1"
+                                                name="a_health_condition">
+                                            <label for="a_health_condition_1"
+                                                class="form-check-label">確診者年齡為19-64歲：無症狀或輕症，<strong
+                                                    class="text-danger">且無懷孕或血液透析</strong></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="a_health_condition_2"
+                                                name="a_health_condition">
+                                            <label for="a_health_condition_2"
+                                                class="form-check-label">確診者年齡為65-69歲：無症狀或輕症，<strong
+                                                    class="text-danger">非獨居，且無懷孕或血液透析</strong></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="a_health_condition_3"
+                                                name="a_health_condition">
+                                            <label for="a_health_condition_3"
+                                                class="form-check-label">不符上述條件之無症狀或輕症確診者，如本人或其法定代理人要求希望採居家照護，經醫療人員評估後，得採取居家照護。
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <!-- if (診斷年齡 > 18) 健康條件 //end -->
+
+                        <!-- if (診斷年齡 <= 18) 健康條件 //start -->
+                        <dd class="wide">
+                            <div class="row g-2">
+                                <div class="col-md-auto">
+                                    <div class="form-control GSMis-no-border">
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="b_health_condition_1"
+                                                name="b_health_condition" required>
+                                            <label for="b_health_condition_1"
+                                                class="form-check-label">確診者年齡為＜3個月：無症狀或輕症，<strong
+                                                    class="text-danger">且無發燒</strong></strong></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="b_health_condition_2"
+                                                name="b_health_condition">
+                                            <label for="b_health_condition_2"
+                                                class="form-check-label">確診者年齡為3-12個月：無症狀或輕症，<strong
+                                                    class="text-danger">且無高燒>39度</strong></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="b_health_condition_3"
+                                                name="b_health_condition">
+                                            <label for="b_health_condition_3"
+                                                class="form-check-label">確診者年齡為1-18歲：無症狀或輕症，<strong
+                                                    class="text-danger">且無懷孕或血液透析</strong></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="b_health_condition_4"
+                                                name="b_health_condition">
+                                            <label for="b_health_condition_4"
+                                                class="form-check-label">不符上述條件之無症狀或輕症確診者，如本人或其法定代理人要求希望採居家照護，經醫療人員評估後，得採取居家照護。</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <!-- if (診斷年齡 <= 18) 健康條件 //end -->
+
+                        <dt>
+                            <label for="" class=""><span class="text-danger">*</span>主訴症狀</label>
+                        </dt>
+                        <dd class="wide">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-auto no-pr">
+                                            <div class="form-control GSMis-no-border">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value=""
+                                                        name="symptom_complaints" id="chk_symptom_complaints_1" checked>
+                                                    <label class="form-check-label" for="chk_symptom_complaints_1">
+                                                        無症狀，報告日：111/04/18
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-auto no-pr">
+                                            <div class="form-control GSMis-no-border">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value=""
+                                                        name="symptom_complaints" id="chk_symptom_complaints_2">
+                                                    <label class="form-check-label" for="chk_symptom_complaints_2">
+                                                        有症狀，發病日：111/04/18
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-auto no-pr">
+                                            <div class="form-control GSMis-no-border">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="3"
+                                                        id="chk_symptom_complaints_3">
+                                                    <label class="form-check-label" for="chk_symptom_complaints_3">
+                                                        發燒(額溫37.5℃或耳溫38℃以上)，
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-auto no-pl">
+                                            <div class="row d-sm-flex g-2 align-items-center">
+                                                <div class="col-auto text-end">
+                                                    <label for="" class="">開始日期</label>
+                                                </div>
+                                                <div class="col">
+                                                    <input type="date" class="form-control form-input-note"
+                                                        placeholder="" value="" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row padding">
+                                <div class="col-xxl">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="4"
+                                                    id="chk_symptom_complaints_4">
+                                                <label class="form-check-label" for="chk_symptom_complaints_4">
+                                                    咳嗽
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="5"
+                                                    id="chk_symptom_complaints_5">
+                                                <label class="form-check-label" for="chk_symptom_complaints_5">
+                                                    喉嚨癢、痛
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="6"
+                                                    id="chk_symptom_complaints_6">
+                                                <label class="form-check-label" for="chk_symptom_complaints_6">
+                                                    鼻塞、流鼻水
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="7"
+                                                    id="chk_symptom_complaints_7">
+                                                <label class="form-check-label" for="chk_symptom_complaints_7">
+                                                    全身倦怠
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="8"
+                                                    id="chk_symptom_complaints_8">
+                                                <label class="form-check-label" for="chk_symptom_complaints_8">
+                                                    肌肉酸痛
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="9"
+                                                    id="chk_symptom_complaints_9">
+                                                <label class="form-check-label" for="chk_symptom_complaints_9">
+                                                    關節酸痛
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="10"
+                                                    id="chk_symptom_complaints_10">
+                                                <label class="form-check-label" for="chk_symptom_complaints_10">
+                                                    噁心、嘔吐
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="11"
+                                                    id="chk_symptom_complaints_11">
+                                                <label class="form-check-label" for="chk_symptom_complaints_11">
+                                                    腹痛、腹瀉
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="12"
+                                                    id="chk_symptom_complaints_12">
+                                                <label class="form-check-label" for="chk_symptom_complaints_12">
+                                                    頭痛
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="13"
+                                                    id="chk_symptom_complaints_13">
+                                                <label class="form-check-label" for="chk_symptom_complaints_13">
+                                                    嗅味覺異常
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-auto">
+                                                    <div class="">
+                                                        <div class="row d-sm-flex g-2 align-items-center">
+                                                            <div class="col-auto text-end">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" id="chk_symptom_complaints_14">
+                                                                    <label class="form-check-label"
+                                                                        for="chk_symptom_complaints_14">
+                                                                        其他
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <input type="text" class="form-control form-input-note"
+                                                                    placeholder="" value="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+
+                        <!-- if (診斷年齡 > 18)， 警示症狀 //start -->
+                        <dt>
+                            <label for="" class="">警示症狀</label>
+                        </dt>
+                        <dd class="wide">
+                            <div class="row padding">
+                                <div class="col-xxl">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1"
+                                                    id="chk_symptom_warning_1">
+                                                <label class="form-check-label" for="chk_symptom_warning_1">
+                                                    喘、呼吸困難
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="2"
+                                                    id="chk_symptom_warning_2">
+                                                <label class="form-check-label" for="chk_symptom_warning_2">
+                                                    意識不清
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="3"
+                                                    id="chk_symptom_warning_3">
+                                                <label class="form-check-label" for="chk_symptom_warning_3">
+                                                    持續胸悶、胸痛
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="4"
+                                                    id="chk_symptom_warning_4">
+                                                <label class="form-check-label" for="chk_symptom_warning_4">
+                                                    無發燒（體溫<38℃）之情形下，心跳>100次/分鐘
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="5"
+                                                    id="chk_symptom_warning_5">
+                                                <label class="form-check-label" for="chk_symptom_warning_5">
+                                                    皮膚或嘴唇或指甲床發青
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="6"
+                                                    id="chk_symptom_warning_6">
+                                                <label class="form-check-label" for="chk_symptom_warning_6">
+                                                    無法進食、喝水或服藥
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="chk_symptom_warning_7">
+                                                <label class="form-check-label" for="chk_symptom_warning_7">
+                                                    過去24小時無尿或尿量顯著減少
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <!-- if (診斷年齡 > 18)， 警示症狀 //end -->
+
+
+                        <!-- if (診斷年齡 <= 18) 警訊表徵(就醫警訊) //start -->
+                        <dt>
+                            <label for="" class="">警訊表徵<br>(就醫警訊)</label>
+                        </dt>
+                        <dd class="wide">
+                            <div class="row padding">
+                                <div class="col-xxl">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1"
+                                                    id="chk_medical_alert_1">
+                                                <label class="form-check-label" for="chk_medical_alert_1">
+                                                    發燒超過48小時，或高燒>39度合併發冷/冒冷汗
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="2"
+                                                    id="chk_medical_alert_2">
+                                                <label class="form-check-label" for="chk_medical_alert_2">
+                                                    退燒後持續活動力不佳
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="3"
+                                                    id="chk_medical_alert_3">
+                                                <label class="form-check-label" for="chk_medical_alert_3">
+                                                    退燒後持續呼吸急促/喘或胸悶胸痛
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="4"
+                                                    id="chk_medical_alert_4">
+                                                <label class="form-check-label" for="chk_medical_alert_4">
+                                                    持續性嘔吐、頭痛或腹痛
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="5"
+                                                    id="chk_medical_alert_5">
+                                                <label class="form-check-label" for="chk_medical_alert_5">
+                                                    超過12小時未進食或未解尿
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <!-- if (診斷年齡 <= 18) 警訊表徵(就醫警訊) //end -->
+
+                        <!-- if (診斷年齡 <= 18) 警訊表徵(就醫警訊) //start -->
+                        <dt>
+                            <label for="" class="">119就醫/<br>緊急自行就醫條件</label>
+                        </dt>
+                        <dd class="wide">
+                            <div class="row padding">
+                                <div class="col-xxl">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="1"
+                                                    id="chk_medical_condition_1">
+                                                <label class="form-check-label" for="chk_medical_condition_1">
+                                                    抽搐
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="2"
+                                                    id="chk_medical_condition_2">
+                                                <label class="form-check-label" for="chk_medical_condition_2">
+                                                    意識不佳
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="3"
+                                                    id="chk_medical_condition_3">
+                                                <label class="form-check-label" for="chk_medical_condition_3">
+                                                    呼吸困難或有胸凹現象
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="4"
+                                                    id="chk_medical_condition_4">
+                                                <label class="form-check-label" for="chk_medical_condition_4">
+                                                    唇色發白或發紫
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="5"
+                                                    id="chk_medical_condition_5">
+                                                <label class="form-check-label" for="chk_medical_condition_5">
+                                                    血氧飽和度低於94%(如有血氧機)
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="5"
+                                                    id="chk_medical_condition_6">
+                                                <label class="form-check-label" for="chk_medical_condition_6">
+                                                    肢體冰冷且有皮膚斑駁或冒汗
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <!-- if (診斷年齡 <= 18) 警訊表徵(就醫警訊) //end -->
+
+                        <dt>
+                            <label for="" class="">主訴疾病史<br>（慢性疾病）</label>
+                        </dt>
+                        <dd class="wide">
+                            <div class="row g-2">
+                                <div class="col-md-auto">
+                                    <div class="form-control GSMis-no-border">
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="marriedOption1"
+                                                name="dialysis" required checked>
+                                            <label for="marriedOption1" class="form-check-label">無慢性病史</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="marriedOption2"
+                                                name="dialysis">
+                                            <label for="marriedOption2" class="form-check-label">有慢性病史</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 慢性疾病：勾選否時隱藏，勾選視是顯示＜ -->
+                            <div>
+                                <div class="row padding">
+                                    <div class="col-xxl">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="1"
+                                                        id="chk_chronic＿disease_1">
+                                                    <label class="form-check-label" for="chk_chronic＿disease_1">
+                                                        1.糖尿病
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="2"
+                                                        id="chk_chronic＿disease_2">
+                                                    <label class="form-check-label" for="chk_chronic＿disease_2">
+                                                        2.腎臟疾病
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="3"
+                                                        id="chk_chronic＿disease_3">
+                                                    <label class="form-check-label" for="chk_chronic＿disease_3">
+                                                        3. 高血壓
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="4"
+                                                        id="chk_chronic＿disease_4">
+                                                    <label class="form-check-label" for="chk_chronic＿disease_4">
+                                                        4.心血管疾病
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="5"
+                                                        id="chk_chronic＿disease_5">
+                                                    <label class="form-check-label" for="chk_chronic＿disease_5">
+                                                        5.氣喘
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="6"
+                                                        id="chk_chronic＿disease_6">
+                                                    <label class="form-check-label" for="chk_chronic＿disease_6">
+                                                        6.慢性肺疾
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="7"
+                                                        id="chk_chronic＿disease_7">
+                                                    <label class="form-check-label" for="chk_chronic＿disease_7">
+                                                        7.肝臟疾病
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="8"
+                                                        id="chk_chronic＿disease_8">
+                                                    <label class="form-check-label" for="chk_chronic＿disease_8">
+                                                        8.神經肌肉疾病
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="9"
+                                                        id="chk_chronic＿disease_9">
+                                                    <label class="form-check-label" for="chk_chronic＿disease_9">
+                                                        9.肥胖(BMI≧30)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="10"
+                                                        id="chk_chronic＿disease_10">
+                                                    <label class="form-check-label" for="chk_chronic＿disease_10">
+                                                        10.代謝性疾病
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="11"
+                                                        id="chk_chronic＿disease_11">
+                                                    <label class="form-check-label" for="chk_chronic＿disease_11">
+                                                        11.精神疾病
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="10"
+                                                        id="chk_chronic＿disease_12">
+                                                    <label class="form-check-label" for="chk_chronic＿disease_12">
+                                                        12.仍在治療中或未治癒之癌症
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row padding">
+                                    <div class="col-xxl">
+                                        <div class="row">
+                                            <div class="col-md-auto">
+                                                <div class="">
+                                                    <div class="row d-sm-flex g-2 align-items-center">
+                                                        <div class="col-auto text-end">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="13" id="chk_chronic＿disease_13">
+                                                                <label class="form-check-label"
+                                                                    for="chk_chronic＿disease_13">
+                                                                    13.免疫低下狀態，說明
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" class="form-control form-input-note"
+                                                                placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row padding">
+                                    <div class="col-xxl">
+                                        <div class="row">
+                                            <div class="col-md-auto">
+                                                <div class="">
+                                                    <div class="row d-sm-flex g-2 align-items-center">
+                                                        <div class="col-auto text-end">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    value="14" id="chk_chronic＿disease_14">
+                                                                <label class="form-check-label"
+                                                                    for="chk_chronic＿disease_14">
+                                                                    14.其他，說明
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <input type="text" class="form-control form-input-note"
+                                                                placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">上傳附件</label>
+                        </dt>
+                        <dd class="wide">
+                            <input type="file"><br><code>（JPG,PNG圖片或PDF）</code>
+                            <div class="form-control GSMis-no-border">
+                                <a href="assets/img/demo-at-home.jpeg" target="_blank">
+                                    <img src="assets/img/demo-at-home.jpeg" alt="" class="upload-image">
+                                </a>
+                                <a href="xxx.pdf" target="_blank">XXXX.pdf</a>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <h1 class="GSMis-section-title">評估結果</h1>
+                    <dl class="GSMis-form-horizontal units-2">
+                        <dt>
+                            <label for="" class=""><span class="text-danger">*</span>評估結果</label>
+                        </dt>
+                        <dd class="wide">
+                            <div class="row padding">
+                                <div class="col-12">
+                                    <!-- 若已完成總評估 -->
+                                    <div class="mb-2">
+                                        <code>（已完成總評估，若您異動評估結果，請通知衛生所重做總評估）</code>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="result" id="result1">
+                                        <label class="form-check-label" for="result1">
+                                            健康狀況適合採居家照護
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="result" id="result2">
+                                        <label class="form-check-label" for="result2">
+                                            健康狀況不適合採居家照護
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <input class="form-check-input" type="radio" name="result" id="result3">
+                                                <label class="form-check-label" for="result3">
+                                                    住院/機構，地點：
+                                                </label>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" class="form-control form-input-note"
+                                                    placeholder="請輸入地點" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="result" id="result4">
+                                        <label class="form-check-label" for="result4">
+                                            轉外縣市
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-4 mb-4">
+                                    <input type="text" class="form-control form-input-note" placeholder="評估結果備註說明（選填）"
+                                        value="">
+                                </div>
+                            </div>
+
+                        </dd>
+                        <dt>
+                            <label for="" class=""><span class="text-danger">*</span>評估日期時間</label>
+                        </dt>
+                        <dd class="wide">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <input type="date" class="form-control form-input-note" placeholder="" value=""
+                                        required="">
+                                </div>
+                                <div class="col-auto">
+                                    <input type="time" class="form-control form-input-note" placeholder="" value=""
+                                        required="">
+                                </div>
+                            </div>
+                        </dd>
+                        <dt>
+                            <label for="" class=""><span class="text-danger">*</span>評估人員</label>
+                        </dt>
+                        <dd class="wide">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <input type="text" class="form-control form-input-note" placeholder="" value=""
+                                        required="">
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                    <hr>
+                    <div class="row justify-content-center my-4">
+                        <div class="col-sm-4 col-lg-3 col-xl-4">
+                            <button type='submit' class="btn w-100 btn-secondary">確定送出</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--/ 健康評估表 -->
+
+    <!-- 居家環境評估表 -->
+    <div class="offcanvas offcanvas-end offcanvas-width" tabindex="-1" id="offcanvasEnvironment"
+        aria-labelledby="offcanvasEnvironmentLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasEnvironmentLabel">確診新型冠狀病毒(COVID-19) 居家環境狀況評估表</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container">
+
+                <div class="alert alert-secondary small" role="alert">
+                    <b>填表說明：</b><br><br>
+                    <ul class="no-list-style" style="text-indent: -2em;">
+                        <li>一、COVID-19確診個案之相關基本資料由轄區衛生所提供區級關懷中心。</li>
+                        <li>二、區級關懷中心接獲轄區衛生所提供COVID-19確診個案名單後，<b><u>需於2小時內完成居家環境評估</u></b>，可透過「<b><u>電話詢問</u></b>」與確診個案收集「二、居家環境狀況」之各項欄位資訊，<b><u>不需至確診個案之隔離地址實地勘察</u></b>：
+                        </li>
+                        <li>
+                            <ul class="no-list-style" style="text-indent: -2em;">
+                                <li>(一)家戶概況：請確認除確診個案本人以外，是否有其他同住者；如有其他同住者，請確認同住者人數及是否為COVID-19確診個案。</li>
+                                <li>(二)確診個案居住狀況：
+                                    <ul class="no-list-style" style="text-indent: -1em;">
+                                        <li>1.請先確認確診個案之類別，再依類別勾選右列之居家環境條件(均為單選題)；如不清楚確診個案之類別，可向轄區衛生所確認。</li>
+                                        <li>2.第一類個案：只要符合任一選項即符合居家照護之居家環境條件。</li>
+                                        <li>3.第二類個案：需「確診個案」及「同住之非確診個案」兩大項均有符合任一選項，始符合居家照護之居家環境條件。</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <form class="needs-validation" novalidate>
+                    <h1 class="GSMis-section-title">基本資料</h1>
+                    <dl class="GSMis-form-horizontal units-2">
+                        <dt>
+                            <label for="" class="">法傳編號</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">ＯＯＯＯＯＯＯ</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">報告日<br>發病日</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">111/04/23 採檢<br>111/04/23 發病</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">姓名</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">陳思佑</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">性別</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">女</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">生日/診斷年齡</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">80/04/19（33歲）</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">身分證字號/護照號碼</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">A123456789</div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">電話</label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">
+                                手機：0980666555<br> 住家：04-23109988
+                                <br> 公司：04-23109988
+                            </div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">
+                                隔離地址
+                            </label>
+                        </dt>
+                        <dd>
+                            <div class="form-control GSMis-no-border">
+                                台中市西區精誠29街23號6樓之2
+                                <a class="btn btn-secondary btn-sm">變更地址</a>
+                                <a class="btn btn-light btn-sm">取消</a>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <select name="" id="" class="form-select">
+                                        <option value="1">OO區</option>
+                                        <option value="2" selected>西區</option>
+                                        <option value="3">北區</option>
+                                        <option value="4">OO區</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="" id="" class="form-control" placeholder="請輸入正確地址(完整)">
+                                </div>
+                            </div>
+                            <code>地址異動過，從「西區」更正至「北區」</code>
+                            <code>備註：請與確診個案再次確認<strong>同意於上開地址居家照護至解除隔離為止</strong>，除因健康或必要之照護需求，不得任意變更隔離地址。</code>
+                        </dd>
+
+                    </dl>
+
+                    <h1 class="GSMis-section-title">居家環境狀況</h1>
+                    <dl class="GSMis-form-horizontal units-2">
+                        <dt>
+                            <span class="text-danger">*</span>家戶概況
+                        </dt>
+                        <dd class="wide">
+                            <div class="form-control GSMis-no-border">
+                                <!-- 是否有同住者 -->
+                                <div class="form-check">
+                                    <input class="form-check-input " type="radio" id="coresident_N" name="coresident"
+                                        required>
+                                    <label for="coresident_N" class="form-check-label">無同住者</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input " type="radio" id="coresident_Y" name="coresident">
+                                    <label for="coresident_Y" class="form-check-label">有同住者</label>
+                                    <!-- 預設隱藏，勾選有同住者才出現 -->
+                                    <div class="field-narrow">
+                                        <div class="form-check form-check-inline">
+                                            <label for="" class="form-check-label">共</label>
+                                            <input type="number" max="42" min="0"
+                                                class="form-control form-input-note input-week" placeholder="" value=""
+                                                required=""> 人；
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label for="" class="form-check-label">確診個案</label>
+                                            <input type="number" max="42" min="0"
+                                                class="form-control form-input-note input-week" placeholder="" value=""
+                                                required=""> 人、
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label for="" class="form-check-label">非確診個案</label>
+                                            <input type="number" max="42" min="0"
+                                                class="form-control form-input-note input-week" placeholder="" value=""
+                                                required=""> 人
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="field-narrow">
+                                    <div class="form-check form-check-inline">
+                                        <label for="" class="form-check-label">房間</label>
+                                        <input type="number" max="42" min="0"
+                                            class="form-control form-input-note input-week" placeholder="" value=""
+                                            required=""> 間，
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label for="" class="form-check-label">衛浴設備</label>
+                                        <input type="number" max="42" min="0"
+                                            class="form-control form-input-note input-week" placeholder="" value=""
+                                            required=""> 間
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <dt>
+                            <label for="" class=""><span class="text-danger">*</span>確診個案居住狀況</label>
+                        </dt>
+                        <dd class="wide">
+                            <div class="row padding">
+                                <div class="col-md-auto">
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="radio" id="foreign" name="type" required>
+                                        <label for="foreign" class="form-check-label">第一類：境外移入個案</label>
+                                    </div>
+
+                                    <!-- 預設隱藏，「境外移入個案」勾選後出現 -->
+                                    <div class="form-control GSMis-no-border margin-left">
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="marriedOption1"
+                                                name="foreign" required>
+                                            <label for="marriedOption1" class="form-check-label">1人1戶 (無其他同住者)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="marriedOption2"
+                                                name="foreign">
+                                            <label for="marriedOption2" class="form-check-label">例外情形：得多人1戶
+                                                <ul class="no-list-style mt">
+                                                    <li>(1) 同住者為確診個案</li>
+                                                    <li>(2) 確診個案有必要照護其他同住者之需求</li>
+                                                    <li>(3) 確診個案需有同住者提供必要照護需求</li>
+                                                </ul>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input " type="radio" id="local" name="type" required>
+                                        <label for="local" class="form-check-label">
+                                            第二類：
+                                            1.本土個案。2.境外移入個案，完成居家檢疫後確診
+                                        </label>
+                                    </div>
+
+                                    <!-- 預設隱藏，「本土個案或完成居家檢疫返家後確診個案」勾選後出現 -->
+                                    <div class="form-control GSMis-no-border margin-left">
+                                        <ul class="form-ul no-list-style">
+                                            <li>
+                                                <!-- 確診個案： -->
+                                                <div class="form-check">
+                                                    <input class="form-check-input " type="radio" id="local_1_1"
+                                                        name="local_1" required>
+                                                    <label for="local_1_1" class="form-check-label">1人1室
+                                                        (單獨房間含衛浴設備)</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input " type="radio" id="local_1_2"
+                                                        name="local_1">
+                                                    <label for="local_1_2" class="form-check-label">1人1室
+                                                        (單獨房間未含衛浴，每次浴廁使用後均可適當清消)</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input " type="radio" id="local_1_3"
+                                                        name="local_1">
+                                                    <label for="local_1_3"
+                                                        class="form-check-label">與其他同住之確診個案多人1室</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input " type="radio" id="marriedOption2"
+                                                        name="foreign">
+                                                    <label for="marriedOption2" class="form-check-label">例外情形：得多人1室
+                                                        <ul class="no-list-style mt">
+                                                            <li>(1) 確診個案需有同住者提供必要照護需求</li>
+                                                            <li>(2) 確診個案有必要照護其他同住者之需求</li>
+                                                        </ul>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <!-- 
+                                            <li>
+                                                同住之非確診個案：
+                                                <div class="form-check">
+                                                    <input class="form-check-input " type="radio" id="local_2_1" name="local_2" required>
+                                                    <label for="local_2_1" class="form-check-label">無同住之非確診個案</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input " type="radio" id="local_2_2" name="local_2" required>
+                                                    <label for="local_2_2" class="form-check-label">同住者均為非確診個案，且未超過4人(在其他房間隔離，可多人1室)</label>
+                                                </div>
+                                            </li>
+                                             -->
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <dt>
+                            <label for="" class="">上傳附件</label>
+                        </dt>
+                        <dd class="wide">
+                            <input type="file"><br><code>（JPG,PNG圖片或PDF）</code>
+                            <div class="form-control GSMis-no-border">
+                                <a href="assets/img/demo-at-home.jpeg" target="_blank">
+                                    <img src="assets/img/demo-at-home.jpeg" alt="" class="upload-image">
+                                </a>
+                                <a href="xxx.pdf" target="_blank">XXXX.pdf</a>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <h1 class="GSMis-section-title">評估結果</h1>
+                    <dl class="GSMis-form-horizontal units-2">
+                        <dt>
+                            <label for="" class=""><span class="text-danger">*</span>評估結果</label>
+                        </dt>
+                        <dd class="wide">
+                            <div class="row padding">
+                                <div class="col-12">
+                                    <!-- 若已完成收案評估 -->
+                                    <div class="mb-2">
+                                        <code>（已完成收案評估，若您異動評估結果，請通知衛生所重做收案評估）</code>
+                                    </div>
+                                    <div class="form-check form-check">
+                                        <input class="form-check-input" type="radio" name="result" id="result1">
+                                        <label class="form-check-label" for="result1">
+                                            符合
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check">
+                                        <input class="form-check-input" type="radio" name="result" id="result2">
+                                        <label class="form-check-label" for="result2">
+                                            不符合
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <input class="form-check-input" type="radio" name="result" id="result3">
+                                                <label class="form-check-label" for="result3">
+                                                    住院/機構，地點：
+                                                </label>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" class="form-control form-input-note"
+                                                    placeholder="請輸入地點" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <input class="form-check-input" type="radio" name="result" id="result4">
+                                                <label class="form-check-label" for="result4">
+                                                    轉外縣市，外縣市地址：
+                                                </label>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" class="form-control form-input-note"
+                                                    placeholder="請輸入外縣市地址" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-4 mb-4">
+                                    <input type="text" class="form-control form-input-note" placeholder="評估結果備註說明（選填）"
+                                        value="">
+                                </div>
+                            </div>
+
+                        </dd>
+                        <dt>
+                            <label for="" class=""><span class="text-danger">*</span>評估日期時間</label>
+                        </dt>
+                        <dd class="wide">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <input type="date" class="form-control form-input-note" placeholder="" value=""
+                                        required="">
+                                </div>
+                                <div class="col-auto">
+                                    <input type="time" class="form-control form-input-note" placeholder="" value=""
+                                        required="">
+                                </div>
+                            </div>
+                        </dd>
+                        <dt>
+                            <label for="" class=""><span class="text-danger">*</span>評估人員</label>
+                        </dt>
+                        <dd class="wide">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <input type="text" class="form-control form-input-note" placeholder="" value=""
+                                        required="">
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                    <hr>
+                    <div class="row justify-content-center my-4">
+                        <div class="col-sm-4 col-lg-3 col-xl-4">
+                            <button type='submit' class="btn w-100 btn-secondary">確定送出</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- / 居家環境評估表 -->
+
+    <!-- 診所收案-建檔/編輯 --><!-- Modal -->
+    <div class="modal fade modal-width" id="editModal" tabindex="-1" aria-labelledby="editModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">個案資料</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning small mb-3" role="alert">
+                        <ul class="no-list-style mb-0" style="text-indent: -2em;">
+                            <li><b>重要提醒：</b>請務必將個案資料建至法傳系統，以利衛生局將法傳資料匯入本系統後，系統能將此個案轉為正式個案。</li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="alert alert-danger" role="alert">
+                        個案研判日期格式錯誤、身分證字號格式錯誤
+                    </div>
+                    <!-- <code>
+                        <strong>
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            個案研判日期格式錯誤、身分證字號格式錯誤
+                        </strong>
+                    </code> -->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">個案研判日期</label>
+                                <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">發病日</label>
+                                <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">報告日</label>
+                                <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">法傳編號</label>
+                                <input type="text" class="form-control" value="1110300376077" placeholder="由法傳系統提供">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">姓名</label>
+                                <input type="text" class="form-control" value="陳思佑">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">性別</label>
+                                <select name="" id="" class="form-control form-select">
+                                    <option value="" disabled>請選擇</option>
+                                    <option value="1">男</option>
+                                    <option value="2" selected>女</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">身分證字號/護照號碼</label>
+                                <input type="text" class="form-control" value="A123456789">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">出生年月日</label>
+                                <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">診斷年齡(足歲)</label>
+                                <input type="number" min="0" class="form-control" value="33" placeholder="足歲">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">手機電話</label>
+                                <input type="text" class="form-control" value="0980555666">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">住家電話</label>
+                                <input type="text" class="form-control" value="04-23109988">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">公司電話</label>
+                                <input type="text" class="form-control" value="04-23109988">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">居住鄉鎮</label>
+                                <select name="" id="" class="form-control form-select">
+                                    <option value="" disabled>請選擇</option>
+                                    <option value="1">OO區</option>
+                                    <option value="2" selected>OO區</option>
+                                    <option value="3">OO區</option>
+                                    <option value="4">OO區</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="mb-3">
+                                <label for="" class="">居家地址(完整地址)</label>
+                                <input type="text" class="form-control" placeholder="請輸入居家照護地址(完整地址)"
+                                    value="台中市西區精誠29街23號6樓之2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary w-100">儲存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / 診所收案-建檔/編輯 -->
+    
+    <!-- delete-wrap -->
+    <div class="delete-wrap">
+        <div class="row">
+            <div class="col-6">
+                <a href="" class="btn w-100 btn-danger">刪除</a>
+            </div>
+            <div class="col-6">
+                <a id="cancel_del" class="btn w-100 btn-outline-secondary">取消</a>
+            </div>
+        </div>
+    </div>
+    <!-- / delete-wrap -->
+
+    <!-- Base -->
+    <script src="assets/vendor/jquery-3.6.0.min.js "></script>
+    <script src="assets/vendor/bootstrap-5.1.3/bootstrap.bundle.min.js "></script>
+    <!-- 自訂 -->
+    <script src="assets/js/base-layout-one.js "></script>
+    <script src="assets/js/common.js "></script>
+</body>
+
+</html>
