@@ -28,8 +28,10 @@
                         <!-- GSMis-brand -->
                         <h1 class="GSMis-brand">
                             <a href="index.html">
-                                <!-- <img class="GSMis-brand-img" src="assets/img/taichung-logo.png"> -->
-                                <span class="GSMis-brand-text">台中市政府新冠肺炎居家照護管理系統</span>
+                                <span class="GSMis-brand-text">
+                                    <span class="logo-tc-gov GSMis-brand-img">台中市政府</span>
+                                    新冠肺炎居家照護管理系統
+                                </span>
                             </a>
                         </h1>
                     </div>
@@ -129,7 +131,7 @@
                                             待轉正式
                                             <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip"
                                                 data-bs-placement="top" title=""
-                                                data-bs-original-title="請確認個案資料已建至法傳系統（若該個案未存在於法傳系統，將無法於本系統轉入正式個案）">
+                                                data-bs-original-title="尚無「法傳編號」，請確認個案資料已建至法傳系統，之後即可轉正式">
                                             </i>
                                         </label>
                                     </div>
@@ -153,8 +155,6 @@
                             </a>
                         </div>
                     </div>
-
-
                 </div>
 
                 <!-- .table-responsive 表格 -->
@@ -172,7 +172,7 @@
                                 <th class="evaluate">健康評估</th>
                                 <th class="evaluate">環境評估</th>
                                 <th class="evaluate">總評估</th>
-                                <th class="center">診所收案狀態</th>
+                                <th class="center">診所收案<br>狀態</th>
                                 <th class="center">編輯</th>
                                 <th class="text-danger delete">
                                     刪除<br>
@@ -367,8 +367,8 @@
                                         <small class="note">這裡顯示地址</small>
                                     </span>
                                 </td>
-                                <td data-th="總評估" class="evaluate text-danger">
-                                    不收案，送檢疫所
+                                <td data-th="總評估" class="evaluate">
+                                    --
                                 </td>
                                 <td data-th="診所收案狀態" class="center">
                                     <i class="fa-solid fa-hourglass-empty is-informal" data-bs-toggle="tooltip"
@@ -1678,6 +1678,7 @@
                     </div>
                     <hr>
                     <div class="alert alert-danger" role="alert">
+                        <i class="fa-solid fa-triangle-exclamation"></i> 
                         個案研判日期格式錯誤、身分證字號格式錯誤
                     </div>
                     <!-- <code>
@@ -1708,7 +1709,7 @@
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <label for="" class="">法傳編號</label>
-                                <input type="text" class="form-control" value="1110300376077" placeholder="由法傳系統提供">
+                                <input type="text" class="form-control" value="" placeholder="由法傳系統提供比對" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">

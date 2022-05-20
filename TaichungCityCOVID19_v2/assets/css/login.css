@@ -26,7 +26,16 @@ body {
 
 
 /* 登入區 */
-
+.login-sys-name {
+    padding: .5em 0;
+    font-size: 32px; 
+    font-weight: bold;
+    text-align: center;
+}
+.login-logo {
+    width: 70%;
+    margin-bottom: .5em;
+}
 .login-title {
     display: -webkit-box;
     display: -webkit-flex;
