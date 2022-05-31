@@ -31,7 +31,7 @@
         <a href="dashboard_組室窗口.html#page" class="active">組室窗口</a>
         <a href="dashboard_主督辦.html#page">主督辦</a>
         <a href="dashboard_預算控管人員.html#page">預算控管人員</a>
-        <a href="dashboard_其他.html#page">其他</a>
+        
     </div>
 
 
@@ -77,6 +77,7 @@
                             </select>
 
                             <select class="select-year">
+                                <option value="">預算控管執行</option>
                                 <option value="" selected>個人主辦</option>
                                 <option value="">個人督辦</option>
                                 <option value="">控管單位主辦</option>
@@ -199,13 +200,14 @@
                                 <select class="select-year">
                                     <option value="110">110年度</option>
                                     <option value="111" selected>111年度</option>
-                                </select> 計畫概要
-                                <div class="wrap toolbox toolbox-no-gap">
-                                    <select class="filter-company">
-                                        <option selected="selected" value="">複審會議核定經費</option>
-                                        <option value="">計畫執行經費</option>
-                                    </select>
-                                </div>
+                                </select>
+                                <!-- 若同時具備組室窗口及預算控管人員權限 -->
+                                <select class="select-year">
+                                    <option value="" selected>組室窗口</option>
+                                    <option value="" >預算控管</option>
+                                </select> 
+                                計畫概要
+                                
                             </h2>
                             <table class="data-total">
                                 <tr>
@@ -572,7 +574,7 @@
                                     <div class="wrap">
                                         <div class="block-funds-detail relative">
                                             <h2 class="grid-title">
-                                                規劃課 - 歷年委辦計畫趨勢圖：
+                                                規劃課 - 近五年委辦計畫趨勢圖：
                                                 <select class="filter-company">
                                                     <option value="">111</option>
                                                     <option value="" selected>107</option>

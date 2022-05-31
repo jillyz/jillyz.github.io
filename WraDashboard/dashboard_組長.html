@@ -31,7 +31,7 @@
         <a href="dashboard_組室窗口.html#page">組室窗口</a>
         <a href="dashboard_主督辦.html#page">主督辦</a>
         <a href="dashboard_預算控管人員.html#page">預算控管人員</a>
-        <a href="dashboard_其他.html#page">其他</a>
+        
     </div>
 
 
@@ -74,6 +74,11 @@
                             <select class="select-year">
                                 <option value="" selected>預定計畫</option>
                                 <option value="">增辦計畫會議</option>
+                            </select>
+
+                            <select class="select-year">
+                                <option value="" selected>控管單位主辦</option>
+                                <option value="">控管單位督辦</option>
                             </select>
                         </div>
                     </div>
@@ -188,15 +193,14 @@
                         <div class="col col-1 section-outsourcing-funds relative">
                             <h2 class="title">
                                 <select class="select-year">
-                            <option value="111" selected>111年度</option>
-                            <option value="110">110年度</option>
-                        </select> 計畫概要
-                                <div class="wrap toolbox toolbox-no-gap">
-                                    <select class="filter-company">
-                        <option selected="selected" value="">複審會議核定經費</option>
-                        <option value="">計畫執行經費</option>
-                    </select>
-                                </div>
+                                    <option value="111" selected>111年度</option>
+                                    <option value="110">110年度</option>
+                                </select> 
+                                <select class="select-year">
+                                    <option value="" selected>主辦</option>
+                                    <option value="">督辦</option>
+                                </select> 
+                                計畫概要
                             </h2>
                             <table class="data-total">
                                 <tr>
@@ -256,21 +260,16 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <!-- <tr class="wra">
-                                                <th>個人主辦</th>
-                                                <td class="align-r"><span>1</span></td>
-                                                <td class="align-r"><span class="late">1</span></td>
-                                            </tr>
-                                            <tr class="aa">
-                                                <th>個人督辦</th>
-                                                <td class="align-r"><span>1</span></td>
-                                                <td class="align-r"><span class="late">0</span></td>
-                                            </tr> -->
-                                            <tr class="aa active">
-                                                <th>控管單位執行</th>
+                                            <tr class="active">
+                                                <th>控管單位主辦</th>
                                                 <td class="align-r"><span>33</span></td>
                                                 <td class="align-r"><span class="late">8</span></td>
                                             </tr>
+                                            <!-- <tr>
+                                                <th>控管單位督辦</th>
+                                                <td class="align-r"><span>17</span></td>
+                                                <td class="align-r"><span class="late">6</span></td>
+                                            </tr> -->
                                         </tbody>
                                     </table>
                                 </section>
@@ -299,45 +298,7 @@
                                             <td>0</td>
                                             <td>3</td>
                                         </tr>
-                                        <tr id="dataSatageLate" class="cursor">
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td><span>1</span></td>
-                                            <td></td>
-                                            <td><span>7</span></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td class="cursor btn-purchase-detail">
-                                                <input id="purchaseDetail" type="checkbox">
-                                                <label for="purchaseDetail" class="btn-view"><i class="fa-regular fa-rectangle-list"></i></label>
-                                                <table class="data-stage purchase">
-                                                    <caption>採購階段執行進度（已完成「計畫核可」方列入統計）</caption>
-                                                    <tr>
-                                                        <th>尚未登打</th>
-                                                        <th>公告上網</th>
-                                                        <th>資格審查</th>
-                                                        <th>規格審查</th>
-                                                        <th>訂期議價</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                        <td>0</td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                            <td colspan="7"></td>
-                                        </tr>
                                     </table>
-
-
                                 </section>
                             </div>
                         </div>
@@ -540,7 +501,7 @@
                                     <div class="wrap">
                                         <div class="block-funds-detail relative">
                                             <h2 class="grid-title">
-                                                水源一科 - 歷年委辦計畫趨勢圖：
+                                                水源一科 - 近五年委辦計畫趨勢圖：
                                                 <select class="filter-company">
                                                     <option value="">111</option>
                                                     <option value="" selected>107</option>

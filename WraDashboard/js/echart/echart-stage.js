@@ -14,7 +14,8 @@ function renderStage(valueTotal, valueLate, noteTitle) {
                 fontSize: 16
             }
         },
-        color: ['#5470C6', '#FF6961'],
+        // color: ['#5470C6', '#FF6961'],
+        color: ['#5470C6'],
         backgroundColor: '#fff',
         tooltip: {
             trigger: 'axis',
@@ -87,32 +88,32 @@ function renderStage(valueTotal, valueLate, noteTitle) {
                 },
                 data: valueTotal
             },
-            {
-                name: '進度落後',
-                type: 'line',
-                // stack: 'x',
-                smooth: true,
-                lineStyle: {
-                    width: 0
-                },
-                showSymbol: false,
-                areaStyle: {
-                    opacity: 0.8,
-                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgb(255, 0, 97)'
-                        },
-                        {
-                            offset: 1,
-                            color: '#FF6961'
-                        }
-                    ])
-                },
-                emphasis: {
-                    focus: 'series',
-                },
-                data: valueLate
-            },
+            // {
+            //     name: '進度落後',
+            //     type: 'line',
+            //     // stack: 'x',
+            //     smooth: true,
+            //     lineStyle: {
+            //         width: 0
+            //     },
+            //     showSymbol: false,
+            //     areaStyle: {
+            //         opacity: 0.8,
+            //         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+            //                 offset: 0,
+            //                 color: 'rgb(255, 0, 97)'
+            //             },
+            //             {
+            //                 offset: 1,
+            //                 color: '#FF6961'
+            //             }
+            //         ])
+            //     },
+            //     emphasis: {
+            //         focus: 'series',
+            //     },
+            //     data: valueLate
+            // },
 
         ]
     };
