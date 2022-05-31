@@ -906,7 +906,7 @@
     <div class="offcanvas offcanvas-end offcanvas-width" tabindex="-1" id="offcanvasHealth"
         aria-labelledby="offcanvasHealthLabel">
         <div class="offcanvas-header">
-            <h5 id="offcanvasHealthLabel">
+            <h5 id="offcanvasRightLabel">
                 <div class="row">
                     <div class="col-auto">
                         確診新型冠狀病毒(COVID-19) 健康狀況評估表
@@ -955,7 +955,7 @@
                             <div class="form-control GSMis-no-border">女</div>
                         </dd>
                         <dt>
-                            <label for="" class="">生日/診斷年齡</label>
+                            <label for="" class="">生日/年齡</label>
                         </dt>
                         <dd>
                             <div class="form-control GSMis-no-border">80/04/19（33歲）</div>
@@ -1001,19 +1001,27 @@
                                                 name="a_health_condition">
                                             <label for="a_health_condition_1"
                                                 class="form-check-label">確診者年齡為19-64歲：無症狀或輕症，<strong
-                                                    class="text-danger">且無懷孕或血液透析</strong></label>
+                                                    class="text-danger">且無懷孕</strong></label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input " type="radio" id="a_health_condition_2"
                                                 name="a_health_condition">
                                             <label for="a_health_condition_2"
                                                 class="form-check-label">確診者年齡為65-69歲：無症狀或輕症，<strong
-                                                    class="text-danger">非獨居，且無懷孕或血液透析</strong></label>
+                                                    class="text-danger">非獨居，且無懷孕</strong></label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input " type="radio" id="a_health_condition_3"
                                                 name="a_health_condition">
                                             <label for="a_health_condition_3"
+                                                class="form-check-label">
+                                                <strong class="text-danger">無症狀或輕症之血液透析確診者，得依衛生局規劃安排居家照護，並於指定之透析診所 或醫院接受血液透析治療。</strong>                                        
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="a_health_condition_4"
+                                                name="a_health_condition">
+                                            <label for="a_health_condition_4"
                                                 class="form-check-label">不符上述條件之無症狀或輕症確診者，如本人或其法定代理人要求希望採居家照護，經醫療人員評估後，得採取居家照護。
                                             </label>
                                         </div>
@@ -1029,31 +1037,45 @@
                                 <div class="col-md-auto">
                                     <div class="form-control GSMis-no-border">
                                         <div class="form-check">
-                                            <input class="form-check-input " type="radio" id="b_health_condition_1"
-                                                name="b_health_condition" required>
-                                            <label for="b_health_condition_1"
-                                                class="form-check-label">確診者年齡為＜3個月：無症狀或輕症，<strong
-                                                    class="text-danger">且無發燒</strong></strong></label>
+                                            <input class="form-check-input " type="radio" id="b_health_condition_1" name="b_health_condition" required>
+                                            <label for="b_health_condition_1" class="form-check-label">
+                                                確診者年齡為＜3個月：無症狀或輕症，
+                                                <strong class="text-danger">
+                                                    且無發燒；或有高燒>39度，但經醫師評估無住院治療必要者 
+                                                </strong>
+                                            </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input " type="radio" id="b_health_condition_2"
-                                                name="b_health_condition">
-                                            <label for="b_health_condition_2"
-                                                class="form-check-label">確診者年齡為3-12個月：無症狀或輕症，<strong
-                                                    class="text-danger">且無高燒>39度</strong></label>
+                                            <input class="form-check-input " type="radio" id="b_health_condition_2" name="b_health_condition">
+                                            <label for="b_health_condition_2" class="form-check-label">
+                                                確診者年齡為3-12個月：無症狀或輕症，
+                                                <strong class="text-danger">
+                                                    且無高燒>39度；或有高燒>39度，但經醫師評估無住院治療必要者 
+                                                </strong>
+                                            </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input " type="radio" id="b_health_condition_3"
-                                                name="b_health_condition">
-                                            <label for="b_health_condition_3"
-                                                class="form-check-label">確診者年齡為1-18歲：無症狀或輕症，<strong
-                                                    class="text-danger">且無懷孕或血液透析</strong></label>
+                                            <input class="form-check-input " type="radio" id="b_health_condition_3" name="b_health_condition">
+                                            <label for="b_health_condition_3" class="form-check-label">
+                                                確診者年齡為1-18歲：無症狀或輕症，
+                                                <strong class="text-danger">
+                                                    且無懷孕
+                                                </strong>
+                                            </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input " type="radio" id="b_health_condition_4"
-                                                name="b_health_condition">
-                                            <label for="b_health_condition_4"
-                                                class="form-check-label">不符上述條件之無症狀或輕症確診者，如本人或其法定代理人要求希望採居家照護，經醫療人員評估後，得採取居家照護。</label>
+                                            <input class="form-check-input " type="radio" id="a_health_condition_4"
+                                                name="a_health_condition">
+                                            <label for="a_health_condition_4"
+                                                class="form-check-label">
+                                                <strong class="text-danger">無症狀或輕症之血液透析確診者，得依衛生局規劃安排居家照護，並於指定之透析診所 或醫院接受血液透析治療。</strong>                                        
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="b_health_condition_5" name="b_health_condition">
+                                            <label for="b_health_condition_5" class="form-check-label">
+                                                不符上述條件之無症狀或輕症確診者，如本人或其法定代理人要求希望採居家照護，經醫療人員評估後，得採取居家照護
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
@@ -1678,14 +1700,52 @@
                     <h1 class="GSMis-section-title">評估結果</h1>
                     <dl class="GSMis-form-horizontal units-2">
                         <dt>
+                            <label for="" class=""><span class="text-danger">*</span>風險評估</label>
+                        </dt>
+                        <dd class="wide">
+                            <div class="row g-2">
+                                <div class="col-md-auto">
+                                    <div class="form-control GSMis-no-border">
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="rdo_risk_1" name="risk" required checked>
+                                            <label for="rdo_risk_1" class="form-check-label">一般風險</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="rdo_risk_2" name="risk">
+                                            <label for="rdo_risk_2" class="form-check-label">高風險</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <dt>
+                            <label for="" class=""><span class="text-danger">*</span>需使用口服抗病毒藥物</label>
+                        </dt>
+                        <dd class="wide">
+                            <div class="row g-2">
+                                <div class="col-md-auto">
+                                    <div class="form-control GSMis-no-border">
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="rdo_antiviral_drugs_1" name="antiviral_drugs" required checked>
+                                            <label for="rdo_antiviral_drugs_1" class="form-check-label">是</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input " type="radio" id="rdo_antiviral_drugs_2" name="antiviral_drugs">
+                                            <label for="rdo_antiviral_drugs_2" class="form-check-label">否</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </dd>
+                        <dt>
                             <label for="" class=""><span class="text-danger">*</span>評估結果</label>
                         </dt>
                         <dd class="wide">
                             <div class="row padding">
                                 <div class="col-12">
-                                    <!-- 若已完成總評估 -->
+                                    <!-- 若已完成收案評估 -->
                                     <div class="mb-2">
-                                        <code>（已完成總評估，若您異動評估結果，請通知衛生所重做總評估）</code>
+                                        <code>（已完成收案評估，若您異動評估結果，請通知衛生所重做收案評估）</code>
                                     </div>
 
                                     <div class="form-check">
@@ -1701,18 +1761,18 @@
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <div class="row">
-                                            <div class="col-auto">
+                                        <!-- <div class="row"> -->
+                                            <!-- <div class="col-auto"> -->
                                                 <input class="form-check-input" type="radio" name="result" id="result3">
                                                 <label class="form-check-label" for="result3">
-                                                    住院/機構，地點：
+                                                    住院/機構
+                                                    <!-- ，地點： -->
                                                 </label>
-                                            </div>
-                                            <div class="col-6">
-                                                <input type="text" class="form-control form-input-note"
-                                                    placeholder="請輸入地點" value="">
-                                            </div>
-                                        </div>
+                                            <!-- </div> -->
+                                            <!-- <div class="col-6">
+                                                <input type="text" class="form-control form-input-note" placeholder="請輸入地點" value="">   
+                                            </div> -->
+                                        <!-- </div> -->
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="result" id="result4">
@@ -1720,11 +1780,48 @@
                                             轉外縣市
                                         </label>
                                     </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="result" id="result5">
+                                        <label class="form-check-label" for="result5">
+                                            電話錯誤
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="result" id="result6">
+                                        <label class="form-check-label" for="result6">
+                                            電話未接
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="result" id="result7">
+                                        <label class="form-check-label" for="result7">
+                                            個案為外籍移工
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="result" id="result8">
+                                        <label class="form-check-label" for="result8">
+                                            死亡
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <input class="form-check-input" type="checkbox" name="result" id="result9">
+                                                <label class="form-check-label" for="result9">
+                                                    其他，說明：
+                                                </label>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" class="form-control form-input-note" placeholder="請輸入說明" value="">   
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-12 mt-4 mb-4">
-                                    <input type="text" class="form-control form-input-note" placeholder="評估結果備註說明（選填）"
-                                        value="">
-                                </div>
+                                
+                                <!-- <div class="col-12 mt-4 mb-4">
+                                    <input type="text" class="form-control form-input-note" placeholder="評估結果備註說明（選填）" value="">   
+                                </div> -->
                             </div>
 
                         </dd>
