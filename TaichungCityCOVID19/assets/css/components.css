@@ -460,6 +460,21 @@ i.is-late {
 .legend-no::before {
     background-color: #EE6666;
 }
+.badge.text-bg-info {
+    background-color: #86ebeb;
+    color: #212529;
+    font-size: .875em;
+}
+.badge.text-bg-danger {
+    background-color: #ffc3c1;
+    color: #212529;
+    font-size: .875em;
+}
+.badge.text-bg-dead {
+    background-color: #dedede;
+    color: #212529;
+    font-size: .875em;
+}
 @media all and (min-width: 992px) {
     .dashboard {
         max-width: 1400px;

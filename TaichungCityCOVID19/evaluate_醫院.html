@@ -104,6 +104,13 @@
                                 待評估
                             </label>
                         </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input " type="radio" id="flexRadioDefault4" name="flexRadioDefault"
+                                checked>
+                            <label class="form-check-label" for="flexRadioDefault4">
+                                電話未接/錯誤
+                            </label>
+                        </div>
                         <!-- <div class="form-check form-check-inline">
                             <input class="form-check-input " type="radio" id="flexRadioDefault4" name="flexRadioDefault">
                             <label class="form-check-label" for="flexRadioDefault4">
@@ -122,6 +129,8 @@
                     <div class="col-auto">
                         <div class="input-group input-group-sm">
                             <input type="text" class="form-control" placeholder="請輸入姓名" aria-label="請輸入姓名"
+                                aria-describedby="button-addon2">
+                            <input type="text" class="form-control" placeholder="身分證字號/護照號碼" aria-label="身分證字號/護照號碼"
                                 aria-describedby="button-addon2">
                             <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
                                     class="fa-solid fa-magnifying-glass"></i></button>
@@ -222,14 +231,60 @@
                                 <td data-th="入案編號">12345678901234</td>
                                 <td data-th="報告日">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="健康評估" class="evaluate">
+                                    <a class="text-danger" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                        aria-controls="offcanvasRight">
+                                        健康狀況不適合採居家照護
+                                        <!-- <small class="note">
+                                            <br>高風險
+                                            <br>需使用口服抗病毒藥物
+                                        </small> -->
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                aria-controls="offcanvasRight">
+                                <td data-th="超過1小時未處理"></td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="健康評估" class="evaluate">
+                                    <a class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight">
+                                        其他
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                aria-controls="offcanvasRight">
+                                <td data-th="超過1小時未處理"></td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
                                 <td data-th="健康評估">
-                                    <a class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                        aria-controls="offcanvasRight">
-                                        其他<br>
-                                        <small class="note">備註內容備註內容備註內容備註內容</small>
-                                    </a>
+                                    <span class="badge rounded-pill text-bg-info" 
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight">
+                                        電話未接
+                                    </span>
+                                    <span class="badge rounded-pill text-bg-danger" 
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight">
+                                        電話錯誤
+                                    </span>
+                                    <span class="badge rounded-pill text-bg-dead" 
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight">
+                                        個案已死亡
+                                    </span>
                                 </td>
                             </tr>
                         </tbody>
@@ -274,7 +329,7 @@
     <div class="offcanvas offcanvas-end offcanvas-width" tabindex="-1" id="offcanvasRight"
         aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-            <h5 id="offcanvasRightLabel">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">
                 <div class="row">
                     <div class="col-auto">
                         確診新型冠狀病毒(COVID-19) 健康狀況評估表
@@ -282,10 +337,32 @@
                     <div class="col-auto">
                         <a class="btn w-100 btn-secondary btn-print">列印</a>
                     </div>
+                    <div class="col-auto">
+                        <div class="vr"></div>
+                    </div>
+                    <div class="col-auto">
+                        <select name="" id="" class="form-select" style="display: inline-block; width: auto;">
+                            <option value="">-註記-</option>
+                            <option value="1">電話錯誤</option>
+                            <option value="2">電話未接</option>
+                            <option value="3">個案已死亡</option>
+                        </select>
+                        <button class="btn btn-secondary" style="display: inline-block"><i class="fa-solid fa-check"></i></button>
+                    </div>
                 </div>
             </h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div class="row">          
+                <div class="col-auto">
+                    
+                </div>
+                <div class="col-auto">
+                    
+
+                </div>
+            </div>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> 
         </div>
+        
         <div class="offcanvas-body">
             <div class="container">
 
@@ -494,7 +571,7 @@
                                                     <input class="form-check-input" type="checkbox" value="3"
                                                         id="chk_symptom_complaints_3">
                                                     <label class="form-check-label" for="chk_symptom_complaints_3">
-                                                        發燒(額溫37.5℃或耳溫38℃以上)，
+                                                        1.發燒(額溫37.5℃或耳溫38℃以上)，
                                                     </label>
                                                 </div>
                                             </div>
@@ -521,7 +598,7 @@
                                                 <input class="form-check-input" type="checkbox" value="4"
                                                     id="chk_symptom_complaints_4">
                                                 <label class="form-check-label" for="chk_symptom_complaints_4">
-                                                    咳嗽
+                                                    2.咳嗽
                                                 </label>
                                             </div>
                                         </div>
@@ -530,7 +607,7 @@
                                                 <input class="form-check-input" type="checkbox" value="5"
                                                     id="chk_symptom_complaints_5">
                                                 <label class="form-check-label" for="chk_symptom_complaints_5">
-                                                    喉嚨癢、痛
+                                                    3.喉嚨癢、痛
                                                 </label>
                                             </div>
                                         </div>
@@ -539,7 +616,7 @@
                                                 <input class="form-check-input" type="checkbox" value="6"
                                                     id="chk_symptom_complaints_6">
                                                 <label class="form-check-label" for="chk_symptom_complaints_6">
-                                                    鼻塞、流鼻水
+                                                    4.鼻塞、流鼻水
                                                 </label>
                                             </div>
                                         </div>
@@ -548,7 +625,7 @@
                                                 <input class="form-check-input" type="checkbox" value="7"
                                                     id="chk_symptom_complaints_7">
                                                 <label class="form-check-label" for="chk_symptom_complaints_7">
-                                                    全身倦怠
+                                                    5.全身倦怠
                                                 </label>
                                             </div>
                                         </div>
@@ -559,7 +636,7 @@
                                                 <input class="form-check-input" type="checkbox" value="8"
                                                     id="chk_symptom_complaints_8">
                                                 <label class="form-check-label" for="chk_symptom_complaints_8">
-                                                    肌肉酸痛
+                                                    6.肌肉酸痛
                                                 </label>
                                             </div>
                                         </div>
@@ -568,7 +645,7 @@
                                                 <input class="form-check-input" type="checkbox" value="9"
                                                     id="chk_symptom_complaints_9">
                                                 <label class="form-check-label" for="chk_symptom_complaints_9">
-                                                    關節酸痛
+                                                    7.關節酸痛
                                                 </label>
                                             </div>
                                         </div>
@@ -577,7 +654,7 @@
                                                 <input class="form-check-input" type="checkbox" value="10"
                                                     id="chk_symptom_complaints_10">
                                                 <label class="form-check-label" for="chk_symptom_complaints_10">
-                                                    噁心、嘔吐
+                                                    8.噁心、嘔吐
                                                 </label>
                                             </div>
                                         </div>
@@ -586,7 +663,7 @@
                                                 <input class="form-check-input" type="checkbox" value="11"
                                                     id="chk_symptom_complaints_11">
                                                 <label class="form-check-label" for="chk_symptom_complaints_11">
-                                                    腹痛、腹瀉
+                                                    9.腹痛、腹瀉
                                                 </label>
                                             </div>
                                         </div>
@@ -597,7 +674,7 @@
                                                 <input class="form-check-input" type="checkbox" value="12"
                                                     id="chk_symptom_complaints_12">
                                                 <label class="form-check-label" for="chk_symptom_complaints_12">
-                                                    頭痛
+                                                    10.頭痛
                                                 </label>
                                             </div>
                                         </div>
@@ -606,7 +683,7 @@
                                                 <input class="form-check-input" type="checkbox" value="13"
                                                     id="chk_symptom_complaints_13">
                                                 <label class="form-check-label" for="chk_symptom_complaints_13">
-                                                    嗅味覺異常
+                                                    11.嗅味覺異常
                                                 </label>
                                             </div>
                                         </div>
@@ -621,7 +698,7 @@
                                                                         value="" id="chk_symptom_complaints_14">
                                                                     <label class="form-check-label"
                                                                         for="chk_symptom_complaints_14">
-                                                                        其他
+                                                                        12.其他
                                                                     </label>
                                                                 </div>
                                                             </div>
@@ -1075,36 +1152,22 @@
                                 <div class="col-md-auto">
                                     <div class="form-control GSMis-no-border">
                                         <div class="form-check">
-                                            <input class="form-check-input " type="radio" id="rdo_risk_1" name="risk" required checked>
+                                            <input class="form-check-input " type="radio" id="rdo_risk_1" name="risk">
                                             <label for="rdo_risk_1" class="form-check-label">一般風險</label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input " type="radio" id="rdo_risk_2" name="risk">
                                             <label for="rdo_risk_2" class="form-check-label">高風險</label>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </dd>
-                        <dt>
-                            <label for="" class=""><span class="text-danger">*</span>需使用口服抗病毒藥物</label>
-                        </dt>
-                        <dd class="wide">
-                            <div class="row g-2">
-                                <div class="col-md-auto">
-                                    <div class="form-control GSMis-no-border">
                                         <div class="form-check">
-                                            <input class="form-check-input " type="radio" id="rdo_antiviral_drugs_1" name="antiviral_drugs" required checked>
-                                            <label for="rdo_antiviral_drugs_1" class="form-check-label">是</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input " type="radio" id="rdo_antiviral_drugs_2" name="antiviral_drugs">
-                                            <label for="rdo_antiviral_drugs_2" class="form-check-label">否</label>
+                                            <input class="form-check-input " type="radio" id="rdo_risk_2" name="risk">
+                                            <label for="rdo_risk_2" class="form-check-label">高風險及使用口服抗病毒藥物</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </dd>
+                        
                         <dt>
                             <label for="" class=""><span class="text-danger">*</span>評估結果</label>
                         </dt>
@@ -1173,23 +1236,16 @@
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <div class="row">
-                                            <div class="col-auto">
-                                                <input class="form-check-input" type="checkbox" name="result" id="result9">
-                                                <label class="form-check-label" for="result9">
-                                                    其他，說明：
-                                                </label>
-                                            </div>
-                                            <div class="col-6">
-                                                <input type="text" class="form-control form-input-note" placeholder="請輸入說明" value="">   
-                                            </div>
-                                        </div>
+                                        <input class="form-check-input" type="radio" name="result" id="result9">
+                                        <label class="form-check-label" for="result9">
+                                            其他
+                                        </label>
                                     </div>
                                 </div>
                                 
-                                <!-- <div class="col-12 mt-4 mb-4">
+                                <div class="col-12 mt-4 mb-4">
                                     <input type="text" class="form-control form-input-note" placeholder="評估結果備註說明（選填）" value="">   
-                                </div> -->
+                                </div>
                             </div>
 
                         </dd>
