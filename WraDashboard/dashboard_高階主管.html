@@ -50,7 +50,6 @@
             <ul class="nav nav-pills mb-3 dashboard-tab relative" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab" aria-controls="pills-home" aria-selected="fasle">預定計畫 
-                        <!-- <i class="fa-solid fa-circle-info"  data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="預定計畫(申請登錄期間：110/8/1～110/8/20)<br>增辦計畫會議登錄(申請登錄期間：110/12/20～111/1/10)"></i> -->
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
@@ -213,9 +212,6 @@
                                         </a>
                                     </th>
                                     <th class="align-r">
-                                        <!-- <a href="dashboard_plan_funds.html" target="_blank">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </a> -->
                                         總經費
                                     </th>
                                 </tr>
@@ -256,7 +252,7 @@
                             <div class="flex">
                                 <section class="wrap-organizer">
                                     <div id="chartOrganizer" class="chart-organizer"></div>
-                                    <!-- <a href="dashboard_plan_rank.html" target="_blank" class="btn-rank">排名</a> -->
+                                    
                                     <table class="data-organizer">
                                         <tr>
                                             <td></td>
@@ -408,46 +404,35 @@
 
                             <div class="wrap toolbox toolbox-no-gap">
                                 <select class="filter-company">
-                            <option selected="selected" value="水利署">全署</option>
-                            <option disabled>-------------</option>
-                            <option value="水利署">本署</option>
-                            <option disabled>-------------</option>
-                            <option value="第一河川局">第一河川局</option>
-                            <option value="第二河川局">第二河川局</option>
-                            <option value="第三河川局">第三河川局</option>
-                            <option value="第四河川局">第四河川局</option>
-                            <option value="第五河川局">第五河川局</option>
-                            <option value="第六河川局">第六河川局</option>
-                            <option value="第七河川局">第七河川局</option>
-                            <option value="第八河川局">第八河川局</option>
-                            <option value="第九河川局">第九河川局</option>
-                            <option value="第十河川局">第十河川局</option>
-                            <option value="北區水資源局">北區水資源局</option>
-                            <option value="中區水資源局">中區水資源局</option>
-                            <option value="南區水資源局">南區水資源局</option>
-                            <option value="水利規劃試驗所">水利規劃試驗所</option>
-                            <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
-                        </select>
+                                    <option selected="selected" value="水利署">全署</option>
+                                    <option disabled>-------------</option>
+                                    <option value="水利署">本署</option>
+                                    <option disabled>-------------</option>
+                                    <option value="第一河川局">第一河川局</option>
+                                    <option value="第二河川局">第二河川局</option>
+                                    <option value="第三河川局">第三河川局</option>
+                                    <option value="第四河川局">第四河川局</option>
+                                    <option value="第五河川局">第五河川局</option>
+                                    <option value="第六河川局">第六河川局</option>
+                                    <option value="第七河川局">第七河川局</option>
+                                    <option value="第八河川局">第八河川局</option>
+                                    <option value="第九河川局">第九河川局</option>
+                                    <option value="第十河川局">第十河川局</option>
+                                    <option value="北區水資源局">北區水資源局</option>
+                                    <option value="中區水資源局">中區水資源局</option>
+                                    <option value="南區水資源局">南區水資源局</option>
+                                    <option value="水利規劃試驗所">水利規劃試驗所</option>
+                                    <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
+                                </select>
                                 <select class="filter-company">
-                            <option selected="selected" value="1">當年度得標</option>
-                            <option value="2">連續2年得標</option>
-                            <option value="3">連續3年得標</option>
-                            <option value="4">連續4年得標</option>
-                            <option value="5">連續5年得標</option>
-                        </select>
+                                    <option selected="selected" value="1">當年度得標</option>
+                                    <option value="2">連續2年得標</option>
+                                    <option value="3">連續3年得標</option>
+                                    <option value="4">連續4年得標</option>
+                                    <option value="5">連續5年得標</option>
+                                </select>
                             </div>
 
-                            <!-- <div class="mychart-type-bar">
-                <table class="data">
-                    <tr>
-                        <td>只有一家廠商投標</td>
-                        <td class="align-r">50件 (13%)</td>
-                    </tr>
-                </table>
-                <div class="mychart-bar">
-                    <span id="chartOneCompany" class="bar" data-value="50" data-total="386"></span>
-                </div>
-            </div> -->
 
                             <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
                                 <div class="total-block big">
@@ -471,14 +456,12 @@
                             <div class="slider">
                                 <input type="radio" name="r" id="r1" checked>
                                 <label for="r1">
-                    <div id="chartCompany" class="chart-company slider" data-slider="0"></div>
-                </label>
+                                    <div id="chartCompany" class="chart-company slider" data-slider="0"></div>
+                                </label>
                                 <input type="radio" name="r" id="r2">
                                 <label for="r2">
-                    <div id="chartCompanyHosting" class="chart-company slider" data-slider="0">
-
-                    </div>
-                </label>
+                                    <div id="chartCompanyHosting" class="chart-company slider" data-slider="0"></div>
+                                </label>
                             </div>
 
                         </div>
@@ -488,39 +471,27 @@
 
                             <div class="wrap toolbox toolbox-no-gap">
                                 <select class="filter-company">
-                    <option selected="selected" value="水利署">全署</option>
-                    <option disabled>-------------</option>
-                    <option value="水利署">本署</option>
-                    <option disabled>-------------</option>
-                    <option value="第一河川局">第一河川局</option>
-                    <option value="第二河川局">第二河川局</option>
-                    <option value="第三河川局">第三河川局</option>
-                    <option value="第四河川局">第四河川局</option>
-                    <option value="第五河川局">第五河川局</option>
-                    <option value="第六河川局">第六河川局</option>
-                    <option value="第七河川局">第七河川局</option>
-                    <option value="第八河川局">第八河川局</option>
-                    <option value="第九河川局">第九河川局</option>
-                    <option value="第十河川局">第十河川局</option>
-                    <option value="北區水資源局">北區水資源局</option>
-                    <option value="中區水資源局">中區水資源局</option>
-                    <option value="南區水資源局">南區水資源局</option>
-                    <option value="水利規劃試驗所">水利規劃試驗所</option>
-                    <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
-                </select>
+                                    <option selected="selected" value="水利署">全署</option>
+                                    <option disabled>-------------</option>
+                                    <option value="水利署">本署</option>
+                                    <option disabled>-------------</option>
+                                    <option value="第一河川局">第一河川局</option>
+                                    <option value="第二河川局">第二河川局</option>
+                                    <option value="第三河川局">第三河川局</option>
+                                    <option value="第四河川局">第四河川局</option>
+                                    <option value="第五河川局">第五河川局</option>
+                                    <option value="第六河川局">第六河川局</option>
+                                    <option value="第七河川局">第七河川局</option>
+                                    <option value="第八河川局">第八河川局</option>
+                                    <option value="第九河川局">第九河川局</option>
+                                    <option value="第十河川局">第十河川局</option>
+                                    <option value="北區水資源局">北區水資源局</option>
+                                    <option value="中區水資源局">中區水資源局</option>
+                                    <option value="南區水資源局">南區水資源局</option>
+                                    <option value="水利規劃試驗所">水利規劃試驗所</option>
+                                    <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
+                                </select>
                             </div>
-
-                            <!-- <div class="mychart-type-bar">
-                <table class="data">
-                    <tr>
-                        <td>有遴聘委員</td>
-                        <td class="align-r">389件 (82%)</td>
-                    </tr>
-                </table>
-                <div class="mychart-bar">
-                    <span id="chartHasCommittee" class="bar" data-value="317" data-total="386"></span>
-                </div>
-            </div> -->
 
                             <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
                                 <div class="total-block big" style="width: 100%;">
@@ -617,841 +588,6 @@
         </main>
     </div>
 
-    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasBottomLabel">待審閱計畫</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div id="" class="offcanvas-body small">
-            <div class="my-table2-wrap">
-                <div class="my-table2-title">
-                    主持人填報資料審閱
-                </div>
-                <table class="my-table2">
-                    <thead>
-                        <tr>
-                            <th scope="col">計畫年度</a>
-                            </th>
-                            <th scope="col">計畫編號</a>
-                            </th>
-                            <th scope="col">計畫名稱</a>
-                            </th>
-                            <th scope="col">預定/增辦計畫</a>
-                            </th>
-                            <th scope="col">計畫類別</a>
-                            </th>
-                            <th scope="col">契約型式</a>
-                            </th>
-                            <th scope="col">督辦組室/人員</a>
-                            </th>
-                            <th scope="col">主辦機關/單位/人員</a>
-                            </th>
-                            <th scope="col">計畫狀態</th>
-                            <th scope="col">GRB_計畫摘要</th>
-                            <th scope="col">GRB_期中報告</th>
-                            <th scope="col">GRB_期末報告</th>
-                            <th scope="col">成果內容</th>
-                            <th scope="col">實際績效指標</th>
-                            <th scope="col">成果效益報告</th>
-                            <th scope="col">修改受託單位資料</th>
-                        </tr>
-                    </thead>
-                    <tobody>
-                        <tr>
-                            <td>100</td>
-                            <td>MOEAWRA1000466</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/Result.aspx?pnumber=MOEAWRA1000466" target="_blank" title="詳細資料">大甲溪裡冷段開闊地區成為囚砂區可行性規劃</a></td>
-                            <td>增辦計畫</td>
-                            <td>一般委辦</td>
-                            <td>一般合約</td>
-                            <td><span style="color: blue;">水利行政組/林玄忠</span></td>
-                            <td><span style="color: blue;">第三河川局/規劃課/李俊延</span></td>
-                            <td><span id="Data_List_All_ctl02_PlanStatus">成果歸檔完成</span></td>
-                            <td>
-                                無
-                            </td>
-                            <td>
-                                無
-                            </td>
-                            <td>
-                                無
-                            </td>
-                            <td>
-                                <div><span id="Data_List_All_ctl02_LbTxt" style="color: green;">完成</span></div>
-
-                                <div><a id="Data_List_All_ctl02_LinkResultView" style="color: rgb(0, 51, 204);">&lt;查閱&gt;</a></div>
-                            </td>
-                            <td>
-
-                                <div><input id="Data_List_All_ctl02_BtnKpiVerify" name="Data_List_All$ctl02$BtnKpiVerify" style="background: red; color: rgb(255, 255, 255);" type="submit" value="審閱" /></div>
-                            </td>
-                            <td>
-                                無
-                            </td>
-                            <td>
-                                <i class="fa-solid fa-pen"></i>
-                            </td>
-                        </tr>
-                        </tbody>
-                </table>
-            </div>
-
-
-            <div class="my-table2-wrap">
-                <div class="my-table2-title">
-                    委辦計畫資料審閱
-                </div>
-                <table class="my-table2">
-                    <table class="my-table2">
-                        <thead>
-                            <tr>
-                                <th><a>計畫年度</a></th>
-                                <th><a>計畫編號</a></th>
-                                <th><a>計畫名稱</a></th>
-                                <th><a>預定/增辦計畫</a></th>
-                                <th><a>計畫類別</a></th>
-                                <th><a>契約型式</a></th>
-                                <th><a>督辦組室/人員</a></th>
-                                <th><a>主辦機關/單位/人員</a></th>
-                                <th>處理事項</th>
-                                <th>計畫書</th>
-                                <th>契約條款</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>111</td>
-                                <td>MOEAWRA1110083</td>
-                                <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                                <td>預定計畫</td>
-                                <td>輔助行政</td>
-                                <td>一般合約</td>
-                                <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                                <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                                <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">請審閱契約簽訂內容</a></td>
-                                <td>
-                                    <a href="http://wendy/wraplan/System/Files/PlanCheckFile/111/MOEAWRA1110083_P.doc" id="Data_List_All_ctl02_lnkBook" target="_blank"><i class="fa-solid fa-file-arrow-down"></i></a>
-                                </td>
-                                <td>
-                                    <a href="http://wendy/wraplan/System/Files/PlanConFile/111/MOEAWRA1110083_S.pdf" id="Data_List_All_ctl02_lnkContract" target="_blank"><i class="fa-solid fa-file-arrow-down"></i></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-            </div>
-        </div>
-    </div>
-
-    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom2" aria-labelledby="offcanvasBottom2Label">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasBottom2Label">評選委員同時為其他計畫廠商</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div id="" class="offcanvas-body small">
-
-            <div class="my-table2-wrap width-max">
-                <div class="my-table2-title">
-                    統計期間：111/03/01 - 111/03/07
-                </div>
-                <table class="my-table2">
-                    <thead>
-                        <tr>
-                            <th>評選委員</th>
-                            <th>期間遴聘次數</th>
-                            <th>得標計畫名稱</th>
-                            <th>計畫職務</th>
-                            <th>受託單位</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td rowspan="3">陳明明</td>
-                            <td rowspan="3">2</td>
-                            <td><a href=" ">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                            <td>計畫主持人</td>
-                            <td rowspan="3">黎明工程顧問股份有限公司</td>
-                        </tr>
-                        <tr>
-                            <td><a href=" ">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                            <td>協同主持人</td>
-                        </tr>
-                        <tr>
-                            <td><a href=" ">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                            <td>協同主持人</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2">王鵬鵬</td>
-                            <td rowspan="2">1</td>
-                            <td><a href=" ">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                            <td>計畫主持人</td>
-                            <td rowspan="2">黎明工程顧問股份有限公司</td>
-                        </tr>
-                        <tr>
-                            <td><a href=" ">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                            <td>協同主持人</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <div class="offcanvas offcanvas-bottom" tabindex="-1 " id="offcanvasBottom3" aria-labelledby="offcanvasBottom3Label">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasBottom3Label">無人督主辦計畫</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div id="" class="offcanvas-body small">
-            <div class="my-table2-wrap ">
-                <table class="my-table2 ">
-                    <tbody>
-                        <tr>
-                            <th scope="col "><a>計畫年度</a></th>
-                            <th scope="col "><a>計畫編號</a></th>
-                            <th scope="col "><a>計畫名稱</a></th>
-                            <th scope="col "><a>預定/增辦計畫</a></th>
-                            <th scope="col "><a>計畫類別</a></th>
-                            <th scope="col "><a>督辦<br />組室/人員</a></th>
-                            <th scope="col "><a>主辦<br />機關/單位/人員</a></th>
-                            <th scope="col "><a>原督辦<br />組室/人員</a></th>
-                            <th scope="col "><a>原主辦<br /> 機關/單位/人員</a></th>
-                            <th scope="col ">編輯設定</th>
-                        </tr>
-                        <tr>
-                            <td>110</td>
-                            <td>MOEAWRA1090031_110</td>
-                            <td>大安溪卓蘭大橋至梅象橋及支流景山溪、烏石坑溪河川區域檢討變更勘測計畫</td>
-                            <td>預定委辦計畫</td>
-                            <td>輔助行政/</td>
-                            <td><a id="gvData_ctl02_lbtnManage " style="color: rgb(0, 51, 204); ">河川勘測隊／周湘俊</a></td>
-                            <td></td>
-                            <td><span id="gvData_ctl02_lblOriManager ">水利行政組/水政四科/周湘俊</span></td>
-                            <td><span id="gvData_ctl02_lblOriAction ">第三河川局/管理課//杜亮呈</span></td>
-                            <td><i class="fa-solid fa-pen "></i></td>
-                        </tr>
-                        <tr>
-                            <td>110</td>
-                            <td>MOEAWRA1100112</td>
-                            <td>110年度臺美水利技術第八號附錄合作計畫</td>
-                            <td>預定委辦計畫</td>
-                            <td>輔助行政/</td>
-                            <td></td>
-                            <td><a id="gvData_ctl03_lbtnAction " style="color: rgb(0, 51, 204); ">水利規劃試驗所／河川規劃課／陳俊合</a></td>
-                            <td><span id="gvData_ctl03_lblOriManager ">河川海岸組/河海一科/黃爾強</span></td>
-                            <td><span id="gvData_ctl03_lblOriAction ">水利規劃試驗所/河川規劃課//陳俊合</span></td>
-                            <td><i class="fa-solid fa-pen "></i></td>
-                        </tr>
-                        <tr>
-                            <td>110</td>
-                            <td>MOEAWRA1100362</td>
-                            <td>河川環境情報地圖製作</td>
-                            <td>預定委辦計畫</td>
-                            <td>輔助行政/</td>
-                            <td></td>
-                            <td><a id="gvData_ctl04_lbtnAction " style="color: rgb(0, 51, 204); ">水利規劃試驗所／河川規劃課／王奕智</a></td>
-                            <td><span id="gvData_ctl04_lblOriManager ">河川海岸組/河海一科/黃爾強</span></td>
-                            <td><span id="gvData_ctl04_lblOriAction ">水利規劃試驗所/河川規劃課//王奕智</span></td>
-                            <td><i class="fa-solid fa-pen "></i></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom4" aria-labelledby="offcanvasBottom4Label">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasBottom4Label">ＯＯＯ計畫 (250件)</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div id="" class="offcanvas-body small">
-
-            <div class="my-table2-wrap" style="height: 100%;">
-                <table class="my-table2">
-                    <thead>
-                        <tr>
-                            <th><a>計畫年度</a></th>
-                            <th><a>計畫編號</a></th>
-                            <th><a>計畫名稱</a></th>
-                            <th><a>督辦組室/人員</a></th>
-                            <th><a>主辦機關/單位/人員</a></th>
-                            <th>執行階段</th>
-                            <th>進度落後</th>
-                            <th>預定日期</th>
-                            <th>受託廠商</th>
-                            <th>計畫主持人</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td class="status">進度填報階段</td>
-                            <td class="late">
-                                第二次審查<br/>第三次報告<br/>第三次審查<br/>第一次撥款<br/>第二次撥款<br/>第三次撥款<br/>第四次撥款
-                            </td>
-                            <td class="late">
-                                110/12/20
-                                <br/> 110/12/24
-                                <br/> 110/12/29
-                                <br/> 110/11/5
-                                <br/> 110/11/15
-                                <br/> 110/12/29
-                                <br/> 110/12/31
-                                <br/>
-                            </td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td class="status">進度填報階段</td>
-                            <td class="late">第一次撥款</td>
-                            <td class="late">111/1/31</td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td class="status">訂期議價已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-                        <tr>
-                            <td>111</td>
-                            <td>MOEAWRA1110083</td>
-                            <td><a href="http://wendy/wraplan/System/Plan/ConSign.aspx?type=verify&amp;pnumber=MOEAWRA1110083" style="text-decoration-line: none; color: rgb(0, 51, 204);" target="_blank" title="審閱提送內容">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                            <td><span style="color: blue;">河川海岸組/陳展裕</span></td>
-                            <td><span style="color: blue;">第十河川局/規劃課/林佳薇</span></td>
-                            <td>計畫核可已完成</td>
-                            <td class="late"></td>
-                            <td class="late"></td>
-                            <td>黎明工程顧問股份有限公司</td>
-                            <td>翁大大</td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
 
 
     <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js "></script>

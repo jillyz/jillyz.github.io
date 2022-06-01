@@ -4,8 +4,6 @@ requirejs([
     'echart/echart-funds',
     // 'echart/echart-organizer-mine',
     // 'echart/echart-priority',
-    // 'echart/echart-budget-over',
-    // 'echart/echart-budget-under',
     'echart/echart-stage',
     'echart/echart-company',
     'echart/echart-hosting',
@@ -14,7 +12,6 @@ requirejs([
     'echart/echart-funds-3-4',
     'echart/echart-funds-4',
     'echart/echart-funds-5-4',
-    // 'mychart-bar',
 ], function() {
 
     // 個人主督辦數據

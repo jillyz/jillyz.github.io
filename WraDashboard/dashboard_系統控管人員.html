@@ -33,9 +33,8 @@
         <a href="dashboard_預算控管人員.html#page">預算控管人員</a>
         ｜
         <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">待審閱</a>
-        <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2" aria-controls="offcanvasBottom2">委員預警</a>
         <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom3" aria-controls="offcanvasBottom3">無人督主辦計畫</a>
-        <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">一般查看：計畫列表</a>
+        <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4" aria-controls="offcanvasBottom4">儀表板查看計畫列表</a>
 
     </div>
 
@@ -55,7 +54,6 @@
             <ul class="nav nav-pills mb-3 dashboard-tab relative" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab" aria-controls="pills-home" aria-selected="fasle">預定計畫 
-                        <!-- <i class="fa-solid fa-circle-info"  data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="預定計畫(申請登錄期間：110/8/1～110/8/20)<br>增辦計畫會議登錄(申請登錄期間：110/12/20～111/1/10)"></i> -->
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
@@ -112,9 +110,6 @@
                                 <tr>
                                     <th>
                                         總件數
-                                        <!-- <a href="dashboard_plan_query.html" target="_blank" class="btn-view">
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                        </a> -->
                                     </th>
                                     <th class="align-r">
                                         總經費
@@ -200,17 +195,7 @@
                 </div>
                 <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                     <div id="dashboardFormalPlan" class="wrap dashboard">
-                        <!-- <div class="notice">
-                            <div class="todo" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
-                                <i class="fa-solid fa-clipboard-check"></i> 待審閱計畫 <span>2</span>
-                            </div>
-                            <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2" aria-controls="offcanvasBottom2">
-                                <i class="fa-solid fa-triangle-exclamation"></i> 評選委員同時為其他計畫廠商 <span>3</span>
-                            </div>
-                            <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom3" aria-controls="offcanvasBottom3">
-                                <i class="fa-solid fa-user-xmark"></i> 無人督主辦計畫 <span>3</span>
-                            </div>
-                        </div> -->
+
                         <div class="col col-1 section-outsourcing-funds relative">
                             <h2 class="title">
                                 <select class="select-year">
@@ -229,9 +214,6 @@
                                         </a>
                                     </th>
                                     <th class="align-r">
-                                        <!-- <a href="dashboard_plan_funds.html" target="_blank">
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                        </a> -->
                                         總經費
                                     </th>
                                 </tr>
@@ -272,7 +254,7 @@
                             <div class="flex">
                                 <section class="wrap-organizer">
                                     <div id="chartOrganizer" class="chart-organizer"></div>
-                                    <!-- <a href="dashboard_plan_rank.html" target="_blank" class="btn-rank">排名</a> -->
+                                    
                                     <table class="data-organizer">
                                         <tr>
                                             <td></td>
@@ -453,17 +435,6 @@
                                 </select>
                             </div>
 
-                            <!-- <div class="mychart-type-bar">
-                        <table class="data">
-                            <tr>
-                                <td>只有一家廠商投標</td>
-                                <td class="align-r">50件 (13%)</td>
-                            </tr>
-                        </table>
-                        <div class="mychart-bar">
-                            <span id="chartOneCompany" class="bar" data-value="50" data-total="386"></span>
-                        </div>
-                    </div> -->
 
                             <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
                                 <div class="total-block big">
@@ -487,14 +458,12 @@
                             <div class="slider">
                                 <input type="radio" name="r" id="r1" checked>
                                 <label for="r1">
-                            <div id="chartCompany" class="chart-company slider" data-slider="0"></div>
-                        </label>
+                                    <div id="chartCompany" class="chart-company slider" data-slider="0"></div>
+                                </label>
                                 <input type="radio" name="r" id="r2">
                                 <label for="r2">
-                            <div id="chartCompanyHosting" class="chart-company slider" data-slider="0">
-        
-                            </div>
-                        </label>
+                                    <div id="chartCompanyHosting" class="chart-company slider" data-slider="0"></div>
+                                </label>
                             </div>
 
                         </div>
@@ -525,18 +494,6 @@
                                     <option value="臺北水源特定區管理局">臺北水源特定區管理局</option>
                                 </select>
                             </div>
-
-                            <!-- <div class="mychart-type-bar">
-                        <table class="data">
-                            <tr>
-                                <td>有遴聘委員</td>
-                                <td class="align-r">389件 (82%)</td>
-                            </tr>
-                        </table>
-                        <div class="mychart-bar">
-                            <span id="chartHasCommittee" class="bar" data-value="317" data-total="386"></span>
-                        </div>
-                    </div> -->
 
                             <div class="wrap" style="margin-top: -8px; margin-bottom: 20px">
                                 <div class="total-block big" style="width: 100%;">
@@ -641,11 +598,11 @@
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div id="" class="offcanvas-body small">
-            <div class="my-table2-wrap">
-                <div class="my-table2-title">
+            <div class="my-table-wrap">
+                <div class="my-table-title">
                     主持人填報資料審閱
                 </div>
-                <table class="my-table2">
+                <table class="my-table">
                     <thead>
                         <tr>
                             <th scope="col">計畫年度</a>
@@ -714,12 +671,12 @@
                 </table>
             </div>
 
-            <div class="my-table2-wrap">
-                <div class="my-table2-title">
+            <div class="my-table-wrap">
+                <div class="my-table-title">
                     委辦計畫資料審閱
                 </div>
-                <table class="my-table2">
-                    <table class="my-table2">
+                <table class="my-table">
+                    <table class="my-table">
                         <thead>
                             <tr>
                                 <th><a>計畫年度</a></th>
@@ -759,61 +716,6 @@
         </div>
     </div>
 
-    <!-- 預警 -->
-    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom2" aria-labelledby="offcanvasBottom2Label">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasBottom2Label">評選委員同時為其他計畫廠商</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div id="" class="offcanvas-body small">
-
-            <div class="my-table2-wrap width-max">
-                <div class="my-table2-title">
-                    統計期間：111/03/01 - 111/03/07
-                </div>
-                <table class="my-table2">
-                    <thead>
-                        <tr>
-                            <th>評選委員</th>
-                            <th>期間遴聘次數</th>
-                            <th>得標計畫名稱</th>
-                            <th>計畫職務</th>
-                            <th>受託單位</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td rowspan="3">陳明明</td>
-                            <td rowspan="3">2</td>
-                            <td><a href=" ">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                            <td>計畫主持人</td>
-                            <td rowspan="3">黎明工程顧問股份有限公司</td>
-                        </tr>
-                        <tr>
-                            <td><a href=" ">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                            <td>協同主持人</td>
-                        </tr>
-                        <tr>
-                            <td><a href=" ">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                            <td>協同主持人</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2">王鵬鵬</td>
-                            <td rowspan="2">1</td>
-                            <td><a href=" ">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                            <td>計畫主持人</td>
-                            <td rowspan="2">黎明工程顧問股份有限公司</td>
-                        </tr>
-                        <tr>
-                            <td><a href=" ">111年度水權管理資訊系統維護擴充與為民服務功能增修</a></td>
-                            <td>協同主持人</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
     <!-- 無人督主辦計畫 -->
     <div class="offcanvas offcanvas-bottom" tabindex="-1 " id="offcanvasBottom3" aria-labelledby="offcanvasBottom3Label">
         <div class="offcanvas-header">
@@ -821,8 +723,8 @@
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div id="" class="offcanvas-body small">
-            <div class="my-table2-wrap ">
-                <table class="my-table2 ">
+            <div class="my-table-wrap ">
+                <table class="my-table ">
                     <tbody>
                         <tr>
                             <th scope="col "><a>計畫年度</a></th>
@@ -886,8 +788,8 @@
         </div>
         <div id="" class="offcanvas-body small" style="overflow-y: hidden;">
 
-            <div class="my-table2-wrap" style="height: 100%;">
-                <table class="my-table2">
+            <div class="my-table-wrap" style="height: 100%;">
+                <table class="my-table">
                     <thead>
                         <tr>
                             <th><a>計畫年度</a></th>
