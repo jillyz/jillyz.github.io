@@ -27,7 +27,7 @@
                     <div class="item">
                         <!-- GSMis-brand -->
                         <h1 class="GSMis-brand">
-                            <a href="index.html">
+                            <a href="login.html">
                                 <span class="GSMis-brand-text">
                                     <span class="logo-tc-gov GSMis-brand-img">台中市政府</span>
                                     新冠肺炎居家照護管理系統
@@ -70,7 +70,7 @@
                             </ul>
                         </li>
                         <!-- if 區公所 -->
-                        <li><a href="diary_區公所.html"><i class="fa-solid fa-book"></i> 關懷日誌</a></li>
+                        <li><a href="diary_區公所.html"><i class="fa-solid fa-book"></i> 生活關懷日誌</a></li>
                         <!-- for all -->
                         <li class="active"><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估查詢</a></li>
                         <!-- if 衛生局 -->
@@ -122,12 +122,12 @@
                             <strong>3,540</strong>
                         </div>
                         <div class="col-md-3 col-6">
-                            <label class="legend-wait">評估中人數</label>
-                            <strong>625</strong>
-                        </div>
-                        <div class="col-md-3 col-6">
                             <label class="legend-no">不符合收案人數</label>
                             <strong>850</strong>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <label class="legend-wait">評估中人數</label>
+                            <strong>625</strong>
                         </div>
                     </div>
                     <div id="pie" class="evaluate-pie">
@@ -181,7 +181,7 @@
 
             var option;
 
-            const colors = ['#91CC75', '#fac858', '#EE6666'];
+            const colors = ['#91CC75', '#EE6666', '#fac858'];
             option = {
                 // title: {
                 //   text: '5,015',
@@ -206,8 +206,8 @@
                         radius: ['40%', '90%'],
                         data: [
                             { value: 3540, name: '新收案數' },
-                            { value: 625, name: '評估中人數' },
                             { value: 850, name: '不符合收案人數' },
+                            { value: 625, name: '評估中人數' },
                         ],
                         emphasis: {
                             itemStyle: {
@@ -238,6 +238,8 @@
 
             var option;
 
+            const colors = ['#5672c6', '#91CC75',  '#EE6666', '#fac858', ];
+
             option = {
                 tooltip: {
                     trigger: 'axis',
@@ -247,6 +249,7 @@
                     }
                 },
                 legend: {},
+                color: colors,
                 grid: {
                     left: '3%',
                     right: '4%',
@@ -377,46 +380,6 @@
                             25]
                     },
                     {
-                        name: '評估中人數',
-                        type: 'bar',
-                        stack: 'total',
-                        label: {
-                            // show: true
-                        },
-                        emphasis: {
-                            focus: 'series'
-                        },
-                        data: [10,
-                            40,
-                            20,
-                            35,
-                            15,
-                            60,
-                            40,
-                            30,
-                            20,
-                            20,
-                            10,
-                            20,
-                            30,
-                            20,
-                            15,
-                            20,
-                            15,
-                            20,
-                            5,
-                            30,
-                            20,
-                            20,
-                            30,
-                            20,
-                            5,
-                            20, ,
-                            20,
-                            10,
-                            5,]
-                    },
-                    {
                         name: '不符合收案人數',
                         type: 'bar',
                         stack: 'total',
@@ -457,6 +420,47 @@
                             25,
                             30]
                     },
+                    {
+                        name: '評估中人數',
+                        type: 'bar',
+                        stack: 'total',
+                        label: {
+                            // show: true
+                        },
+                        emphasis: {
+                            focus: 'series'
+                        },
+                        data: [10,
+                            40,
+                            20,
+                            35,
+                            15,
+                            60,
+                            40,
+                            30,
+                            20,
+                            20,
+                            10,
+                            20,
+                            30,
+                            20,
+                            15,
+                            20,
+                            15,
+                            20,
+                            5,
+                            30,
+                            20,
+                            20,
+                            30,
+                            20,
+                            5,
+                            20, ,
+                            20,
+                            10,
+                            5,]
+                    },
+                    
 
                 ]
             };
