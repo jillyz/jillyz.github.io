@@ -68,7 +68,7 @@ const checkForDelete = () => {
 
 // show DELETE fun panel
 const showDeleteFunc = () => {
-    const countChecked =$('td.delete input[type=checkbox]:checked').length;
+    const countChecked =$('td.delete input.chk-del[type=checkbox]:checked').length;
     if(countChecked > 0) {
         $('.delete-wrap').addClass('show');
     }
@@ -96,11 +96,12 @@ $('.chk-withdraw').change(function(){
     // highlight tr
     const isChecked = this.checked;
     const funcWithdraw = $(this).parent().next().find('.func-withdraw');
+    // const funcWithdraw = $(this).next('.func-withdraw');
     const colWithdraw = $('.col-withdraw-note');
     if(isChecked){
-        colWithdraw.show();
+        // colWithdraw.show();
         funcWithdraw.show();
-        $('.col-form-assign').attr('colspan', 2);
+        // $('.col-form-assign').attr('colspan', 2);
     }
     else{
         funcWithdraw.hide();

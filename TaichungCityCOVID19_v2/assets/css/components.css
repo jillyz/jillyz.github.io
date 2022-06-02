@@ -222,6 +222,7 @@ td.evaluate:hover span i {
 .col-withdraw-note {
     min-width: 12em;
 }
+
 .bd-l-dot {
     border-left: 1px solid rgb(222, 226, 230);
 }
@@ -355,9 +356,9 @@ main nav {
 }
 
 .delete {
-    text-align: center;
+    /* text-align: center; */
 }
-.delete input {
+.delete input[type=checkbox] {
     width: 20px;
     height: 20px;
 }
