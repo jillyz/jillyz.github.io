@@ -20,72 +20,133 @@
             <div class="login-inner">
                 <h2 class="login-sys-name">
                     <img class="login-logo" src="assets/img/logo_taichung_city_gov_black.svg" alt="台中市政府" title="台中市政府">
-                    <br><!--台中市政府-->新冠肺炎居家照護管理系統
+                    <br>
+                    <!--台中市政府-->新冠肺炎居家照護管理系統
                 </h2>
-                <hr>
-                <h3 class="login-title"><span>登入</spa></h3>   
-              
-              <!-- 表單 -->
-              <form id=form-login>
-                  <div class="d-grid gap-4">
-                      <!-- 警告訊息框 -->
-                      <div class="GSMis-alert-wrapper">
-                          <div class="alert mb-0 GSMis-alert-danger  d-flex align-items-center">
-                              <i class="fas fa-exclamation-triangle"></i>
-                              <div class="text"></div>
-                          </div>
-                      </div>
-                      <div class="input-group">
-                          <span class="input-group-text justify-content-center" style="width: 43px;"><i class="icon-user"></i></span>
-                    <input type="text" id="username" class="form-control form-control-lg" placeholder="帳號" required>
-            </div>
-            <div class="input-group">
-                <span class="input-group-text justify-content-center" style="width: 43px;"><i class="icon-lock"></i></span>
-                <input type="password" id="password" class="form-control form-control-lg" placeholder="密碼" required>
-            </div>
-            <div class="row g-2 align-items-center">
-                <div class="input-group col-sm">
-                    <span class="input-group-text justify-content-center" style="width: 43px;"><i class="icon-key"></i></span>
-                    <input type="text" id="verifycode" class="form-control form-control-lg" placeholder="驗證碼" required>
-                </div>
-                <div class="col-auto ms-auto">
-                    <img class="" src="assets/img/secu-code.png" alt="驗證碼" style="height: 48px;">
-                </div>
-                <div class="col-auto">
-                    <a href="#" class="btn-refresh" data-bs-toggle="tooltip" title="取得新的認證碼"><i class="icon-refresh"></i></a>
-                </div>
-            </div>
-            <div class="d-grid mt-1">
-                <button class="btn btn-login btn-lg">登 入</button>
-            </div>
 
-            <!-- <div class="d-flex">
-                        <a href="#" class="ms-auto">忘記密碼？</a>
-                    </div> -->
+                <br>
+
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button type="button" role="tab" class="nav-link" 
+                            id="login-id-tab" data-bs-toggle="tab" data-bs-target="#login-id-tab-pane" aria-controls="login-id-tab-pane"
+                            aria-selected="true" onclick="localStorage.setItem('loginType', 'id');">
+                            帳密登入
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button type="button" role="tab" class="nav-link" 
+                            id="login-card-tab" data-bs-toggle="tab" data-bs-target="#login-card-tab-pane" aria-controls="login-card-tab-pane"
+                            aria-selected="true" onclick="localStorage.setItem('loginType', 'card');">
+                            HCA醫事憑證登入
+                        </button>
+                    </li>
+                </ul>
+                <br>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade" id="login-id-tab-pane" role="tabpanel"
+                        aria-labelledby="login-id-tab" tabindex="0">
+                        <!-- 帳密登入表單 -->
+                        <form id="form-login">
+                            <div class="d-grid gap-4">
+                                <!-- 警告訊息框 -->
+                                <div class="GSMis-alert-wrapper">
+                                    <div class="alert mb-0 GSMis-alert-danger  d-flex align-items-center">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <div class="text"></div>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-text justify-content-center" style="width: 43px;"><i
+                                            class="icon-user"></i></span>
+                                    <input type="text" id="txtAccount" class="form-control form-control-lg"
+                                        placeholder="帳號" required>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-text justify-content-center" style="width: 43px;"><i
+                                            class="icon-lock"></i></span>
+                                    <input type="password" id="txtPassword" class="form-control form-control-lg"
+                                        placeholder="密碼" required>
+                                </div>
+                                <div class="row g-2 align-items-center">
+                                    <div class="input-group col-sm">
+                                        <span class="input-group-text justify-content-center" style="width: 43px;"><i
+                                                class="icon-key"></i></span>
+                                        <input type="text" id="txtVerifycode" class="form-control form-control-lg"
+                                            placeholder="驗證碼" required>
+                                    </div>
+                                    <div class="col-auto ms-auto">
+                                        <img class="" src="assets/img/secu-code.png" alt="驗證碼" style="height: 48px;">
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="#" class="btn-refresh" data-bs-toggle="tooltip" title="取得新的認證碼"><i
+                                                class="icon-refresh"></i></a>
+                                    </div>
+                                </div>
+                                <div class="d-grid mt-1">
+                                    <button class="btn btn-login btn-lg">登 入</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="login-card-tab-pane" role="tabpanel" aria-labelledby="login-card-tab"
+                        tabindex="0">
+                        <!-- 醫事憑證登入表單 -->
+                        <form id="form-login">
+                            <div class="d-grid gap-4">
+                                <!-- 警告訊息框 -->
+                                <!-- <div class="GSMis-alert-wrapper">
+                                    <div class="alert mb-0 GSMis-alert-danger  d-flex align-items-center">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <div class="text">154554</div>
+                                    </div>
+                                </div> -->
+
+                                <div class="text-danger">HCA憑證(限醫事人員) 請使用一般讀卡機</div>
+                                <div class="input-group">
+                                    <span class="input-group-text justify-content-center" style="width: 43px;"><i
+                                            class="icon-lock"></i></span>
+                                    <input type="password" id="txtPin" class="form-control form-control-lg"
+                                        placeholder="請輸入PIN碼" required>
+                                </div>
+                                <div class="d-grid mt-1">
+                                    <button class="btn btn-login btn-lg">登 入</button>
+                                </div>
+                                <br>
+                                <div>
+                                    <a href="https://ma.mohw.gov.tw/portal/File/DownloadHCA">HCA憑證登入安裝套件</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        </form>
-    </div>
-    </div>
 
-    <ul>
-        <li>DEMO:</li>
-        <li class="active"><a href="upload_衛生局.html"><i class="fa-solid fa-file-lines"></i> 衛生局登入-確診者資料上傳</a></li>
-        <li class="active"><a href="evaluate_診所.html"><i class="fa-solid fa-file-lines"></i> 診所登入-健康/環境評估填報/診所收案</a></li>
-        <li class="active"><a href="diary_區公所.html"><i class="fa-solid fa-file-lines"></i> 區公所登入-關懷日誌</a></li>
-        <li class="active"><a href="evaluate_衛生所.html"><i class="fa-solid fa-file-lines"></i> 衛生所登入-居家照護總評估填報</a></li>
-        <li class="active"><a href="query.html"><i class="fa-solid fa-file-lines"></i> 查詢頁</a></li>
-        <li class="active"><a href="report.html"><i class="fa-solid fa-file-lines"></i> 收案統計表</a></li>
-        <li class="active"><a href="dashboard.html"><i class="fa-solid fa-file-lines"></i> 儀表板</a></li>
-        <li class="active"><a href="user_management.html"><i class="fa-solid fa-file-lines"></i> 帳號管理</a></li>
-    </ul>
+        <ul>
+            <li>DEMO:</li>
+            <li class="active"><a href="upload_衛生局.html"><i class="fa-solid fa-file-lines"></i> 衛生局登入-確診者資料上傳</a></li>
+            <li class="active"><a href="evaluate_診所.html"><i class="fa-solid fa-file-lines"></i> 診所醫事憑證登入-健康/環境評估填報/診所收案</a>
+            </li>
+            <li class="active"><a href="diary_區公所.html"><i class="fa-solid fa-file-lines"></i> 區公所登入-關懷日誌</a></li>
+            <li class="active"><a href="evaluate_衛生所.html"><i class="fa-solid fa-file-lines"></i> 衛生所登入-居家照護總評估填報</a>
+            </li>
+            <li class="active"><a href="query.html"><i class="fa-solid fa-file-lines"></i> 查詢頁</a></li>
+            <li class="active"><a href="report.html"><i class="fa-solid fa-file-lines"></i> 收案統計表</a></li>
+            <li class="active"><a href="dashboard.html"><i class="fa-solid fa-file-lines"></i> 儀表板</a></li>
+            <li class="active"><a href="user_management.html"><i class="fa-solid fa-file-lines"></i> 帳號管理</a></li>
+        </ul>
 
-    <footer class="GSMis-footer-wrap">
-        <div class="GSMis-footer-inner">
-            <div class="GSMis-footer ">
-                Copyright © 逢甲大學地理資訊系統研究中心、天思數位科技股份有限公司
+        <footer class="GSMis-footer-wrap">
+            <div class="GSMis-footer-inner">
+                <div class="GSMis-footer ">
+                    Copyright © 逢甲大學地理資訊系統研究中心、天思數位科技股份有限公司
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
     </div>
     <!-- /.wrapper -->
 
@@ -96,6 +157,20 @@
     <!-- 自訂 -->
     <script src="assets/js/common.js"></script>
     <script src="assets/js/login.js"></script>
+
+    <script>
+        var loginType = localStorage.getItem('loginType');
+        if (loginType !== null) {
+            $('#login-' + loginType + '-tab').addClass('active');
+            $('#login-' + loginType + '-tab-pane').addClass('show active');
+        }
+        else {
+            $('#login-id-tab').addClass('active');
+            $('#login-id-tab-pane').addClass('show active');
+        }
+    </script>
+
+
 </body>
 
 </html>

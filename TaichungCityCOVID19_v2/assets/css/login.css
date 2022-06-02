@@ -33,7 +33,7 @@ body {
     text-align: center;
 }
 .login-logo {
-    width: 70%;
+    width: 50%;
     margin-bottom: .5em;
 }
 .login-title {
@@ -100,7 +100,9 @@ body {
     -webkit-box-shadow: 0 2px 4px rgba(102, 102, 102, 0.2);
     box-shadow: 0 2px 4px rgba(102, 102, 102, 0.2);
 }
-
+.login-inner .tab-content {
+    min-height: 280px;
+}
 @media all and (min-width: 768px) {
     .login-inner {
         padding: 24px 40px;
