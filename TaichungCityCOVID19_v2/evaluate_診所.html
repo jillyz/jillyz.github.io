@@ -109,6 +109,13 @@
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
+                                        <input class="form-check-input " type="radio" id="flexRadioDefault4" name="flexRadioDefault"
+                                            checked>
+                                        <label class="form-check-label" for="flexRadioDefault4">
+                                            電話未接/錯誤
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
                                         <input class="form-check-input " type="radio" id="flexRadioDefault3"
                                             name="flexRadioDefault">
                                         <label class="form-check-label" for="flexRadioDefault3">
@@ -118,16 +125,16 @@
                                 </div>
                                 <div class="col-md-auto mt-1 split-line-left">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input " type="radio" id="flexRadioDefault4"
+                                        <input class="form-check-input " type="radio" id="flexRadioDefault5"
                                             name="flexRadioDefault">
-                                        <label class="form-check-label" for="flexRadioDefault4">
+                                        <label class="form-check-label" for="flexRadioDefault5">
                                             診所收案
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input " type="radio" id="flexRadioDefault5"
+                                        <input class="form-check-input " type="radio" id="flexRadioDefault6"
                                             name="flexRadioDefault">
-                                        <label class="form-check-label" for="flexRadioDefault5">
+                                        <label class="form-check-label" for="flexRadioDefault6">
                                             待轉正式
                                             <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip"
                                                 data-bs-placement="top" title=""
@@ -139,6 +146,8 @@
                                 <div class="col-md-auto split-line-left">
                                     <div class="input-group input-group-sm">
                                         <input type="text" class="form-control" placeholder="請輸入姓名" aria-label="請輸入姓名"
+                                            aria-describedby="button-addon2">
+                                            <input type="text" class="form-control" placeholder="身分證字號/護照號碼" aria-label="身分證字號/護照號碼"
                                             aria-describedby="button-addon2">
                                         <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
                                                 class="fa-solid fa-magnifying-glass"></i></button>
@@ -161,7 +170,7 @@
                 <div class="table-responsive">
                     <table class="table table-hover striped GSMis-table-rwd">
                         <thead>
-                            <tr>
+                            <!-- <tr>
                                 <th></th>
                                 <th>入案時間</th>
                                 <th>入案編號</th>
@@ -172,10 +181,38 @@
                                 <th class="evaluate">健康評估</th>
                                 <th class="evaluate">環境評估</th>
                                 <th class="evaluate">總評估</th>
+                                <th>來自派案<br><span class="text-danger">退案</span></th>
                                 <th class="center">診所收案<br>狀態</th>
-                                <th class="center">編輯</th>
-                                <th class="text-danger delete">
-                                    刪除<br>
+                                <th class="center">診所收案<br>編輯</th>
+                                <th class="delete">
+                                    診所收案<br>
+                                    <span class="text-danger">刪除</span>
+                                    <input class="form-check-input" type="checkbox" value="" id="chk_delete_all">
+                                </th>
+                            </tr> -->
+                            <tr>
+                                <th colspan="1" rowspan="2"></th>
+                                <th colspan="1" rowspan="2">入案時間</th>
+                                <th colspan="1" rowspan="2">入案編號</th>
+                                <th colspan="1" rowspan="2">報告日</th>
+                                <th colspan="1" rowspan="2">姓名</th>
+                                <th colspan="1" rowspan="2">身分證字號/<br />護照號碼</th>
+                                <th colspan="1" rowspan="2">診斷年齡</th>
+                                <th colspan="1" rowspan="2" class="bd-l-dot">健康評估</th>
+                                <th colspan="1" rowspan="2">環境評估</th>
+                                <th colspan="1" rowspan="2">總評估</th>
+                                <th colspan="2" class="bd-l-dot col-form-assign">來自派案</th>
+                                <th colspan="3" class="bd-l-dot">來自診所收案</th>
+                            </tr>
+                            <tr>
+                                <th class="bd-l-dot center">
+                                    <span class="text-danger">退案</span>
+                                </th>
+                                <th class="col-withdraw-note">原因</th>
+                                <th class="bd-l-dot">狀態</th>
+                                <th>編輯</th>
+                                <th class="delete">
+                                    <span class="text-danger">刪除</span>
                                     <input class="form-check-input" type="checkbox" value="" id="chk_delete_all">
                                 </th>
                             </tr>
@@ -196,7 +233,7 @@
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
+                                <td data-th="健康評估" class="bd-l-dot evaluate">
                                     <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas"
                                         data-bs-target="#offcanvasHealth" aria-controls="offcanvasHealth">
                                         <i class="fa-solid fa-pen-to-square"></i>
@@ -213,7 +250,13 @@
                                 <td data-th="總評估" class="evaluate">
 
                                 </td>
-                                <td data-th="診所收案狀態" class="center">
+                                <td data-th="退案" class="bd-l-dot delete">
+                                    --
+                                </td>
+                                <td data-th="退案原因" class="bd-l-dot col-withdraw-note">
+                                    --
+                                </td>
+                                <td data-th="診所收案狀態" class="center bd-l-dot">
                                     <i class="fa-solid fa-check-double is-formal" data-bs-toggle="tooltip" data-bs-placement="top"
                                         title="" data-bs-original-title="已轉正式"></i>
                                 </td>
@@ -236,8 +279,8 @@
                                 <td data-th="報告日">111/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
+                                <td data-th="診斷年齡(足歲)">33</td>                                
+                                <td data-th="健康評估" class="bd-l-dot evaluate">
                                     <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas"
                                         data-bs-target="#offcanvasHealth" aria-controls="offcanvasHealth">
                                         <i class="fa-solid fa-pen-to-square"></i>
@@ -254,7 +297,13 @@
                                 <td data-th="總評估" class="evaluate">
                                     --
                                 </td>
-                                <td data-th="診所收案狀態" class="center">
+                                <td data-th="退案" class="bd-l-dot delete">
+                                    --
+                                </td>
+                                <td data-th="退案原因" class="bd-l-dot col-withdraw-note">
+                                    --
+                                </td>
+                                <td data-th="診所收案狀態" class="center bd-l-dot">
                                     <i class="fa-solid fa-hourglass-empty is-informal" data-bs-toggle="tooltip"
                                         data-bs-placement="top" title="" data-bs-original-title="待轉正式">
                                     </i>
@@ -279,22 +328,33 @@
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
-                                        aria-controls="offcanvasHealth">
+                                <td data-th="健康評估" class="bd-l-dot evaluate">
+                                    <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasHealth" aria-controls="offcanvasHealth">
                                         <i class="fa-solid fa-pen-to-square"></i>
-                                        適合居家照護
-                                    </span>
+                                        填報
+                                    </a>
                                 </td>
                                 <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
-                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
+                                    <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                        填報
+                                    </a>
                                 </td>
-                                <td data-th="總評估" class="evaluate text-dark">
-                                    收案，居家照護
+                                <td data-th="總評估" class="evaluate">
+                                    
                                 </td>
-                                <td data-th="診所收案狀態" class="center">
+                                <td data-th="退案" class="bd-l-dot delete">
+                                    <input class="form-check-input chk-withdraw" type="checkbox" value="" id="chk_withdraw_12345678901234">
+                                </td>
+                                <td data-th="退案原因" class="bd-l-dot col-withdraw-note">
+                                    <div class="input-group input-group-sm func-withdraw">
+                                        <input type="text" class="form-control" placeholder="請輸入退案原因" aria-label="請輸入退案原因" aria-describedby="button-addon2">
+                                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">確定退案</button>
+                                    </div>
+                                </td>
+                                <td data-th="診所收案狀態" class="center bd-l-dot">
                                     --
                                 </td>
                                 <td data-th="編輯" class="center">
@@ -313,25 +373,120 @@
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-danger" data-bs-toggle="offcanvas"
+                                <td data-th="健康評估" class="bd-l-dot evaluate">
+                                    <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas"
                                         data-bs-target="#offcanvasHealth" aria-controls="offcanvasHealth">
                                         <i class="fa-solid fa-pen-to-square"></i>
-                                        不適合居家照護
+                                        填報
+                                    </a>
+                                </td>
+                                <td data-th="環境評估" class="evaluate">
+                                    <a class="btn w-100 btn-secondary btn-sm btn-evaluate" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                        填報
+                                    </a>
+                                </td>
+                                <td data-th="總評估" class="evaluate">
+                                    
+                                </td>
+                                <td data-th="退案" class="bd-l-dot delete">
+                                    <input class="form-check-input chk-withdraw" type="checkbox" value="" id="chk_withdraw_12345678901234">
+                                </td>
+                                <td data-th="退案原因" class="bd-l-dot col-withdraw-note">
+                                    <div class="input-group input-group-sm func-withdraw">
+                                        <input type="text" class="form-control" placeholder="請輸入退案原因" aria-label="請輸入退案原因" aria-describedby="button-addon2">
+                                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">確定退案</button>
+                                    </div>
+                                </td>
+                                <td data-th="診所收案狀態" class="center bd-l-dot">
+                                    --
+                                </td>
+                                <td data-th="編輯" class="center">
+                                    --
+                                </td>
+                                <td data-th="刪除" class="delete">
+                                    --
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="超過1小時未處理">
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="健康評估" class="bd-l-dot evaluate">
+                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
+                                        aria-controls="offcanvasHealth">
+                                        <i class="fa-solid fa-pen-to-square"></i>適合居家照護
+                                        <small class="note">
+                                            <br>高風險
+                                        </small>
+                                    </span>
+                                </td>
+                                <td data-th="環境評估" class="evaluate">
+                                    <span class="text-dark" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment">
+                                        <i class="fa-solid fa-pen-to-square"></i>符合
+                                    </span>
+                                </td>
+                                <td data-th="總評估" class="evaluate text-dark">
+                                    收案，居家照護
+                                </td>
+                                <td data-th="退案" class="bd-l-dot delete">
+                                    --
+                                </td>
+                                <td data-th="退案原因" class="bd-l-dot col-withdraw-note">
+                                    --
+                                </td>
+                                <td data-th="診所收案狀態" class="center bd-l-dot">
+                                    --
+                                </td>
+                                <td data-th="編輯" class="center">
+                                    --
+                                </td>
+                                <td data-th="刪除" class="delete">
+                                    --
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-th="超過1小時未處理">
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="健康評估" class="bd-l-dot evaluate">
+                                    <span class="text-danger" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasHealth" aria-controls="offcanvasHealth">
+                                        <i class="fa-solid fa-pen-to-square"></i>不適合居家照護
+                                        <small class="note">
+                                            <br>高風險
+                                        </small>
                                     </span>
                                 </td>
                                 <td data-th="環境評估" class="evaluate">
                                     <span class="text-danger" data-bs-toggle="offcanvas"
                                         data-bs-target="#offcanvasEnvironment"
                                         aria-controls="offcanvasEnvironment">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        不符合
+                                        <i class="fa-solid fa-pen-to-square"></i>不符合
                                     </span>
                                 </td>
                                 <td data-th="總評估" class="evaluate text-danger">
                                     不收案，送醫院
                                 </td>
-                                <td data-th="診所收案狀態" class="center">
+                                <td data-th="退案" class="bd-l-dot delete">
+                                    --
+                                </td>
+                                <td data-th="退案原因" class="bd-l-dot col-withdraw-note">
+                                    --
+                                </td>
+                                <td data-th="診所收案狀態" class="center bd-l-dot">
                                     --
                                 </td>
                                 <td data-th="編輯" class="center">
@@ -350,19 +505,19 @@
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
+                                <td data-th="健康評估" class="bd-l-dot evaluate">
                                     <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
                                         aria-controls="offcanvasHealth">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        住院/機構<br>
-                                        <small class="note">這裡顯示地點</small>
+                                        <i class="fa-solid fa-pen-to-square"></i>住院/機構
+                                        <small class="note">
+                                            <br>高風險及使用口服抗病毒藥物
+                                        </small>
                                     </span>
                                 </td>
                                 <td data-th="環境評估" class="evaluate">
                                     <span class="text-dark" data-bs-toggle="offcanvas"
                                         data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        轉外縣市
+                                        <i class="fa-solid fa-pen-to-square"></i>轉外縣市
                                         <br>
                                         <small class="note">這裡顯示地址</small>
                                     </span>
@@ -370,7 +525,13 @@
                                 <td data-th="總評估" class="evaluate">
                                     --
                                 </td>
-                                <td data-th="診所收案狀態" class="center">
+                                <td data-th="退案" class="bd-l-dot delete">
+                                    --
+                                </td>
+                                <td data-th="退案原因" class="bd-l-dot col-withdraw-note">
+                                    --
+                                </td>
+                                <td data-th="診所收案狀態" class="center bd-l-dot">
                                     <i class="fa-solid fa-hourglass-empty is-informal" data-bs-toggle="tooltip"
                                         data-bs-placement="top" title="" data-bs-original-title="待轉正式">
                                     </i>
@@ -384,482 +545,6 @@
                                 <td data-th="刪除" class="delete">
                                     <input class="form-check-input chk-del" type="checkbox" value=""
                                         id="chk_delete_12345678901234">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-th="超過1小時未處理">
-                                </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
-                                        aria-controls="offcanvasHealth">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        適合居家照護
-                                    </span>
-                                </td>
-                                <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
-                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
-                                </td>
-                                <td data-th="總評估" class="evaluate text-dark">
-                                    收案，居家照護
-                                </td>
-                                <td data-th="診所收案狀態" class="center">
-                                    --
-                                </td>
-                                <td data-th="編輯" class="center">
-                                    --
-                                </td>
-                                <td data-th="刪除" class="delete">
-                                    --
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-th="超過1小時未處理">
-                                </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
-                                        aria-controls="offcanvasHealth">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        適合居家照護
-                                    </span>
-                                </td>
-                                <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
-                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
-                                </td>
-                                <td data-th="總評估" class="evaluate text-dark">
-                                    收案，居家照護
-                                </td>
-                                <td data-th="診所收案狀態" class="center">
-                                    --
-                                </td>
-                                <td data-th="編輯" class="center">
-                                    --
-                                </td>
-                                <td data-th="刪除" class="delete">
-                                    --
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-th="超過1小時未處理">
-                                </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
-                                        aria-controls="offcanvasHealth">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        適合居家照護
-                                    </span>
-                                </td>
-                                <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
-                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
-                                </td>
-                                <td data-th="總評估" class="evaluate text-dark">
-                                    收案，居家照護
-                                </td>
-                                <td data-th="診所收案狀態" class="center">
-                                    --
-                                </td>
-                                <td data-th="編輯" class="center">
-                                    --
-                                </td>
-                                <td data-th="刪除" class="delete">
-                                    --
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-th="超過1小時未處理">
-                                </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
-                                        aria-controls="offcanvasHealth">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        適合居家照護
-                                    </span>
-                                </td>
-                                <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
-                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
-                                </td>
-                                <td data-th="總評估" class="evaluate text-dark">
-                                    收案，居家照護
-                                </td>
-                                <td data-th="診所收案狀態" class="center">
-                                    --
-                                </td>
-                                <td data-th="編輯" class="center">
-                                    --
-                                </td>
-                                <td data-th="刪除" class="delete">
-                                    --
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-th="超過1小時未處理">
-                                </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
-                                        aria-controls="offcanvasHealth">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        適合居家照護
-                                    </span>
-                                </td>
-                                <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
-                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
-                                </td>
-                                <td data-th="總評估" class="evaluate text-dark">
-                                    收案，居家照護
-                                </td>
-                                <td data-th="診所收案狀態" class="center">
-                                    --
-                                </td>
-                                <td data-th="編輯" class="center">
-                                    --
-                                </td>
-                                <td data-th="刪除" class="delete">
-                                    --
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-th="超過1小時未處理">
-                                </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
-                                        aria-controls="offcanvasHealth">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        適合居家照護
-                                    </span>
-                                </td>
-                                <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
-                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
-                                </td>
-                                <td data-th="總評估" class="evaluate text-dark">
-                                    收案，居家照護
-                                </td>
-                                <td data-th="診所收案狀態" class="center">
-                                    --
-                                </td>
-                                <td data-th="編輯" class="center">
-                                    --
-                                </td>
-                                <td data-th="刪除" class="delete">
-                                    --
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-th="超過1小時未處理">
-                                </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
-                                        aria-controls="offcanvasHealth">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        適合居家照護
-                                    </span>
-                                </td>
-                                <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
-                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
-                                </td>
-                                <td data-th="總評估" class="evaluate text-dark">
-                                    收案，居家照護
-                                </td>
-                                <td data-th="診所收案狀態" class="center">
-                                    --
-                                </td>
-                                <td data-th="編輯" class="center">
-                                    --
-                                </td>
-                                <td data-th="刪除" class="delete">
-                                    --
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-th="超過1小時未處理">
-                                </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
-                                        aria-controls="offcanvasHealth">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        適合居家照護
-                                    </span>
-                                </td>
-                                <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
-                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
-                                </td>
-                                <td data-th="總評估" class="evaluate text-dark">
-                                    收案，居家照護
-                                </td>
-                                <td data-th="診所收案狀態" class="center">
-                                    --
-                                </td>
-                                <td data-th="編輯" class="center">
-                                    --
-                                </td>
-                                <td data-th="刪除" class="delete">
-                                    --
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-th="超過1小時未處理">
-                                </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
-                                        aria-controls="offcanvasHealth">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        適合居家照護
-                                    </span>
-                                </td>
-                                <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
-                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
-                                </td>
-                                <td data-th="總評估" class="evaluate text-dark">
-                                    收案，居家照護
-                                </td>
-                                <td data-th="診所收案狀態" class="center">
-                                    --
-                                </td>
-                                <td data-th="編輯" class="center">
-                                    --
-                                </td>
-                                <td data-th="刪除" class="delete">
-                                    --
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-th="超過1小時未處理">
-                                </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
-                                        aria-controls="offcanvasHealth">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        適合居家照護
-                                    </span>
-                                </td>
-                                <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
-                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
-                                </td>
-                                <td data-th="總評估" class="evaluate text-dark">
-                                    收案，居家照護
-                                </td>
-                                <td data-th="診所收案狀態" class="center">
-                                    --
-                                </td>
-                                <td data-th="編輯" class="center">
-                                    --
-                                </td>
-                                <td data-th="刪除" class="delete">
-                                    --
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-th="超過1小時未處理">
-                                </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
-                                        aria-controls="offcanvasHealth">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        適合居家照護
-                                    </span>
-                                </td>
-                                <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
-                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
-                                </td>
-                                <td data-th="總評估" class="evaluate text-dark">
-                                    收案，居家照護
-                                </td>
-                                <td data-th="診所收案狀態" class="center">
-                                    --
-                                </td>
-                                <td data-th="編輯" class="center">
-                                    --
-                                </td>
-                                <td data-th="刪除" class="delete">
-                                    --
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-th="超過1小時未處理">
-                                </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
-                                        aria-controls="offcanvasHealth">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        適合居家照護
-                                    </span>
-                                </td>
-                                <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
-                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
-                                </td>
-                                <td data-th="總評估" class="evaluate text-dark">
-                                    收案，居家照護
-                                </td>
-                                <td data-th="診所收案狀態" class="center">
-                                    --
-                                </td>
-                                <td data-th="編輯" class="center">
-                                    --
-                                </td>
-                                <td data-th="刪除" class="delete">
-                                    --
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-th="超過1小時未處理">
-                                </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
-                                        aria-controls="offcanvasHealth">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        適合居家照護
-                                    </span>
-                                </td>
-                                <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
-                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
-                                </td>
-                                <td data-th="總評估" class="evaluate text-dark">
-                                    收案，居家照護
-                                </td>
-                                <td data-th="診所收案狀態" class="center">
-                                    --
-                                </td>
-                                <td data-th="編輯" class="center">
-                                    --
-                                </td>
-                                <td data-th="刪除" class="delete">
-                                    --
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-th="超過1小時未處理">
-                                </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="健康評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHealth"
-                                        aria-controls="offcanvasHealth">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                        適合居家照護
-                                    </span>
-                                </td>
-                                <td data-th="環境評估" class="evaluate">
-                                    <span class="text-dark" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasEnvironment" aria-controls="offcanvasEnvironment"><i
-                                            class="fa-solid fa-pen-to-square"></i> 符合</span>
-                                </td>
-                                <td data-th="總評估" class="evaluate text-dark">
-                                    收案，居家照護
-                                </td>
-                                <td data-th="診所收案狀態" class="center">
-                                    --
-                                </td>
-                                <td data-th="編輯" class="center">
-                                    --
-                                </td>
-                                <td data-th="刪除" class="delete">
-                                    --
                                 </td>
                             </tr>
                         </tbody>
@@ -1707,31 +1392,16 @@
                                 <div class="col-md-auto">
                                     <div class="form-control GSMis-no-border">
                                         <div class="form-check">
-                                            <input class="form-check-input " type="radio" id="rdo_risk_1" name="risk" required checked>
+                                            <input class="form-check-input " type="radio" id="rdo_risk_1" name="risk">
                                             <label for="rdo_risk_1" class="form-check-label">一般風險</label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input " type="radio" id="rdo_risk_2" name="risk">
                                             <label for="rdo_risk_2" class="form-check-label">高風險</label>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </dd>
-                        <dt>
-                            <label for="" class=""><span class="text-danger">*</span>需使用口服抗病毒藥物</label>
-                        </dt>
-                        <dd class="wide">
-                            <div class="row g-2">
-                                <div class="col-md-auto">
-                                    <div class="form-control GSMis-no-border">
                                         <div class="form-check">
-                                            <input class="form-check-input " type="radio" id="rdo_antiviral_drugs_1" name="antiviral_drugs" required checked>
-                                            <label for="rdo_antiviral_drugs_1" class="form-check-label">是</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input " type="radio" id="rdo_antiviral_drugs_2" name="antiviral_drugs">
-                                            <label for="rdo_antiviral_drugs_2" class="form-check-label">否</label>
+                                            <input class="form-check-input " type="radio" id="rdo_risk_2" name="risk">
+                                            <label for="rdo_risk_2" class="form-check-label">高風險及使用口服抗病毒藥物</label>
                                         </div>
                                     </div>
                                 </div>
@@ -1780,7 +1450,7 @@
                                             轉外縣市
                                         </label>
                                     </div>
-                                    <div class="form-check">
+                                    <!-- <div class="form-check">
                                         <input class="form-check-input" type="radio" name="result" id="result5">
                                         <label class="form-check-label" for="result5">
                                             電話錯誤
@@ -1791,19 +1461,19 @@
                                         <label class="form-check-label" for="result6">
                                             電話未接
                                         </label>
-                                    </div>
+                                    </div> -->
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="result" id="result7">
                                         <label class="form-check-label" for="result7">
                                             個案為外籍移工
                                         </label>
                                     </div>
-                                    <div class="form-check">
+                                    <!-- <div class="form-check">
                                         <input class="form-check-input" type="radio" name="result" id="result8">
                                         <label class="form-check-label" for="result8">
                                             死亡
                                         </label>
-                                    </div>
+                                    </div> -->
                                     <div class="form-check">
                                         <div class="row">
                                             <div class="col-auto">

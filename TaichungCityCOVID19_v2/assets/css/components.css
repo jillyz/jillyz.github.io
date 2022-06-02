@@ -210,54 +210,28 @@ td.evaluate {
 td.evaluate [class^="text"] {
     text-decoration: underline;
 }
+td.evaluate:hover span {
+    text-indent: -1.25em;
+} 
 td.evaluate span i {
     display: none;
 }
 td.evaluate:hover span i {
     display: inline-block;
 }
+.col-withdraw-note {
+    min-width: 12em;
+}
+.bd-l-dot {
+    border-left: 1px solid rgb(222, 226, 230);
+}
+.bd-r-dot {
+    border-right: 1px solid rgb(222, 226, 230);
+}
 [data-bs-toggle="offcanvas"] {
     cursor: pointer;
 }
-.delete {
-    text-align: center;
-}
-.delete input {
-    width: 20px;
-    height: 20px;
-}
-.delete .form-check-input:checked {
-    border-color: #dc3545;
-    background-color: #dc3545;
-}
-.delete-highlight td {
-    background-color: #ffc !important;
-}
-.table-hover tr.delete-highlight:hover td {
-    background-color: rgb(255, 255, 129) !important;
-    /* cursor: pointer; */
-}
-.delete-wrap {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-    padding: 1.5em;
-    background-color: #EEEEEE;
-    transform: translateY(100%);
-    transition: .25s all;
-    box-shadow: 0 -10px 20px rgba(0,0,0,.2); 
-}
-.delete-wrap.show {
-    transform: translateY(0);
-}
-.delete-wrap>div {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 600px;
-}
+
 .split-line-left {
     border-left: 1px solid #ccc;
 }
@@ -378,6 +352,46 @@ main nav {
     background-color: rgb(220, 53, 69);
     border-color: rgb(220, 53, 69);
     font-weight: bold;
+}
+
+.delete {
+    text-align: center;
+}
+.delete input {
+    width: 20px;
+    height: 20px;
+}
+.delete .form-check-input:checked {
+    border-color: #dc3545;
+    background-color: #dc3545;
+}
+.delete-highlight td {
+    background-color: #ffc !important;
+}
+.table-hover tr.delete-highlight:hover td {
+    background-color: rgb(255, 255, 129) !important;
+    /* cursor: pointer; */
+}
+.delete-wrap {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    padding: 1.5em;
+    background-color: #EEEEEE;
+    transform: translateY(100%);
+    transition: .25s all;
+    box-shadow: 0 -10px 20px rgba(0,0,0,.2); 
+}
+.delete-wrap.show {
+    transform: translateY(0);
+}
+.delete-wrap>div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 600px;
 }
 
 .table a {

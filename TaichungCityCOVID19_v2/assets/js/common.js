@@ -23,6 +23,8 @@ const goTop = () => {
     })
 };
 
+//刪除---------------------------------------
+
 // check all checkbox for DELETE
 const checkForAllDelete = () => {
     $('#chk_delete_all').change(function(){
@@ -80,4 +82,35 @@ $('#cancel_del').click(function(){
     $('#chk_delete_all').prop( "checked", false );
     $('.chk-del').prop( "checked", false );
     $('.delete-highlight').removeClass('delete-highlight');
+})
+
+//退案---------------------------------------
+
+// inital
+$('.col-withdraw-note').hide();
+$('.func-withdraw').hide();
+$('.col-form-assign').attr('colspan', 1);
+
+//
+$('.chk-withdraw').change(function(){
+    // highlight tr
+    const isChecked = this.checked;
+    const funcWithdraw = $(this).parent().next().find('.func-withdraw');
+    const colWithdraw = $('.col-withdraw-note');
+    if(isChecked){
+        colWithdraw.show();
+        funcWithdraw.show();
+        $('.col-form-assign').attr('colspan', 2);
+    }
+    else{
+        funcWithdraw.hide();
+    }
+
+    const countInputIsChecked = $('.chk-withdraw:checked').length;
+    if(countInputIsChecked == 0) {
+        $('.col-form-assign').attr('colspan', 1);
+        colWithdraw.hide();
+    }
+
+
 })
