@@ -219,10 +219,6 @@ td.evaluate span i {
 td.evaluate:hover span i {
     display: inline-block;
 }
-.col-withdraw-note {
-    min-width: 12em;
-}
-
 .bd-l-dot {
     border-left: 1px solid rgb(222, 226, 230);
 }
@@ -232,7 +228,9 @@ td.evaluate:hover span i {
 [data-bs-toggle="offcanvas"] {
     cursor: pointer;
 }
-
+.hide {
+    display: none;
+}
 .split-line-left {
     border-left: 1px solid #ccc;
 }
@@ -322,6 +320,7 @@ main nav {
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 2;
     border-top: 1px solid #ccc;
     padding-top: 0.5em;
     background: #fff;
@@ -355,25 +354,32 @@ main nav {
     font-weight: bold;
 }
 
-.delete {
-    /* text-align: center; */
-}
-.delete input[type=checkbox] {
+
+.delete input[type=checkbox],
+.withdraw input[type=checkbox],
+.unassign input[type=checkbox],
+.assign input[type=checkbox]  {
     width: 20px;
     height: 20px;
 }
-.delete .form-check-input:checked {
+.delete .form-check-input:checked,
+.withdraw .form-check-input:checked,
+.unassign .form-check-input:checked  {
     border-color: #dc3545;
     background-color: #dc3545;
 }
-.delete-highlight td {
+.assign .form-check-input:checked {
+    border-color: #0d6efd;
+    background-color: #0d6efd;
+}
+.func-check-highlight td {
     background-color: #ffc !important;
 }
-.table-hover tr.delete-highlight:hover td {
+.table-hover tr.func-check-highlight:hover td {
     background-color: rgb(255, 255, 129) !important;
     /* cursor: pointer; */
 }
-.delete-wrap {
+.func-pane-wrap {
     position: fixed;
     left: 0;
     right: 0;
@@ -385,14 +391,30 @@ main nav {
     transition: .25s all;
     box-shadow: 0 -10px 20px rgba(0,0,0,.2); 
 }
-.delete-wrap.show {
+.func-pane-wrap.show {
     transform: translateY(0);
 }
-.delete-wrap>div {
+.func-pane-wrap>div {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     max-width: 600px;
+}
+.func-unassign {
+    display: none;
+}
+tr:hover .func-unassign {
+    display: flex;
+}
+.count {
+    display: inline-block;
+    margin-left: .5em;
+    padding: .1em .5em;
+    font-weight: bold;
+    font-size: .9em;
+    background-color: rgba(255,255,255, .9);
+    color: #000;
+    border-radius: 2em;
 }
 
 .table a {
@@ -420,7 +442,8 @@ code strong {
 .is-informal {
     display: inline-block;
     vertical-align: middle;
-    color: #EE6666;
+    color: #f04e4e;
+    font-size: 20px;
 }
 .form-ul li {
     padding: 5px 0;
@@ -635,7 +658,7 @@ i.is-late {
     .row-narrow>.wide.is-last-day {
         border-left: 0;
     }
-    .delete-wrap>div {
+    .func-pane-wrap>div {
         padding-right: 60px;
     }
 }

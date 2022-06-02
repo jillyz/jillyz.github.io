@@ -1,0 +1,605 @@
+<!doctype html>
+<html class="no-js" lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台中市政府新冠肺炎居家照護管理系統</title>
+    <!-- Base -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap-5.1.3/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/fontawesome-free-6.1.1-web/all.min.css">
+    <link rel="stylesheet" href="assets/vendor/js-snackbar/js-snackbar.min.css">
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="assets/css/base-layout-one.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/table.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/form-layout.css">
+</head>
+
+<body>
+    <div class="GSMis-wrapper">
+        <!-- GSMis-header-wrap 刊頭 -->
+        <header class="GSMis-header-wrap">
+            <div class="GSMis-header-inner">
+                <div class="GSMis-header">
+                    <div class="item">
+                        <!-- GSMis-brand -->
+                        <h1 class="GSMis-brand">
+                            <a href="login.html">
+                                <span class="GSMis-brand-text">
+                                    <span class="logo-tc-gov GSMis-brand-img">台中市政府</span>
+                                    新冠肺炎居家照護管理系統
+                                </span>
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="item">
+                        <!-- 手機版的漢堡 -->
+                        <a class="GSMis-hamburger-mobile" data-bs-toggle="collapse" href="#GSMis-collapse-menu">
+                            <span><i class="fas fa-bars"></i></span>
+                            <span style="display: none;"><i class="fas fa-times"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /.GSMis-header-wrap -->
+        <!-- GSMis-nav-wrap 導覽列 -->
+        <nav class="GSMis-nav-wrap">
+            <div class="GSMis-nav-inner">
+                <div class="text-end">
+                    <!-- 桌機版的漢堡 -->
+                    <a class="GSMis-hamburger-desktop" href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+                <!-- 手機版選單開闔容器 -->
+                <div class="collapse" id="GSMis-collapse-menu">
+                    <!-- GSMis-menu 主選單 -->
+                    <ul class="GSMis-menu">
+                        <li><a href="#"><i class="fa-solid fa-file-pen"></i> 評估填報</a></li>
+                        <li class="active"><a href="assign_衛生所_診協.html"><i class="fa-solid fa-hand-point-right"></i> 派案管理</a></li>
+                        <li><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估查詢</a></li>
+                    </ul>
+                    <!-- /.GSMis-menu -->
+                    <!-- GSMis-help 輔助資訊 -->
+                    <div class="GSMis-help">
+                        <!-- 非主選單區的輔助選項 -->
+                        <ul class="GSMis-help-nav">
+                            <li><a href="xxx.pdf">操作手冊</a></li>
+                        </ul>
+                        <!-- 使用者狀態資訊 -->
+                        <div class="GSMis-help-user">
+                            <span class="GSMis-help-user-name">歡迎○○○ ○○○登入</span>
+                            <button class="GSMis-help-user-logout"><span class="text">登出</span><i
+                                    class="fas fa-sign-out-alt"></i></button>
+                        </div>
+                    </div>
+                    <!-- /.GSMis-help -->
+                </div>
+                <!-- /.collapse -->
+            </div>
+        </nav>
+        <!-- /.GSMis-nav-wrap -->
+
+        <!-- /.GSMis-breadcrumb-wrap -->
+        <!-- GSMis-main-wrap 主內容區 -->
+        <main class="GSMis-main-wrap">
+            <div class="GSMis-main-inner">
+
+                <h2 class="GSMis-section-title">派案管理</h2>
+                <div class="row GSMis-search-area p-4 bg-light rounded border mb-3" data-func="filter">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="row">
+                                <div class="col-md-auto mt-1">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input " type="radio" id="flexRadioDefault2"
+                                            name="flexRadioDefault" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            待派案
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input " type="radio" id="flexRadioDefault4" name="flexRadioDefault"
+                                        >
+                                        <label class="form-check-label" for="flexRadioDefault4">
+                                            已派案
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-auto mt-1 bold split-line-left">
+                                    共 <strong>99</strong> 筆
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- .table-responsive 表格 -->
+                <!-- 待派案 -->
+                <div class="">
+                    <table class="table table-hover striped GSMis-table-rwd">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>入案時間</th>
+                                <th>入案編號</th>
+                                <th>報告日</th>
+                                <th>姓名</th>
+                                <th>身分證字號/<br />護照號碼</th>
+                                <th>診斷年齡</th>
+                                <th class="center ">編輯</th>
+                                <th class="bd-l-dot center assign text-primary">
+                                    派案
+                                    <br>
+                                    <input class="form-check-input" type="checkbox" value="" id="chk_assign_all">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 超過1小時未處理：
+                                <tr> 加 class="table-is-late" 
+                                第一欄顯示圖示
+                            -->
+                            <tr class="table-is-late">
+                                <td data-th="超過1小時未處理">
+                                    <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip"
+                                        data-bs-placement="right" title="超過1小時未處理"></i>
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="編輯" class="center">
+                                    <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
+                                        data-bs-target="#editModal">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+                                </td>
+                                <td data-th="派案" class="bd-l-dot center assign">
+                                    <input class="form-check-input chk-assign" type="checkbox" value=""
+                                        id="chk_assign_12345678901234">
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <td data-th="超過1小時未處理">
+                                    
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="編輯" class="center">
+                                    <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
+                                        data-bs-target="#editModal">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+                                </td>
+                                <td data-th="派案" class="bd-l-dot center assign">
+                                    <input class="form-check-input chk-assign" type="checkbox" value=""
+                                        id="chk_assign_12345678901234">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- 已派案 -->
+                <div class="">
+                    <table class="table table-hover striped GSMis-table-rwd">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>入案時間</th>
+                                <th>入案編號</th>
+                                <th>報告日</th>
+                                <th>姓名</th>
+                                <th>身分證字號/<br />護照號碼</th>
+                                <th>診斷年齡</th>
+                                <th class="center ">編輯</th>
+                                <th>派案至</th>
+                                <th class="bd-l-dot unassign text-danger" style="min-width: 21em;">
+                                    取消派案
+                                    <br>
+                                    <input class="form-check-input" type="checkbox" value="" id="chk_unassign_all">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 超過1小時未處理：
+                                <tr> 加 class="table-is-late" 
+                                第一欄顯示圖示
+                            -->
+                            <tr class="table-is-late">
+                                <td data-th="超過1小時未處理">
+                                    <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip"
+                                        data-bs-placement="right" title="超過1小時未處理"></i>
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="編輯" class="center">
+                                    <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
+                                        data-bs-target="#editModal">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+                                </td>
+                                <td data-th="派案至">ＯＯＯＯＯＯ診所</td>
+                                <td data-th="取消派案" class="bd-l-dot center unassign">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <input class="form-check-input chk-unassign" type="checkbox" value="" id="chk_unassign_12345678901234">
+
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="input-group input-group-sm func-unassign">
+                                                <input type="text" class="form-control" placeholder="取消派案原因" aria-label="取消派案原因" aria-describedby="button-addon2">
+                                                <button class="btn btn-outline-secondary js-btn-unassign" type="button" id="button-addon2">確定取消派案</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="table-is-late">
+                                <td data-th="超過1小時未處理">
+                                    <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip"
+                                        data-bs-placement="right" title="超過1小時未處理"></i>
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="編輯" class="center">
+                                    <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
+                                        data-bs-target="#editModal">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+                                </td>
+                                <td data-th="派案至">ＯＯＯＯＯＯ診所</td>
+                                <td data-th="取消派案" class="bd-l-dot center unassign">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <input class="form-check-input chk-unassign" type="checkbox" value="" id="chk_unassign_12345678901234">
+
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="input-group input-group-sm func-unassign">
+                                                <input type="text" class="form-control" placeholder="取消派案原因" aria-label="取消派案原因" aria-describedby="button-addon2">
+                                                <button class="btn btn-outline-secondary js-btn-unassign" type="button" id="button-addon2">確定取消派案</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="table-is-late">
+                                <td data-th="超過1小時未處理">
+                                    <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip"
+                                        data-bs-placement="right" title="超過1小時未處理"></i>
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="編輯" class="center">
+                                    <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
+                                        data-bs-target="#editModal">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+                                </td>
+                                <td data-th="派案至">ＯＯＯＯＯＯ診所</td>
+                                <td data-th="取消派案" class="bd-l-dot center unassign">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <input class="form-check-input chk-unassign" type="checkbox" value="" id="chk_unassign_12345678901234">
+
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="input-group input-group-sm func-unassign">
+                                                <input type="text" class="form-control" placeholder="取消派案原因" aria-label="取消派案原因" aria-describedby="button-addon2">
+                                                <button class="btn btn-outline-secondary js-btn-unassign" type="button" id="button-addon2">確定取消派案</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="table-is-late">
+                                <td data-th="超過1小時未處理">
+                                    <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip"
+                                        data-bs-placement="right" title="超過1小時未處理"></i>
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="編輯" class="center">
+                                    <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
+                                        data-bs-target="#editModal">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+                                </td>
+                                <td data-th="派案至">ＯＯＯＯＯＯ診所</td>
+                                <td data-th="取消派案" class="bd-l-dot center unassign">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <input class="form-check-input chk-unassign" type="checkbox" value="" id="chk_unassign_12345678901234">
+
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="input-group input-group-sm func-unassign">
+                                                <input type="text" class="form-control" placeholder="取消派案原因" aria-label="取消派案原因" aria-describedby="button-addon2">
+                                                <button class="btn btn-outline-secondary js-btn-unassign" type="button" id="button-addon2">確定取消派案</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="table-is-late">
+                                <td data-th="超過1小時未處理">
+                                    <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip"
+                                        data-bs-placement="right" title="超過1小時未處理"></i>
+                                </td>
+                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="編輯" class="center">
+                                    <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
+                                        data-bs-target="#editModal">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+                                </td>
+                                <td data-th="派案至">ＯＯＯＯＯＯ診所</td>
+                                <td data-th="取消派案" class="bd-l-dot center unassign">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <input class="form-check-input chk-unassign" type="checkbox" value="" id="chk_unassign_12345678901234">
+
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="input-group input-group-sm func-unassign">
+                                                <input type="text" class="form-control" placeholder="取消派案原因" aria-label="取消派案原因" aria-describedby="button-addon2">
+                                                <button class="btn btn-outline-secondary js-btn-unassign" type="button" id="button-addon2">確定取消派案</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.table-responsive -->
+
+                <!-- 分頁 -->
+                <nav>
+                    <ul class="pagination GSMis-pagination justify-content-center ">
+                        <li class="page-item disabled ">
+                            <a class="page-link " href="# " tabindex="-1 " aria-disabled="true ">上一頁</a>
+                        </li>
+                        <li class="page-item "><a class="page-link " href="# ">1</a></li>
+                        <li class="page-item active " aria-current="page ">
+                            <a class="page-link " href="# ">2</a>
+                        </li>
+                        <li class="page-item "><a class="page-link " href="# ">3</a></li>
+                        <li class="page-item ">
+                            <a class="page-link " href="# ">下一頁</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </main>
+        <!-- /.GSMis-main-wrap -->
+        <!-- GSMis-footer-wrap -->
+        <footer class="GSMis-footer-wrap ">
+            <div class="GSMis-footer-inner ">
+                <div class="GSMis-footer ">
+                    Copyright © 逢甲大學地理資訊系統研究中心、天思數位科技股份有限公司
+                </div>
+            </div>
+        </footer>
+        <!-- /.GSMis-footer-wrap -->
+    </div>
+    <!-- /.GSMis-wrapper -->
+    <div class="GSMis-go-top ">
+        <a href="# " class=" " title="Go to Top ">TOP</a>
+    </div>
+
+    <!-- 個案資料-編輯 --><!-- Modal -->
+    <div class="modal fade modal-width" id="editModal" tabindex="-1" aria-labelledby="editModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">個案資料</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning small mb-3" role="alert">
+                        <ul class="no-list-style mb-0" style="text-indent: -2em;">
+                            <li><b>重要提醒：</b>請務必將個案資料建至法傳系統，以利衛生局將法傳資料匯入本系統後，系統能將此個案轉為正式個案。</li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="alert alert-danger" role="alert">
+                        <i class="fa-solid fa-triangle-exclamation"></i> 
+                        個案研判日期格式錯誤、身分證字號格式錯誤
+                    </div>
+                    <!-- <code>
+                        <strong>
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            個案研判日期格式錯誤、身分證字號格式錯誤
+                        </strong>
+                    </code> -->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">個案研判日期</label>
+                                <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">發病日</label>
+                                <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">報告日</label>
+                                <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">法傳編號</label>
+                                <input type="text" class="form-control" value="" placeholder="由法傳系統提供比對" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">姓名</label>
+                                <input type="text" class="form-control" value="陳思佑">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">性別</label>
+                                <select name="" id="" class="form-control form-select">
+                                    <option value="" disabled>請選擇</option>
+                                    <option value="1">男</option>
+                                    <option value="2" selected>女</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">身分證字號/護照號碼</label>
+                                <input type="text" class="form-control" value="A123456789">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">出生年月日</label>
+                                <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">診斷年齡(足歲)</label>
+                                <input type="number" min="0" class="form-control" value="33" placeholder="足歲">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">手機電話</label>
+                                <input type="text" class="form-control" value="0980555666">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">住家電話</label>
+                                <input type="text" class="form-control" value="04-23109988">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">公司電話</label>
+                                <input type="text" class="form-control" value="04-23109988">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="" class="">居住鄉鎮</label>
+                                <select name="" id="" class="form-control form-select">
+                                    <option value="" disabled>請選擇</option>
+                                    <option value="1">OO區</option>
+                                    <option value="2" selected>OO區</option>
+                                    <option value="3">OO區</option>
+                                    <option value="4">OO區</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="mb-3">
+                                <label for="" class="">居家地址(完整地址)</label>
+                                <input type="text" class="form-control" placeholder="請輸入居家照護地址(完整地址)"
+                                    value="台中市西區精誠29街23號6樓之2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary w-100">儲存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / 個案資料-編輯 -->
+    
+    <!-- 派案 -->
+    <div class="func-pane-wrap" data-func="assign">
+        <div class="row">
+            <div class="col-6">
+                <select name="" id="" class="form-select">
+                    <option value="" disabled>請選擇</option>
+                    <option value="1">OOOOOO診所</option>
+                    <option value="2">OOOOOO診所</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <button href="" class="btn w-100 btn-primary">確定派案 <strong class="count">0</strong></button>
+            </div>
+            <div class="col-2">
+                <button id="cancel_assign" class="btn w-100 btn-outline-secondary">關閉</button>
+            </div>
+        </div>
+    </div>
+    <!-- / 派案 -->
+
+
+    <!-- 取消派案 -->
+    <div class="func-pane-wrap" data-func="unassign">
+        <div class="row">
+            <div class="col-6">
+                <input type="text" name="" id="" class="form-control" placeholder="取消派案原因">
+            </div>
+            <div class="col-4">
+                <button href="" class="btn w-100 btn-danger">批次取消派案 <strong class="count">0</strong></button>
+            </div>
+            <div class="col-2">
+                <button id="cancel_unassign" class="btn w-100 btn-outline-secondary" onclick="$('.chk-unassign:checked').click()">關閉</button>
+            </div>
+        </div>
+    </div>
+    <!-- / 取消派案 -->
+
+    <!-- Base -->
+    <script src="assets/vendor/jquery-3.6.0.min.js "></script>
+    <script src="assets/vendor/bootstrap-5.1.3/bootstrap.bundle.min.js "></script>
+    <script src="assets/vendor/js-snackbar/js-snackbar.min.js"></script>
+    <!-- 自訂 -->
+    <script src="assets/js/base-layout-one.js "></script>
+    <script src="assets/js/common.js "></script>
+
+</body>
+
+</html>

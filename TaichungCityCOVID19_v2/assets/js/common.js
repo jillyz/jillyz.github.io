@@ -1,3 +1,5 @@
+var tempOperationType;
+
 $(() => {
     // 執行BS的tooltip功能
     $('[data-bs-toggle="tooltip"]').tooltip();
@@ -5,10 +7,14 @@ $(() => {
     // go to top
     goTop();
 
-    // for DELETE
-    checkForAllDelete();
-    checkForDelete();
+    // for Operation
 
+    batchOperation('delete');
+    batchOperation('withdraw');
+    batchOperation('assign');
+    batchOperation('unassign');
+    // checkAndReasonOperation('unassign')
+    
 });
 
 // == 自訂function =====================================
@@ -23,95 +29,230 @@ const goTop = () => {
     })
 };
 
-//刪除---------------------------------------
+//=============================================
+// 批次操作（刪除,退案）
+//=============================================
 
-// check all checkbox for DELETE
-const checkForAllDelete = () => {
-    $('#chk_delete_all').change(function(){
-        const isChecked = this.checked;
-        if(isChecked){
-            $('.chk-del').prop( "checked", true );
-            $('.chk-del').parent().parent('tr').addClass('delete-highlight');
+function batchOperation(type) {
+
+    checkForAllOperation(type)
+    checkForOperation(type)
+
+    // check all checkbox for Operation
+    function checkForAllOperation() {
+        $('#chk_' + type + '_all').change(function(){
+            const isChecked = this.checked;
+
+            checkDifferentOperationType($(this));
+
+            if(isChecked){
+                
+                $('.chk-' + type).prop( "checked", true );
+                $('.chk-' + type).parent().parent('tr').addClass('func-check-highlight');
+            }
+            else{
+                hideFuncPane();
+                $('.chk-' + type).prop( "checked", false );
+                $('.chk-' + type).parent().parent('tr').removeClass('func-check-highlight');
+            }
+            showFuncPane();
+        })
+    }
+
+    // check single checkbox for Operation
+    function checkForOperation() {
+
+        // alert(type)
+
+        $('.chk-'+ type).change(function(){
+
+            checkDifferentOperationType($(this));
+
+            // highlight tr
+            const isChecked = this.checked;
+            if(isChecked){
+                $(this).parent().parent('tr').addClass('func-check-highlight');
+            }
+            else{
+                $(this).parent().parent('tr').removeClass('func-check-highlight');
+            }
+
+            const countInputIsChecked = $('.chk-' + type + ':checked').length;
+            const countInputAll = $('.chk-' + type).length;
+
+            if(countInputIsChecked == countInputAll) {
+                $('#chk_' + type + '_all').prop( "checked", true );
+            }
+            else{
+                $('#chk_' + type + '_all').prop( "checked", false );
+            }
+
+            showFuncPane();
+        })
+    };
+
+    function checkDifferentOperationType (_this){
+        if(type !== tempOperationType) {
+            hideFuncPane(tempOperationType);
+            _this.prop( "checked", true );
+            tempOperationType = type;
+        }
+    }
+
+    var $thisPane = $('.func-pane-wrap[data-func="' + type + '"]');
+    var $allPane = $('.func-pane-wrap');
+
+    // show Operation func panel
+    function showFuncPane () {
+
+        const count = $('.chk-' + type + ':checked').length;
+        $thisPane.find('.count').text(count);
+
+        // const countChecked =$('td.' + type + ' input.chk-' + type + '[type=checkbox]:checked').length;
+        const countChecked =$('input.chk-' + type + '[type=checkbox]:checked').length;
+        if(countChecked > 0) {
+            $allPane.removeClass('show');
+            $thisPane.addClass('show');
         }
         else{
-            $('.chk-del').prop( "checked", false );
-            $('.chk-del').parent().parent('tr').removeClass('delete-highlight');
+            $thisPane.removeClass('show');
         }
-        showDeleteFunc();
+    }
+
+    // hide Operation func panel
+    function hideFuncPane (type) {
+        $thisPane.removeClass('show');
+        $('#chk_' + type + '_all').prop( "checked", false );
+        $('.chk-' + type).prop( "checked", false );
+        $('.func-check-highlight').removeClass('func-check-highlight');
+    }
+
+    // cancel Operation check & func panel
+    $('#cancel_' + type).click(function(){
+        hideFuncPane();
+    })
+
+    // 切換篩選列表時，底部操作面板若有打開則須隱藏
+    $('[data-func="filter"] input[type=radio]').change(function(){
+        hideFuncPane();
+    })
+
+}
+
+
+//=============================================
+// 單筆操作 + 後面輸入原因及送出（取消派案）
+//=============================================
+
+// function checkAndReasonOperation(type){
+
+//     // inital
+//     // $('.col-' + type + '-note').hide();
+//     $('.func-' + type).hide();
+
+//     // 出現輸入框及送出按鈕
+//     $('.chk-' + type).change(function(){
+//         // highlight tr
+//         const isChecked = this.checked;
+//         const $thisNoteBtn= $(this).parent().next().find('.func-' + type);
+//         if(isChecked){
+//             $thisNoteBtn.show();
+//         }
+//         else{
+//             $thisNoteBtn.hide();
+//         }
+//         batchOperation(type);
+//     })
+
+//     $('.func-' + type + ':not(:checked)').parents('tr').on('mouseenter', function(){
+//         $(this).find($('.func-' + type)).show();
+//     })
+//     $('.func-' + type + ':not(:checked)').parents('tr').on('mouseleave', function(){
+//         $(this).find($('.func-' + type)).hide();
+//     })
+
+//     checkForAllOperation(type)
+//     function checkForAllOperation(type) {
+//         $('#chk_' + type + '_all').change(function(){
+//             const isChecked = this.checked;
+//             if(isChecked){
+//                 showAllNoteBtn();
+//             }
+//             else{
+//                 hideAllNoteBtn();
+//             }
+//         })
+//     }
+
+//     function hideAllNoteBtn(){
+//         $('.chk-' + type + ':checked').click();
+//         $('.chk-' + type).parent().parent('tr').removeClass('func-check-highlight');
+//     }
+//     function showAllNoteBtn(){
+//         $('.chk-' + type + ':not(:checked)').click();
+//         $('.chk-' + type).parent().parent('tr').addClass('func-check-highlight');
+//     }
+
+//     // 切換篩選列表時，底部操作面板若有打開則須隱藏
+//     $('[data-func="filter"] input[type=radio]').change(function(){
+        
+//     })
+
+// }
+
+
+
+//=============================================
+// BTN
+//=============================================
+
+// 執行取消派案
+$('.js-btn-unassign').click(function(){
+    toastWithdrawSuccess();
+})
+
+// 執行退案
+$('.js-btn-withdraw').click(function(){
+    toastWithdrawSuccess();
+})
+
+
+//=============================================
+// TOAST 操作回饋訊息
+//=============================================
+
+const toastFailed = () => {
+    SnackBar({
+        status: 'danger',
+        message: '操作失敗！請重試',
+        timeout: 2000,
+        fixed: true,
     })
 }
 
-// check single checkbox for DELETE
-const checkForDelete = () => {
-    $('.chk-del').change(function(){
-        // highlight tr
-        const isChecked = this.checked;
-        if(isChecked){
-            $(this).parent().parent('tr').addClass('delete-highlight');
-        }
-        else{
-            $(this).parent().parent('tr').removeClass('delete-highlight');
-        }
-
-        const countInputAll = $('.chk-del').length;
-        const countInputIsChecked = $('.chk-del:checked').length;
-        if(countInputIsChecked == countInputAll) {
-            $('#chk_delete_all').prop( "checked", true );
-        }
-        else{
-            $('#chk_delete_all').prop( "checked", false );
-        }
-
-        showDeleteFunc();
+const toastWithdrawSuccess = () => {
+    SnackBar({
+        status: 'success',
+        message: '<i class="fa-solid fa-check"></i> 取消派案成功！　',
+        timeout: 4000,
+        fixed: true,
+        actions: [
+            {
+                text: '[ 復原 ]',
+                dismiss: true,
+                function: () => {
+                    alert('復原成功');
+                }
+            }
+        ]
     })
-};
-
-// show DELETE fun panel
-const showDeleteFunc = () => {
-    const countChecked =$('td.delete input.chk-del[type=checkbox]:checked').length;
-    if(countChecked > 0) {
-        $('.delete-wrap').addClass('show');
-    }
-    else{
-        $('.delete-wrap').removeClass('show');
-    }
 }
 
-$('#cancel_del').click(function(){
-    $('.delete-wrap').removeClass('show');
-    $('#chk_delete_all').prop( "checked", false );
-    $('.chk-del').prop( "checked", false );
-    $('.delete-highlight').removeClass('delete-highlight');
-})
-
-//退案---------------------------------------
-
-// inital
-$('.col-withdraw-note').hide();
-$('.func-withdraw').hide();
-$('.col-form-assign').attr('colspan', 1);
-
-//
-$('.chk-withdraw').change(function(){
-    // highlight tr
-    const isChecked = this.checked;
-    const funcWithdraw = $(this).parent().next().find('.func-withdraw');
-    // const funcWithdraw = $(this).next('.func-withdraw');
-    const colWithdraw = $('.col-withdraw-note');
-    if(isChecked){
-        // colWithdraw.show();
-        funcWithdraw.show();
-        // $('.col-form-assign').attr('colspan', 2);
-    }
-    else{
-        funcWithdraw.hide();
-    }
-
-    const countInputIsChecked = $('.chk-withdraw:checked').length;
-    if(countInputIsChecked == 0) {
-        $('.col-form-assign').attr('colspan', 1);
-        colWithdraw.hide();
-    }
-
-
-})
+// const toastCancelWithdrawSuccess = () => {
+//     SnackBar({
+//         status: 'success',
+//         message: '<i class="fa-solid fa-check"></i> 已取消退案！　',
+//         timeout: 2000,
+//         fixed: true,
+//     })
+// }
