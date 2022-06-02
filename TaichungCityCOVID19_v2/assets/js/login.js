@@ -58,7 +58,7 @@ $(() => {
         
         // 條件皆符合
         if (isMatch && isCodeMatch) {
-            window.location.href='index.html'
+            window.location.href='login.html'
         }
     }
 
