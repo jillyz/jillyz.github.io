@@ -88,46 +88,41 @@
             <div class="GSMis-main-inner">
 
                 <h2 class="GSMis-section-title">生活關懷日誌</h2>
-                <div class="mb-3">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input " type="radio" id="flexRadioDefault1" name="flexRadioDefault">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            全部
-                        </label>
+                <div class="row">
+                    <div class="col-md-auto mt-1">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input " type="radio" id="flexRadioDefault1" name="flexRadioDefault">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                全部
+                            </label>
+                        </div>
+                
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input " type="radio" id="flexRadioDefault2" name="flexRadioDefault" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                定期關懷
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input " type="radio" id="flexRadioDefault3" name="flexRadioDefault">
+                            <label class="form-check-label" for="flexRadioDefault3">
+                                期滿轉自主健康管理/結案
+                            </label>
+                        </div>
                     </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input " type="radio" id="flexRadioDefault2" name="flexRadioDefault" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            當日生活關懷日誌摘要
-                        </label>
+                    <div class="col-md-auto split-line-left">
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" placeholder="請輸入姓名" aria-label="請輸入姓名"
+                                aria-describedby="button-addon2">
+                            <input type="text" class="form-control" placeholder="身分證字號/護照號碼" aria-label="身分證字號/護照號碼"
+                                aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                                    class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input " type="radio" id="flexRadioDefault3" name="flexRadioDefault">
-                        <label class="form-check-label" for="flexRadioDefault3">
-                            期滿轉自主健康管理/結案
-                        </label>
+                    <div class="col-md-auto mt-1 bold split-line-left">
+                        共 <strong>99</strong> 筆
                     </div>
-                    <!-- <div class="form-check form-check-inline">
-                        <input class="form-check-input " type="radio" id="flexRadioDefault4" name="flexRadioDefault">
-                        <label class="form-check-label" for="flexRadioDefault4">
-                            未滿10日因故轉
-                        </label>
-                    </div> -->
-                    <!-- ｜
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input " type="checkbox" id="filter_1" name="filter">
-                        <label class="form-check-label" for="filter_1">
-                            有需協助事項
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input " type="checkbox" id="filter_2" name="flexRadioDefault">
-                        <label class="form-check-label" for="filter_2">
-                            轉介其他單位
-                        </label>
-                    </div> -->
-                    ｜ 共 99 筆
                 </div>
 
                 <!-- .table-responsive 表格 -->
@@ -277,7 +272,7 @@
 
     <div class="offcanvas offcanvas-end offcanvas-width" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-            <h5 id="offcanvasRightLabel">每日電話關懷紀錄表</h5>
+            <h5 id="offcanvasRightLabel">每日生活關懷紀錄表</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
