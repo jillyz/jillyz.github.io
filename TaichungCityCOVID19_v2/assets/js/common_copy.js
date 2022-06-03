@@ -126,7 +126,13 @@ function batchOperation(type) {
     }
 
     // hide Operation func panel
-    
+    function hideFuncPane (type) {
+        $thisPane.removeClass('show');
+        $('#chk_' + type + '_all').prop( "checked", false );
+        // $('.chk-' + type).prop( "checked", false );
+        $('.chk-' + type + ':checked').click();
+        $('.func-check-highlight').removeClass('func-check-highlight');
+    }
 
     // cancel Operation check & func panel
     $('#cancel_' + type).click(function(){
@@ -140,71 +146,84 @@ function batchOperation(type) {
 
 }
 
-function hideFuncPane (type) {
-    var $thisPane = $('.func-pane-wrap[data-func="' + type + '"]');
-    $thisPane.removeClass('show');
-    $('#chk_' + type + '_all').prop( "checked", false );
-    // $('.chk-' + type).prop( "checked", false );
-    $('.chk-' + type + ':checked').click();
-    $('.func-check-highlight').removeClass('func-check-highlight');
-}
+
+//=============================================
+// 單筆操作 + 後面輸入原因及送出（取消派案）
+//=============================================
+
+// function checkAndReasonOperation(type){
+
+//     // inital
+//     // $('.col-' + type + '-note').hide();
+//     $('.func-' + type).hide();
+
+//     // 出現輸入框及送出按鈕
+//     $('.chk-' + type).change(function(){
+//         // highlight tr
+//         const isChecked = this.checked;
+//         const $thisNoteBtn= $(this).parent().next().find('.func-' + type);
+//         if(isChecked){
+//             $thisNoteBtn.show();
+//         }
+//         else{
+//             $thisNoteBtn.hide();
+//         }
+//         batchOperation(type);
+//     })
+
+//     $('.func-' + type + ':not(:checked)').parents('tr').on('mouseenter', function(){
+//         $(this).find($('.func-' + type)).show();
+//     })
+//     $('.func-' + type + ':not(:checked)').parents('tr').on('mouseleave', function(){
+//         $(this).find($('.func-' + type)).hide();
+//     })
+
+//     checkForAllOperation(type)
+//     function checkForAllOperation(type) {
+//         $('#chk_' + type + '_all').change(function(){
+//             const isChecked = this.checked;
+//             if(isChecked){
+//                 showAllNoteBtn();
+//             }
+//             else{
+//                 hideAllNoteBtn();
+//             }
+//         })
+//     }
+
+//     function hideAllNoteBtn(){
+//         $('.chk-' + type + ':checked').click();
+//         $('.chk-' + type).parent().parent('tr').removeClass('func-check-highlight');
+//     }
+//     function showAllNoteBtn(){
+//         $('.chk-' + type + ':not(:checked)').click();
+//         $('.chk-' + type).parent().parent('tr').addClass('func-check-highlight');
+//     }
+
+//     // 切換篩選列表時，底部操作面板若有打開則須隱藏
+//     $('[data-func="filter"] input[type=radio]').change(function(){
+        
+//     })
+
+// }
+
 
 
 //=============================================
 // BTN
 //=============================================
 
-// 執行派案
-$('.js-btn-assign').click(function(){
-    toastSuccess('派案成功！');
-    hideFuncPane('assign');
-})
-
 // 執行取消派案
 $('.js-btn-unassign').click(function(){
-    toastSuccess_UndoAction(
-        '取消派案成功！', 
-        function(){
-            alert('已復原取消派案！');
-        }
-    );
-    hideFuncPane('unassign');
-})
-
-// 批次執行取消派案
-$('.js-btn-batch-unassign').click(function(){
-    toastSuccess_UndoAction(
-        '取消派案成功！<br>王某某, 張某', 
-        function(){
-            alert('已復原取消派案！');
-        }
-    );
-    hideFuncPane('unassign');
+    toastWithdrawSuccess();
 })
 
 // 執行退案
 $('.js-btn-withdraw').click(function(){
-    toastSuccess_UndoAction(
-        '退案成功！', 
-        function(){
-            alert('已復原退案！');
-        }
-    );
-    hideFuncPane('withdraw');
+    toastWithdrawSuccess();
+    // toastFailed();
 })
 
-// 執行刪除
-$('.js-btn-delete').click(function(){
-    toastSuccess_UndoAction(
-        '刪除成功！', 
-        function(){
-            alert('已復原刪除！');
-        }
-    );
-    hideFuncPane('delete');
-})
-
-// 健康評估-註記後隱藏欄位
 $('#btn_case_note').click(function(){
     var val = $('#case_note').val();
     if(val > 0) {
@@ -213,6 +232,7 @@ $('#btn_case_note').click(function(){
     else {
         $('.js-no-fill-for-note').show();
     }
+    
 })
 
 
@@ -220,41 +240,38 @@ $('#btn_case_note').click(function(){
 // TOAST 操作回饋訊息
 //=============================================
 
-// toast 操作失敗
-const toastFailed = (msg) => {
+const toastFailed = () => {
     SnackBar({
         status: 'danger',
-        message: msg ? msg : '操作失敗！請重試',
+        message: '操作失敗！請重試',
         timeout: 2000,
         fixed: true,
     })
 }
 
-// toast 操作成功
-const toastSuccess = (msg) => {
+const toastWithdrawSuccess = () => {
     SnackBar({
         status: 'success',
-        message: '<i class="fa-solid fa-check"></i> ' + msg,
-        timeout: 2000,
-        fixed: true
-    })
-}
-
-// toast 成功 + 復原
-const toastSuccess_UndoAction = (msg, function_Undo) => {
-    SnackBar({
-        status: 'success',
-        message: '<i class="fa-solid fa-check"></i> ' + msg,
-        timeout: 5000,
+        message: '<i class="fa-solid fa-check"></i> 取消派案成功！　',
+        timeout: 4000,
         fixed: true,
         actions: [
             {
                 text: '[ 復原 ]',
                 dismiss: true,
                 function: () => {
-                    function_Undo();
+                    alert('復原成功');
                 }
             }
         ]
     })
 }
+
+// const toastCancelWithdrawSuccess = () => {
+//     SnackBar({
+//         status: 'success',
+//         message: '<i class="fa-solid fa-check"></i> 已取消退案！　',
+//         timeout: 2000,
+//         fixed: true,
+//     })
+// }
