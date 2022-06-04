@@ -143,8 +143,11 @@
     white-space:nowrap; /*希望元素在第一排上面，沒有斷行*/
 }
 
-/* 
-.GSMis-header-wrap {
+
+.GSMis-footer-wrap {
+    background-color: #e5e5e5;
+}
+/* .GSMis-header-wrap {
     background-color: #fff;
 }
 .GSMis-brand a {
@@ -152,9 +155,6 @@
 }
 .GSMis-nav-wrap {
     background-color: #2e8e91;
-}
-.GSMis-footer-wrap {
-    background-color: #e5e5e5;
 }
 @media (min-width: 992px) {
 .GSMis-menu .level-2 {
@@ -210,14 +210,33 @@ td.evaluate {
 td.evaluate [class^="text"] {
     text-decoration: underline;
 }
-td.evaluate:hover span {
+td.evaluate:hover a:not(.btn) {
     text-indent: -1.25em;
 } 
-td.evaluate span i {
+td.evaluate a:not(.btn) i {
     display: none;
 }
-td.evaluate:hover span i {
+td.evaluate:hover a:not(.btn) i {
     display: inline-block;
+}
+.badge.text-bg-info {
+    background-color: #86ebeb;
+    color: #212529;
+    font-size: .875em;
+}
+.badge.text-bg-danger {
+    background-color: #ffc3c1;
+    color: #212529;
+    font-size: .875em;
+}
+.badge.text-bg-dead {
+    background-color: #dedede;
+    color: #212529;
+    font-size: .875em;
+}
+td.evaluate:hover a.badge {
+    margin-left: -1em;
+    padding-left: 3em;
 }
 .bd-l-dot {
     border-left: 1px solid rgb(222, 226, 230);
@@ -241,6 +260,7 @@ td.evaluate:hover span i {
     z-index: 11;
 }
 .note {
+    display: block;
     color: #666;
 }
 
@@ -297,11 +317,24 @@ td.evaluate:hover span i {
 .toolbox {
     margin-left: 1em;
 }
-
+.name {
+    width: 5em;
+}
+.id-passport-number {
+    width: 8em;
+}
 .years-old {
     width: 5em;
 }
-
+.import-time {
+    width: 11em;
+}
+.import-number {
+    width: 10em;
+}
+.date {
+    width: 7em;
+}
 .modal .form-control {
     margin-top: 5px;
 }
