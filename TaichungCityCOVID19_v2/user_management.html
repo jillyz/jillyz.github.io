@@ -63,7 +63,8 @@
                         <li><a href="upload_衛生局.html"><i class="fa-solid fa-file-arrow-up"></i> 確診者資料上傳(衛生局)</a></li>
                         <!-- if 系統管理員 -->
                         <li>
-                            <a href="#" class="children"><i class="fa-solid fa-file-pen"></i> 評估填報<i class="fas fa-chevron-down toggleIcon"></i></a>
+                            <a href="#" class="children"><i class="fa-solid fa-file-pen"></i> 評估填報<i
+                                    class="fas fa-chevron-down toggleIcon"></i></a>
                             <ul class="level-2">
                                 <li><a href="evaluate_診所.html"> 診所評估</a></li>
                                 <li><a href="evaluate_衛生所.html">衛生所總評估</a></li>
@@ -72,13 +73,15 @@
                         <!-- if 區公所 -->
                         <li><a href="diary_區公所.html"><i class="fa-solid fa-book"></i> 生活關懷日誌</a></li>
                         <!-- for all -->
-                        <li class="active"><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估查詢</a></li>
+                        <li class="active"><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估查詢</a>
+                        </li>
                         <!-- if 衛生局 -->
                         <li><a href="report.html"><i class="fa-solid fa-table-list"></i> 收案統計</a></li>
                         <li><a href="dashboard.html"><i class="fa-solid fa-chart-column"></i> 儀表板</a></li>
                         <!-- if 系統管理員 -->
-                        <li>
-                            <a href="#" class="children"><i class="fa-solid fa-gear"></i> 系統管理<i class="fas fa-chevron-down toggleIcon"></i></a>
+                        <li class="active">
+                            <a href="#" class="children"><i class="fa-solid fa-gear"></i> 系統管理<i
+                                    class="fas fa-chevron-down toggleIcon"></i></a>
                             <ul class="level-2">
                                 <li><a href="user_management.html">帳號管理</a></li>
                             </ul>
@@ -95,7 +98,8 @@
                         <!-- 使用者狀態資訊 -->
                         <div class="GSMis-help-user">
                             <span class="GSMis-help-user-name">歡迎○○○ ○○○登入</span>
-                            <button class="GSMis-help-user-logout"><span class="text">登出</span><i class="fas fa-sign-out-alt"></i></button>
+                            <button class="GSMis-help-user-logout"><span class="text">登出</span><i
+                                    class="fas fa-sign-out-alt"></i></button>
                         </div>
                     </div>
                     <!-- /.GSMis-help -->
@@ -110,100 +114,342 @@
         <main class="GSMis-main-wrap">
             <div class="GSMis-main-inner">
 
-                <div class="query">
-                    <div class="GSMis-search-area p-4 bg-light rounded border mb-5">
-                        <!-- 表單組合 -->
-                        <div class="row">
-                            <div class="col-xl-10">
-                                <div class="row mb-1">
-                                    <div class="col-md-3 col-lg-3 col-xl-2">
-                                        <div class="mb-3">
-                                            <!-- <label for="" class="form-label">帳號</label> -->
-                                            <input type="text" name="" id="" class="form-control" placeholder="帳號">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="account-association-tab" data-bs-toggle="tab"
+                            data-bs-target="#account-association-tab-pane" type="button" role="tab"
+                            aria-controls="account-association-tab-pane" aria-selected="true"
+                            onclick="localStorage.setItem('tabAccountManage', 'association');">
+                            診協：帳密登入管理
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="account-clinic-tab" data-bs-toggle="tab"
+                            data-bs-target="#account-clinic-tab-pane" type="button" role="tab"
+                            aria-controls="account-clinic-tab-pane" aria-selected="false"
+                            onclick="localStorage.setItem('tabAccountManage', 'clinic');">
+                            診所：醫事憑證登入管理
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <!-- 診協 -->
+                    <div class="tab-pane" id="account-association-tab-pane" role="tabpanel"
+                        aria-labelledby="account-association-tab" tabindex="0">
+                        <div class="query p-2">
+                            <div class="row GSMis-search-area p-2 bg-light rounded" data-func="filter">
+                                <div class="row">
+                                    <div class="col-md-10 mt-1">
+                                        <div class="row">
+                                            <div class="col-md-auto">
+                                                <div class="input-group input-group-sm">
+                                                    <input type="text" class="form-control" placeholder="帳號"
+                                                        aria-label="帳號" aria-describedby="button-addon2">
+                                                    <input type="text" class="form-control" placeholder="診協名稱"
+                                                        aria-label="診協名稱" aria-describedby="button-addon2">
+                                                    <select name="" id="" class="form-select">
+                                                        <option value="">--負責地區--</option>
+                                                        <option value="1">OO區</option>
+                                                        <option value="2">OO區</option>
+                                                        <option value="3">OO區</option>
+                                                        <option value="4">OO區</option>
+                                                    </select>
+                                                    <button class="btn btn-outline-secondary" type="button"
+                                                        id="button-addon2"><i
+                                                            class="fa-solid fa-magnifying-glass"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-auto mt-1 bold split-line-left">
+                                                共 <strong>99</strong> 筆
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-lg-3 col-xl-2">
-                                        <div class="mb-3">
-                                            <!-- <label for="" class="form-label">名稱</label> -->
-                                            <input type="text" name="" id="" class="form-control" placeholder="名稱">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-lg-3 col-xl-2">
-                                        <div class="mb-3">
-                                            <select name="" id="" class="form-select">
-                                                <option value="">--負責地區--</option>
-                                                <option value="1">OO區</option>
-                                                <option value="2">OO區</option>
-                                                <option value="3">OO區</option>
-                                                <option value="4">OO區</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3 col-lg-3 col-xl-2">
-                                        <a href="" class="btn w-100 btn-secondary">查詢</a>
+                                    <div class="col-md-2">
+                                        <a href="" class="btn w-100 btn-success" data-bs-toggle="modal"
+                                            data-bs-target="#editModal"><i class="fa-solid fa-plus"></i> 新增診協帳號</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-2">
-                                <a href="" class="btn w-100 btn-success" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa-solid fa-plus"></i> 新增帳號</a>
+                        </div>
+                        <!-- 診協清單 -->
+                        <div class="result p-3">
+                            <!-- .table-responsive 表格 -->
+                            <div class="table-responsive">
+                                <table class="table table-hover striped GSMis-table-rwd small">
+                                    <thead>
+                                        <tr>
+                                            <th>帳號</th>
+                                            <th>診協名稱</th>
+                                            <th>負責地區</th>
+                                            <th>管理</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td data-th="帳號" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                                aria-controls="offcanvasRight">TCCG0303</td>
+                                            <td data-th="診所名稱" data-bs-toggle="offcanvas"
+                                                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                                大台中診協-大雅區
+                                            </td>
+                                            <td data-th="負責地區" data-bs-toggle="offcanvas"
+                                                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">北區、北屯區
+                                            </td>
+                                            <td data-th="管理">
+                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                    data-bs-toggle="modal" data-bs-target="#editModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    編輯
+                                                </button>
+                                                <button type="button" class="btn btn-outline-secondary btn-sm"
+                                                    data-bs-toggle="modal" data-bs-target="#pwModal">
+                                                    <i class="fa-solid fa-lock"></i>
+                                                    變更密碼
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+
+                            <!-- 分頁 -->
+                            <nav>
+                                <ul class="pagination GSMis-pagination justify-content-center ">
+                                    <li class="page-item disabled ">
+                                        <a class="page-link " href="# " tabindex="-1 " aria-disabled="true ">上一頁</a>
+                                    </li>
+                                    <li class="page-item "><a class="page-link " href="# ">1</a></li>
+                                    <li class="page-item active " aria-current="page ">
+                                        <a class="page-link " href="# ">2</a>
+                                    </li>
+                                    <li class="page-item "><a class="page-link " href="# ">3</a></li>
+                                    <li class="page-item ">
+                                        <a class="page-link " href="# ">下一頁</a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                        </div>
+                    </div>
+                    <!-- 診所 -->
+                    <div class="tab-pane" id="account-clinic-tab-pane" role="tabpanel"
+                        aria-labelledby="account-clinic-tab" tabindex="0">
+                        <div class="query p-2">
+                            <div class="row GSMis-search-area p-2 bg-light rounded" data-func="filter">
+                                <div class="row">
+                                    <div class="col-md-10 mt-1">
+                                        <div class="row">
+                                            <div class="col-md-auto">
+                                                <div class="input-group input-group-sm">
+                                                    <input type="text" class="form-control" placeholder="診所名稱"
+                                                        aria-label="診協名稱" aria-describedby="button-addon2">
+                                                    <select name="" id="" class="form-select">
+                                                        <option value="">--負責地區--</option>
+                                                        <option value="1">OO區</option>
+                                                        <option value="2">OO區</option>
+                                                        <option value="3">OO區</option>
+                                                        <option value="4">OO區</option>
+                                                    </select>
+                                                    <input type="text" class="form-control" placeholder="醫事人員姓名"
+                                                        aria-label="醫事人員姓名" aria-describedby="button-addon2">
+                                                    <input type="text" class="form-control" placeholder="醫事憑證IC卡號"
+                                                        aria-label="醫事憑證IC卡號" aria-describedby="button-addon2">
+                                                    <button class="btn btn-outline-secondary" type="button"
+                                                        id="button-addon2"><i
+                                                            class="fa-solid fa-magnifying-glass"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-auto mt-1 bold split-line-left">
+                                                共 <strong>99</strong> 筆
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <a href="" class="btn w-100 btn-success" data-bs-toggle="modal"
+                                            data-bs-target="#editClinicModal"><i class="fa-solid fa-plus"></i> 新增診所</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <!-- 診所清單 -->
+                        <div class="result p-3">
+                            <!-- .table-responsive 表格 -->
+                            <div class="">
+                                <table class="table table-hover striped GSMis-table-rwd small">
+                                    <thead>
+                                        <tr>
+                                            <th style="min-width: 16em">診所名稱</th>
+                                            <th style="min-width: 10em">負責地區</th>
+                                            <th>醫事人員</th>
+                                            <th style="width: 17em">管理</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td data-th="診所名稱">
+                                                博新小兒科家庭醫學科診所
+                                            </td>
+                                            <td data-th="負責地區">
+                                                北區、北屯區
+                                            </td>
+                                            <td data-th="診協名稱">
+                                                <a class="btn btn-sm btn-light mb-1" data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    陳某某 HP00000001000284
+                                                </a>
+                                                <a class="btn btn-sm btn-light mb-1" data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    陳某某 HP00000001000284
+                                                </a>
+                                                <a class="btn btn-sm btn-light mb-1" data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    陳某某 HP00000001000284
+                                                </a>
+                                                <a class="btn btn-sm btn-light mb-1" data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    陳某某 HP00000001000284
+                                                </a>
+                                                <a class="btn btn-sm btn-light mb-1" data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    陳某某 HP00000001000284
+                                                </a>
+                                            </td>
+                                            <td data-th="管理">
+                                                <div class="row">
+                                                    <div class="col-auto">
+                                                        <button type="button" class="btn btn-secondary btn-sm"
+                                                            data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                            <i class="fa-solid fa-user-plus"></i> 新增醫事人員
+                                                        </button>
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm"
+                                                            data-bs-toggle="modal" data-bs-target="#editClinicModal">
+                                                            <i class="fa-solid fa-pen"></i>
+                                                            編輯診所
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-th="診所名稱">
+                                                博新小兒科家庭醫學科診所
+                                            </td>
+                                            <td data-th="負責地區">
+                                                北區、北屯區
+                                            </td>
+                                            <td data-th="診協名稱">
+                                                <a class="btn btn-sm btn-light mb-1" data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    陳某某 HP00000001000284
+                                                </a>
+                                                <a class="btn btn-sm btn-light mb-1" data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    陳某某 HP00000001000284
+                                                </a>
+                                                <a class="btn btn-sm btn-light mb-1" data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    陳某某 HP00000001000284
+                                                </a>
+                                                <a class="btn btn-sm btn-light mb-1" data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    陳某某 HP00000001000284
+                                                </a>
+                                                <a class="btn btn-sm btn-light mb-1" data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    陳某某 HP00000001000284
+                                                </a>
+                                            </td>
+                                            <td data-th="管理">
+                                                <div class="row">
+                                                    <div class="col-auto">
+                                                        <button type="button" class="btn btn-secondary btn-sm"
+                                                            data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                            <i class="fa-solid fa-user-plus"></i> 新增醫事人員
+                                                        </button>
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm"
+                                                            data-bs-toggle="modal" data-bs-target="#editClinicModal">
+                                                            <i class="fa-solid fa-pen"></i>
+                                                            編輯診所
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-th="診所名稱">
+                                                博新小兒科家庭醫學科診所
+                                            </td>
+                                            <td data-th="負責地區">
+                                                北區、北屯區
+                                            </td>
+                                            <td data-th="診協名稱">
+                                                <a class="btn btn-sm btn-light mb-1" data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    陳某某 HP00000001000284
+                                                </a>
+                                                <a class="btn btn-sm btn-light mb-1" data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    陳某某 HP00000001000284
+                                                </a>
+                                                <a class="btn btn-sm btn-light mb-1" data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    陳某某 HP00000001000284
+                                                </a>
+                                                <a class="btn btn-sm btn-light mb-1" data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    陳某某 HP00000001000284
+                                                </a>
+                                                <a class="btn btn-sm btn-light mb-1" data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    陳某某 HP00000001000284
+                                                </a>
+                                            </td>
+                                            <td data-th="管理">
+                                                <div class="row">
+                                                    <div class="col-auto">
+                                                        <button type="button" class="btn btn-secondary btn-sm"
+                                                            data-bs-toggle="modal" data-bs-target="#editStaffModal">
+                                                            <i class="fa-solid fa-user-plus"></i> 新增醫事人員
+                                                        </button>
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm"
+                                                            data-bs-toggle="modal" data-bs-target="#editClinicModal">
+                                                            <i class="fa-solid fa-pen"></i>
+                                                            編輯診所
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
 
+                            <!-- 分頁 -->
+                            <nav>
+                                <ul class="pagination GSMis-pagination justify-content-center ">
+                                    <li class="page-item disabled ">
+                                        <a class="page-link " href="# " tabindex="-1 " aria-disabled="true ">上一頁</a>
+                                    </li>
+                                    <li class="page-item "><a class="page-link " href="# ">1</a></li>
+                                    <li class="page-item active " aria-current="page ">
+                                        <a class="page-link " href="# ">2</a>
+                                    </li>
+                                    <li class="page-item "><a class="page-link " href="# ">3</a></li>
+                                    <li class="page-item ">
+                                        <a class="page-link " href="# ">下一頁</a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                        </div>
                     </div>
                 </div>
-
-                <div class="result">
-                    <h2 class="GSMis-section-title">使用者帳號 (共 60 筆)</h2>
-                    <!-- .table-responsive 表格 -->
-                    <div class="table-responsive">
-                        <table class="table table-hover striped GSMis-table-rwd small">
-                            <thead>
-                                <tr>
-                                    <th>帳號</th>
-                                    <th>名稱</th>
-                                    <th>負責地區</th>
-                                    <th>編輯</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr data-bs-toggle="modal" data-bs-target="#editModal">
-                                    <td data-th="帳號" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">TCCG0303</td>
-                                    <td data-th="名稱" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">中國醫藥大學附設醫院</td>
-                                    <td data-th="負責地區" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">北區、北屯區</td>
-                                    <td data-th="編輯">
-                                        <button type="button" class="btn btn-secondary btn-sm">
-                                            <i class="fa-solid fa-user-pen"></i> 
-                                            編輯
-                                        </button>
-                                        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#pwModal">
-                                            <i class="fa-solid fa-lock"></i> 
-                                            變更密碼
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- /.table-responsive -->
-
-                    <!-- 分頁 -->
-                    <nav>
-                        <ul class="pagination GSMis-pagination justify-content-center ">
-                            <li class="page-item disabled ">
-                                <a class="page-link " href="# " tabindex="-1 " aria-disabled="true ">上一頁</a>
-                            </li>
-                            <li class="page-item "><a class="page-link " href="# ">1</a></li>
-                            <li class="page-item active " aria-current="page ">
-                                <a class="page-link " href="# ">2</a>
-                            </li>
-                            <li class="page-item "><a class="page-link " href="# ">3</a></li>
-                            <li class="page-item ">
-                                <a class="page-link " href="# ">下一頁</a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                </div>
+                <!-- /Tab panes -->
 
             </div>
         </main>
@@ -223,12 +469,13 @@
         <a href="# " class=" " title="Go to Top ">TOP</a>
     </div>
 
-    <!-- info Modal -->
-    <div class="modal fade modal-width" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <!-- info Modal , 診協 - 新增編輯:診協帳號 -->
+    <div class="modal fade modal-width" id="editModal" tabindex="-1" aria-labelledby="editModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="editModalLabel">新增管理帳號</h5>
+                    <h5 class="modal-title" id="editModalLabel">新增/編輯診協帳號</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -387,7 +634,7 @@
         </div>
     </div>
 
-    <!-- PW Modal -->
+    <!-- PW Modal ,  診協 - 變更密碼 -->
     <div class="modal fade modal-width" id="pwModal" tabindex="-1" aria-labelledby="pwModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -426,23 +673,201 @@
                     </div>
 
 
-                    <!-- <form id="form-login">
-                            <div class="d-grid gap-4">
-                                <div class="form-floating">
-                                    <input type="password" class="form-control" id="floatingPassword" placeholder="輸入舊密碼">
-                                    <label for="floatingPassword">舊密碼</label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary w-100">儲存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clinic Modal , 診所 - 新增編輯:診所帳號 -->
+    <div class="modal fade modal-width" id="editClinicModal" tabindex="-1" aria-labelledby="editClinicModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editClinicModalLabel">新增/編輯診所</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <code>
+                     <i class="fa-solid fa-circle-exclamation"></i>
+                     若有錯誤訊息顯示在此<br>
+                 </code>
+                    <div class="row mt-3 p-2">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="" class="">診所名稱</label>
+                                <input type="text" name="" id="" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label>負責地區</label>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">中區</label>
                                 </div>
-                                <div class="form-floating">
-                                    <input type="password" class="form-control" id="floatingPassword" placeholder="輸入新密碼">
-                                    <label for="floatingPassword">新密碼</label>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">東區</label>
                                 </div>
-                                <div class="form-floating">
-                                    <input type="password" class="form-control" id="floatingPassword" placeholder="確認新密碼">
-                                    <label for="floatingPassword">確認新密碼</label>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">南區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">西區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">北區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">北屯區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">西屯區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">南屯區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">太平區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">大里區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">霧峰區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">烏日區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">豐原區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">后里區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">石岡區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">東勢區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">和平區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">新社區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">潭子區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">大雅區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">神岡區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">大肚區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">沙鹿區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">龍井區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">梧棲區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">清水區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">大甲區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">外埔區</label>
+                                </div>
+                                <div class="col-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">大安區</label>
                                 </div>
                             </div>
-                        </form> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary w-100">儲存</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Staff Modal , 診所 - 新增編輯:醫事人員 -->
+    <div class="modal fade modal-width" id="editStaffModal" tabindex="-1" aria-labelledby="editStaffModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editStaffModalLabel">新增/編輯醫事人員</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <code>
+                      <i class="fa-solid fa-circle-exclamation"></i>
+                      若有錯誤訊息顯示在此<br>
+                  </code>
+                    <div class="row mt-3 p-2">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="" class="">診所名稱</label>
+                                <input type="text" name="" id="" class="form-control" value="博新小兒科家庭醫學科診所" readonly disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="" class="">醫事人員姓名</label>
+                                <input type="text" name="" id="" value="陳某某" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="" class="">醫事憑證IC卡號</label>
+                                <input type="text" name="" id="" value="HP00000001000284" class="form-control">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary w-100">儲存</button>
@@ -458,6 +883,19 @@
     <!-- 自訂 -->
     <script src="assets/js/base-layout-one.js "></script>
     <script src="assets/js/common.js "></script>
+
+    <script>
+        var tabAccountManage = localStorage.getItem('tabAccountManage');
+        if (tabAccountManage !== null) {
+            $('#account-' + tabAccountManage + '-tab').addClass('active');
+            $('#account-' + tabAccountManage + '-tab-pane').addClass('show active');
+        }
+        else {
+            $('#account-association-tab').addClass('active');
+            $('#account-association-tab-pane').addClass('show active');
+        }
+    </script>
+
 </body>
 
 </html>
