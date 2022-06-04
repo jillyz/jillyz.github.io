@@ -60,7 +60,7 @@
                     <!-- GSMis-menu 主選單 -->
                     <ul class="GSMis-menu">
                         <li class="active"><a href="evaluate_區公所.html"><i class="fa-solid fa-file-lines"></i> 評估填報</a></li>
-                        <li class="active"><a href="diary_診所.html"><i class="fa-solid fa-book"></i> 生活關懷日誌</a></li>
+                        <li class="active"><a href="diary_診所.html"><i class="fa-solid fa-book"></i> 健康關懷日誌</a></li>
                         <li><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估查詢</a></li>
                     </ul>
                     <!-- /.GSMis-menu -->
@@ -89,122 +89,158 @@
             <div class="GSMis-main-inner">
 
                 <h2 class="GSMis-section-title">健康關懷日誌</h2>
-                <div class="row">
-                    <div class="col-md-auto mt-1">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input " type="radio" id="flexRadioDefault1" name="flexRadioDefault">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                全部
-                            </label>
+                <div class="row GSMis-search-area p-3 bg-light rounded border mb-3" data-func="filter">
+                    <div class="row">
+                        <div class="col-md-auto mt-1">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input " type="radio" id="flexRadioDefault1" name="flexRadioDefault">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    全部
+                                </label>
+                            </div>
+                    
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input " type="radio" id="flexRadioDefault2" name="flexRadioDefault" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    定期關懷
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input " type="radio" id="flexRadioDefault3" name="flexRadioDefault">
+                                <label class="form-check-label" for="flexRadioDefault3">
+                                    期滿轉自主健康管理/結案
+                                </label>
+                            </div>
                         </div>
-                
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input " type="radio" id="flexRadioDefault2" name="flexRadioDefault" checked>
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                定期關懷
-                            </label>
+                        <div class="col-md-auto split-line-left">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" placeholder="請輸入姓名" aria-label="請輸入姓名"
+                                    aria-describedby="button-addon2">
+                                <input type="text" class="form-control" placeholder="身分證字號/護照號碼" aria-label="身分證字號/護照號碼"
+                                    aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input " type="radio" id="flexRadioDefault3" name="flexRadioDefault">
-                            <label class="form-check-label" for="flexRadioDefault3">
-                                期滿轉自主健康管理/結案
-                            </label>
+                        <div class="col-md-auto mt-1 bold split-line-left">
+                            共 <strong>99</strong> 筆
                         </div>
-                    </div>
-                    <div class="col-md-auto split-line-left">
-                        <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" placeholder="請輸入姓名" aria-label="請輸入姓名"
-                                aria-describedby="button-addon2">
-                            <input type="text" class="form-control" placeholder="身分證字號/護照號碼" aria-label="身分證字號/護照號碼"
-                                aria-describedby="button-addon2">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
-                                    class="fa-solid fa-magnifying-glass"></i></button>
-                        </div>
-                    </div>
-                    <div class="col-md-auto mt-1 bold split-line-left">
-                        共 <strong>99</strong> 筆
                     </div>
                 </div>
-
                 <!-- .table-responsive 表格 -->
                 <div class="table-responsive">
                     <table class="table table-hover striped GSMis-table-rwd">
                         <thead>
                             <tr>
-                                <th>入案時間</th>
-                                <th>入案編號</th>
-                                <th>報告日</th>
+                                <th class="import-time">入案時間</th>
+                                <th class="import-number">入案編號</th>
+                                <th class="date">報告日</th>
                                 <th class="name">姓名</th>
-                                <th>身分證字號/<br>護照號碼</th>
-                                <th>診斷年齡</th>
-                                <th>狀態</th>
-                                <th>解隔日</th>
+                                <th class="id-passport-number">身分證字號/<br>護照號碼</th>
+                                <th class="years-old">診斷年齡</th>
+                                <th style="width: 6em;">狀態</th>
+                                <th class="date">解隔日</th>
+                                <th>前日關懷結果</th>
                                 <th>當日關懷結果</th>
-                                <th class="evaluate">生活關懷日誌</th>
+                                <th class="evaluate" style="width: 6em;">生活關懷日誌</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                <td data-th="入案時間">111/04/18 13:12:20</td>
+                                <td data-th="入案時間">2022/04/18 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="報告日">2022/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="狀態"> 定期關懷第 2 天</td>
-                                <td data-th="解隔日">111/04/26</td>
-                                <td data-th="當日關懷結果" class="evaluate"></td>
-                                <td data-th="生活關懷日誌" class="evaluate">
-                                    <a class="btn w-75 btn-secondary btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">填報</a>
+                                <td data-th="狀態">
+                                     <!-- 定期關懷 第X天 -->
+                                     第 2 天
                                 </td>
-                            </tr>
-                            <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                <td data-th="入案時間">111/04/18 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="狀態">定期關懷第 5 天</td>
-                                <td data-th="解隔日">111/04/26</td>
+                                <td data-th="解隔日">2022/04/26</td>
                                 <td data-th="當日關懷結果" class="evaluate">
-                                    <!-- 有/無 需協助事項 -->
-                                    <span class="text-dark">有需協助事項</span>
-                                    <!-- 若「處理情形」為「轉介其他單位」則額外顯示 -->
-                                    <br><span class="text-dark">(自行處理完成)</span>
+                                    
                                 </td>
-                                <td data-th="生活關懷日誌" class="evaluate">
-                                    <a class="btn w-75 btn-secondary btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">填報</a>
-                                </td>
-                            </tr>
-                            <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                <td data-th="入案時間">111/04/18 13:12:20</td>
-                                <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
-                                <td data-th="姓名">陳思佑</td>
-                                <td data-th="身分證字號/護照號碼">A123456789</td>
-                                <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="狀態">定期關懷第 7 天</td>
-                                <td data-th="解隔日">111/04/26</td>
                                 <td data-th="當日關懷結果" class="evaluate">
-                                    <!-- 有/無 需協助事項 -->
-                                    <span class="text-dark">有需協助事項</span>
-                                    <!-- 若「處理情形」為「轉介其他單位」則額外顯示 -->
-                                    <br><span class="text-dark">(轉介其他單位)</span>
+
                                 </td>
                                 <td data-th="生活關懷日誌" class="evaluate">
                                     <a class="btn w-75 btn-secondary btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">填報</a>
                                 </td>
                             </tr>
                             <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                <td data-th="入案時間">111/04/18 13:12:20</td>
+                                <td data-th="入案時間">2022/04/18 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="報告日">2022/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="狀態">定期關懷第 7 天</td>
-                                <td data-th="解隔日">111/04/26</td>
+                                <td data-th="狀態">
+                                     <!-- 定期關懷 第X天 -->
+                                     第 5 天
+                                </td>
+                                <td data-th="解隔日">2022/04/26</td>
+                                <td data-th="前日關懷結果" class="evaluate">
+                                    
+                                </td>
+                                <td data-th="當日關懷結果" class="evaluate">
+                                    
+                                </td>
+                                <td data-th="生活關懷日誌" class="evaluate">
+                                    <a class="btn w-75 btn-secondary btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">填報</a>
+                                </td>
+                            </tr>
+                            <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                <td data-th="入案時間">2022/04/18 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">2022/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="狀態">
+                                     <!-- 定期關懷 第X天 -->
+                                     第 7 天
+                                </td>
+                                <td data-th="解隔日">2022/04/26</td>
+                                <td data-th="當日關懷結果" class="evaluate">
+                                    <!-- 關懷結果 -->
+                                    持續有症狀，經評估後為：
+                                    高風險及使用口服抗病毒藥物
+                                    <!-- 後續處理情形 -->
+                                    <small class="note">
+                                        <i class="fa-solid fa-circle-right"></i>
+                                        個案表示症狀再觀察
+                                    </small>
+                                </td>
+                                <td data-th="當日關懷結果" class="evaluate">
+                                    <!-- 關懷結果 -->
+                                    症狀有緩解：
+                                    有服用抗病毒藥物
+                                    <!-- 後續處理情形 -->
+                                    <small class="note">
+                                        <i class="fa-solid fa-circle-right"></i>
+                                        需安排醫師視訊診療
+                                    </small>
+                                </td>
+                                <td data-th="生活關懷日誌" class="evaluate">
+                                    <a class="btn w-75 btn-secondary btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">填報</a>
+                                </td>
+                            </tr>
+                            <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                <td data-th="入案時間">2022/04/18 13:12:20</td>
+                                <td data-th="入案編號">12345678901234</td>
+                                <td data-th="報告日">2022/04/18</td>
+                                <td data-th="姓名">陳思佑</td>
+                                <td data-th="身分證字號/護照號碼">A123456789</td>
+                                <td data-th="診斷年齡(足歲)">33</td>
+                                <td data-th="狀態">
+                                    <!-- 定期關懷 第X天 -->
+                                    第 7 天
+                                </td>
+                                <td data-th="解隔日">2022/04/26</td>
+                                <td data-th="當日關懷結果" class="evaluate">
+                                    
+                                </td>
                                 <td data-th="當日關懷結果" class="evaluate">
                                     <!-- 有/無 需協助事項 -->
                                     <span class="text-dark">無需協助事項</span>
@@ -217,15 +253,23 @@
                             </tr>
 
                             <tr data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                <td data-th="入案時間">111/04/18 13:12:20</td>
+                                <td data-th="入案時間">2022/04/18 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="報告日">2022/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="狀態">期滿轉自主健康管理/結案</td>
-                                <td data-th="解隔日">111/04/26</td>
-                                <td data-th="當日關懷結果" class="evaluate">--</td>
+                                <td data-th="狀態">
+                                    <!-- 期滿轉自主健康管理/結案 -->
+                                    期滿/結案
+                                </td>
+                                <td data-th="解隔日">2022/04/26</td>
+                                <td data-th="當日關懷結果" class="evaluate">
+                                    
+                                </td>
+                                <td data-th="當日關懷結果" class="evaluate">
+                                    --
+                                </td>
                                 <td data-th="生活關懷日誌" class="evaluate">
                                     <a class="btn w-75 btn-outline-secondary btn-evaluate" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">檢視</a>
                                 </td>
@@ -291,7 +335,7 @@
                                 <label for="" class="">報告日<br>發病日</label>
                             </dt>
                         <dd>
-                            <div class="form-control GSMis-no-border">111/04/23 採檢<br>111/04/23 發病</div>
+                            <div class="form-control GSMis-no-border">2022/04/23 採檢<br>2022/04/23 發病</div>
                         </dd>
                         <dt>
                                 <label for="" class="">姓名</label>
@@ -359,7 +403,7 @@
                             <dl class="diary row-narrow">
                                 <dt>
                                     <div class="diary-day">第1天</div>
-                                    <div class="diary-date">111/04/19</div>
+                                    <div class="diary-date">2022/04/19</div>
                                 </dt>
                                 <dd class="wide">
                                     <dl class="GSMis-form-horizontal units-2 mt-5 mb-3">
@@ -367,7 +411,9 @@
                                         <dd class="wide">
                                             <div class="form-control GSMis-no-border">
                                                 發燒(額溫37.5℃或耳溫38℃以上)<br>
+                                                喉嚨癢、痛<br>
                                                 全身倦怠<br>
+                                                嗅味覺異常<br>
                                             </div>
                                         </dd>
                                         <dt>後續處理情形</dt>
@@ -385,7 +431,7 @@
                                         </dd>
                                         <dt>關懷時間/人員</dt>
                                         <dd class="wide">
-                                            <div class="form-control GSMis-no-border">111/04/19 12:00，王某某</div>
+                                            <div class="form-control GSMis-no-border">2022/04/19 12:00，王某某</div>
                                         </dd>
                                     </dl>
                                 </dd>
@@ -397,7 +443,7 @@
                         <dl class="diary row-narrow form">
                             <dt>
                                     <div class="diary-day">今日：第3天</div>
-                                    <div class="diary-date">111/04/21</div>
+                                    <div class="diary-date">2022/04/21</div>
                                 </dt>
                             <dd class="wide">
                                 <dl class="GSMis-form-horizontal units-2 mt-5 mb-3">
@@ -453,8 +499,6 @@
                                                             </label>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox" value="8"
@@ -491,8 +535,6 @@
                                                             </label>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox" value="12"
@@ -565,8 +607,8 @@
                                                                     <label for="rdo_risk_2" class="form-check-label">高風險</label>
                                                                 </div>
                                                                 <div class="form-check">
-                                                                    <input class="form-check-input " type="radio" id="rdo_risk_2" name="risk">
-                                                                    <label for="rdo_risk_2" class="form-check-label">高風險及使用口服抗病毒藥物</label>
+                                                                    <input class="form-check-input " type="radio" id="rdo_risk_3" name="risk">
+                                                                    <label for="rdo_risk_3" class="form-check-label">高風險及使用口服抗病毒藥物</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -618,14 +660,14 @@
                                                 <label for="treat_1" class="form-check-label">繼續居家照護</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input " type="radio" id="treat_1" name="treat" required>
-                                                <label for="treat_1" class="form-check-label">個案表示症狀再觀察，已提醒若症狀持續不適請立即來電</label>
+                                                <input class="form-check-input " type="radio" id="treat_2" name="treat" required>
+                                                <label for="treat_2" class="form-check-label">個案表示症狀再觀察，已提醒若症狀持續不適請立即來電</label>
                                             </div>
                                             <div class="row d-sm-flex g-2 align-items-center">
                                                 <div class="col-auto text-end">
                                                     <div class="form-check">
-                                                        <input class="form-check-input " type="radio" id="treat_2" name="treat">
-                                                        <label for="treat_2" class="form-check-label">
+                                                        <input class="form-check-input " type="radio" id="treat_3" name="treat">
+                                                        <label for="treat_3" class="form-check-label">
                                                             需安排醫師視訊診療，視訊診療時間：
                                                         </label>
                                                     </div>
@@ -644,8 +686,8 @@
                                             <div class="row d-sm-flex g-2 align-items-center">
                                                 <div class="col-auto text-end">
                                                     <div class="form-check">
-                                                        <input class="form-check-input " type="radio" id="treat_2" name="treat">
-                                                        <label for="treat_2" class="form-check-label">
+                                                        <input class="form-check-input " type="radio" id="treat_4" name="treat">
+                                                        <label for="treat_4" class="form-check-label">
                                                             經初步評估無法視訊診療，需安排後送就醫(請聯絡衛生局安排後送)，就醫醫院：
                                                         </label>
                                                     </div>
@@ -657,8 +699,8 @@
                                             <div class="row d-sm-flex g-2 align-items-center">
                                                 <div class="col-auto text-end">
                                                     <div class="form-check">
-                                                        <input class="form-check-input " type="radio" id="treat_2" name="treat">
-                                                        <label for="treat_2" class="form-check-label">
+                                                        <input class="form-check-input " type="radio" id="treat_5" name="treat">
+                                                        <label for="treat_5" class="form-check-label">
                                                             其他，說明：
                                                         </label>
                                                     </div>
@@ -669,7 +711,7 @@
                                             </div>
                                         </div>
                                     </dd>
-                                    <dt class="mt-3">
+                                    <dt class="mt-4">
                                         <label for="" class=""><span class="text-danger">*</span>關懷時間</label>
                                     </dt>
                                     <dd class="wide mt-4">
@@ -699,7 +741,7 @@
                         <dl class="diary">
                             <dt class="is-last-day">
                                     <div class="diary-day">預計解隔日</div>
-                                    <div class="diary-date">111/04/26</div>
+                                    <div class="diary-date">2022/04/26</div>
                                 </dt>
                             <dd></dd>
                         </dl>
