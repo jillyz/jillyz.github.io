@@ -19,7 +19,6 @@ $(() => {
     batchOperation('withdraw');
     batchOperation('assign');
     batchOperation('unassign');
-    // checkAndReasonOperation('unassign')
     
 });
 
@@ -54,12 +53,12 @@ function batchOperation(type) {
             if(isChecked){
                 
                 $('.chk-' + type).prop( "checked", true );
-                $('.chk-' + type).parent().parent('tr').addClass('func-check-highlight');
+                $('.chk-' + type).parents('tr').addClass('func-check-highlight');
             }
             else{
                 hideFuncPane();
                 $('.chk-' + type).prop( "checked", false );
-                $('.chk-' + type).parent().parent('tr').removeClass('func-check-highlight');
+                $('.chk-' + type).parents('tr').removeClass('func-check-highlight');
             }
             showFuncPane();
         })
@@ -68,8 +67,6 @@ function batchOperation(type) {
     // check single checkbox for Operation
     function checkForOperation() {
 
-        // alert(type)
-
         $('.chk-'+ type).change(function(){
 
             checkDifferentOperationType($(this));
@@ -77,10 +74,10 @@ function batchOperation(type) {
             // highlight tr
             const isChecked = this.checked;
             if(isChecked){
-                $(this).parent().parent('tr').addClass('func-check-highlight');
+                $(this).parents('tr').addClass('func-check-highlight');
             }
             else{
-                $(this).parent().parent('tr').removeClass('func-check-highlight');
+                $(this).parents('tr').removeClass('func-check-highlight');
             }
 
             const countInputIsChecked = $('.chk-' + type + ':checked').length;
@@ -125,9 +122,6 @@ function batchOperation(type) {
         }
     }
 
-    // hide Operation func panel
-    
-
     // cancel Operation check & func panel
     $('#cancel_' + type).click(function(){
         hideFuncPane(type);
@@ -140,6 +134,7 @@ function batchOperation(type) {
 
 }
 
+// hide Operation func panel
 function hideFuncPane (type) {
     var $thisPane = $('.func-pane-wrap[data-func="' + type + '"]');
     $thisPane.removeClass('show');
