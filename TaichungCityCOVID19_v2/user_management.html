@@ -151,6 +151,11 @@
                                                     <input type="text" class="form-control" placeholder="診協名稱"
                                                         aria-label="診協名稱" aria-describedby="button-addon2">
                                                     <select name="" id="" class="form-select">
+                                                        <option value="">--啟用/停用--</option>
+                                                        <option value="Y">啟用</option>
+                                                        <option value="N">停用</option>
+                                                    </select>
+                                                    <select name="" id="" class="form-select">
                                                         <option value="">--負責地區--</option>
                                                         <option value="1">OO區</option>
                                                         <option value="2">OO區</option>
@@ -209,6 +214,36 @@
                                                     <i class="fa-solid fa-lock"></i>
                                                     變更密碼
                                                 </button>
+                                                <button type="button" class="btn btn-outline-danger btn-sm">
+                                                    停用
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-th="帳號" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                                aria-controls="offcanvasRight">TCCG0303</td>
+                                            <td data-th="診所名稱" data-bs-toggle="offcanvas"
+                                                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                                大台中診協-大雅區
+                                            </td>
+                                            <td data-th="負責地區" data-bs-toggle="offcanvas"
+                                                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">北區、北屯區
+                                            </td>
+                                            <td data-th="管理">
+                                                <button type="button" class="btn btn-secondary btn-sm"
+                                                    data-bs-toggle="modal" data-bs-target="#editModal">
+                                                    <i class="fa-solid fa-user-pen"></i>
+                                                    編輯
+                                                </button>
+                                                <button type="button" class="btn btn-outline-secondary btn-sm"
+                                                    data-bs-toggle="modal" data-bs-target="#pwModal">
+                                                    <i class="fa-solid fa-lock"></i>
+                                                    變更密碼
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-sm">
+                                                    <i class="fa-solid fa-ban"></i>
+                                                    已停用
+                                                </button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -248,6 +283,11 @@
                                                     <input type="text" class="form-control" placeholder="診所名稱"
                                                         aria-label="診協名稱" aria-describedby="button-addon2">
                                                     <select name="" id="" class="form-select">
+                                                        <option value="">--啟用/停用--</option>
+                                                        <option value="Y">啟用</option>
+                                                        <option value="N">停用</option>
+                                                    </select>
+                                                    <select name="" id="" class="form-select">
                                                         <option value="">--負責地區--</option>
                                                         <option value="1">OO區</option>
                                                         <option value="2">OO區</option>
@@ -269,7 +309,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-2">
-                                        <a href="" class="btn w-100 btn-success" data-bs-toggle="modal"
+                                        <a href="" class="btn w-100 btn-secondary" data-bs-toggle="modal"
                                             data-bs-target="#editClinicModal"><i class="fa-solid fa-plus"></i> 新增診所</a>
                                     </div>
                                 </div>
@@ -285,7 +325,7 @@
                                             <th style="min-width: 16em">診所名稱</th>
                                             <th style="min-width: 10em">負責地區</th>
                                             <th>醫事人員</th>
-                                            <th style="width: 17em">管理</th>
+                                            <th style="width: 24em">管理</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -323,12 +363,15 @@
                                                     <div class="col-auto">
                                                         <button type="button" class="btn btn-secondary btn-sm"
                                                             data-bs-toggle="modal" data-bs-target="#editStaffModal">
-                                                            <i class="fa-solid fa-user-plus"></i> 新增醫事人員
+                                                            <i class="fa-solid fa-user-plus"></i> 新增人員
                                                         </button>
                                                         <button type="button" class="btn btn-outline-secondary btn-sm"
                                                             data-bs-toggle="modal" data-bs-target="#editClinicModal">
                                                             <i class="fa-solid fa-pen"></i>
                                                             編輯診所
+                                                        </button>
+                                                        <button type="button" class="btn btn-outline-danger btn-sm">
+                                                            停用診所
                                                         </button>
                                                     </div>
                                                 </div>
@@ -368,12 +411,16 @@
                                                     <div class="col-auto">
                                                         <button type="button" class="btn btn-secondary btn-sm"
                                                             data-bs-toggle="modal" data-bs-target="#editStaffModal">
-                                                            <i class="fa-solid fa-user-plus"></i> 新增醫事人員
+                                                            <i class="fa-solid fa-user-plus"></i> 新增人員
                                                         </button>
                                                         <button type="button" class="btn btn-outline-secondary btn-sm"
                                                             data-bs-toggle="modal" data-bs-target="#editClinicModal">
                                                             <i class="fa-solid fa-pen"></i>
                                                             編輯診所
+                                                        </button>
+                                                        <button type="button" class="btn btn-danger btn-sm">
+                                                            <i class="fa-solid fa-ban"></i>
+                                                            已停用診所
                                                         </button>
                                                     </div>
                                                 </div>
@@ -413,12 +460,15 @@
                                                     <div class="col-auto">
                                                         <button type="button" class="btn btn-secondary btn-sm"
                                                             data-bs-toggle="modal" data-bs-target="#editStaffModal">
-                                                            <i class="fa-solid fa-user-plus"></i> 新增醫事人員
+                                                            <i class="fa-solid fa-user-plus"></i> 新增人員
                                                         </button>
                                                         <button type="button" class="btn btn-outline-secondary btn-sm"
                                                             data-bs-toggle="modal" data-bs-target="#editClinicModal">
                                                             <i class="fa-solid fa-pen"></i>
                                                             編輯診所
+                                                        </button>
+                                                        <button type="button" class="btn btn-outline-danger btn-sm">
+                                                            停用診所
                                                         </button>
                                                     </div>
                                                 </div>
@@ -871,6 +921,9 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary w-100">儲存</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger btn-25">刪除醫事人員</button>
                 </div>
             </div>
         </div>
