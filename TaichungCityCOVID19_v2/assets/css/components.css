@@ -207,7 +207,7 @@
 td.evaluate {
     font-weight: bold;
 }
-td.evaluate [class^="text"] {
+td.evaluate a {
     text-decoration: underline;
 }
 td.evaluate:hover a:not(.btn) {
@@ -218,6 +218,12 @@ td.evaluate a:not(.btn) i {
 }
 td.evaluate:hover a:not(.btn) i {
     display: inline-block;
+}
+td.evaluate:hover a:not(.btn) .note {
+    text-indent: 0;
+}
+.badge {
+    line-height: 120%;
 }
 .badge.text-bg-info {
     background-color: #86ebeb;
