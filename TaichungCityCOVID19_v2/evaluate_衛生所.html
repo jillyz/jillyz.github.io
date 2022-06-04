@@ -59,7 +59,8 @@
                 <div class="collapse" id="GSMis-collapse-menu">
                     <!-- GSMis-menu 主選單 -->
                     <ul class="GSMis-menu">
-                        <li class="active"><a href="#"><i class="fa-solid fa-file-pen"></i> 總評估</a></li>
+                        <li><a href="assign_衛生所_診協.html"><i class="fa-solid fa-hand-point-right"></i> 派案管理</a></li>
+                        <li class="active"><a href="evaluate_衛生所.html"><i class="fa-solid fa-file-pen"></i> 總評估</a></li>
                         <li><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估查詢</a></li>
                     </ul>
                     <!-- /.GSMis-menu -->
@@ -89,43 +90,45 @@
             <div class="GSMis-main-inner">
 
                 <h2 class="GSMis-section-title">總評估</h2>
-                <div class="row mb-3">
-                    <div class="col-auto mt-1">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input " type="radio" id="flexRadioDefault1"
-                                name="flexRadioDefault">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                全部
-                            </label>
+                <div class="row GSMis-search-area p-3 bg-light rounded border mb-3" data-func="filter">
+                    <div class="row">
+                        <div class="col-auto mt-1">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input " type="radio" id="flexRadioDefault1"
+                                    name="flexRadioDefault">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    全部
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input " type="radio" id="flexRadioDefault2" name="flexRadioDefault"
+                                    checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    待評估
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input " type="radio" id="flexRadioDefault3"
+                                    name="flexRadioDefault">
+                                <label class="form-check-label" for="flexRadioDefault3">
+                                    已評估
+                                </label>
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input " type="radio" id="flexRadioDefault2" name="flexRadioDefault"
-                                checked>
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                待評估
-                            </label>
+                        <div class="col-auto">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" placeholder="請輸入姓名" aria-label="請輸入姓名"
+                                    aria-describedby="button-addon2">
+                                    <input type="text" class="form-control" placeholder="身分證字號/護照號碼" aria-label="身分證字號/護照號碼" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input " type="radio" id="flexRadioDefault3"
-                                name="flexRadioDefault">
-                            <label class="form-check-label" for="flexRadioDefault3">
-                                已評估
-                            </label>
+                        <div class="col-auto mt-1">
+                            共 99 筆
                         </div>
-                    </div>
-                    <div class="col-auto">
-                        <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" placeholder="請輸入姓名" aria-label="請輸入姓名"
-                                aria-describedby="button-addon2">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
-                                    class="fa-solid fa-magnifying-glass"></i></button>
-                        </div>
-                    </div>
-                    <div class="col-auto mt-1">
-                        共 99 筆
                     </div>
                 </div>
-
                 <!-- .table-responsive 表格 -->
                 <div class="table-responsive">
                     <table class="table table-hover striped GSMis-table-rwd">
@@ -154,9 +157,9 @@
                                     <i class="fa-solid fa-clock text-danger is-late" data-bs-toggle="tooltip"
                                         data-bs-placement="right" title="超過1小時未處理"></i>
                                 </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案時間">2022/04/20 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="報告日">2022/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
@@ -174,9 +177,9 @@
                                 aria-controls="offcanvasRight">
                                 <td data-th="超過1小時未處理">
                                 </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案時間">2022/04/20 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="報告日">2022/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
@@ -194,9 +197,9 @@
                                 aria-controls="offcanvasRight">
                                 <td data-th="超過1小時未處理">
                                 </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案時間">2022/04/20 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="報告日">2022/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
@@ -221,9 +224,9 @@
                                 aria-controls="offcanvasRight">
                                 <td data-th="超過1小時未處理">
                                 </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案時間">2022/04/20 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="報告日">2022/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
@@ -248,9 +251,9 @@
                                 aria-controls="offcanvasRight">
                                 <td data-th="超過1小時未處理">
                                 </td>
-                                <td data-th="入案時間">111/04/20 13:12:20</td>
+                                <td data-th="入案時間">2022/04/20 13:12:20</td>
                                 <td data-th="入案編號">12345678901234</td>
-                                <td data-th="報告日">111/04/18</td>
+                                <td data-th="報告日">2022/04/18</td>
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
@@ -333,7 +336,7 @@
                             <label for="" class="">報告日<br>發病日</label>
                         </dt>
                         <dd>
-                            <div class="form-control GSMis-no-border">111/04/23 採檢<br>111/04/23 發病</div>
+                            <div class="form-control GSMis-no-border">2022/04/23 採檢<br>2022/04/23 發病</div>
                         </dd>
                         <dt>
                             <label for="" class="">姓名</label>
@@ -410,10 +413,10 @@
                                 </dt>
                                 <dd class="wide">
                                     <div class="form-control GSMis-no-border">
-                                        無症狀，報告日：111/04/18
+                                        無症狀，報告日：2022/04/18
                                     </div>
                                     <div class="form-control GSMis-no-border">
-                                        有症狀，發病日：111/04/18<br> 發燒(額溫37.5℃或耳溫38℃以上)，開始日期：111/04/18
+                                        有症狀，發病日：2022/04/18<br> 發燒(額溫37.5℃或耳溫38℃以上)，開始日期：2022/04/18
                                         <br> 咳嗽｜喉嚨癢、痛｜鼻塞、流鼻水｜其他（ＯＯＯＯ）
                                     </div>
                                 </dd>
@@ -578,7 +581,7 @@
                             <label for="" class="">健康評估時間/人員</label>
                         </dt>
                         <dd>
-                            <div class="form-control GSMis-no-border">111/04/20 14:30，陳某某</div>
+                            <div class="form-control GSMis-no-border">2022/04/20 14:30，陳某某</div>
                         </dd>
                         <dt>
                             <label for="" class="">環境評估結果</label>
@@ -593,7 +596,7 @@
                             <label for="" class="">環境評估時間/人員</label>
                         </dt>
                         <dd>
-                            <div class="form-control GSMis-no-border">111/04/20 14:30，陳某某</div>
+                            <div class="form-control GSMis-no-border">2022/04/20 14:30，陳某某</div>
                         </dd>
                         <dt>
                             <label for="" class=""><span class="text-danger">*</span>總評估結果</label>
