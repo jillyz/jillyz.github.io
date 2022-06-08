@@ -201,6 +201,17 @@
                 // },
                 tooltip: {
                     trigger: 'item',
+                    formatter: function (p) {
+                        let value = p.value
+                        if (value > 999) {
+                        let parts = value.toString().split('.')
+                        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                        value = parts.join('.')
+                        }
+                        // let res = p.seriesName + '<br/>' + p.name + ' : ' + value + ' (' + p.percent + '%)'
+                        let res = p.name + '<br><b>' + value + '</b> <small>(' + p.percent + '%)</small>'
+                        return res
+                    }
                 },
                 // legend: {
                 //   orient: 'vertical',
@@ -234,6 +245,12 @@
             }
 
             window.addEventListener('resize', myChart.resize);
+
+            function toCurrency(num){
+                var parts = num.toString().split('.');
+                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                return parts.join('.');
+            }
         }
 
 
