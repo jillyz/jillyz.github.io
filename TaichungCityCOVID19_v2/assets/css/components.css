@@ -207,7 +207,7 @@
 td.evaluate {
     font-weight: bold;
 }
-td.evaluate a {
+td.evaluate a:not(.btn) {
     text-decoration: underline;
 }
 td.evaluate:hover a:not(.btn) {
