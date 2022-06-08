@@ -69,8 +69,17 @@
                                 <li><a href="evaluate_衛生所.html">衛生所總評估</a></li>
                             </ul>
                         </li>
-                        <!-- if 區公所 -->
-                        <li><a href="diary_區公所.html"><i class="fa-solid fa-book"></i> 生活關懷日誌</a></li>
+                        <!-- if 系統管理員 -->
+                        <li>
+                            <a href="#" class="children">
+                                <i class="fa-solid fa-book"></i> 關懷日誌
+                                <i class="fas fa-chevron-down toggleIcon"></i>
+                            </a>
+                            <ul class="level-2">
+                                <li><a href="diary_診所.html">健康關懷日誌</a></li>
+                                <li><a href="diary_區公所.html">生活關懷日誌</a></li>
+                            </ul>
+                        </li>
                         <!-- for all -->
                         <li class="active"><a href="query.html"><i class="fa-solid fa-magnifying-glass"></i> 個案評估查詢</a></li>
                         <!-- if 衛生局 -->
@@ -164,6 +173,7 @@
     <script src="assets/js/base-layout-one.js "></script>
     <script src="assets/js/common.js "></script>
 
+    <!-- echarts，可以用CDN，或是抓下來放 assets -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
     <script>
 
@@ -191,7 +201,6 @@
                 // },
                 tooltip: {
                     trigger: 'item',
-                    formatter: '{a} <br/>{b} : {c} ({d}%)'
                 },
                 // legend: {
                 //   orient: 'vertical',
