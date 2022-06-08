@@ -619,6 +619,19 @@
         <div class="offcanvas-body">
             <div class="container">
 
+                <div class="alert alert-warning small mb-3" role="alert">
+                    <ul class="no-list-style mb-0" style="text-indent: -2em;">
+                        <li>
+                            若遇「電話錯誤、電話未接、個案已死亡」之情況，請直接跳至「
+                            <a href="#healthEvaluateResult">評估結果</a>
+                            」做填寫
+                        </li>
+                    </ul>
+                </div>
+
+
+                
+
                 <div class="alert alert-secondary small mb-3" role="alert">
                     <ul class="no-list-style mb-0" style="text-indent: -2em;">
                         <li><b>備註：</b>本評估表係經採受評估者主訴資訊所綜整之評估結果，如有不實受評估者應自負相關責任。</li>
@@ -1422,7 +1435,7 @@
                                 </div>
                             </div>
                         </dd>
-                        <dt>
+                        <dt id="healthEvaluateResult">
                             <label for="" class=""><span class="text-danger">*</span>評估結果</label>
                         </dt>
                         <dd class="wide">
@@ -1486,7 +1499,7 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="result_health" id="result_health_8">
                                         <label class="form-check-label" for="result_health_8">
-                                            死亡
+                                            個案已死亡
                                         </label>
                                     </div>
                                     <div class="form-check">
