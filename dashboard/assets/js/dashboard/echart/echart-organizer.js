@@ -15,7 +15,7 @@ function renderOrganizer(dom) {
                 text: '主辦機關',
                 textStyle: {
                     fontSize: '15',
-                    color: 'rgba(255,255,255,.5)',
+                    color: 'rgba(255,255,255,.75)',
                     fontWeight: 'normal'
                 }
             },

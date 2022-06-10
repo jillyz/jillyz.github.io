@@ -28,7 +28,7 @@ option = {
     data: ['件數','預定經費', '核定經費', ],
     textStyle: {
         // color: '#fff'
-        color: 'rgba(255,255,255,.5)'
+        color: 'rgba(255,255,255,.75)'
     }
   },
   grid: {
@@ -46,7 +46,7 @@ option = {
       },
       axisLabel: {
         // color: '#fff',
-        color: 'rgba(255,255,255,.5)'
+        color: 'rgba(255,255,255,.75)'
       }
     }
   ],
@@ -59,12 +59,12 @@ option = {
       axisLabel: {
         formatter: '{value} 千元',
         // color: '#fff',
-        // color: 'rgba(255,255,255,.5)'
+        color: 'rgba(255,255,255,.75)'
       },
       axisLine: {
         lineStyle: {
           // color: '#fff'
-          // color: 'rgba(255,255,255,.5)'
+          color: 'rgba(255,255,255,.75)'
         }
       },
     },
@@ -73,10 +73,14 @@ option = {
       name: '件數',
       position: 'left',
       alignTicks: true,
+      axisLabel: {
+        color: 'rgba(255,255,255,.75)'
+      },
       axisLine: {
         show: true,
         lineStyle: {
           // color: colors[0]
+          color: 'rgba(255,255,255,.75)'
         }
       },
     },

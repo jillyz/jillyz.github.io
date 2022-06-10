@@ -13,7 +13,7 @@ function renderStage(valueTotal, valueLate, noteTitle) {
             textStyle: {
                 fontSize: 15,
                 // color: '#fff',
-                color: 'rgba(255,255,255,.5)',
+                color: 'rgba(255,255,255,.75)',
                 fontWeight: 'normal'
             }
         },

@@ -12,11 +12,11 @@ function renderCommittee(label, value) {
         title: {
             text: '遴聘次數最多委員',
             textStyle: {
-                fontSize: 13,
-                color: '#fff',
-                fontWeight: 'normal'
+                fontSize: 15,
+                color: 'rgba(255, 255, 255, .75)',
+                fontWeight: 'normal',
             },
-            show: false,
+            show: true,
             left: '-5',
             top: '-2.5'
         },
@@ -43,7 +43,7 @@ function renderCommittee(label, value) {
             },
         },
         grid: {
-            top: 30,
+            top: 40,
             bottom: 20,
             left: 50,
             right: 40,
@@ -54,7 +54,7 @@ function renderCommittee(label, value) {
             inverse: true,
             axisLabel: {
                 // color: '#fff',
-                color: 'rgba(255,255,255, .5)',
+                color: 'rgba(255,255,255, .75)',
             }
         },
         xAxis: {

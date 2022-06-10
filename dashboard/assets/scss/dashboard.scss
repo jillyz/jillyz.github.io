@@ -61,11 +61,12 @@ body{
     display: grid;
     gap: 16px 8px;
 
+    grid-template-columns: repeat(3,1fr);
     @include lg-width{
         // grid-template-columns: repeat(2,1fr);
     }
     @include xl-width{
-        grid-template-columns: repeat(3,1fr);
+        // grid-template-columns: repeat(3,1fr);
     }
     .block{
         $padding: 16px;
@@ -98,8 +99,9 @@ body{
     }
     // 合併
     .unit-2{
+        grid-column: span 2;
         @include xl-width{
-            grid-column: span 2;
+            // grid-column: span 2;
         }
     }
     .full{
@@ -130,12 +132,12 @@ body{
 .opacity-mix{
     $color: white;
 
-    color: rgba($color, .5);
+    color: rgba($color, .75);
     *{
-        border-top-color: rgba($color, .5) !important;
-        border-bottom-color: rgba($color, .5) !important;
-        border-left-color: rgba($color, .5) !important;
-        border-right-color: rgba($color, .5) !important;
+        border-top-color: rgba($color, .75) !important;
+        border-bottom-color: rgba($color, .75) !important;
+        border-left-color: rgba($color, .75) !important;
+        border-right-color: rgba($color, .75) !important;
     }
 }
 
@@ -162,13 +164,13 @@ body{
         flex: 1;
         padding: 0 4px;
 
-        border-left: 1px dotted rgba(white, .5);
+        border-left: 1px dotted rgba(white, .75);
         text-align: center;
         // font-weight: bold;
-        color: rgba(white, .5);
+        color: rgba(white, .75);
         
         &:last-child{
-            border-right: 1px dotted rgba(white, .5);
+            border-right: 1px dotted rgba(white, .75);
         }
     }
     .text{

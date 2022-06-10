@@ -11,10 +11,11 @@ function renderCompany(label, value) {
         title: {
             text: '得標最多廠商',
             textStyle: {
-                fontSize: 13,
-                color: '#fff',
+                fontSize: 15,
+                color: 'rgba(255, 255, 255, .75)',
+                fontWeight: 'normal',
             },
-            show: false,
+            show: true,
             left: '-5',
         },
         // color: '#47bba8',
@@ -40,7 +41,7 @@ function renderCompany(label, value) {
             },
         },
         grid: {
-            top: 30,
+            top: 40,
             bottom: 20,
             // left: 170,
             left: long_string(label).length * 13,
@@ -53,7 +54,7 @@ function renderCompany(label, value) {
             inverse: true,
             axisLabel: {
                 // color: '#fff',
-                color: 'rgba(255,255,255, .5)',
+                color: 'rgba(255,255,255, .75)',
             }
         },
         xAxis: {
