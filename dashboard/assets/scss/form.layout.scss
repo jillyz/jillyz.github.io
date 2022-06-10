@@ -1,0 +1,200 @@
+@import "variables";
+@import "mixin";
+
+/* 表單排列(水平) 最多4個單位 */
+.GSMis-form-horizontal {
+  & > *{
+    margin-bottom: 0;
+  }
+  & > dt {
+    margin-top: 16px;
+    font-weight: bold;
+    
+    // sm時變成horizontal排列
+    @include sm-width {
+      display: flex;
+      justify-content: end;
+
+      margin-left: 8px;
+      margin-top: 7px;
+      text-align: right;
+
+      // 灰色分隔線
+      &::after {
+        content: "";
+        display: block;
+        height: 20px;
+        margin-top: 2px;
+        border-right: 1px solid rgba($border, 0.25);
+        padding-left: 8px;
+        margin-right: 8px;
+      }
+    }
+
+    > label{
+      margin: 0;
+    }
+  }
+
+  // 1單位
+  @include sm-width {
+    display: grid;
+    grid-template-columns: repeat(1, auto 1fr);
+    gap: 20px 4px;
+  }
+
+  // 2單位
+  &.__gs-units-2,
+  &.__gs-units-3,
+  &.__gs-units-4 {
+    @include md-width {
+      grid-template-columns: repeat(2, auto 1fr);
+    }
+  }
+  // 3單位
+  &.__gs-units-3,
+  &.__gs-units-4 {
+    @include lg-width {
+      grid-template-columns: repeat(3, auto 1fr);
+    }
+  }
+  // 4單位
+  &.__gs-units-4 {
+    @include xl-width {
+      grid-template-columns: repeat(4, auto 1fr);
+    }
+  }
+
+  // 合併寬度
+  // 全寬
+  .__gs-col-full {
+    grid-column: 1/-1;
+  }
+  &.__gs-units-2,
+  &.__gs-units-3,
+  &.__gs-units-4 {
+    .__gs-col-wide {
+      grid-column: 1;
+      & + dd {
+        grid-column: 2/-1;
+      }
+    }
+
+    @include md-width {
+      .__gs-col-span {
+        grid-column: 1;
+        & + dd {
+          grid-column: span 3;
+        }
+      }
+    }
+
+    @include lg-width {
+      .__gs-col-span {
+        grid-column: auto;
+        &.__gs-escape {
+          grid-column: 1;
+        }
+      }
+    }
+  }
+}
+
+/* 多行label */
+.GSMis-label {
+  &-multi {
+    margin-top: -5px;
+    line-height: 1.1;
+
+    .__gs-break {
+      @include sm-width {
+        display: block;
+      }
+    }
+  }
+}
+
+/* 表單排列(垂直) 最多4個單位 */
+.GSMis-form-vertical {
+  display: grid;
+  gap: 16px;
+
+  .__gs-item {
+    // border: 1px solid rgba($primary, 0.25);
+    // border-radius: 8px;
+    // padding: 8px;
+
+    .form-control:not(.GSMis-no-border),
+    .form-select {
+      border-width: 0;
+      border-radius: 0;
+      border-bottom: 1px solid rgba($border, 1);
+    }
+    .GSMis-duration .input-group-text {
+      background-color: transparent;
+      border-width: 0;
+    }
+    > label {
+      // display: flex;
+      color: #007a9a;
+      // margin-bottom: 4px;
+      font-weight: bold;
+
+      // 灰色分隔線
+      // &::before {
+      //   content: "";
+      //   display: block;
+      //   height: 20px;
+      //   margin-top: 2px;
+      //   border-right: 1px solid rgba($primary, 0.25);
+      //   padding-left: 8px;
+      //   margin-right: 8px;
+      // }
+    }
+  }
+
+  .__gs-col-full {
+    grid-column: 1/-1;
+  }
+  .__gs-col-span {
+    @include md-width {
+      grid-column: span 2;
+    }
+  }
+  .__gs-col-spanX2 {
+    @include md-width {
+      grid-column: span 2;
+    }
+    @include lg-width {
+      grid-column: span 3;
+    }
+  }
+
+  // 2單位
+  &.__gs-units-2 {
+    @include md-width {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  // 3單位
+  &.__gs-units-3 {
+    @include md-width {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include lg-width {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  // 4單位
+  &.__gs-units-4 {
+    @include md-width {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include lg-width {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include xl-width {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

@@ -1,0 +1,121 @@
+@import "variables";
+@import "mixin";
+/* 表格RWD */
+.GSMis-table-rwd {
+  th {
+    white-space: nowrap;
+  }
+  // thead
+  thead {
+    display: none;
+    @include lg-width {
+      display: table-header-group;
+    }
+  }
+  // td
+  td {
+    display: grid;
+    grid-template-columns: 8em 1fr;
+    @include lg-width {
+      display: table-cell;
+    }
+
+    &::before {
+      content: attr(data-th);
+
+      padding-right: 1em;
+      margin-right: 1em;
+
+      border-right: 1px solid rgba(#333, 0.3);
+      text-align: right;
+
+      @include lg-width {
+        display: none;
+      }
+    }
+
+    @include lg-width {
+      display: table-cell;
+    }
+  }
+  // tr
+  tbody tr {
+    &:nth-child(odd) {
+      background-color: #efefef;
+      @include lg-width {
+        background-color: inherit;
+      }
+    }
+  }
+}
+
+/* 分頁 */
+.GSMis-pagination {
+  .page-link {
+    color: inherit;
+  }
+  .page-item.active .page-link {
+    background-color: $primary;
+    border-color: $primary;
+  }
+}
+
+/* 表格上方功能列 */
+.GSMis-table-top-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include lg-width {
+    // border-bottom: 1px solid $border;
+  }
+
+  > div {
+    margin-bottom: 8px;
+  }
+
+  & + div {
+    // margin-left: 8px;
+  }
+}
+
+/* 表格大標題 */
+.GSMis-table-caption {
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+/* 驗證失敗提示 */
+.form-select.gs-error,
+.form-control.gs-error {
+  border-color: red;
+}
+/*驗證失敗顯示提示文字*/
+.gs-error + .invalid-feedback {
+  display: block;
+}
+
+/* 排序符號 */
+.gs-btn-sort {
+  position: relative;
+  display: inline-block;
+  padding-right: 1.5em;
+
+  color: currentColor !important;
+  text-decoration: none;
+
+  .gs-icons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    opacity: 0.5;
+
+    > * {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}

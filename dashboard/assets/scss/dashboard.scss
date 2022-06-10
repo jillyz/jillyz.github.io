@@ -1,0 +1,293 @@
+@import 'mixin';
+$dark1: #333340;
+$dark2: #3a3d4d;
+$dark3: #28283e;
+$blue: #5dbeff;
+$orange-red: #ff835c;
+$orange: #fbb03b;
+$cyan: #37ffe1;
+$yellow: #f4e537;
+$magenta: #ff5ab8;
+$magenta-2: #ed1e79;
+$blue-ribbon: #536aff;
+
+
+//Utilities
+
+
+body{
+    background-color: $dark1;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* 隱藏 */
+.GSMis-header-wrap{
+    display: none;
+    @include xl-width{
+        display: block;
+    }
+}
+.GSMis-nav-wrap{
+    display: none;
+    @include xl-width{
+        display: block;
+    }
+}
+/* 主框架 */
+.GSMis-wrapper{
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+    @include xl-width{
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr;
+    }
+}
+.GSMis-main-wrap{
+    width: 100vw;
+    @include xl-width{
+        width: calc(100vw - 300px);
+    }
+    .isClose &{
+        @include xl-width{
+            width: calc(100vw - 80px - 10px);
+        }
+    }
+}
+
+/* 儀表板框架 */
+.dashboard-wrap{
+    $r: 8px;
+
+    display: grid;
+    gap: 16px 8px;
+
+    @include lg-width{
+        // grid-template-columns: repeat(2,1fr);
+    }
+    @include xl-width{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .block{
+        $padding: 16px;
+        background-color: $dark2;
+        border-radius: $r;        
+
+        .head{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            min-height: 54px;
+            padding: .25rem $padding;
+            // border-bottom: 1px solid rgba(white, .25);
+            border-bottom: 3px solid rgb(42, 45, 60);
+            line-height: 1;
+
+            .title{
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 0;
+            }
+            h6{
+                font-weight: bold;
+            }
+        }
+        .body{            
+            padding: $padding;
+        }        
+    }
+    // 合併
+    .unit-2{
+        @include xl-width{
+            grid-column: span 2;
+        }
+    }
+    .full{
+        grid-column: 1/-1;
+    }
+}
+
+/* 下拉選單 */
+.form-select{
+    // 小尺寸
+    &.sm{
+        padding: 0.2rem 2rem 0.2rem 0.55rem;
+    }
+    // 深色
+    &.dark-form{
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    }
+}
+
+/* 深色表單樣式 */
+.dark-form{
+    background-color: #525568;
+    color: white;
+    border-color: #8a8c99;
+}
+
+/* 透明度混合 */
+.opacity-mix{
+    $color: white;
+
+    color: rgba($color, .5);
+    *{
+        border-top-color: rgba($color, .5) !important;
+        border-bottom-color: rgba($color, .5) !important;
+        border-left-color: rgba($color, .5) !important;
+        border-right-color: rgba($color, .5) !important;
+    }
+}
+
+/* 小圓點 */
+.dot{
+    display: inline-block;
+    @include avatar(12px, true);
+    margin-right: 8px;
+}
+
+/* 執行階段 */
+.stage-list{
+    display: flex;
+    padding-left: 6px;
+    padding-right: 1px;
+    background-color: $dark2;
+
+    position: relative;
+    top: -23px;
+    >*{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex: 1;
+        padding: 0 4px;
+
+        border-left: 1px dotted rgba(white, .5);
+        text-align: center;
+        // font-weight: bold;
+        color: rgba(white, .5);
+        
+        &:last-child{
+            border-right: 1px dotted rgba(white, .5);
+        }
+    }
+    .text{
+        flex: 1;
+        // font-size: 15px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: end;
+    }
+}
+
+/* 分類切換按鈕 */
+.category-tabs{
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    >*{
+        width: 150px;
+        color: white !important;
+        border-radius: 999rem;
+        transition: all .2s;
+
+        &:hover{
+            background-color: $dark1;
+        }
+        
+        &.active{
+            background-color: $dark1;
+            border-color: rgba(white, .4);
+            // color: #37ffdf !important;}
+        }
+    }
+}
+
+/* == Container-------------------------------------- */
+/* Grid cell容器 */
+.grid-cell-container{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    >*{
+        border: 0px solid transparent;
+        border-bottom-width: 3px;
+        padding: 4px 0;
+    }
+}
+.children-flex-container{
+    >*{
+        display: flex;
+        align-items: center;
+    }
+}
+/* == Utilities-------------------------------------- */
+/* 文字顏色 */
+.text{
+    &-blue{
+        color: $blue !important;
+    }
+    &-orange{
+        color: $orange !important;
+    }
+    &-orange-red{
+        color: $orange-red !important;
+    }
+    &-cyan{
+        color: $cyan !important;
+    }
+    &-yellow{
+        color: $yellow !important;
+    }
+}
+/* 框線顏色 */
+.border{
+    &-blue{
+        border-color: $blue !important;
+    }
+    &-orange{
+        border-color: $orange !important;
+    }
+    &-orange-red{
+        border-color: $orange-red !important;
+    }
+    &-cyan{
+        border-color: $cyan !important;
+    }
+    &-magenta-2{
+        border-color: $magenta-2 !important;
+    }
+}
+/* 被景色 */
+.bg{
+    &-dark1{
+        background-color: $dark1 !important;
+    }
+    &-dark2{
+        background-color: $dark2 !important;
+    }
+    &-dark3{
+        background-color: $dark3 !important;
+    }
+    &-orange-red{
+        background-color: $orange-red !important;
+    }
+    &-blue{
+        background-color: $blue !important;
+    }
+    &-orange{
+        background-color: $orange !important;
+    }
+    &-cyan{
+        background-color: $cyan !important;
+    }
+    &-magenta{
+        background-color: $magenta !important;
+    }
+    &-yellow{
+        background-color: $yellow !important;
+    }
+    &-blue-ribbon{
+        background-color: $blue-ribbon !important;
+    }
+}

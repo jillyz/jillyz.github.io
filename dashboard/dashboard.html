@@ -1,0 +1,818 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>水利署委辦計畫管理系統</title>
+    <!-- Base -->
+    <link
+      rel="stylesheet"
+      href="assets/vendor/bootstrap-5.1.3/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendor/fontawesome-pro-6.0.0/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendor/vanillajs-datepicker@1.2.0/datepicker.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/vendor/sumoselect/sumoselect.min.css"
+    />
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="assets/css/base-layout.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/dashboard.css" />
+  </head>
+
+  <body>
+    <!-- Wrapper -->
+    <div class="GSMis-wrapper isClose">
+      <!-- 刊頭 -->
+      <header class="GSMis-header-wrap">
+        <div class="GSMis-header-inner">
+          <div class="GSMis-header">
+            <div class="item">
+              <!-- GSMis-brand -->
+              <h1 class="GSMis-brand">
+                <a href="index.html">
+                  <img class="GSMis-brand-img" src="assets/img/logo.svg" />
+                  <span class="GSMis-brand-text">委辦計畫管理系統</span>
+                </a>
+              </h1>
+            </div>
+            <div class="item">
+              <div class="header-help-wrapper">
+                <!-- 使用者 -->
+                <div class="item">
+                  <div class="link dropdown" title="會員資料管理">
+                    水利署 綜合企劃組 系統控管人員 登入系統 
+                    <i class="fa-solid fa-angle-down"></i>
+                  </div>
+                  <div class="content">
+                    <a  href="#" class="icon-text text-decoration-none ">
+                      <span class="icon bg"><i class="fa-solid fa-user-gear"></i></span>
+                      <sapn class="text">使用者資料管理</sapn>
+                    </a>
+                    <a  href="#" class="icon-text text-decoration-none js-btn-user-switch">
+                      <span class="icon bg"><i class="fa-duotone fa-user-group"></i></span>
+                      <sapn class="text">切換帳號</sapn>
+                    </a>
+                    <div id="user-switch-form-wrapper" class="mt-3" style="display: none;">
+                      <div class="user-switch-form">
+                        <select name="" id="" class="form-select">
+                          <option value="">請選擇機關</option>
+                        </select>
+                        <select name="" id="" class="form-select">
+                          <option value="">請選擇單位</option>
+                        </select>
+                        <select name="" id="" class="form-select">
+                          <option value="">請選擇科別</option>
+                        </select>
+                        <select name="" id="" class="form-select">
+                          <option value="">請選擇姓名</option>
+                        </select>
+                        <div class="text-end mt-2">
+                          <button class="btn btn-outline-secondary px-4 me-2 js-btn-user-switch">取消</button>
+                          <button class="btn bg-blue text-white"><i class="fa-solid fa-circle-check me-1"></i>確定切換</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+                <!-- 待辦事項 -->
+                <div class="item">                 
+                  <button class="link warning" title="待辦事項">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="badge rounded-pill">8</span>
+                  </button>
+                  <div class="content">
+                    <h4>待辦事項</h4>
+                    <a  href="#" class="icon-text text-decoration-none">
+                      <span class="icon">
+                        <i class="fa-solid fa-bell"></i>
+                      </span>
+                      <span class="text text-decoration-underline">待審閱計畫</span>
+                      <span class="badge rounded-pill align-self-center ms-auto">3</span>
+                    </a>
+                    <a  href="#" class="icon-text text-decoration-none">
+                      <span class="icon">
+                        <i class="fa-solid fa-bell"></i>
+                      </span>
+                      <span class="text text-decoration-underline">評選委員同時為其他<br>計畫廠商</span>
+                      <span class="badge rounded-pill align-self-center ms-auto">2</span>
+                    </a>
+                    <a  href="#" class="icon-text text-decoration-none">
+                      <span class="icon">
+                        <i class="fa-solid fa-bell"></i>
+                      </span>
+                      <span class="text text-decoration-underline">無人督主辦計畫</span>
+                      <span class="badge rounded-pill align-self-center ms-auto">3</span>
+                    </a>
+                  </div>
+                </div>
+                <!-- 重要文件專區 -->
+                <div class="item">
+                  <button class="link" title="重要文件專區">
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                  </button>
+                  <div class="content documents">
+                    <h4>重要文件專區</h4>
+                    <hr>
+                    <div class="scroll">
+                      <div class="scroll-inner">
+                        <h5>水利署及所屬機關委託服務計畫作業要點</h5>
+                        <a href="#" class="icon-text text-decoration-none">
+                          <span class="icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                          <span class="text text-decoration-underline" download>1110323委託服務計畫作業要點</span>
+                        </a>
+                        <a href="#" class="icon-text text-decoration-none">
+                          <span class="icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                          <span class="text text-decoration-underline" download>1110323委託服務計畫作業要點修正對照表</span>
+                        </a>
+                        <a href="#" class="icon-text text-decoration-none">
+                          <span class="icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                          <span class="text text-decoration-underline" download>1110323委託服務計畫作業要點修正總說明</span>
+                        </a>
+                        <hr>
+                        <h5>委託服務計畫採公開評選或審查之採購作業流程補充說明</h5>
+                        <a href="#" class="icon-text text-decoration-none">
+                          <span class="icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                          <span class="text text-decoration-underline" download>1110329評選會議作業程序簡報(範例)</span>
+                        </a>
+                        <a href="#" class="icon-text text-decoration-none">
+                          <span class="icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                          <span class="text text-decoration-underline" download>1110323委託服務計畫採公開評選或審查之 採購作業流程補充說明</span>
+                        </a>
+                        <a href="#" class="icon-text text-decoration-none">
+                          <span class="icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                          <span class="text text-decoration-underline" download>1110323委託服務計畫採公開評選或審查之 採購作業流程補充說明修正對照表</span>
+                        </a>
+                        <a href="#" class="icon-text text-decoration-none">
+                          <span class="icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                          <span class="text text-decoration-underline" download>1110323委託服務計畫採公開評選或審查之 採購作業流程補充說明修正總說明</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 聯絡資訊 -->
+                <div class="item">
+                  <button class="link" title="聯絡資訊">
+                    <i class="fa-solid fa-phone-flip"></i>
+                  </button>
+                  <div class="content">
+                    <h4>逢甲大學地理資訊研究中心<br><span class="text-muted">為您服務</span></h4>
+                    <hr>
+                    <div class="icon-text">
+                      <span class="icon bg">
+                        <i class="fa-solid fa-user-headset"></i>
+                      </span>
+                      <div class="text">
+                        <div>王郁淳 小姐</div>
+                        <div>04-24516669 #629</div>
+                        <a href="mailto:jillwang@gis.tw">jillwang@gis.tw</a>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="icon-text">
+                      <span class="icon bg">
+                        <i class="fa-solid fa-user-headset"></i>
+                      </span>
+                      <div class="text">
+                        <div>張芸甄 小姐</div>
+                        <div>04-24516669 #692</div>
+                        <a href="mailto:eugina@gis.tw">eugina@gis.tw</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 其他協助 -->
+                <div class="item">
+                  <button class="link other" title="其他協助">
+                    <i class="fa-solid fa-question"></i>
+                    <span>其他<br>協助</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                  </button>
+                  <div class="content">
+                    <h4>其他協助</h4>
+                    <hr>
+                    <a href="#" class="icon-text text-decoration-none">
+                      <span class="icon bg"><i class="fa-solid fa-sitemap"></i></span>
+                      <span class="text">網站地圖</span>
+                    </a>
+                    <a href="#" class="icon-text text-decoration-none">
+                      <span class="icon bg"><i class="fa-solid fa-video"></i></span>
+                      <span class="text">教學專區</span>
+                    </a>
+                    <a href="#" class="icon-text text-decoration-none">
+                      <span class="icon bg"><i class="fa-solid fa-circle-question"></i></span>
+                      <span class="text">常見問題</span>
+                    </a>
+                    <a href="#" class="icon-text text-decoration-none">
+                      <span class="icon bg"><i class="fa-solid fa-phone-flip"></i></span>
+                      <span class="text">聯繫客服</span>
+                    </a>
+                    <a href="#" class="icon-text text-decoration-none">
+                      <span class="icon bg"><i class="fa-solid fa-message-pen"></i></span>
+                      <span class="text">意見反應</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- 導覽列 -->
+      <nav class="GSMis-nav-wrap">
+        <div class="GSMis-nav-inner">
+          <!-- 側邊攔開合按鈕 -->
+          <button class="GSMis-hamburger-desktop" title="側邊選單開闔">
+            <i class="fa-regular fa-angle-left"></i>
+          </button>
+          <div class="GSMis-nav-scroll">
+            <div>
+              <a href="index.html" class="primary-menu primary-menu-link "><i class="fa-duotone fa-house-chimney only"></i><span class="ms-2">首頁</span class="ms-2"></a>
+              <a href="dashboard.html" class="primary-menu primary-menu-link current"><i class="fa-duotone fa-gauge-high only"></i><span class="ms-2">儀表板</span class="ms-2"></a>
+              <div id="btn-favorite" class="primary-menu icon-menu-wrapper">
+                <div class="children primary-menu-link only"><i class="fa-duotone fa-stars only"></i><span class="ms-2">常用功能</span class="ms-2"></div>
+                <div id="panel-favorite">
+                  <div class="icon-menu">
+                    <a href="project-application-list.html"><i class="fa-solid fa-star"></i>資料申請登錄</a>
+                    <a href=""><i class="fa-solid fa-star"></i>計畫資料填報</a>
+                    <a href=""><i class="fa-solid fa-star"></i>計畫成果應用追蹤</a>
+                    <a href=""><i class="fa-solid fa-star"></i>資料查詢與匯出</a>
+                    <a href=""><i class="fa-solid fa-star"></i>計畫相似度比對</a>
+                  </div>
+                  <div class="text-end">
+                    <button class="btn btn-icon primary-menu-link d-inline-flex w-auto" type="button" title="編輯" data-bs-toggle="modal" data-bs-target="#gModal"><i class="fa-solid fa-pen d-inline"></i></button>
+                  </div>
+                </div>
+              </div>
+              <!-- GSMis-menu 主選單 -->
+              <ul class="GSMis-menu mb-5">
+                  <!-- item 1 -->
+                  <li>
+                      <a href="#" class="children"><i class="fa-solid fa-file-lines only"></i><span>計畫管理</span><i class="fas fa-chevron-down"></i></a>
+                      <ul class="level-2">
+                          <li><a href="#" >資料申請登錄</a></li>
+                          <li><a href="#" >計畫資料填報</a></li>
+                          <li><a href="#" >無主人督辦計畫</a></li>
+                          <li><a href="#" >作業進度統計資訊</a></li>
+                          <li><a href="#" >結案案件資料補登</a></li>
+                          <li><a href="#" >計畫成果應用追蹤</a></li>
+                          <li><a href="#" >委辦計畫經費上限設定</a></li>
+                      </ul>
+                  </li>
+                  <!-- item 2 -->
+                  <li>
+                      <a href="#" class="children"><i class="fa-solid fa-clipboard-check only"></i><span>計畫審閱管理</span><i class="fas fa-chevron-down"></i></a>
+                      <ul class="level-2">
+                          <li><a href="#" >XXX</a></li>
+                      </ul>
+                  </li>
+                  <!-- item 3 -->
+                  <li>
+                      <a href="#" class="children"><i class="fa-solid fa-file-arrow-down only"></i><span>資料查詢與匯出</span><i class="fas fa-chevron-down"></i></a>
+                      <ul class="level-2">
+                          <li><a href="#" >XXX</a></li>
+                      </ul>
+                  </li>
+                  <!-- item 4 -->
+                  <li>
+                      <a href="#" class="children"><i class="fa-solid fa-chart-column only"></i><span>報表及分析</span><i class="fas fa-chevron-down"></i></a>
+                      <ul class="level-2">
+                          <li><a href="#" >XXX</a></li>
+                      </ul>
+                  </li>
+                  <!-- item 5 -->
+                  <li>
+                      <a href="#" class="children"><i class="fa-solid fa-gear only"></i><span>系統資料維護管理</span><i class="fas fa-chevron-down"></i></a>
+                      <ul class="level-2">
+                          <li><a href="#" >XXX</a></li>
+                      </ul>
+                  </li>
+              </ul>              <!-- /.GSMis-menu -->
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- 主內容區 -->
+      <main class="GSMis-main-wrap">
+        <div class="GSMis-main-inner"><div class="dashboard-wrap">
+    <div class="block full mb-1">
+        <!-- 分類切換按鈕 -->
+        <div class="category-tabs">
+            <button class="btn">預定計畫</button>
+            <button class="btn active">正式計畫</button>
+        </div>
+    </div>
+    <!-- 計畫概要 -->
+    <div class="block">
+        <div class="head">
+            <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 計畫概要</h5>
+            <select name="" id="" class="form-select w-auto rounded-pill sm ms-auto dark-form">
+                <option value="">110年度</option>
+                <option value="">111年度</option>
+            </select>
+        </div>
+        <div class="body">  
+            <!-- 總計 -->
+            <div class="d-flex justify-content-between">
+                <div class="d-grid">
+                    <div class="flex-left-center">
+                        <span class="opacity-50 small me-2">總件數</span>
+                        <button class="btn btn-sm dark-form bg-dark1"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <span class="opacity-50 fs-5 fw-bold">386件</span>
+                </div>
+                <div class="d-grid text-end">
+                    <span class="opacity-50 small">總經費</span>
+                    <span class="opacity-50 fs-5 fw-bold">29億9966萬</span>
+                </div>
+            </div>
+            <!-- 圖表+明細 -->
+            <div class="row small">
+                <!-- 件數統計表 -->
+                <div class="col-md">
+                    <div id="chartOutsourcing" class="" style="height: 180px;"></div>    
+                    <div class="grid-cell-container opacity-mix">
+                            <div class="border-bottom flex-left-center"><span class="dot bg-blue"></span>已發包</div>
+                            <div class="border-bottom text-end">250件</div>
+                            <div class="border-bottom flex-left-center"><span class="dot bg-magenta"></span>未發包</div>
+                            <div class="border-bottom text-end">136件</div>
+                    </div>                            
+                </div>
+                <!-- 經費統計表 -->
+                <div class="col-md">
+                    <div id="chartOutsourcing-2" class="" style="height: 180px;"></div>
+                    <div class="grid-cell-container opacity-mix">
+                            <div class="border-bottom"><span class="dot bg-blue"></span>已發包經費</div>
+                            <div class="border-bottom text-end">20億2千萬</div>
+                            <div class="border-bottom"><span class="dot bg-orange-red"></span>發包結餘款</div>
+                            <div class="border-bottom text-end">5千萬</div>
+                            <div class="border-bottom"><span class="dot bg-yellow"></span>未發包經費</div>
+                            <div class="border-bottom text-end">9億2千萬</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- 計畫執行 -->
+    <div class="block unit-2">        
+        <div class="head">
+            <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 計畫執行</h5>
+        </div>
+        <div class="body">
+            <div class="row">
+                <!-- 主辦機關 -->
+                <div class="col-lg-4">
+                    <div class="block bg-dark1 p-4">
+                        <div id="chartOrganizer" style="height: 200px;"></div>
+                        <div class="grid-cell-container opacity-mix small" style="grid-template-columns: auto auto auto;">
+                                <div class="border-bottom"></div>
+                                <div class="border-bottom text-end">件數</div>
+                                <div class="border-bottom text-end"><span class="ps-3">進度落後</span></div>
+                                <div class="border-bottom"><span class="dot bg-cyan"></span>水利署主辦</div>
+                                <div class="border-bottom text-end">109</div>
+                                <div class="border-bottom text-end">38</div>
+                                <div class="border-bottom"><span class="dot bg-blue-ribbon"></span>所屬機關主辦</div>
+                                <div class="border-bottom text-end">277</div>
+                                <div class="border-bottom text-end">71</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 執行階段 -->
+                <div class="col-lg">
+                    <div class="p-4">
+                        <div id="chartStage" style="height: 245px;"></div>
+                        <div class="stage-list small">
+                            <div class="item">
+                                <span class="text"><span>計畫</span><span>申請</span></span>
+                                <span class="">0</span>
+                            </div>
+                            <div class="item">
+                                <span class="text"><span>計畫</span><span>核可</span></span>
+                                <span class="">145</span>
+                            </div>
+                            <div class="item">
+                                <span class="text"><span>採購</span><span>提報</span></span>
+                                <span class="">42</span>
+                            </div>
+                            <div class="item">
+                                <span class="text"><span>契約</span><span>簽訂</span></span>
+                                <span class="">91</span>
+                            </div>
+                            <div class="item">
+                                <span class="text"><span>契約</span><span>變更</span></span>
+                                <span class="">1</span>
+                            </div>
+                            <div class="item">
+                                <span class="text"><span>進度</span><span>填報</span></span>
+                                <span class="">107</span>
+                            </div>
+                            <div class="item">
+                                <span class="text">已結案</span>
+                                <span class="">0</span>
+                            </div>
+                            <div class="item">
+                                <span class="text"><span>成果</span><span>上傳</span></span>
+                                <span class="">0</span>
+                            </div>
+                            <div class="item">
+                                <span class="text"><span>成果</span><span>歸檔</span></span>
+                                <span class="">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 計畫優先序 -->
+    <div class="block">        
+        <div class="head">
+            <h5 class="title flex-left-center w-100">
+                <span class="me-2"><i class="fa-regular fa-grip-dots text-cyan"></i> 計畫優先序</span> 
+                <button class="btn btn-sm dark-form bg-dark1 ms-auto"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </h5>
+        </div>
+        <div class="body">
+            <!-- 總計 -->
+            <div class="d-flex justify-content-between opacity-mix small ">
+                <div class="d-grid">
+                    <span class="">總件數</span>
+                    <span class="fs-5 fw-bold">250件</span>
+                </div>
+                <div class="d-grid text-end">
+                    <span class="">不含跨年度計畫及無需訂約計畫</span>
+                    <span class="fs-5 fw-bold">20</span>
+                </div>
+            </div>
+            <!-- 圖表+明細 -->
+            <div class="grid-cell-container small" style="grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                <div class="item opacity-mix">
+                    <div id="chartFunds-1" style="height: 130px;"></div>
+                    <h5 class="fw-bold text-center mb-4">最優先</h5>
+                    <div class="grid-cell-container opacity-mix border-top border-magenta-2" style="grid-template-columns: auto auto;">
+                        <span class="border-bottom">總件數</span>
+                        <span class="text-end border-bottom">71</span>
+                        <span class="border-bottom">已發包</span>
+                        <span class="text-end border-bottom">54</span>
+                        <span class="border-bottom">未發包</span>
+                        <span class="text-end border-bottom">17</span>
+                    </div>
+                    <div class="mt-2 text-center">
+                        <span class="">辦理期限</span>
+                        <span class="">110/12/31</span>
+                    </div>
+                </div>
+                <div class="item opacity-mix">
+                    <div id="chartFunds-2" style="height: 130px;"></div>
+                    <h5 class="fw-bold text-center mb-4">優先</h5>
+                    <div class="grid-cell-container opacity-mix border-top border-orange" style="grid-template-columns: auto auto;">
+                        <span class="border-bottom">總件數</span>
+                        <span class="text-end border-bottom">106</span>
+                        <span class="border-bottom">已發包</span>
+                        <span class="text-end border-bottom">95</span>
+                        <span class="border-bottom">未發包</span>
+                        <span class="text-end border-bottom">11</span>
+                    </div>
+                    <div class="mt-2 text-center">
+                        <span class="">辦理期限</span>
+                        <span class="">111/03/30</span>
+                    </div>
+                </div>
+                <div class="item opacity-mix">
+                    <div id="chartFunds-3" style="height: 130px;"></div>
+                    <h5 class="fw-bold text-center mb-4">一般</h5>
+                    <div class="grid-cell-container opacity-mix border-top border-cyan" style="grid-template-columns: auto auto;">
+                        <span class="border-bottom">總件數</span>
+                        <span class="text-end border-bottom">38</span>
+                        <span class="border-bottom">已發包</span>
+                        <span class="text-end border-bottom">20</span>
+                        <span class="border-bottom">未發包</span>
+                        <span class="text-end border-bottom">18</span>
+                    </div>
+                    <div class="mt-2 text-center">
+                        <span class="">辦理期限</span>
+                        <span class="">111/05/31</span>
+                    </div>
+                </div>
+                <div class="item opacity-mix">
+                    <div id="chartFunds-4" style="height: 130px;"></div>
+                    <h5 class="fw-bold text-center mb-4">增辦</h5>
+                    <div class="grid-cell-container opacity-mix border-top border-blue" style="grid-template-columns: auto auto;">
+                        <span class="border-bottom">總件數</span>
+                        <span class="text-end border-bottom">35</span>
+                        <span class="border-bottom">已發包</span>
+                        <span class="text-end border-bottom">22</span>
+                        <span class="border-bottom">未發包</span>
+                        <span class="text-end border-bottom">13</span>
+                    </div>
+                    <div class="mt-2 text-center">
+                        <span class="">辦理期限</span>
+                        <span class="">111/06/30</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 廠商資訊 -->
+    <div class="block d-flex flex-column">        
+        <div class="head justify-content-between">
+            <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 廠商資訊</h5>
+            <div class="d-flex">
+                <div class="input-group">
+                    <select name="" id="" class="form-select dark-form sm">
+                        <option value="">全署</option>
+                        <option value="">本署</option>
+                        <option value="">第一河川局</option>
+                        <option value="">第二河川局</option>
+                        <option value="">第三河川局</option>
+                        <option value="">第四河川局</option>
+                        <option value="">第五河川局</option>
+                        <option value="">第六河川局</option>
+                        <option value="">第七河川局</option>
+                        <option value="">第八河川局</option>
+                        <option value="">第九河川局</option>
+                        <option value="">第十河川局</option>
+                        <option value="">北區水資源局</option>
+                        <option value="">中區水資源局</option>
+                        <option value="">南區水資源局</option>
+                        <option value="">水利規劃試驗所</option>
+                        <option value="">臺北水源特定區管理局</option>
+                    </select>
+                    <select name="" id="" class="form-select dark-form sm">
+                        <option value="">當年度得標</option>
+                        <option value="">連續2年得標</option>
+                        <option value="">連續3年得標</option>
+                        <option value="">連續4年得標</option>
+                        <option value="">連續5年得標</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="body h-100 d-flex flex-column">
+            <div class="flex-center h-100">
+                <div id="chartCompany" class="w-100" style="height: 150px;"></div>
+            </div>
+            <div class="children-flex-container mb-3 opacity-50 small">
+                <div class="justify-content-between border-bottom py-2">
+                    <div class="d-grid">
+                        <span>得標廠商總數</span>
+                        <span class="fw-bold fs-5">250</span>
+                    </div>
+                    <div class="d-grid text-end">
+                        <span>得標計畫主持人總數</span>
+                        <span class="fw-bold fs-5">218</span>
+                    </div>
+                </div>
+                <div class="justify-content-between border-bottom py-2">
+                    <div class="d-grid">
+                        <span>得標3件以上廠商數</span>
+                        <span class="fw-bold fs-5">14</span>
+                    </div>
+                    <div class="d-grid text-end">
+                        <span>得標3件以上計畫主持人數</span>
+                        <span class="fw-bold fs-5">3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 外聘評選委員 -->
+    <div class="block d-flex flex-column">        
+        <div class="head justify-content-between">
+            <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 外聘評選委員</h5>
+            <div class="d-flex">
+                <select name="" id="" class="form-select dark-form sm">
+                    <option value="">全署</option>
+                    <option value="">本署</option>
+                    <option value="">第一河川局</option>
+                    <option value="">第二河川局</option>
+                    <option value="">第三河川局</option>
+                    <option value="">第四河川局</option>
+                    <option value="">第五河川局</option>
+                    <option value="">第六河川局</option>
+                    <option value="">第七河川局</option>
+                    <option value="">第八河川局</option>
+                    <option value="">第九河川局</option>
+                    <option value="">第十河川局</option>
+                    <option value="">北區水資源局</option>
+                    <option value="">中區水資源局</option>
+                    <option value="">南區水資源局</option>
+                    <option value="">水利規劃試驗所</option>
+                    <option value="">臺北水源特定區管理局</option>
+                </select>
+            </div>
+        </div>
+        <div class="body h-100 d-flex flex-column">
+            <div class="flex-center h-100">
+                <div id="chartCommittee" class="w-100" style="height: 150px;"></div>
+            </div>
+            <div class="mb-3 opacity-50 small">
+                <div class="border-bottom py-2">
+                    <div class="d-grid">
+                        <span>遴選委員總數</span>
+                        <span class="fw-bold fs-5">238</span>
+                    </div>
+                </div>
+                <div class="border-bottom py-2">
+                    <div class="d-grid">
+                        <span>鄰選5次以上委員數</span>
+                        <span class="fw-bold fs-5">6</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="full row g-2">
+        <div class="col">
+            <!-- 全署 -->
+            <div class="block">        
+                <div class="head">
+                    <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 全署</h5>
+                    
+                </div>
+                <div class="body">
+                    <div id="container" style="height: 280px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <!-- 委辦計畫經費執行 -->
+            <div class="block">        
+                <div class="head">
+                    <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 委辦計畫經費執行</h5>
+                </div>
+                <div class="body">
+                    <div id="funds1" style="height: 280px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+      </main>
+    </div>
+    <!-- Wrapper End -->
+    <!-- 回到最上面 -->
+    <div class="GSMis-go-top">
+      <a href="#" class="" title="回到最上面">TOP</a>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="gModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><i class="fa-duotone fa-stars me-2"></i>編輯常用功能</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-header fw-bold">
+                        功能選單項目
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title fw-bold text-blue">計畫管理</h5>
+                        <div class="mb-3">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBA0">
+                            <label class="form-check-label" for="flexCheckDefaultBA0">
+                              資料申請登錄
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBA1">
+                            <label class="form-check-label" for="flexCheckDefaultBA1">
+                              計畫資料填報
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBA2">
+                            <label class="form-check-label" for="flexCheckDefaultBA2">
+                              無人督主辦計畫
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBA3">
+                            <label class="form-check-label" for="flexCheckDefaultBA3">
+                              作業進度統計資訊
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBA4">
+                            <label class="form-check-label" for="flexCheckDefaultBA4">
+                              結案案件資料補登
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBA5">
+                            <label class="form-check-label" for="flexCheckDefaultBA5">
+                              計畫成果應用追蹤
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBA6">
+                            <label class="form-check-label" for="flexCheckDefaultBA6">
+                              委辦計畫經費上限設定
+                            </label>
+                          </div>
+                        </div>
+                        <h5 class="card-title fw-bold text-blue">計畫審閱管理</h5>
+                        <div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBB0">
+                            <label class="form-check-label" for="flexCheckDefaultBB0">
+                              審閱委辦計畫資料
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBB1">
+                            <label class="form-check-label" for="flexCheckDefaultBB1">
+                              主持人填報資料審閱
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBB2">
+                            <label class="form-check-label" for="flexCheckDefaultBB2">
+                              資料查詢與匯出
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBB3">
+                            <label class="form-check-label" for="flexCheckDefaultBB3">
+                              資料相似度比對
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-header fw-bold bg-blue text-white">
+                        自訂常用功能
+                      </div>
+                      <div class="card-body bg-light">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBC0" checked>
+                          <label class="form-check-label" for="flexCheckDefaultBC0">
+                            資料申請登錄
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBC1" checked>
+                          <label class="form-check-label" for="flexCheckDefaultBC1">
+                            計畫資料填報
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBC2" checked>
+                          <label class="form-check-label" for="flexCheckDefaultBC2">
+                            計畫成果應用追蹤
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBC3" checked>
+                          <label class="form-check-label" for="flexCheckDefaultBC3">
+                            資料查詢與匯出
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBC4" checked>
+                          <label class="form-check-label" for="flexCheckDefaultBC4">
+                            資料相似度比對
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Base -->
+    <script src="assets/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendor/bootstrap-5.1.3/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/vanillajs-datepicker@1.2.0/datepicker-full.min.js"></script>
+    <script src="assets/vendor/vanillajs-datepicker@1.2.0/zh-TW.js"></script>
+    <script src="assets/vendor/sumoselect/jquery.sumoselect.min.js"></script>
+    <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js "></script>
+    <script data-main="assets/js/dashboard/dashboard-admin" src="assets/js/dashboard/require.js"></script>
+    <!-- 自訂 -->
+    <script src="assets/js/base-layout.js"></script>
+    <script src="assets/js/customJS.js"></script>
+  </body>
+</html>

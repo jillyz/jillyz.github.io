@@ -1,0 +1,111 @@
+@import "variables";
+@import "mixin";
+
+/* ==Center */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pos-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.grid-center {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+
+/* ==Flex */
+.flex-left-center {
+  display: flex;
+  align-items: center;
+}
+
+/* ==Color */
+.text{
+  &-bluePurple{
+    color: $blue-purple !important;
+  }
+  &-blueGray{
+    color: $blue-gray !important;
+  }
+  &-red{
+    color: $red !important;
+  }
+  &-cyanDark{
+    color: $cyanDark !important;
+  }
+  &-brown{
+    color: $brown !important;
+  }
+  &-blue{
+    color: $blue !important;
+  }
+
+}
+a, button{
+  &.text{
+    &-bluePurple{  
+      &:hover{
+        color: darken($blue-purple, 5%)
+      }
+    }
+    &-blueGray{  
+      &:hover{
+        color: darken($blue-gray, 10%)
+      }
+    }
+  
+  }
+}
+
+/* ==Background */
+.bg{
+  &-orange{
+    background-color: $orange !important;
+  }
+  &-red{
+    background-color: $red !important;
+  }
+  &-skyBlue{
+    background-color: $skyBlue !important;
+  }
+  &-blue-gray{
+    background-color: $blue-gray !important;
+  }
+  &-blue{
+    background-color: $blue !important;
+  }
+  &-green{
+    background-color: $green !important;
+  }
+}
+a, button{
+  &.bg{
+    &-orange:hover{
+      background-color: darken($orange, 8%) !important;
+    }
+    &-red:hover{
+      background-color: darken($red, 5%) !important;
+    }
+    &-skyBlue:hover{
+      background-color: darken($skyBlue, 5%) !important;
+    }
+    &-blue-gray:hover{
+      background-color: darken($blue-gray, 5%) !important;
+    }
+    &-blue:hover{
+      background-color: darken($blue, 5%) !important;
+    }
+    &-green:hover{
+      background-color: darken($green, 5%) !important;
+    }
+  }
+}

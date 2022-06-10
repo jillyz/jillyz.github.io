@@ -1,0 +1,412 @@
+@import "variables";
+
+// Media query
+@mixin sm-width() {
+  @media all and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin md-width() {
+  @media all and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin lg-width() {
+  @media all and (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin xl-width() {
+  @media all and (min-width: $xl) {
+    @content;
+  }
+}
+
+@mixin xxl-width() {
+  @media all and (min-width: $xxl) {
+    @content;
+  }
+}
+// ==大頭照
+@mixin avatar($size, $circle: false) {
+  width: $size;
+  height: $size;
+
+  @if $circle {
+    border-radius: $size / 2;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// reset
+@mixin reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// 框架置中
+@mixin inner-center {
+  max-width: $max-with;
+  margin: 0 auto;
+}
+
+// ==base-layout 組件 ===============================================
+@mixin brand {
+  margin-bottom: 0;
+
+  font-size: 24px;
+  font-weight: bold;
+
+  @include lg-width {
+    font-size: 32px;
+  }
+
+  // a
+  a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none !important;
+  }
+
+  // img
+  &-img {
+    height: $header-h * 0.6;
+    margin-right: 0.5em;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: white;
+    @include lg-width {
+      height: $header-h-desktop * 0.6;
+    }
+  }
+  // text
+  &-text {
+  }
+}
+
+@mixin hamburger-mobile {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: $header-h;
+  height: $header-h;
+  color: white !important;
+
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: rgba(black, 0.2);
+  }
+
+  @include lg-width {
+    display: none;
+  }
+}
+
+@mixin help-nav {
+  // Reset
+  @include reset;
+  // Init
+  color: white;
+
+  // 1024
+  @include lg-width {
+    display: flex;
+    align-items: center;
+
+    line-height: 1;
+    margin-right: 2em;
+  }
+
+  //a
+  a {
+    display: block;
+    padding: 8px 16px;
+    color: inherit;
+    text-decoration: none !important;
+    transition: all 0.2s;
+    &:hover {
+      background-color: rgba(black, 0.2);
+    }
+
+    @include lg-width {
+      &:hover {
+        opacity: 0.5;
+        background-color: transparent;
+      }
+    }
+  }
+
+  // li
+  > li {
+    // padding: 0 1em;
+    border-bottom: 1px solid rgba(white, 0.2);
+
+    @include lg-width {
+      // padding: 0;
+      border-width: 0;
+    }
+  }
+  > li + li {
+    @include lg-width {
+      // margin-left: 1em;
+      border-left: 1px solid rgba(white, 0.4);
+
+      // a {
+      //   border-left: 1px solid rgba(white, 0.4);
+      //   padding-left: 1em;
+      // }
+    }
+  }
+}
+
+@mixin help-user {
+  $h: 40px;
+  padding: 8px 16px;
+  @include lg-width {
+    display: flex;
+    padding: 0;
+  }
+  // 使用者狀態
+  &-name {
+    position: absolute;
+    // top: $header-h;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: $h;
+    padding-right: 16px;
+
+    background-color: grey;
+    color: white;
+
+    @include lg-width {
+      // lg的時候強制顯示
+      display: flex !important;
+
+      border-radius: 999rem 0 0 999rem;
+    }
+
+    &::before {
+      content: "";
+      font-family: $font-awesone;
+      font-weight: 400;
+      content: "\f007";
+      font-size: 18px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: $h;
+      height: $h;
+      margin-right: 12px;
+
+      border-radius: 999rem;
+      background-color: #333;
+      border: 3px solid grey;
+    }
+
+    // 1024
+    @include lg-width {
+      // Reset
+      position: static;
+      width: auto;
+    }
+  }
+  // 登出按鈕
+  &-logout {
+    // Reset
+    background-color: transparent;
+    // init
+    color: white !important;
+    border: 1px solid rgba(white, 0.4);
+    border-radius: 4px;
+    padding: 3px 8px;
+
+    @include lg-width {
+      // reset
+      border-width: 0;
+      padding: 0;
+      // Init
+      width: $h;
+      background-color: #eee;
+      color: #333 !important;
+      border-radius: 0 8px 8px 0;
+
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: #b1b1b1;
+        color: white !important;
+      }
+    }
+
+    // 文字
+    .text {
+      margin-right: 6px;
+      @include lg-width {
+        display: none;
+      }
+    }
+  }
+}
+
+@mixin help {
+  @include lg-width {
+    position: fixed;
+    // right: calc((100vw - 900px) / 2);
+    right: 24px;
+    top: 20px;
+    z-index: 99;
+
+    display: flex;
+    align-items: center;
+  }
+}
+
+@mixin collapse-menu {
+  @include lg-width {
+    display: block !important;
+  }
+}
+
+@mixin go-top {
+  $w: 50px;
+  $color: #5c84d2;
+
+  position: fixed;
+  right: 2em;
+  bottom: 1em;
+
+  display: none;
+
+  a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: $w;
+    height: $w;
+
+    background: $color url(../img/goTop.svg) center top 4px no-repeat;
+    border: 3px solid white;
+    border-radius: 999rem;
+    text-indent: -100vw;
+  }
+}
+
+// ==base-layout 大區塊 ==============================
+@mixin nav-wrap {
+  position: sticky;
+  z-index: 99;
+  top: $header-h;
+
+  max-height: calc(100vh - #{$header-h});
+  overflow-y: auto;
+
+  background-color: #5C84D2;
+}
+@mixin header {
+  display: flex;
+  align-items: center;
+
+  height: $header-h;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  // 1024
+  @include lg-width {
+    height: $header-h-desktop;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  // 裝手機漢堡的容器靠右
+  .item:last-child {
+    margin-left: auto;
+  }
+}
+@mixin header-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: #578CDD;
+}
+@mixin breadcrumb {
+  // Reset
+  margin-bottom: 0;
+  border-radius: 0;
+
+  //init
+  padding: 12px 24px;
+  // border-bottom: 1px solid rgba(black, 0.1);
+  color: #7A7A7A;
+  font-size: 15px;
+  
+
+  &::before {
+    font-family: $font-awesone;
+    font-weight: 900;
+    // content: "\f277";
+    content: "\e3af"; //房子
+
+    margin-right: 0.7em;
+  }
+
+  .breadcrumb-item.active{
+    color: $blue;
+    font-weight: bold;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+@mixin footer {
+  padding: 24px;
+  font-size: 14px;
+  text-align: center;
+}
+@mixin main-inner {
+  padding: 32px 24px;
+
+  // @include md-width {
+  //   padding: 24px;
+  // }
+
+  // @include xl-width {
+  //   padding: 40px;
+  // }
+}
+@mixin wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .GSMis-main-inner {
+    // min-height: 2000px;
+  }
+}

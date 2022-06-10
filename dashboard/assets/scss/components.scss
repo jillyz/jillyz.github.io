@@ -1,0 +1,461 @@
+@import "variables";
+@import "mixin";
+//Form
+//Bootstrap
+//Object
+//Components
+
+
+/* Form============================================================== */
+.SumoSelect{
+  width: 100%;
+  .select-all{
+    height: 40px;
+  }
+  >.CaptionCont{
+    border-color: #ced4da;
+    >span.placeholder{
+      background-color: white;
+      color: #6c757d;
+      font-style: normal;
+    }
+  }
+}
+/* Bootstrap============================================================== */
+/* Tooltip */
+.tooltip{
+  &-inner{
+    background-color: $blue-purple;
+    text-align: left;
+    font-size: 14px;
+  }
+}
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before, .bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: $blue-purple;
+}
+.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before, .bs-tooltip-end .tooltip-arrow::before{
+  border-right-color: $blue-purple;
+}
+/* Table */
+.table>:not(:first-child) {
+  border-top-width: 0;
+}
+.table-striped>tbody>tr:nth-of-type(odd)>*{
+  --bs-table-accent-bg: unset;
+}
+.table-striped>tbody>tr:nth-of-type(even)>*{  
+  box-shadow: inset 0 0 0 9999px rgba(black, .02);
+}
+/* Tab */
+.nav-tabs .nav-item {
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+.nav-tabs .nav-link {
+
+  $color: #6c6969;
+  color: $color;
+
+  .badge{
+    background-color: $color;
+  }
+}
+
+.nav-tabs .nav-item:nth-child(1) {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+  $color: #f2762c;
+
+  color: #495057;
+  background-color: #fff;
+  border: none;
+  border-top: 5px solid $color;
+  box-shadow: 3px -4px 5px 0px #d4d4d4;
+
+  .badge{
+    background-color: $color;
+  }
+}
+
+.tab-content {  
+  $r: 4px;
+  border: 1px solid #dee2e6;
+  border-width: 0;
+  padding: 15px;
+  border-top: none;
+  background: #fff;
+  border-radius: 0 0 $r $r;
+}
+.nav-tabs{
+  border-width: 0;
+}
+
+
+/* Object============================================================== */
+/* Btn */
+.btn{
+  &-icon{
+    background: transparent;
+    border-width: 0;
+    transition: all 0.2s;
+
+    &:hover{
+      background-color: rgba(black, .05)
+    }
+
+  }
+  &-collapse-arrow{
+    @include avatar(32px, true);
+    background-color: rgba(0, 0, 0, 0.23);
+    color: white;
+    font-size: 16px;
+
+    transition: all .2s;
+    
+    &:hover{
+      background-color: rgba(0, 0, 0, 0.45);
+    }
+  
+    i{
+      transform: rotate(0deg);
+      transition: all .2s;
+    }
+
+    &.collapsed{
+      i{
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+/* Badge */
+
+/* Components============================================================== */
+/* 搜尋區 */
+.GSMis-search-area {
+  padding: 16px;
+  margin-bottom: 24px;
+
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+
+  @include md-width {
+    padding: 24px;
+  }
+}
+/* 流程 */
+.flow-wrapper{
+  $size: 110px;
+
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
+
+  > .item{
+    $color: #E1E1E1;
+
+    flex: 1;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    height: $size;
+    padding-top: 10px;
+    padding-left: $size/6;
+
+    color: #8B8B8B;
+    background: $color;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-left: $size/6 solid white;
+      border-top: $size/2 solid transparent;
+      border-bottom: $size/2 solid transparent;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      right: -$size/6;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-left: $size/6 solid  $color;
+      border-top: $size/2 solid transparent;
+      border-bottom: $size/2 solid transparent;
+    }
+
+
+    &.finished{
+      $color: #E5F3FD;
+
+      color: #5481C6;
+      background-color: $color;
+
+      &::before{
+        border-left-color: $color;
+      }
+    }
+    &.active{
+      $color: #2E74CD;
+      color: white;
+      background-color:  $color;
+
+      &::before{
+        border-left-color: $color;
+      }
+    }
+
+    .head{
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 24px;
+      padding-top: 6px;
+    }
+    .body{
+      flex: 1;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding-top: 4px;
+
+      >*{
+        margin: 0;
+      }
+    }
+
+    &:first-child{
+      padding-left: 0;
+      &::after{
+        display: none;
+      }
+    }
+    &:last-child{
+      &::before{
+        display: none;
+      }
+    }
+  }
+}
+/* 申報資料填寫上方狀態列 */
+.top-status-wrapper{
+  display: flex;
+  gap: 40px;
+  font-size: 18px;
+  line-height: 29px;
+  font-weight: bold;
+
+  small{
+    font-size: 14px;
+    line-height: 20px;
+  }
+  i{
+    margin-right: 0.25rem;
+  }
+}
+/* 白底資料區塊 */
+.block-wrapper{
+  $r: 4px;
+
+  margin-bottom: 40px;
+  border-radius: 0 0 $r $r;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.13);
+
+  .body{
+    padding: 24px 40px;
+  }
+
+}
+/* 區塊標題 */
+.block-title{
+  font-size: 22px;
+  line-height: 45px;
+  font-weight: bold;
+  border-bottom: 2px solid;
+  margin: 0;
+
+  &.yellow{
+    color: #DE9300;
+    border-bottom-color:#FFB80C;
+  }
+  &.blue-purple{
+    color: $blue-purple;
+    border-bottom-color:$blue-purple;
+  }
+
+  >i{
+    margin-right: 8px;
+    margin-left: 16px;
+  }  
+}
+
+/* 表格 */
+.table-blue{
+  border-color: white;
+  th{
+    background-color: #A9C9FF;
+    // color: white !important;
+  }
+  td{
+    background-color: #E5EEFD;
+  }
+}
+.table-yellow{
+  border-color: white;
+  th{
+    background-color: #FAEBC4;
+  }
+  td{
+    background-color: #FFF9EA;
+  }
+}
+.table-brown{
+  border-color: white;
+  th{
+    background-color: #D67824;
+    color: white
+  }
+  td{
+    background-color: #FFF6EE;
+  }
+}
+/* 階段成果及撥款次數 */
+.preProgress-wrapper{
+  display: flex;
+  // align-items: center;
+  
+
+  background: #F1F1F1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  
+  color: #000000;
+  font-size: 24px;
+  line-height: 35px;
+  font-weight: bold;
+
+  >*{
+    position: relative;
+    white-space: nowrap;
+
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 16px;
+
+    &.orange,
+    &.blue{
+      border-left: 5px solid;
+    }
+    &.orange{
+      background-color: #FFE4C2;
+      border-left-color: #FF7800;
+    }
+    &.blue{
+      background-color: #CADEFF;
+      border-left-color: #578EE3;
+    }
+
+    >label{
+      position: absolute;
+      top: -1px;
+      font-size: 14px;
+
+      span{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4px 8px;
+
+        background-color: #FDE4E3;
+        color: #DC3545;
+        font-size: 14px;
+        line-height: 1;
+        border-radius: 999rem;
+      }
+    }
+    select{
+      width: 200px;
+      margin-right: 8px;
+    }
+  }
+}
+/* 撥款次數統計 */
+.total-wrapper{
+  $color: #2F6DCD;
+
+  border-color: $color;  
+  // border-top: 2px solid;
+  border-bottom: 2px solid;
+  color: $color;
+  // text-align: right;
+  .total{
+    font-size: 24px;
+    line-height: 35px;
+    font-weight: bold;
+    vertical-align:middle
+  }
+
+  small{
+
+  }
+  span{
+    display: block;
+    margin-top: 4px;
+
+    font-size: 22px;
+    line-height: 20px;
+    text-align: right;
+  }
+}
+/* checkbox控制div開闔 */
+.checkboxToggleDiv{
+  .toggleDiv{
+    display: none;
+  }
+  input:checked ~ .toggleDiv{
+    display: block;
+  }
+}
+/* Scroll 卷軸 */
+.scroll{
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background-color: rgba(black, .15);
+    border-radius: 99rem;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(black, .25);
+    background-clip: content-box;
+    border-radius: 99rem;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #5749d2;
+  }
+  &-inner{
+    padding-right: 8px;
+  }
+}

@@ -1,0 +1,837 @@
+/* 兩欄式 2021-11-11 更新 */
+@import "variables";
+@import "mixin";
+
+
+// $header-h: 40px;
+// $header-h-desktop: 80px;
+// $sidebar-w-collapse: 40px;
+// $sidebar-w-extend: 250px;
+// $sidebar-scroll-h: calc(100vh - 80px - 38px);
+
+$header-h: 40px;
+$header-h-desktop: 66px;
+$sidebar-w-collapse: 80px;
+$sidebar-w-extend: 300px;
+$sidebar-scroll-h: 100vh;
+// $max-with 是在_variables.scss設定的
+
+body {
+  // background-color: #eee;
+  font-family: "微軟正黑體";
+  background-color: #F0F2F5;
+
+}
+
+a {
+  text-underline-offset: 10%;
+  color: $blue-purple;
+}
+
+/* ==base-layout 組件 =============================================== */
+/* GSMis-Brand */
+.GSMis-brand {
+  @include brand;
+}
+
+/* 桌機版的漢堡 */
+.GSMis-hamburger-desktop {
+  $color: #3A63BE;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  @include avatar(40px, true);
+
+  background-color: $color;
+  color: white !important;
+  text-decoration: none !important;
+  font-size: 24px;
+  border: none;
+  transform: rotate(0deg);
+  transition: all 0.2s;
+
+  &:hover{
+    background-color: darken($color, 5%);
+  }
+
+  .isClose & {
+    transform: rotate(180deg);
+  }
+}
+
+/* 主要選單項目 */
+.primary-menu{
+  padding: 5px 20px;
+  
+  background-color: white;  
+  border-radius: 20px;     
+  // text-align: center;
+
+  .isClose & {
+    padding: 5px 8px;
+    margin: 0px 10px;
+    
+    justify-content: center;    
+
+    > *{
+      display: none;
+    }
+    .only{
+      display: inline-block;
+    }
+    
+  }
+  
+  &-link{
+    $color: #3A63BE;
+
+    display: flex;
+    align-items: center;
+    color: #2262C7 !important;
+    text-decoration: none !important;
+    font-size: 20px;
+    font-weight: bold;
+
+    transition: all .2s;
+
+    &:hover{
+      background-color: rgba(white, .85);
+    }
+
+    &.current{
+      background-color: $color;
+      color: white !important;
+    }    
+  }    
+}
+
+/* 主選單內的次選單 */
+.icon-menu{
+  display: grid;
+  gap: 4px;
+  margin: .75rem 0;
+  // grid-template-columns: 1fr 1fr;
+  // gap: 16px 20px;
+  
+  a{
+    $color: #E8F2FF; 
+
+    // display: block;
+    display: flex;
+    align-items: center;
+    // flex-direction: column;
+    // gap: 6px;
+    padding: 8px;
+    // text-align: center;
+    
+    color: #1E549F;
+    // color: black !important;
+    background: transparent;
+    border-radius: 6px;
+    text-decoration: none !important;
+    font-weight: bold;
+    line-height: 1.2;
+
+    transition: all .2s;
+
+    &:hover{
+      // background-color: darken($color, 5%);
+      background-color: #234ead;
+      color: white;
+    }
+
+    i{
+      margin-right: 8px;
+      // font-size: 24px;
+    }
+
+  }
+
+  .isClose &{
+    // display: none;
+    margin-top: 0;
+  }
+
+  &-wrapper{
+    position: relative;
+
+    .isClose &{
+      padding: 0;
+      
+      .primary-menu-link {
+        padding: 5px 8px;
+        line-height: 1;
+        width: 100%;
+
+        cursor: pointer;
+        > *{
+          display: none;
+        }
+        .only{
+          display: inline-block;
+        }
+
+        &.children{
+          text-align: center;
+          &:hover{
+            background-color: transparent;
+          }
+          &+div{
+            $color: white;
+
+            position: absolute;
+            top: -17px;
+            left: 56px;
+
+            width: 260px;
+
+            padding: 16px;
+            background-color: $color;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 6px;
+            &::after{        
+              $size: 7px;
+
+              position: absolute;
+              top: 29px;
+              left: 0;
+
+              content: '';
+              transform: translateX(-100%);
+              width: 0;
+              height: 0;
+              border-top: $size solid transparent;
+              border-right: $size*.85 solid $color;
+              border-bottom: $size solid transparent;
+            }
+          }
+        }
+      }
+    }
+
+    .isOpen &{
+      .primary-menu-link{
+        > *{
+          display: block !important;
+        }
+        &+div{
+          display: block !important;
+        }
+      }
+    }
+  }
+}
+
+
+/* GSMis-menu 主選單 */
+.GSMis-menu {
+  // Init
+  @include reset;
+  padding-top: unset;
+  max-height: $sidebar-scroll-h;
+  transition: all 0.2s;
+
+  .isClose & {
+    // width: 0;
+    .children{
+      justify-content: center;
+      width: 70px;
+      &>*{
+        display: none;
+        &.only{
+          display: inline-block;
+        }
+      }
+
+      i{
+        font-size: 24px;
+      }
+    }
+  }
+
+  // a
+  a {
+    display: block;
+    padding: 6px 16px;
+
+    // font-size:18px;
+    line-height: 1.7;
+    color: #fff !important;
+    white-space: nowrap;
+    text-decoration: none !important;
+    border-radius: 999rem;
+
+    transition: all 0.2s;
+    // opacity: 1;
+
+    &:hover {
+      // opacity: .7;
+      // background-color: rgba(black, 0.2);
+    }
+  }
+  li.current a {
+    // color: #d3e100 !important;
+  }
+  .children {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    padding: 12px 8px;
+
+    i{
+      &:first-child{
+        margin-right: 0.4em;
+
+        .isClose &{
+          margin-right: 0;
+        }
+      }
+      &:last-child {
+        margin-left: auto;
+        transform: rotate(0deg);
+        transition: all 0.2s;
+        // color: #66A3FF;
+      }
+    }
+
+    &.childrenOpen {
+      i:last-child {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  li.active {
+    > .children {
+      color: #fff659 !important;
+    }
+  }
+
+  // li
+  > li {
+    position: relative;
+  }
+
+  // ul
+  .children + ul {
+    display: none;
+  }
+  .active > ul {
+    display: block;
+    .isClose & {
+      display: none;
+    }
+  }
+  .level-2 {
+    $color: #234ead;
+
+    @include reset;
+    margin: 8px 0;
+
+    li+li{
+      margin-top: 2px;
+    }
+
+    a {
+      padding-left: 1em;
+      border-radius: 6px;
+      &::before{
+        content: '\2d';
+        font-family: $font-awesone;
+        margin-right: 8px;
+      }
+      &:hover{
+        background-color: rgba($color, .25);
+      }
+      &.current{
+        background-color: $color;
+      }
+    }
+    
+    .isClose &{
+      position: absolute;
+      top: -19px;
+      left: 64px;
+
+      padding: 16px;
+      background-color: #1E549F;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 6px;
+
+      &::before{
+        content: attr(data-title);
+
+        display: block;
+        margin-bottom: 8px;
+
+        color: white;
+        border-bottom: 1px solid rgba(white, .8);
+        line-height: 2;
+        white-space: nowrap;
+      }
+      &::after{        
+        $size: 5px;
+
+        position: absolute;
+        top: 28px;
+        left: 0;
+
+        content: '';
+        transform: translateX(-100%);
+        width: 0;
+        height: 0;
+        border-top: $size solid transparent;
+        border-right: $size*1.5 solid #1E549F;
+        border-bottom: $size solid transparent;
+      }
+
+      a {
+        $color: #5c84d2;
+
+        padding-left: 0.8em;       
+
+        &.current{
+          background-color: $color;
+        }
+        &:hover{
+          background-color: rgba($color, .3);
+        }
+      }
+    }
+  }
+}
+
+/* Header 上方資訊 */
+.header-help-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+
+  > div{
+  }
+
+  h4, h5{
+    font-weight: bold;
+  }
+  h4{
+    font-size: 18px;
+  }
+  h5{
+    color: #D67824;
+    font-size: 16px;
+  }
+
+  .badge{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF685F;
+  }
+
+  .icon-text{
+    display: flex;
+    gap: 16px;
+    font-weight: bold;
+    color: #1E549F;  
+
+    // a{
+    //   color: #1E549F;
+    // }
+    
+    .text{
+      padding-top: 6px;
+    }
+
+    .icon{
+      flex-shrink:  0;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      @include avatar(36px, true);
+
+      font-size: 18px;
+
+      &.bg{
+        background-color: #D6E8FF;
+      }
+    }
+
+    &+.icon-text{
+      margin-top: 8px;
+    }
+  }
+
+  a.icon-text{
+    padding: 8px;
+    border-radius: 4px;
+    // text-decoration: none !important;
+
+    transition: all .2s;
+
+    &:hover{
+      background-color: rgba(#D6E8FF, .2);
+    }
+  }
+
+  // Link 
+  .link{
+    color: white;
+  }
+  .dropdown.link{
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;    
+
+    i{
+      margin-left: 8px;
+      margin-right: 16px;
+    }
+  }
+  button.link{
+    $size: 48px;
+    
+    position: relative;
+    min-width: $size;
+    height: $size;
+    
+    background-color: #2B64BA;
+    border: none;
+    border-radius: 999rem;
+
+    &.active{
+      background-color: white;
+      color:  #2B64BA;
+    }
+
+    // 訊息
+    &.warning{
+      .badge{
+        position: absolute;
+        top: -3px;
+        right: -3px;;
+      }
+    }
+    // 其他協助
+    &.other{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-left: 16px;
+      padding-right: 8px;
+      span{
+        white-space: nowrap;
+        line-height: 1.1;
+        font-size: 15px;
+      }
+    }
+
+    i{
+      &:first-child{
+        font-size: 24px;
+      }
+    }
+  }
+
+  // 內容
+  .content{
+    display: none;
+    position: absolute;
+    top: 53px;
+    right: 0;
+
+    width: 300px;
+    padding: 16px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+
+    &.documents{
+      width: 360px;
+      .scroll{
+        max-height: 60vh;
+        overflow-y: auto;
+      }
+    }
+
+  }
+  .dropdown.link+.content{
+  }
+}
+
+/* 帳號切換表單 */
+.user-switch-form{
+  position: relative;
+  display: grid;
+  gap: 12px;
+
+  padding:16px 8px;
+  border-radius: 8px;
+  background-color: white;
+  filter: drop-shadow(0 0 2px rgba(black, 0.2));
+
+  &::before{
+    $size: 6px;
+
+    position: absolute;
+    top: 0px;
+    left: 60px;
+    content: '';
+    display: inline-block;
+    transform: translateY(-100%);
+
+    width: 0;
+    height: 0;
+    border-left:$size solid transparent;
+    border-right:$size solid transparent;
+    border-bottom: $size*1.5 solid white;
+  }  
+
+  .form-select{
+    border-color: #D2D7DC;
+  }
+}
+
+/* 最新消息 */
+.news{
+  display: flex;
+  align-items: center;
+
+  height: 50px;
+  max-width: 1030px;
+
+  color: #234EAD;
+  background: #F0F2F5;
+  border-radius: 50px;
+  font-weight: bold;
+
+  .icon{
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include avatar(50px, true);
+    background-color: white;
+    font-size: 28px;    
+  }
+
+  .date{
+    padding: 0 10px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+    text-align: center;
+
+    .big{
+      font-size: 18px;
+    }
+  }
+
+  .head{
+    display: flex;
+    align-items: center;
+    background-color: #D6E8FF;
+    border-radius: 999rem 0 0 999rem;
+  }
+  .body{
+    padding: 20px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+
+
+  &-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px;
+    background-color: #5074C4;
+  }
+}
+
+/* Go to top */
+.GSMis-go-top {
+  @include go-top;
+}
+
+/* ==base-layout 大區塊 ====================================================== */
+/* GSMis-nav 導覽列 */
+.GSMis-nav {
+  &-scroll{   
+
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: rgba(white, .15);
+      // border-radius: 100px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(#3A63BE, 1);
+      // border-radius: 100px;
+      // border: 5px solid transparent;
+      background-clip: content-box;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #5749d2;
+    }
+
+    .isClose &{
+      overflow-y: unset;
+      overflow-x: unset;
+    }
+
+    > div{
+      display: grid;
+      gap: 12px;
+      margin-right: 20px;
+
+      .isClose &{
+        margin-right: 0;
+      }
+    }
+  }
+  // ==內層
+  &-inner {
+    display: grid;
+    gap: 12px;
+
+    .GSMis-hamburger-desktop{
+      margin-left: auto;
+      margin-right: 20px;
+    }
+    .isClose &{
+      .GSMis-hamburger-desktop{
+        margin: 0 auto
+      }
+    }
+  }
+  // ==外層
+  &-wrap {
+    @include nav-wrap;
+    grid-column: 1;
+    grid-row: 1 / -1;      
+    max-height: 100vh;
+    overflow-y: unset;
+    top: 0;
+
+    padding: 6px 20px;
+    padding-right: 0;
+    width: 280px;
+
+    .isClose &{
+      // padding: 6px 16px;
+      padding: 6px 0;
+      width: auto;
+    }
+  }
+}
+
+/* GSMis-breadcrumb 麵包屑 */
+.GSMis-breadcrumb {
+  @include breadcrumb;
+  // 內層
+  &-inner {
+  }
+  // 外層
+  &-wrap {
+    box-shadow: 0 0px 4px rgba(black, 0.3);
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* GSMis-Header 刊頭 */
+.GSMis-header {
+  @include header;
+
+  // ==外層
+  &-wrap {
+    @include header-wrap;
+    grid-column: 2 / -1;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* GSMis-Footer 註腳 */
+.GSMis-footer {
+  @include footer;
+  $color: #f5f5f5;
+  background-color: $color;
+  border-top: 1px solid darken($color, 3%);
+  // 內層
+  &-inner {
+    // max-width: $max-with;
+    margin: 0 auto;
+    // background-color: white;
+  }
+
+  // 外層
+  &-wrap {
+    // 1024
+    @include lg-width {
+      position: absolute;
+      bottom: 0;
+      left: $sidebar-w-extend;
+
+      width: calc(100% - #{$sidebar-w-extend});
+      transition: all 0.2s;
+      // background-color: $primary;
+    }
+
+    .isClose & {
+      @include lg-width {
+        left: $sidebar-w-collapse;
+        width: calc(100% - #{$sidebar-w-collapse});
+      }
+    }
+  }
+}
+
+/* GSMis-Main 主內容區 */
+.GSMis-main {
+  // ==內層
+  &-inner {
+    height: 100%;
+    @include main-inner;
+  }
+  // ==外層
+  &-wrap {
+    flex-grow: 1;
+    @include lg-width {
+      width: calc(100vw - #{$sidebar-w-extend} - 20px);
+    }
+    .isClose & {
+      @include lg-width {
+        width: calc(100vw - #{$sidebar-w-collapse} - 20px);
+      }
+    }
+  }
+}
+
+/* GSMis-Wrapper 最外層 */
+.GSMis-wrapper {
+  position: relative;
+  @include wrapper;
+
+  // ==1024
+  @include lg-width {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto 1fr;
+  }
+}
