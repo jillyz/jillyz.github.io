@@ -6,7 +6,7 @@ function renderChartFunds1() {
     var app = {};
 
     var option;
-    const colors = ['#5dbeff','#ff835c', '#FFDE37', ];
+    const colors = ['#5dbeff','#ff835c', '#FFDE37' ];
 
     option = {
         color: colors,
@@ -56,7 +56,7 @@ function renderChartFunds1() {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [1489870, 613588, 68030, 253379]
+                data: [1489870, 613588, 305314, 253379]
             },
             {
                 cursor: 'default',
@@ -69,7 +69,7 @@ function renderChartFunds1() {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [1164348, 667921, 72657, 181205]
+                data: [1164348, 667921, 152757, 181205]
             },
             {
                 
@@ -84,7 +84,7 @@ function renderChartFunds1() {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [325520, -54333, -4627, 72172]
+                data: [325520, -54333, 152557, 72172]
             }
         ]
     };

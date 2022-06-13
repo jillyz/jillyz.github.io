@@ -25,7 +25,7 @@ option = {
     }
   },
   legend: {
-    data: ['件數','預定經費', '核定經費', ],
+    data: ['件數','發包經費', '核定經費', ],
     textStyle: {
         // color: '#fff'
         color: 'rgba(255,255,255,.75)'
@@ -98,7 +98,7 @@ option = {
       data: [2, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2]
     },
     {
-      name: '預定經費',
+      name: '發包經費',
       type: 'bar',
       tooltip: {
         valueFormatter: function (value) {
