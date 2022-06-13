@@ -94,8 +94,8 @@ function renderChartFunds(container, myValue, myColor='#47bba8') {
     }
 
 }
-renderChartFunds('chartFunds-1', 76, '#ed1e79');
-renderChartFunds('chartFunds-2', 90, '#fbb03b');
+renderChartFunds('chartFunds-1', 76, '#FF5CEA');
+renderChartFunds('chartFunds-2', 90, '#FF835C');
 renderChartFunds('chartFunds-3', 53, '#37ffdf');
 renderChartFunds('chartFunds-4', 63, '#5dbeff');
 // renderChartFunds('chartFunds-1', 76,);

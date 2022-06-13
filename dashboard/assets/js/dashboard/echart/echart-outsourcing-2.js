@@ -29,7 +29,7 @@ function renderChartOutsourcing() {
         color: [
             '#5dbeff',
             '#ff835c',
-            '#f4e537',
+            '#FFDE37',
             // '#5dbeff',
             // '#ff835c',
             // '#adcbdf'

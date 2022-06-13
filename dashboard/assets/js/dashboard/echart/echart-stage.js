@@ -82,11 +82,11 @@ function renderStage(valueTotal, valueLate, noteTitle) {
                     opacity: .97,
                     color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
                             offset: .15,
-                            color: '#ff835c'
+                            color: '#5DBEFF'
                         },
                         {
                             offset: .82,
-                            color: '#b429f9'
+                            color: '#37FFDF'
                         }
                     ])
                 },

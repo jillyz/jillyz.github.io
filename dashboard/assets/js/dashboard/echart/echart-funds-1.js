@@ -6,7 +6,7 @@ function renderChartFunds1() {
     var app = {};
 
     var option;
-    const colors = ['#5dbeff','#ff835c', '#f4e537', ];
+    const colors = ['#5dbeff','#ff835c', '#FFDE37', ];
 
     option = {
         color: colors,
@@ -28,11 +28,12 @@ function renderChartFunds1() {
             containLabel: true
         },
         xAxis: [{
-            type: 'value'
+            type: 'value',
+            show: false
         }],
 
         axisLabel: {
-            formatter: '{value}千元',
+            formatter: '{value} (千元)',
             color: 'rgba(255,255,255,.75)'
         },
         yAxis: [{
@@ -43,7 +44,8 @@ function renderChartFunds1() {
             inverse: true,
             data: ['公務預算', '水資源作業基金', '代辦經費', '前瞻基礎建設計畫第3期特別預算']
         }],
-        series: [{
+        series: [
+            {
                 cursor: 'default',
                 name: '預算經費',
                 type: 'bar',
@@ -57,7 +59,8 @@ function renderChartFunds1() {
                 data: [1489870, 613588, 68030, 253379]
             },
             {
-                name: '核定經費',
+                cursor: 'default',
+                name: '發包經費',
                 type: 'bar',
                 stack: 'Total',
                 label: {
@@ -69,12 +72,14 @@ function renderChartFunds1() {
                 data: [1164348, 667921, 72657, 181205]
             },
             {
+                
+                cursor: 'default',
                 name: '剩餘經費',
                 type: 'bar',
                 stack: 'Total',
                 label: {
                     show: true,
-                    position: 'left'
+                    position: 'left '
                 },
                 emphasis: {
                     focus: 'series'

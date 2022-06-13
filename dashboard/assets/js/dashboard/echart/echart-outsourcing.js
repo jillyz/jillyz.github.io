@@ -28,7 +28,7 @@ function renderChartOutsourcing() {
         },
         color: [
             '#5dbeff',
-            '#ff5ab8',
+            '#FF5CEA',
             // '#adcbdf'
         ],
         series: [{

@@ -34,7 +34,7 @@ function renderOrganizer(dom) {
             },
             color: [
                 '#37ffdf',
-                '#536aff',
+                '#5DBEFF',
             ],
             series: [{
                 center: ['50%', '60%'],
