@@ -14,7 +14,7 @@ function renderChartFunds1() {
             trigger: 'axis',
             axisPointer: {
                 type: 'shadow'
-            }
+            },
         },
         legend: {
             textStyle: {

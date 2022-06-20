@@ -4,6 +4,7 @@
 //Bootstrap
 //Object
 //Components
+//Container
 
 
 /* Form============================================================== */
@@ -44,7 +45,7 @@
   --bs-table-accent-bg: unset;
 }
 .table-striped>tbody>tr:nth-of-type(even)>*{  
-  box-shadow: inset 0 0 0 9999px rgba(black, .02);
+  box-shadow: inset 0 0 0 9999px rgba(169, 201, 255, .1);
 }
 /* Tab */
 .nav-tabs .nav-item {
@@ -97,6 +98,11 @@
   border-width: 0;
 }
 
+/*Offcanvas*/
+.offcanvas-bottom{
+  height: 90vh;
+}
+
 
 /* Object============================================================== */
 /* Btn */
@@ -135,7 +141,22 @@
     }
   }
 }
-/* Badge */
+/* icon close */
+.icon-btn-close{
+  position: relative;
+
+  
+  &:hover{
+    &::before{
+      position: absolute;
+      top: 2px;
+      right: 8px;
+  
+      content: '˟';
+      opacity: .75;
+    }
+  }
+}
 
 /* Components============================================================== */
 /* 搜尋區 */
@@ -257,7 +278,7 @@
 /* 申報資料填寫上方狀態列 */
 .top-status-wrapper{
   display: flex;
-  gap: 40px;
+  gap: 24px;
   font-size: 18px;
   line-height: 29px;
   font-weight: bold;
@@ -315,6 +336,11 @@
     // color: white !important;
   }
   td{
+    // background-color: #E5EEFD;
+    background-color: #F1F6FF;
+  }
+  &.table-striped > tbody > tr:nth-of-type(even) > *{
+    box-shadow: none;
     background-color: #E5EEFD;
   }
 }
@@ -324,6 +350,10 @@
     background-color: #FAEBC4;
   }
   td{
+    background-color: #FFFCF3;
+  }
+  &.table-striped > tbody > tr:nth-of-type(even) > *{
+    box-shadow: none;
     background-color: #FFF9EA;
   }
 }
@@ -458,4 +488,10 @@
   &-inner{
     padding-right: 8px;
   }
+}
+/* Container============================================================== */
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px 40px;
 }

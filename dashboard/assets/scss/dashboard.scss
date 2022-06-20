@@ -2,7 +2,7 @@
 $dark1: #333340;
 $dark2: #3a3d4d;
 $dark3: #28283e;
-$blue: #5dbeff;
+$blueSkye: #5dbeff;
 $orange-red: #ff835c;
 $orange: #fbb03b;
 $cyan: #37ffe1;
@@ -17,7 +17,6 @@ $blue-ribbon: #536aff;
 
 body{
     background-color: $dark1;
-    color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 /* 隱藏 */
@@ -35,15 +34,17 @@ body{
 }
 /* 主框架 */
 .GSMis-wrapper{
+
     grid-template-columns: unset;
     grid-template-rows: unset;
     @include xl-width{
         grid-template-columns: auto 1fr;
-        grid-template-rows: auto 1fr;
+        grid-template-rows: auto auto 1fr;
     }
 }
 .GSMis-main-wrap{
-    width: 100vw;
+    width: 100vw;    
+    color: white;
     @include xl-width{
         width: calc(100vw - 300px);
     }
@@ -124,8 +125,20 @@ body{
 /* 深色表單樣式 */
 .dark-form{
     background-color: #525568;
-    color: white;
+    color: white !important;
     border-color: #8a8c99;
+    opacity: 0.75;
+
+    transition: all .2s;
+
+    &:hover{
+        opacity: 1;
+    }
+    
+    &.muted{
+        border-color: $dark2;
+        background-color: $dark1;
+    }
 }
 
 /* 透明度混合 */
@@ -192,15 +205,18 @@ body{
         width: 150px;
         color: white !important;
         border-radius: 999rem;
+        opacity: 0.75;
         transition: all .2s;
 
         &:hover{
-            background-color: $dark1;
+            // background-color: $dark1;
+            opacity: 1;
         }
         
         &.active{
             background-color: $dark1;
             border-color: rgba(white, .4);
+            opacity: 1;
             // color: #37ffdf !important;}
         }
     }
@@ -226,8 +242,8 @@ body{
 /* == Utilities-------------------------------------- */
 /* 文字顏色 */
 .text{
-    &-blue{
-        color: $blue !important;
+    &-blueSkye{
+        color: $blueSkye !important;
     }
     &-orange{
         color: $orange !important;
@@ -244,8 +260,8 @@ body{
 }
 /* 框線顏色 */
 .border{
-    &-blue{
-        border-color: $blue !important;
+    &-blueSkye{
+        border-color: $blueSkye !important;
     }
     &-orange{
         border-color: $orange !important;
@@ -274,8 +290,8 @@ body{
     &-orange-red{
         background-color: $orange-red !important;
     }
-    &-blue{
-        background-color: $blue !important;
+    &-blueSkye{
+        background-color: $blueSkye !important;
     }
     &-orange{
         background-color: $orange !important;

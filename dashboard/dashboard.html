@@ -31,7 +31,7 @@
 
   <body>
     <!-- Wrapper -->
-    <div class="GSMis-wrapper isClose">
+    <div class="GSMis-wrapper isOpen">
       <!-- 刊頭 -->
       <header class="GSMis-header-wrap">
         <div class="GSMis-header-inner">
@@ -48,8 +48,8 @@
             <div class="item">
               <div class="header-help-wrapper">
                 <!-- 使用者 -->
-                <div class="item">
-                  <div class="link dropdown" title="會員資料管理">
+                <div class="item position-relative">
+                  <div class="link dropdown noActive" title="會員資料管理">
                     水利署 綜合企劃組 系統控管人員 登入系統 
                     <i class="fa-solid fa-angle-down"></i>
                   </div>
@@ -84,33 +84,43 @@
                     </div>
                   </div>
                 </div>                
+                <!-- 外聘委員預警 -->
+                <div class="item">                 
+                  <button class="link warning bg-red noActive" title="外聘委員預警"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasEarlyWarning">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span class="badge rounded-pill bg-danger">8</span>
+                  </button>
+                </div>
                 <!-- 待辦事項 -->
                 <div class="item">                 
-                  <button class="link warning" title="待辦事項">
+                  <button class="link warning bg-orange" title="待辦事項">
                     <i class="fa-solid fa-bell"></i>
                     <span class="badge rounded-pill">8</span>
                   </button>
                   <div class="content">
                     <h4>待辦事項</h4>
+                    <hr class="my-2">
                     <a  href="#" class="icon-text text-decoration-none">
                       <span class="icon">
-                        <i class="fa-solid fa-bell"></i>
+                        <i class="fa-solid fa-bell fa-lg"></i>
                       </span>
-                      <span class="text text-decoration-underline">待審閱計畫</span>
+                      <span class="text">待審閱計畫</span>
                       <span class="badge rounded-pill align-self-center ms-auto">3</span>
                     </a>
+                    <hr class="my-2">
                     <a  href="#" class="icon-text text-decoration-none">
                       <span class="icon">
-                        <i class="fa-solid fa-bell"></i>
+                        <i class="fa-solid fa-bell fa-lg"></i>
                       </span>
-                      <span class="text text-decoration-underline">評選委員同時為其他<br>計畫廠商</span>
+                      <span class="text">進度落後提醒</span>
                       <span class="badge rounded-pill align-self-center ms-auto">2</span>
                     </a>
+                    <hr class="my-2">
                     <a  href="#" class="icon-text text-decoration-none">
                       <span class="icon">
-                        <i class="fa-solid fa-bell"></i>
+                        <i class="fa-solid fa-bell fa-lg"></i>
                       </span>
-                      <span class="text text-decoration-underline">無人督主辦計畫</span>
+                      <span class="text">無人督主辦計畫</span>
                       <span class="badge rounded-pill align-self-center ms-auto">3</span>
                     </a>
                   </div>
@@ -127,33 +137,33 @@
                       <div class="scroll-inner">
                         <h5>水利署及所屬機關委託服務計畫作業要點</h5>
                         <a href="#" class="icon-text text-decoration-none">
-                          <span class="icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                          <span class="icon"><i class="fa-solid fa-file-arrow-down fa-lg"></i></span>
                           <span class="text text-decoration-underline" download>1110323委託服務計畫作業要點</span>
                         </a>
                         <a href="#" class="icon-text text-decoration-none">
-                          <span class="icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                          <span class="icon"><i class="fa-solid fa-file-arrow-down fa-lg"></i></span>
                           <span class="text text-decoration-underline" download>1110323委託服務計畫作業要點修正對照表</span>
                         </a>
                         <a href="#" class="icon-text text-decoration-none">
-                          <span class="icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                          <span class="icon"><i class="fa-solid fa-file-arrow-down fa-lg"></i></span>
                           <span class="text text-decoration-underline" download>1110323委託服務計畫作業要點修正總說明</span>
                         </a>
                         <hr>
                         <h5>委託服務計畫採公開評選或審查之採購作業流程補充說明</h5>
                         <a href="#" class="icon-text text-decoration-none">
-                          <span class="icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                          <span class="icon"><i class="fa-solid fa-file-arrow-down fa-lg"></i></span>
                           <span class="text text-decoration-underline" download>1110329評選會議作業程序簡報(範例)</span>
                         </a>
                         <a href="#" class="icon-text text-decoration-none">
-                          <span class="icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                          <span class="icon"><i class="fa-solid fa-file-arrow-down fa-lg"></i></span>
                           <span class="text text-decoration-underline" download>1110323委託服務計畫採公開評選或審查之 採購作業流程補充說明</span>
                         </a>
                         <a href="#" class="icon-text text-decoration-none">
-                          <span class="icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                          <span class="icon"><i class="fa-solid fa-file-arrow-down fa-lg"></i></span>
                           <span class="text text-decoration-underline" download>1110323委託服務計畫採公開評選或審查之 採購作業流程補充說明修正對照表</span>
                         </a>
                         <a href="#" class="icon-text text-decoration-none">
-                          <span class="icon"><i class="fa-solid fa-file-arrow-down"></i></span>
+                          <span class="icon"><i class="fa-solid fa-file-arrow-down fa-lg"></i></span>
                           <span class="text text-decoration-underline" download>1110323委託服務計畫採公開評選或審查之 採購作業流程補充說明修正總說明</span>
                         </a>
                       </div>
@@ -214,10 +224,6 @@
                       <span class="text">常見問題</span>
                     </a>
                     <a href="#" class="icon-text text-decoration-none">
-                      <span class="icon bg"><i class="fa-solid fa-phone-flip"></i></span>
-                      <span class="text">聯繫客服</span>
-                    </a>
-                    <a href="#" class="icon-text text-decoration-none">
                       <span class="icon bg"><i class="fa-solid fa-message-pen"></i></span>
                       <span class="text">意見反應</span>
                     </a>
@@ -237,71 +243,76 @@
           </button>
           <div class="GSMis-nav-scroll">
             <div>
-              <a href="index.html" class="primary-menu primary-menu-link "><i class="fa-duotone fa-house-chimney only"></i><span class="ms-2">首頁</span class="ms-2"></a>
-              <a href="dashboard.html" class="primary-menu primary-menu-link current"><i class="fa-duotone fa-gauge-high only"></i><span class="ms-2">儀表板</span class="ms-2"></a>
+              <a href="index.html" class="primary-menu primary-menu-link " title="首頁"><i class="fa-duotone fa-house-chimney only"></i><span class="ms-2">首頁</span class="ms-2"></a>
+              <a href="dashboard.html" class="primary-menu primary-menu-link current" title="儀表板"><i class="fa-duotone fa-gauge-high only"></i><span class="ms-2">儀表板</span class="ms-2"></a>
               <div id="btn-favorite" class="primary-menu icon-menu-wrapper">
-                <div class="children primary-menu-link only"><i class="fa-duotone fa-stars only"></i><span class="ms-2">常用功能</span class="ms-2"></div>
+                <div class="children primary-menu-link only" title="常用功能"><i class="fa-duotone fa-stars only"></i><span class="ms-2">常用功能</span class="ms-2"></div>
                 <div id="panel-favorite">
                   <div class="icon-menu">
-                    <a href="project-application-list.html"><i class="fa-solid fa-star"></i>資料申請登錄</a>
-                    <a href=""><i class="fa-solid fa-star"></i>計畫資料填報</a>
-                    <a href=""><i class="fa-solid fa-star"></i>計畫成果應用追蹤</a>
-                    <a href=""><i class="fa-solid fa-star"></i>資料查詢與匯出</a>
-                    <a href=""><i class="fa-solid fa-star"></i>計畫相似度比對</a>
+                    <a href="project-application-list.html" ><i class="fa-solid fa-star"></i>計畫申請</a>
+                    <a href="" ><i class="fa-solid fa-star"></i>計畫填報</a>
+                    <a href="" ><i class="fa-solid fa-star"></i>歷年成果查詢</a>
+                    <a href="" ><i class="fa-solid fa-star"></i>自訂表單輸出</a>
                   </div>
                   <div class="text-end">
-                    <button class="btn btn-icon primary-menu-link d-inline-flex w-auto" type="button" title="編輯" data-bs-toggle="modal" data-bs-target="#gModal"><i class="fa-solid fa-pen d-inline"></i></button>
+                    <button id="btn-favorite-edit" class="btn btn-icon primary-menu-link d-inline-flex w-auto me-n2" type="button" title="編輯" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFavorite"><i class="fa-solid fa-pen d-inline"></i></button>
                   </div>
                 </div>
               </div>
               <!-- GSMis-menu 主選單 -->
-              <ul class="GSMis-menu mb-5">
+              <ul class="GSMis-menu mb-5 mt-2">
                   <!-- item 1 -->
                   <li>
                       <a href="#" class="children"><i class="fa-solid fa-file-lines only"></i><span>計畫管理</span><i class="fas fa-chevron-down"></i></a>
                       <ul class="level-2">
-                          <li><a href="#" >資料申請登錄</a></li>
-                          <li><a href="#" >計畫資料填報</a></li>
-                          <li><a href="#" >無主人督辦計畫</a></li>
-                          <li><a href="#" >作業進度統計資訊</a></li>
-                          <li><a href="#" >結案案件資料補登</a></li>
-                          <li><a href="#" >計畫成果應用追蹤</a></li>
-                          <li><a href="#" >委辦計畫經費上限設定</a></li>
+                          <li><a href="project-application-list.html" >計畫申請</a></li>
+                          <li><a href="#" >計畫填報</a></li>
+                          <li><a href="#" >無人督主辦計畫</a></li>
+                          <li><a href="#" >經費上限設定</a></li>
+                          <li><a href="#" >訊息發送管理</a></li>
                       </ul>
                   </li>
                   <!-- item 2 -->
                   <li>
-                      <a href="#" class="children"><i class="fa-solid fa-clipboard-check only"></i><span>計畫審閱管理</span><i class="fas fa-chevron-down"></i></a>
+                      <a href="#" class="children"><i class="fa-solid fa-clipboard-check only"></i><span>計畫審閱</span><i class="fas fa-chevron-down"></i></a>
                       <ul class="level-2">
-                          <li><a href="#" >XXX</a></li>
+                          <li><a href="#" >審閱計畫資料</a></li>
+                          <li><a href="#" >審閱廠商資料</a></li>
                       </ul>
                   </li>
                   <!-- item 3 -->
                   <li>
-                      <a href="#" class="children"><i class="fa-solid fa-file-arrow-down only"></i><span>資料查詢與匯出</span><i class="fas fa-chevron-down"></i></a>
+                      <a href="#" class="children"><i class="fa-solid fa-file-magnifying-glass only"></i><span>資料查詢</span><i class="fas fa-chevron-down"></i></a>
                       <ul class="level-2">
-                          <li><a href="#" >XXX</a></li>
+                          <li><a href="#" >計畫查詢與匯出</a></li>
+                          <li><a href="#" >歷年成果查詢</a></li>
+                          <li><a href="#" >工作小組審查參考</a></li>
+                          <li><a href="#" >下載法規及檔案</a></li>
                       </ul>
                   </li>
                   <!-- item 4 -->
                   <li>
                       <a href="#" class="children"><i class="fa-solid fa-chart-column only"></i><span>報表及分析</span><i class="fas fa-chevron-down"></i></a>
                       <ul class="level-2">
-                          <li><a href="#" >XXX</a></li>
+                          <li><a href="#" >績效指標分析管理</a></li>
+                          <li><a href="#" >訪查作業管理</a></li>
                       </ul>
                   </li>
                   <!-- item 5 -->
                   <li>
-                      <a href="#" class="children"><i class="fa-solid fa-gear only"></i><span>系統資料維護管理</span><i class="fas fa-chevron-down"></i></a>
+                      <a href="#" class="children"><i class="fa-solid fa-gear only"></i><span>資料維護</span><i class="fas fa-chevron-down"></i></a>
                       <ul class="level-2">
-                          <li><a href="#" >XXX</a></li>
+                          <li><a href="#" >秘書室維護</a></li>
+                          <li><a href="#" >綜企組維護</a></li>
                       </ul>
                   </li>
               </ul>              <!-- /.GSMis-menu -->
             </div>
           </div>
         </div>
-      </nav>
+      </nav>      
+      <div>
+      </div>
       <!-- 主內容區 -->
       <main class="GSMis-main-wrap">
         <div class="GSMis-main-inner"><div class="dashboard-wrap">
@@ -312,7 +323,7 @@
             <button class="btn active">正式計畫</button>
         </div>
     </div>
-    <!-- 計畫概要 -->
+    <!-- C 計畫概要 -->
     <div class="block">
         <div class="head">
             <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 計畫概要</h5>
@@ -342,7 +353,7 @@
                 <div class="col-md">
                     <div id="chartOutsourcing" class="" style="height: 180px;"></div>    
                     <div class="grid-cell-container opacity-mix">
-                            <div class="border-bottom flex-left-center"><span class="dot bg-blue"></span>已發包</div>
+                            <div class="border-bottom flex-left-center"><span class="dot bg-blueSkye"></span>已發包</div>
                             <div class="border-bottom text-end">250件</div>
                             <div class="border-bottom flex-left-center"><span class="dot bg-magenta"></span>未發包</div>
                             <div class="border-bottom text-end">136件</div>
@@ -352,19 +363,19 @@
                 <div class="col-md">
                     <div id="chartOutsourcing-2" class="" style="height: 180px;"></div>
                     <div class="grid-cell-container opacity-mix">
-                            <div class="border-bottom"><span class="dot bg-blue"></span>已發包經費</div>
-                            <div class="border-bottom text-end">20億2千萬</div>
+                            <div class="border-bottom"><span class="dot bg-blueSkye"></span>已發包經費</div>
+                            <div class="border-bottom text-end">20億2000萬</div>
                             <div class="border-bottom"><span class="dot bg-orange-red"></span>發包結餘款</div>
-                            <div class="border-bottom text-end">5千萬</div>
+                            <div class="border-bottom text-end">3億74萬</div>
                             <div class="border-bottom"><span class="dot bg-yellow"></span>未發包經費</div>
-                            <div class="border-bottom text-end">9億2千萬</div>
+                            <div class="border-bottom text-end">6億789萬</div>
                     </div>
                 </div>
             </div>
             
         </div>
     </div>
-    <!-- 計畫執行 -->
+    <!-- D 計畫執行 -->
     <div class="block unit-2">        
         <div class="head">
             <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 計畫執行</h5>
@@ -382,7 +393,7 @@
                                 <div class="border-bottom"><span class="dot bg-cyan"></span>水利署主辦</div>
                                 <div class="border-bottom text-end">109</div>
                                 <div class="border-bottom text-end">38</div>
-                                <div class="border-bottom"><span class="dot bg-blue"></span>所屬機關主辦</div>
+                                <div class="border-bottom"><span class="dot bg-blueSkye"></span>所屬機關主辦</div>
                                 <div class="border-bottom text-end">277</div>
                                 <div class="border-bottom text-end">71</div>
                         </div>
@@ -435,7 +446,7 @@
             </div>
         </div>
     </div>
-    <!-- 計畫優先序 -->
+    <!-- E 計畫優先序 -->
     <div class="block">        
         <div class="head">
             <h5 class="title flex-left-center w-100">
@@ -524,13 +535,13 @@
             </div>
         </div>
     </div>
-    <!-- 廠商資訊 -->
+    <!-- F 廠商資訊 -->
     <div class="block d-flex flex-column">        
         <div class="head justify-content-between">
             <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 廠商資訊</h5>
             <div class="d-flex">
                 <div class="input-group">
-                    <select name="" id="" class="form-select dark-form sm">
+                    <select name="" id="" class="form-select dark-form muted sm">
                         <option value="">全署</option>
                         <option value="">本署</option>
                         <option value="">第一河川局</option>
@@ -549,7 +560,7 @@
                         <option value="">水利規劃試驗所</option>
                         <option value="">臺北水源特定區管理局</option>
                     </select>
-                    <select name="" id="" class="form-select dark-form sm">
+                    <select name="" id="" class="form-select dark-form muted sm">
                         <option value="">當年度得標</option>
                         <option value="">連續2年得標</option>
                         <option value="">連續3年得標</option>
@@ -587,12 +598,12 @@
             </div>
         </div>
     </div>
-    <!-- 外聘評選委員 -->
+    <!-- G 外聘評選委員 -->
     <div class="block d-flex flex-column">        
         <div class="head justify-content-between">
             <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 外聘評選委員</h5>
             <div class="d-flex">
-                <select name="" id="" class="form-select dark-form sm">
+                <select name="" id="" class="form-select dark-form muted sm">
                     <option value="">全署</option>
                     <option value="">本署</option>
                     <option value="">第一河川局</option>
@@ -633,10 +644,11 @@
             </div>
         </div>
     </div>
+       
     <div class="full row g-2">
         <div class="col-xl">
-            <!-- 全署 -->
-            <div class="block">        
+            <!-- H 全署 -->
+            <div class="block full">        
                 <div class="head">
                     <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 全署</h5>
                     
@@ -644,11 +656,11 @@
                 <div class="body">
                     <div id="container" style="height: 280px;"></div>
                 </div>
-            </div>
+            </div>             
         </div>
         <div class="col-xl">
-            <!-- 委辦計畫經費執行 -->
-            <div class="block">        
+            <!-- K 委辦計畫經費執行 -->
+            <div class="block unit-2">        
                 <div class="head">
                     <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 委辦計畫經費執行</h5>
                 </div>
@@ -669,140 +681,1277 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="gModal" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title"><i class="fa-duotone fa-stars me-2"></i>編輯常用功能</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                  <div class="col">
-                    <div class="card">
-                      <div class="card-header fw-bold">
-                        功能選單項目
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title fw-bold text-blue">計畫管理</h5>
-                        <div class="mb-3">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBA0">
-                            <label class="form-check-label" for="flexCheckDefaultBA0">
-                              資料申請登錄
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBA1">
-                            <label class="form-check-label" for="flexCheckDefaultBA1">
-                              計畫資料填報
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBA2">
-                            <label class="form-check-label" for="flexCheckDefaultBA2">
-                              無人督主辦計畫
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBA3">
-                            <label class="form-check-label" for="flexCheckDefaultBA3">
-                              作業進度統計資訊
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBA4">
-                            <label class="form-check-label" for="flexCheckDefaultBA4">
-                              結案案件資料補登
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBA5">
-                            <label class="form-check-label" for="flexCheckDefaultBA5">
-                              計畫成果應用追蹤
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBA6">
-                            <label class="form-check-label" for="flexCheckDefaultBA6">
-                              委辦計畫經費上限設定
-                            </label>
-                          </div>
-                        </div>
-                        <h5 class="card-title fw-bold text-blue">計畫審閱管理</h5>
-                        <div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBB0">
-                            <label class="form-check-label" for="flexCheckDefaultBB0">
-                              審閱委辦計畫資料
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBB1">
-                            <label class="form-check-label" for="flexCheckDefaultBB1">
-                              主持人填報資料審閱
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBB2">
-                            <label class="form-check-label" for="flexCheckDefaultBB2">
-                              資料查詢與匯出
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBB3">
-                            <label class="form-check-label" for="flexCheckDefaultBB3">
-                              資料相似度比對
-                            </label>
-                          </div>
-                        </div>
+    <!-- 編輯常用功能 -->
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasFavorite">
+      <div class="offcanvas-header block-title blue-purple">
+        <h5 class="offcanvas-title fw-bold"><i class="fa-duotone fa-stars me-1"></i>常用功能</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="row">
+          <div class="col-auto">
+            <div class="card">
+              <div class="card-header fw-bold bg-blue text-white">
+                自訂常用功能</span>
+              </div>
+              <div class="card-body bg-light">
+                <div class="flex-left-center small mb-3">
+                  <span class="text-muted">*常用功能最多自訂8項</span>
+                  <a href="#" class="btn btn-icon text-primary ms-auto" style="font-size: 14px;">重設為預設值</a>
+                </div>
+                <div class="d-flex flex-column" style="gap: 8px">
+                  <div class="flex-left-center" style="gap: 8px">
+                    <button class="btn btn-icon text-muted icon-btn-close" style="width: 80px;">
+                      <i class="fa-solid fa-house-chimney"></i>
+                    </button>
+                    <div style="width: 4rem;">
+                      <input type="text" class="form-control text-center" value="1">
+                    </div>
+                    <div class="flex-grow-1">
+                      <div class="flex-left-center w-100">
+                        <div class="fw-bold">計畫申請</div>
+                        <button href="#" class="btn btn-icon text-muted py-0 opacity-50" title="刪除" data-bs-toggle="tooltip"><i class="fa-solid fa-trash-can"></i></button>
                       </div>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="card">
-                      <div class="card-header fw-bold bg-blue text-white">
-                        自訂常用功能
+                  <div class="flex-left-center" style="gap: 8px">
+                    <button class="btn btn-icon text-primary" style="width: 80px;">
+                      設首頁
+                    </button>
+                    <div style="width: 4rem;">
+                      <input type="text" class="form-control text-center" value="2">
+                    </div>
+                    <div class="flex-grow-1">
+                      <div class="flex-left-center w-100">
+                        <div class="fw-bold">計畫填報</div>
+                        <button href="#" class="btn btn-icon text-muted py-0 opacity-50" title="刪除" data-bs-toggle="tooltip"><i class="fa-solid fa-trash-can"></i></button>
                       </div>
-                      <div class="card-body bg-light">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBC0" checked>
-                          <label class="form-check-label" for="flexCheckDefaultBC0">
-                            資料申請登錄
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBC1" checked>
-                          <label class="form-check-label" for="flexCheckDefaultBC1">
-                            計畫資料填報
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBC2" checked>
-                          <label class="form-check-label" for="flexCheckDefaultBC2">
-                            計畫成果應用追蹤
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBC3" checked>
-                          <label class="form-check-label" for="flexCheckDefaultBC3">
-                            資料查詢與匯出
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultBC4" checked>
-                          <label class="form-check-label" for="flexCheckDefaultBC4">
-                            資料相似度比對
-                          </label>
-                        </div>
+                    </div>
+                  </div>
+                  <div class="flex-left-center" style="gap: 8px">
+                    <button class="btn btn-icon text-primary" style="width: 80px;">
+                      設首頁
+                    </button>
+                    <div style="width: 4rem;">
+                      <input type="text" class="form-control text-center" value="3">
+                    </div>
+                    <div class="flex-grow-1">
+                      <div class="flex-left-center w-100">
+                        <div class="fw-bold">無人督主辦計畫</div>
+                        <button href="#" class="btn btn-icon text-muted py-0 opacity-50" title="刪除" data-bs-toggle="tooltip"><i class="fa-solid fa-trash-can"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex-left-center" style="gap: 8px">
+                    <button class="btn btn-icon text-primary" style="width: 80px;">
+                      設首頁
+                    </button>
+                    <div style="width: 4rem;">
+                      <input type="text" class="form-control text-center" value="4">
+                    </div>
+                    <div class="flex-grow-1">
+                      <span class="badge rounded-pill bg-blue">預定計畫</span>
+                      <div class="flex-left-center w-100">
+                        <div class="fw-bold">組室初審計畫清單</div>
+                        <button href="#" class="btn btn-icon text-muted py-0 opacity-50" title="刪除" data-bs-toggle="tooltip"><i class="fa-solid fa-trash-can"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex-left-center" style="gap: 8px">
+                    <button class="btn btn-icon text-primary" style="width: 80px;">
+                      設首頁
+                    </button>
+                    <div style="width: 4rem;">
+                      <input type="text" class="form-control text-center" value="5">
+                    </div>
+                    <div class="flex-grow-1">
+                      <span class="badge rounded-pill bg-blue">增辦計畫會議登錄</span>
+                      <div class="flex-left-center w-100">
+                        <div class="fw-bold">核列計畫清單</div>
+                        <button href="#" class="btn btn-icon text-muted py-0 opacity-50" title="刪除" data-bs-toggle="tooltip"><i class="fa-solid fa-trash-can"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex-left-center" style="gap: 8px">
+                    <button class="btn btn-icon text-primary" style="width: 80px;">
+                      設首頁
+                    </button>
+                    <div style="width: 4rem;">
+                      <input type="text" class="form-control text-center" value="6">
+                    </div>
+                    <div class="flex-grow-1">
+                      <span class="badge rounded-pill bg-blue">增辦計畫會議登錄</span>
+                      <div class="flex-left-center w-100">
+                        <div class="fw-bold">預算別分類彙整表</div>
+                        <button href="#" class="btn btn-icon text-muted py-0 opacity-50" title="刪除" data-bs-toggle="tooltip"><i class="fa-solid fa-trash-can"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex-left-center" style="gap: 8px">
+                    <button class="btn btn-icon text-primary" style="width: 80px;">
+                      設首頁
+                    </button>
+                    <div style="width: 4rem;">
+                      <input type="text" class="form-control text-center" value="7">
+                    </div>
+                    <div class="flex-grow-1">
+                      <span class="badge rounded-pill bg-blue">預定計畫</span>
+                      <div class="flex-left-center w-100">
+                        <div class="fw-bold">各組室計畫及其督辦計畫報表</div>
+                        <button href="#" class="btn btn-icon text-muted py-0 opacity-50" title="刪除" data-bs-toggle="tooltip"><i class="fa-solid fa-trash-can"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex-left-center" style="gap: 8px">
+                    <button class="btn btn-icon text-muted" disabled  style="width: 80px;">設首頁</button>
+                    <div style="width: 4rem;">
+                      <input type="text" class="form-control text-center" value="8" disabled>
+                    </div>
+                    <div>
+                      <div class="opacity-50 fw-bold">尚未選取</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap justify-content-center my-3" style="gap: 16px">
+              <button class="btn btn-danger" type="submit"><i class="fa-solid fa-floppy-disk me-1"></i>確定儲存</button>
+              <button type="button" class="btn btn-icon">取消</button>
+          </div>
+          </div>
+          <div class="col">
+            <div class="overflow-auto" style="max-height: calc(90vh - 100px);">
+              <div class="card">
+                <div class="card-header fw-bold">
+                  功能選單項目
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">計畫管理</h5>
+                  <div class="grid-container">
+                    <!-- 計畫管理 -->
+                    <div>
+                      <h6 class="text-brown fw-bold">計畫管理</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCA0">
+                        <label class="form-check-label" for="flexCheckDefaultCA0">
+                          計畫申請
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCA1">
+                        <label class="form-check-label" for="flexCheckDefaultCA1">
+                          計畫填報
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCA2">
+                        <label class="form-check-label" for="flexCheckDefaultCA2">
+                          無人督主辦計畫
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCA3">
+                        <label class="form-check-label" for="flexCheckDefaultCA3">
+                          經費上限設定
+                        </label>
+                      </div>
+                    </div>
+                    <!-- 訊息發送管理 -->
+                    <div>
+                      <h6 class="text-brown fw-bold">訊息發送管理</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCB0">
+                        <label class="form-check-label" for="flexCheckDefaultCB0">
+                          公告訊息查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCB1">
+                        <label class="form-check-label" for="flexCheckDefaultCB1">
+                          E-Mail訊息發送
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <h5 class="card-title fw-bold">計畫審閱</h5>
+                  <!-- 計畫審閱 -->
+                  <div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCC0">
+                      <label class="form-check-label" for="flexCheckDefaultCC0">
+                        審閱計畫資料
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCC1">
+                      <label class="form-check-label" for="flexCheckDefaultCC1">
+                        審閱廠商資料
+                      </label>
+                    </div>
+                  </div>
+                  <hr>
+                  <h5 class="card-title fw-bold">資料查詢</h5>
+                  <h6 class="text-brown fw-bold">計畫查詢與匯出</h6>
+                  <div class="grid-container mb-5">
+                    <!-- 預定計畫 -->
+                    <div>
+                      <h6 class="text-blue mt-2">預定計畫</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCD0">
+                        <label class="form-check-label" for="flexCheckDefaultCD0">
+                          組室初審計畫清單
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCD1">
+                        <label class="form-check-label" for="flexCheckDefaultCD1">
+                          核列計畫清單
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCD2">
+                        <label class="form-check-label" for="flexCheckDefaultCD2">
+                          預算別分類彙整表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCD3">
+                        <label class="form-check-label" for="flexCheckDefaultCD3">
+                          組室別分類彙整表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCD4">
+                        <label class="form-check-label" for="flexCheckDefaultCD4">
+                          經費統計總表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCD5">
+                        <label class="form-check-label" for="flexCheckDefaultCD5">
+                          預定計畫自訂輸出表單
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCD6">
+                        <label class="form-check-label" for="flexCheckDefaultCD6">
+                          預定計畫資料匯出
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCD7">
+                        <label class="form-check-label" for="flexCheckDefaultCD7">
+                          預定計畫固定表單
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCD8">
+                        <label class="form-check-label" for="flexCheckDefaultCD8">
+                          預算來源分配統計表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCD9">
+                        <label class="form-check-label" for="flexCheckDefaultCD9">
+                          預算來源執行統計表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCD10">
+                        <label class="form-check-label" for="flexCheckDefaultCD10">
+                          全署預定計畫資料查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCD11">
+                        <label class="form-check-label" for="flexCheckDefaultCD11">
+                          計畫相似度分析查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCD12">
+                        <label class="form-check-label" for="flexCheckDefaultCD12">
+                          委託服務計畫經費統計表
+                        </label>
+                      </div>
+                    </div>
+                    <!-- 增辦計畫會議登錄 -->
+                    <div>
+                      <h6 class="text-blue mt-2">增辦計畫會議登錄</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCE0">
+                        <label class="form-check-label" for="flexCheckDefaultCE0">
+                          組室初審計畫清單
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCE1">
+                        <label class="form-check-label" for="flexCheckDefaultCE1">
+                          核列計畫清單
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCE2">
+                        <label class="form-check-label" for="flexCheckDefaultCE2">
+                          預算別分類彙整表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCE3">
+                        <label class="form-check-label" for="flexCheckDefaultCE3">
+                          組室別分類彙整表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCE4">
+                        <label class="form-check-label" for="flexCheckDefaultCE4">
+                          經費統計總表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCE5">
+                        <label class="form-check-label" for="flexCheckDefaultCE5">
+                          預定計畫自訂輸出表單
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCE6">
+                        <label class="form-check-label" for="flexCheckDefaultCE6">
+                          預定計畫資料匯出
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCE7">
+                        <label class="form-check-label" for="flexCheckDefaultCE7">
+                          預定計畫固定表單
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCE8">
+                        <label class="form-check-label" for="flexCheckDefaultCE8">
+                          預算來源分配統計表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCE9">
+                        <label class="form-check-label" for="flexCheckDefaultCE9">
+                          預算來源執行統計表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCE10">
+                        <label class="form-check-label" for="flexCheckDefaultCE10">
+                          全署預定計畫資料查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCE11">
+                        <label class="form-check-label" for="flexCheckDefaultCE11">
+                          計畫相似度分析查詢
+                        </label>
+                      </div>
+                    </div>
+                    <!-- 經費與進度管理 -->
+                    <div>
+                      <h6 class="text-blue mt-2">正式計畫/經費與進度管理</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF0">
+                        <label class="form-check-label" for="flexCheckDefaultCF0">
+                          正式計畫自訂輸出表單
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF1">
+                        <label class="form-check-label" for="flexCheckDefaultCF1">
+                          委辦案件明細
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF2">
+                        <label class="form-check-label" for="flexCheckDefaultCF2">
+                          計畫提報匯出
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF3">
+                        <label class="form-check-label" for="flexCheckDefaultCF3">
+                          委辦經費總表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF4">
+                        <label class="form-check-label" for="flexCheckDefaultCF4">
+                          進度落後統計
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF5">
+                        <label class="form-check-label" for="flexCheckDefaultCF5">
+                          訪查資料匯出
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF6">
+                        <label class="form-check-label" for="flexCheckDefaultCF6">
+                          計畫進度統計
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF7">
+                        <label class="form-check-label" for="flexCheckDefaultCF7">
+                          經費月報表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF8">
+                        <label class="form-check-label" for="flexCheckDefaultCF8">
+                          撥款情形比對查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF9">
+                        <label class="form-check-label" for="flexCheckDefaultCF9">
+                          正式計畫固定表單
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF10">
+                        <label class="form-check-label" for="flexCheckDefaultCF10">
+                          控管預算執行進度表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF11">
+                        <label class="form-check-label" for="flexCheckDefaultCF11">
+                          優先次序進度統計表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF12">
+                        <label class="form-check-label" for="flexCheckDefaultCF12">
+                          尚未議價案件清單
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF13">
+                        <label class="form-check-label" for="flexCheckDefaultCF13">
+                          決標金額級距統計
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF14">
+                        <label class="form-check-label" for="flexCheckDefaultCF14">
+                          會計決算檢核表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF15">
+                        <label class="form-check-label" for="flexCheckDefaultCF15">
+                          計畫基本資料異動查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCF16">
+                        <label class="form-check-label" for="flexCheckDefaultCF16">
+                          委託服務計畫經費統計表
+                        </label>
+                      </div>
+                    </div>
+                    <!-- 資料查詢 -->
+                    <div>
+                      <h6 class="text-blue mt-2">正式計畫/資料查詢</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCG0">
+                        <label class="form-check-label" for="flexCheckDefaultCG0">
+                          單一計畫查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCG1">
+                        <label class="form-check-label" for="flexCheckDefaultCG1">
+                          部門計劃查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCG2">
+                        <label class="form-check-label" for="flexCheckDefaultCG2">
+                          採購階段查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCG3">
+                        <label class="form-check-label" for="flexCheckDefaultCG3">
+                          主持人接案查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCG4">
+                        <label class="form-check-label" for="flexCheckDefaultCG4">
+                          結案未歸檔查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCG5">
+                        <label class="form-check-label" for="flexCheckDefaultCG5">
+                          計畫審閱查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCG6">
+                        <label class="form-check-label" for="flexCheckDefaultCG6">
+                          控管計畫查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCG7">
+                        <label class="form-check-label" for="flexCheckDefaultCG7">
+                          異質系統整合查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCG8">
+                        <label class="form-check-label" for="flexCheckDefaultCG8">
+                          系統LOG資訊查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCG9">
+                        <label class="form-check-label" for="flexCheckDefaultCG9">
+                          各組室計畫及其督辦計畫報表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCG10">
+                        <label class="form-check-label" for="flexCheckDefaultCG10">
+                          決標公告資訊查詢
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid-container">                
+                    <!-- 歷年成果查詢 -->
+                    <div>
+                      <h6 class="text-brown fw-bold">歷年成果查詢</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCH0">
+                        <label class="form-check-label" for="flexCheckDefaultCH0">
+                          歷年成果查詢
+                        </label>
+                      </div>
+                    </div>
+                    <!-- 工作小組審查參考 -->
+                    <div>
+                      <h6 class="text-brown fw-bold">工作小組審查參考</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCI0">
+                        <label class="form-check-label" for="flexCheckDefaultCI0">
+                          工作小組審查參考
+                        </label>
+                      </div>
+                    </div>
+                    <!-- 下載法規及檔案 -->
+                    <div>
+                      <h6 class="text-brown fw-bold">下載法規及檔案</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCJ0">
+                        <label class="form-check-label" for="flexCheckDefaultCJ0">
+                          法規及檔案下載
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCJ1">
+                        <label class="form-check-label" for="flexCheckDefaultCJ1">
+                          計畫檔案批次下載
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCJ2">
+                        <label class="form-check-label" for="flexCheckDefaultCJ2">
+                          空白招標範本下載
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <h5 class="card-title fw-bold">報表及分析</h5>
+                  <div class="grid-container">
+                    <!-- 績效指標分析管理 -->
+                    <div>
+                      <h6 class="text-brown fw-bold">績效指標分析管理</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCK0">
+                        <label class="form-check-label" for="flexCheckDefaultCK0">
+                          績效指標填報查詢
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCK1">
+                        <label class="form-check-label" for="flexCheckDefaultCK1">
+                          計畫績效產出總表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCK2">
+                        <label class="form-check-label" for="flexCheckDefaultCK2">
+                          績效指標統計圖
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCK3">
+                        <label class="form-check-label" for="flexCheckDefaultCK3">
+                          成果應用情形分析
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCK4">
+                        <label class="form-check-label" for="flexCheckDefaultCK4">
+                          成果效益報告下載
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCK5">
+                        <label class="form-check-label" for="flexCheckDefaultCK5">
+                          績效指標目標設定與達成
+                        </label>
+                      </div>
+                    </div>
+                    <!-- 訪查作業管理 -->
+                    <div>
+                      <h6 class="text-brown fw-bold">訪查作業管理</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCL0">
+                        <label class="form-check-label" for="flexCheckDefaultCL0">
+                          設定年度訪查委員
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCL1">
+                        <label class="form-check-label" for="flexCheckDefaultCL1">
+                          篩選訪查委員計畫
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCL2">
+                        <label class="form-check-label" for="flexCheckDefaultCL2">
+                          印製訪查表單
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCL3">
+                        <label class="form-check-label" for="flexCheckDefaultCL3">
+                          訪查表單套表
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCL4">
+                        <label class="form-check-label" for="flexCheckDefaultCL4">
+                          訪查資料登錄
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCL5">
+                        <label class="form-check-label" for="flexCheckDefaultCL5">
+                          下載訪查簡報範例
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCL6">
+                        <label class="form-check-label" for="flexCheckDefaultCL6">
+                          訪查缺失追蹤表
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <h5 class="card-title fw-bold">資料維護</h5>
+                  <h6 class="text-brown fw-bold">秘書室維護</h6>
+                  <!-- 秘書室維護 -->
+                  <div class="mb-5">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCM0">
+                      <label class="form-check-label" for="flexCheckDefaultCM0">
+                        新增門檻金額
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCM1">
+                      <label class="form-check-label" for="flexCheckDefaultCM1">
+                        招標文件範本維護
+                      </label>
+                    </div>
+                  </div>
+                  <h6 class="text-brown fw-bold">綜企組維護</h6>
+                  <div class="grid-container mb-5">
+                    <!-- GRB資料轉匯 -->
+                    <div>
+                      <h6 class="text-blue mt-2">GRB資料轉匯</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCN0">
+                        <label class="form-check-label" for="flexCheckDefaultCN0">
+                          GRB資料轉匯
+                        </label>
+                      </div>
+                    </div>
+                    <!-- 發表會檔案設定 -->
+                    <div>
+                      <h6 class="text-blue mt-2">發表會檔案設定</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCO0">
+                        <label class="form-check-label" for="flexCheckDefaultCO0">
+                          發表會檔案設定
+                        </label>
+                      </div>
+                    </div>
+                    <!-- 權限設定 -->
+                    <div>
+                      <h6 class="text-blue mt-2">權限設定</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCP0">
+                        <label class="form-check-label" for="flexCheckDefaultCP0">
+                          系統控管人員設定
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCP1">
+                        <label class="form-check-label" for="flexCheckDefaultCP1">
+                          組室窗口人員設定
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCP2">
+                        <label class="form-check-label" for="flexCheckDefaultCP2">
+                          採購人員權限設定
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCP3">
+                        <label class="form-check-label" for="flexCheckDefaultCP3">
+                          預定計畫資料異動權限設定
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCP4">
+                        <label class="form-check-label" for="flexCheckDefaultCP4">
+                          重要職務代理
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCP5">
+                        <label class="form-check-label" for="flexCheckDefaultCP5">
+                          系統功能權限設定
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                    <div class="grid-container mb-5">                  
+                    <!-- 檔案訊息發布 -->
+                    <div>
+                      <h6 class="text-blue mt-2">檔案訊息發布</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCQ0">
+                        <label class="form-check-label" for="flexCheckDefaultCQ0">
+                          發布公告訊息
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCQ1">
+                        <label class="form-check-label" for="flexCheckDefaultCQ1">
+                          法規上傳
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCQ2">
+                        <label class="form-check-label" for="flexCheckDefaultCQ2">
+                          檔案上傳
+                        </label>
+                      </div>
+                    </div>
+                    <!-- 切換身分 -->
+                    <div>
+                      <h6 class="text-blue mt-2">切換身分</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCR0">
+                        <label class="form-check-label" for="flexCheckDefaultCR0">
+                          切換身分
+                        </label>
+                      </div>
+                    </div>
+                    <!-- 預定計畫申請前置設定 -->
+                    <div>
+                      <h6 class="text-blue mt-2">預定計畫申請前置設定</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCS0">
+                        <label class="form-check-label" for="flexCheckDefaultCS0">
+                          設定年度預算科目
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCS1">
+                        <label class="form-check-label" for="flexCheckDefaultCS1">
+                          設定預算科目用途別
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCS2">
+                        <label class="form-check-label" for="flexCheckDefaultCS2">
+                          設定年度計畫類別
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCS3">
+                        <label class="form-check-label" for="flexCheckDefaultCS3">
+                          設定業務性質
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCS4">
+                        <label class="form-check-label" for="flexCheckDefaultCS4">
+                          設定申請登記期程
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCS5">
+                        <label class="form-check-label" for="flexCheckDefaultCS5">
+                          設定年度施政方向/施政綱領議題
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCS6">
+                        <label class="form-check-label" for="flexCheckDefaultCS6">
+                          設定年度計畫優先次序
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCS7">
+                        <label class="form-check-label" for="flexCheckDefaultCS7">
+                          設定公務預算委辦費經費
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCS8">
+                        <label class="form-check-label" for="flexCheckDefaultCS8">
+                          設定RoadMap發展架構
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCS9">
+                        <label class="form-check-label" for="flexCheckDefaultCS9">
+                          水利專業語料庫管理
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                    <div class="grid-container">
+                      
+                    <!-- 預定計畫檢討作業 -->
+                    <div>
+                      <h6 class="text-blue mt-2">預定計畫檢討作業</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCT0">
+                        <label class="form-check-label" for="flexCheckDefaultCT0">
+                          審查結果匯入
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCT1">
+                        <label class="form-check-label" for="flexCheckDefaultCT1">
+                          組室計畫關鍵字匯入
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCT2">
+                        <label class="form-check-label" for="flexCheckDefaultCT2">
+                          設定計畫核定上限經費
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCT3">
+                        <label class="form-check-label" for="flexCheckDefaultCT3">
+                          轉入計畫內容管理
+                        </label>
+                      </div>
+                    </div>
+                    <!-- 增辦計畫設定與審核 -->
+                    <div>
+                      <h6 class="text-blue mt-2">增辦計畫設定與審核</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCU0">
+                        <label class="form-check-label" for="flexCheckDefaultCU0">
+                          設定申請登記期程
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCU1">
+                        <label class="form-check-label" for="flexCheckDefaultCU1">
+                          增辦計畫申請審核
+                        </label>
+                      </div>
+                    </div>
+                    <!-- 計畫執行設定與審核 -->
+                    <div>
+                      <h6 class="text-blue mt-2">計畫執行設定與審核</h6>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCV0">
+                        <label class="form-check-label" for="flexCheckDefaultCV0">
+                          計畫資料變更審核
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCV1">
+                        <label class="form-check-label" for="flexCheckDefaultCV1">
+                          提報資料內容審核
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCV2">
+                        <label class="form-check-label" for="flexCheckDefaultCV2">
+                          提報鎖定解除審核
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCV3">
+                        <label class="form-check-label" for="flexCheckDefaultCV3">
+                          無書面成果計畫審核
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCV4">
+                        <label class="form-check-label" for="flexCheckDefaultCV4">
+                          委辦費勻支留用登錄
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCV5">
+                        <label class="form-check-label" for="flexCheckDefaultCV5">
+                          說明文字維護
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCV6">
+                        <label class="form-check-label" for="flexCheckDefaultCV6">
+                          受託單位資料維護
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCV7">
+                        <label class="form-check-label" for="flexCheckDefaultCV7">
+                          補捐助申請轉核定
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultCV8">
+                        <label class="form-check-label" for="flexCheckDefaultCV8">
+                          警示報表資料匯入
+                        </label>
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <!-- 外聘委員預警 -->
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasEarlyWarning">
+      <div class="offcanvas-header block-title blue-purple">
+        <h5 class="offcanvas-title fw-bold"><i class="fa-duotone fa-file-lines me-1"></i>OOO計畫 (共30筆)</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="table-responsive position-relative h-100">
+            <table class="table table-blue table-striped table-bordered table-striped mb-0">
+                <tbody>
+                    <tr class="sticky-top">
+                        <th>計畫年度</th>
+                        <th>計畫編號</th>
+                        <th>計畫名稱</th>
+                        <th>督辦組室/人員</th>
+                        <th>主辦機關/單位/人員</th>
+                        <th>執行階段</th>
+                        <th>進度落後</th>
+                        <th>預定日期</th>
+                        <th>進度落後</th>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>MOEAWRA1110083</td>
+                        <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td>進度填報階段</td>
+                        <td>第二次審查</td>
+                        <td>110/12/20</td>
+                        <td>進度填報階段</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+    <!-- 個人基本資料 -->
+    <div class="modal fade" id="cModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><i class="fa-solid fa-user me-1"></i>個人基本資料</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-blue table-striped">
+                  <tr>
+                    <th>機關</th>
+                    <td>水利署</td>
+                  </tr>
+                  <tr>
+                    <th>單位</th>
+                    <td>水源經營組</td>
+                  </tr>
+                  <tr>
+                    <th>科別</th>
+                    <td>水源二科</td>
+                  </tr>
+                  <tr>
+                    <th>姓名</th>
+                    <td>林雅谷</td>
+                  </tr>
+                  <tr>
+                    <th>職稱</th>
+                    <td>正工程司</td>
+                  </tr>
+                  <tr>
+                    <th>公務電話</th>
+                    <td>04-22501191</td>
+                  </tr>
+                  <tr>
+                    <th>行動電話</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>傳真電話</th>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <th>E-Mail</th>
+                    <td>yahoo55@ms1.wra.gov.tw</td>
+                  </tr>
+                </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    
     <!-- Base -->
     <script src="assets/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets/vendor/bootstrap-5.1.3/bootstrap.bundle.min.js"></script>
@@ -814,5 +1963,12 @@
     <!-- 自訂 -->
     <script src="assets/js/base-layout.js"></script>
     <script src="assets/js/customJS.js"></script>
+    <script>
+      //快訊輪播
+      //網頁load完會執行一次
+      //五個屬性各別是：外面div的id名稱、包在裡面的標籤類型
+      //延遲毫秒數、速度、高度
+      slideLine('latest-news','div',3000,25,50);
+    </script>
   </body>
 </html>
