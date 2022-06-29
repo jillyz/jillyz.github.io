@@ -340,7 +340,7 @@
                         <span class="opacity-75 small me-2">總件數</span>
                         <button class="btn btn-sm dark-form bg-dark1"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
-                    <span class="opacity-75 fs-5 fw-bold">386件</span>
+                    <div class="opacity-75 fw-bold"><span class="fs-5">386</span><small class="ms-1">件</small></div>
                 </div>
                 <div class="d-grid text-end">
                     <span class="opacity-75 small">總經費</span>
@@ -375,20 +375,20 @@
             
         </div>
     </div>
-    <!-- K 委辦計畫經費執行 -->
+    <!-- K 經費執行 -->
     <div class="block unit-2">        
         <div class="head">
-            <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 委辦計畫經費執行</h5>
+            <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 經費執行</h5>
         </div>
         <div class="body">
             <div id="funds1" style="height: 280px;"></div>
         </div>
     </div>
-    <!-- E 計畫優先序 -->
+    <!-- E 發包情形 -->
     <div class="block">        
         <div class="head">
             <h5 class="title flex-left-center w-100">
-                <span class="me-2"><i class="fa-regular fa-grip-dots text-cyan"></i> 計畫優先序</span> 
+                <span class="me-2"><i class="fa-regular fa-grip-dots text-cyan"></i> 發包情形</span> 
                 <button class="btn btn-sm dark-form bg-dark1 ms-auto"><i class="fa-solid fa-magnifying-glass"></i></button>
             </h5>
         </div>
@@ -397,11 +397,11 @@
             <div class="d-flex justify-content-between opacity-mix small ">
                 <div class="d-grid">
                     <span class="">總件數</span>
-                    <span class="fs-5 fw-bold">250件</span>
+                    <div class="fw-bold"><span class="fs-5">250</span><small class="ms-1">件</small></div>
                 </div>
                 <div class="d-grid text-end">
                     <span class="">不含跨年度計畫及無需訂約計畫</span>
-                    <span class="fs-5 fw-bold">20</span>
+                    <div class="fw-bold"><span class="fs-5">20</span><small class="ms-1">件</small></div>
                 </div>
             </div>
             <!-- 圖表+明細 -->
@@ -418,7 +418,7 @@
                         <span class="text-end border-bottom">17</span>
                     </div>
                     <div class="mt-2 text-center">
-                        <span class="">辦理期限</span>
+                        <span class="">發包期限</span>
                         <span class="">110/12/31</span>
                     </div>
                 </div>
@@ -434,7 +434,7 @@
                         <span class="text-end border-bottom">11</span>
                     </div>
                     <div class="mt-2 text-center">
-                        <span class="">辦理期限</span>
+                        <span class="">發包期限</span>
                         <span class="">111/03/30</span>
                     </div>
                 </div>
@@ -450,7 +450,7 @@
                         <span class="text-end border-bottom">18</span>
                     </div>
                     <div class="mt-2 text-center">
-                        <span class="">辦理期限</span>
+                        <span class="">發包期限</span>
                         <span class="">111/05/31</span>
                     </div>
                 </div>
@@ -466,17 +466,17 @@
                         <span class="text-end border-bottom">13</span>
                     </div>
                     <div class="mt-2 text-center">
-                        <span class="">辦理期限</span>
+                        <span class="">發包期限</span>
                         <span class="">111/06/30</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- D 計畫執行 -->
+    <!-- D 執行階段 -->
     <div class="block unit-2">        
         <div class="head">
-            <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 計畫執行</h5>
+            <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 執行階段</h5>
         </div>
         <div class="body">
             <div class="row g-0">
@@ -546,9 +546,29 @@
     </div>
     <!-- H 全署 -->
     <div class="block full">        
-        <div class="head">
-            <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 全署</h5>
-            
+        <div class="head justify-content-between">
+            <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 件數及經費分布</h5>
+            <div class="d-flex">
+                <select name="" id="" class="form-select dark-form muted sm">
+                    <option value="">全署</option>
+                    <option value="">本署</option>
+                    <option value="">第一河川局</option>
+                    <option value="">第二河川局</option>
+                    <option value="">第三河川局</option>
+                    <option value="">第四河川局</option>
+                    <option value="">第五河川局</option>
+                    <option value="">第六河川局</option>
+                    <option value="">第七河川局</option>
+                    <option value="">第八河川局</option>
+                    <option value="">第九河川局</option>
+                    <option value="">第十河川局</option>
+                    <option value="">北區水資源局</option>
+                    <option value="">中區水資源局</option>
+                    <option value="">南區水資源局</option>
+                    <option value="">水利規劃試驗所</option>
+                    <option value="">臺北水源特定區管理局</option>
+                </select>
+            </div>
         </div>
         <div class="body">
             <div id="container" style="height: 280px;"></div>
@@ -556,10 +576,10 @@
     </div>    
     <div class="full row g-2">
         <div class="col-xl">
-            <!-- F 廠商資訊 -->
+            <!-- F 得標廠商資訊 -->
             <div class="block d-flex flex-column">        
                 <div class="head justify-content-between">
-                    <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 廠商資訊</h5>
+                    <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 得標廠商資訊</h5>
                     <div class="d-flex">
                         <div class="input-group">
                             <select name="" id="" class="form-select dark-form muted sm">
@@ -691,26 +711,25 @@
         <div class="row">
           <div class="col-auto">
             <div class="card">
-              <div class="card-header fw-bold bg-blue text-white">
-                自訂常用功能</span>
+              <div class="card-header flex-left-center fw-bold bg-blue text-white">
+                自訂常用功能
+                <a href="#" class="text-white small ms-auto">設首頁為儀表板</a>
               </div>
               <div class="card-body bg-light">
                 <div class="flex-left-center small mb-3">
                   <span class="text-muted">*常用功能最多自訂8項</span>
-                  <a href="#" class="btn btn-icon text-primary ms-auto" style="font-size: 14px;">重設為預設值</a>
                 </div>
                 <div class="d-flex flex-column" style="gap: 8px">
                   <div class="flex-left-center" style="gap: 8px">
-                    <button class="btn btn-icon text-muted icon-btn-close" style="width: 80px;">
+                    <div class="text-center text-muted opacity-75"  style="width: 80px;">
                       <i class="fa-solid fa-house-chimney"></i>
-                    </button>
+                    </div>
                     <div style="width: 4rem;">
                       <input type="text" class="form-control text-center" value="1">
                     </div>
                     <div class="flex-grow-1">
                       <div class="flex-left-center w-100">
                         <div class="fw-bold">計畫申請</div>
-                        <button href="#" class="btn btn-icon text-muted py-0 opacity-50" title="刪除" data-bs-toggle="tooltip"><i class="fa-solid fa-trash-can"></i></button>
                       </div>
                     </div>
                   </div>
@@ -724,7 +743,6 @@
                     <div class="flex-grow-1">
                       <div class="flex-left-center w-100">
                         <div class="fw-bold">計畫填報</div>
-                        <button href="#" class="btn btn-icon text-muted py-0 opacity-50" title="刪除" data-bs-toggle="tooltip"><i class="fa-solid fa-trash-can"></i></button>
                       </div>
                     </div>
                   </div>
@@ -737,8 +755,7 @@
                     </div>
                     <div class="flex-grow-1">
                       <div class="flex-left-center w-100">
-                        <div class="fw-bold">無人督主辦計畫</div>
-                        <button href="#" class="btn btn-icon text-muted py-0 opacity-50" title="刪除" data-bs-toggle="tooltip"><i class="fa-solid fa-trash-can"></i></button>
+                        <div class="fw-bold">歷年成果查詢</div>
                       </div>
                     </div>
                   </div>
@@ -750,10 +767,8 @@
                       <input type="text" class="form-control text-center" value="4">
                     </div>
                     <div class="flex-grow-1">
-                      <span class="badge rounded-pill bg-blue">預定計畫</span>
                       <div class="flex-left-center w-100">
-                        <div class="fw-bold">組室初審計畫清單</div>
-                        <button href="#" class="btn btn-icon text-muted py-0 opacity-50" title="刪除" data-bs-toggle="tooltip"><i class="fa-solid fa-trash-can"></i></button>
+                        <div class="fw-bold">自訂表單輸出</div>
                       </div>
                     </div>
                   </div>
@@ -768,7 +783,6 @@
                       <span class="badge rounded-pill bg-blue">增辦計畫會議登錄</span>
                       <div class="flex-left-center w-100">
                         <div class="fw-bold">核列計畫清單</div>
-                        <button href="#" class="btn btn-icon text-muted py-0 opacity-50" title="刪除" data-bs-toggle="tooltip"><i class="fa-solid fa-trash-can"></i></button>
                       </div>
                     </div>
                   </div>
@@ -783,7 +797,6 @@
                       <span class="badge rounded-pill bg-blue">增辦計畫會議登錄</span>
                       <div class="flex-left-center w-100">
                         <div class="fw-bold">預算別分類彙整表</div>
-                        <button href="#" class="btn btn-icon text-muted py-0 opacity-50" title="刪除" data-bs-toggle="tooltip"><i class="fa-solid fa-trash-can"></i></button>
                       </div>
                     </div>
                   </div>
@@ -798,7 +811,6 @@
                       <span class="badge rounded-pill bg-blue">預定計畫</span>
                       <div class="flex-left-center w-100">
                         <div class="fw-bold">各組室計畫及其督辦計畫報表</div>
-                        <button href="#" class="btn btn-icon text-muted py-0 opacity-50" title="刪除" data-bs-toggle="tooltip"><i class="fa-solid fa-trash-can"></i></button>
                       </div>
                     </div>
                   </div>

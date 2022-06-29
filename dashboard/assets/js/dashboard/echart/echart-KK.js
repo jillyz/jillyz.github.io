@@ -12,7 +12,7 @@ function renderCommittee(label, value) {
     
     var option;
     
-  const colors = [ '#ff5ab8', '#5dbeff','#37ffdf',];
+  const colors = [ '#ff5ab8','#37ffdf', '#5dbeff',];
 option = {
   color: colors,
   tooltip: {
@@ -98,20 +98,9 @@ option = {
       data: [2, 2, 3, 2, 2, 3, 2, 2, 3, 2, 2]
     },
     {
-      name: '發包經費',
-      type: 'bar',
-      tooltip: {
-        valueFormatter: function (value) {
-          return toCurrency(value) + ' 千元';
-        }
-      },
-      data: [
-        6789, 4532, 7790, 6789, 4532, 7790, 6789, 4532, 7790, 6789, 4532
-      ]
-    },
-    {
       name: '核定經費',
       type: 'bar',
+      barWidth: '20',
       tooltip: {
         valueFormatter: function (value) {
           return toCurrency(value) + ' 千元';
@@ -119,6 +108,19 @@ option = {
       },
       data: [
         8967, 5567,8624, 8967, 5567,8624, 8967, 5567,8624, 8967, 5567 
+      ]
+    },
+    {
+      name: '發包經費',
+      type: 'bar',
+      barWidth: '20',
+      tooltip: {
+        valueFormatter: function (value) {
+          return toCurrency(value) + ' 千元';
+        }
+      },
+      data: [
+        6789, 4532, 7790, 6789, 4532, 7790, 6789, 4532, 7790, 6789, 4532
       ]
     },
     

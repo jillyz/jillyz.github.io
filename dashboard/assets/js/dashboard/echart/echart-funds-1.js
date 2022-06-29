@@ -1,7 +1,7 @@
 // define(function() {
 //----經費-------
 function renderChartFunds1() {
-    var dom = document.getElementById("funds1");
+    var dom = document.getElementById("funds1"); 
     var myChart = echarts.init(dom);
     var app = {};
 
@@ -84,7 +84,7 @@ function renderChartFunds1() {
                 emphasis: {
                     focus: 'series'
                 },
-                data: [325520, -54333, 152557, 72172]
+                data: [325520, -154333, 152557, 72172]
             }
         ]
     };
