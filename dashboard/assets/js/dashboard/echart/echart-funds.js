@@ -54,7 +54,7 @@ function renderChartFunds(container, myValue, myColor='#47bba8') {
             },
             axisLine: {
                 lineStyle: {
-                    width: 8,
+                    width: 9,
                     // color: [[1,'#2e3246']],
                     color: [[1,'#2a2d3c']],
                 }

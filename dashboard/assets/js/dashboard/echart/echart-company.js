@@ -72,7 +72,7 @@ function renderCompany(label, value) {
             data: value,
             type: 'bar',
 
-            barWidth: 10,
+            barWidth: 13,
             label: {
                 show: true,
                 position: 'right',

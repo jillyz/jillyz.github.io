@@ -6,7 +6,9 @@ function renderChartFunds1() {
     var app = {};
 
     var option;
-    const colors = ['#5dbeff','#ff835c', '#FFDE37' ];
+    // const colors = ['#5dbeff','#ff835c', '#FFDE37' ];
+    // const colors = ['#9c88ff','#ff835c', '#b3f24e' ];
+    const colors = ['#9c88ff','#5dbeff', '#b3f24e' ];
 
     option = {
         color: colors,
@@ -25,11 +27,12 @@ function renderChartFunds1() {
             left: '3%',
             right: '5%',
             bottom: '3%',
-            containLabel: true
+            containLabel: true,
         },
         xAxis: [{
             type: 'value',
-            show: false
+            maxInterval: 200000,
+            show: false,
         }],
 
         axisLabel: {
@@ -49,6 +52,7 @@ function renderChartFunds1() {
                 cursor: 'default',
                 name: '預算經費',
                 type: 'bar',
+                barWidth: 15,
                 label: {
                     show: true,
                     position: 'inside'
@@ -62,6 +66,7 @@ function renderChartFunds1() {
                 cursor: 'default',
                 name: '發包經費',
                 type: 'bar',
+                barWidth: 15,
                 stack: 'Total',
                 label: {
                     show: true
@@ -76,6 +81,7 @@ function renderChartFunds1() {
                 cursor: 'default',
                 name: '剩餘經費',
                 type: 'bar',
+                barWidth: 15,
                 stack: 'Total',
                 label: {
                     show: true,

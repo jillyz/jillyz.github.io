@@ -12,7 +12,8 @@ function renderCommittee(label, value) {
     
     var option;
     
-  const colors = [ '#ff5ab8','#37ffdf', '#5dbeff',];
+  // const colors = [ '#ff5ab8','#37ffdf', '#5dbeff',];
+  const colors = [ '#ff5ab8','#3b4aff', '#5dbeff',];
 option = {
   color: colors,
   tooltip: {
