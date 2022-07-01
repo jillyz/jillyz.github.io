@@ -20,7 +20,7 @@ function renderChartFunds1() {
         },
         legend: {
             textStyle: {
-                color: 'rgba(255,255,255,.75)'
+                color: 'rgba(255,255,255,1)'
             }
         },
         grid: {
@@ -37,7 +37,7 @@ function renderChartFunds1() {
 
         axisLabel: {
             formatter: '{value} (千元)',
-            color: 'rgba(255,255,255,.75)',
+            color: 'rgba(255,255,255,1)',
             
         },
         textStyle: {

@@ -80,7 +80,7 @@ function renderChartFunds(container, myValue, myColor='#47bba8') {
                 width: 50,
                 height: 14,
                 fontSize: 14,
-                color: 'rgba(255,255,255, .75)',
+                color: 'rgba(255,255,255, 1)',
                 // borderColor: 'auto',
                 // borderRadius: 20,
                 // borderWidth: 1,

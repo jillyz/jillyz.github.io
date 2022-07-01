@@ -12,8 +12,8 @@ function renderCommittee(label, value) {
         title: {
             text: '遴聘次數最多委員',
             textStyle: {
-                fontSize: 15,
-                color: 'rgba(255, 255, 255, .75)',
+                fontSize: 16,
+                color: 'rgba(255, 255, 255, 1)',
                 fontWeight: 'normal',
             },
             show: true,
@@ -64,7 +64,7 @@ function renderCommittee(label, value) {
             inverse: true,
             axisLabel: {
                 // color: '#fff',
-                color: 'rgba(255,255,255, .75)',
+                color: 'rgba(255,255,255, 1)',
                 textStyle:{
                     fontSize:14
                 }

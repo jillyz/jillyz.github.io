@@ -11,8 +11,8 @@ function renderCompany(label, value) {
         title: {
             text: '得標最多廠商',
             textStyle: {
-                fontSize: 15,
-                color: 'rgba(255, 255, 255, .75)',
+                fontSize: 16,
+                color: 'rgba(255, 255, 255, 1)',
                 fontWeight: 'normal',
             },
             show: true,
@@ -64,7 +64,7 @@ function renderCompany(label, value) {
             inverse: true,
             axisLabel: {
                 // color: '#fff',
-                color: 'rgba(255,255,255, .75)',
+                color: 'rgba(255,255,255, 1)',
                 textStyle:{
                     fontSize:14
                 }

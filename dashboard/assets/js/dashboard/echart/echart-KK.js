@@ -28,8 +28,8 @@ option = {
   legend: {
     data: ['件數','核定經費','發包經費' ],
     textStyle: {
-        // color: '#fff'
-        color: 'rgba(255,255,255,.75)'
+        color: '#fff'
+        // color: 'rgba(255,255,255,.75)'
     }
   },
   grid: {
@@ -37,6 +37,9 @@ option = {
     right: '3%',
     bottom: '3%',
     containLabel: true
+},
+textStyle: {
+  fontSize: 14,
 },
   xAxis: [
     {
@@ -46,8 +49,7 @@ option = {
         type: 'shadow'
       },
       axisLabel: {
-        // color: '#fff',
-        color: 'rgba(255,255,255,.75)',
+        color: 'rgba(255,255,255,1)',
         textStyle:{
           fontSize:14
         }
@@ -62,16 +64,14 @@ option = {
       alignTicks: true,
       axisLabel: {
         formatter: '{value} 千元',
-        // color: '#fff',
-        color: 'rgba(255,255,255,.75)',
+        color: 'rgba(255,255,255,1)',
         textStyle:{
           fontSize:14
         }
       },
       axisLine: {
         lineStyle: {
-          // color: '#fff'
-          color: 'rgba(255,255,255,.75)'
+          color: 'rgba(255,255,255,1)'
         }
       },
     },
@@ -81,7 +81,7 @@ option = {
       position: 'left',
       alignTicks: true,
       axisLabel: {
-        color: 'rgba(255,255,255,.75)',
+        color: 'rgba(255,255,255,1)',
         textStyle:{
           fontSize:14
         }
@@ -90,7 +90,7 @@ option = {
         show: true,
         lineStyle: {
           // color: colors[0]
-          color: 'rgba(255,255,255,.75)',
+          color: 'rgba(255,255,255,1)',
         }
       },
     },
