@@ -125,8 +125,11 @@
                         <div class="row">
                             <div class="col-12 col-lg-9 col-xl-6">
                                 <div class="mb-3">
-                                    <label for="" class="form-label">入案日</label>
-                                    <div class="row justify-content-center gx-0 GSMis-duration">
+                                    <div class="form-check form-check-inline">
+                                        <input name="" type="checkbox" id="ContentInFormPH1_cbEVALUATE_FINAL01" class="form-check-input " value="01">
+                                        <label class="form-check-label" for="ContentInFormPH1_cbEVALUATE_FINAL01">入案日</label>
+                                    </div>
+                                    <div class="row justify-content-center gx-0 GSMis-duration mt-1">
                                         <div class="col-sm">
                                             <input type="date" name="" id="" class="form-control start" value="2022-05-04">
                                         </div>
@@ -175,9 +178,31 @@
                             </div>
                         </div>
                         <div class="row">
-
-
-
+                            <div class="col-12 col-lg-9 col-xl-6">
+                                <div class="mb-3">
+                                    <div class="form-check form-check-inline">
+                                        <input name="" type="checkbox" id="ContentInFormPH1_cbEVALUATE_FINAL01" class="form-check-input " value="01">
+                                        <label class="form-check-label" for="ContentInFormPH1_cbEVALUATE_FINAL01">收案時間</label>
+                                    </div>
+                                    <div class="row justify-content-center gx-0 GSMis-duration mt-1">
+                                        <div class="col-sm">
+                                            <input type="date" name="" id="" class="form-control start" value="2022-05-04">
+                                        </div>
+                                        <div class="col-sm">
+                                            <input type="time" class="form-control" value="" step="1800">
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="input-group-text justify-content-center">至</div>
+                                        </div>
+                                        <div class="col-sm">
+                                            <input type="date" name="" id="" class="form-control end" value="2022-05-04">
+                                        </div>
+                                        <div class="col-sm">
+                                            <input type="time" class="form-control" value="" step="1800">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-md-6 col-lg-4 col-xl-2">
                                 <div class="mb-3">
                                     <label for="" class="form-label">總評估結果</label>
@@ -202,7 +227,7 @@
 
                             <div class="col-md-6 col-lg-4 col-xl-2">
                                 <div class="mb-3">
-                                    <label for="" class="form-label">生活關懷日誌</label>
+                                    <label for="" class="form-label">關懷日誌</label>
                                     <div class="form-control GSMis-no-border">
                                         <div class="form-check form-check-inline1">
                                             <input class="form-check-input " type="checkbox" value="" id="care_status_1">
@@ -216,7 +241,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6 col-lg-4 col-xl-2">
+                            <!-- <div class="col-md-6 col-lg-4 col-xl-2">
                                 <div class="mb-3">
                                     <label for="" class="form-label">關懷結果</label>
                                     <div class="form-control GSMis-no-border">
@@ -230,9 +255,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <div class="col-md-6 col-lg-4 col-xl-2">
+                            <!-- <div class="col-md-6 col-lg-4 col-xl-2">
                                 <div class="mb-3">
                                     <label for="" class="form-label">年齡</label>
                                     <select name="" id="" class="form-select">
@@ -247,7 +272,7 @@
                                         <option value="8">85歲以上</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col-md-6 col-lg-4 col-xl-2">
                                 <label for="" class="form-label">稽催</label>
                                 <div class="form-control GSMis-no-border">
@@ -262,15 +287,29 @@
 
                         </div>
                         <!-- 按鈕組 -->
-                        <div class="row justify-content-center my-4">
-                            <div class="col-sm-4 col-lg-3 col-xl-2">
-                                <a href="file/export_20220504.xlsx" class="btn w-100 btn-success">匯出</a>
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="col-12">
+                                    <small>
+                                        <a href="http://healthcare.taichung.gov.tw/TCCG_HOMECARE/" target="_blank">2022/7/9之前的資料，請至舊版系統查詢</a>
+                                    </small>
+                                </div>
                             </div>
-                            <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 mb-sm-0">
-                                <a href="" class="btn w-100 btn-secondary">查詢</a>
+                            <div class="col-8">
+                                <div class="row justify-content-center">
+                                    <div class="col-sm-4 col-lg-3 col-xl-2">
+                                        <a href="file/export_20220504.xlsx" class="btn w-100 btn-success">匯出</a>
+                                    </div>
+                                    <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 mb-sm-0">
+                                        <a href="" class="btn w-100 btn-secondary">查詢</a>
+                                    </div>
+                                    <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 mb-sm-0">
+                                        <a href="" class="btn w-100 btn-outline-secondary">清除</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 mb-sm-0">
-                                <a href="" class="btn w-100 btn-outline-secondary">清除</a>
+                            <div class="col-2">
+                                
                             </div>
                         </div>
                     </div>
