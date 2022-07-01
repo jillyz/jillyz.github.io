@@ -37,12 +37,21 @@ function renderChartFunds1() {
 
         axisLabel: {
             formatter: '{value} (千元)',
-            color: 'rgba(255,255,255,.75)'
+            color: 'rgba(255,255,255,.75)',
+            
+        },
+        textStyle: {
+            fontSize: 14,
         },
         yAxis: [{
             type: 'category',
             axisTick: {
                 show: false
+            },
+            axisLabel:{
+                textStyle:{
+                    fontSize:14
+                }
             },
             inverse: true,
             data: ['公務預算', '水資源作業基金', '代辦經費', '前瞻基礎建設計畫第3期特別預算']

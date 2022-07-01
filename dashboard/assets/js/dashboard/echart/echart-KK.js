@@ -47,7 +47,10 @@ option = {
       },
       axisLabel: {
         // color: '#fff',
-        color: 'rgba(255,255,255,.75)'
+        color: 'rgba(255,255,255,.75)',
+        textStyle:{
+          fontSize:14
+        }
       }
     }
   ],
@@ -60,7 +63,10 @@ option = {
       axisLabel: {
         formatter: '{value} 千元',
         // color: '#fff',
-        color: 'rgba(255,255,255,.75)'
+        color: 'rgba(255,255,255,.75)',
+        textStyle:{
+          fontSize:14
+        }
       },
       axisLine: {
         lineStyle: {
@@ -75,13 +81,16 @@ option = {
       position: 'left',
       alignTicks: true,
       axisLabel: {
-        color: 'rgba(255,255,255,.75)'
+        color: 'rgba(255,255,255,.75)',
+        textStyle:{
+          fontSize:14
+        }
       },
       axisLine: {
         show: true,
         lineStyle: {
           // color: colors[0]
-          color: 'rgba(255,255,255,.75)'
+          color: 'rgba(255,255,255,.75)',
         }
       },
     },

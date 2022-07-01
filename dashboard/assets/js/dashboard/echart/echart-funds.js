@@ -16,7 +16,7 @@ function renderChartFunds(container, myValue, myColor='#47bba8') {
         detail: {
             valueAnimation: true,
             offsetCenter: ['0%', '10%'],
-            fontSize: 16,
+            fontSize: 22,
             fontWeight: 'normal'
         }
     }, ];
@@ -84,7 +84,7 @@ function renderChartFunds(container, myValue, myColor='#47bba8') {
                 // borderColor: 'auto',
                 // borderRadius: 20,
                 // borderWidth: 1,
-                formatter: '{value}%'
+                formatter: '{value}%',
             }
         }]
     };

@@ -157,6 +157,54 @@
     }
   }
 }
+/* 進階查詢 Trigger */
+.advancedSearch-trigger{
+  $color: #E5F3FD;
+  //---
+  display: block;
+  text-align: center;
+  border-bottom: 4px solid $color;
+  color: $blue !important;
+  text-decoration: none !important;
+
+  span{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 146px;
+    height: 34px;
+    background: $color;
+    border-radius: 6px 6px 0px 0px;
+
+    &::before{
+      content: '\f00d \ 關閉';
+      font-family: $font-awesone;
+      display: block;
+      width: 50px;
+      text-align: right;
+    }
+  }
+
+  &.collapsed{
+    span{
+      &::before{
+        content: '\2b \ 展開';
+      }
+    }
+  }
+}
+/* Caption */
+.caption{
+  $h: 38px;
+  //---
+  display: flex;
+  align-items: center;
+  height: $h;
+  padding: 0 16px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
 
 /* Components============================================================== */
 /* 搜尋區 */

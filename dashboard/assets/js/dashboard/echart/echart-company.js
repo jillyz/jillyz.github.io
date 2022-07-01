@@ -21,15 +21,24 @@ function renderCompany(label, value) {
         // color: '#47bba8',
         // color: '#37ffdf',
         // color: '#5dbeff',
-          color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
-                offset: 0,
-                color: '#fbb03b'
-            },
-            {
-                offset: 1,
-                color: '#ed1e79'
-            }
-        ]),
+        //   color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+        //         offset: 0,
+        //         color: '#fbb03b'
+        //     },
+        //     {
+        //         offset: 1,
+        //         color: '#ed1e79'
+        //     }
+        // ]),
+        color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+            offset: 0,
+            color: '#fbc523'
+        },
+        {
+            offset: 1,
+            color: '#fa8800'
+        }
+    ]),
         tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -44,8 +53,9 @@ function renderCompany(label, value) {
             top: 40,
             bottom: 20,
             // left: 170,
-            left: long_string(label).length * 13,
+            left: long_string(label).length * 18,
             right: 40,
+            // containLabel: true,
         },
         yAxis: {
             type: 'category',
@@ -55,6 +65,9 @@ function renderCompany(label, value) {
             axisLabel: {
                 // color: '#fff',
                 color: 'rgba(255,255,255, .75)',
+                textStyle:{
+                    fontSize:14
+                }
             }
         },
         xAxis: {

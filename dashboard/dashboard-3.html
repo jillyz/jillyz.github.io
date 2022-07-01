@@ -315,8 +315,8 @@
       </div>
       <!-- 主內容區 -->
       <main class="GSMis-main-wrap">
-        <div class="GSMis-main-inner"><div class="dashboard-wrap">
-    <div class="block full mb-1" style="background-color: #5a6072;">
+        <div class="GSMis-main-inner"><div class="dashboard-wrapper d-grid gap-20">
+    <div class="block" style="background-color: #5a6072;">
         <!-- 分類切換按鈕 -->
         <div class="category-tabs" style="padding-left: 24px;">
             <select name="" id="" class="form-select w-auto rounded-pill sm dark-form" style="padding-left: 20px; transform: translateY(1px); width: 170px !important; height: 41px; opacity: 1; margin-right: 30px; background-color: #4c4f61;">
@@ -327,150 +327,162 @@
             <button class="btn active">已核定計畫</button>
         </div>
     </div>
-    <!-- 總件數 -->
-    <div class="block">
-        <div class="head">
-            <h5 class="title flex-left-center w-100">
-                <span><i class="fa-regular fa-grip-dots text-cyan"></i> 總件數</span>
-                <div class="opacity-75 fw-bold ms-auto me-2">
-                    <span class="fs-5">386</span><small class="ms-1">件</small>
+    <div class="row g-0 gap-20">
+        <div class="col-auto">
+            <!-- 總件數 -->
+            <div class="block" style="width: 400px;">
+                <div class="head">
+                    <h5 class="title flex-left-center w-100">
+                        <span><i class="fa-regular fa-grip-dots text-cyan"></i> 總件數</span>                        
+                        <button class="btn btn-sm dark-form bg-dark1 ms-auto"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </h5>
                 </div>
-                <button class="btn btn-sm dark-form bg-dark1"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </h5>
-        </div>
-        <div class="body px-4">
-            <div id="chartOutsourcing" class="" style="height: 265px;"></div>    
-            <div class="grid-cell-container opacity-mix small">
-                    <div class="border-bottom flex-left-center"><span class="dot bg-blueSkye"></span>已發包</div>
-                    <div class="border-bottom text-end">250件</div>
-                    <div class="border-bottom flex-left-center"><span class="dot bg-magenta"></span>未發包</div>
-                    <div class="border-bottom text-end">136件</div>
-            </div>     
-        </div>
-    </div>
-    <!-- E 發包情形 -->
-    <div class="block unit-2">        
-        <div class="head">
-            <h5 class="title flex-left-center w-100">
-                <span class="me-2"><i class="fa-regular fa-grip-dots text-cyan"></i> 發包情形</span> 
-                <button class="btn btn-sm dark-form bg-dark1 ms-auto"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </h5>
-        </div>
-        <div class="body px-4">
-            <!-- 總計 -->
-            <div class="d-flex justify-content-between opacity-mix small ">
-                <div class="d-grid">
-                    <span class="">總件數</span>
-                    <div class="fw-bold"><span class="fs-5">250</span><small class="ms-1">件</small></div>
-                </div>
-                <div class="d-grid text-end">
-                    <span class="">不含跨年度計畫及無需訂約計畫</span>
-                    <div class="fw-bold"><span class="fs-5">20</span><small class="ms-1">件</small></div>
-                </div>
-            </div>
-            <!-- 圖表+明細 -->
-            <div class="grid-cell-container small" style="grid-template-columns: repeat(4, 1fr); gap: 20px;">
-                <div class="item opacity-mix">
-                    <div id="chartFunds-1" style="height: 130px;"></div>
-                    <h5 class="fw-bold text-center mb-4">最優先</h5>
-                    <div class="grid-cell-container opacity-mix border-topX border-magenta-2" style="grid-template-columns: auto auto; border-top: 2px solid;">
-                        <span class="border-bottom">總件數</span>
-                        <span class="text-end border-bottom">71</span>
-                        <span class="border-bottom">已發包</span>
-                        <span class="text-end border-bottom">54</span>
-                        <span class="border-bottom">未發包</span>
-                        <span class="text-end border-bottom">17</span>
+                <div class="body px-4">
+                    <div class="fw-bold">
+                        <span class="fs-3">386</span><small class="opacity-75 ms-1">件</small>
                     </div>
-                    <div class="mt-2 text-center">
-                        <span class="">發包期限</span>
-                        <span class="">110/12/31</span>
-                    </div>
-                </div>
-                <div class="item opacity-mix">
-                    <div id="chartFunds-2" style="height: 130px;"></div>
-                    <h5 class="fw-bold text-center mb-4">優先</h5>
-                    <div class="grid-cell-container opacity-mix border-topX border-orange-red" style="grid-template-columns: auto auto; border-top: 2px solid;">
-                        <span class="border-bottom">總件數</span>
-                        <span class="text-end border-bottom">106</span>
-                        <span class="border-bottom">已發包</span>
-                        <span class="text-end border-bottom">95</span>
-                        <span class="border-bottom">未發包</span>
-                        <span class="text-end border-bottom">11</span>
-                    </div>
-                    <div class="mt-2 text-center">
-                        <span class="">發包期限</span>
-                        <span class="">111/03/30</span>
-                    </div>
-                </div>
-                <div class="item opacity-mix">
-                    <div id="chartFunds-3" style="height: 130px;"></div>
-                    <h5 class="fw-bold text-center mb-4">一般</h5>
-                    <div class="grid-cell-container opacity-mix border-topX border-cyan" style="grid-template-columns: auto auto; border-top: 2px solid;">
-                        <span class="border-bottom">總件數</span>
-                        <span class="text-end border-bottom">38</span>
-                        <span class="border-bottom">已發包</span>
-                        <span class="text-end border-bottom">20</span>
-                        <span class="border-bottom">未發包</span>
-                        <span class="text-end border-bottom">18</span>
-                    </div>
-                    <div class="mt-2 text-center">
-                        <span class="">發包期限</span>
-                        <span class="">111/05/31</span>
-                    </div>
-                </div>
-                <div class="item opacity-mix">
-                    <div id="chartFunds-4" style="height: 130px;"></div>
-                    <h5 class="fw-bold text-center mb-4">增辦</h5>
-                    <div class="grid-cell-container opacity-mix border-topX border-blueSkye" style="grid-template-columns: auto auto; border-top: 2px solid;">
-                        <span class="border-bottom">總件數</span>
-                        <span class="text-end border-bottom">35</span>
-                        <span class="border-bottom">已發包</span>
-                        <span class="text-end border-bottom">22</span>
-                        <span class="border-bottom">未發包</span>
-                        <span class="text-end border-bottom">13</span>
-                    </div>
-                    <div class="mt-2 text-center">
-                        <span class="">發包期限</span>
-                        <span class="">111/06/30</span>
-                    </div>
+                    <div id="chartOutsourcing" class="" style="height: 238px;"></div>    
+                    <div class="grid-cell-container opacity-mix">
+                            <div class="border-bottom flex-left-center"><span class="dot bg-blueSkye"></span><span class="opacity-75">已發包</span></div>
+                            <div class="border-bottom text-end"><span class="fs-4 me-1">250</span><span class="opacity-75">件</span></div>
+                            <div class="border-bottom flex-left-center"><span class="dot bg-magenta"></span><span class="opacity-75">未發包</span></div>
+                            <div class="border-bottom text-end"><span class="fs-4 me-1">136</span><span class="opacity-75">件</span></div>
+                    </div>     
                 </div>
             </div>
         </div>
-    </div>
-    <!-- 總經費 -->
-    <div class="block">
-        <div class="head">
-            <h5 class="title flex-left-center w-100">
-                <span><i class="fa-regular fa-grip-dots text-cyan"></i> 總經費</span>
-                <div class="opacity-75 fw-bold ms-auto">
-                    <span class="fs-5">29億9966萬</span><small class="ms-1"></small>
+        <div class="col">
+            <!-- E 發包情形 -->
+            <div class="block">        
+                <div class="head">
+                    <h5 class="title flex-left-center w-100">
+                        <span class="me-2"><i class="fa-regular fa-grip-dots text-cyan"></i> 發包情形</span> 
+                        <button class="btn btn-sm dark-form bg-dark1 ms-auto"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </h5>
                 </div>
-            </h5>
-        </div>
-        <div class="body px-4">  
-            <!-- 圖表+明細 -->
-            <div id="chartOutsourcing-2" class="" style="height: 250px;"></div>
-            <div class="grid-cell-container opacity-mix small">
-                    <div class="border-bottom"><span class="dot bg-blueSkye"></span>已發包經費</div>
-                    <div class="border-bottom text-end">20億2000萬</div>
-                    <div class="border-bottom"><span class="dot bg-orange-red"></span>發包結餘款</div>
-                    <div class="border-bottom text-end">3億74萬</div>
-                    <div class="border-bottom"><span class="dot bg-yellow"></span>未發包經費</div>
-                    <div class="border-bottom text-end">6億789萬</div>
+                <div class="body px-4">
+                    <!-- 總計 -->
+                    <div class="d-flex justify-content-between small ">
+                        <div class="d-grid">
+                            <span class="opacity-75">總件數</span>
+                            <div class="fw-bold"><span class="fs-3">250</span><small class="ms-1 opacity-75">件</small></div>
+                        </div>
+                        <div class="d-grid text-end">
+                            <span class="opacity-75">不含跨年度計畫及無需訂約計畫</span>
+                            <div class="fw-bold"><span class="fs-3">20</span><small class="ms-1 opacity-75">件</small></div>
+                        </div>
+                    </div>
+                    <!-- 圖表+明細 -->
+                    <div class="grid-cell-container" style="grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                        <div class="item">
+                            <div id="chartFunds-1" style="height: 130px;"></div>
+                            <h5 class="fw-bold text-center mb-4 opacity-75">最優先</h5>
+                            <div class="grid-cell-container opacity-mix border-magenta-2" style="grid-template-columns: auto auto; border-top: 2px solid;">
+                                <span class="border-bottom opacity-75 pt-2" >總件數</span>
+                                <span class="text-end border-bottom fs-4">71</span>
+                                <span class="border-bottom opacity-75 pt-2" >已發包</span>
+                                <span class="text-end border-bottom fs-4">54</span>
+                                <span class="border-bottom opacity-75 pt-2" >未發包</span>
+                                <span class="text-end border-bottom fs-4">17</span>
+                            </div>
+                            <div class="mt-2 text-center opacity-75">
+                                <span class="">發包期限</span>
+                                <span class="">110/12/31</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div id="chartFunds-2" style="height: 130px;"></div>
+                            <h5 class="fw-bold text-center mb-4 opacity-75">優先</h5>
+                            <div class="grid-cell-container opacity-mix border-orange-red" style="grid-template-columns: auto auto; border-top: 2px solid;">
+                                <span class="border-bottom opacity-75 pt-2" >總件數</span>
+                                <span class="text-end border-bottom fs-4">106</span>
+                                <span class="border-bottom opacity-75 pt-2" >已發包</span>
+                                <span class="text-end border-bottom fs-4">95</span>
+                                <span class="border-bottom opacity-75 pt-2" >未發包</span>
+                                <span class="text-end border-bottom fs-4">11</span>
+                            </div>
+                            <div class="mt-2 text-center opacity-75">
+                                <span class="">發包期限</span>
+                                <span class="">111/03/30</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div id="chartFunds-3" style="height: 130px;"></div>
+                            <h5 class="fw-bold text-center mb-4 opacity-75">一般</h5>
+                            <div class="grid-cell-container opacity-mix border-cyan" style="grid-template-columns: auto auto; border-top: 2px solid;">
+                                <span class="border-bottom opacity-75 pt-2" >總件數</span>
+                                <span class="text-end border-bottom fs-4">38</span>
+                                <span class="border-bottom opacity-75 pt-2" >已發包</span>
+                                <span class="text-end border-bottom fs-4">20</span>
+                                <span class="border-bottom opacity-75 pt-2" >未發包</span>
+                                <span class="text-end border-bottom fs-4">18</span>
+                            </div>
+                            <div class="mt-2 text-center opacity-75">
+                                <span class="">發包期限</span>
+                                <span class="">111/05/31</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div id="chartFunds-4" style="height: 130px;"></div>
+                            <h5 class="fw-bold text-center mb-4 opacity-75">增辦</h5>
+                            <div class="grid-cell-container opacity-mix border-blueSkye" style="grid-template-columns: auto auto; border-top: 2px solid;">
+                                <span class="border-bottom opacity-75 pt-2" >總件數</span>
+                                <span class="text-end border-bottom fs-4">35</span>
+                                <span class="border-bottom opacity-75 pt-2" >已發包</span>
+                                <span class="text-end border-bottom fs-4">22</span>
+                                <span class="border-bottom opacity-75 pt-2" >未發包</span>
+                                <span class="text-end border-bottom fs-4">13</span>
+                            </div>
+                            <div class="mt-2 text-center opacity-75">
+                                <span class="">發包期限</span>
+                                <span class="">111/06/30</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- K 經費執行 -->
-    <div class="block unit-2">        
-        <div class="head">
-            <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 經費執行</h5>
+    <div class="row g-0 gap-20">
+        <div class="col-auto">
+            <!-- 總經費 -->
+            <div class="block" style="width: 400px;">
+                <div class="head">
+                    <h5 class="title flex-left-center w-100">
+                        <span><i class="fa-regular fa-grip-dots text-cyan"></i> 總經費</span>
+                    </h5>
+                </div>
+                <div class="body px-4">                      
+                    <div class="fw-bold">
+                        <span class="fs-3">29億9966萬</span><small class="ms-1"></small>
+                    </div>
+                    <!-- 圖表+明細 -->
+                    <div id="chartOutsourcing-2" class="" style="height: 240px;"></div>
+                    <div class="grid-cell-container opacity-mix">
+                            <div class="border-bottom pt-2"><span class="dot bg-blueSkye"></span><span class="opacity-75">已發包經費</span></div>
+                            <div class="border-bottom text-end fs-4">20億2000萬</div>
+                            <div class="border-bottom pt-2"><span class="dot bg-yellow"></span><span class="opacity-75">發包結餘款</span></div>
+                            <div class="border-bottom text-end fs-4">3億74萬</div>
+                            <div class="border-bottom pt-2"><span class="dot bg-magentaD"></span><span class="opacity-75">未發包經費</span></div>
+                            <div class="border-bottom text-end fs-4">6億789萬</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="body">
-            <div id="funds1" style="height: 320px;"></div>
+        <div class="col">
+            <!-- K 經費執行 -->
+            <div class="block">        
+                <div class="head">
+                    <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 經費執行</h5>
+                </div>
+                <div class="body">
+                    <div id="funds1" class="mt-4" style="height: 320px;"></div>
+                </div>
+            </div>
         </div>
     </div>    
     <!-- D 執行階段 -->
-    <div class="block unit-2 d-none">    
+    <div class="block d-none">    
         <div class="body">
             <div class="row g-0">
                 <!-- 主辦機關 -->
@@ -538,7 +550,7 @@
         </div>
     </div>
     <!-- H 全署 -->
-    <div class="block full">        
+    <div class="block">        
         <div class="head justify-content-between">
             <h5 class="title"><i class="fa-regular fa-grip-dots text-cyan"></i> 件數及經費分布</h5>
             <div class="d-flex">
@@ -566,8 +578,8 @@
         <div class="body">
             <div id="container" style="height: 280px;"></div>
         </div>
-    </div>    
-    <div class="full d-flex" style="gap: 20px">
+    </div> 
+    <div class="row g-0 gap-20">
         <div class="col-xl">
             <!-- F 得標廠商資訊 -->
             <div class="block d-flex flex-column">        
@@ -608,25 +620,25 @@
                     <div class="flex-center h-100">
                         <div id="chartCompany" class="w-100" style="height: 160px;"></div>
                     </div>
-                    <div class="children-flex-container mb-3 opacity-75 small">
+                    <div class="children-flex-container small mb-3">
                         <div class="justify-content-between border-bottom py-2">
                             <div class="d-grid">
-                                <span>得標廠商總數</span>
-                                <span class="fw-bold fs-5">250</span>
+                                <span class="opacity-75">得標廠商總數</span>
+                                <span class="fw-bold fs-4">250</span>
                             </div>
                             <div class="d-grid text-end">
-                                <span>得標計畫主持人總數</span>
-                                <span class="fw-bold fs-5">218</span>
+                                <span class="opacity-75">得標計畫主持人總數</span>
+                                <span class="fw-bold fs-4">218</span>
                             </div>
                         </div>
                         <div class="justify-content-between border-bottom py-2">
                             <div class="d-grid">
-                                <span>得標3件以上廠商數</span>
-                                <span class="fw-bold fs-5">14</span>
+                                <span class="opacity-75">得標3件以上廠商數</span>
+                                <span class="fw-bold fs-4">14</span>
                             </div>
                             <div class="d-grid text-end">
-                                <span>得標3件以上計畫主持人數</span>
-                                <span class="fw-bold fs-5">3</span>
+                                <span class="opacity-75">得標3件以上計畫主持人數</span>
+                                <span class="fw-bold fs-4">3</span>
                             </div>
                         </div>
                     </div>
@@ -665,17 +677,17 @@
                     <div class="flex-center h-100">
                         <div id="chartCommittee" class="w-100" style="height: 160px;"></div>
                     </div>
-                    <div class="mb-3 opacity-75 small">
+                    <div class="mb-3 small">
                         <div class="border-bottom py-2">
                             <div class="d-grid">
-                                <span>遴選委員總數</span>
-                                <span class="fw-bold fs-5">238</span>
+                                <span class="opacity-75">遴選委員總數</span>
+                                <span class="fw-bold fs-4">238</span>
                             </div>
                         </div>
                         <div class="border-bottom py-2">
                             <div class="d-grid">
-                                <span>鄰選5次以上委員數</span>
-                                <span class="fw-bold fs-5">6</span>
+                                <span class="opacity-75">鄰選5次以上委員數</span>
+                                <span class="fw-bold fs-4">6</span>
                             </div>
                         </div>
                     </div>

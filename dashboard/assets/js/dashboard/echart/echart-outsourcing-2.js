@@ -27,9 +27,12 @@ function renderChartOutsourcing() {
             show: false
         },
         color: [
+            // '#5dbeff',
+            // '#ff835c',
+            // '#FFDE37',
             '#5dbeff',
-            '#ff835c',
-            '#FFDE37',
+            '#fff61c',
+            '#ff4aa6',
             // '#5dbeff',
             // '#ff835c',
             // '#adcbdf'

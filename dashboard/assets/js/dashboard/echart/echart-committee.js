@@ -23,15 +23,24 @@ function renderCommittee(label, value) {
         // color: '#47bba8',
         // color: '#5dbeff',
         // color: '#37ffdf',
+        // color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+        //         offset: 0,
+        //         color: '#0071bc'
+        //     },
+        //     {
+        //         offset: 1,
+        //         color: '#37ffdf'
+        //     }
+        // ]),
         color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
-                offset: 0,
-                color: '#0071bc'
-            },
-            {
-                offset: 1,
-                color: '#37ffdf'
-            }
-        ]),
+            offset: 0,
+            color: '#fbc523'
+        },
+        {
+            offset: 1,
+            color: '#fa8800'
+        }
+    ]),
         tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -45,8 +54,9 @@ function renderCommittee(label, value) {
         grid: {
             top: 40,
             bottom: 20,
-            left: 50,
+            // left: 50,
             right: 40,
+            containLabel: true,
         },
         yAxis: {
             type: 'category',
@@ -55,6 +65,9 @@ function renderCommittee(label, value) {
             axisLabel: {
                 // color: '#fff',
                 color: 'rgba(255,255,255, .75)',
+                textStyle:{
+                    fontSize:14
+                }
             }
         },
         xAxis: {

@@ -9,6 +9,7 @@ $cyan: #37ffe1;
 $yellow: #FFDE37;
 $magenta: #FF5CEA;
 $magenta-2: #FF5CEA;
+$magentaD: #ff4aa6;
 $blue-ribbon: #536aff;
 
 
@@ -52,6 +53,51 @@ body{
         @include xl-width{
             width: calc(100vw - 80px - 10px);
         }
+    }
+}
+
+.dashboard-wrapper{
+    $r: 8px;
+    //---
+    
+
+    // 
+
+    // 區塊
+    .block{
+        $padding: 16px;
+        background-color: $dark2;
+        border-radius: $r;     
+        height: 100%;   
+
+        .head{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            min-height: 64px;
+            padding: .25rem $padding;
+            // border-bottom: 1px solid rgba(white, .25);
+            border-bottom: 3px solid rgb(42, 45, 60);
+            line-height: 1;
+
+            .title{
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 0;
+            }
+            h6{
+                font-weight: bold;
+            }
+        }
+        .body{            
+            padding: $padding;
+        }        
+    }
+}
+.gap{
+    &-20{
+        gap: 15px;
     }
 }
 
@@ -146,7 +192,7 @@ body{
 .opacity-mix{
     $color: white;
 
-    color: rgba($color, .75);
+    // color: rgba($color, .75);
     *{
         border-top-color: rgba($color, .75) !important;
         border-bottom-color: rgba($color, .75) !important;
@@ -240,7 +286,7 @@ body{
     >*{
         border: 0px solid transparent;
         border-bottom-width: 3px;
-        padding: 4px 0;
+        // padding: 4px 0;
     }
 }
 .children-flex-container{
@@ -317,5 +363,8 @@ body{
     }
     &-blue-ribbon{
         background-color: $blue-ribbon !important;
+    }
+    &-magentaD{
+        background-color: $magentaD !important;
     }
 }
