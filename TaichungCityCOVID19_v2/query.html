@@ -61,6 +61,8 @@
                     <ul class="GSMis-menu">
                         <!-- if 衛生局 -->
                         <li><a href="upload_衛生局.html"><i class="fa-solid fa-file-arrow-up"></i> 確診者資料上傳(衛生局)</a></li>
+                        <!-- if 衛生所 or 診協 -->
+                        <li class="active"><a href="assign_衛生所_診協.html"><i class="fa-solid fa-hand-point-right"></i> 派案管理</a></li>
                         <!-- if 系統管理員 -->
                         <li>
                             <a href="#" class="children"><i class="fa-solid fa-file-pen"></i> 評估填報<i class="fas fa-chevron-down toggleIcon"></i></a>
@@ -154,26 +156,16 @@
                                     <input type="text" name="" id="" class="form-control" placeholder="請輸入關鍵字">
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-4 col-xl-1">
+                            <div class="col-md-6 col-lg-3 col-xl-2">
                                 <div class="mb-3">
-                                    <label for="" class="form-label">居住鄉鎮</label>
-                                    <select name="" id="" class="form-select">
-                                        <option value="">全部</option>
-                                        <option value="1">OO區</option>
-                                        <option value="2">OO區</option>
-                                        <option value="3">OO區</option>
-                                        <option value="4">OO區</option>
-                                    </select>
+                                    <label for="" class="form-label">身分證字號</label>
+                                    <input name="ctl00$ContentInFormPH1$txtIDNumber" type="text" id="ContentInFormPH1_txtIDNumber" class="form-control" placeholder="請輸入身分證統一編號">
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-5 col-xl-3">
+                            <div class="col-md-6 col-lg-3 col-xl-2">
                                 <div class="mb-3">
-                                    <label for="" class="form-label">診協/診所</label>
-                                    <select name="" id="" class="form-select">
-                                        <option value="">全部</option>
-                                        <option value="1">大台中診協-大雅區</option>
-                                        <option value="2">OOOOOO診所</option>
-                                    </select>
+                                    <label for="" class="form-label">住址</label>
+                                    <input name="ctl00$ContentInFormPH1$txtAddress" type="text" id="ContentInFormPH1_txtAddress" class="form-control" placeholder="請輸入住址">
                                 </div>
                             </div>
                         </div>
@@ -181,8 +173,8 @@
                             <div class="col-12 col-lg-9 col-xl-6">
                                 <div class="mb-3">
                                     <div class="form-check form-check-inline">
-                                        <input name="" type="checkbox" id="ContentInFormPH1_cbEVALUATE_FINAL01" class="form-check-input " value="01">
-                                        <label class="form-check-label" for="ContentInFormPH1_cbEVALUATE_FINAL01">收案時間</label>
+                                        <input class="form-check-input" id="ContentInFormPH1_chkPEFDate" type="checkbox" name="ctl00$ContentInFormPH1$chkPEFDate">
+                                        <label class="form-check-label" for="ContentInFormPH1_chkPEFDate">收案時間</label>
                                     </div>
                                     <div class="row justify-content-center gx-0 GSMis-duration mt-1">
                                         <div class="col-sm">
@@ -205,7 +197,99 @@
                             </div>
                             <div class="col-md-6 col-lg-4 col-xl-2">
                                 <div class="mb-3">
-                                    <label for="" class="form-label">總評估結果</label>
+                                    <label for="" class="form-label">居住鄉鎮</label>
+                                    <select name="" id="" class="form-select">
+                                        <option value="">全部</option>
+                                        <option value="1">OO區</option>
+                                        <option value="2">OO區</option>
+                                        <option value="3">OO區</option>
+                                        <option value="4">OO區</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-4">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">診協/診所</label>
+                                    <select name="" id="" class="form-select">
+                                        <option value="">全部</option>
+                                        <option value="1">大台中診協-大雅區</option>
+                                        <option value="2">OOOOOO診所</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            
+                            
+
+                            <div class="col-md-6 col-lg-4 col-xl-4">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">健康評估</label>
+                                    <div class="form-control GSMis-no-border">
+                                        <div class="form-check form-check-inline">
+                                            <input name="ctl00$ContentInFormPH1$cbEVALUATE_HEALTH01" type="checkbox" id="ContentInFormPH1_cbEVALUATE_HEALTH01" class="form-check-input " value="01">
+                                            <label class="form-check-label" for="cbEVALUATE_HEALTH01" onclick="lbConditionText_Onclick(this)">適合採居家照護</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input name="ctl00$ContentInFormPH1$cbEVALUATE_HEALTH02" type="checkbox" id="ContentInFormPH1_cbEVALUATE_HEALTH02" class="form-check-input " value="02">
+                                            <label class="form-check-label" for="cbEVALUATE_HEALTH02" onclick="lbConditionText_Onclick(this)">不適合採居家照護</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input name="ctl00$ContentInFormPH1$cbEVALUATE_HEALTH06" type="checkbox" id="ContentInFormPH1_cbEVALUATE_HEALTH06" class="form-check-input " value="06">
+                                            <label class="form-check-label" for="cbEVALUATE_HEALTH06" onclick="lbConditionText_Onclick(this)">電話錯誤</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input name="ctl00$ContentInFormPH1$cbEVALUATE_HEALTH07" type="checkbox" id="ContentInFormPH1_cbEVALUATE_HEALTH07" class="form-check-input " value="07">
+                                            <label class="form-check-label" for="cbEVALUATE_HEALTH07" onclick="lbConditionText_Onclick(this)">電話未接３次</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input name="ctl00$ContentInFormPH1$cbEVALUATE_HEALTH10" type="checkbox" id="ContentInFormPH1_cbEVALUATE_HEALTH10" class="form-check-input " value="10">
+                                            <label class="form-check-label" for="cbEVALUATE_HEALTH10" onclick="lbConditionText_Onclick(this)">原地收治(如醫院、監獄、護理之家、長照機構等)</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input name="ctl00$ContentInFormPH1$cbEVALUATE_HEALTH04" type="checkbox" id="ContentInFormPH1_cbEVALUATE_HEALTH04" class="form-check-input " value="04">
+                                            <label class="form-check-label" for="cbEVALUATE_HEALTH04" onclick="lbConditionText_Onclick(this)">住院中</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input name="ctl00$ContentInFormPH1$cbEVALUATE_HEALTH05" type="checkbox" id="ContentInFormPH1_cbEVALUATE_HEALTH05" class="form-check-input " value="05">
+                                            <label class="form-check-label" for="cbEVALUATE_HEALTH05" onclick="lbConditionText_Onclick(this)">轉外縣市</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input name="ctl00$ContentInFormPH1$cbEVALUATE_HEALTH11" type="checkbox" id="ContentInFormPH1_cbEVALUATE_HEALTH11" class="form-check-input " value="11">
+                                            <label class="form-check-label" for="cbEVALUATE_HEALTH11" onclick="lbConditionText_Onclick(this)">轉台中市其他行政區</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input name="ctl00$ContentInFormPH1$cbEVALUATE_HEALTH08" type="checkbox" id="ContentInFormPH1_cbEVALUATE_HEALTH08" class="form-check-input " value="08">
+                                            <label class="form-check-label" for="cbEVALUATE_HEALTH08" onclick="lbConditionText_Onclick(this)">外籍移工</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input name="ctl00$ContentInFormPH1$cbEVALUATE_HEALTH09" type="checkbox" id="ContentInFormPH1_cbEVALUATE_HEALTH09" class="form-check-input " value="09">
+                                            <label class="form-check-label" for="cbEVALUATE_HEALTH09" onclick="lbConditionText_Onclick(this)">死亡</label>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4 col-xl-2">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">居住環境評估</label>
+                                    <div class="form-control GSMis-no-border">
+                                        <div class="form-check form-check-inline">
+                                            <input name="ctl00$ContentInFormPH1$cbEVALUATE_ENVIRONMENT01" type="checkbox" id="ContentInFormPH1_cbEVALUATE_ENVIRONMENT01" class="form-check-input " value="01">
+                                            <label class="form-check-label" for="cbEVALUATE_ENVIRONMENT01" onclick="lbConditionText_Onclick(this)">符合</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input name="ctl00$ContentInFormPH1$cbEVALUATE_ENVIRONMENT02" type="checkbox" id="ContentInFormPH1_cbEVALUATE_ENVIRONMENT02" class="form-check-input " value="02">
+                                            <label class="form-check-label" for="cbEVALUATE_ENVIRONMENT02" onclick="lbConditionText_Onclick(this)">不符合</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4 col-xl-2">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">收案評估結果</label>
                                     <div class="form-control GSMis-no-border">
                                         <div class="form-check form-check-inline1">
                                             <input class="form-check-input " type="checkbox" value="" id="inlineCheckbox1">
@@ -224,6 +308,7 @@
                                     </div>
                                 </div>
                             </div>
+
 
                             <div class="col-md-6 col-lg-4 col-xl-2">
                                 <div class="mb-3">
@@ -287,28 +372,29 @@
 
                         </div>
                         <!-- 按鈕組 -->
+                        <hr>
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <div class="col-12">
                                     <small>
                                         <a href="http://healthcare.taichung.gov.tw/TCCG_HOMECARE/" target="_blank">2022/7/9之前的資料，請至舊版系統查詢</a>
                                     </small>
                                 </div>
                             </div>
-                            <div class="col-8">
+                            <div class="col-6">
                                 <div class="row justify-content-center">
-                                    <div class="col-sm-4 col-lg-3 col-xl-2">
+                                    <div class="col-4">
                                         <a href="file/export_20220504.xlsx" class="btn w-100 btn-success">匯出</a>
                                     </div>
-                                    <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 mb-sm-0">
+                                    <div class="col-4">
                                         <a href="" class="btn w-100 btn-secondary">查詢</a>
                                     </div>
-                                    <div class="col-sm-4 col-lg-3 col-xl-2 mb-2 mb-sm-0">
+                                    <div class="col-4">
                                         <a href="" class="btn w-100 btn-outline-secondary">清除</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-3">
                                 
                             </div>
                         </div>
