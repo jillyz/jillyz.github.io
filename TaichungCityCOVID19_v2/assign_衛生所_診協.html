@@ -149,8 +149,10 @@
                                 <th>姓名</th>
                                 <th>身分證字號/<br />護照號碼</th>
                                 <th>診斷年齡</th>
-                                <th class="center ">編輯</th>
-                                <th class="bd-l-dot center assign text-primary">
+                                <th class="center ">檢視</th>
+                                <th class="bd-l-dot center">被退案<br>被取消</th>
+                                
+                                <th class="center assign text-primary">
                                     派案
                                     <br>
                                     <input class="form-check-input" type="checkbox" value="" id="chk_assign_all">
@@ -173,16 +175,22 @@
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="編輯" class="center">
+                                <td data-th="檢視" class="center">
                                     <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
                                         data-bs-target="#editModal">
-                                        <i class="fa-solid fa-pen"></i>
+                                        <i class="fa-solid fa-eye"></i>
                                     </button>
                                 </td>
-                                <td data-th="派案" class="bd-l-dot center assign">
+                                <td data-th="被退案/被取消" class="bd-l-dot center">
+                                    <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal" data-bs-target="#editModal">
+                                        <i class="fa-solid fa-circle-question text-danger"></i>
+                                    </button>
+                                </td>
+                                <td data-th="派案" class="center assign">
                                     <input class="form-check-input chk-assign" type="checkbox" value=""
                                         id="chk_assign_12345678901234">
                                 </td>
+                                
                             </tr>
                             <tr class="">
                                 <td data-th="超過1小時未處理">
@@ -194,13 +202,15 @@
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="編輯" class="center">
+                                <td data-th="檢視" class="center">
                                     <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
                                         data-bs-target="#editModal">
-                                        <i class="fa-solid fa-pen"></i>
+                                        <i class="fa-solid fa-eye"></i>
                                     </button>
                                 </td>
-                                <td data-th="派案" class="bd-l-dot center assign">
+                                <td data-th="被退案/被取消" class="bd-l-dot center"></td>
+
+                                <td data-th="派案" class="center assign">
                                     <input class="form-check-input chk-assign" type="checkbox" value=""
                                         id="chk_assign_12345678901234">
                                 </td>
@@ -220,7 +230,7 @@
                                 <th>姓名</th>
                                 <th>身分證字號/<br />護照號碼</th>
                                 <th>診斷年齡</th>
-                                <th class="center ">編輯</th>
+                                <th class="center ">檢視</th>
                                 <th>派案至</th>
                                 <th class="bd-l-dot unassign text-danger" style="min-width: 20em;">
                                     取消派案
@@ -245,10 +255,10 @@
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="編輯" class="center">
+                                <td data-th="檢視" class="center">
                                     <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
                                         data-bs-target="#editModal">
-                                        <i class="fa-solid fa-pen"></i>
+                                        <i class="fa-solid fa-eye"></i>
                                     </button>
                                 </td>
                                 <td data-th="派案至">雙合耳鼻喉科聯合診所</td>
@@ -278,10 +288,10 @@
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="編輯" class="center">
+                                <td data-th="檢視" class="center">
                                     <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
                                         data-bs-target="#editModal">
-                                        <i class="fa-solid fa-pen"></i>
+                                        <i class="fa-solid fa-eye"></i>
                                     </button>
                                 </td>
                                 <td data-th="派案至">博新小兒科家庭醫學科診所</td>
@@ -311,10 +321,10 @@
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="編輯" class="center">
+                                <td data-th="檢視" class="center">
                                     <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
                                         data-bs-target="#editModal">
-                                        <i class="fa-solid fa-pen"></i>
+                                        <i class="fa-solid fa-eye"></i>
                                     </button>
                                 </td>
                                 <td data-th="派案至">誠新耳鼻喉科診所</td>
@@ -344,10 +354,10 @@
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="編輯" class="center">
+                                <td data-th="檢視" class="center">
                                     <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
                                         data-bs-target="#editModal">
-                                        <i class="fa-solid fa-pen"></i>
+                                        <i class="fa-solid fa-eye"></i>
                                     </button>
                                 </td>
                                 <td data-th="派案至">陽光耳鼻喉科診所</td>
@@ -377,10 +387,10 @@
                                 <td data-th="姓名">陳思佑</td>
                                 <td data-th="身分證字號/護照號碼">A123456789</td>
                                 <td data-th="診斷年齡(足歲)">33</td>
-                                <td data-th="編輯" class="center">
+                                <td data-th="檢視" class="center">
                                     <button type="button" class="btn btn-light btn-sm btn-edit" data-bs-toggle="modal"
                                         data-bs-target="#editModal">
-                                        <i class="fa-solid fa-pen"></i>
+                                        <i class="fa-solid fa-eye"></i>
                                     </button>
                                 </td>
                                 <td data-th="派案至">友力耳鼻喉科診所</td>
@@ -439,137 +449,175 @@
         <a href="# " class=" " title="Go to Top ">TOP</a>
     </div>
 
-    <!-- 個案資料-編輯 --><!-- Modal -->
+    <!-- 個案資料-檢視 --><!-- Modal -->
     <div class="modal fade modal-width" id="editModal" tabindex="-1" aria-labelledby="editModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">個案資料</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">檢視</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="alert alert-warning small mb-3" role="alert">
-                        <ul class="no-list-style mb-0" style="text-indent: -2em;">
-                            <li><b>重要提醒：</b>請務必將個案資料建至法傳系統，以利衛生局將法傳資料匯入本系統後，系統能將此個案轉為正式個案。</li>
-                        </ul>
+                    <h2 class="GSMis-section-title">派案歷程</h2>
+                    <div class="GSMis-search-area bg-light rounded border" style="padding: 0 1.5em;">
+                        <table class="table table-hover striped GSMis-table-rwd">
+                            <thead>
+                                <th></th>
+                                <th>時間</th>
+                                <th>操作</th>
+                                <th>原因</th>
+                                <th>操作人</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2022/07/04 09:30:00</td>
+                                    <td>派案</td>
+                                    <td>--</td>
+                                    <td>南屯區衛生所</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>2022/07/04 09:35:00</td>
+                                    <td><span class="text-danger">取消派案</span></td>
+                                    <td><span class="text-danger">顯示取消派案原因</span></td>
+                                    <td>OO衛生所</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>2022/07/04 09:40:00</td>
+                                    <td>派案</td>
+                                    <td>--</td>
+                                    <td>台中市診協-南屯</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>2022/07/04 10:00:00</td>
+                                    <td><span class="text-danger">退案</span></td>
+                                    <td><span class="text-danger">顯示退案原因</span></td>
+                                    <td>誠新耳鼻喉科診所</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>2022/07/04 10:05:00</td>
+                                    <td>派案</td>
+                                    <td>--</td>
+                                    <td>南屯區衛生所</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <hr>
-                    <div class="alert alert-danger" role="alert">
-                        <i class="fa-solid fa-triangle-exclamation"></i> 
-                        個案研判日期格式錯誤、身分證字號格式錯誤
-                    </div>
-                    <!-- <code>
-                        <strong>
-                            <i class="fa-solid fa-circle-exclamation"></i>
-                            個案研判日期格式錯誤、身分證字號格式錯誤
-                        </strong>
-                    </code> -->
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="" class="">個案研判日期</label>
-                                <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                    
+
+                    <h2 class="GSMis-section-title mt-4">個案資料</h2>
+                    <div style="padding: 0 1.5em;">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="">個案研判日期</label>
+                                    <input type="date" name="" id="" class="form-control" value="2022-12-21" readonly disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="" class="">發病日</label>
-                                <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="">發病日</label>
+                                    <input type="date" name="" id="" class="form-control" value="2022-12-21" readonly disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="" class="">報告日</label>
-                                <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="">報告日</label>
+                                    <input type="date" name="" id="" class="form-control" value="2022-12-21" readonly disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="" class="">法傳編號</label>
-                                <input type="text" class="form-control" value="" placeholder="由法傳系統提供比對" disabled>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="">法傳編號</label>
+                                    <input type="text" class="form-control" value="1234567890" placeholder="由法傳系統提供比對" readonly disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="" class="">姓名</label>
-                                <input type="text" class="form-control" value="陳思佑">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="">姓名</label>
+                                    <input type="text" class="form-control" value="陳思佑" readonly disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="" class="">性別</label>
-                                <select name="" id="" class="form-control form-select">
-                                    <option value="" disabled>請選擇</option>
-                                    <option value="1">男</option>
-                                    <option value="2" selected>女</option>
-                                </select>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="">性別</label>
+                                    <select name="" id="" class="form-control form-select" readonly disabled>
+                                        <option value="" disabled>請選擇</option>
+                                        <option value="1">男</option>
+                                        <option value="2" selected>女</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="" class="">身分證字號/護照號碼</label>
-                                <input type="text" class="form-control" value="A123456789">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="">身分證字號/護照號碼</label>
+                                    <input type="text" class="form-control" value="A123456789" readonly disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="" class="">出生年月日</label>
-                                <input type="date" name="" id="" class="form-control" value="2022-12-21">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="">出生年月日</label>
+                                    <input type="date" name="" id="" class="form-control" value="2022-12-21" readonly disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="" class="">診斷年齡(足歲)</label>
-                                <input type="number" min="0" class="form-control" value="33" placeholder="足歲">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="">診斷年齡(足歲)</label>
+                                    <input type="number" min="0" class="form-control" value="33" placeholder="足歲" readonly disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="" class="">手機電話</label>
-                                <input type="text" class="form-control" value="0980555666">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="">手機電話</label>
+                                    <input type="text" class="form-control" value="0980555666" readonly disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="" class="">住家電話</label>
-                                <input type="text" class="form-control" value="04-23109988">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="">住家電話</label>
+                                    <input type="text" class="form-control" value="04-23109988" readonly disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="" class="">公司電話</label>
-                                <input type="text" class="form-control" value="04-23109988">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="">公司電話</label>
+                                    <input type="text" class="form-control" value="04-23109988" readonly disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="" class="">居住鄉鎮</label>
-                                <select name="" id="" class="form-control form-select">
-                                    <option value="" disabled>請選擇</option>
-                                    <option value="1">OO區</option>
-                                    <option value="2" selected>OO區</option>
-                                    <option value="3">OO區</option>
-                                    <option value="4">OO區</option>
-                                </select>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="">居住鄉鎮</label>
+                                    <select name="" id="" class="form-control form-select" readonly disabled>
+                                        <option value="" disabled>請選擇</option>
+                                        <option value="1">OO區</option>
+                                        <option value="2" selected>OO區</option>
+                                        <option value="3">OO區</option>
+                                        <option value="4">OO區</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="mb-3">
-                                <label for="" class="">居家地址(完整地址)</label>
-                                <input type="text" class="form-control" placeholder="請輸入居家照護地址(完整地址)"
-                                    value="台中市西區精誠29街23號6樓之2">
+                            <div class="col-md-8">
+                                <div class="mb-3">
+                                    <label for="" class="">居家地址(完整地址)</label>
+                                    <input type="text" class="form-control" placeholder="請輸入居家照護地址(完整地址)"
+                                        value="台中市西區精誠29街23號6樓之2" readonly disabled>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <!-- <div class="modal-footer">
                     <button type="button" class="btn btn-secondary w-100">儲存</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
-    <!-- / 個案資料-編輯 -->
+    <!-- / 個案資料-檢視 -->
     
     <!-- 派案 -->
     <div class="func-pane-wrap" data-func="assign">
