@@ -6,34 +6,43 @@ function renderChartTemplatePieCircle(setting) {
 
     var option;
     option = {
-        backgroundColor: '#FFFFFF',
+        backgroundColor: 'transparent',
         title: {
-            text: setting.title ? setting.title : '',
+            text: setting.title ? setting.title : '',            
             textStyle: {
-                fontSize: setting.titleFontSize ? setting.titleFontSize : '24'
+                fontSize: setting.titleFontSize ? setting.titleFontSize : '18',
+                color: 'rgba(255,255,255,1)',
+                fontWeight: 'normal',
+                fontFamily: '微軟正黑體'
             },
-            left: 'center',
-            top: '23%',
+            // subtext: '$',
+            // subtextStyle: {
+            //     color: 'white',
+            // },
+            left: 'left',
+            // top: '40%',
+            top: 'top'
         },
         tooltip: {
             trigger: 'item',
             formatter: setting.tooltip.formatter ? setting.tooltip.formatter : '',
             textStyle: {
-                fontSize: 12
+                // fontSize: 12
             },
         },
         legend: {
-            bottom: '5%',
-            left: 'center',
-            icon: 'circle',
-            bottom: 0,
+            // bottom: '5%',
+            // left: 'center',
+            // icon: 'circle',
+            // bottom: 0,
+            show: false
         },
         series: [{
             // name: 'Access From',
             type: 'pie',
             top: 0,
-            center: ['50%', '30%'],
-            radius: ['50%', '80%'],
+            center: ['50%', '50%'],
+            radius: ['25%', '78%'],
             avoidLabelOverlap: false,
             // selectedMode: 'single',
             showEmptyCircle: true,

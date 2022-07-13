@@ -46,8 +46,11 @@ function renderCompany(label, value) {
             },
             // formatter: '{b}<br/>得標件數: <b>{c}</b>',
             textStyle: {
-                fontSize: 12
+                // fontSize: 12
             },
+        },
+        textStyle: {
+            fontSize: 14,
         },
         grid: {
             top: 40,

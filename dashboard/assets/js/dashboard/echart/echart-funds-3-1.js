@@ -1,6 +1,7 @@
 // define(function() {
 //----經費-------
 function renderChartFunds31() {
+    console.log('renderChartFunds31');
     var dom = document.getElementById("funds3");
     var myChart = echarts.init(dom);
     var app = {};

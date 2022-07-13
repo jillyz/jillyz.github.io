@@ -112,6 +112,11 @@
     border-width: 0;
     transition: all 0.2s;
 
+    &.big{
+      padding: 0 8px;
+      font-size: 26px;
+    }
+
     &:hover{
       background-color: rgba(black, .05)
     }
@@ -139,6 +144,41 @@
         transform: rotate(180deg);
       }
     }
+  }
+  &-back{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    @include avatar(40px, true);
+    background-color: #3A63BE;
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 24px;
+
+    &.dark{
+      color: #c1c1c1 !important;
+      background-color: #4c4f61;
+      // border: 1px solid #8a8c99;
+    }
+  }
+}
+/* 被景色 */
+.bg{
+  
+}
+/* 文字顏色 */
+.text{
+  $success: #008243;
+  $danger: #F11B1B;
+  // ---
+  &-success{
+    color: $success !important;
+  }
+  &-danger{
+    color: $danger !important;
+  }
+  &-blue{
+    color: $blue !important
   }
 }
 /* icon close */
@@ -223,6 +263,9 @@
 /* 流程 */
 .flow-wrapper{
   $size: 110px;
+  $color: #E1E1E1;
+  $primary: #5481C6;
+  // ---
 
   display: flex;
   gap: 10px;
@@ -230,8 +273,6 @@
   background-color: white;
 
   > .item{
-    $color: #E1E1E1;
-
     flex: 1;
 
     position: relative;
@@ -273,7 +314,7 @@
     &.finished{
       $color: #E5F3FD;
 
-      color: #5481C6;
+      color: $primary;
       background-color: $color;
 
       &::before{
@@ -308,6 +349,10 @@
       >*{
         margin: 0;
       }
+    }
+    .badge{
+      background-color: $primary;
+      font-size: 16px;
     }
 
     &:first-child{
