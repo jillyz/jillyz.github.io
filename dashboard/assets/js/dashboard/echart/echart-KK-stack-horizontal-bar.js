@@ -1,4 +1,4 @@
-function stackBar(target, category, budget, outMoney, balance) {
+function stackBar(target, category, budgetName, outMoneyName, balanceName, budget, outMoney, balance) {
     var domTarget = document.getElementById(target); 
     var myChart = echarts.init(domTarget);
     var colors = ['#9c88ff','#5dbeff', '#b3f24e' ];
@@ -58,7 +58,7 @@ function stackBar(target, category, budget, outMoney, balance) {
         series: [
             {
                 cursor: 'default',
-                name: '可辦理委辦計畫之經費',
+                name: budgetName,
                 type: 'bar',
                 barWidth: 15,
                 label: {
@@ -72,7 +72,7 @@ function stackBar(target, category, budget, outMoney, balance) {
             },
             {
                 cursor: 'default',
-                name: '已核定或契約經費',
+                name: outMoneyName,
                 type: 'bar',
                 barWidth: 15,
                 stack: 'Total',
@@ -87,7 +87,7 @@ function stackBar(target, category, budget, outMoney, balance) {
             {
                 
                 cursor: 'default',
-                name: '剩餘經費',
+                name: balanceName,
                 type: 'bar',
                 barWidth: 15,
                 stack: 'Total',

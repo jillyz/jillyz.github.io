@@ -375,11 +375,11 @@
                     <div class="d-flex justify-content-between ">
                         <div class="d-grid">
                             <span class="text-yellow">總件數</span>
-                            <div class="fw-bold"><span class="num big">386</span><small class="ms-1 opacity-75">件</small></div>
+                            <div class="fw-bold"><a href="#offcanvasEarlyWarning" data-bs-toggle="offcanvas" class="num big">380</a><small class="ms-1 opacity-75">件</small></div>
                         </div>
                         <div class="d-grid text-end">
                             <span class="text-yellow">總經費</span>
-                            <div class="fw-bold"><span class="num big">29億9966萬</span></div>
+                            <div class="fw-bold"><a href="#offcanvasEarlyWarning" data-bs-toggle="offcanvas" class="num big">30億9966萬</a></div>
                         </div>
                     </div>
                     <div class="border-top my-4"></div>
@@ -389,16 +389,16 @@
                             <h5 class="fw-bold text-center mb-4 mt-2">最優先</h5>
                             <div class="legend-list opacity-mix border-magenta-2" style="border-top: 2px solid;">
                                 <div class="item">
-                                    <spa>總件數</spa>
-                                    <span class="num">71</span>
+                                    <span>總件數</span>
+                                    <a href="#offcanvasEarlyWarning" data-bs-toggle="offcanvas" class="num">171</a>
                                 </div>
                                 <div class="item">
-                                    <spa>已發包</spa>
-                                    <span class="num">54</span>
+                                    <spa>已提送</spa>
+                                    <a href="#offcanvasEarlyWarning" data-bs-toggle="offcanvas" class="num">120</a>
                                 </div>
                                 <div class="item">
-                                    <spa>未發包</spa>
-                                    <span class="num">17</span>
+                                    <spa>未提送</spa>
+                                    <a href="#offcanvasEarlyWarning" data-bs-toggle="offcanvas" class="num">51</a>
                                 </div>
                             </div>
                         </div>
@@ -406,16 +406,16 @@
                             <h5 class="fw-bold text-center mb-4 mt-2">優先</h5>
                             <div class="legend-list opacity-mix border-orange-red" style="border-top: 2px solid;">
                                 <div class="item">
-                                    <spa>總件數</spa>
-                                    <span class="num">106</span>
+                                    <span>總件數</span>
+                                    <a href="#offcanvasEarlyWarning" data-bs-toggle="offcanvas" class="num">156</a>
                                 </div>
                                 <div class="item">
-                                    <spa>已發包</spa>
-                                    <span class="num">95</span>
+                                    <spa>已提送</spa>
+                                    <a href="#offcanvasEarlyWarning" data-bs-toggle="offcanvas" class="num">100</a>
                                 </div>
                                 <div class="item">
-                                    <spa>未發包</spa>
-                                    <span class="num">11</span>
+                                    <spa>未提送</spa>
+                                    <a href="#offcanvasEarlyWarning" data-bs-toggle="offcanvas" class="num">56</a>
                                 </div>
                             </div>
                         </div>
@@ -423,16 +423,16 @@
                             <h5 class="fw-bold text-center mb-4 mt-2">一般</h5>
                             <div class="legend-list opacity-mix border-cyan" style="border-top: 2px solid;">
                                 <div class="item">
-                                    <spa>總件數</spa>
-                                    <span class="num">38</span>
+                                    <span>總件數</span>
+                                    <a href="#offcanvasEarlyWarning" data-bs-toggle="offcanvas" class="num">53</a>
                                 </div>
                                 <div class="item">
-                                    <spa>已發包</spa>
-                                    <span class="num">20</span>
+                                    <spa>已提送</spa>
+                                    <a href="#offcanvasEarlyWarning" data-bs-toggle="offcanvas" class="num">45</a>
                                 </div>
                                 <div class="item">
-                                    <spa>未發包</spa>
-                                    <span class="num">18</span>
+                                    <spa>未提送</spa>
+                                    <a href="#offcanvasEarlyWarning" data-bs-toggle="offcanvas" class="num">8</a>
                                 </div>
                             </div>
                         </div>
@@ -441,12 +441,19 @@
             </div>
         </div>
         <div class="col-8">
-            <div class="block">
+            <!-- K 經費執行 -->
+            <div class="block">        
                 <div class="head">
                     <h5 class="title">經費執行</h5>
+                    <div class="flex-left-center ms-auto">
+                        <select name="" id="" class="form-select dark-form muted sm" style="width: 205px;">
+                            <option value="">全部經費來源</option>
+                        </select>
+                        <a href="#" class="text-nowrap ms-3 text-white">查看財源經費表</a>
+                    </div>
                 </div>
                 <div class="body">
-                    <div id="funds1" style="height: 320px;"></div>
+                    <div id="funds1" class="mt-4" style="height: 320px;"></div>
                 </div>
             </div>
         </div>
@@ -1453,7 +1460,7 @@
             </button>
             <ul class="dropdown-menu zIndex-1021">
               <li><a class="dropdown-item" href="#">Excel</a></li>
-              <li><a class="dropdown-item" href="#">ODT</a></li>
+              <li><a class="dropdown-item" href="#">ODS</a></li>
             </ul>
           </div>
         </div>
@@ -1478,8 +1485,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1489,8 +1496,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1500,8 +1507,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1511,8 +1518,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1522,8 +1529,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1533,8 +1540,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1544,8 +1551,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1555,8 +1562,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1566,8 +1573,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1577,8 +1584,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1588,8 +1595,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1599,8 +1606,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1610,8 +1617,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1621,8 +1628,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1632,8 +1639,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1643,8 +1650,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1654,8 +1661,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1665,8 +1672,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1676,8 +1683,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>
@@ -1687,8 +1694,8 @@
                         <td>111</td>
                         <td>MOEAWRA1110083</td>
                         <td><a href="#">磺溪水系逕流分擔評估規劃暨流域整體改善與調適規劃(2/2)</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">河川海岸組/陳展裕</a></td>
-                        <td><a href="#cModal" data-bs-toggle="modal">第十河川局/規劃課/林佳薇</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">河川海岸組/陳展裕</a></td>
+                        <td><a href="#" class="showmodal" data-show-modal="cModal">第十河川局/規劃課/林佳薇</a></td>
                         <td>進度填報階段</td>
                         <td>第二次審查</td>
                         <td>110/12/20</td>

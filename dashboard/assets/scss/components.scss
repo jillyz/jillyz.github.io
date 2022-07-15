@@ -103,6 +103,20 @@
   height: 90vh;
 }
 
+/* Carousel */
+.carousel-indicators{
+  $w: 8px;
+  // ---
+  [data-bs-target]{  
+    height: 6px;
+    // @include avatar($w);
+    // border-radius: 999px;
+    // margin: 0 4px;
+  }
+  // .active{
+  //   box-shadow: 0 0 0 2px white;
+  // }
+}
 
 /* Object============================================================== */
 /* Btn */

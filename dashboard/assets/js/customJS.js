@@ -8,7 +8,39 @@ $(function(){
   // 驅動元素toggle
   toggleElements();
 
+  // 多層Modal
+  multiModal()
 
+  var zIndexGL = 1060;
+
+  $('[data-bs-toggle="offcanvas"]').click(function(e){
+    e.preventDefault();
+    // console.log($('.offcanvas.show').last().css('z-index'));
+    // $('.offcanvas.show').css('z-index', zIndexGL+1);
+    // $('.offcanvas-backdrop.show').css('z-index', zIndexGL);
+    zIndexGL++;
+    // console.log('zIndexGL', zIndexGL);
+
+    
+    // if($('.modal.show').length>0){      
+    //   $('.offcanvas.show').css('z-index', $('.modal.show').css('z-index')*1+1);
+    // }
+  })
+  $('[data-bs-toggle="modal"]').click(function(e){
+    e.preventDefault();
+    // $('.modal.show').last().css('z-index', zIndexGL+1);
+    // $('.modal-backdrop.show').last().css('z-index', zIndexGL);
+    // console.log('zIndexGL', zIndexGL);
+
+    // zIndexGL++;    // console.log($('.modal.show').last());
+    
+    if($('.offcanvas.show').length>0){      
+      // $('.modal.show').last().css('z-index', $('.offcanvas.show').css('z-index')*1+1);
+      // $('.modal.show').last().css('z-index', $('.offcanvas.show').css('z-index')*1+1);
+      // $('.modal.show').css('z-index', zIndexGL+1);
+      // $('.modal-backdrop.show').css('z-index', zIndexGL);
+    }
+  })
 })
 
 
@@ -89,5 +121,60 @@ function slideLine(box,stf,delay,speed,h){
   slideBox.onmouseout=function(){pause=false;}
   //起始的地方，沒有這個就不會動囉
   setTimeout(s, delay);
+}
+//設定輪播item的寬度，for 圖表輪播
+function setCarouseItemWidth(target){
+  var w = $(target).width() - 20;
+  $(target).find('.carousel-item > div').width(w);
+}
+// 多層modal
+function  multiModal(){
+  var zIndex = 1055;
+  // Modal
+  Array.from(document.getElementsByClassName('showmodal')).forEach( (e) => {
+      e.addEventListener('click', function(element) {
+          element.preventDefault();
+          if (e.hasAttribute('data-show-modal')) {
+              showModal(e.getAttribute('data-show-modal'));
+          }
+      }); 
+  });
+  // Offcanvas
+  Array.from(document.getElementsByClassName('showoffcanvas')).forEach( (e) => {
+      e.addEventListener('click', function(element) {
+          element.preventDefault();
+          if (e.hasAttribute('data-show-offcanvas')) {
+              showoffcanvas(e.getAttribute('data-show-offcanvas'));
+          }
+      }); 
+  });
+  // Show 彈窗
+  function showModal(modal) {
+      const mid = document.getElementById(modal);
+      let myModal = new bootstrap.Modal(mid);
+      myModal.show();
+
+      mid.addEventListener('shown.bs.modal', function(){
+        if($('.offcanvas.show').length>0){
+          $(mid).css('z-index', zIndex*1+2);
+          $('.modal-backdrop.show').last().css('z-index', zIndex*1+1);
+        }
+        zIndex = $(mid).css('z-index');
+      })
+  }
+  // Show offcanvas
+  function showoffcanvas(offcanvas) {
+      const mid = document.getElementById(offcanvas);
+      let myOffcanvas = new bootstrap.Offcanvas(mid);
+      myOffcanvas.show();
+
+      mid.addEventListener('shown.bs.offcanvas', function(){
+        if($('.modal.show').length>0){
+          $(mid).css('z-index', zIndex*1+2);
+          $('.offcanvas-backdrop.show').css('z-index', zIndex*1+1);
+        }
+        zIndex = $(mid).css('z-index');
+      })
+  }
 }
 

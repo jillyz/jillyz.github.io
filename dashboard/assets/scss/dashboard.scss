@@ -170,8 +170,10 @@ body{
 }
 /* 數字 */
 .num{
+    color: white !important;
     font-size: 1.5rem;
-    cursor: pointer;
+    opacity: 1 ;
+    text-decoration: none !important;    
 
     &.big{
         font-size: 2rem;

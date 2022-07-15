@@ -35,10 +35,13 @@ requirejs([
     // K 經費執行
     var targetK = 'funds1';
     var categoryK = ['公務預算', '水資源作業基金', '代辦經費', '前瞻基礎建設計畫第3期特別預算'];
+    var budgetNameK = '可辦理委辦計畫之經費';
+    var outMoneyNameK = '已核定或契約經費';
+    var balanceNameK = '剩餘經費';
     var budgetK = [1489870, 613588, 305314, 253379];
     var outMoneyK = [1164348, 667921, 152757, 181205];
     var balanceK = [325520, -54333, 152557, 72172];
-    stackBar(targetK, categoryK, budgetK, outMoneyK, balanceK);
+    stackBar(targetK, categoryK, budgetNameK, outMoneyNameK, balanceNameK, budgetK, outMoneyK, balanceK);
     
     // H 件數及經費
     var targetH = 'parentBar';
@@ -70,11 +73,17 @@ requirejs([
     var titleF = '得標最多廠商';
     var categoryF = ['黎明工程顧問股份有限公司', '中興工程顧問股份有限公司', '逢甲大學',];
     var dataF = [20, 15, 12];
+
+    var targetF2 = 'chartHosting';
+    var titleF2 = '得標計畫主持人';
+    var categoryF2 = ['李曉明', '陳曉惠', '張曉華',];
+    var dataF2 = [20, 15, 12];
     horizontalBar( targetF, titleF, categoryF, dataF);
+    horizontalBar( targetF2, titleF2, categoryF2, dataF2);
 
     // G 外聘評選委員
     var targetG = 'chartCommittee';
-    var titleG = '鄰聘次數最多委員';
+    var titleG = '遴聘次數最多委員';
     var categoryF = ['李安安', '陳欣欣', '張明明', ];
     var dataG = [10, 8, 7];
     horizontalBar(targetG, titleG, categoryF, dataG);

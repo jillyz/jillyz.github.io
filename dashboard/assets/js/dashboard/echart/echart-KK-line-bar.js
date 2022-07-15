@@ -145,16 +145,22 @@ function lineBar(target, category, amount, apprMoney, outMoney, parentBar, child
         var old = '';
         // Click事件
         myChart.on('click',  function(params) {
-            if(params.name != old){
-                $('.js-chart-ij').fadeIn();
-                old = params.name;
+            $('.js-chart-ij').fadeIn();
+            $('.js-chart-ij .title .org').text(params.name);
+            lineBar(childrenI[0], childrenI[1], childrenI[2], childrenI[3], childrenI[4]);                
+            lineBar(childrenJ[0], childrenJ[1], childrenJ[2], childrenJ[3], childrenJ[4]); 
 
-                $('.js-chart-ij .title .org').text(params.name);
-                lineBar(childrenI[0], childrenI[1], childrenI[2], childrenI[3], childrenI[4]);                
-                lineBar(childrenJ[0], childrenJ[1], childrenJ[2], childrenJ[3], childrenJ[4]);                
-            }else{
-                $('.js-chart-ij').fadeToggle();
-            }               
+            
+            // if(params.name != old){
+            //     $('.js-chart-ij').fadeIn();
+            //     old = params.name;
+
+            //     $('.js-chart-ij .title .org').text(params.name);
+            //     lineBar(childrenI[0], childrenI[1], childrenI[2], childrenI[3], childrenI[4]);                
+            //     lineBar(childrenJ[0], childrenJ[1], childrenJ[2], childrenJ[3], childrenJ[4]);                
+            // }else{
+            //     $('.js-chart-ij').fadeToggle();
+            // }               
         });
     }    
 }

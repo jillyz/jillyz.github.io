@@ -13,9 +13,13 @@ requirejs([
         // K 經費執行
         var targetK = 'funds1';
         var categoryK = ['公務預算', '水資源作業基金', '代辦經費', '前瞻基礎建設計畫第3期特別預算'];
+        var budgetNameK = '可辦理委辦計畫之經費';
+        var outMoneyNameK = '提報經費';
+        var balanceNameK = '剩餘經費';
         var budgetK = [1489870, 613588, 305314, 253379];
         var outMoneyK = [1164348, 667921, 152757, 181205];
         var balanceK = [325520, -54333, 152557, 72172];
-        stackBar(targetK, categoryK, budgetK, outMoneyK, balanceK);
+        stackBar(targetK, categoryK, budgetNameK, outMoneyNameK, balanceNameK, budgetK, outMoneyK, balanceK);
+
         
     });
