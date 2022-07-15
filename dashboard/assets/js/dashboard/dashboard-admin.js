@@ -17,10 +17,10 @@ requirejs([
     pie(targetC1, colorsC1, dataC1);
     
     // E 發包情形
-    gauge('chartFunds-1', 76, '#FF5CEA');
-    gauge('chartFunds-2', 90, '#FF835C');
-    gauge('chartFunds-3', 53, '#37ffdf');
-    gauge('chartFunds-4', 63, '#5dbeff');
+    gauge('chartFunds-1', 83, '#FF5CEA');
+    gauge('chartFunds-2', 79, '#FF835C');
+    gauge('chartFunds-3', 95, '#37ffdf');
+    gauge('chartFunds-4', 88, '#5dbeff');
 
     // C-2 總經費
     var targetC2  = 'chartOutsourcing-2';
