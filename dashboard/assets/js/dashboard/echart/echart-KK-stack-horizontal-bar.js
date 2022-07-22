@@ -1,7 +1,8 @@
 function stackBar(target, category, budgetName, outMoneyName, balanceName, budget, outMoney, balance) {
     var domTarget = document.getElementById(target); 
     var myChart = echarts.init(domTarget);
-    var colors = ['#9c88ff','#5dbeff', '#b3f24e' ];
+    // var colors = ['#9c88ff','#5dbeff', '#b3f24e' ];
+    var colors = ['#9c88ff','#5dbeff', '#3a3d4d' ];
     var myOptions = {
         color: colors,
         textStyle: {
@@ -14,13 +15,25 @@ function stackBar(target, category, budgetName, outMoneyName, balanceName, budge
                 type: 'shadow'
             },
             textStyle: {
-                fontSize: 16
+                fontSize: 16,
+                fontWeight: 'normal'
+            },  
+            valueFormatter: function (value) {
+                return toCurrency(value) + ' 千元';
             },
         },
         legend: {
+            // show: false,
             textStyle: {
                 color: 'rgba(255,255,255,1)'
-            }
+            },
+            formatter: function (name) {
+                if(name == '剩餘經費'){
+                    return '';
+                } else{
+                    return name
+                }
+            },
         },
         grid: {
             left: '3%',
@@ -30,7 +43,7 @@ function stackBar(target, category, budgetName, outMoneyName, balanceName, budge
         },
         xAxis: [{
             type: 'value',
-            maxInterval: 200000,
+            maxInterval: 50000,
             show: false,
         }],
 
@@ -53,7 +66,7 @@ function stackBar(target, category, budgetName, outMoneyName, balanceName, budge
                 }
             },
             inverse: true,
-            data: category
+            data: category,
         }],
         series: [
             {
@@ -62,7 +75,7 @@ function stackBar(target, category, budgetName, outMoneyName, balanceName, budge
                 type: 'bar',
                 barWidth: 15,
                 label: {
-                    show: true,
+                    // show: true,
                     position: 'inside'
                 },
                 emphasis: {
@@ -77,7 +90,7 @@ function stackBar(target, category, budgetName, outMoneyName, balanceName, budge
                 barWidth: 15,
                 stack: 'Total',
                 label: {
-                    show: true
+                    // show: true
                 },
                 emphasis: {
                     focus: 'series'
@@ -92,7 +105,7 @@ function stackBar(target, category, budgetName, outMoneyName, balanceName, budge
                 barWidth: 15,
                 stack: 'Total',
                 label: {
-                    show: true,
+                    // show: true,
                     position: 'left '
                 },
                 emphasis: {
@@ -104,7 +117,11 @@ function stackBar(target, category, budgetName, outMoneyName, balanceName, budge
     };
 
     window.addEventListener('resize', myChart.resize);
-
+    function toCurrency(num){
+        var parts = num.toString().split('.');
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        return parts.join('.');
+    }
     if (myOptions && typeof myOptions === 'object') {
         myChart.setOption(myOptions);
     }

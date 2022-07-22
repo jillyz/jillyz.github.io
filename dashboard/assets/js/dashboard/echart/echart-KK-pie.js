@@ -8,7 +8,10 @@ function pie(target, colors, data) {
         },
         tooltip: {
             trigger: 'item',
-            formatter: '{b}<br/><b>{c}</b> ({d}%)',
+            // formatter: '{b}<br/><b>{c}</b> ({d}%)',
+            formatter: function(params){
+                return `${params.name}<br><b>${toCurrency(params.value)} (${params.percent}%)</b>`;
+            },
             textStyle: {
                 fontSize: 16
             },
@@ -30,9 +33,14 @@ function pie(target, colors, data) {
             labelLine: {
                 show: false
             },
-            data: data
+            data: data,
         }]
     };
+    function toCurrency(num){
+        var parts = num.toString().split('.');
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        return parts.join('.');
+    }
     if (myOptions && typeof myOptions === 'object') {
         myChart.setOption(myOptions);
     }

@@ -474,6 +474,44 @@
     background-color: #FFF6EE;
   }
 }
+/* 排序 */
+.sorting{
+  color: inherit !important;
+  text-decoration: none !important;
+
+  position: relative;
+  padding-right: 26px;
+
+  &::before,
+  &::after{
+    position: absolute;
+    display: block;
+    opacity: .125;
+    right: 10px;
+    line-height: 9px;
+    font-size: .75em;
+  }
+  &::before{
+    bottom: 50%;
+    content: "▲";
+  }
+  &::after{
+    top: 50%;
+    content: "▼";
+  }
+
+  &.sorting_asc{
+    &::before{
+      opacity: .6;
+    }
+  }
+  &.sorting_desc{
+    &::after{
+      opacity: .6;
+    }
+  }
+
+}
 /* 階段成果及撥款次數 */
 .preProgress-wrapper{
   display: flex;
