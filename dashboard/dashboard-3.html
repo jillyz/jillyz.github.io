@@ -513,19 +513,107 @@
             </div>
         </div>
         <div class="col">
-            <!-- K 經費執行 -->
-            <div class="block">        
-                <div class="head">
-                    <h5 class="title">經費執行</h5>
-                    <div class="flex-left-center ms-auto">
-                        <select name="" id="" class="form-select dark-form muted sm" style="width: 205px;">
-                            <option value="">全部經費來源</option>
-                        </select>
-                        <a href="#" class="text-nowrap ms-3 text-white">查看財源經費表</a>
+            <!-- 經費執行&個人控管計畫進度 -->
+            <div class="tab-block-wrap h-100">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1" type="button" title="經費執行"><i class="fa-solid fa-sack-dollar"></i></button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2" type="button" title="個人控管計畫進度"><i class="fa-solid fa-wave-sine"></i></button>
+                    </li>
+                </ul>
+                <div class="tab-content h-100">
+                    <div class="tab-pane fade h-100 show active" id="tab1">
+                        <div class="block">        
+                            <div class="head">
+                                <h5 class="title">經費執行</h5>
+                                <div class="flex-left-center ms-auto">
+                                    <select name="" id="" class="form-select dark-form muted sm" style="width: 205px;">
+                                        <option value="">全部經費來源</option>
+                                    </select>
+                                    <a href="#" class="text-nowrap ms-3 text-white">查看財源經費表</a>
+                                </div>
+                            </div>
+                            <div class="body">
+                                <div id="funds1" class="mt-4 js-same-width" style="height: 320px;"></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="body">
-                    <div id="funds1" class="mt-4" style="height: 320px;"></div>
+                    <div class="tab-pane fade h-100" id="tab2">
+                        <div class="block">        
+                            <div class="head">
+                                <h5 class="title">個人控管計畫進度</h5>
+                                <div class="flex-left-center ms-auto">
+                                    <select name="" id="" class="form-select dark-form muted sm" style="width: 150px;">
+                                        <option value="">全署</option>
+                                        <option value="">本署主辦</option>
+                                        <option value="">所屬機關主辦</option>
+                                        <option value="">預算控管</option>
+                                        <option value="">控管單位主辦</option>
+                                        <option value="">控管單位督辦</option>
+                                        <option value="">個人主辦</option>
+                                        <option value="">個人督辦</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="body">
+                                <div class="row mb-2">
+                                    <div class="col-auto">
+                                        <div class="d-grid">
+                                            <span class="">總件數</span>
+                                            <div class="fw-bold"><a href="#offcanvasEarlyWarning" data-bs-toggle="offcanvas" class="num big">32</a><small class="ms-1 opacity-75">件</small></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto ms-5">
+                                        <div class="d-grid">
+                                            <span class="">進度落後</span>
+                                            <div class="fw-bold"><a href="#offcanvasEarlyWarning" data-bs-toggle="offcanvas" class="num big">4</a><small class="ms-1 opacity-75">件</small></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="chartStage" class="js-same-width" style="height: 230px;"></div>
+                                <div class="stage-list">
+                                    <div class="item">
+                                        <span class="text"><span>計畫</span><span>申請</span></span>
+                                        <a href="#" class="num">0</a>
+                                    </div>
+                                    <div class="item">
+                                        <span class="text"><span>計畫</span><span>核可</span></span>
+                                        <a href="#" class="num">145</a>
+                                    </div>
+                                    <div class="item">
+                                        <span class="text"><span>採購</span><span>提報</span></span>
+                                        <a href="#" class="num">42</a>
+                                    </div>
+                                    <div class="item">
+                                        <span class="text"><span>契約</span><span>簽訂</span></span>
+                                        <a href="#" class="num">91</a>
+                                    </div>
+                                    <div class="item">
+                                        <span class="text"><span>契約</span><span>變更</span></span>
+                                        <a href="#" class="num">1</a>
+                                    </div>
+                                    <div class="item">
+                                        <span class="text"><span>進度</span><span>填報</span></span>
+                                        <a href="#" class="num">107</a>
+                                    </div>
+                                    <div class="item">
+                                        <span class="text">已結案</span>
+                                        <a href="#" class="num">0</a>
+                                    </div>
+                                    <div class="item">
+                                        <span class="text"><span>成果</span><span>上傳</span></span>
+                                        <a href="#" class="num">0</a>
+                                    </div>
+                                    <div class="item">
+                                        <span class="text"><span>成果</span><span>歸檔</span></span>
+                                        <a href="#" class="num">0</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -658,11 +746,17 @@
                         <div class="carousel-inner">
                             <!-- 廠商 -->
                             <div class="carousel-item active">
-                                <div id="chartCompany" style="height: 160px;"></div>                            
+                                <div id="chartCompany" style="height: 160px;"></div>  
+                                <div class="flex-center" style="height: 30px; margin-bottom: 20px;">
+                                    件數2件：共<a href="#" data-show-modal="aModal" class="num-bg mx-1 showmodal">33</a>家
+                                </div>                         
                             </div>
                             <!-- 計畫主持人 -->
                             <div class="carousel-item">
-                                <div id="chartHosting" style="height: 160px; width: 100%;"></div>                            
+                                <div id="chartHosting" style="height: 160px; width: 100%;"></div>  
+                                <div class="flex-center" style="height: 30px; margin-bottom: 20px;">
+                                    件數2件：共<a href="#" data-show-modal="bModal" class="num-bg mx-1 showmodal">5</a>位
+                                </div>                           
                             </div>
                         </div>
                     </div>
@@ -719,7 +813,10 @@
                     </div>
                 </div>
                 <div class="body">
-                    <div id="chartCommittee" class="w-100" style="height: 160px; margin-bottom: 30px;" ></div>
+                    <div id="chartCommittee" class="w-100" style="height: 160px;" ></div>
+                    <div class="flex-center" style="height:30px; margin-bottom: 50px;">
+                        件數2件：共<a href="#" data-show-modal="cModal" class="num-bg mx-1 showmodal">5</a>位
+                    </div> 
                     <div class="legend-list mb-3">
                         <div class="item pt-2">
                             <div class="d-grid">

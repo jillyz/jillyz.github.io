@@ -177,4 +177,9 @@ function  multiModal(){
       })
   }
 }
+// 與第一個el同寬度
+function sameWidth(target){
+  var w = $(target).eq(0).width();
+  $(target).width(w);
+}
 

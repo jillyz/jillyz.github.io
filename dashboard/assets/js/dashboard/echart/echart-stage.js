@@ -1,21 +1,26 @@
 // define(function() {
 //----計劃執行階段-------
-function renderStage(valueTotal, valueLate, noteTitle) {
+function renderStage(container, category, valueTotal) {
 
-    var domChartStage = document.getElementById("chartStage");
+    var domChartStage = document.getElementById(container);
     var myChartStage = echarts.init(domChartStage);
 
     var optionStage;
     optionStage = {
         // backgroundColor: '#FFFFFF',
         title: {
-            text: noteTitle ? '執行階段' + noteTitle : '執行階段',
+            // text: noteTitle ? '執行階段' + noteTitle : '執行階段',
             textStyle: {
-                fontSize: 15,
+                fontSize: 16,
                 // color: '#fff',
                 color: 'rgba(255,255,255,.75)',
                 fontWeight: 'normal'
-            }
+            },
+            show: false
+        },
+        textStyle: {
+            fontSize: 16,
+            fontFamily: '微軟正黑體'
         },
         // color: ['#5470C6', '#FF6961'],
         color: ['#5470C6'],
@@ -29,14 +34,14 @@ function renderStage(valueTotal, valueLate, noteTitle) {
                 }
             },
             textStyle: {
-                fontSize: 12
+                fontSize: 16
             },
         },
         legend: {
             data: ['總件數', '進度落後'],
             right: '5%',
             top: '10%',
-            // show: false
+            show: false,
             textStyle: {
                 color: 'white'
             },
@@ -50,23 +55,27 @@ function renderStage(valueTotal, valueLate, noteTitle) {
             }
         },
         grid: {
-            left: '2%',
-            right: '6%',
-            top: '30%',
+            left: '35px',
+            right: '65px',
+            top: '30px',
             bottom: '10px',
             containLabel: true,
         },
         xAxis: [{
             type: 'category',
             boundaryGap: false,
-            data: ['計畫申請', '計畫核可', '採購提報', '契約簽訂', '契約變更', '進度填報', '已結案', '成果上傳', '成果歸檔']
+            data: category,
+            // show: false
+            axisLabel: {
+                color: '#3a3d4d'
+            }
         }],
         yAxis: [{
             type: 'value',
             axisLabel: {
                 show: true,
-                color: "#bbb",
-                fontSize: 12
+                color: 'white',
+                fontSize: 14
             }
         }],
         series: [{

@@ -174,11 +174,36 @@ body{
     font-size: 1.5rem;
     opacity: 1 ;
     text-decoration: none !important;    
+    transition: all .2s;
 
     &.big{
         font-size: 2rem;
     }
+
+
+    // &:hover{
+    //     color: $cyan;
+    // }
 }
+/* 數字背景 */
+.num-bg{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(black, .35);
+    border-radius: 4px;
+    padding: 0 4px;
+    min-width: 24px;
+    min-height: 20px;
+    color: white ;
+  
+    transition: all .2s;
+  
+    &:hover{
+      color: $cyan;
+    }
+    text-decoration: none !important;
+  }
 
 
 /* 儀表板框架 */
@@ -251,15 +276,25 @@ body{
 
 /* 深色表單樣式 */
 .dark-form{
-    background-color: #525568;
+    $border: #8a8c99;
+    $bg: #525568;
+    $disabled: rgba(black, .1);
+    //--
+    background-color: $bg;
     color: white !important;
-    border-color: #8a8c99;
+    border-color: $border;
     // opacity: 0.75;
 
     transition: all .2s;
 
     &:hover{
         // opacity: 1;
+    }
+    &:disabled{
+        background-color: $disabled;
+        border-color: transparent;
+        // opacity: 0.75;
+        color: rgba(white, .5) !important;
     }
     
     &.muted{
@@ -296,18 +331,18 @@ body{
     background-color: $dark2;
 
     position: relative;
-    top: -23px;
+    top: -16px;
     >*{
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        // gap: 4px;
         flex: 1;
-        padding: 0 4px;
+        // padding: 0 4px;
 
         border-left: 1px dotted rgba(white, .75);
         text-align: center;
         // font-weight: bold;
-        color: rgba(white, .75);
+        // color: rgba(white, .75);
         
         &:last-child{
             border-right: 1px dotted rgba(white, .75);
@@ -355,6 +390,40 @@ body{
             // color: #37ffdf !important;}
             color: #ffff03 !important;
         }
+    }
+}
+/* 區塊切換頁籤 */
+.tab-block-wrap{
+    position: relative;
+
+    .nav-tabs{
+        position: absolute;
+        right: 8px;
+        bottom: 16px;
+        z-index: 2;
+    }
+    .tab-content{
+        background: none;
+        padding: 0;
+    }
+
+    .nav-tabs .nav-link {
+        color: white;
+        border: none;
+        border-radius: .25rem;
+        // padding: 2px 8px;
+        opacity: 0.5;
+    }
+
+    .nav-tabs .nav-item.show .nav-link,
+    .nav-tabs .nav-link.active,
+    .nav-tabs .nav-link:focus,
+    .nav-tabs .nav-link:hover {
+        color: white;
+        background-color: rgba(black, .25);
+        box-shadow: none;
+        border: none;
+        opacity: 1;
     }
 }
 

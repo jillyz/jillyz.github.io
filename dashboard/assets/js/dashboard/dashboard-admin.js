@@ -5,6 +5,7 @@ requirejs([
     'echart/echart-KK-pie',
     'echart/echart-KK-line-bar',
     'echart/echart-KK-horizontal-bar',
+    'echart/echart-stage',
 ], function() {
 
     // C-1 總件數
@@ -42,6 +43,15 @@ requirejs([
     var outMoneyK = [1164348, 667921, 152757, 181205];
     var balanceK = [325520, -54333, 152557, 72172];
     stackBar(targetK, categoryK, budgetNameK, outMoneyNameK, balanceNameK, budgetK, outMoneyK, balanceK);
+
+
+    
+    sameWidth('.js-same-width');
+
+    // 個人控管計畫進度
+    var categoryStage = ['計畫申請', '計畫核可', '採購提報', '契約簽訂', '契約變更', '進度填報', '已結案', '成果上傳', '成果歸檔']
+    var valueStageTotal = [0, 145, 42, 91, 1, 107, 0, 0, 0];
+    renderStage('chartStage', categoryStage,  valueStageTotal );
     
     // H 件數及經費
     var targetH = 'parentBar';
@@ -87,4 +97,7 @@ requirejs([
     var categoryF = ['李安安', '陳欣欣', '張明明', ];
     var dataG = [10, 8, 7];
     horizontalBar(targetG, titleG, categoryF, dataG);
+
+
+
 });

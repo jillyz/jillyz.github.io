@@ -50,7 +50,7 @@ function horizontalBar(target, title ,category, data) {
                 color: '#fff',
                 textStyle:{
                     fontSize: 16
-                }
+                },
             }
         },
         xAxis: {
