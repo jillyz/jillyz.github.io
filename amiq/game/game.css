@@ -133,7 +133,7 @@ a,.show-ans button {
 }
 .game-card a,
 .game-option a[data-showoption] {
-    border: 1px solid #de952c;
+    border: 3px solid #de952c;
     border-radius: 2vw;
     line-height: calc( 100vw * (480/3200));
     font-size: 8vw;
@@ -152,10 +152,12 @@ a,.show-ans button {
     background-size: calc( 100vw * (479/3200) * 6);
     background-position: -100%;
     border-radius: 2vw;
+    opacity: 0;
 }
 .game-option a[data-showoption] {
     background-color: #f4eed4;
     box-shadow: .5vw .5vw 0 #b0ad9e;
+    opacity: 1;
 }
 .game-option a[data-showoption]:before {
     position: absolute;
