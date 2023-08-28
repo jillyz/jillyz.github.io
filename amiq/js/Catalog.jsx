@@ -413,21 +413,22 @@ class Catalog extends React.Component {
   }
 
   renderBookRentInfo(rentBook){
-    const bookId = rentBook.bookId;
+    const bookId = rentBook.bookIds;
+    const status = rentBook.status;
     const fromTime = rentBook.fromTime;
     const toTime = rentBook.toTime;
-    const isRented = Date.parse(rentBook.fromTime) < Date.parse(new Date());
-    const isPassed= Date.parse(rentBook.toTime) < Date.parse(new Date());
-    if(!isRented) {
+    
+    if(status == '租借中') {
+      return(
+        <div className="rent-state already" key={`rent_state_already_${bookId}`}><span className="state">租借中</span><span className="rent-date">{this.formatDateStr(fromTime)} 借 ~ {this.formatDateStr(toTime)} 還</span></div>
+      )
+    }
+    if(status == '已預約') {
       return(
         <div className="rent-state reserve" key={`rent_state_reserve_${bookId}`}><span className="state">已預約</span><span className="rent-date">{this.formatDateStr(fromTime)} 借 ~ {this.formatDateStr(toTime)} 還</span></div>
       )
     } 
-    else if (isRented && !isPassed) {
-      return(
-        <div className="rent-state already" key={`rent_state_already_${bookId}`}><span className="state">借閱中</span><span className="rent-date">{this.formatDateStr(fromTime)} 借 ~ {this.formatDateStr(toTime)} 還</span></div>
-      )
-    }
+    
   }
 
   formatDateStr(dateStr) {
@@ -446,8 +447,12 @@ class Catalog extends React.Component {
   }
 
   renderBooksGrid(data){
+    // console.log('data',data)
     return (
       data.map(book => (
+        // console.log('book',book)
+        // console.log('rentBookTimeRagne',rentBookTimeRagne)
+
         <div id={`guid_${book.guid}`} data-ga="BookGrid" data-value={book.id} ref={`books-${book.stage}`} className={this.typesClassName(book.types, book.stage, book.guid)}>
           <div className={`item item-grid stage stage-${book.stage}`} key={book.guid} onClick={() => this.previewShow(book)}>
             <div className="info">
@@ -477,11 +482,16 @@ class Catalog extends React.Component {
             }
             <div className="rent-info">
             {
-              rentBookTimeRagne.map(rentBook => (
+              rentBookTimeRagneData.map(rentBook => (
                 (book.id == rentBook.bookId ? this.renderBookRentInfo(rentBook) : '')
               ))
             }
             </div>
+            {/* <div className="rent-info">
+              <div className="rent-state already"><span className="state">借閱中</span><span className="rent-date">XXXX/XX/XX 借 ~ XXXX/XX/XX 還</span></div>
+              <div className="rent-state reserve"><span className="state">已預約</span><span className="rent-date">XXXX/XX/XX 借 ~ XXXX/XX/XX 還</span></div>
+            </div>  */}
+
           </div>
         </div>
       ))
@@ -515,13 +525,13 @@ class Catalog extends React.Component {
                 </span>
                 : ''
               }
-              <span className="rent-info">
+              {/* <span className="rent-info">
               {
                 rentBookTimeRagne.map(rentBook => (
                   (book.id == rentBook.bookId ? this.renderBookRentInfo(rentBook) : '')
                 ))
               }
-              </span>
+              </span> */}
             </div>
           </div>
         </div>
