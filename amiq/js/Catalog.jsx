@@ -420,15 +420,14 @@ class Catalog extends React.Component {
     
     if(status == '租借中') {
       return(
-        <div className="rent-state already" key={`rent_state_already_${bookId}`}><span className="state">租借中</span><span className="rent-date">{this.formatDateStr(fromTime)} 借 ~ {this.formatDateStr(toTime)} 還</span></div>
+        <div className="rent-state already" key={`rent_state_already_${fromTime}_${bookId}`}><span className="state">租借中</span><span className="rent-date">{this.formatDateStr(fromTime)} 借 ~ {this.formatDateStr(toTime)} 還</span></div>
       )
     }
     if(status == '已預約') {
       return(
-        <div className="rent-state reserve" key={`rent_state_reserve_${bookId}`}><span className="state">已預約</span><span className="rent-date">{this.formatDateStr(fromTime)} 借 ~ {this.formatDateStr(toTime)} 還</span></div>
+        <div className="rent-state reserve" key={`rent_state_reserve_${fromTime}_${bookId}`}><span className="state">已預約</span><span className="rent-date">{this.formatDateStr(fromTime)} 借 ~ {this.formatDateStr(toTime)} 還</span></div>
       )
-    } 
-    
+    }   
   }
 
   formatDateStr(dateStr) {
